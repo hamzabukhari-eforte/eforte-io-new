@@ -1,0 +1,139 @@
+# eForte Solutions - Project Rules & Best Practices
+
+## Technology Stack
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS v4
+- **Language**: TypeScript
+- **React Version**: React 19
+
+## Code Organization & Architecture
+
+### Component Structure
+- **Component-based architecture**: Break down UI into reusable, well-organized components
+- **Atomic Design Pattern**: Use a layered component architecture
+- **File organization**: 
+  - Create components in a `components/` directory
+  - Group related components in subdirectories (e.g., `components/ui/`, `components/atoms/`, `components/sections/`)
+  - Use PascalCase for component file names (e.g., `Button.tsx`, `Header.tsx`)
+
+### Component Architecture Layers
+
+#### `components/ui/` - Shadcn Base Components
+- **Purpose**: Store base shadcn/ui components (third-party library components)
+- **Content**: Raw shadcn components installed via `npx shadcn@latest add [component]`
+- **Examples**: `button.tsx`, `input.tsx`, `card.tsx`, `dialog.tsx`
+- **Rules**: 
+  - Do NOT modify these components directly
+  - Keep them as-is from shadcn/ui
+  - These are the foundation/base components
+
+#### `components/atoms/` - Customized Components
+- **Purpose**: Store customized versions of shadcn components
+- **Content**: Custom components built on top of shadcn components from `ui/`
+- **Examples**: `Button1.tsx`, `Button2.tsx`, `Input1.tsx`, `Card1.tsx`
+- **Rules**:
+  - Import and extend shadcn components from `components/ui/`
+  - Apply custom styling, props, or functionality
+  - Each variant gets its own file (e.g., `Button1.tsx`, `Button2.tsx`)
+  - Use descriptive names that indicate the variant or use case
+
+### Component Best Practices
+- **Single Responsibility**: Each component should have a single, well-defined purpose
+- **Reusability**: Design components to be reusable across the application
+- **Props Interface**: Always define TypeScript interfaces for component props
+- **Default Exports**: Use default exports for components
+- **Component Naming**: Use descriptive, semantic names that reflect the component's purpose
+- **Page Sections**: ALL page sections must be created as separate components in `components/sections/` and imported into page files
+  - Do NOT write section code directly in page files
+  - Each major section (Banner, Hero, Features, etc.) should be its own component
+  - Page files should only import and compose section components
+  - Example: `<Banner />`, `<TrustedBySection />`, `<LegacyToIntelligenceSection />`
+
+### Code Quality Standards
+- **Refactoring**: Keep code DRY (Don't Repeat Yourself) - extract common logic into utilities or hooks
+- **Readability**: Write code that is self-documenting with clear variable and function names
+- **Type Safety**: Use TypeScript strictly - avoid `any` types, define proper interfaces
+- **Comments**: Add comments for complex logic, but prefer self-documenting code
+
+### Styling Guidelines
+- **Tailwind CSS**: Use Tailwind utility classes for styling
+- **Responsive Design**: Use Tailwind's responsive breakpoints (sm, md, lg, xl, 2xl)
+- **Consistency**: Maintain consistent spacing, colors, and typography using Tailwind's design tokens
+- **Custom Styles**: When needed, extend Tailwind in `globals.css` using CSS variables
+
+### Custom Color Tokens
+- **`text-desc`**: `#A0A0C0` - Use for descriptive/secondary text
+- **`text-white`**: `#ffffff` - White text color
+- **`text-primary-pink`**: `#D3287A` - Primary pink color for text
+- **`bg-default`**: `#0A0A1A` - Default background color
+- **Usage**: These colors are defined in `globals.css` and can be used as Tailwind utility classes (e.g., `text-desc`, `bg-default`)
+
+### Container Component
+- **Standard Container**: Use `Container` component from `@/components/atoms/Container` for all content sections
+- **Max Width**: Container has a max-width of 1400px and is centered with responsive padding
+- **Exceptions**: Do NOT use Container for:
+  - Carousel components (should be full-width)
+  - Banner/Hero images (should be full-width)
+  - Any element that needs to break out of the container width
+- **Usage**: Wrap content sections with `<Container>` to maintain consistent width across the site
+
+### File Structure Example
+```
+app/
+  layout.tsx
+  page.tsx
+  globals.css
+components/
+  ui/          # Shadcn base components (button.tsx, input.tsx, etc.)
+  atoms/       # Customized components (Button1.tsx, Button2.tsx, Input1.tsx, etc.)
+  sections/    # Page sections (header, footer, hero, etc.)
+  features/    # Feature-specific components
+lib/          # Utility functions and helpers
+types/        # TypeScript type definitions
+```
+
+### Component Usage Pattern
+```typescript
+// components/ui/button.tsx (shadcn component - do not modify)
+// This is installed via: npx shadcn@latest add button
+
+// components/atoms/Button1.tsx (customized version)
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+export interface Button1Props extends React.ComponentProps<typeof Button> {
+  // Add custom props if needed
+}
+
+export default function Button1({ className, ...props }: Button1Props) {
+  return (
+    <Button
+      className={cn("custom-styles-here", className)}
+      {...props}
+    />
+  );
+}
+```
+
+### Design Implementation
+- **Figma to Code**: When implementing Figma designs:
+  - Match spacing, colors, and typography exactly
+  - Ensure responsive behavior matches design specifications
+  - Pay attention to hover states, transitions, and animations
+  - Maintain pixel-perfect accuracy where possible
+
+### Performance
+- **Image Optimization**: Use Next.js Image component for all images
+- **Code Splitting**: Leverage Next.js automatic code splitting
+- **Lazy Loading**: Implement lazy loading for below-the-fold content when appropriate
+
+### Accessibility
+- **Semantic HTML**: Use semantic HTML elements
+- **ARIA Labels**: Add ARIA labels where necessary for screen readers
+- **Keyboard Navigation**: Ensure all interactive elements are keyboard accessible
+
+## Workflow
+- Always follow these rules when working on this project
+- Maintain consistency with existing code patterns
+- Refactor when code duplication is detected
+- Test components in isolation before integration
