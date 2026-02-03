@@ -26,7 +26,7 @@ export default function Banner() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[72px] font-bold text-white leading-tight mb-6"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[90px] font-medium text-white leading-tight mb-6 tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -34,7 +34,7 @@ export default function Banner() {
               The Integrated AI Transformation Partner.
             </motion.h1>
             <motion.p
-              className="text-base sm:text-lg md:text-[18px] text-desc leading-relaxed"
+              className="text-lg md:text-xl text-desc font-light leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}

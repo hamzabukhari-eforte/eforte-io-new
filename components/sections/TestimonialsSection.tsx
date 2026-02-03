@@ -66,14 +66,14 @@ export default function TestimonialsSection() {
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
             >
-              <span className="inline-block px-6 md:px-8 py-2 text-primary-pink text-xs md:text-sm font-medium uppercase tracking-wider border border-primary-pink/30 rounded-full">
+              <span className="inline-block px-6 md:px-8 py-2 text-primary-pink text-[11px] font-bold uppercase tracking-[0.15em] border border-primary-pink/30 rounded-full">
                 WHAT OUR CLIENTS SAY
               </span>
             </motion.div>
 
             {/* Main Title */}
             <motion.h2
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[52px] font-bold text-white leading-tight"
+              className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-tight tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -98,12 +98,12 @@ export default function TestimonialsSection() {
                 </h3>
 
                 {/* Testimonial Text */}
-                <p className="text-sm md:text-base lg:text-lg text-desc leading-relaxed mb-6 md:mb-8 flex-1 text-center">
+                <p className="text-base md:text-[17px] text-desc font-light leading-relaxed mb-6 md:mb-8 flex-1 text-center">
                   {testimonial.testimonial}
                 </p>
 
                 {/* Attribution */}
-                <div className="text-sm md:text-base text-white/70">
+                <div className="text-[15px] text-white/70">
                   <span className="font-bold">{testimonial.author}</span>
                   <span className="mx-2">|</span>
                   <span>{testimonial.title}</span>

@@ -31,7 +31,7 @@ export default function AgenticOrchestrationSection() {
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                 transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
               >
-                <h3 className="text-primary-pink text-base md:text-lg font-bold text-center px-6 leading-tight">
+                <h3 className="text-primary-pink text-xl font-bold text-center px-6 leading-tight">
                   The Agentic Orchestration Stack
                 </h3>
               </motion.div>
@@ -43,7 +43,7 @@ export default function AgenticOrchestrationSection() {
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                 transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
               >
-                <p className="text-white text-xs md:text-sm text-center px-6 leading-relaxed">
+                <p className="text-white text-[15px] text-center px-6 leading-relaxed">
                   We build on the eForte Agentic Platform, leveraging powerful technologies including
                 </p>
               </motion.div>
@@ -80,7 +80,7 @@ export default function AgenticOrchestrationSection() {
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                 transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
               >
-                <h3 className="text-primary-pink text-base md:text-lg lg:text-xl font-bold text-center px-6 leading-tight">
+                <h3 className="text-primary-pink text-xl font-bold text-center px-6 leading-tight">
                   The Agentic Orchestration Stack
                 </h3>
               </motion.div>
@@ -92,7 +92,7 @@ export default function AgenticOrchestrationSection() {
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                 transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
               >
-                <p className="text-white text-xs md:text-sm lg:text-base text-center px-6 leading-relaxed">
+                <p className="text-white text-[15px] text-center px-6 leading-relaxed">
                   We build on the eForte Agentic Platform, leveraging powerful technologies including
                 </p>
               </motion.div>
@@ -130,7 +130,7 @@ export default function AgenticOrchestrationSection() {
           >
             {/* Main Heading */}
             <motion.h2
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[40px] font-bold text-white leading-tight mb-6 md:mb-8"
+              className="text-3xl md:text-4xl lg:text-[56px] font-medium text-white leading-tight mb-6 md:mb-8 tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -140,7 +140,7 @@ export default function AgenticOrchestrationSection() {
 
             {/* First Paragraph */}
             <motion.p
-              className="text-base md:text-lg lg:text-xl xl:text-[24px] font-semibold text-white leading-relaxed mb-6 md:mb-8"
+              className="text-xl font-semibold text-white leading-relaxed mb-6 md:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -150,7 +150,7 @@ export default function AgenticOrchestrationSection() {
 
             {/* Second Paragraph */}
             <motion.p
-              className="text-sm md:text-base lg:text-lg text-desc leading-relaxed"
+              className="text-base md:text-[17px] text-desc font-light leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}

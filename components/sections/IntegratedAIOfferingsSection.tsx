@@ -20,14 +20,14 @@ export default function IntegratedAIOfferingsSection() {
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <span className="inline-block px-6 md:px-8 py-2 text-primary-pink text-xs md:text-sm font-medium uppercase tracking-wider border border-primary-pink rounded-full">
+            <span className="inline-block px-6 md:px-8 py-2 text-primary-pink text-[11px] font-bold uppercase tracking-[0.15em] border border-primary-pink rounded-full">
               INTEGRATED AI-FIRST OFFERINGS
             </span>
           </motion.div>
 
           {/* Main Heading */}
           <motion.h2
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[52px] font-bold text-white text-center leading-tight"
+            className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white text-center leading-tight tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}

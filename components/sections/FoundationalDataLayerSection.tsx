@@ -31,7 +31,7 @@ export default function FoundationalDataLayerSection() {
           >
             {/* Main Heading */}
             <motion.h2
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[40px] font-bold text-white leading-tight mb-4 md:mb-6"
+              className="text-3xl md:text-4xl lg:text-[56px] font-medium text-white leading-tight mb-4 md:mb-6 tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -41,7 +41,7 @@ export default function FoundationalDataLayerSection() {
 
             {/* Subtitle */}
             <motion.h3
-              className="text-lg md:text-xl lg:text-2xl xl:text-[24px] font-semibold text-white mb-6 md:mb-8"
+              className="text-xl font-semibold text-white mb-6 md:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -51,7 +51,7 @@ export default function FoundationalDataLayerSection() {
 
             {/* Paragraph */}
             <motion.p
-              className="text-sm md:text-base lg:text-lg text-desc leading-relaxed"
+              className="text-base md:text-[17px] text-desc font-light leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -87,7 +87,7 @@ export default function FoundationalDataLayerSection() {
                       <FaCheck className="text-white text-base md:text-lg" />
                     </div>
                     {/* Feature Text */}
-                    <span className="text-sm md:text-base lg:text-lg text-white flex-1">
+                    <span className="text-[15px] text-white flex-1">
                       {feature}
                     </span>
                   </motion.div>

@@ -65,14 +65,14 @@ export default function AIWorkflowsSection() {
                         animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                        <span className="text-primary-pink text-xs md:text-sm font-medium uppercase tracking-wider px-6 md:px-8 py-2 border border-primary-pink rounded-full">
+                        <span className="text-primary-pink text-[11px] font-bold uppercase tracking-[0.15em] px-6 md:px-8 py-2 border border-primary-pink rounded-full">
                             AI WORKFLOWS
                         </span>
                     </motion.div>
 
                     {/* Main Title */}
                     <motion.h2
-                        className="text-2xl sm:text-3xl md:text-4xl lg:text-[52px] font-bold text-white leading-tight mb-6 md:mb-8"
+                        className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-tight mb-6 md:mb-8 tracking-tight"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -82,7 +82,7 @@ export default function AIWorkflowsSection() {
 
                     {/* Description */}
                     <motion.p
-                        className="text-sm md:text-base lg:text-lg text-desc leading-relaxed max-w-4xl mx-auto"
+                        className="text-base md:text-[17px] text-desc font-light leading-relaxed max-w-4xl mx-auto"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
@@ -107,12 +107,12 @@ export default function AIWorkflowsSection() {
                             transition={{ duration: 0.6, delay: 0.7 + index * 0.1, ease: "easeOut" }}
                         >
                             {/* Title */}
-                            <h3 className="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">
+                            <h3 className="text-xl font-bold text-white mb-3 md:mb-4">
                                 {workflow.title}
                             </h3>
 
                             {/* Description */}
-                            <p className="text-sm md:text-base text-desc leading-relaxed">
+                            <p className="text-[15px] text-desc leading-relaxed">
                                 {workflow.description}
                             </p>
                         </motion.div>

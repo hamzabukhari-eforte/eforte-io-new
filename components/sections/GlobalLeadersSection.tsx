@@ -22,14 +22,14 @@ export default function GlobalLeadersSection() {
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <span className="inline-block px-6 md:px-8 py-2 text-primary-pink text-xs md:text-sm font-medium uppercase tracking-wider border border-primary-pink rounded-full">
+            <span className="inline-block px-6 md:px-8 py-2 text-primary-pink text-[11px] font-bold uppercase tracking-[0.15em] border border-primary-pink rounded-full">
               WE ARE A SEASONED PROFESSIONAL TEAM
             </span>
           </motion.div>
 
           {/* First Heading */}
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[60px] font-bold text-white leading-tight mb-4 md:mb-6"
+            className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-tight mb-4 md:mb-6 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -39,7 +39,7 @@ export default function GlobalLeadersSection() {
 
           {/* Second Heading */}
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[60px] font-bold text-white leading-tight mb-8 md:mb-12"
+            className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-tight mb-8 md:mb-12 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -49,7 +49,7 @@ export default function GlobalLeadersSection() {
 
           {/* Description Paragraph */}
           <motion.p
-            className="text-sm md:text-base lg:text-lg text-desc leading-relaxed max-w-4xl mx-auto mb-12 md:mb-16"
+            className="text-base md:text-[17px] text-desc font-light leading-relaxed max-w-4xl mx-auto mb-12 md:mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -72,13 +72,13 @@ export default function GlobalLeadersSection() {
           >
             {/* Top Badge */}
             <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-primary-pink text-white text-xs md:text-sm font-bold uppercase tracking-wider rounded-lg">
+              <span className="inline-block px-4 py-2 bg-primary-pink text-white text-[11px] font-bold uppercase tracking-[0.15em] rounded-lg">
                 IBM GLOBAL ENTREPRENEUR
               </span>
             </div>
 
             {/* Main Text */}
-            <p className="text-sm md:text-base text-white/90 leading-relaxed mb-6 flex-1">
+            <p className="text-[15px] text-white/90 leading-relaxed mb-6 flex-1">
               Recognized for innovation and leadership in emerging technologies with the Blockchain & AI Award.
             </p>
 
@@ -87,10 +87,10 @@ export default function GlobalLeadersSection() {
 
             {/* Industry Awards Section */}
             <div className="mb-6">
-              <h4 className="text-base md:text-lg font-bold text-white mb-3">
+              <h4 className="text-xl font-bold text-white mb-3">
                 Industry Awards
               </h4>
-              <p className="text-sm md:text-base text-desc leading-relaxed">
+              <p className="text-[15px] text-desc leading-relaxed">
                 Rated &quot;A&quot; by Expertise.com among top software service providers for quality, trust, and performance.
               </p>
             </div>
@@ -133,10 +133,10 @@ export default function GlobalLeadersSection() {
               <div className="flex items-center gap-4 mb-3">
                 <FaShieldAlt className="text-primary-pink text-4xl" />
                 <div>
-                  <h3 className="text-lg md:text-xl font-bold text-white">
+                  <h3 className="text-xl font-bold text-white">
                     ISO 27001 Certified
                   </h3>
-                  <p className="text-xs md:text-sm text-desc mt-1">
+                  <p className="text-[13px] text-desc mt-1">
                     Demonstrating best-in-class information security.
                   </p>
                 </div>
@@ -148,10 +148,10 @@ export default function GlobalLeadersSection() {
 
             {/* Security & Scale Section */}
             <div className="mb-6 flex-1">
-              <h4 className="text-base md:text-lg font-bold text-white mb-3">
+              <h4 className="text-xl font-bold text-white mb-3">
                 Security & Scale
               </h4>
-              <p className="text-sm md:text-base text-desc leading-relaxed">
+              <p className="text-[15px] text-desc leading-relaxed">
                 Our certifications and expertise demonstrate an unwavering commitment to enterprise-grade security and data protection.
               </p>
             </div>
@@ -185,10 +185,10 @@ export default function GlobalLeadersSection() {
               <div className="flex items-center gap-4 mb-3">
                 <FaBalanceScale className="text-primary-pink text-4xl" />
                 <div>
-                  <h3 className="text-lg md:text-xl font-bold text-white">
+                  <h3 className="text-xl font-bold text-white">
                     Ethical & Compliant
                   </h3>
-                  <p className="text-xs md:text-sm text-desc mt-1">
+                  <p className="text-[13px] text-desc mt-1">
                     Adherence to global standards.
                   </p>
                 </div>
@@ -200,20 +200,20 @@ export default function GlobalLeadersSection() {
 
             {/* CAIDP Member Section */}
             <div className="mb-6">
-              <h4 className="text-base md:text-lg font-bold text-white mb-2">
+              <h4 className="text-xl font-bold text-white mb-2">
                 CAIDP Member:
               </h4>
-              <p className="text-sm md:text-base text-desc leading-relaxed mb-4">
+              <p className="text-[15px] text-desc leading-relaxed mb-4">
                 Aligned with global standards for ethical and responsible AI.
               </p>
             </div>
 
             {/* HIPAA Compliance Section */}
             <div className="mb-6 flex-1">
-              <h4 className="text-base md:text-lg font-bold text-white mb-2">
+              <h4 className="text-xl font-bold text-white mb-2">
                 HIPAA Compliance Expertise:
               </h4>
-              <p className="text-sm md:text-base text-desc leading-relaxed">
+              <p className="text-[15px] text-desc leading-relaxed">
                 Proven experience delivering solutions meeting healthcare data protection requirements.
               </p>
             </div>

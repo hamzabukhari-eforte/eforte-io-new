@@ -41,14 +41,14 @@ export default function LegacyToIntelligenceSection() {
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <span className="text-primary-pink text-xs md:text-sm font-medium uppercase tracking-wider px-8 py-2 border border-primary-pink rounded-full">
+              <span className="text-primary-pink text-[11px] font-bold uppercase tracking-[0.15em] px-8 py-2 border border-primary-pink rounded-full">
                 Evolving
               </span>
             </motion.div>
 
             {/* Main Title */}
             <motion.h2
-              className="text-xl sm:text-2xl md:text-3xl lg:text-[52px] font-bold text-white leading-tight mb-6 md:mb-8"
+              className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-tight mb-6 md:mb-8 tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -58,7 +58,7 @@ export default function LegacyToIntelligenceSection() {
 
             {/* Description */}
             <motion.div
-              className="space-y-4 text-sm md:text-base lg:text-lg text-desc leading-relaxed"
+              className="space-y-4 text-base md:text-[17px] text-desc font-light leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}

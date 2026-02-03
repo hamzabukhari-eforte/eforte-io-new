@@ -66,7 +66,7 @@ export default function VelocityAISection() {
           >
             {/* Main Title */}
             <motion.h2
-              className="text-xl sm:text-2xl md:text-3xl lg:text-[40px] font-bold text-white leading-tight mb-4 md:mb-6"
+              className="text-3xl md:text-4xl lg:text-[40px] font-bold text-white leading-tight mb-4 md:mb-6 tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -76,7 +76,7 @@ export default function VelocityAISection() {
 
             {/* Subtitle */}
             <motion.h3
-              className="text-xl sm:text-2xl font-semibold text-white mb-6 md:mb-8"
+              className="text-xl font-semibold text-white mb-6 md:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -86,7 +86,7 @@ export default function VelocityAISection() {
 
             {/* Description */}
             <motion.p
-              className="text-sm md:text-base lg:text-lg text-desc leading-relaxed mb-8 md:mb-10"
+              className="text-base md:text-[17px] text-desc font-light leading-relaxed mb-8 md:mb-10"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -103,7 +103,7 @@ export default function VelocityAISection() {
             >
               <Link
                 href="#"
-                className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 rounded-full text-sm md:text-base font-medium text-primary-pink border border-primary-pink bg-transparent hover:bg-primary-pink hover:border-primary-pink hover:text-white transition-all duration-200"
+                className="inline-flex items-center justify-center px-9 py-3.5 rounded-full text-[15px] font-medium text-primary-pink border border-primary-pink bg-transparent hover:bg-primary-pink hover:border-primary-pink hover:text-white transition-all duration-200"
               >
                 Learn more
               </Link>
@@ -150,11 +150,11 @@ export default function VelocityAISection() {
                   {/* Text Content - Right Side */}
                   <div className="flex-1">
                     {/* Title */}
-                    <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-white mb-2 md:mb-3">
+                    <h3 className="text-xl font-bold text-white mb-2 md:mb-3">
                       {feature.title}
                     </h3>
                     {/* Description */}
-                    <p className="text-sm md:text-base text-desc leading-relaxed">
+                    <p className="text-[15px] text-desc leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -218,7 +218,7 @@ export default function VelocityAISection() {
                       {feature.title}
                     </h4>
                     {/* Description */}
-                    <p className="text-sm text-desc leading-relaxed">
+                    <p className="text-[15px] text-desc leading-relaxed">
                       {feature.description}
                     </p>
                   </div>

@@ -30,7 +30,7 @@ export default function TrustedBySection({ items, heading }: TrustedBySectionPro
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h2 className="text-sm md:text-base lg:text-lg font-normal text-desc">
+            <h2 className="text-base md:text-[17px] font-light text-desc">
               {heading}
             </h2>
           </motion.div>

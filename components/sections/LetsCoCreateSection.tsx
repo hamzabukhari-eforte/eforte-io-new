@@ -16,7 +16,7 @@ export default function LetsCoCreateSection() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Heading */}
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[52px] font-bold text-white leading-tight mb-4 md:mb-6"
+            className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-tight mb-4 md:mb-6 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -26,7 +26,7 @@ export default function LetsCoCreateSection() {
 
           {/* Sub-heading */}
           <motion.p
-            className="text-lg md:text-xl lg:text-2xl text-white font-medium mb-6 md:mb-8"
+            className="text-xl font-medium text-white mb-6 md:mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -36,7 +36,7 @@ export default function LetsCoCreateSection() {
 
           {/* Descriptive Paragraph */}
           <motion.p
-            className="text-sm md:text-base lg:text-lg text-desc leading-relaxed max-w-2xl mx-auto mb-8 md:mb-10"
+            className="text-base md:text-[17px] text-desc font-light leading-relaxed max-w-2xl mx-auto mb-8 md:mb-10"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -52,7 +52,7 @@ export default function LetsCoCreateSection() {
           >
             <Link
               href="#"
-              className="inline-flex items-center justify-center px-8 md:px-10 py-4 md:py-5 rounded-full text-base md:text-lg font-medium text-white bg-primary-pink hover:bg-primary-pink/90 transition-all duration-200"
+              className="inline-block bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-9 py-3.5 rounded-full text-[15px] font-medium transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
             >
               Get in Touch
             </Link>

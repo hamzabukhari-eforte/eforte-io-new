@@ -52,14 +52,14 @@ export default function SecureDataPracticesSection() {
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <span className="inline-block px-6 md:px-8 py-2 bg-primary-pink text-white text-xs md:text-sm font-medium uppercase tracking-wider rounded-full">
+            <span className="inline-block px-6 md:px-8 py-2 text-primary-pink text-[11px] font-bold uppercase tracking-[0.15em] border border-primary-pink rounded-full">
               UNCOMPROMISED DIGITAL SECURITY
             </span>
           </motion.div>
 
           {/* Main Title */}
           <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[52px] font-bold text-white leading-tight mb-6 md:mb-8"
+            className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-tight mb-6 md:mb-8 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -100,12 +100,12 @@ export default function SecureDataPracticesSection() {
               </div>
 
               {/* Title */}
-              <h3 className="text-lg md:text-xl font-bold text-white mb-4">
+              <h3 className="text-xl font-bold text-white mb-4">
                 {certification.title}
               </h3>
 
               {/* Description */}
-              <p className="text-sm md:text-base text-desc leading-relaxed">
+              <p className="text-[15px] text-desc leading-relaxed">
                 {certification.description}
               </p>
             </motion.div>

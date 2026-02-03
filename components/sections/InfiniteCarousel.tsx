@@ -17,9 +17,9 @@ export default function InfiniteCarousel({
   return (
     <div className={`relative w-full overflow-hidden ${className}`}>
       <div className="flex animate-scroll">
-        {/* Duplicate items for seamless infinite scroll */}
+        {/* Duplicate items for seamless infinite scroll; margin matches gap so spacing is even at loop */}
         {[...Array(3)].map((_, setIndex) => (
-          <div key={setIndex} className={`flex ${gap} shrink-0`}>
+          <div key={setIndex} className={`flex ${gap} shrink-0 mr-8 md:mr-12 lg:mr-16`}>
             {items.map((item) => (
               <div key={`${setIndex}-${item.id}`} className="shrink-0">
                 {item.content}

@@ -16,6 +16,9 @@
   --color-white: #ffffff;
   --color-primary-pink: #D3287A;
   --color-default: #0A0A1A;
+  /* Velocity AI / shared */
+  --color-deep: #03050C;
+  --color-brand-blue: #2563EB;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -60,5 +63,30 @@ body {
 
 .animate-scroll:hover {
   animation-play-state: paused;
+}
+
+/* Velocity AI: slow spin for orbit */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 

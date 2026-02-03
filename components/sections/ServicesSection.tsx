@@ -83,12 +83,12 @@ export default function ServicesSection() {
                             </div>
                             <div className="flex flex-col items-center justify-start text-center ">
                                 {/* Title */}
-                                <h3 className="text-xl md:text-2xl font-bold text-white mb-4">
+                                <h3 className="text-xl font-bold text-white mb-4">
                                     {service.title}
                                 </h3>
 
                                 {/* Description */}
-                                <p className="text-sm md:text-base text-desc leading-relaxed mb-6 flex-1">
+                                <p className="text-[15px] text-desc leading-relaxed mb-6 flex-1">
                                     {service.description}
                                 </p>
                             </div>
@@ -96,7 +96,7 @@ export default function ServicesSection() {
                             {/* Button */}
                             <Link
                                 href="#"
-                                className="inline-flex items-center justify-center px-6 py-3 rounded-full text-sm md:text-base font-medium text-primary-pink border border-primary-pink bg-transparent hover:bg-primary-pink hover:text-white hover:border-transparent transition-all duration-200"
+                                className="inline-flex items-center justify-center px-9 py-3.5 rounded-full text-[15px] font-medium text-primary-pink border border-primary-pink bg-transparent hover:bg-primary-pink hover:text-white hover:border-transparent transition-all duration-200"
                             >
                                 Learn more
                             </Link>

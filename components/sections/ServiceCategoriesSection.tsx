@@ -38,7 +38,7 @@ export default function ServiceCategoriesSection({ items }: ServiceCategoriesSec
                   {item.icon}
                 </div>
                 {/* Text */}
-                <span className="text-sm md:text-base lg:text-base text-gray-300 font-medium leading-tight flex flex-wrap">
+                <span className="text-[15px] text-gray-300 font-medium leading-tight flex flex-wrap">
                   {item.text}
                 </span>
               </motion.div>
