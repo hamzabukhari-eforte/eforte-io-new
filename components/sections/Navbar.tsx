@@ -65,9 +65,8 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 className={cn(
-                  "text-base font-normal transition-colors duration-200",
-                  "hover:opacity-80",
-                  isScrolled || isMobileMenuOpen ? "text-gray-900" : "text-desc"
+                  "text-base font-normal transition-colors duration-200 text-desc",
+                  "hover:opacity-80"
                 )}
               >
                 {link.label}
