@@ -41,7 +41,7 @@ export default function Navbar() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           "h-16 md:h-20",
           isScrolled || isMobileMenuOpen
-            ? "bg-white shadow-sm"
+            ? "bg-white/80 dark:bg-black/60 backdrop-blur-md shadow-sm"
             : "bg-transparent"
         )}
       >
@@ -49,7 +49,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
             <Image
-              src={isScrolled || isMobileMenuOpen ? "/assets/images/logo-black.svg" : "/assets/images/logo.svg"}
+              src="/assets/images/logo.svg"
               alt="eForte Logo"
               width={105}
               height={32}
@@ -97,11 +97,7 @@ export default function Navbar() {
           {/* Mobile/Tablet Hamburger Menu Button */}
           <button
             onClick={toggleMobileMenu}
-            className={cn(
-              "lg:hidden p-2 rounded-md transition-colors duration-200",
-              "flex items-center justify-center",
-              isScrolled || isMobileMenuOpen ? "text-gray-900" : "text-white"
-            )}
+            className="lg:hidden p-2 rounded-md transition-colors duration-200 flex items-center justify-center text-white"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
@@ -126,11 +122,11 @@ export default function Navbar() {
         {/* Backdrop */}
         {/* <div className="absolute inset-0 bg-black/50" /> */}
 
-        {/* Menu Panel - Full Width, Below Navbar */}
+        {/* Menu Panel - Full Width, Below Navbar (glass effect) */}
         <div
           className={cn(
             "absolute top-16 md:top-20 left-0 right-0 bottom-0 w-full",
-            "bg-white transform transition-transform duration-300",
+            "bg-black/70 backdrop-blur-xl transform transition-transform duration-300",
             isMobileMenuOpen ? "translate-y-0" : "translate-y-full"
           )}
           onClick={(e) => e.stopPropagation()}
@@ -144,11 +140,7 @@ export default function Navbar() {
                     key={link.label}
                     href={link.href}
                     onClick={closeMobileMenu}
-                    className={cn(
-                      "px-6 py-4 text-base font-normal text-gray-900",
-                      "hover:bg-gray-50 transition-colors duration-200",
-                      "border-b border-gray-200"
-                    )}
+                    className="px-6 py-4 text-base font-normal text-white hover:bg-white/10 transition-colors duration-200 border-b border-white/10"
                   >
                     {link.label}
                   </Link>
@@ -157,16 +149,11 @@ export default function Navbar() {
             </nav>
 
             {/* Mobile CTA Button */}
-            <div className="p-6 border-t border-gray-200">
+            <div className="p-6 border-t border-white/10">
               <Link
                 href="#"
                 onClick={closeMobileMenu}
-                className={cn(
-                  "w-full h-12 rounded-md flex items-center justify-center",
-                  "text-sm font-semibold",
-                  "bg-primary-pink text-white border border-primary-pink",
-                  "hover:bg-transparent hover:text-primary-pink transition-all duration-200"
-                )}
+                className="w-full h-12 rounded-md flex items-center justify-center text-sm font-semibold bg-primary-pink text-white border border-primary-pink hover:bg-primary-pink/90 transition-all duration-200"
               >
                 Let&apos;s build intelligence together.
               </Link>
