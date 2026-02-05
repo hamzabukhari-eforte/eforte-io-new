@@ -30,11 +30,13 @@ export default function VelocityAIHeroSection() {
   return (
     <section
       ref={ref}
-      className={`relative overflow-hidden flex flex-col justify-center items-center bg-deep pt-24 pb-16 md:pt-40 md:pb-20 md:min-h-[900px] ${section.paddingX}`}
+      className={`relative overflow-hidden flex flex-col justify-center items-center bg-black pt-24 pb-16 md:pt-40 md:pb-20 md:min-h-[900px] ${section.paddingX}`}
     >
-      {/* Background blurs */}
-      <div className="absolute top-0 right-0 w-[70%] h-[80%] bg-blue-600/20 blur-[180px] rounded-full pointer-events-none translate-x-1/4 -translate-y-1/4" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-900/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-[-20%] right-[-30%] md:right-[-10%] w-[120%] md:w-[80%] h-[140%] md:h-[120%] bg-[#581c87] rounded-full blur-[120px] md:blur-[180px] opacity-80 md:opacity-90" />
+        <div className="absolute top-[10%] right-[10%] w-[80%] md:w-[60%] h-[100%] md:h-[80%] bg-[#4338ca] rounded-full blur-[100px] md:blur-[150px] opacity-70 md:opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent z-0" />
+      </div>
 
       <div className="relative z-10 text-center max-w-5xl mx-auto px-6 mt-[-50px]">
         <motion.div
@@ -113,7 +115,7 @@ export default function VelocityAIHeroSection() {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-deep to-transparent pointer-events-none z-20" />
+      <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-black to-transparent pointer-events-none z-20" />
     </section>
   );
 }

@@ -8,7 +8,6 @@ import {
   VelocityAICapabilitiesSection,
   VelocityAICaseStudySection,
   VelocityAIInsightsSection,
-  VelocityAIFooterCTASection,
 } from "@/components/sections/velocity-ai";
 
 export default function VelocityAIPage() {
@@ -23,7 +22,6 @@ export default function VelocityAIPage() {
       <VelocityAICapabilitiesSection />
       <VelocityAICaseStudySection />
       <VelocityAIInsightsSection />
-      <VelocityAIFooterCTASection />
     </main>
   );
 }

@@ -13,7 +13,6 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import NavigateAISection from "@/components/sections/NavigateAISection";
 import GlobalLeadersSection from "@/components/sections/GlobalLeadersSection";
 import SecureDataPracticesSection from "@/components/sections/SecureDataPracticesSection";
-import LetsCoCreateSection from "@/components/sections/LetsCoCreateSection";
 import { defaultTrustedByLogos } from "@/data/trustedByLogos";
 import { defaultServiceCategories } from "@/data/serviceCategories";
 
@@ -44,7 +43,6 @@ export default function Home() {
       <GlobalLeadersSection />
       <ServiceCategoriesSection items={defaultServiceCategories} />
       <SecureDataPracticesSection />
-      <LetsCoCreateSection />
     </main>
   );
 }

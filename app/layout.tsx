@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
+import { VelocityAIFooterCTASection } from "@/components/sections/velocity-ai";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
         <SmoothScrollProvider>
           <Navbar />
           {children}
+          <VelocityAIFooterCTASection />
           <Footer />
         </SmoothScrollProvider>
       </body>
