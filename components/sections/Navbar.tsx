@@ -88,7 +88,7 @@ const navLinks: NavLink[] = [
   { id: "capabilities", label: "Capabilities", href: "#capabilities" },
   { id: "industries", label: "Industries", href: "#industries" },
   { id: "impact-studies", label: "Impact Studies", href: "#impact-studies" },
-  { id: "insights", label: "Insights", href: "/insights" },
+  { id: "insights", label: "Insights", href: "/blog" },
   { id: "about-us", label: "About Us", href: "#about-us" },
   { id: "databricks", label: "Databricks", href: "#databricks" },
 ];

@@ -11,8 +11,8 @@ import { INSIGHT_CATEGORIES, FEATURED_POST, categoryToSlug } from "./data";
 export default function InsightsHeroSection() {
   const pathname = usePathname();
   const activeSlug =
-    pathname?.startsWith("/insights/category/") ?
-      pathname.replace("/insights/category/", "").replace(/\/$/, "")
+    pathname?.startsWith("/blog/category/") ?
+      pathname.replace("/blog/category/", "").replace(/\/$/, "")
     : null;
   return (
     <section className="relative bg-black pt-28 md:pt-32 pb-20 md:pb-10 overflow-hidden">
@@ -42,7 +42,7 @@ export default function InsightsHeroSection() {
         {/* Categories */}
         <div className="mt-8 flex flex-wrap gap-2 md:gap-3 justify-center">
           <Link
-            href="/insights"
+            href="/blog"
             className={cn(
               "px-4 py-1.5 rounded-full border text-[11px] md:text-sm transition-colors",
               activeSlug === null
@@ -58,7 +58,7 @@ export default function InsightsHeroSection() {
             return (
               <Link
                 key={category}
-                href={`/insights/category/${slug}`}
+                href={`/blog/category/${slug}`}
                 className={cn(
                   "px-4 py-1.5 rounded-full border text-[11px] md:text-sm transition-colors",
                   isActive

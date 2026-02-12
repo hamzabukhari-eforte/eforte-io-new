@@ -39,7 +39,7 @@ export default function InsightsPostsSection({ categorySlug = null }: InsightsPo
               our latest insights.
             </p>
             <Link
-              href="/insights"
+              href="/blog"
               className="inline-flex mt-6 px-5 py-2.5 rounded-full border-2 border-primary-pink bg-white/5 text-sm font-medium text-white hover:bg-gradient-to-r from-[#be185d] to-[#db2777] hover:text-white transition-colors"
             >
               Browse all insights
