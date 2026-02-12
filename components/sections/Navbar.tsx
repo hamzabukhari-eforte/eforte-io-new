@@ -1190,10 +1190,7 @@ export default function Navbar() {
                 "text-sm md:text-base font-semibold",
                 "bg-primary-pink text-white border border-primary-pink",
                 "hover:bg-transparent transition-all duration-200",
-                "whitespace-nowrap",
-                isScrolled
-                  ? "hover:text-gray-900"
-                  : "hover:text-white"
+                "whitespace-nowrap"
               )}
             >
               Let&apos;s build intelligence together.
