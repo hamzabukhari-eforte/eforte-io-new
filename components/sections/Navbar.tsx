@@ -88,7 +88,7 @@ const navLinks: NavLink[] = [
   { id: "capabilities", label: "Capabilities", href: "#capabilities" },
   { id: "industries", label: "Industries", href: "#industries" },
   { id: "impact-studies", label: "Impact Studies", href: "#impact-studies" },
-  { id: "insights", label: "Insights", href: "#insights" },
+  { id: "insights", label: "Insights", href: "/insights" },
   { id: "about-us", label: "About Us", href: "#about-us" },
   { id: "databricks", label: "Databricks", href: "#databricks" },
 ];
@@ -552,7 +552,6 @@ export default function Navbar() {
       return (
         <div
           className="hidden lg:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
-          onMouseLeave={closeMegaMenu}
         >
           {/* Backdrop */}
           <div
@@ -561,7 +560,10 @@ export default function Navbar() {
           />
 
           {/* Mega menu panel */}
-          <div className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10">
+          <div
+            className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            onMouseLeave={closeMegaMenu}
+          >
             <Container className="py-10 flex gap-10 text-white">
               {/* Left narrative + link groups */}
               <div className="w-1/3 space-y-6 max-w-sm">
@@ -680,10 +682,12 @@ export default function Navbar() {
       return (
         <div
           className="hidden lg:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
-          onMouseLeave={closeMegaMenu}
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
-          <div className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10">
+          <div
+            className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            onMouseLeave={closeMegaMenu}
+          >
             <Container className="py-10 flex gap-10 text-white">
               <div className="w-1/3 space-y-4 max-w-sm">
                 {config.eyebrow && (
@@ -741,10 +745,12 @@ export default function Navbar() {
       return (
         <div
           className="hidden lg:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
-          onMouseLeave={closeMegaMenu}
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
-          <div className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10">
+          <div
+            className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            onMouseLeave={closeMegaMenu}
+          >
             <Container className="py-10 flex gap-10 text-white">
               <div className="w-1/3 space-y-4 max-w-sm">
                 {config.eyebrow && (
@@ -788,10 +794,12 @@ export default function Navbar() {
       return (
         <div
           className="hidden lg:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
-          onMouseLeave={closeMegaMenu}
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
-          <div className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10">
+          <div
+            className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            onMouseLeave={closeMegaMenu}
+          >
             <Container className="py-10 flex gap-10 text-white">
               <div className="w-1/4 space-y-6 max-w-xs">
                 {config.eyebrow && (
@@ -896,10 +904,12 @@ export default function Navbar() {
       return (
         <div
           className="hidden lg:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
-          onMouseLeave={closeMegaMenu}
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
-          <div className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10">
+          <div
+            className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            onMouseLeave={closeMegaMenu}
+          >
             <Container className="py-10 flex gap-8 text-white">
               <div className="w-1/4 space-y-4 max-w-xs">
                 {config.eyebrow && (
@@ -973,7 +983,6 @@ export default function Navbar() {
     return (
       <div
         className="hidden lg:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
-        onMouseLeave={closeMegaMenu}
       >
         {/* Backdrop */}
         <div
@@ -982,7 +991,10 @@ export default function Navbar() {
         />
 
         {/* Mega menu panel */}
-        <div className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10">
+        <div
+          className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+          onMouseLeave={closeMegaMenu}
+        >
           <Container className="py-10 flex gap-10 text-white">
             {/* Left narrative column */}
             <div className="w-1/3 space-y-4 max-w-sm">
