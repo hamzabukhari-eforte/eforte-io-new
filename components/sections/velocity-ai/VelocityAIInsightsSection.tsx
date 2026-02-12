@@ -113,7 +113,7 @@ export default function VelocityAIInsightsSection() {
                   width={100}
                   height={100}
                   unoptimized
-                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover w-full h-[240px] transition-transform duration-700 group-hover:scale-105"
                 />
                 {article.avatars ? (
                   <div className="absolute bottom-1 left-8 flex -space-x-3 z-10">

@@ -5,20 +5,12 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { section, typography } from "./layout";
-import { FaCube, FaMicrosoft, FaEye } from "react-icons/fa";
-import { SiAmazon } from "react-icons/si";
+import PartnerLogosRow from "@/components/atoms/PartnerLogosRow";
 
 const industryLinks = [
   "Health & Life-Science",
   "Fintech",
   "High-Tech",
-];
-
-const partnerLogos = [
-  { id: "databricks", icon: FaCube, label: "databricks" },
-  { id: "aws", icon: SiAmazon, label: "aws" },
-  { id: "azure", icon: FaMicrosoft, label: "Azure" },
-  { id: "nvidia", icon: FaEye, label: "NVIDIA®" },
 ];
 
 export default function AgenticOrchestrationHeroSection() {
@@ -102,17 +94,12 @@ export default function AgenticOrchestrationHeroSection() {
         </motion.div>
 
         <motion.div
-          className="flex flex-wrap justify-center items-center gap-4 md:gap-12 mt-12 md:mt-16 w-full"
+          className="w-full"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
         >
-          {partnerLogos.map(({ id, icon: Icon, label }, index) => (
-            <div key={id} className="flex items-center gap-1.5 md:gap-2 text-white">
-              <Icon className="text-sm md:text-xl text-white/80" />
-              {label && <span className="text-xs md:text-lg font-semibold">{label}</span>}
-            </div>
-          ))}
+          <PartnerLogosRow />
         </motion.div>
       </div>
     </section>

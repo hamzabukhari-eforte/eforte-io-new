@@ -95,7 +95,7 @@ export default function ServicesSection() {
 
                             {/* Button */}
                             <Link
-                                href={service.id === "velocity-ai" ? "/velocity-ai" : service.id === "agentic-orchestration" ? "/agentic-orchestration" : "#"}
+                                href={service.id === "velocity-ai" ? "/velocity-ai" : service.id === "agentic-orchestration" ? "/agentic-orchestration" : "/foundational-data-layer"}
                                 className="inline-flex items-center justify-center px-9 py-3.5 rounded-full text-[15px] font-medium text-primary-pink border border-primary-pink bg-transparent hover:bg-primary-pink hover:text-white hover:border-transparent transition-all duration-200"
                             >
                                 Learn more

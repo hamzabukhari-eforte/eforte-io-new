@@ -6,6 +6,7 @@ import {
   AgenticOrchestrationPlatformSection,
   AgenticOrchestrationUseCasesSection,
 } from "@/components/sections/agentic-orchestration";
+import { VelocityAIInsightsSection } from "@/components/sections/velocity-ai";
 
 export default function AgenticOrchestrationPage() {
   return (
@@ -16,6 +17,8 @@ export default function AgenticOrchestrationPage() {
       <AgenticOrchestrationPlatformFlowSection />
       <AgenticOrchestrationPlatformSection />
       <AgenticOrchestrationUseCasesSection />
+      <VelocityAIInsightsSection />
+      
     </main>
   );
 }
