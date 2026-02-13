@@ -65,7 +65,7 @@ const footerColumns: FooterColumn[] = [
   {
     title: "About eForte",
     links: [
-      { label: "About Us", href: "#" },
+      { label: "About Us", href: "/about-us" },
       { label: "Press and announcements", href: "#" },
       { label: "Information Security Policy", href: "#" },
       { label: "Trust Center", href: "#" },

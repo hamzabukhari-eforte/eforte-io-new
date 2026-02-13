@@ -7,6 +7,7 @@ import {
   FaSitemap,
 } from "react-icons/fa";
 import { SiAmazon, SiNvidia } from "react-icons/si";
+import { cn } from "@/lib/utils";
 
 const partnerLogos: {
   id: string;
@@ -23,9 +24,19 @@ const partnerLogos: {
   { id: "nvidia", icon: <SiNvidia className="text-2xl text-white/80" />, label: "Nvidia" },
 ];
 
-export default function PartnerLogosRow() {
+interface PartnerLogosRowProps {
+  heading?: string;
+  className?: string;
+}
+
+export default function PartnerLogosRow({ heading, className }: PartnerLogosRowProps) {
   return (
-    <div className="w-full max-w-6xl mx-auto mt-12 md:mt-16">
+    <div className={cn("w-full max-w-6xl mx-auto mt-12 md:mt-16", className)}>
+      {heading && (
+        <h2 className="text-[11px] font-semibold tracking-[0.2em] uppercase text-primary-pink text-center mb-6">
+          {heading}
+        </h2>
+      )}
       <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
         {partnerLogos.map((item) => (
           <div

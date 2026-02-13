@@ -89,7 +89,7 @@ const navLinks: NavLink[] = [
   { id: "industries", label: "Industries", href: "#industries" },
   { id: "impact-studies", label: "Impact Studies", href: "#impact-studies" },
   { id: "insights", label: "Insights", href: "/blog" },
-  { id: "about-us", label: "About Us", href: "#about-us" },
+  { id: "about-us", label: "About Us", href: "/about-us" },
   { id: "databricks", label: "Databricks", href: "#databricks" },
 ];
 
@@ -551,7 +551,7 @@ export default function Navbar() {
 
       return (
         <div
-          className="hidden lg:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
+          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
         >
           {/* Backdrop */}
           <div
@@ -681,7 +681,7 @@ export default function Navbar() {
       const studios = config.columns[0]?.items ?? [];
       return (
         <div
-          className="hidden lg:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
+          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
@@ -744,7 +744,7 @@ export default function Navbar() {
       const caseStudies = config.columns[0]?.items ?? [];
       return (
         <div
-          className="hidden lg:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
+          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
@@ -793,7 +793,7 @@ export default function Navbar() {
       const moreInsights = config.columns[3]?.items ?? [];
       return (
         <div
-          className="hidden lg:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
+          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
@@ -903,7 +903,7 @@ export default function Navbar() {
       const insightCards = config.columns[1]?.items ?? [];
       return (
         <div
-          className="hidden lg:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
+          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
@@ -982,7 +982,7 @@ export default function Navbar() {
 
     return (
       <div
-        className="hidden lg:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
+        className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
       >
         {/* Backdrop */}
         <div
@@ -1153,7 +1153,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <div className="hidden xl:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => {
               const isActive = activeMenu === link.id;
               return (
@@ -1182,7 +1182,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop CTA Button */}
-          <div className="hidden lg:block">
+          <div className="hidden xl:block">
             <Link
               href="#"
               className={cn(
@@ -1200,7 +1200,7 @@ export default function Navbar() {
           {/* Mobile/Tablet Hamburger Menu Button */}
           <button
             onClick={toggleMobileMenu}
-            className="lg:hidden p-2 rounded-md transition-colors duration-200 flex items-center justify-center text-white"
+            className="xl:hidden p-2 rounded-md transition-colors duration-200 flex items-center justify-center text-white"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
@@ -1217,7 +1217,7 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          "fixed inset-0 z-50 lg:hidden transition-all duration-300",
+          "fixed inset-0 z-50 xl:hidden transition-all duration-300",
           isMobileMenuOpen
             ? "opacity-100 visible"
             : "opacity-0 invisible"
