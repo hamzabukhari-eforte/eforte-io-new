@@ -1,7 +1,4 @@
-import AboutUsSection from "@/components/sections/about-us/AboutUsSection";
-import OurTimelineSection from "@/components/sections/about-us/OurTimelineSection";
-import OurValuesSection from "@/components/sections/about-us/OurValuesSection";
-import WhatMakesUsDifferentSection from "@/components/sections/about-us/WhatMakesUsDifferentSection";
+import AboutUsPageContent from "./AboutUsPageContent";
 
 export const metadata = {
   title: "About Us | eForte",
@@ -10,12 +7,5 @@ export const metadata = {
 };
 
 export default function AboutUsPage() {
-  return (
-    <main className="min-h-screen bg-default">
-      <AboutUsSection />
-      <OurTimelineSection />
-      <WhatMakesUsDifferentSection />
-      <OurValuesSection />
-    </main>
-  );
+  return <AboutUsPageContent />;
 }

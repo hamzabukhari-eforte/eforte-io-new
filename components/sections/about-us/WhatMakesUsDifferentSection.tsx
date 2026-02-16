@@ -1,7 +1,23 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import DifferentiatorCard from "./DifferentiatorCard";
 import { differentiatorsCards } from "./differentiatorsData";
 import PartnerLogosRow from "@/components/atoms/PartnerLogosRow";
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.25, 0.46, 0.45, 0.94] as const,
+      delay: i * 0.08,
+    },
+  }),
+};
 
 export default function WhatMakesUsDifferentSection() {
   return (
@@ -16,12 +32,20 @@ export default function WhatMakesUsDifferentSection() {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-12">
-          {differentiatorsCards.map((card) => (
-            <DifferentiatorCard key={card.id} card={card} />
+          {differentiatorsCards.map((card, index) => (
+            <motion.div
+              key={card.id}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, margin: "-40px" }}
+              variants={cardVariants}
+              custom={index}
+            >
+              <DifferentiatorCard card={card} />
+            </motion.div>
           ))}
         </div>
-      <PartnerLogosRow heading="Some of our incredible clients" />
-
+        <PartnerLogosRow heading="Some of our incredible clients" />
       </Container>
     </section>
   );

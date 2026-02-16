@@ -69,6 +69,8 @@ interface MegaMenuItem {
   /** Key from menuIconMap (react-icons). Use with iconColorClass for the icon box. */
   iconName?: keyof typeof menuIconMap;
   iconColorClass?: string;
+  /** When set, the item is rendered as a link to this path. */
+  href?: string;
 }
 
 interface MegaMenuColumn {
@@ -104,25 +106,28 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
         title: "Featured Pillars",
         items: [
           {
-            title: "AccelerateAI",
+            title: "Velocity AI",
             description:
               "Our comprehensive framework of best practices, workflows and AI methodologies.",
             iconName: "lightning-bolt",
             iconColorClass: "bg-[#2563eb]",
+            href: "/velocity-ai",
           },
           {
-            title: "Agentic Factory",
+            title: "Agentic Orchestration",
             description:
               "Build AI agents tailored for industry-specific challenges.",
             iconName: "view-list",
             iconColorClass: "bg-[#2563eb]",
+            href: "/agentic-orchestration",
           },
           {
-            title: "Data Foundation",
+            title: "Foundational Data Layer",
             description:
               "Establish the data foundations of next-generation businesses.",
             iconName: "database",
             iconColorClass: "bg-[#2563eb]",
+            href: "/foundational-data-layer",
           },
         ],
       },
@@ -1025,15 +1030,12 @@ export default function Navbar() {
                   <div className="space-y-3">
                     {column.items.map((item) => {
                       const hasImage = !!item.imageSrc;
-
-                      return (
-                        <div
-                          key={item.title}
-                          className={cn(
-                            "group rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 transition-colors duration-200 cursor-pointer",
-                            hasImage ? "p-2" : "px-4 py-3"
-                          )}
-                        >
+                      const cardClass = cn(
+                        "group rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 transition-colors duration-200 cursor-pointer block",
+                        hasImage ? "p-2" : "px-4 py-3"
+                      );
+                      const cardContent = (
+                        <>
                           {hasImage ? (
                             <div className="flex gap-3">
                               <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-black/40">
@@ -1115,6 +1117,21 @@ export default function Navbar() {
                               )}
                             </>
                           )}
+                        </>
+                      );
+
+                      return item.href ? (
+                        <Link
+                          key={item.title}
+                          href={item.href}
+                          onClick={closeMegaMenu}
+                          className={cardClass}
+                        >
+                          {cardContent}
+                        </Link>
+                      ) : (
+                        <div key={item.title} className={cardClass}>
+                          {cardContent}
                         </div>
                       );
                     })}

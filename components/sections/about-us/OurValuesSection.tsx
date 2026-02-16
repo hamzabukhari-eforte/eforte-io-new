@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { values, type ValueItem, type ValueIconName } from "./valuesData";
 
@@ -35,9 +36,29 @@ function ValueImage({ name }: { name: ValueIconName }) {
   );
 }
 
-function ValueCard({ item }: { item: ValueItem }) {
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.25, 0.46, 0.45, 0.94] as const,
+      delay: i * 0.08,
+    },
+  }),
+};
+
+function ValueCard({ item, index }: { item: ValueItem; index: number }) {
   return (
-    <div className="relative flex items-start gap-0 min-h-48">
+    <motion.div
+      className="relative flex items-start gap-0 min-h-48"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, margin: "-40px" }}
+      variants={cardVariants}
+      custom={index}
+    >
       <div className="shrink-0 pt-0.5 -mt-4 md:-mt-5">
         <ValueImage name={item.iconName} />
       </div>
@@ -54,7 +75,7 @@ function ValueCard({ item }: { item: ValueItem }) {
           {item.description}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -74,8 +95,8 @@ export default function OurValuesSection() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-12 md:gap-y-14">
-          {values.map((item) => (
-            <ValueCard key={item.id} item={item} />
+          {values.map((item, index) => (
+            <ValueCard key={item.id} item={item} index={index} />
           ))}
         </div>
       </Container>
