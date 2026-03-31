@@ -148,7 +148,7 @@ export default function ImpactStudiesContent() {
                 >
                   <motion.span
                     variants={itemVariants}
-                    className="text-sm uppercase tracking-widest bg-[linear-gradient(213deg,#dd0dce_-39.81%,#540dce_85.21%)] bg-clip-text text-transparent"
+                    className="text-sm uppercase tracking-widest bg-clip-text text-[#db2777]"
                   >
                     {item.title}
                   </motion.span>
@@ -170,8 +170,7 @@ export default function ImpactStudiesContent() {
                   <motion.div variants={itemVariants}>
                     <Link
                       href={item.link}
-                      className="mt-6 inline-flex items-center justify-center rounded-full bg-[linear-gradient(213deg,#dd0dce_-39.81%,#540dce_85.21%)] px-6 py-3 text-sm font-medium text-white hover:opacity-90 transition"
-                    >
+                      className="inline-block mt-6 md:mt-8 px-7 py-2.5 md:px-9 md:py-3 rounded-full border-2 border-[#db2777] text-[#db2777] font-medium text-sm md:text-[15px] hover:bg-[#db2777] hover:text-white transition-all duration-300" >
                       View Case Study
                     </Link>
                   </motion.div>
