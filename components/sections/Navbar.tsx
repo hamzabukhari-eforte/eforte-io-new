@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useScroll } from "@/hooks/useScroll";
 import { cn } from "@/lib/utils";
 import Container from "@/components/atoms/Container";
+import { caseStudies } from "@/data/caseStudies";
 import {
   HiMenu,
   HiX,
@@ -85,11 +86,17 @@ interface MegaMenuConfig {
   columns: MegaMenuColumn[];
 }
 
+const impactStudiesMenuItems: MegaMenuItem[] = caseStudies.map((cs) => ({
+  title: cs.introSection.title,
+  description: cs.introSection.description,
+  href: `/case-studies/${cs.slug}`,
+}));
+
 const navLinks: NavLink[] = [
   { id: "ai-pillars", label: "AI Pillars", href: "#ai-pillars" },
   { id: "capabilities", label: "Capabilities", href: "#capabilities" },
   { id: "industries", label: "Industries", href: "#industries" },
-  { id: "impact-studies", label: "Impact Studies", href: "#impact-studies" },
+  { id: "impact-studies", label: "Impact Studies", href: "/impact-studies" },
   { id: "insights", label: "Insights", href: "/blog" },
   { id: "about-us", label: "About Us", href: "/about-us" },
   { id: "databricks", label: "Databricks", href: "#databricks" },
@@ -320,40 +327,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
     columns: [
       {
         title: "Case Studies",
-        items: [
-          {
-            title: "Avant",
-            description: "Explore how we and Avant are building a new generation of data and AI-driven financial services for their 3 million+ customers.",
-          },
-          {
-            title: "Shopify",
-            description: "See how we help commerce brands scale with data and AI.",
-          },
-          {
-            title: "Tabula Rasa",
-            description: "Case study on tailored AI and data solutions.",
-          },
-          {
-            title: "Computer Vision",
-            description: "Real-world computer vision and AI implementations.",
-          },
-          {
-            title: "OnePay",
-            description: "Payments and fintech transformation with data and AI.",
-          },
-          {
-            title: "MyRow",
-            description: "Turning dispersed documents into searchable intelligence.",
-          },
-          {
-            title: "YouScience",
-            description: "Data and AI for education and talent solutions.",
-          },
-          {
-            title: "Wearables",
-            description: "IoT, wearables, and embedded AI solutions.",
-          },
-        ],
+        items: impactStudiesMenuItems,
       },
     ],
   },
@@ -772,17 +746,39 @@ export default function Navbar() {
                 <div className="mt-4 h-px w-10 bg-white/10" />
               </div>
               <div className="flex-1 grid grid-cols-2 gap-x-10 gap-y-0">
-                {caseStudies.map((item) => (
-                  <div
-                    key={item.title}
-                    className="border-b border-white/10 pb-4 mb-4 cursor-pointer hover:opacity-90"
-                  >
-                    <p className="text-sm font-semibold text-white">{item.title}</p>
-                    {item.description && (
-                      <p className="mt-1 text-xs text-desc line-clamp-2">{item.description}</p>
-                    )}
-                  </div>
-                ))}
+                {caseStudies.map((item) => {
+                  const href = item.href;
+                  const cardClass =
+                    "border-b border-white/10 pb-4 mb-4 cursor-pointer hover:opacity-90";
+
+                  const content = (
+                    <>
+                      <p className="text-sm font-semibold text-white">
+                        {item.title}
+                      </p>
+                      {item.description && (
+                        <p className="mt-1 text-xs text-desc line-clamp-2">
+                          {item.description}
+                        </p>
+                      )}
+                    </>
+                  );
+
+                  return href ? (
+                    <Link
+                      key={item.title}
+                      href={href}
+                      onClick={closeMegaMenu}
+                      className={cardClass}
+                    >
+                      {content}
+                    </Link>
+                  ) : (
+                    <div key={item.title} className={cardClass}>
+                      {content}
+                    </div>
+                  );
+                })}
               </div>
             </Container>
           </div>
