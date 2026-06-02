@@ -259,12 +259,14 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description: "Modernize banking systems for a secure, compliant, AI-ready enterprise ecosystem.",
             iconName: "office-building",
             iconColorClass: "bg-[#7C4CFF]",
+            href: "/industries/banking",
           },
           {
             title: "Financial Services",
             description: "Secure, data and AI-driven financial services - from paytech and financial infrastructure to risk, compliance and analytics.",
             iconName: "currency-dollar",
             iconColorClass: "bg-[#7C4CFF]",
+            href: "/industries/financial-services",
           },
           {
             title: "Health & Wellbeing",
