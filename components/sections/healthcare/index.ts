@@ -1,0 +1,11 @@
+export { default as HealthcareHeroSection } from "./HealthcareHeroSection";
+export { default as HealthcareExpertiseSection } from "./HealthcareExpertiseSection";
+export { default as HealthcareVideoSection } from "./HealthcareVideoSection";
+export { default as HealthcareEventsSection } from "./HealthcareEventsSection";
+export { default as HealthcareHighlightsSection } from "./HealthcareHighlightsSection";
+export { default as HealthcareCertificationsSection } from "./HealthcareCertificationsSection";
+export { default as HealthcareCapabilitiesSection } from "./HealthcareCapabilitiesSection";
+export { default as HealthcareTestimonialsSection } from "./HealthcareTestimonialsSection";
+export { default as HealthcareStoryVideoSection } from "./HealthcareStoryVideoSection";
+export { default as HealthcarePortfolioSection } from "./HealthcarePortfolioSection";
+export { default as HealthcareSuccessStoriesSection } from "./HealthcareSuccessStoriesSection";

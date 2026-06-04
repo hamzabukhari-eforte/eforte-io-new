@@ -273,6 +273,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description: "People-centric healthcare solutions, from virtual care to integrations and smart devices.",
             iconName: "heart",
             iconColorClass: "bg-[#7C4CFF]",
+            href: "/industries/healthcare",
           },
           {
             title: "Insurance",
