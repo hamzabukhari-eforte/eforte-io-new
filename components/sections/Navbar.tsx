@@ -287,6 +287,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description: "AI-native solutions to deliver personalized, real-time, and immersive experiences at scale.",
             iconName: "play",
             iconColorClass: "bg-[#7C4CFF]",
+            href: "/industries/media-entertainment",
           },
           {
             title: "Hi-Tech & Semiconductors",
