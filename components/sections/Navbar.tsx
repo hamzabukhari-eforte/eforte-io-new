@@ -279,6 +279,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description: "AI-powered insurance solutions - from accelerating policy lifecycle management to accelerating claims processing.",
             iconName: "shield-check",
             iconColorClass: "bg-[#7C4CFF]",
+            href: "/industries/insurance",
           },
           {
             title: "Media & Entertainment",
@@ -1179,7 +1180,7 @@ export default function Navbar() {
                   onFocus={() => setActiveMenu(link.id)}
                   className={cn(
                     "relative text-base font-normal transition-colors duration-200",
-                    isActive ? "text-white" : "text-desc",
+                    isActive ? "text-white" : "text-white",
                     "hover:text-white"
                   )}
                 >
