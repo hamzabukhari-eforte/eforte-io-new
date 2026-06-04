@@ -7,3 +7,7 @@ export { default as FinancialServicesDataFoundationsSection } from "./FinancialS
 export { default as FinancialServicesSolutionsSection } from "./FinancialServicesSolutionsSection";
 export { default as FinancialServicesExpertiseSection } from "./FinancialServicesExpertiseSection";
 export { default as FinancialServicesTestimonialsSection } from "./FinancialServicesTestimonialsSection";
+export { default as FinancialServicesSuccessStoriesSection } from "./FinancialServicesSuccessStoriesSection";
+export { default as FinancialServicesInsightsSection } from "./FinancialServicesInsightsSection";
+export { default as FinancialServicesRelatedArticlesSection } from "./FinancialServicesRelatedArticlesSection";
+export { default as FinancialServicesFaqSection } from "./FinancialServicesFaqSection";

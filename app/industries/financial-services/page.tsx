@@ -2,10 +2,14 @@ import {
   FinancialServicesAgentsSection,
   FinancialServicesDataFoundationsSection,
   FinancialServicesExpertiseSection,
+  FinancialServicesFaqSection,
   FinancialServicesFinanceStudioSection,
   FinancialServicesHeroSection,
+  FinancialServicesInsightsSection,
   FinancialServicesOurWorkSection,
+  FinancialServicesRelatedArticlesSection,
   FinancialServicesSolutionsSection,
+  FinancialServicesSuccessStoriesSection,
   FinancialServicesTestimonialsSection,
   FinancialServicesWebinarSection,
 } from "@/components/sections/financial-services";
@@ -31,6 +35,10 @@ export default function FinancialServicesPage() {
       <FinancialServicesSolutionsSection />
       <FinancialServicesExpertiseSection />
       <FinancialServicesTestimonialsSection />
+      <FinancialServicesSuccessStoriesSection />
+      <FinancialServicesInsightsSection />
+      <FinancialServicesRelatedArticlesSection />
+      <FinancialServicesFaqSection />
     </main>
   );
 }

@@ -184,14 +184,14 @@ export default function BankingTrustSection() {
 
       <section className="border-t border-white/10 bg-default py-20">
         <Container className="max-w-4xl">
-          <div className="relative mb-8 overflow-hidden rounded-2xl bg-[#0F1118] px-6 py-5 md:px-8">
-            {/* <Image
-              src="/assets/images/industry/faq-bg.svg"
+          <div className="relative mb-8 overflow-hidden rounded-2xl bg-[#0F1118] px-6 py-7 md:px-8 md:py-8">
+            <Image
+              src="/assets/images/industry/faq-banner-bg.svg"
               alt=""
               fill
-              className="object-cover opacity-90"
+              className="object-cover"
               aria-hidden
-            /> */}
+            />
             <div className="relative">
               <p className="text-4xl font-medium text-white md:text-5xl">FAQs</p>
               <p className="mt-1 text-base text-white/80">FAQs about eForte&apos;s banking capabilities</p>

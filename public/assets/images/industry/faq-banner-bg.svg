@@ -1,0 +1,21 @@
+<svg width="1230" height="300" viewBox="0 0 1230 300" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="faqLight" x1="420" y1="300" x2="1370" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2C6FB4"/>
+      <stop offset="1" stop-color="#4FA0EC"/>
+    </linearGradient>
+    <linearGradient id="faqDark" x1="500" y1="300" x2="1370" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0A1422"/>
+      <stop offset="1" stop-color="#1C3F6B"/>
+    </linearGradient>
+  </defs>
+  <rect width="1230" height="300" fill="#070A11"/>
+  <!-- top-left: light blue -->
+  <path d="M570 0 L970 0 L895 150 L495 150 Z" fill="url(#faqLight)"/>
+  <!-- top-right: dark gradient -->
+  <path d="M970 0 L1370 0 L1295 150 L895 150 Z" fill="url(#faqDark)"/>
+  <!-- bottom-left: dark gradient -->
+  <path d="M495 150 L895 150 L820 300 L420 300 Z" fill="url(#faqDark)"/>
+  <!-- bottom-right: light blue -->
+  <path d="M895 150 L1295 150 L1220 300 L820 300 Z" fill="url(#faqLight)"/>
+</svg>
