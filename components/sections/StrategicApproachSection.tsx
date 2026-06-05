@@ -43,7 +43,7 @@ const features: FeatureBlock[] = [
 
 export default function StrategicApproachSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
 
   return (
     <section ref={ref} className="w-full bg-default py-16 md:py-24 lg:py-32">

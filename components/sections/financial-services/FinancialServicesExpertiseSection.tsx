@@ -77,7 +77,7 @@ export default function FinancialServicesExpertiseSection() {
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
           transition={{ duration: 0.5 }}
           className="text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-white"
         >
@@ -87,7 +87,7 @@ export default function FinancialServicesExpertiseSection() {
         <motion.h2
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.08 }}
           className="mx-auto mt-4 max-w-3xl text-center text-3xl font-medium leading-tight text-white md:text-4xl"
         >

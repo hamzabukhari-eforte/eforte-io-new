@@ -184,7 +184,7 @@ export default function HealthcareCapabilitiesSection() {
           <motion.div
             initial={{ opacity: 0, x: isImageRight ? -80 : 80 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-120px" }}
+            viewport={{ once: false, margin: "-120px", amount: 0.3 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col justify-center"
           >
@@ -213,7 +213,7 @@ export default function HealthcareCapabilitiesSection() {
           <motion.div
             initial={{ opacity: 0, x: isImageRight ? 80 : -80 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-120px" }}
+            viewport={{ once: false, margin: "-120px", amount: 0.3 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className={cn(
               "relative flex items-center",

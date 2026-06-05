@@ -23,7 +23,7 @@ export default function TrustedBySection({
   variant = "dark",
 }: TrustedBySectionProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
 
   const isLight = variant === "light";
 

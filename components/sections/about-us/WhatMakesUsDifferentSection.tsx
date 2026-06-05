@@ -37,7 +37,7 @@ export default function WhatMakesUsDifferentSection() {
               key={card.id}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, margin: "-40px" }}
+              viewport={{ once: false, margin: "-40px", amount: 0.3 }}
               variants={cardVariants}
               custom={index}
             >

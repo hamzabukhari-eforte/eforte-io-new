@@ -72,7 +72,7 @@ export default function InsightsPostsSection({ categorySlug = null }: InsightsPo
               key={post.id}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
+              viewport={{ once: false, margin: "-80px", amount: 0.3 }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
             >
               <Link

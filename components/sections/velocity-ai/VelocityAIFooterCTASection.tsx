@@ -10,7 +10,7 @@ const CTA_IMG = "/assets/images/velocity-ai/cta-team.png";
 
 export default function VelocityAIFooterCTASection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
 
   return (
     <section ref={ref} className="relative min-h-[320px] md:min-h-[400px] flex flex-col items-center justify-center text-center overflow-hidden py-16 md:py-24">

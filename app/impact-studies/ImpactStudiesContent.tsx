@@ -119,7 +119,7 @@ export default function ImpactStudiesContent() {
           variants={headingVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
           className="text-3xl lg:text-4xl font-semibold text-center text-white"
         >
           Empowering positive change,
@@ -139,7 +139,7 @@ export default function ImpactStudiesContent() {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-120px" }}
+              viewport={{ once: false, margin: "-120px", amount: 0.3 }}
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
                 <motion.div
@@ -181,7 +181,7 @@ export default function ImpactStudiesContent() {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 1, ease: "easeOut" }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false, amount: 0.3 }}
                 >
                   <Image
                     src={item.image}

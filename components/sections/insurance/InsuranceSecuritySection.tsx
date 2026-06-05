@@ -32,7 +32,7 @@ export default function InsuranceSecuritySection() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
           transition={{ duration: 0.5 }}
           className="rounded-[32px] bg-[#101219] p-8 md:rounded-[40px] md:p-12 lg:p-14"
         >
@@ -64,7 +64,7 @@ export default function InsuranceSecuritySection() {
                 key={cert.alt}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
+                viewport={{ once: false, margin: "-80px", amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 className="flex flex-col items-center text-center"
               >

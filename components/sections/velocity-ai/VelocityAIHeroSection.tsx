@@ -25,7 +25,7 @@ const techStack: { id: string; icon?: React.ReactNode; label: string | null; isT
 
 export default function VelocityAIHeroSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
 
   return (
     <section

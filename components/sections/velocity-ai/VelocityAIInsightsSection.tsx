@@ -58,7 +58,7 @@ const articles: {
 
 export default function VelocityAIInsightsSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   return (

@@ -8,7 +8,7 @@ import { useRef } from "react";
 
 export default function LegacyToIntelligenceSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
   return (
     <section className="relative w-full min-h-auto bg-default py-16 md:py-24 lg:py-32">
       <Container>

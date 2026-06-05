@@ -23,7 +23,7 @@ const statPositions = [
 
 export default function VelocityAICaseStudySection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
 
   return (
     <section ref={ref} className="py-24 bg-[#02040a]">

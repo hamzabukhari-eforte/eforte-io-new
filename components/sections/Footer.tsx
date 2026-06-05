@@ -92,7 +92,7 @@ const socialLinks = [
 
 export default function Footer() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
 
   return (
     <footer ref={ref} className="w-full bg-default text-white">

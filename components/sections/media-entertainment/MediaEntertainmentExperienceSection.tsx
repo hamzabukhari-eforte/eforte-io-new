@@ -47,7 +47,7 @@ export default function MediaEntertainmentExperienceSection() {
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
           transition={{ duration: 0.5 }}
           className={`text-center text-[38px] font-normal leading-[46px] text-white ${hankenGrotesk.className}`}
         >
@@ -60,7 +60,7 @@ export default function MediaEntertainmentExperienceSection() {
               key={stat.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
+              viewport={{ once: false, margin: "-80px", amount: 0.3 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex flex-col"
             >

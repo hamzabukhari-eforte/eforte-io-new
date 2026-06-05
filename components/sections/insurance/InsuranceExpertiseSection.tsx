@@ -110,7 +110,7 @@ export default function InsuranceExpertiseSection() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
           transition={{ duration: 0.5 }}
           className="rounded-[32px] bg-white p-8 text-default md:rounded-[40px] md:p-12 lg:p-14"
         >
@@ -149,7 +149,7 @@ export default function InsuranceExpertiseSection() {
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: false, margin: "-80px", amount: 0.3 }}
             transition={{ duration: 0.5 }}
             className="text-3xl font-medium text-white md:text-4xl"
           >
@@ -159,7 +159,7 @@ export default function InsuranceExpertiseSection() {
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: false, margin: "-80px", amount: 0.3 }}
             transition={{ duration: 0.5, delay: 0.08 }}
             className="max-w-2xl space-y-4 text-[15px] leading-relaxed text-white/70 md:text-base"
           >
@@ -182,7 +182,7 @@ export default function InsuranceExpertiseSection() {
             key={card.id}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: false, margin: "-80px", amount: 0.3 }}
             transition={{ duration: 0.5 }}
             className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0A0C16] p-8 md:p-12 lg:p-14"
           >

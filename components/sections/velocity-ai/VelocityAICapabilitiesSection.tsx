@@ -67,7 +67,7 @@ const capabilities = [
 
 export default function VelocityAICapabilitiesSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
 
   return (
     <section ref={ref} className={`${section.padding} ${section.paddingX} max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 md:gap-16 lg:gap-20`}>

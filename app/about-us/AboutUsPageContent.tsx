@@ -35,7 +35,7 @@ export default function AboutUsPageContent() {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: false, margin: "-80px", amount: 0.3 }}
         variants={sectionVariants}
       >
         <OurTimelineSection />
@@ -44,7 +44,7 @@ export default function AboutUsPageContent() {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: false, margin: "-80px", amount: 0.3 }}
         variants={sectionVariants}
       >
         <WhatMakesUsDifferentSection />
@@ -53,7 +53,7 @@ export default function AboutUsPageContent() {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: false, margin: "-80px", amount: 0.3 }}
         variants={sectionVariants}
       >
         <OurValuesSection />

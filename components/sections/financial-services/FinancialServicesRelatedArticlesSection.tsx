@@ -65,7 +65,7 @@ export default function FinancialServicesRelatedArticlesSection() {
         <motion.h2
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
           transition={{ duration: 0.5 }}
           className="text-3xl font-medium leading-tight text-default md:text-4xl"
         >
@@ -78,7 +78,7 @@ export default function FinancialServicesRelatedArticlesSection() {
               key={article.id}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
+              viewport={{ once: false, margin: "-80px", amount: 0.3 }}
               transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
               className="grid gap-6 border-b border-default/10 pb-12 last:border-b-0 last:pb-0 md:grid-cols-[1fr_260px] md:gap-10"
             >

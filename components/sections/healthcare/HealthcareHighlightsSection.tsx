@@ -35,7 +35,7 @@ export default function HealthcareHighlightsSection() {
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
           transition={{ duration: 0.5 }}
           className="text-center text-3xl font-semibold text-[#011C57] md:text-4xl"
         >
@@ -50,7 +50,7 @@ export default function HealthcareHighlightsSection() {
                 key={item.text}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
+                viewport={{ once: false, margin: "-80px", amount: 0.3 }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 className="rounded-2xl border border-black/5 bg-white p-7 shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
               >

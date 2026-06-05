@@ -13,7 +13,7 @@ const BENTO_CARD_3_IMG = "/assets/images/velocity-ai/bento-metrics-chart.png";
 
 export default function VelocityAIFrameworkSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
 
   return (
     <section ref={ref} className={`${section.padding} ${section.paddingX} max-w-7xl mx-auto`}>

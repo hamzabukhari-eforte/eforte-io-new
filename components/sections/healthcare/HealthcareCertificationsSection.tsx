@@ -28,7 +28,7 @@ export default function HealthcareCertificationsSection() {
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
           transition={{ duration: 0.5 }}
           className="text-center text-3xl font-semibold text-[#011C57] md:text-4xl"
         >
@@ -38,7 +38,7 @@ export default function HealthcareCertificationsSection() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.08 }}
           className="mt-12 flex flex-wrap items-center justify-center gap-12 md:mt-14 md:gap-16"
         >
@@ -57,7 +57,7 @@ export default function HealthcareCertificationsSection() {
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.12 }}
           className="mx-auto mt-8 max-w-2xl text-center text-[15px] leading-relaxed text-[#888888]"
         >
@@ -70,7 +70,7 @@ export default function HealthcareCertificationsSection() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.16 }}
           className="mt-16 flex flex-wrap items-center justify-center gap-12 md:gap-20"
         >
@@ -89,7 +89,7 @@ export default function HealthcareCertificationsSection() {
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mx-auto mt-8 max-w-2xl text-center text-[15px] leading-relaxed text-[#888888]"
         >

@@ -14,7 +14,7 @@ const roles = [
 
 export default function AgenticOrchestrationAIPodsSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: false, margin: "-80px", amount: 0.3 });
 
   return (
     <section

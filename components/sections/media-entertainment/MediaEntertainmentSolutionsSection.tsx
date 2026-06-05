@@ -46,7 +46,7 @@ export default function MediaEntertainmentSolutionsSection() {
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
           transition={{ duration: 0.5 }}
           className="text-center text-3xl font-medium text-white md:text-4xl"
         >
@@ -61,7 +61,7 @@ export default function MediaEntertainmentSolutionsSection() {
               <motion.div
                 initial={{ opacity: 0, x: isImageLeft ? -80 : 80 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: false, margin: "-100px", amount: 0.3 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="flex justify-center"
               >
@@ -81,7 +81,7 @@ export default function MediaEntertainmentSolutionsSection() {
               <motion.div
                 initial={{ opacity: 0, x: isImageLeft ? 80 : -80 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: false, margin: "-100px", amount: 0.3 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 className="flex flex-col justify-center"
               >

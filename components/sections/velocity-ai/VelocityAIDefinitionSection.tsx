@@ -8,7 +8,7 @@ import { section } from "./layout";
 
 export default function VelocityAIDefinitionSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
 
   return (
     <section ref={ref} className={`relative bg-[#03050C] ${section.padding} ${section.paddingX}`}>

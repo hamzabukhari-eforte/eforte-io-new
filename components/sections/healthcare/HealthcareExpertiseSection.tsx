@@ -31,7 +31,7 @@ export default function HealthcareExpertiseSection() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
           transition={{ duration: 0.5 }}
           className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:gap-16"
         >
@@ -51,7 +51,7 @@ export default function HealthcareExpertiseSection() {
               key={stat.value}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
+              viewport={{ once: false, margin: "-80px", amount: 0.3 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
               className="rounded-2xl border border-black/5 bg-white p-7 shadow-sm"
             >

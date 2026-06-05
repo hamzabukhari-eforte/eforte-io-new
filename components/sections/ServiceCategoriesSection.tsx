@@ -18,7 +18,7 @@ interface ServiceCategoriesSectionProps {
 
 export default function ServiceCategoriesSection({ items }: ServiceCategoriesSectionProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
 
   return (
     <section ref={ref} className="w-full bg-default py-12 md:py-16">

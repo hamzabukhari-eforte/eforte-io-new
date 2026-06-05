@@ -11,7 +11,7 @@ const CUBE_IMG = "/assets/images/velocity-ai/cube-3d.png";
 
 export default function VelocityAIEngineeringSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
 
   return (
     <section ref={ref} className={`bg-black relative overflow-hidden flex items-center ${section.padding} ${section.paddingX} md:min-h-[900px]`}>
