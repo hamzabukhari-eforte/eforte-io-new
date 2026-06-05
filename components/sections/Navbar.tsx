@@ -294,6 +294,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description: "Semiconductor design, firmware, and IoT development, AI-powered embedded systems.",
             iconName: "chip",
             iconColorClass: "bg-[#7C4CFF]",
+            href: "/industries/embedded-engineering",
           },
         ],
       },

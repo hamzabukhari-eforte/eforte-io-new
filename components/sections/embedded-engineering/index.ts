@@ -1,0 +1,9 @@
+export { default as EmbeddedEngineeringHeroSection } from "./EmbeddedEngineeringHeroSection";
+export { default as EmbeddedEngineeringWorkSection } from "./EmbeddedEngineeringWorkSection";
+export { default as EmbeddedEngineeringSuccessStoriesSection } from "./EmbeddedEngineeringSuccessStoriesSection";
+export { default as EmbeddedEngineeringServicesSection } from "./EmbeddedEngineeringServicesSection";
+export { default as EmbeddedEngineeringNearshoreSection } from "./EmbeddedEngineeringNearshoreSection";
+export { default as EmbeddedEngineeringRecognitionsSection } from "./EmbeddedEngineeringRecognitionsSection";
+export { default as EmbeddedEngineeringTestimonialsSection } from "./EmbeddedEngineeringTestimonialsSection";
+export { default as EmbeddedEngineeringStudioVideoSection } from "./EmbeddedEngineeringStudioVideoSection";
+export { default as EmbeddedEngineeringFaqSection } from "./EmbeddedEngineeringFaqSection";
