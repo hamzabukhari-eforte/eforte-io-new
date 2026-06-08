@@ -1205,14 +1205,14 @@ export default function Navbar() {
             <Link
               href="#"
               className={cn(
-                "px-4 md:px-6 h-12 rounded-md flex items-center justify-center",
+                "px-4 md:px-6 h-12 rounded-full flex items-center justify-center",
                 "text-sm md:text-base font-semibold",
                 "bg-primary-pink text-white border border-primary-pink",
                 "hover:bg-transparent transition-all duration-200",
                 "whitespace-nowrap"
               )}
             >
-              Let&apos;s build intelligence together.
+              Let&apos;s build intelligence together
             </Link>
           </div>
 
@@ -1277,9 +1277,9 @@ export default function Navbar() {
               <Link
                 href="#"
                 onClick={closeMobileMenu}
-                className="w-full h-12 rounded-md flex items-center justify-center text-sm font-semibold bg-primary-pink text-white border border-primary-pink hover:bg-primary-pink/90 transition-all duration-200"
+                className="w-full h-12 rounded-full flex items-center justify-center text-sm font-semibold bg-primary-pink text-white border border-primary-pink hover:bg-primary-pink/90 transition-all duration-200"
               >
-                Let&apos;s build intelligence together.
+                Let&apos;s build intelligence together
               </Link>
             </div>
           </div>
