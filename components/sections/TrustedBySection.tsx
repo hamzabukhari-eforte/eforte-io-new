@@ -2,7 +2,7 @@
 
 import InfiniteCarousel from "@/components/sections/InfiniteCarousel";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -23,7 +23,7 @@ export default function TrustedBySection({
   variant = "dark",
 }: TrustedBySectionProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
+  const isInView = useInViewReplay(ref);
 
   const isLight = variant === "light";
 

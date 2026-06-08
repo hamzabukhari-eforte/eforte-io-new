@@ -3,12 +3,12 @@
 import Container from "@/components/atoms/Container";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 import { useRef } from "react";
 
 export default function LegacyToIntelligenceSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
+  const isInView = useInViewReplay(ref);
   return (
     <section className="relative w-full min-h-auto bg-default py-16 md:py-24 lg:py-32">
       <Container>

@@ -4,7 +4,7 @@ import Container from "@/components/atoms/Container";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 import { useRef } from "react";
 
 interface ServiceCard {
@@ -44,7 +44,7 @@ const services: ServiceCard[] = [
 
 export default function ServicesSection() {
     const ref = useRef(null);
-    const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
+    const isInView = useInViewReplay(ref);
 
     return (
         <section ref={ref} className="w-full bg-default py-16 md:py-24 lg:py-32">
