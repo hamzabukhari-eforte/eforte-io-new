@@ -62,7 +62,7 @@ export default function SecureDataPracticesSection() {
             className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-tight mb-6 md:mb-8 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           >
             Secure-by-Design Data Practices
           </motion.h2>
@@ -72,7 +72,7 @@ export default function SecureDataPracticesSection() {
             className="text-sm md:text-base lg:text-lg text-desc leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
           >
             We implement stringent security controls and robust protocols to safeguard all digital assets and data. Our layered security framework is designed to address evolving threats, ensuring reliability and peace of mind for our clients.
           </motion.p>

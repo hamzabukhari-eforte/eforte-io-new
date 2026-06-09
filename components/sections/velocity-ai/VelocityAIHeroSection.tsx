@@ -25,7 +25,7 @@ const techStack: { id: string; icon?: React.ReactNode; label: string | null; isT
 
 export default function VelocityAIHeroSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
 
   return (
     <section
@@ -54,7 +54,7 @@ export default function VelocityAIHeroSection() {
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[90px] font-medium tracking-tight mb-6 leading-[1.1] text-white drop-shadow-2xl"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
         >
           The Velocity AI Framework
         </motion.h1>
@@ -63,7 +63,7 @@ export default function VelocityAIHeroSection() {
           className="text-sm md:text-lg lg:text-xl text-gray-300/90 max-w-2xl mx-auto mb-8 md:mb-12 px-2 font-light leading-relaxed tracking-wide"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
         >
           Secure-First Governance for AI Delivery
         </motion.p>
@@ -71,7 +71,7 @@ export default function VelocityAIHeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
         >
           <Link
             href="#"
@@ -86,7 +86,7 @@ export default function VelocityAIHeroSection() {
           className="mt-12 md:mt-32 w-full max-w-4xl mx-auto px-2"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
         >
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
             {techStack.map((item, index) => (

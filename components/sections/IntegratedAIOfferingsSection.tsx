@@ -30,7 +30,7 @@ export default function IntegratedAIOfferingsSection() {
             className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white text-center leading-tight tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           >
             Unlocking Business Value by Weaving Velocity AI Across Our Full Suite of Services.
           </motion.h2>

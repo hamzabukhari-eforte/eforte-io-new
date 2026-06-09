@@ -8,7 +8,7 @@ import { section } from "./layout";
 
 export default function VelocityAIDefinitionSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
 
   return (
     <section ref={ref} className={`relative bg-[#03050C] ${section.padding} ${section.paddingX}`}>
@@ -17,7 +17,7 @@ export default function VelocityAIDefinitionSection() {
           className="text-xl md:text-2xl lg:text-4xl font-light leading-snug text-gray-200 mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <b>Velocity AI</b> is eForte&apos;s comprehensive methodology detailing best
           practices, workflows, and tools that enhance digital delivery efficiency
@@ -30,7 +30,7 @@ export default function VelocityAIDefinitionSection() {
           className="mt-4 md:mt-6 text-gray-400 text-sm md:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
         >
           eForte&apos;s AI‑Enabled Pods work within this framework to increase the
           efficiency and quality of digital delivery, using a carefully vetted
@@ -40,7 +40,7 @@ export default function VelocityAIDefinitionSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
         >
           <Link
             href="#"

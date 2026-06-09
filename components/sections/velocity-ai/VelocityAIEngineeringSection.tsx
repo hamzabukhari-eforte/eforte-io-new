@@ -11,7 +11,7 @@ const CUBE_IMG = "/assets/images/velocity-ai/cube-3d.png";
 
 export default function VelocityAIEngineeringSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
 
   return (
     <section ref={ref} className={`bg-black relative overflow-hidden flex items-center ${section.padding} ${section.paddingX} md:min-h-[900px]`}>
@@ -20,7 +20,7 @@ export default function VelocityAIEngineeringSection() {
           className="relative z-10 order-2 lg:order-1"
           initial={{ opacity: 0, x: -30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <div className="mb-6 md:mb-10">
             <span className={`inline-block px-4 py-1.5 md:px-5 md:py-2 rounded-full border border-white/30 ${typography.badge} text-white bg-white/5 backdrop-blur-sm`}>
@@ -52,7 +52,7 @@ export default function VelocityAIEngineeringSection() {
           className="relative flex items-center justify-center h-full perspective-1000 group order-1 lg:order-2 min-h-[256px] md:min-h-[400px]"
           initial={{ opacity: 0, x: 30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
         >
           <div className="absolute inset-0 bg-blue-500/10 blur-[120px] rounded-full pointer-events-none opacity-40 group-hover:opacity-60 transition-opacity duration-700" />
           <div className="relative w-full aspect-square max-w-[256px] md:max-w-[400px] lg:max-w-[600px] animate-float">

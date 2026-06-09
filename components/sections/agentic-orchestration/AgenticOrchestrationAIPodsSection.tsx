@@ -14,7 +14,7 @@ const roles = [
 
 export default function AgenticOrchestrationAIPodsSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-80px", amount: 0.3 });
+  const isInView = useInView(ref, { once: false, margin: "-80px", amount: 0.15 });
 
   return (
     <section
@@ -30,7 +30,7 @@ export default function AgenticOrchestrationAIPodsSection() {
               className={`${typography.sectionTitleLg} text-white leading-[1.1] mb-6`}
               initial={{ opacity: 0, x: -24 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             >
               AI Pods<span className="text-[#3b82f6] align-super text-2xl md:text-3xl ml-2">✦</span>
               <br />
@@ -42,7 +42,7 @@ export default function AgenticOrchestrationAIPodsSection() {
               className="text-xl md:text-2xl font-semibold text-white mb-6"
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
             >
               Cross-functional expertise tailored for your needs
             </motion.h3>
@@ -50,7 +50,7 @@ export default function AgenticOrchestrationAIPodsSection() {
               className="space-y-4 md:space-y-6"
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
             >
               <p className={`${typography.lead} text-gray-400 max-w-xl`}>
                 At the core of our AI delivery model are cross-functional AI Pods, designed to build, deploy, and scale industry-specific AI solutions.
@@ -65,7 +65,7 @@ export default function AgenticOrchestrationAIPodsSection() {
             className="relative flex items-center justify-center"
             initial={{ opacity: 0, y: 32 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
           >
             <div className="relative w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] aspect-square">
               <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">

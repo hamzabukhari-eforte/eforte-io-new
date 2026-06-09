@@ -36,7 +36,7 @@ const posClasses: Record<string, string> = {
 
 export default function VelocityAIMetricsOrbitSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
 
   return (
     <section ref={ref} className={`bg-black relative overflow-hidden flex flex-col items-center ${section.padding} ${section.paddingX}`}>
@@ -77,7 +77,7 @@ export default function VelocityAIMetricsOrbitSection() {
           className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mt-8"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
           {orbitItems.map((item, index) => {
             const Icon = item.icon;
@@ -104,7 +104,7 @@ export default function VelocityAIMetricsOrbitSection() {
           className="hidden lg:block relative w-full max-w-[1000px] mx-auto h-[550px] mt-16 perspective-[2000px] min-h-[500px]"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <div className="absolute w-[700px] max-w-[90%] h-[300px] rounded-full border border-white/5 bg-gradient-to-b from-fuchsia-900/10 to-transparent shadow-[0_0_80px_rgba(134,25,143,0.15)] [transform:rotateX(75deg)]" />

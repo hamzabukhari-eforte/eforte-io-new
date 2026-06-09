@@ -32,7 +32,7 @@ export default function GlobalLeadersSection() {
             className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-tight mb-4 md:mb-6 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           >
             Powered by Global Leaders.
           </motion.h2>
@@ -42,7 +42,7 @@ export default function GlobalLeadersSection() {
             className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-tight mb-8 md:mb-12 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
           >
             Recognized for Excellence.
           </motion.h2>
@@ -52,7 +52,7 @@ export default function GlobalLeadersSection() {
             className="text-base md:text-[17px] text-desc font-light leading-relaxed max-w-4xl mx-auto mb-12 md:mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
           >
             Combine the world&apos;s most advanced AI infrastructure with award-winning delivery. As an IBM Global Entrepreneur and ISO 27001-certified partner, we build secure, scalable, enterprise-grade solutions trusted globally.
           </motion.p>

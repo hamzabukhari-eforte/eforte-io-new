@@ -50,7 +50,7 @@ export default function MediaEntertainmentFaqSection() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+          viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
           className="relative mb-8 overflow-hidden rounded-2xl bg-[#0F1118] px-6 py-7 md:px-8 md:py-8"
         >

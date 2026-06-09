@@ -15,7 +15,7 @@ const industryLinks = [
 
 export default function AgenticOrchestrationHeroSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
 
   return (
     <section
@@ -44,7 +44,7 @@ export default function AgenticOrchestrationHeroSection() {
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[90px] font-medium tracking-tight mb-6 leading-[1.1] text-white drop-shadow-2xl"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
         >
           The Agentic Orchestration
         </motion.h1>
@@ -53,7 +53,7 @@ export default function AgenticOrchestrationHeroSection() {
         className="text-sm md:text-lg lg:text-xl text-white max-w-2xl mx-auto mb-8 md:mb-12 px-2 font-light leading-relaxed tracking-wide"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
         >
           AI Agents Tailored for Industry-Specific Challenges.
         </motion.p>
@@ -62,7 +62,7 @@ export default function AgenticOrchestrationHeroSection() {
           className={`${typography.lead} text-gray-300 max-w-2xl mx-auto mb-8 md:mb-16 px-2`}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.25, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
         >
           We specialize in creating powerful, autonomous AI agents capable of dramatically accelerating business processes and operations. Our AI Pods integrate seamlessly with client teams to develop industry-specific AI solutions.
         </motion.p>
@@ -71,7 +71,7 @@ export default function AgenticOrchestrationHeroSection() {
           className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-sm text-white font-medium mb-8 md:mb-20"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
         >
           {industryLinks.map((label, i) => (
             <span key={label} className="hover:text-[#7c3aed] cursor-pointer transition-colors">
@@ -83,7 +83,7 @@ export default function AgenticOrchestrationHeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.35, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
         >
           <Link
             href="#"
@@ -97,7 +97,7 @@ export default function AgenticOrchestrationHeroSection() {
           className="w-full"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
         >
           <PartnerLogosRow />
         </motion.div>

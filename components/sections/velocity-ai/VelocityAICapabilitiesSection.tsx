@@ -67,7 +67,7 @@ const capabilities = [
 
 export default function VelocityAICapabilitiesSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
 
   return (
     <section ref={ref} className={`${section.padding} ${section.paddingX} max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 md:gap-16 lg:gap-20`}>
@@ -75,7 +75,7 @@ export default function VelocityAICapabilitiesSection() {
         className="lg:w-1/3 lg:sticky lg:top-32 h-fit"
         initial={{ opacity: 0, x: -20 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <span className={typography.badge + " text-[#2563EB] tracking-widest"}>AGILE Solutions</span>
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mt-3 md:mt-4 mb-4 md:mb-6 text-white leading-tight">

@@ -20,7 +20,7 @@ export default function AgenticOrchestrationSection() {
             className="w-full"
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             {/* Mobile/Tablet Layout - Non-overlapping Circles (below lg) */}
             <div className="lg:hidden flex flex-col items-center gap-6 md:gap-8">
@@ -126,14 +126,14 @@ export default function AgenticOrchestrationSection() {
             className="flex flex-col px-4 md:px-6 lg:px-8 xl:px-12"
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           >
             {/* Main Heading */}
             <motion.h2
               className="text-3xl md:text-4xl lg:text-[56px] font-medium text-white leading-tight mb-6 md:mb-8 tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
             >
               Agentic Orchestration
             </motion.h2>
@@ -143,7 +143,7 @@ export default function AgenticOrchestrationSection() {
               className="text-xl font-semibold text-white leading-relaxed mb-6 md:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
             >
               Precision Automation for Peak Performance. Our specialized delivery model centers on the Agentic Orchestration, a capability that crafts powerful, AI-driven solutions tailored for complex, industry-specific challenges.
             </motion.p>
@@ -153,7 +153,7 @@ export default function AgenticOrchestrationSection() {
               className="text-base md:text-[17px] text-desc font-light leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
             >
               Deploy industry-specific AI agents for finance, HR, sales, and operations to deliver speed, compliance, and guaranteed data quality. Our workflows represent standard business automation solutions that can be adapted to any industry
             </motion.p>

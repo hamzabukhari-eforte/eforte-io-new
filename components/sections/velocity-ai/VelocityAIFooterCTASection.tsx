@@ -10,7 +10,7 @@ const CTA_IMG = "/assets/images/velocity-ai/cta-team.png";
 
 export default function VelocityAIFooterCTASection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
 
   return (
     <section ref={ref} className="relative min-h-[320px] md:min-h-[400px] flex flex-col items-center justify-center text-center overflow-hidden py-16 md:py-24">
@@ -26,7 +26,7 @@ export default function VelocityAIFooterCTASection() {
         className="relative z-10 px-4 sm:px-6 max-w-2xl mx-auto"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-white">
           Let&apos;s Build the Future Together

@@ -20,7 +20,7 @@ export default function NavigateAISection() {
             className="flex items-center justify-center"
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <div className="relative w-full max-w-lg rounded-xl overflow-hidden">
               <Image
@@ -38,7 +38,7 @@ export default function NavigateAISection() {
             className="flex flex-col"
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           >
             {/* White Paper Badge */}
             <motion.div
@@ -57,7 +57,7 @@ export default function NavigateAISection() {
               className="text-3xl md:text-4xl lg:text-[56px] font-medium text-white leading-tight mb-6 md:mb-8 tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
             >
               Navigate the Complexities of AI Adoption to Unlock Real-World Business Value.
             </motion.h2>
@@ -67,7 +67,7 @@ export default function NavigateAISection() {
               className="text-base md:text-[17px] text-white font-light leading-relaxed mb-6 md:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
             >
               AI is a game-changer, but successful implementation requires expert guidance. eForte empowers your organization to strategically adopt AI, transforming key operations from reactive to predictive.
             </motion.p>
@@ -77,7 +77,7 @@ export default function NavigateAISection() {
               className="text-base md:text-[17px] text-white font-light leading-relaxed mb-8 md:mb-10"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
             >
               Our expertise spans complex domains: from deploying sophisticated bankruptcy prediction models in finance to engineering personalized, adaptive learning systems in EdTech, ensuring high efficiency and impactful innovation.
             </motion.p>
@@ -86,7 +86,7 @@ export default function NavigateAISection() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.7, ease: "easeOut" }}
             >
               <Link
                 href="#"

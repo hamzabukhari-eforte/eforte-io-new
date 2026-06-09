@@ -20,7 +20,7 @@ const metricsCards = [
 
 export default function VelocityAIMetricsCoreSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
 
   return (
     <section ref={ref} className={`bg-black relative overflow-hidden ${section.padding} ${section.paddingX}`}>

@@ -22,7 +22,7 @@ interface UseInViewReplayOptions {
  */
 export function useInViewReplay(
   ref: RefObject<Element | null>,
-  { margin = "-100px", amount = 0.3, settleMs = 1000 }: UseInViewReplayOptions = {}
+  { margin = "-60px", amount = 0.15, settleMs = 800 }: UseInViewReplayOptions = {}
 ): boolean {
   // framer-motion's margin typing is a branded string; cast keeps callers simple.
   const rawInView = useInView(ref, {

@@ -24,7 +24,7 @@ export default function HealthcarePortfolioSection() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+          viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
           className="relative rounded-[32px] bg-[#3E8CEF] md:rounded-[40px]"
         >
@@ -32,7 +32,7 @@ export default function HealthcarePortfolioSection() {
             <motion.div
               initial={{ opacity: 0, x: -80 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false, margin: "-100px", amount: 0.3 }}
+              viewport={{ once: false, margin: "-100px", amount: 0.15 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
               <h2 className="max-w-md text-[46px] font-light leading-[50px] text-white">
@@ -79,7 +79,7 @@ export default function HealthcarePortfolioSection() {
             <motion.div
               initial={{ opacity: 0, x: 80 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: false, margin: "-100px", amount: 0.3 }}
+              viewport={{ once: false, margin: "-100px", amount: 0.15 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="relative hidden items-center justify-end self-center lg:flex"
             >

@@ -69,7 +69,7 @@ export default function EmbeddedEngineeringNearshoreSection() {
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+            viewport={{ once: false, margin: "-80px", amount: 0.15 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-white/70">
@@ -98,7 +98,7 @@ export default function EmbeddedEngineeringNearshoreSection() {
                   key={item.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+                  viewport={{ once: false, margin: "-80px", amount: 0.15 }}
                   transition={{ duration: 0.5, delay: index * 0.08 }}
                   className="rounded-2xl bg-white p-6 text-default shadow-[0_10px_40px_rgba(0,0,0,0.25)]"
                 >
@@ -122,7 +122,7 @@ export default function EmbeddedEngineeringNearshoreSection() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+          viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
           className="mt-20 grid items-center gap-8 md:mt-28 lg:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] lg:gap-12"
         >

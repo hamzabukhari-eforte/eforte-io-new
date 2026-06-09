@@ -62,14 +62,14 @@ export default function VelocityAISection() {
             className="flex flex-col"
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             {/* Main Title */}
             <motion.h2
               className="text-3xl md:text-4xl lg:text-[40px] font-bold text-white leading-tight mb-4 md:mb-6 tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
             >
               Velocity AI The Secure Pathway to AI Value
             </motion.h2>
@@ -79,7 +79,7 @@ export default function VelocityAISection() {
               className="text-xl font-semibold text-white mb-6 md:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
             >
               The Comprehensive Framework for High-Velocity, Ethical Digital Transformation.
             </motion.h3>
@@ -89,7 +89,7 @@ export default function VelocityAISection() {
               className="text-base md:text-[17px] text-desc font-light leading-relaxed mb-8 md:mb-10"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
             >
               Velocity AI is our systematic approach, detailing best-in-class practices, optimized workflows, and AI/ML methodologies. It boosts digital delivery speed and quality, all while rigorously upholding Data Privacy & Security commitments.
             </motion.p>
@@ -99,7 +99,7 @@ export default function VelocityAISection() {
               className="mb-8 md:mb-10"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
             >
               <Link
                 href="#"
@@ -114,7 +114,7 @@ export default function VelocityAISection() {
               className="flex flex-wrap gap-3 md:gap-4 items-center"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
             >
               {badges.map((badge) => (
                 <div key={badge.id} className="flex items-center justify-center">
@@ -206,7 +206,7 @@ export default function VelocityAISection() {
                   className={`absolute ${positionClasses} w-full max-w-[320px] z-10`}
                   initial={{ opacity: 0, y: feature.position === "top" ? -30 : 30, x: feature.position === "bottom-left" ? -30 : feature.position === "bottom-right" ? 30 : 0 }}
                   animate={isInView ? { opacity: 1, y: 0, x: 0 } : { opacity: 0, y: feature.position === "top" ? -30 : 30, x: feature.position === "bottom-left" ? -30 : feature.position === "bottom-right" ? 30 : 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 + index * 0.2, ease: "easeOut" }}
+                  transition={{ duration: 0.5, delay: 0.6 + index * 0.2, ease: "easeOut" }}
                 >
                   <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:border-white/30 transition-all duration-300">
                     {/* Icon */}

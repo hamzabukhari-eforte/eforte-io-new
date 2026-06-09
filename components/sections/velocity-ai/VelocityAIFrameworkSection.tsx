@@ -13,7 +13,7 @@ const BENTO_CARD_3_IMG = "/assets/images/velocity-ai/bento-metrics-chart.png";
 
 export default function VelocityAIFrameworkSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
 
   return (
     <section ref={ref} className={`${section.padding} ${section.paddingX} max-w-7xl mx-auto`}>
@@ -21,7 +21,7 @@ export default function VelocityAIFrameworkSection() {
         className="text-center mb-10 md:mb-16"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <div className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-4 md:mb-6">
           <span className={typography.badge + " text-white tracking-widest"}>

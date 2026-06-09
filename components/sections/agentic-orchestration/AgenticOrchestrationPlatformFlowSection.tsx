@@ -70,7 +70,7 @@ function RightColumnSection({
   registerRef: (index: number, el: HTMLDivElement | null) => void;
 }) {
   const localRef = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(localRef, { once: false, margin: "-80px", amount: 0.3 });
+  const isInView = useInView(localRef, { once: false, margin: "-80px", amount: 0.15 });
   const setRef = useCallback(
     (el: HTMLDivElement | null) => {
       localRef.current = el;

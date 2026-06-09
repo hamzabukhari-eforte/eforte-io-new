@@ -21,7 +21,7 @@ export default function MediaEntertainmentWorkSection() {
           <motion.h2
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+            viewport={{ once: false, margin: "-80px", amount: 0.15 }}
             transition={{ duration: 0.5 }}
             className="text-3xl font-semibold leading-tight text-white md:text-4xl"
           >
@@ -31,7 +31,7 @@ export default function MediaEntertainmentWorkSection() {
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+            viewport={{ once: false, margin: "-80px", amount: 0.15 }}
             transition={{ duration: 0.5, delay: 0.08 }}
             className="max-w-xl text-[15px] leading-relaxed text-white/60 md:text-base"
           >
@@ -47,7 +47,7 @@ export default function MediaEntertainmentWorkSection() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+          viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.6, delay: 0.16 }}
           className="mt-12 md:mt-16"
         >

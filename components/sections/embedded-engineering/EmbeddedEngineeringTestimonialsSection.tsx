@@ -81,7 +81,7 @@ export default function EmbeddedEngineeringTestimonialsSection() {
               <motion.h2
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+                viewport={{ once: false, margin: "-80px", amount: 0.15 }}
                 transition={{ duration: 0.5 }}
                 className="text-3xl font-medium leading-tight text-white md:text-4xl lg:text-[40px]"
               >

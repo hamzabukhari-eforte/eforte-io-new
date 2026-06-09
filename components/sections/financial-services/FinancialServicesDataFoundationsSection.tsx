@@ -65,7 +65,7 @@ export default function FinancialServicesDataFoundationsSection() {
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+          viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
           className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-default/70"
         >
@@ -75,7 +75,7 @@ export default function FinancialServicesDataFoundationsSection() {
         <motion.h2
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+          viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5, delay: 0.08 }}
           className="mx-auto mt-4 max-w-3xl text-center text-3xl font-medium leading-tight text-default md:text-4xl lg:text-[44px]"
         >
@@ -85,7 +85,7 @@ export default function FinancialServicesDataFoundationsSection() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+          viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.6, delay: 0.16 }}
           className="mt-12 md:mt-16"
         >
@@ -108,7 +108,7 @@ export default function FinancialServicesDataFoundationsSection() {
                 key={item.title}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+                viewport={{ once: false, margin: "-80px", amount: 0.15 }}
                 transition={{
                   duration: 0.5,
                   delay: 0.06 * (index % 3),
@@ -133,7 +133,7 @@ export default function FinancialServicesDataFoundationsSection() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+          viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
           className="mt-20 md:mt-24"
         >

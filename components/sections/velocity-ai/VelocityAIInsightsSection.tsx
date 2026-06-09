@@ -58,7 +58,7 @@ const articles: {
 
 export default function VelocityAIInsightsSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   return (
@@ -67,7 +67,7 @@ export default function VelocityAIInsightsSection() {
         className="text-center mb-8 md:mb-16"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <div className="inline-block px-4 py-1 md:px-5 md:py-1.5 rounded-full border border-[#D3287A] bg-pink-900/5 backdrop-blur-sm mb-4 md:mb-6">
           <span className={typography.badge + " text-[#D3287A] tracking-[0.2em] block"}>
@@ -148,7 +148,7 @@ export default function VelocityAIInsightsSection() {
         className="text-center"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
       >
         <Link
           href="#"

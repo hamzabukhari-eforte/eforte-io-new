@@ -58,7 +58,7 @@ export default function TechnologiesSection({
       <motion.section
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: false, amount: 0.15 }}
         variants={fadeUp}
         className="relative w-full py-12 px-12 lg:px-20 bg-[#05060f] overflow-hidden"
       >

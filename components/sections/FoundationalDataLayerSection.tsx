@@ -27,14 +27,14 @@ export default function FoundationalDataLayerSection() {
             className="flex flex-col"
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             {/* Main Heading */}
             <motion.h2
               className="text-3xl md:text-4xl lg:text-[56px] font-medium text-white leading-tight mb-4 md:mb-6 tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
             >
               Future-Proof Foundational Data Layer
             </motion.h2>
@@ -44,7 +44,7 @@ export default function FoundationalDataLayerSection() {
               className="text-xl font-semibold text-white mb-6 md:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
             >
               Forging the Rock-Solid Data Infrastructure Essential for the AI-Native Enterprise.
             </motion.h3>
@@ -54,7 +54,7 @@ export default function FoundationalDataLayerSection() {
               className="text-base md:text-[17px] text-desc font-light leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
             >
               We help clients master the complete data lifecycle— from high-volume ingestion to rigorous governance—building the robust, scalable data foundation required for every AI and GenAI initiative.
             </motion.p>
@@ -65,7 +65,7 @@ export default function FoundationalDataLayerSection() {
             className="flex flex-col"
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           >
             <div className="bg-[#0f0a1a] border border-gray-500/30 rounded-xl p-5 md:p-6 lg:p-8 w-full max-w-md lg:max-w-lg">
               <div className="flex flex-col gap-3 md:gap-4">

@@ -32,7 +32,7 @@ export default function LegacyToIntelligenceSection() {
             className="max-w-4xl mx-auto text-center"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             {/* EVOLVING Label */}
             <motion.div
@@ -51,7 +51,7 @@ export default function LegacyToIntelligenceSection() {
               className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-tight mb-6 md:mb-8 tracking-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
             >
               From Legacy to Intelligence
             </motion.h2>
@@ -61,7 +61,7 @@ export default function LegacyToIntelligenceSection() {
               className="space-y-4 text-base md:text-[17px] text-desc font-light leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+              transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
             >
               <p>
                 Navigating the Shift to the <span className="italic">AI-Native Era</span>: Intuitive, Secure, and Data-Driven Solutions.

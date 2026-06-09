@@ -23,7 +23,7 @@ const statPositions = [
 
 export default function VelocityAICaseStudySection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.3 });
+  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
 
   return (
     <section ref={ref} className="py-24 bg-[#02040a]">
@@ -31,7 +31,7 @@ export default function VelocityAICaseStudySection() {
         className="max-w-5xl mx-auto text-center mb-16 px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
       >
         <span className="text-xs font-bold tracking-widest text-[#2563EB] uppercase">Case Study</span>
         <h2 className="text-3xl md:text-4xl font-bold mt-4 text-white">
@@ -47,7 +47,7 @@ export default function VelocityAICaseStudySection() {
           className="relative h-[256px] sm:h-[360px] md:h-[500px] lg:h-[600px] rounded-2xl md:rounded-3xl overflow-hidden group"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
         >
           <Image
             src={CASE_STUDY_IMG}
@@ -94,7 +94,7 @@ export default function VelocityAICaseStudySection() {
         className="text-center mt-8 md:mt-12"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+        transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
       >
         <Link
           href="#"

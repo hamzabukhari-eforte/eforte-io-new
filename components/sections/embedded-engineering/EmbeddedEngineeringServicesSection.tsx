@@ -90,7 +90,7 @@ export default function EmbeddedEngineeringServicesSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+            viewport={{ once: false, margin: "-80px", amount: 0.15 }}
             transition={{ duration: 0.5 }}
             className="grid gap-6 lg:grid-cols-2 lg:gap-16"
           >
@@ -113,7 +113,7 @@ export default function EmbeddedEngineeringServicesSection() {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+            viewport={{ once: false, margin: "-80px", amount: 0.15 }}
             transition={{ duration: 0.5, delay: 0.08 }}
             className="relative mt-10 aspect-1230/300 w-full overflow-hidden rounded-2xl md:mt-12"
           >
@@ -134,7 +134,7 @@ export default function EmbeddedEngineeringServicesSection() {
                   key={service.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+                  viewport={{ once: false, margin: "-80px", amount: 0.15 }}
                   transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
                   className="flex flex-col"
                 >

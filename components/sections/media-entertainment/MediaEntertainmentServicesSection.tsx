@@ -76,7 +76,7 @@ export default function MediaEntertainmentServicesSection() {
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+            viewport={{ once: false, margin: "-80px", amount: 0.15 }}
             transition={{ duration: 0.5 }}
             className="text-center text-[38px] font-semibold leading-[46px] text-default"
           >
@@ -89,7 +89,7 @@ export default function MediaEntertainmentServicesSection() {
                 key={service.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+                viewport={{ once: false, margin: "-80px", amount: 0.15 }}
                 transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
                 className="flex flex-col"
               >

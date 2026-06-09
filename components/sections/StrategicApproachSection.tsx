@@ -66,7 +66,7 @@ export default function StrategicApproachSection() {
             className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white text-center leading-tight tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           >
             Our Strategic Approach to AI Trust and Business Acceleration
           </motion.h2>
@@ -148,7 +148,7 @@ export default function StrategicApproachSection() {
                     y: feature.position === "bottom" ? 30 : 0, 
                     x: feature.position === "left" ? -30 : feature.position === "right" ? 30 : 0 
                   }}
-                  transition={{ duration: 0.8, delay: 0.6 + index * 0.2, ease: "easeOut" }}
+                  transition={{ duration: 0.5, delay: 0.6 + index * 0.2, ease: "easeOut" }}
                 >
                   <div className={`flex flex-col ${feature.position === "left" ? "items-end text-right" : feature.position === "right" ? "items-start text-left" : "items-center text-center"}`}>
                     {/* Title */}

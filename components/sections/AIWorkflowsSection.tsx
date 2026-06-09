@@ -56,7 +56,7 @@ export default function AIWorkflowsSection() {
                     className="text-center mb-12 md:mb-16"
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                 >
                     {/* Label */}
                     <motion.div
@@ -75,7 +75,7 @@ export default function AIWorkflowsSection() {
                         className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-tight mb-6 md:mb-8 tracking-tight"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                        transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
                     >
                         From Task to Autonomous Outcome
                     </motion.h2>
@@ -85,7 +85,7 @@ export default function AIWorkflowsSection() {
                         className="text-base md:text-[17px] text-desc font-light leading-relaxed max-w-4xl mx-auto"
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                        transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+                        transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
                     >
                         Revolutionize your enterprise with intelligent agents that reason, plan, and execute across your core business functions—freeing your team for strategy.
                     </motion.p>

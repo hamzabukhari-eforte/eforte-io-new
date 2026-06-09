@@ -14,7 +14,7 @@ const containerVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.5,
       ease: [0.16, 1, 0.3, 1],
       when: "beforeChildren",
       staggerChildren: 0.15,
@@ -119,7 +119,7 @@ export default function ImpactStudiesContent() {
           variants={headingVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, margin: "-80px", amount: 0.3 }}
+          viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           className="text-3xl lg:text-4xl font-semibold text-center text-white"
         >
           Empowering positive change,
@@ -139,7 +139,7 @@ export default function ImpactStudiesContent() {
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, margin: "-120px", amount: 0.3 }}
+              viewport={{ once: false, margin: "-120px", amount: 0.15 }}
             >
               <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
                 <motion.div
@@ -181,7 +181,7 @@ export default function ImpactStudiesContent() {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 1, ease: "easeOut" }}
-                  viewport={{ once: false, amount: 0.3 }}
+                  viewport={{ once: false, amount: 0.15 }}
                 >
                   <Image
                     src={item.image}

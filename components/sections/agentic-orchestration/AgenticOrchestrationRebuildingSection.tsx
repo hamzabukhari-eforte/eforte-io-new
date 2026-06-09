@@ -18,7 +18,7 @@ const industries = [
 
 export default function AgenticOrchestrationRebuildingSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-80px", amount: 0.3 });
+  const isInView = useInView(ref, { once: false, margin: "-80px", amount: 0.15 });
 
   return (
     <section
@@ -31,7 +31,7 @@ export default function AgenticOrchestrationRebuildingSection() {
           className="relative z-10"
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <h2 className={`${typography.sectionTitleLg} text-white leading-[1.1] mb-6 md:mb-8`}>
             Rebuilding industries with AI
@@ -61,7 +61,7 @@ export default function AgenticOrchestrationRebuildingSection() {
           className="relative flex items-center justify-center lg:justify-end"
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
         >
           <div className="relative w-full max-w-[280px] sm:max-w-[360px] lg:max-w-[420px] aspect-square">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-blue-900/10 rounded-full blur-[80px] md:blur-[100px] pointer-events-none" />

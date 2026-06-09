@@ -55,7 +55,7 @@ function ValueCard({ item, index }: { item: ValueItem; index: number }) {
       className="relative flex items-start gap-0 min-h-48"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, margin: "-40px", amount: 0.3 }}
+      viewport={{ once: false, margin: "-40px", amount: 0.15 }}
       variants={cardVariants}
       custom={index}
     >
