@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useScroll } from "@/hooks/useScroll";
 import { cn } from "@/lib/utils";
 import Container from "@/components/atoms/Container";
+import ContactCTA from "@/components/atoms/ContactCTA";
 import { caseStudies } from "@/data/caseStudies";
 import {
   HiMenu,
@@ -1202,8 +1203,7 @@ export default function Navbar() {
 
           {/* Desktop CTA Button */}
           <div className="hidden xl:block">
-            <Link
-              href="#"
+            <ContactCTA
               className={cn(
                 "px-4 md:px-6 h-12 rounded-full flex items-center justify-center",
                 "text-sm md:text-base font-semibold",
@@ -1213,7 +1213,7 @@ export default function Navbar() {
               )}
             >
               Let&apos;s build intelligence together
-            </Link>
+            </ContactCTA>
           </div>
 
           {/* Mobile/Tablet Hamburger Menu Button */}
@@ -1274,13 +1274,12 @@ export default function Navbar() {
 
             {/* Mobile CTA Button */}
             <div className="p-6 border-t border-white/10">
-              <Link
-                href="#"
-                onClick={closeMobileMenu}
+              <ContactCTA
+                onOpen={closeMobileMenu}
                 className="w-full h-12 rounded-full flex items-center justify-center text-sm font-semibold bg-primary-pink text-white border border-primary-pink hover:bg-primary-pink/90 transition-all duration-200"
               >
                 Let&apos;s build intelligence together
-              </Link>
+              </ContactCTA>
             </div>
           </div>
         </div>

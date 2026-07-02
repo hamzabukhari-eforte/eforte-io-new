@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import ContactCTA from "@/components/atoms/ContactCTA";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { HiOutlineChip } from "react-icons/hi";
@@ -60,12 +60,9 @@ export default function EmbeddedEngineeringHeroSection() {
             transition={{ duration: 0.5, delay: 0.24 }}
             className="mt-9"
           >
-            <Link
-              href="#contact"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-[#2D52F0] bg-[#2D52F0] px-8 text-sm font-medium text-white transition-all duration-300 hover:bg-transparent hover:text-white"
-            >
+            <ContactCTA className="inline-flex h-12 items-center justify-center rounded-full border border-[#2D52F0] bg-[#2D52F0] px-8 text-sm font-medium text-white transition-all duration-300 hover:bg-transparent hover:text-white">
               Contact Us
-            </Link>
+            </ContactCTA>
           </motion.div>
         </div>
       </Container>

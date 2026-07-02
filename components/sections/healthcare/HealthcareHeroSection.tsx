@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import ContactCTA from "@/components/atoms/ContactCTA";
 import { AnimatePresence, motion } from "framer-motion";
 import { HiArrowRight } from "react-icons/hi";
 import Container from "@/components/atoms/Container";
@@ -108,12 +108,9 @@ export default function HealthcareHeroSection() {
                 View portfolio
                 <HiArrowRight className="h-4 w-4" />
               </Link>
-              <Link
-                href="#contact"
-                className="inline-flex h-12 items-center justify-center rounded-full border border-white/50 px-8 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default"
-              >
+              <ContactCTA className="inline-flex h-12 items-center justify-center rounded-full border border-white/50 px-8 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default">
                 Contact Us
-              </Link>
+              </ContactCTA>
             </motion.div>
           </div>
 

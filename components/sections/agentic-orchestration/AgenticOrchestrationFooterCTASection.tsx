@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import ContactCTA from "@/components/atoms/ContactCTA";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -28,12 +28,11 @@ export default function AgenticOrchestrationFooterCTASection() {
         <p className="text-gray-400 mb-6 md:mb-8 text-sm md:text-base leading-relaxed">
           Partner with eForte&apos;s experts to explore your idea or product and discover how Velocity AI, Agentic Orchestration, and a robust Foundational Data Layer can accelerate innovation and business impact.
         </p>
-        <Link
-          href="#"
+        <ContactCTA
           className="inline-block bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-8 py-3 md:px-9 md:py-3.5 rounded-full text-sm md:text-[15px] font-medium transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
         >
           Get in touch
-        </Link>
+        </ContactCTA>
       </motion.div>
     </section>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import ContactCTA from "@/components/atoms/ContactCTA";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -73,12 +73,11 @@ export default function VelocityAIHeroSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
         >
-          <Link
-            href="#"
+          <ContactCTA
             className="group relative inline-flex px-10 py-3 rounded-full border-2 border-[#db2777] text-[#db2777] font-medium text-lg transition-all duration-300 hover:bg-[#db2777] hover:text-white hover:shadow-[0_0_30px_rgba(219,39,119,0.4)]"
           >
             <span className="relative z-10">Contact Us</span>
-          </Link>
+          </ContactCTA>
         </motion.div>
 
         {/* Tech stack logos */}

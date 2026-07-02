@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import ContactCTA from "@/components/atoms/ContactCTA";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -35,12 +35,11 @@ export default function VelocityAIEngineeringSection() {
           <p className={typography.lead + " text-gray-400 mb-8 md:mb-12 max-w-xl"}>
             Velocity AI empowers engineering teams to become AI-first, turning traditional agile pods into data-centric, AI-driven squads for faster, smarter software delivery.
           </p>
-          <Link
-            href="#"
+          <ContactCTA
             className="inline-block bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-8 py-3 md:px-10 md:py-4 rounded-full font-medium text-sm md:text-[15px] transition-all shadow-[0_4px_20px_rgba(219,39,119,0.4)] hover:shadow-[0_6px_25px_rgba(219,39,119,0.6)] hover:-translate-y-0.5"
           >
             Contact Us
-          </Link>
+          </ContactCTA>
           <div className="flex items-center gap-3 mt-12 md:mt-24 hidden lg:flex">
             <div className="w-3 h-3 rounded-full border-2 border-white bg-white cursor-pointer shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
             <div className="w-2 h-2 rounded-full bg-white/20 cursor-pointer hover:bg-white/40 transition-colors" />

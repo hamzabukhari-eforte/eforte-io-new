@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import ContactCTA from "@/components/atoms/ContactCTA";
 import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 
@@ -43,12 +43,9 @@ export default function HealthcareEventsSection() {
               fitness and wearable events and podcasts.
             </p>
 
-            <Link
-              href="#contact"
-              className="mt-9 inline-flex h-12 w-fit items-center justify-center rounded-full border border-white bg-white px-8 text-sm font-medium text-default transition-all duration-300 hover:bg-transparent hover:text-white"
-            >
+            <ContactCTA className="mt-9 inline-flex h-12 w-fit items-center justify-center rounded-full border border-white bg-white px-8 text-sm font-medium text-default transition-all duration-300 hover:bg-transparent hover:text-white">
               Contact Us
-            </Link>
+            </ContactCTA>
           </div>
 
           <div className="relative min-h-[320px] lg:min-h-[480px]">

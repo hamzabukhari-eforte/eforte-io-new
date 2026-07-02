@@ -1,0 +1,25 @@
+export const projectTypeOptions = [
+  "Staff Augmentation",
+  "Product Design & Strategy",
+  "Artificial Intelligence / GenAI",
+  "Agentic Orchestration",
+  "Data & Analytics",
+  "Foundational Data Layer",
+  "Mobile App Development",
+  "App Solutions",
+  "Cloud, SRE, & DevOps",
+  "Cybersecurity",
+  "Platform Engineering",
+  "Quality Assurance",
+  "Embedded Engineering",
+  "Blockchain Development",
+  "Startup MVP & Prototyping",
+  "Business Dashboard",
+  "Prototyping & Documentation",
+  "AR/VR",
+  "Generative AI Applications",
+  "Velocity AI",
+  "Other",
+] as const;
+
+export type ProjectType = (typeof projectTypeOptions)[number];

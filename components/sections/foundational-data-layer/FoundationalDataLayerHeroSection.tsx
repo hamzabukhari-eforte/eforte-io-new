@@ -1,7 +1,7 @@
 "use client";
 
 import Container from "@/components/atoms/Container";
-import Link from "next/link";
+import ContactCTA from "@/components/atoms/ContactCTA";
 import PartnerLogosRow from "@/components/atoms/PartnerLogosRow";
 
 export default function FoundationalDataLayerHeroSection() {
@@ -31,12 +31,9 @@ export default function FoundationalDataLayerHeroSection() {
           management—from ingestion to governance.
         </p>
         <div className="flex items-center justify-center mb-10 md:mb-14">
-          <Link
-            href="#contact"
-            className="px-10 py-3.5 rounded-full border border-white text-base font-medium text-white hover:bg-white hover:text-black transition-all duration-300"
-          >
+          <ContactCTA className="px-10 py-3.5 rounded-full border border-white text-base font-medium text-white hover:bg-white hover:text-black transition-all duration-300">
             Contact Us
-          </Link>
+          </ContactCTA>
         </div>
         <PartnerLogosRow />
       </Container>

@@ -1,7 +1,7 @@
 "use client";
 
 import Container from "@/components/atoms/Container";
-import Link from "next/link";
+import ContactCTA from "@/components/atoms/ContactCTA";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -50,12 +50,11 @@ export default function LetsCoCreateSection() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
           >
-            <Link
-              href="#"
+            <ContactCTA
               className="inline-block bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-9 py-3.5 rounded-full text-[15px] font-medium transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
             >
               Get in Touch
-            </Link>
+            </ContactCTA>
           </motion.div>
         </div>
       </Container>

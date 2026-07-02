@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import ContactCTA from "@/components/atoms/ContactCTA";
 import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import InfiniteCarousel from "@/components/sections/InfiniteCarousel";
@@ -70,12 +70,9 @@ export default function InsuranceHeroSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mt-9"
           >
-            <Link
-              href="#contact"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-white/50 px-8 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default"
-            >
+            <ContactCTA className="inline-flex h-12 items-center justify-center rounded-full border border-white/50 px-8 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default">
               Contact Us
-            </Link>
+            </ContactCTA>
           </motion.div>
         </div>
       </Container>

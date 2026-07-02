@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import ContactCTA from "@/components/atoms/ContactCTA";
 import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 
@@ -201,12 +201,9 @@ export default function InsuranceExpertiseSection() {
                 <h3 className="max-w-md text-3xl font-medium leading-tight text-white md:text-4xl">
                   {card.title}
                 </h3>
-                <Link
-                  href="#contact"
-                  className="mt-auto inline-flex h-11 w-fit items-center justify-center rounded-full border border-white/50 px-7 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default"
-                >
+                <ContactCTA className="mt-auto inline-flex h-11 w-fit items-center justify-center rounded-full border border-white/50 px-7 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default">
                   Learn more
-                </Link>
+                </ContactCTA>
               </div>
 
               <ul className="space-y-6">

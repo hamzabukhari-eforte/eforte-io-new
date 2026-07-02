@@ -8,81 +8,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-interface FooterColumn {
-  title: string;
-  links: { label: string; href: string }[];
-}
-
-const footerColumns: FooterColumn[] = [
-  {
-    title: "AI Pillars",
-    links: [
-      { label: "Velocity AI", href: "#" },
-      { label: "Agentic Orchestration", href: "#" },
-      { label: "Data Foundation", href: "#" },
-    ],
-  },
-  {
-    title: "Core Capabilities",
-    links: [
-      { label: "Customer Service & Support", href: "#" },
-      { label: "Sales & Marketing", href: "#" },
-      { label: "Financial Operations", href: "#" },
-      { label: "Human Resources", href: "#" },
-      { label: "Operations & Compliance", href: "#" },
-      { label: "Project Management & Data", href: "#" },
-    ],
-  },
-  {
-    title: "Impact Studies",
-    links: [
-      { label: "Case Studies", href: "#" },
-      { label: "BioResearch Labs", href: "#" },
-      { label: "Iberian Ventures", href: "#" },
-      { label: "Allied Insurance", href: "#" },
-      { label: "Global Manufacturing Corp", href: "#" },
-      { label: "GlobalTrade Solutions", href: "#" },
-    ],
-  },
-  {
-    title: "Industries",
-    links: [
-      { label: "Financial Services", href: "#" },
-      { label: "Healthcare", href: "#" },
-      { label: "Insurance", href: "#" },
-      { label: "Media and Entertainment", href: "#" },
-    ],
-  },
-  {
-    title: "Strategic Partners",
-    links: [
-      { label: "Amazon Web Services (AWS)", href: "#" },
-      { label: "Databricks", href: "#" },
-      { label: "Snowflake", href: "#" },
-      { label: "UX Pilot AI", href: "#" },
-    ],
-  },
-  {
-    title: "About eForte",
-    links: [
-      { label: "About Us", href: "/about-us" },
-      { label: "Press and announcements", href: "#" },
-      { label: "Information Security Policy", href: "#" },
-      { label: "Trust Center", href: "#" },
-    ],
-  },
-  {
-    title: "Community",
-    links: [
-      { label: "Insights", href: "#" },
-      { label: "Careers", href: "#" },
-      { label: "Webinars", href: "#" },
-      { label: "Events", href: "#" },
-      { label: "Reports", href: "#" },
-      { label: "Diversity", href: "#" },
-    ],
-  },
-];
+import { footerColumns } from "@/data/siteNavigation";
 
 const socialLinks = [
   { icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
@@ -152,10 +78,25 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           >
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              {/* Copyright */}
-              <p className="text-sm text-desc">
-                © {new Date().getFullYear()} eForte.io. All rights reserved.
-              </p>
+              <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-6">
+                <p className="text-sm text-desc">
+                  © {new Date().getFullYear()} eForte.io. All rights reserved.
+                </p>
+                <div className="flex items-center gap-4 text-sm">
+                  <Link
+                    href="/privacy-policy"
+                    className="text-desc transition-colors duration-200 hover:text-white"
+                  >
+                    Privacy Policy
+                  </Link>
+                  <Link
+                    href="/terms-and-conditions"
+                    className="text-desc transition-colors duration-200 hover:text-white"
+                  >
+                    Terms &amp; Conditions
+                  </Link>
+                </div>
+              </div>
 
               {/* Social Media Icons */}
               <div className="flex items-center gap-4">

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import AppProviders from "@/components/providers/AppProviders";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import { VelocityAIFooterCTASection } from "@/components/sections/velocity-ai";
 
 const geistSans = Geist({
@@ -27,16 +27,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
-        <SmoothScrollProvider>
+        <AppProviders>
           <Navbar />
           {children}
           <VelocityAIFooterCTASection />
           <Footer />
-        </SmoothScrollProvider>
+        </AppProviders>
       </body>
     </html>
   );
