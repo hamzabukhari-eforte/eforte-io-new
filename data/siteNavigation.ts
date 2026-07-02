@@ -77,7 +77,7 @@ export const footerColumns: FooterColumn[] = [
     links: [
       { label: "About eForte", href: "/about-us" },
       { label: "Locations", href: "/locations" },
-      { label: "Careers", href: "#" },
+      { label: "Careers", href: "/careers" },
       { label: "Events & Webinars", href: "#" },
       { label: "Press & Announcements", href: "#" },
       { label: "Diversity & Inclusion", href: "#" },

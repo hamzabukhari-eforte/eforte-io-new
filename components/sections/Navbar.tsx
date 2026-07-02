@@ -434,6 +434,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             tag: "CAREERS",
             description: "Shape the AI future with cross-functional teams working on data, AI, and human-centered product design.",
             imageSrc: "/assets/images/velocity-ai/cta-team.png",
+            href: "/careers",
           },
           {
             title: "Locations",
