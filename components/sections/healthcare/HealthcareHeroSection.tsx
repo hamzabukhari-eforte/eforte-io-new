@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import ContactCTA from "@/components/atoms/ContactCTA";
 import { AnimatePresence, motion } from "framer-motion";
 import { HiArrowRight } from "react-icons/hi";
