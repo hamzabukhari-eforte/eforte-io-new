@@ -427,6 +427,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             tag: "ABOUT US",
             description: "With 20+ years of experience, our expertise spans the AI lifecycle, from data platforms to agentic products.",
             imageSrc: "/assets/images/landing/Expertise.png",
+            href: "/about-us",
           },
           {
             title: "Careers",
@@ -439,6 +440,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             tag: "LOCATIONS",
             description: "Global presence with local delivery, so we can partner with you wherever you are.",
             imageSrc: "/assets/images/landing/navigate.png",
+            href: "/locations",
           },
         ],
       },
@@ -613,48 +615,62 @@ export default function Navbar() {
 
               {/* Right image cards row */}
               <div className="flex-1 grid grid-cols-3 gap-6">
-                {aboutCards.map((item) => (
-                  <div
-                    key={item.title}
-                    className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/6 shadow-lg shadow-black/20 hover:bg-white/8 hover:border-white/15 transition-all duration-200 cursor-pointer"
-                  >
-                    <div className="relative aspect-4/3 w-full bg-black/40 shrink-0">
-                      {item.imageSrc && (
-                        <Image
-                          src={item.imageSrc}
-                          alt={item.title}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 1024px) 33vw, 280px"
-                        />
-                      )}
-                    </div>
-                    <div className="flex flex-col flex-1 p-5 space-y-3">
-                      {item.tag && (
-                        <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-primary-pink">
-                          {item.tag}
+                {aboutCards.map((item) => {
+                  const cardClass =
+                    "group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/6 shadow-lg shadow-black/20 hover:bg-white/8 hover:border-white/15 transition-all duration-200 cursor-pointer";
+
+                  const cardContent = (
+                    <>
+                      <div className="relative aspect-4/3 w-full bg-black/40 shrink-0">
+                        {item.imageSrc && (
+                          <Image
+                            src={item.imageSrc}
+                            alt={item.title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 1024px) 33vw, 280px"
+                          />
+                        )}
+                      </div>
+                      <div className="flex flex-col flex-1 p-5 space-y-3">
+                        {item.tag && (
+                          <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-primary-pink">
+                            {item.tag}
+                          </p>
+                        )}
+                        <p className="text-base font-semibold text-white">
+                          {item.title}
                         </p>
-                      )}
-                      <p className="text-base font-semibold text-white">
-                        {item.title}
-                      </p>
-                      {item.description && (
-                        <p className="text-sm text-white/80 line-clamp-3 leading-relaxed">
-                          {item.description}
-                        </p>
-                      )}
-                      <button
-                        type="button"
-                        className="mt-auto pt-1 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/90 transition-colors"
-                      >
-                        Learn more
-                        <span className="ml-1" aria-hidden="true">
-                          →
+                        {item.description && (
+                          <p className="text-sm text-white/80 line-clamp-3 leading-relaxed">
+                            {item.description}
+                          </p>
+                        )}
+                        <span className="mt-auto pt-1 inline-flex items-center text-sm font-semibold text-primary-pink group-hover:text-primary-pink/90 transition-colors">
+                          Learn more
+                          <span className="ml-1" aria-hidden="true">
+                            →
+                          </span>
                         </span>
-                      </button>
+                      </div>
+                    </>
+                  );
+
+                  return item.href ? (
+                    <Link
+                      key={item.title}
+                      href={item.href}
+                      onClick={closeMegaMenu}
+                      className={cardClass}
+                    >
+                      {cardContent}
+                    </Link>
+                  ) : (
+                    <div key={item.title} className={cardClass}>
+                      {cardContent}
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </Container>
           </div>
