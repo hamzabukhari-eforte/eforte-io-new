@@ -1,31 +1,45 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import InsightImage from "@/components/atoms/InsightImage";
 import Container from "@/components/atoms/Container";
-import { OTHER_POSTS, getPostsByCategorySlug, slugToCategory } from "./data";
+import { ALL_INSIGHT_POSTS, OTHER_POSTS } from "./data";
 import type { InsightPost } from "./data";
+import { filterPostsByCategory } from "@/lib/strapi/insights";
 
 const POSTS_PER_PAGE = 10;
 
 export interface InsightsPostsSectionProps {
   /** When set, only posts in this category (by slug) are shown. */
   categorySlug?: string | null;
+  /** Resolved Strapi category title for filtering. */
+  categoryTitle?: string | null;
+  /** Grid posts for the main /blog page (excludes featured). */
+  posts?: InsightPost[];
+  /** Full post list used for category filtering. */
+  allPosts?: InsightPost[];
 }
 
-export default function InsightsPostsSection({ categorySlug = null }: InsightsPostsSectionProps) {
+export default function InsightsPostsSection({
+  categorySlug = null,
+  categoryTitle = null,
+  posts,
+  allPosts,
+}: InsightsPostsSectionProps) {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const posts: InsightPost[] = useMemo(
-    () => (categorySlug ? getPostsByCategorySlug(categorySlug) : OTHER_POSTS),
-    [categorySlug]
-  );
+  const displayPosts: InsightPost[] = useMemo(() => {
+    if (categorySlug && categoryTitle) {
+      return filterPostsByCategory(allPosts ?? ALL_INSIGHT_POSTS, categoryTitle);
+    }
+    return posts ?? OTHER_POSTS;
+  }, [categorySlug, categoryTitle, posts, allPosts]);
 
-  const categoryLabel = categorySlug ? slugToCategory(categorySlug) ?? "this category" : null;
+  const categoryLabel = categoryTitle ?? "this category";
 
-  if (categorySlug && posts.length === 0) {
+  if (categorySlug && displayPosts.length === 0) {
     return (
       <section className="bg-black pb-10 max-w-5xl mx-auto">
         <Container>
@@ -50,9 +64,9 @@ export default function InsightsPostsSection({ categorySlug = null }: InsightsPo
     );
   }
 
-  const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+  const totalPages = Math.max(1, Math.ceil(displayPosts.length / POSTS_PER_PAGE));
   const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
-  const currentPosts = posts.slice(startIndex, startIndex + POSTS_PER_PAGE);
+  const currentPosts = displayPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
   const handlePageChange = (page: number) => {
     if (page < 1 || page > totalPages || page === currentPage) return;
@@ -76,11 +90,11 @@ export default function InsightsPostsSection({ categorySlug = null }: InsightsPo
               transition={{ duration: 0.5, delay: 0.1 * index }}
             >
               <Link
-                href="#"
+                href={`/blog/${post.id}`}
                 className="group flex flex-col bg-white rounded-lg overflow-hidden shadow-lg shadow-black/30 hover:-translate-y-2 transition-transform duration-300 h-full"
               >
                 <div className="relative min-h-[220px] overflow-hidden">
-                  <Image
+                  <InsightImage
                     src={post.imageSrc}
                     alt={post.title}
                     fill

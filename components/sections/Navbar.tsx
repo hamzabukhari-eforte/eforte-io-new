@@ -33,6 +33,7 @@ import {
 } from "react-icons/hi";
 import { FiLink } from "react-icons/fi";
 import type { IconType } from "react-icons";
+import type { InsightsMenuData } from "@/lib/strapi/insights";
 
 const menuIconMap: Record<string, IconType> = {
   "lightning-bolt": HiLightningBolt,
@@ -510,7 +511,11 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
   },
 };
 
-export default function Navbar() {
+export interface NavbarProps {
+  insightsMenuData?: InsightsMenuData;
+}
+
+export default function Navbar({ insightsMenuData }: NavbarProps) {
   const isScrolled = useScroll(10);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
    const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -828,8 +833,8 @@ export default function Navbar() {
 
     // Insights: left intro + KEY CATEGORIES + MORE INSIGHTS; right = HIGHLIGHTED POSTS (2) + LATEST POSTS (6)
     if (activeMenu === "insights") {
-      const highlighted = config.columns[0]?.items ?? [];
-      const latest = config.columns[1]?.items ?? [];
+      const highlighted = insightsMenuData?.highlighted ?? config.columns[0]?.items ?? [];
+      const latest = insightsMenuData?.latest ?? config.columns[1]?.items ?? [];
       const keyCategories = config.columns[2]?.items ?? [];
       const moreInsights = config.columns[3]?.items ?? [];
       return (

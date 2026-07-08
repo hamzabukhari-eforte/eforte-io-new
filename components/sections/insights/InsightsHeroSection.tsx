@@ -1,14 +1,24 @@
 "use client";
 
 import Container from "@/components/atoms/Container";
+import InsightImage from "@/components/atoms/InsightImage";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { INSIGHT_CATEGORIES, FEATURED_POST, categoryToSlug } from "./data";
+import { FEATURED_POST, type InsightPost } from "./data";
+import type { InsightCategory } from "@/lib/strapi/insights";
 
-export default function InsightsHeroSection() {
+export interface InsightsHeroSectionProps {
+  featuredPost?: InsightPost;
+  categories?: InsightCategory[];
+}
+
+export default function InsightsHeroSection({
+  featuredPost,
+  categories = [],
+}: InsightsHeroSectionProps = {}) {
+  const featured = featuredPost ?? FEATURED_POST;
   const pathname = usePathname();
   const activeSlug =
     pathname?.startsWith("/blog/category/") ?
@@ -52,13 +62,12 @@ export default function InsightsHeroSection() {
           >
             All
           </Link>
-          {INSIGHT_CATEGORIES.map((category) => {
-            const slug = categoryToSlug(category);
-            const isActive = activeSlug === slug;
+          {categories.map((category) => {
+            const isActive = activeSlug === category.slug;
             return (
               <Link
-                key={category}
-                href={`/blog/category/${slug}`}
+                key={category.slug}
+                href={`/blog/category/${category.slug}`}
                 className={cn(
                   "px-4 py-1.5 rounded-full border text-[11px] md:text-sm transition-colors",
                   isActive
@@ -66,7 +75,7 @@ export default function InsightsHeroSection() {
                     : "border-white/15 text-white/90 hover:bg-gradient-to-r from-[#2946CF] to-[#233cb9] hover:text-white"
                 )}
               >
-                {category}
+                {category.title}
               </Link>
             );
           })}
@@ -82,13 +91,13 @@ export default function InsightsHeroSection() {
           >
             <div className="max-w-4xl mx-auto">
               <Link
-                href="#"
+                href={`/blog/${featured.id}`}
                 className="group grid md:grid-cols-[3fr,2fr] bg-white rounded-lg overflow-hidden shadow-2xl shadow-black/40 border border-white/20"
               >
                 <div className="relative min-h-[220px] md:min-h-[450px] bg-black">
-                  <Image
-                    src={FEATURED_POST.imageSrc}
-                    alt={FEATURED_POST.title}
+                  <InsightImage
+                    src={featured.imageSrc}
+                    alt={featured.title}
                     fill
                     priority
                     sizes="(max-width: 768px) 100vw, 60vw"
@@ -103,21 +112,21 @@ export default function InsightsHeroSection() {
                 <div className="p-6 md:p-8 flex flex-col justify-between text-black">
                   <div>
                     <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary-pink mb-3">
-                      {FEATURED_POST.category}
+                      {featured.category}
                     </p>
                     <h2 className="text-xl md:text-2xl lg:text-[26px] font-semibold leading-snug mb-4 group-hover:text-brand-blue transition-colors">
-                      {FEATURED_POST.title}
+                      {featured.title}
                     </h2>
                     <p className="text-sm text-gray-600 mb-5 line-clamp-3">
-                      {FEATURED_POST.description}
+                      {featured.description}
                     </p>
                   </div>
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-gray-500">
-                    {FEATURED_POST.author && <span>By {FEATURED_POST.author}</span>}
-                    {FEATURED_POST.date && (
+                    {featured.author && <span>By {featured.author}</span>}
+                    {featured.date && (
                       <>
                         <span className="w-1 h-1 rounded-full bg-gray-400" />
-                        <span>{FEATURED_POST.date}</span>
+                        <span>{featured.date}</span>
                       </>
                     )}
                   </div>

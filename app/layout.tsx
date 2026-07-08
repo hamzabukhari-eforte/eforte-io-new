@@ -5,6 +5,7 @@ import AppProviders from "@/components/providers/AppProviders";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import { VelocityAIFooterCTASection } from "@/components/sections/velocity-ai";
+import { getInsightsMenuData } from "@/lib/strapi/insights";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,11 +22,13 @@ export const metadata: Metadata = {
   description: "eForte Solutions is a software development company that provides software development services to businesses.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const insightsMenuData = await getInsightsMenuData();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -33,7 +36,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <AppProviders>
-          <Navbar />
+          <Navbar insightsMenuData={insightsMenuData} />
           {children}
           <VelocityAIFooterCTASection />
           <Footer />

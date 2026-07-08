@@ -84,3 +84,103 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
+/* Strapi rich text — blog detail (dark theme) */
+.insight-article-body {
+  color: #a0a0c0;
+}
+
+.insight-article-body h2,
+.insight-article-body h3,
+.insight-article-body h4 {
+  color: #ffffff;
+  font-weight: 700;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+}
+
+.insight-article-body h2 {
+  font-size: 1.35rem;
+}
+
+.insight-article-body h3 {
+  font-size: 1.15rem;
+}
+
+.insight-article-body p,
+.insight-article-body li,
+.insight-article-body span,
+.insight-article-body div {
+  color: #a0a0c0;
+}
+
+.insight-article-body p {
+  margin-bottom: 1rem;
+}
+
+.insight-article-body ul,
+.insight-article-body ol {
+  margin: 1rem 0 1.25rem 1.25rem;
+}
+
+.insight-article-body ul {
+  list-style-type: disc;
+}
+
+.insight-article-body ol {
+  list-style-type: decimal;
+}
+
+.insight-article-body li {
+  margin-bottom: 0.5rem;
+}
+
+.insight-article-body a {
+  color: #d3287a;
+  text-decoration: underline;
+}
+
+.insight-article-body a:hover {
+  color: #ffffff;
+}
+
+.insight-article-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1.25rem 0;
+}
+
+.insight-article-body blockquote {
+  border-left: 3px solid #d3287a;
+  padding-left: 1rem;
+  margin: 1.25rem 0;
+  color: #a0a0c0;
+  font-style: italic;
+}
+
+.insight-article-body strong,
+.insight-article-body b {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.insight-article-body em,
+.insight-article-body i {
+  color: #d8d8ec;
+  font-style: italic;
+}
+
+.insight-article-body u {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.insight-article-body h1 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+

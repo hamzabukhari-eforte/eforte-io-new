@@ -125,9 +125,9 @@ export const OTHER_POSTS: InsightPost[] = [
 export const ALL_INSIGHT_POSTS: InsightPost[] = [FEATURED_POST, ...OTHER_POSTS];
 
 /** Return posts whose category string includes the given category label. */
-export function getPostsByCategorySlug(slug: string): InsightPost[] {
+export function getPostsByCategorySlug(slug: string, posts: InsightPost[] = ALL_INSIGHT_POSTS): InsightPost[] {
   const category = slugToCategory(slug);
   if (!category) return [];
-  return ALL_INSIGHT_POSTS.filter((post) => post.category.includes(category));
+  return posts.filter((post) => post.category.toLowerCase().includes(category.toLowerCase()));
 }
 

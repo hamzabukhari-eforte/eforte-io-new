@@ -1,10 +1,15 @@
 import { notFound } from "next/navigation";
 import { InsightsHeroSection, InsightsPostsSection } from "@/components/sections/insights";
-import { INSIGHT_CATEGORIES, categoryToSlug, slugToCategory } from "@/components/sections/insights/data";
+import {
+  findCategoryBySlug,
+  getInsightCategories,
+  getInsightPosts,
+} from "@/lib/strapi/insights";
 
-export function generateStaticParams() {
-  return INSIGHT_CATEGORIES.map((category) => ({
-    slug: categoryToSlug(category),
+export async function generateStaticParams() {
+  const categories = await getInsightCategories();
+  return categories.map((category) => ({
+    slug: category.slug,
   }));
 }
 
@@ -14,11 +19,12 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const category = slugToCategory(slug);
+  const categories = await getInsightCategories();
+  const category = findCategoryBySlug(slug, categories);
   if (!category) return { title: "Insights | eForte" };
   return {
-    title: `${category} | Insights | eForte`,
-    description: `Expert insights in ${category} from the eForte team.`,
+    title: `${category.title} | Insights | eForte`,
+    description: `Expert insights in ${category.title} from the eForte team.`,
   };
 }
 
@@ -28,13 +34,19 @@ export default async function InsightsCategoryPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const category = slugToCategory(slug);
+  const [allPosts, categories] = await Promise.all([getInsightPosts(), getInsightCategories()]);
+  const category = findCategoryBySlug(slug, categories);
   if (!category) notFound();
 
   return (
     <main className="min-h-screen bg-black text-white">
-      <InsightsHeroSection />
-      <InsightsPostsSection key={slug} categorySlug={slug} />
+      <InsightsHeroSection categories={categories} />
+      <InsightsPostsSection
+        key={slug}
+        categorySlug={slug}
+        categoryTitle={category.title}
+        allPosts={allPosts}
+      />
     </main>
   );
 }
