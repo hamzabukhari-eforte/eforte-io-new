@@ -22,7 +22,7 @@ export const footerColumns: FooterColumn[] = [
   {
     title: "Capabilities",
     links: [
-      { label: "Product Design", href: "#capabilities" },
+      { label: "Product Design", href: "/capabilities/product-design" },
       { label: "Artificial Intelligence", href: "#capabilities" },
       { label: "Data", href: "#capabilities" },
       { label: "App Solutions", href: "#capabilities" },

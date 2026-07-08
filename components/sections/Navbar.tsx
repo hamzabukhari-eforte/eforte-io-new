@@ -181,6 +181,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description: "UX research, service design, design thinking, and UI design.",
             iconName: "pencil",
             iconColorClass: "bg-[#7C4CFF]",
+            href: "/capabilities/product-design",
           },
           {
             title: "Artificial Intelligence",
@@ -713,27 +714,42 @@ export default function Navbar() {
                 <div className="grid grid-cols-2 gap-x-8 gap-y-4">
                   {studios.map((item) => {
                     const IconComponent = item.iconName ? menuIconMap[item.iconName] : null;
-                    return (
-                    <div
-                      key={item.title}
-                      className="flex gap-3 items-start rounded-lg border border-white/5 bg-white/5 px-4 py-3 hover:bg-white/10 transition-colors cursor-pointer"
-                    >
-                      <div
-                        className={cn(
-                          "shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-xl text-white",
-                          item.iconColorClass ?? "bg-primary-pink"
-                        )}
+                    const cardClass =
+                      "flex gap-3 items-start rounded-lg border border-white/5 bg-white/5 px-4 py-3 hover:bg-white/10 transition-colors cursor-pointer";
+                    const content = (
+                      <>
+                        <div
+                          className={cn(
+                            "shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-xl text-white",
+                            item.iconColorClass ?? "bg-primary-pink"
+                          )}
+                        >
+                          {IconComponent && <IconComponent className="w-5 h-5" />}
+                        </div>
+                        <div>
+                          <p className="text-sm font-medium text-white">{item.title}</p>
+                          {item.description && (
+                            <p className="mt-0.5 text-xs text-desc">{item.description}</p>
+                          )}
+                        </div>
+                      </>
+                    );
+
+                    return item.href ? (
+                      <Link
+                        key={item.title}
+                        href={item.href}
+                        onClick={closeMegaMenu}
+                        className={cardClass}
                       >
-                        {IconComponent && <IconComponent className="w-5 h-5" />}
+                        {content}
+                      </Link>
+                    ) : (
+                      <div key={item.title} className={cardClass}>
+                        {content}
                       </div>
-                      <div>
-                        <p className="text-sm font-medium text-white">{item.title}</p>
-                        {item.description && (
-                          <p className="mt-0.5 text-xs text-desc">{item.description}</p>
-                        )}
-                      </div>
-                    </div>
-                  );})}
+                    );
+                  })}
                 </div>
               </div>
             </Container>
