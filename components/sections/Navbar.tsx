@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useScroll } from "@/hooks/useScroll";
 import { cn } from "@/lib/utils";
 import Container from "@/components/atoms/Container";
@@ -201,6 +202,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description: "Native or hybrid, SDK development, integrations, app store positioning.",
             iconName: "device-mobile",
             iconColorClass: "bg-[#f97316]",
+            href: "/capabilities/app-solutions",
           },
           {
             title: "Cloud, SRE, & DevOps",
@@ -219,6 +221,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description: "Robust infrastructures, scalable APIs, efficient deployment.",
             iconName: "cog",
             iconColorClass: "bg-[#1e3a8a]",
+            href: "/capabilities/platform-engineering",
           },
           {
             title: "Quality Assurance",
@@ -230,19 +233,22 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             title: "Embedded Engineering",
             description: "Development for semiconductors, embedded systems, IoT, & microcontrollers.",
             iconName: "cube",
-            iconColorClass: "bg-[#eab308]",
+            iconColorClass: "bg-[#7C4CFF]",
+            href: "/capabilities/embedded-engineering",
           },
           {
             title: "Product Management",
             description: "Product consulting, process management, monetization.",
             iconName: "view-grid",
             iconColorClass: "bg-[#2563eb]",
+            href: "/capabilities/product-management",
           },
           {
             title: "Blockchain",
             description: "Smart contracts, decentralized apps, blockchain integration.",
             iconName: "link",
-            iconColorClass: "bg-[#a855f7]",
+            iconColorClass: "bg-[#D348EA]",
+            href: "/capabilities/blockchain",
           },
         ],
       },
@@ -515,10 +521,24 @@ export interface NavbarProps {
   insightsMenuData?: InsightsMenuData;
 }
 
+/** Light-hero capability pages need a solid nav at top (white content under transparent bar). */
+const LIGHT_HERO_NAV_ROUTES = [
+  "/capabilities/app-solutions",
+  "/capabilities/platform-engineering",
+  "/capabilities/product-management",
+  "/capabilities/blockchain",
+] as const;
+
 export default function Navbar({ insightsMenuData }: NavbarProps) {
+  const pathname = usePathname();
   const isScrolled = useScroll(10);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+
+  const isLightHeroPage = LIGHT_HERO_NAV_ROUTES.some(
+    (route) => pathname === route || pathname?.startsWith(`${route}/`)
+  );
+  const useSolidNav = isScrolled || isMobileMenuOpen || isLightHeroPage;
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -1192,7 +1212,7 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           "h-16 md:h-20",
-          isScrolled || isMobileMenuOpen
+          useSolidNav
             ? "bg-black/60 backdrop-blur-md shadow-sm"
             : "bg-transparent"
         )}

@@ -14,10 +14,10 @@ import {
 export const metadata = {
   title: "Embedded Engineering | eForte",
   description:
-    "Embedded engineering services for semiconductors and embedded systems - nearshore firmware development with a proven methodology and highly qualified software engineers.",
+    "Embedded engineering services for semiconductors, IoT, firmware, and microcontrollers — nearshore teams that build reliable hardware-software systems.",
 };
 
-export default function EmbeddedEngineeringPage() {
+export default function EmbeddedEngineeringCapabilityPage() {
   return (
     <main className="min-h-screen bg-default text-white">
       <EmbeddedEngineeringHeroSection />

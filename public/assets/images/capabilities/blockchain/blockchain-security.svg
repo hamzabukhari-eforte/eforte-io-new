@@ -1,0 +1,11 @@
+<svg width="480" height="360" viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="360" rx="20" fill="#0A0A0A"/>
+  <path d="M0 0C80 60 80 120 0 180" stroke="#D348EA" stroke-width="2" opacity="0.35"/>
+  <path d="M0 0C110 70 110 140 0 210" stroke="#D348EA" stroke-width="2" opacity="0.25"/>
+  <path d="M480 0C400 60 400 120 480 180" stroke="#D348EA" stroke-width="2" opacity="0.35"/>
+  <path d="M480 0C370 70 370 140 480 210" stroke="#D348EA" stroke-width="2" opacity="0.25"/>
+  <path d="M0 360C80 300 80 240 0 180" stroke="#D348EA" stroke-width="2" opacity="0.3"/>
+  <path d="M480 360C400 300 400 240 480 180" stroke="#D348EA" stroke-width="2" opacity="0.3"/>
+  <rect x="216" y="118" width="48" height="48" rx="8" fill="#D348EA"/>
+  <text x="240" y="220" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600">Blockchain Security</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg width="480" height="360" viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="360" rx="20" fill="#0A0A0A"/>
+  <circle cx="240" cy="150" r="110" stroke="#D348EA" stroke-width="2" opacity="0.25"/>
+  <circle cx="240" cy="150" r="80" stroke="#D348EA" stroke-width="2" opacity="0.4"/>
+  <circle cx="240" cy="150" r="50" stroke="#D348EA" stroke-width="2" opacity="0.65"/>
+  <rect x="222" y="114" width="36" height="36" rx="6" fill="#D348EA"/>
+  <rect x="200" y="156" width="36" height="36" rx="6" fill="#D348EA"/>
+  <rect x="244" y="156" width="36" height="36" rx="6" fill="#9B6CFF"/>
+  <text x="240" y="260" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600">Empowering Networks</text>
+</svg>

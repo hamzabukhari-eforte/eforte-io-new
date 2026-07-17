@@ -24,7 +24,7 @@ export default function EmbeddedEngineeringWorkSection() {
           transition={{ duration: 0.5 }}
           className="text-center text-[14px] font-normal uppercase leading-[17px] tracking-[0.2em] text-white/80"
         >
-          Our Work in Action
+          Trusted by innovators
         </motion.p>
 
         <motion.h2
@@ -32,10 +32,9 @@ export default function EmbeddedEngineeringWorkSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="mx-auto mt-4 max-w-2xl text-center text-[32px] font-normal leading-[40px] text-white md:text-[38px] md:leading-[46px]"
+          className="mx-auto mt-4 max-w-3xl text-center text-[32px] font-normal leading-[40px] text-white md:text-[38px] md:leading-[46px]"
         >
-          eForte&apos;s work with one of the world&apos;s largest semiconductor
-          companies
+          How we help you build world-class embedded products for your customers
         </motion.h2>
 
         <motion.div

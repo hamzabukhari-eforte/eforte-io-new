@@ -7,3 +7,4 @@ export { default as EmbeddedEngineeringRecognitionsSection } from "./EmbeddedEng
 export { default as EmbeddedEngineeringTestimonialsSection } from "./EmbeddedEngineeringTestimonialsSection";
 export { default as EmbeddedEngineeringStudioVideoSection } from "./EmbeddedEngineeringStudioVideoSection";
 export { default as EmbeddedEngineeringFaqSection } from "./EmbeddedEngineeringFaqSection";
+export { default as EmbeddedEngineeringCtaSection } from "./EmbeddedEngineeringCtaSection";
