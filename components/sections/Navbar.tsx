@@ -196,6 +196,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description: "Data manipulation, engineering, visualization, and prediction.",
             iconName: "database",
             iconColorClass: "bg-[#0ea5e9]",
+            href: "/capabilities/data",
           },
           {
             title: "App Solutions",

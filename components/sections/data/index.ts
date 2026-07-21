@@ -1,0 +1,11 @@
+export { default as DataHeroSection } from "./DataHeroSection";
+export { default as DataOverviewSection } from "./DataOverviewSection";
+export { default as DataPartnersSection } from "./DataPartnersSection";
+export { default as DataDatabricksPartnerSection } from "./DataDatabricksPartnerSection";
+export { default as DataGovernanceSection } from "./DataGovernanceSection";
+export { default as DataServicesSection } from "./DataServicesSection";
+export { default as DataAcceleratorsSection } from "./DataAcceleratorsSection";
+export { default as DataCaseStudySection } from "./DataCaseStudySection";
+export { default as DataCtaBannerSection } from "./DataCtaBannerSection";
+export { default as DataInsightsSection } from "./DataInsightsSection";
+export { default as DataFaqSection } from "./DataFaqSection";

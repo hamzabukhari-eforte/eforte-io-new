@@ -24,7 +24,7 @@ export const footerColumns: FooterColumn[] = [
     links: [
       { label: "Product Design", href: "/capabilities/product-design" },
       { label: "Artificial Intelligence", href: "#capabilities" },
-      { label: "Data", href: "#capabilities" },
+      { label: "Data", href: "/capabilities/data" },
       { label: "App Solutions", href: "/capabilities/app-solutions" },
       { label: "Cloud, SRE, & DevOps", href: "#capabilities" },
       { label: "Cybersecurity", href: "#capabilities" },
