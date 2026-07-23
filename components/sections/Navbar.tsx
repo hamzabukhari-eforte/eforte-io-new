@@ -232,6 +232,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description: "AI-augmented QA, test automation, CI/CD, load and performance testing, data testing.",
             iconName: "check-circle",
             iconColorClass: "bg-[#22c55e]",
+            href: "/capabilities/quality-assurance",
           },
           {
             title: "Embedded Engineering",
@@ -531,6 +532,7 @@ const LIGHT_HERO_NAV_ROUTES = [
   "/capabilities/platform-engineering",
   "/capabilities/product-management",
   "/capabilities/blockchain",
+  "/capabilities/quality-assurance",
 ] as const;
 
 export default function Navbar({ insightsMenuData }: NavbarProps) {

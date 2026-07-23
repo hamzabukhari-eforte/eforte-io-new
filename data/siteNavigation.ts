@@ -29,7 +29,7 @@ export const footerColumns: FooterColumn[] = [
       { label: "Cloud, SRE, & DevOps", href: "/capabilities/cloud-sre" },
       { label: "Cybersecurity", href: "/capabilities/cybersecurity" },
       { label: "Platform Engineering", href: "/capabilities/platform-engineering" },
-      { label: "Quality Assurance", href: "#capabilities" },
+      { label: "Quality Assurance", href: "/capabilities/quality-assurance" },
       { label: "Embedded Engineering", href: "/capabilities/embedded-engineering" },
       { label: "Product Management", href: "/capabilities/product-management" },
       { label: "Blockchain", href: "/capabilities/blockchain" },
