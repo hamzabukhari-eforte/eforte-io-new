@@ -48,7 +48,7 @@ export default function DataOverviewSection() {
                   transition={{ duration: 0.4, delay: index * 0.08 }}
                   className="flex items-center gap-3 text-base font-medium text-default"
                 >
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2D52F0]/10 text-[#2D52F0]">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-pink/10 text-primary-pink">
                     <HiCheck className="h-4 w-4" />
                   </span>
                   {item}

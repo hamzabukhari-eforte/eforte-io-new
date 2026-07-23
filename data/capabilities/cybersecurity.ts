@@ -1,4 +1,4 @@
-export const CYBER_ACCENT = "#4050FF";
+export const CYBER_ACCENT = "#D3287A";
 
 export const cyberHero = {
   eyebrow: "CYBERSECURITY",
@@ -161,7 +161,7 @@ export const cyberServices = [
     id: "risk",
     title: "Cyber risk management",
     icon: "warning" as const,
-    iconBg: "#3B82F6",
+    iconBg: "#D3287A",
     paragraphs: [
       "We treat cybersecurity as a core business discipline with a clear framework for managing risk.",
       "Risk is modeled in financial terms where useful, so leaders can prioritize investments with confidence.",
@@ -248,7 +248,7 @@ export const cyberSuccessStories = [
     ],
     imageSrc: "/assets/images/capabilities/cybersecurity/stride-story.png",
     imageAlt: "Stride Funding cybersecurity success story",
-    tagClass: "bg-[#6126E1]/12 text-[#6126E1]",
+    tagClass: "bg-primary-pink/12 text-primary-pink",
   },
   {
     id: "enterprise-defense",
@@ -260,7 +260,7 @@ export const cyberSuccessStories = [
     tags: ["Managed defense", "Cloud security", "Continuous assurance"],
     imageSrc: "/assets/images/industry/cybersecurity.jpg",
     imageAlt: "Enterprise cybersecurity program",
-    tagClass: "bg-[#4050FF]/12 text-[#4050FF]",
+    tagClass: "bg-primary-pink/12 text-primary-pink",
   },
 ];
 

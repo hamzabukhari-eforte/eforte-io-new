@@ -47,7 +47,7 @@ export default function DataInsightsSection() {
                   </div>
 
                   <Link href="/blog" className="group mt-4 block">
-                    <h3 className="text-2xl font-semibold leading-snug text-default transition-colors group-hover:text-[#2D52F0] md:text-[28px]">
+                    <h3 className="text-2xl font-semibold leading-snug text-default transition-colors group-hover:text-primary-pink md:text-[28px]">
                       {article.title}
                     </h3>
                     <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[#666]">
@@ -61,7 +61,7 @@ export default function DataInsightsSection() {
                       <Link
                         key={category}
                         href="/blog"
-                        className="font-medium text-[#2D52F0] hover:underline"
+                        className="font-medium text-primary-pink hover:underline"
                       >
                         {category}
                       </Link>

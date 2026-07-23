@@ -35,7 +35,7 @@ const stories: SuccessStory[] = [
     ],
     imageSrc: "/assets/images/industry/cloud.jpg",
     imageAlt: "Cloud infrastructure and data platform visualization",
-    tagClass: "bg-[#4050FF]/12 text-[#4050FF]",
+    tagClass: "bg-primary-pink/12 text-primary-pink",
   },
   {
     id: "sre-observability",

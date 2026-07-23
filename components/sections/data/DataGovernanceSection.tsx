@@ -30,8 +30,7 @@ export default function DataGovernanceSection() {
     dataStudioTabs.find((item) => item.id === activeTab) ?? dataStudioTabs[0];
 
   return (
-    <section className="bg-default">
-      <div className="rounded-[36px] bg-white py-20 text-default md:rounded-[42px] md:py-28">
+    <section className="bg-white py-20 text-default md:py-28">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,16 +71,16 @@ export default function DataGovernanceSection() {
                     onClick={() => setActiveTab(item.id)}
                     className={`w-full cursor-pointer rounded-2xl px-5 py-4 text-left transition-all ${
                       isActive
-                        ? "bg-[#EEF5FF] shadow-sm"
-                        : "bg-transparent hover:bg-[#F6F8FC]"
+                        ? "bg-primary-pink/10 shadow-sm"
+                        : "bg-transparent hover:bg-[#F8F8F8]"
                     }`}
                   >
                     <div className="flex items-start gap-3">
                       <span
                         className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md ${
                           isActive
-                            ? "bg-[#7AB7FF] text-white"
-                            : "bg-transparent text-[#325C93]"
+                            ? "bg-primary-pink text-white"
+                            : "bg-transparent text-primary-pink"
                         }`}
                       >
                         <Icon className="h-4 w-4" />
@@ -89,7 +88,7 @@ export default function DataGovernanceSection() {
                       <div>
                         <p
                           className={`text-lg font-medium ${
-                            isActive ? "text-default" : "text-[#325C93]"
+                            isActive ? "text-default" : "text-primary-pink"
                           }`}
                         >
                           {item.label}
@@ -129,7 +128,6 @@ export default function DataGovernanceSection() {
           </div>
         </motion.div>
       </Container>
-      </div>
     </section>
   );
 }

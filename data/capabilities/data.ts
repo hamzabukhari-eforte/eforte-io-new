@@ -1,4 +1,4 @@
-export const DATA_ACCENT = "#2D52F0";
+export const DATA_ACCENT = "#D3287A";
 
 export const dataPartnerCertifications = [
   { src: "/assets/images/landing/soc.png", alt: "SOC 2 Type 2 certified" },

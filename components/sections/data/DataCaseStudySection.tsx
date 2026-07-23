@@ -34,7 +34,7 @@ export default function DataCaseStudySection() {
   return (
     <section className="bg-white">
       <div
-        className="relative overflow-hidden rounded-[36px] bg-[#2D52F0] py-16 text-white md:rounded-[42px] md:py-24"
+        className="relative overflow-hidden rounded-[36px] bg-primary-pink py-16 text-white md:rounded-[42px] md:py-24"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onFocus={() => setIsPaused(true)}
@@ -75,7 +75,7 @@ export default function DataCaseStudySection() {
                   {story.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-white px-3 py-1.5 text-xs font-medium text-[#2D52F0]"
+                      className="rounded-full bg-white px-3 py-1.5 text-xs font-medium text-primary-pink"
                     >
                       {tag}
                     </span>
@@ -83,7 +83,7 @@ export default function DataCaseStudySection() {
                 </div>
                 <Link
                   href="/impact-studies"
-                  className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-[#2D52F0] transition-opacity hover:opacity-90"
+                  className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-primary-pink transition-opacity hover:opacity-90"
                 >
                   Learn more
                 </Link>
@@ -102,7 +102,7 @@ export default function DataCaseStudySection() {
                   sizes="(max-width: 1024px) 90vw, 420px"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1a2fb0]/80 via-[#2D52F0]/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#9B1B5A]/80 via-primary-pink/30 to-transparent" />
                 <div className="absolute inset-x-0 top-0 p-6 text-center">
                   <p className="text-sm font-bold tracking-[0.2em] text-white">
                     {story.brand}

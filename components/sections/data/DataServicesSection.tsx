@@ -45,7 +45,7 @@ export default function DataServicesSection() {
                     key={bullet}
                     className="flex items-start gap-2 text-[14px] leading-relaxed text-[#666]"
                   >
-                    <HiCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#2D52F0]" />
+                    <HiCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary-pink" />
                     {bullet}
                   </li>
                 ))}

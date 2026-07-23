@@ -1,4 +1,4 @@
-export const QA_ACCENT = "#22C55E";
+export const QA_ACCENT = "#D3287A";
 
 export const qualityAssuranceHero = {
   label: "Quality Assurance Studio",
@@ -126,7 +126,7 @@ export const qualityAssuranceSuccessStories = [
     tags: ["Test automation", "Fintech", "CI/CD"],
     imageSrc: "/assets/images/industry/qa.jpg",
     imageAlt: "Quality assurance automation for fintech",
-    tagClass: "bg-[#22C55E]/12 text-[#16A34A]",
+    tagClass: "bg-primary-pink/12 text-primary-pink",
   },
   {
     id: "edtech-ux",
@@ -138,7 +138,7 @@ export const qualityAssuranceSuccessStories = [
     tags: ["UX quality", "Performance", "Accessibility"],
     imageSrc: "/assets/images/industry/working.jpg",
     imageAlt: "Ed-tech quality assurance engagement",
-    tagClass: "bg-[#22C55E]/12 text-[#16A34A]",
+    tagClass: "bg-primary-pink/12 text-primary-pink",
   },
   {
     id: "banking-ttm",
@@ -150,7 +150,7 @@ export const qualityAssuranceSuccessStories = [
     tags: ["Shift-left", "Banking", "Release quality"],
     imageSrc: "/assets/images/capabilities/tech.jpg",
     imageAlt: "Banking platform QA transformation",
-    tagClass: "bg-[#22C55E]/12 text-[#16A34A]",
+    tagClass: "bg-primary-pink/12 text-primary-pink",
   },
 ];
 

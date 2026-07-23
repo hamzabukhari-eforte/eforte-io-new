@@ -35,11 +35,11 @@ export default function DataHeroSection() {
             transition={{ duration: 3, repeat: Infinity }}
             className="grid h-full grid-cols-2 gap-3"
           >
-            <div className="rounded-lg bg-[#2D52F0]/30 p-3">
+            <div className="rounded-lg bg-primary-pink/30 p-3">
               <motion.div
                 animate={{ scaleX: [0.6, 1, 0.6] }}
                 transition={{ duration: 2.5, repeat: Infinity }}
-                className="h-2 w-full origin-left rounded bg-[#2D52F0]"
+                className="h-2 w-full origin-left rounded bg-primary-pink"
               />
               <motion.div
                 animate={{ opacity: [0.5, 1, 0.5] }}
@@ -51,7 +51,7 @@ export default function DataHeroSection() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                className="mx-auto mt-4 h-14 w-14 rounded-full border-4 border-[#2D52F0]/60 border-t-[#F15B50]"
+                className="mx-auto mt-4 h-14 w-14 rounded-full border-4 border-primary-pink/60 border-t-[#F15B50]"
               />
             </div>
             <div className="col-span-2 rounded-lg bg-white/5 p-3">
@@ -70,7 +70,7 @@ export default function DataHeroSection() {
                       repeat: Infinity,
                       delay: i * 0.15,
                     }}
-                    className="w-full rounded-sm bg-[#2D52F0]/50"
+                    className="w-full rounded-sm bg-primary-pink/50"
                     style={{ height }}
                   />
                 ))}

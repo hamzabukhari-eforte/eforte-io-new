@@ -1,4 +1,4 @@
-export const CLOUD_SRE_ACCENT = "#4050FF";
+export const CLOUD_SRE_ACCENT = "#D3287A";
 
 export const cloudSreSplitCards = [
   {

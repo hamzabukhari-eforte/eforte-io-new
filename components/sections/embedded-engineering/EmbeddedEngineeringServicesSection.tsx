@@ -23,7 +23,7 @@ const services: Service[] = [
   {
     id: "firmware",
     icon: HiOutlineCpuChip,
-    iconColor: "text-[#7C4CFF]",
+    iconColor: "text-primary-pink",
     title: "Firmware development services",
     paragraphs: [
       "We excel in crafting high-performance firmware solutions tailored to device needs. Our embedded software engineers develop firmware for hardware platforms, including microcontrollers, microprocessors, and SOCs.",
@@ -53,7 +53,7 @@ const services: Service[] = [
   {
     id: "testing",
     icon: HiOutlineCheckCircle,
-    iconColor: "text-[#2D52F0]",
+    iconColor: "text-primary-pink",
     title: "Testing, verification, and validation",
     paragraphs: [
       "Ensure reliability and quality with testing methodologies and simulation platforms - including unit, integration, and system validation testing to ensure software and device function flawlessly before and after manufacturing which reduces costly re-work in the fabrication process.",

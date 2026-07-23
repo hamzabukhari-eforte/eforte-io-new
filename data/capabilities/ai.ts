@@ -1,4 +1,4 @@
-export const AI_ACCENT = "#4050FF";
+export const AI_ACCENT = "#D3287A";
 
 export const aiCaseStudy = {
   title: "AI solutions in action: Real-world implementations",

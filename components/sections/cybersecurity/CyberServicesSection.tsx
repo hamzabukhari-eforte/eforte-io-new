@@ -38,7 +38,7 @@ export default function CyberServicesSection() {
           className="grid gap-10 border-t border-[#E8E8E8] pt-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 md:pt-12"
         >
           <div>
-            <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-[#93C5FD]">
+            <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-pink">
               <HiShieldCheck className="h-8 w-8 text-white" />
               <span className="absolute bottom-2 right-2 text-[10px] text-white">
                 ✦

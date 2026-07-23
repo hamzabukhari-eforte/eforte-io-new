@@ -43,7 +43,7 @@ export default function AiConstellationSection() {
               href={aiConstellation.ctaHref}
               className="mt-8 inline-flex items-center justify-center rounded-full px-8 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
               style={{
-                background: `linear-gradient(90deg, ${AI_ACCENT} 0%, #7B5CFF 100%)`,
+                background: `linear-gradient(90deg, ${AI_ACCENT} 0%, #BE185D 100%)`,
               }}
             >
               {aiConstellation.ctaLabel}

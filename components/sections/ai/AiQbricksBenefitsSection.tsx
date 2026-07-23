@@ -33,9 +33,9 @@ export default function AiQbricksBenefitsSection() {
                 className="relative mb-7 flex h-[88px] w-[88px] items-center justify-center rounded-full"
                 style={{
                   background:
-                    "radial-gradient(circle at center, #243A6C 0%, #15204A 55%, #0D1530 100%)",
+                    "radial-gradient(circle at center, #6B1645 0%, #3D0F28 55%, #1A0A12 100%)",
                   boxShadow:
-                    "0 0 0 1px rgba(75, 120, 255, 0.15), 0 0 28px 8px rgba(64, 80, 255, 0.35)",
+                    "0 0 0 1px rgba(211, 40, 122, 0.2), 0 0 28px 8px rgba(211, 40, 122, 0.35)",
                 }}
               >
                 <Image

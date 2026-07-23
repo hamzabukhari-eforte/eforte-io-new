@@ -56,7 +56,7 @@ export default function DataAcceleratorsSection() {
                 className="grid items-start gap-8 py-10 lg:grid-cols-[220px_1fr] lg:gap-12"
               >
                 <div className="flex items-start gap-3.5">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[10px] bg-[#E8F1FF] text-[#3B82F6]">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[10px] bg-primary-pink/10 text-primary-pink">
                     <Icon className="h-5 w-5" />
                   </span>
                   <div className="pt-0.5">

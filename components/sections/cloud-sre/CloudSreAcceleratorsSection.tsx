@@ -7,7 +7,7 @@ import Container from "@/components/atoms/Container";
 import { cn } from "@/lib/utils";
 import { cloudSreAccelerators } from "@/data/capabilities/cloudSre";
 
-const ACTIVE_TAB = "#7B12F8";
+const ACTIVE_TAB = "#D3287A";
 
 export default function CloudSreAcceleratorsSection() {
   const [activeId, setActiveId] =

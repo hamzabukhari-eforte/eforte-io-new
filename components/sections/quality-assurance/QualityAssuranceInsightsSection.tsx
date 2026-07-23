@@ -63,7 +63,7 @@ export default function QualityAssuranceInsightsSection() {
                       <span
                         key={tag}
                         className="font-medium"
-                        style={{ color: "#2563EB" }}
+                        style={{ color: "#D3287A" }}
                       >
                         {tag}
                       </span>

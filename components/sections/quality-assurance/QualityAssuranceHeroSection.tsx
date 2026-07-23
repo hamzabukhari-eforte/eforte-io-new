@@ -45,7 +45,7 @@ export default function QualityAssuranceHeroSection() {
             transition={{ duration: 0.5, delay: 0.12 }}
             className="shrink-0 md:pb-1"
           >
-            <ContactCTA className="inline-flex items-center justify-center rounded-full bg-black px-8 py-3.5 text-sm font-medium text-white transition-opacity hover:opacity-90 md:px-10 md:py-4 md:text-base">
+            <ContactCTA className="inline-flex items-center justify-center rounded-full bg-primary-pink px-8 py-3.5 text-sm font-medium text-white shadow-[0_18px_40px_rgba(211,40,122,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-pink/90 md:px-10 md:py-4 md:text-base">
               {qualityAssuranceHero.ctaLabel}
             </ContactCTA>
           </motion.div>

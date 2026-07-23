@@ -45,11 +45,11 @@ export default function CyberPillarsSection() {
                 className="flex flex-col items-center rounded-[2rem] border bg-[#0B0D12] px-6 py-10 text-center md:px-8 md:py-12"
                 style={{
                   borderColor: featured
-                    ? "rgba(64, 80, 255, 0.7)"
-                    : "rgba(64, 80, 255, 0.35)",
+                    ? "rgba(211, 40, 122, 0.7)"
+                    : "rgba(211, 40, 122, 0.35)",
                   boxShadow: featured
-                    ? "0 0 48px rgba(64, 80, 255, 0.22)"
-                    : "0 0 28px rgba(64, 80, 255, 0.1)",
+                    ? "0 0 48px rgba(211, 40, 122, 0.22)"
+                    : "0 0 28px rgba(211, 40, 122, 0.1)",
                 }}
               >
                 <div className="relative h-24 w-24 shrink-0 md:h-28 md:w-28 lg:h-32 lg:w-32">

@@ -43,8 +43,8 @@ const advantages: Advantage[] = [
   },
   {
     icon: HiOutlineCog6Tooth,
-    iconColor: "text-[#7C4CFF]",
-    iconBg: "bg-[#7C4CFF]/10",
+    iconColor: "text-primary-pink",
+    iconBg: "bg-primary-pink/10",
     title: "Access to specialized skills.",
     text: "Tap into a diverse talent pool with expertise in both core and niche embedded technologies.",
   },
