@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import ContactCTA from "@/components/atoms/ContactCTA";
 import Container from "@/components/atoms/Container";
-import { DATA_ACCENT } from "@/data/capabilities/data";
 
 export default function DataHeroSection() {
   return (
@@ -35,11 +34,11 @@ export default function DataHeroSection() {
             transition={{ duration: 3, repeat: Infinity }}
             className="grid h-full grid-cols-2 gap-3"
           >
-            <div className="rounded-lg bg-primary-pink/30 p-3">
+            <div className="rounded-lg bg-[#2D52F0]/30 p-3">
               <motion.div
                 animate={{ scaleX: [0.6, 1, 0.6] }}
                 transition={{ duration: 2.5, repeat: Infinity }}
-                className="h-2 w-full origin-left rounded bg-primary-pink"
+                className="h-2 w-full origin-left rounded bg-[#2D52F0]"
               />
               <motion.div
                 animate={{ opacity: [0.5, 1, 0.5] }}
@@ -51,7 +50,7 @@ export default function DataHeroSection() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                className="mx-auto mt-4 h-14 w-14 rounded-full border-4 border-primary-pink/60 border-t-[#F15B50]"
+                className="mx-auto mt-4 h-14 w-14 rounded-full border-4 border-[#2D52F0]/60 border-t-[#F15B50]"
               />
             </div>
             <div className="col-span-2 rounded-lg bg-white/5 p-3">
@@ -70,7 +69,7 @@ export default function DataHeroSection() {
                       repeat: Infinity,
                       delay: i * 0.15,
                     }}
-                    className="w-full rounded-sm bg-primary-pink/50"
+                    className="w-full rounded-sm bg-[#2D52F0]/50"
                     style={{ height }}
                   />
                 ))}
@@ -100,10 +99,7 @@ export default function DataHeroSection() {
           transition={{ duration: 0.55 }}
           className="max-w-2xl"
         >
-          <p
-            className="text-[13px] font-semibold uppercase tracking-[0.18em]"
-            style={{ color: DATA_ACCENT }}
-          >
+          <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
             Capabilities / Data
           </p>
           <h1 className="mt-5 text-4xl font-semibold leading-[1.12] text-white sm:text-5xl lg:text-[48px]">
@@ -116,10 +112,7 @@ export default function DataHeroSection() {
             platforms built for scale.
           </p>
           <div className="mt-9">
-            <ContactCTA
-              className="inline-flex h-12 items-center justify-center rounded-full px-8 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: DATA_ACCENT }}
-            >
+            <ContactCTA className="inline-flex h-12 items-center justify-center rounded-full bg-primary-pink px-8 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(211,40,122,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-pink/90">
               Let&apos;s Talk
             </ContactCTA>
           </div>
