@@ -1,0 +1,120 @@
+<svg viewBox="0 0 800 790" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3b6bf5" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#3b6bf5" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#3b6bf5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <circle cx="331" cy="130" r="42" fill="url(#glow)"/>
+  <circle cx="331" cy="130" r="6" fill="#3b6bf5"/>
+
+  <text x="316" y="123" text-anchor="end" font-size="21" fill="#f2f4f8">Pre-built agents and</text>
+  <text x="316" y="150" text-anchor="end" font-size="21" fill="#f2f4f8">a library of workflows</text>
+
+  <g fill="none" stroke-width="1.4">
+    <path d="M337 130 L520 130 L537 113 L610 113 L627 96 L705 96" stroke="#3b6bf5" opacity="0.9"/>
+    <circle cx="537" cy="104" r="5" fill="none" stroke="#4a5568"/>
+    <path d="M480 62 L705 62" stroke="#4a5568" opacity="0.7"/>
+    <circle cx="538" cy="62" r="4" fill="none" stroke="#4a5568"/>
+    <path d="M560 145 L580 145 L597 128 L620 128" stroke="#3b6bf5" opacity="0.8"/>
+    <circle cx="605" cy="128" r="9" fill="none" stroke="#7d9dfb" stroke-width="1.6"/>
+    <path d="M620 128 L660 128 L660 145 L710 145" stroke="#4a5568"/>
+    <circle cx="660" cy="137" r="4" fill="none" stroke="#4a5568"/>
+    <path d="M580 185 L650 185 L667 168 L730 168" stroke="#4a5568" opacity="0.7"/>
+    <circle cx="580" cy="185" r="3.5" fill="none" stroke="#4a5568"/>
+    <path d="M660 183 L695 183" stroke="#4a5568" opacity="0.6"/>
+    <circle cx="660" cy="183" r="3.5" fill="none" stroke="#4a5568"/>
+  </g>
+
+  <circle cx="286" cy="253" r="42" fill="url(#glow)"/>
+  <circle cx="286" cy="253" r="6" fill="#3b6bf5"/>
+
+  <text x="272" y="246" text-anchor="end" font-size="21" fill="#f2f4f8">Visual agent</text>
+  <text x="272" y="273" text-anchor="end" font-size="21" fill="#f2f4f8">workflow builder</text>
+
+  <g fill="none" stroke-width="1.4">
+    <path d="M292 253 L470 253 L487 236 L525 236" stroke="#3b6bf5" opacity="0.9"/>
+    <circle cx="525" cy="236" r="7" fill="none" stroke="#7d9dfb"/>
+    <path d="M532 236 L565 236 L582 219 L740 219" stroke="#4a5568" opacity="0.7"/>
+    <path d="M480 178 L640 178 L657 195 L680 195" stroke="#4a5568" opacity="0.6"/>
+    <circle cx="480" cy="178" r="4" fill="none" stroke="#4a5568"/>
+    <circle cx="657" cy="195" r="4" fill="none" stroke="#4a5568"/>
+    <path d="M370 288 L440 288 L457 271 L530 271" stroke="#4a5568" opacity="0.7"/>
+    <circle cx="370" cy="288" r="4" fill="none" stroke="#4a5568"/>
+    <path d="M555 271 L620 271" stroke="#4a5568" opacity="0.5"/>
+    <circle cx="620" cy="271" r="5" fill="none" stroke="#4a5568"/>
+    <path d="M330 300 L400 300 L417 283 L470 283" stroke="#3b6bf5" opacity="0.6"/>
+    <circle cx="330" cy="300" r="6" fill="none" stroke="#7d9dfb"/>
+    <path d="M470 310 L555 310 L572 293 L730 293" stroke="#4a5568" opacity="0.6"/>
+  </g>
+
+  <circle cx="341" cy="354" r="42" fill="url(#glow)"/>
+  <circle cx="341" cy="354" r="6" fill="#3b6bf5"/>
+
+  <text x="326" y="361" text-anchor="end" font-size="21" fill="#f2f4f8">Evaluation framework</text>
+
+  <g fill="none" stroke-width="1.4">
+    <path d="M347 354 L555 354 L572 337 L650 337" stroke="#3b6bf5" opacity="0.9"/>
+    <circle cx="555" cy="337" r="5" fill="none" stroke="#4a5568"/>
+    <path d="M480 320 L580 320" stroke="#4a5568" opacity="0.6"/>
+    <circle cx="480" cy="320" r="4" fill="none" stroke="#4a5568"/>
+    <path d="M570 358 L640 358 L657 375 L750 375" stroke="#4a5568" opacity="0.6"/>
+    <circle cx="570" cy="358" r="4" fill="none" stroke="#4a5568"/>
+    <path d="M420 388 L500 388 L517 371 L570 371" stroke="#4a5568" opacity="0.7"/>
+    <circle cx="420" cy="388" r="4" fill="none" stroke="#4a5568"/>
+    <path d="M745 388 L775 388" stroke="#4a5568" opacity="0.7"/>
+    <circle cx="745" cy="388" r="9" fill="none" stroke="#7d9dfb"/>
+    <path d="M690 358 L720 358" stroke="#4a5568" opacity="0.5"/>
+    <circle cx="690" cy="358" r="5" fill="none" stroke="#4a5568"/>
+  </g>
+
+  <circle cx="341" cy="452" r="42" fill="url(#glow)"/>
+  <circle cx="341" cy="452" r="6" fill="#3b6bf5"/>
+
+  <text x="326" y="445" text-anchor="end" font-size="21" fill="#f2f4f8">End-to-end observability</text>
+  <text x="326" y="472" text-anchor="end" font-size="21" fill="#f2f4f8">dashboard</text>
+
+  <g fill="none" stroke-width="1.4">
+    <path d="M347 452 L500 452 L517 435 L560 435" stroke="#3b6bf5" opacity="0.9"/>
+    <circle cx="430" cy="422" r="9" fill="none" stroke="#7d9dfb"/>
+    <path d="M370 422 L430 422 L447 405 L510 405" stroke="#3b6bf5" opacity="0.7"/>
+    <path d="M450 422 L560 422 L577 439 L640 439" stroke="#4a5568" opacity="0.6"/>
+    <path d="M400 480 L470 480 L487 463 L560 463" stroke="#3b6bf5" opacity="0.6"/>
+    <circle cx="400" cy="480" r="4" fill="none" stroke="#4a5568"/>
+    <path d="M375 500 L440 500 L457 483 L680 483" stroke="#4a5568" opacity="0.6"/>
+    <circle cx="557" cy="490" r="7" fill="none" stroke="#7d9dfb"/>
+    <path d="M564 490 L640 490 L657 507 L730 507" stroke="#3b6bf5" opacity="0.6"/>
+  </g>
+
+  <circle cx="373" cy="568" r="46" fill="url(#glow)"/>
+  <circle cx="373" cy="568" r="6" fill="#3b6bf5"/>
+
+  <text x="358" y="561" text-anchor="end" font-size="21" fill="#f2f4f8">Production-ready agent</text>
+  <text x="358" y="588" text-anchor="end" font-size="21" fill="#f2f4f8">ecosystem</text>
+
+  <g fill="none" stroke-width="1.4">
+    <path d="M379 568 L540 568 L557 551 L600 551" stroke="#3b6bf5" opacity="0.9"/>
+    <circle cx="490" cy="536" r="8" fill="none" stroke="#7d9dfb"/>
+    <path d="M420 536 L490 536 L507 519 L560 519" stroke="#3b6bf5" opacity="0.6"/>
+    <path d="M497 536 L590 536 L607 553 L700 553" stroke="#4a5568" opacity="0.6"/>
+    <path d="M410 592 L470 592 L487 575 L570 575" stroke="#3b6bf5" opacity="0.6"/>
+    <circle cx="410" cy="592" r="4" fill="none" stroke="#4a5568"/>
+    <path d="M395 610 L455 610 L472 593 L680 593" stroke="#4a5568" opacity="0.6"/>
+    <circle cx="577" cy="600" r="7" fill="none" stroke="#7d9dfb"/>
+    <path d="M584 600 L650 600 L667 617 L740 617" stroke="#3b6bf5" opacity="0.6"/>
+  </g>
+
+  <g fill="none" stroke-width="1.4" opacity="0.55">
+    <path d="M420 638 L560 638 L577 655 L720 655" stroke="#4a5568"/>
+    <circle cx="420" cy="638" r="4" fill="none" stroke="#4a5568"/>
+    <circle cx="577" cy="655" r="4" fill="none" stroke="#4a5568"/>
+    <path d="M430 668 L500 668 L517 685 L600 685" stroke="#3b6bf5"/>
+    <path d="M460 700 L560 700 L577 683 L650 683" stroke="#4a5568"/>
+    <circle cx="460" cy="700" r="4" fill="none" stroke="#4a5568"/>
+    <path d="M480 728 L570 728" stroke="#4a5568"/>
+    <circle cx="480" cy="728" r="4" fill="none" stroke="#4a5568"/>
+    <path d="M420 758 L490 758 L507 741 L610 741" stroke="#3b6bf5"/>
+  </g>
+</svg>

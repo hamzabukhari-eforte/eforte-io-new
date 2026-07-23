@@ -106,7 +106,7 @@ export default function DataHeroSection() {
           >
             Capabilities / Data
           </p>
-          <h1 className="mt-5 text-4xl font-semibold leading-[1.12] text-white sm:text-5xl lg:text-[52px]">
+          <h1 className="mt-5 text-4xl font-semibold leading-[1.12] text-white sm:text-5xl lg:text-[48px]">
             Unlock the full potential of your data with our data engineering
             solutions
           </h1>

@@ -1,0 +1,10 @@
+export { default as CloudSreHeroSection } from "./CloudSreHeroSection";
+export { default as CloudSreSplitSection } from "./CloudSreSplitSection";
+export { default as CloudSreStudioSection } from "./CloudSreStudioSection";
+export { default as CloudSreAwsPartnerSection } from "./CloudSreAwsPartnerSection";
+export { default as CloudSreApproachSection } from "./CloudSreApproachSection";
+export { default as CloudSreProvidersSection } from "./CloudSreProvidersSection";
+export { default as CloudSreSolutionsSection } from "./CloudSreSolutionsSection";
+export { default as CloudSreAcceleratorsSection } from "./CloudSreAcceleratorsSection";
+export { default as CloudSreSuccessStoriesSection } from "./CloudSreSuccessStoriesSection";
+export { default as CloudSreInsightsSection } from "./CloudSreInsightsSection";

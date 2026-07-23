@@ -190,6 +190,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description: "Agentic AI, GenAI, machine learning, NLP, computer vision.",
             iconName: "chip",
             iconColorClass: "bg-[#ef4444]",
+            href: "/capabilities/artificial-intelligence",
           },
           {
             title: "Data",
@@ -210,6 +211,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description: "Cloud migration, CI/CD pipeline development, SRE, infrastructure-as-code.",
             iconName: "cloud",
             iconColorClass: "bg-[#1e40af]",
+            href: "/capabilities/cloud-sre",
           },
           {
             title: "Cybersecurity",
