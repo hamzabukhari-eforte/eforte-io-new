@@ -19,7 +19,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "eForte Solutions",
-  description: "eForte Solutions is a software development company that provides software development services to businesses.",
+  description:
+    "eForte Solutions is a software development company that provides software development services to businesses.",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default async function RootLayout({

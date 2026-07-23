@@ -95,6 +95,12 @@ export default function Footer() {
                   >
                     Terms &amp; Conditions
                   </Link>
+                  <Link
+                    href="/site-map"
+                    className="text-desc transition-colors duration-200 hover:text-white"
+                  >
+                    Sitemap
+                  </Link>
                 </div>
               </div>
 
