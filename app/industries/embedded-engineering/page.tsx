@@ -8,7 +8,6 @@ import {
   EmbeddedEngineeringTestimonialsSection,
   EmbeddedEngineeringStudioVideoSection,
   EmbeddedEngineeringFaqSection,
-  EmbeddedEngineeringCtaSection,
 } from "@/components/sections/embedded-engineering";
 
 export const metadata = {
@@ -29,7 +28,6 @@ export default function EmbeddedEngineeringPage() {
       <EmbeddedEngineeringTestimonialsSection />
       <EmbeddedEngineeringStudioVideoSection />
       <EmbeddedEngineeringFaqSection />
-      <EmbeddedEngineeringCtaSection />
     </main>
   );
 }
