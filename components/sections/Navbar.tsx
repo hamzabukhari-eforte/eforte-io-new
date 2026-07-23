@@ -218,6 +218,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description: "Secure SDLC, AI-powered cybersecurity, vCISO, penetration testing, AI security assessments.",
             iconName: "shield-check",
             iconColorClass: "bg-[#0f172a]",
+            href: "/capabilities/cybersecurity",
           },
           {
             title: "Platform Engineering",
