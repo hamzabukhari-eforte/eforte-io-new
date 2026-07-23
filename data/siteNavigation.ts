@@ -87,10 +87,10 @@ export const footerColumns: FooterColumn[] = [
   {
     title: "Databricks",
     links: [
-      { label: "Databricks Solutions", href: "#databricks" },
-      { label: "Select Tier Partner", href: "#databricks" },
-      { label: "Certified Databricks Engineers", href: "#databricks" },
-      { label: "20+ Years of Data Experience", href: "#databricks" },
+      { label: "Databricks Solutions", href: "/databricks" },
+      { label: "Select Tier Partner", href: "/databricks" },
+      { label: "Certified Databricks Engineers", href: "/databricks" },
+      { label: "20+ Years of Data Experience", href: "/databricks" },
     ],
   },
 ];

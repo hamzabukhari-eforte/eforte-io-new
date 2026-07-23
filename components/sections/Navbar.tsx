@@ -102,7 +102,7 @@ const navLinks: NavLink[] = [
   { id: "impact-studies", label: "Impact Studies", href: "/impact-studies" },
   { id: "insights", label: "Insights", href: "/blog" },
   { id: "about-us", label: "About Us", href: "/about-us" },
-  { id: "databricks", label: "Databricks", href: "#databricks" },
+  { id: "databricks", label: "Databricks", href: "/databricks" },
 ];
 
 const megaMenuConfig: Record<string, MegaMenuConfig> = {
@@ -483,18 +483,21 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description: "We are a Select Tier Databricks partner, delivering scalable, secure data and AI solutions on Databricks.",
             iconName: "badge-check",
             iconColorClass: "bg-primary-pink",
+            href: "/databricks",
           },
           {
             title: "200+ certified Databricks engineers",
             description: "We have 200+ certified engineers on the Databricks Intelligence Platform.",
             iconName: "user-group",
             iconColorClass: "bg-primary-pink",
+            href: "/databricks",
           },
           {
             title: "20+ years of data experience",
             description: "We have been providing end-to-end data services for over 20 years.",
             iconName: "calendar",
             iconColorClass: "bg-primary-pink",
+            href: "/databricks",
           },
         ],
       },
@@ -533,6 +536,7 @@ const LIGHT_HERO_NAV_ROUTES = [
   "/capabilities/product-management",
   "/capabilities/blockchain",
   "/capabilities/quality-assurance",
+  "/databricks",
 ] as const;
 
 export default function Navbar({ insightsMenuData }: NavbarProps) {
@@ -1000,8 +1004,10 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
                 <div className="space-y-4">
                   {highlights.map((item) => {
                     const IconComponent = item.iconName ? menuIconMap[item.iconName] : null;
-                    return (
-                    <div key={item.title} className="flex gap-3 items-start">
+                    const cardClass =
+                      "flex gap-3 items-start rounded-xl px-3.5 py-3 transition-colors hover:bg-white/5";
+                    const content = (
+                      <>
                       <div
                         className={cn(
                           "shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-xl text-white",
@@ -1016,8 +1022,22 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
                           <p className="mt-0.5 text-xs text-desc">{item.description}</p>
                         )}
                       </div>
-                    </div>
-                  );
+                      </>
+                    );
+                    return item.href ? (
+                      <Link
+                        key={item.title}
+                        href={item.href}
+                        onClick={closeMegaMenu}
+                        className={cardClass}
+                      >
+                        {content}
+                      </Link>
+                    ) : (
+                      <div key={item.title} className={cardClass}>
+                        {content}
+                      </div>
+                    );
                   })}
                 </div>
               </div>

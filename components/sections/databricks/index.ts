@@ -1,0 +1,12 @@
+export { default as DatabricksHeroSection } from "./DatabricksHeroSection";
+export { default as DatabricksGoldPartnerSection } from "./DatabricksGoldPartnerSection";
+export { default as DatabricksSpecializationSection } from "./DatabricksSpecializationSection";
+export { default as DatabricksExperienceSection } from "./DatabricksExperienceSection";
+export { default as DatabricksExpertiseVideoSection } from "./DatabricksExpertiseVideoSection";
+export { default as DatabricksSuccessStoriesSection } from "./DatabricksSuccessStoriesSection";
+export { default as DatabricksServicesSection } from "./DatabricksServicesSection";
+export { default as DatabricksWhitepaperSection } from "./DatabricksWhitepaperSection";
+export { default as DatabricksConferencesSection } from "./DatabricksConferencesSection";
+export { default as DatabricksTestimonialsSection } from "./DatabricksTestimonialsSection";
+export { default as DatabricksInsightsSection } from "./DatabricksInsightsSection";
+export { default as DatabricksFaqSection } from "./DatabricksFaqSection";

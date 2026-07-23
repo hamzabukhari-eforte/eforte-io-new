@@ -102,15 +102,6 @@ export default function DataCaseStudySection() {
                   sizes="(max-width: 1024px) 90vw, 420px"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#9B1B5A]/80 via-primary-pink/30 to-transparent" />
-                <div className="absolute inset-x-0 top-0 p-6 text-center">
-                  <p className="text-sm font-bold tracking-[0.2em] text-white">
-                    {story.brand}
-                  </p>
-                  <p className="mx-auto mt-3 max-w-xs text-lg font-semibold leading-snug text-white">
-                    {story.cardHeading}
-                  </p>
-                </div>
               </motion.div>
             </motion.div>
           </AnimatePresence>
