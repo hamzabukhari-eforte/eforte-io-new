@@ -9,6 +9,7 @@ import IntegratedAIOfferingsSection from "@/components/sections/IntegratedAIOffe
 import ServiceCategoriesSection from "@/components/sections/ServiceCategoriesSection";
 import FoundationalDataLayerSection from "@/components/sections/FoundationalDataLayerSection";
 import AgenticOrchestrationSection from "@/components/sections/AgenticOrchestrationSection";
+import HomeCaseStudiesSection from "@/components/sections/HomeCaseStudiesSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import NavigateAISection from "@/components/sections/NavigateAISection";
 import GlobalLeadersSection from "@/components/sections/GlobalLeadersSection";
@@ -38,6 +39,7 @@ export default function Home() {
       <ServiceCategoriesSection items={defaultServiceCategories} />
       <FoundationalDataLayerSection />
       <ServiceCategoriesSection items={defaultServiceCategories} />
+      <HomeCaseStudiesSection />
       <TestimonialsSection />
       <NavigateAISection />
       <GlobalLeadersSection />
