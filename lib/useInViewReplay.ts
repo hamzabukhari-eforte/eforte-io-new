@@ -6,6 +6,8 @@ import { useInView } from "framer-motion";
 interface UseInViewReplayOptions {
   margin?: string;
   amount?: number | "some" | "all";
+  /** When true, stay in view after the first intersection (framer-motion `once`). */
+  once?: boolean;
   /**
    * Time (ms) after mount during which we never animate an element back out.
    * This prevents the flicker that happens while the page is still loading and
@@ -22,34 +24,34 @@ interface UseInViewReplayOptions {
  */
 export function useInViewReplay(
   ref: RefObject<Element | null>,
-  { margin = "-60px", amount = 0.15, settleMs = 800 }: UseInViewReplayOptions = {}
+  {
+    margin = "-60px",
+    amount = 0.15,
+    once = false,
+    settleMs = 800,
+  }: UseInViewReplayOptions = {}
 ): boolean {
   // framer-motion's margin typing is a branded string; cast keeps callers simple.
   const rawInView = useInView(ref, {
     margin: margin as `${number}px`,
     amount,
+    once,
   });
 
   const [settled, setSettled] = useState(false);
-  const [visible, setVisible] = useState(false);
+  const [seenInView, setSeenInView] = useState(false);
 
   useEffect(() => {
     const timer = window.setTimeout(() => setSettled(true), settleMs);
     return () => window.clearTimeout(timer);
   }, [settleMs]);
 
-  useEffect(() => {
-    if (rawInView) {
-      setVisible(true);
-      return;
-    }
+  // Latch first visibility during render (React-supported pattern) so we do not
+  // need a syncing effect that mirrors rawInView into local state.
+  if (rawInView && !seenInView) {
+    setSeenInView(true);
+  }
 
-    // Only allow animating back out once the initial load has settled. During
-    // the load window we keep the last visible state to prevent flicker.
-    if (settled) {
-      setVisible(false);
-    }
-  }, [rawInView, settled]);
-
-  return visible;
+  if (settled) return rawInView;
+  return rawInView || seenInView;
 }

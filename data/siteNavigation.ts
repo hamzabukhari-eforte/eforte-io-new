@@ -10,6 +10,7 @@ export type FooterColumn = {
   links: SiteNavLink[];
 };
 
+/** Footer columns mirror navbar mega-menu items (same order as top nav). */
 export const footerColumns: FooterColumn[] = [
   {
     title: "AI Pillars",
@@ -22,31 +23,54 @@ export const footerColumns: FooterColumn[] = [
   {
     title: "Capabilities",
     links: [
+      { label: "Capabilities Overview", href: "/capabilities" },
       { label: "Product Design", href: "/capabilities/product-design" },
       { label: "Artificial Intelligence", href: "/capabilities/artificial-intelligence" },
       { label: "Data", href: "/capabilities/data" },
       { label: "App Solutions", href: "/capabilities/app-solutions" },
       { label: "Cloud, SRE, & DevOps", href: "/capabilities/cloud-sre" },
-      { label: "Cybersecurity", href: "/capabilities/cybersecurity" },
-      { label: "Platform Engineering", href: "/capabilities/platform-engineering" },
-      { label: "Quality Assurance", href: "/capabilities/quality-assurance" },
-      { label: "Embedded Engineering", href: "/capabilities/embedded-engineering" },
-      { label: "Product Management", href: "/capabilities/product-management" },
-      { label: "Blockchain", href: "/capabilities/blockchain" },
+      {
+        label: "Staff Augmentation - Dedicated Resource Hiring",
+        href: "#",
+      },
+      // Legacy studios preserved for future reuse (also commented in navbar):
+      // { label: "Cybersecurity", href: "/capabilities/cybersecurity" },
+      // { label: "Platform Engineering", href: "/capabilities/platform-engineering" },
+      // { label: "Quality Assurance", href: "/capabilities/quality-assurance" },
+      // { label: "Embedded Engineering", href: "/capabilities/embedded-engineering" },
+      // { label: "Product Management", href: "/capabilities/product-management" },
+      // { label: "Blockchain", href: "/capabilities/blockchain" },
+    ],
+  },
+  {
+    title: "AI Workflows",
+    links: [
+      { label: "Customer Service & Support", href: "#" },
+      { label: "Sales & Marketing", href: "#" },
+      { label: "Financial Operations", href: "#" },
+      { label: "Human Resources", href: "#" },
+      { label: "Operations & Compliance", href: "#" },
+      { label: "Project Management & Data", href: "#" },
     ],
   },
   {
     title: "Industries",
     links: [
-      { label: "Banking", href: "/industries/banking" },
-      { label: "Financial Services", href: "/industries/financial-services" },
+      { label: "Industries Overview", href: "/industries" },
       { label: "Health & Wellbeing", href: "/industries/healthcare" },
+      { label: "Finance", href: "/industries/financial-services" },
       { label: "Insurance", href: "/industries/insurance" },
-      { label: "Media & Entertainment", href: "/industries/media-entertainment" },
-      {
-        label: "Hi-Tech & Semiconductors",
-        href: "/industries/embedded-engineering",
-      },
+      { label: "Automobile", href: "#" },
+      { label: "Heavy Industries", href: "#" },
+      { label: "BPO & Shared Services", href: "#" },
+      { label: "Hospitality", href: "#" },
+      // Legacy industries preserved for future reuse (also commented in navbar):
+      // { label: "Banking", href: "/industries/banking" },
+      // { label: "Media & Entertainment", href: "/industries/media-entertainment" },
+      // {
+      //   label: "Hi-Tech & Semiconductors",
+      //   href: "/industries/embedded-engineering",
+      // },
     ],
   },
   {
@@ -63,11 +87,13 @@ export const footerColumns: FooterColumn[] = [
     title: "Insights",
     links: [
       { label: "Insights", href: "/blog" },
+      // Key Categories (mega menu)
       { label: "AccelerateAI", href: "/blog" },
       { label: "Data & AI", href: "/blog" },
       { label: "Agentic Factory", href: "/blog" },
       { label: "Cybersecurity", href: "/blog" },
       { label: "Databricks", href: "/blog" },
+      // More Insights (mega menu)
       { label: "White Papers", href: "/blog" },
       { label: "Events", href: "/blog" },
     ],
@@ -76,21 +102,23 @@ export const footerColumns: FooterColumn[] = [
     title: "About Us",
     links: [
       { label: "About eForte", href: "/about-us" },
-      { label: "Locations", href: "/locations" },
+      { label: "Partners", href: "#" },
       { label: "Careers", href: "/careers" },
-      { label: "Events & Webinars", href: "#" },
-      { label: "Press & Announcements", href: "#" },
-      { label: "Diversity & Inclusion", href: "#" },
-      { label: "Trust & Security", href: "#" },
+      // Legacy company items preserved for future reuse (also commented in navbar):
+      // { label: "Locations", href: "/locations" },
+      // { label: "Events & Webinars", href: "#" },
+      // { label: "Press & Announcements", href: "#" },
+      // { label: "Diversity & Inclusion", href: "#" },
+      // { label: "Trust & Security", href: "#" },
     ],
   },
-  {
-    title: "Databricks",
-    links: [
-      { label: "Databricks Solutions", href: "/databricks" },
-      { label: "Select Tier Partner", href: "/databricks" },
-      { label: "Certified Databricks Engineers", href: "/databricks" },
-      { label: "20+ Years of Data Experience", href: "/databricks" },
-    ],
-  },
+  // Legacy Databricks column preserved for future reuse (also commented in navbar):
+  // {
+  //   title: "Databricks",
+  //   links: [
+  //     { label: "Select Tier Partner", href: "/databricks" },
+  //     { label: "200+ Certified Databricks Engineers", href: "/databricks" },
+  //     { label: "20+ Years of Data Experience", href: "/databricks" },
+  //   ],
+  // },
 ];

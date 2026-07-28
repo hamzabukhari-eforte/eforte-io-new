@@ -1,0 +1,21 @@
+---
+description: Preserve pages and components by commenting out instead of deleting
+alwaysApply: true
+---
+
+# Preserve Existing Files
+
+- Do not delete existing files such as pages, components, sections, data files, styles, or assets by default.
+- If something should be removed from active use, comment it out, disable its usage, or detach its imports/routes instead of deleting the file.
+- Prefer preserving recoverable code paths so they can be restored later with minimal effort.
+- Only delete a file when the user explicitly says it can be deleted.
+
+## Preferred approach
+
+- Comment out JSX usage, exports, imports, routes, or config entries first.
+- If full-file commenting is awkward, leave the file in place and remove references to it.
+- Add a short comment explaining that the code/file was intentionally preserved for possible future reuse.
+
+## Exception
+
+- If the user clearly instructs to delete a file, deletion is allowed for that specific request.

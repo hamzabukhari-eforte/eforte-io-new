@@ -29,6 +29,8 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "storage.googleapis.com", pathname: "/**" },
       { protocol: "https", hostname: "cdn.jsdelivr.net", pathname: "/**" },
       { protocol: "https", hostname: "images.unsplash.com", pathname: "/**" },
+      { protocol: "https", hostname: "eforte.io", pathname: "/**" },
+      { protocol: "https", hostname: "static.eforte.io", pathname: "/**" },
       ...(getStrapiRemotePatterns() ?? []),
     ],
   },

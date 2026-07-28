@@ -98,19 +98,21 @@ const impactStudiesMenuItems: MegaMenuItem[] = caseStudies.map((cs) => ({
 const navLinks: NavLink[] = [
   { id: "ai-pillars", label: "AI Pillars", href: "#ai-pillars" },
   { id: "capabilities", label: "Capabilities", href: "#capabilities" },
-  { id: "industries", label: "Industries", href: "#industries" },
+  { id: "ai-workflows", label: "AI Workflows", href: "#ai-workflows" },
+  { id: "industries", label: "Industries", href: "/industries" },
   { id: "impact-studies", label: "Impact Studies", href: "/impact-studies" },
   { id: "insights", label: "Insights", href: "/blog" },
   { id: "about-us", label: "About Us", href: "/about-us" },
-  { id: "databricks", label: "Databricks", href: "/databricks" },
+  // Legacy top-level item preserved for future reuse:
+  // { id: "databricks", label: "Databricks", href: "/databricks" },
 ];
 
 const megaMenuConfig: Record<string, MegaMenuConfig> = {
   "ai-pillars": {
     eyebrow: "AI Pillars",
-    title: "Evolve from Digital-Native to AI-Native",
+    title: "evolvAIng: From Legacy to Intelligence",
     description:
-      "We are shaping the future of next-generation applications by seamlessly integrating advanced data engineering and AI solutions with high-quality UX and robust security.",
+      "We provide end-to-end data and AI solutions that unite security-first approaches with intelligent automation.",
     columns: [
       {
         title: "Featured Pillars",
@@ -118,7 +120,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "Velocity AI",
             description:
-              "Our comprehensive framework of best practices, workflows and AI methodologies.",
+              "eForte's comprehensive framework encompassing best practices, workflows, and advanced AI methodologies.",
             iconName: "lightning-bolt",
             iconColorClass: "bg-[#2563eb]",
             href: "/velocity-ai",
@@ -126,7 +128,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "Agentic Orchestration",
             description:
-              "Build AI agents tailored for industry-specific challenges.",
+              "Design and deploy AI agents customized to address industry-specific challenges.",
             iconName: "view-list",
             iconColorClass: "bg-[#2563eb]",
             href: "/agentic-orchestration",
@@ -134,7 +136,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "Foundational Data Layer",
             description:
-              "Establish the data foundations of next-generation businesses.",
+              "Build robust data foundations that power next-generation enterprises.",
             iconName: "database",
             iconColorClass: "bg-[#2563eb]",
             href: "/foundational-data-layer",
@@ -147,21 +149,22 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "White paper: Building powerful & scalable AI agents",
             description:
-              "Discover our modular architecture for building agentic AI systems using Databricks and LangGraph.",
+              "Discover eForte's modular architecture for building agentic AI systems using Databricks and LangGraph.",
             tag: "White paper",
             imageSrc: "/assets/images/velocity-ai/insight-1.png",
           },
           {
             title: "White paper: Implementing AI in today's world",
             description:
-              "We showcase real-world success stories of our work in AI.",
+              "We showcase real-world success stories of eForte's work in AI.",
             tag: "White paper",
             imageSrc: "/assets/images/velocity-ai/insight-2.png",
           },
           {
-            title: "Insight: How our Prompt System brings structure to AI-powered developments",
+            title:
+              "Insight: How eForte's Prompt System brings structure to AI-powered developments",
             description:
-              "Our Prompt System adds an orchestrated multi-agent workflow inside tools like Cursor and Copilot.",
+              "eForte's Prompt System (EPS) adds an orchestrated, multi-agent workflow inside tools like Cursor and Copilot.",
             tag: "Insight",
             imageSrc: "/assets/images/velocity-ai/insight-3.png",
           },
@@ -173,87 +176,207 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
     eyebrow: "Capabilities",
     title: "Our Studios",
     description:
-      "Our Studio delivery model enables us to address challenges head-on by bringing technology and domain experts together. This ensures we deliver immediate business value with our customized solutions.",
+      "Our Studio delivery model brings together technology and domain experts to tackle complex challenges and deliver customized solutions that create immediate and measurable business value.",
     columns: [
       {
         title: "Our Studios",
         items: [
           {
             title: "Product Design",
-            description: "UX research, service design, design thinking, and UI design.",
+            description:
+              "User experience research, service design, design thinking, and intuitive UI design.",
             iconName: "pencil",
             iconColorClass: "bg-[#7C4CFF]",
             href: "/capabilities/product-design",
           },
           {
             title: "Artificial Intelligence",
-            description: "Agentic AI, GenAI, machine learning, NLP, computer vision.",
+            description:
+              "Agentic AI, generative AI, machine learning, natural language processing, and computer vision.",
             iconName: "chip",
             iconColorClass: "bg-[#ef4444]",
             href: "/capabilities/artificial-intelligence",
           },
           {
             title: "Data",
-            description: "Data manipulation, engineering, visualization, and prediction.",
+            description:
+              "Data engineering, transformation, visualization, and predictive analytics.",
             iconName: "database",
             iconColorClass: "bg-[#0ea5e9]",
             href: "/capabilities/data",
           },
           {
             title: "App Solutions",
-            description: "Native or hybrid, SDK development, integrations, app store positioning.",
+            description:
+              "Native and hybrid app development, SDK creation, system integrations, and app store optimization.",
             iconName: "device-mobile",
             iconColorClass: "bg-[#f97316]",
             href: "/capabilities/app-solutions",
           },
           {
             title: "Cloud, SRE, & DevOps",
-            description: "Cloud migration, CI/CD pipeline development, SRE, infrastructure-as-code.",
+            description:
+              "Cloud migration, CI/CD pipeline implementation, site reliability engineering, and infrastructure as code.",
             iconName: "cloud",
             iconColorClass: "bg-[#1e40af]",
             href: "/capabilities/cloud-sre",
           },
           {
-            title: "Cybersecurity",
-            description: "Secure SDLC, AI-powered cybersecurity, vCISO, penetration testing, AI security assessments.",
+            title: "Staff Augmentation - Dedicated Resource Hiring",
+            description:
+              "Accelerate delivery with dedicated AI, data, cloud, and engineering talent seamlessly embedded into your teams, eliminating hiring complexity and ramp-up time.",
+            iconName: "user-group",
+            iconColorClass: "bg-primary-pink",
+          },
+          // Legacy studios preserved for future reuse:
+          // {
+          //   title: "Cybersecurity",
+          //   description:
+          //     "Secure SDLC, AI-powered cybersecurity, vCISO, penetration testing, AI security assessments.",
+          //   iconName: "shield-check",
+          //   iconColorClass: "bg-[#0f172a]",
+          //   href: "/capabilities/cybersecurity",
+          // },
+          // {
+          //   title: "Platform Engineering",
+          //   description: "Robust infrastructures, scalable APIs, efficient deployment.",
+          //   iconName: "cog",
+          //   iconColorClass: "bg-[#1e3a8a]",
+          //   href: "/capabilities/platform-engineering",
+          // },
+          // {
+          //   title: "Quality Assurance",
+          //   description:
+          //     "AI-augmented QA, test automation, CI/CD, load and performance testing, data testing.",
+          //   iconName: "check-circle",
+          //   iconColorClass: "bg-[#22c55e]",
+          //   href: "/capabilities/quality-assurance",
+          // },
+          // {
+          //   title: "Embedded Engineering",
+          //   description:
+          //     "Development for semiconductors, embedded systems, IoT, & microcontrollers.",
+          //   iconName: "cube",
+          //   iconColorClass: "bg-[#7C4CFF]",
+          //   href: "/capabilities/embedded-engineering",
+          // },
+          // {
+          //   title: "Product Management",
+          //   description: "Product consulting, process management, monetization.",
+          //   iconName: "view-grid",
+          //   iconColorClass: "bg-[#2563eb]",
+          //   href: "/capabilities/product-management",
+          // },
+          // {
+          //   title: "Blockchain",
+          //   description: "Smart contracts, decentralized apps, blockchain integration.",
+          //   iconName: "link",
+          //   iconColorClass: "bg-[#D348EA]",
+          //   href: "/capabilities/blockchain",
+          // },
+        ],
+      },
+      // Legacy nested AI Workflows group preserved for future reuse:
+      // {
+      //   title: "AI Workflows",
+      //   items: [
+      //     {
+      //       title: "AI Workflows",
+      //       description:
+      //         "Where AI Meets Execution. We don't just build software; we engineer business outcomes. By fusing deep industry expertise with our Agentic Orchestration...",
+      //       tag: "Learn More",
+      //     },
+      //     {
+      //       title: "Customer Service & Support",
+      //       description:
+      //         "Autonomous Customer Service Workflows: AI agents route, respond, analyze sentiment, and continuously optimize customer interactions.",
+      //     },
+      //     {
+      //       title: "Sales & Marketing",
+      //       description:
+      //         "Agentic Revenue Workflows: AI agents qualify leads, generate proposals, and accelerate deal cycles.",
+      //     },
+      //     {
+      //       title: "Financial Operations",
+      //       description:
+      //         "Autonomous Financial Workflows: AI agents process invoices, detect fraud, and ensure continuous compliance.",
+      //     },
+      //     {
+      //       title: "Human Resources",
+      //       description:
+      //         "Agentic Talent Workflows: AI agents screen candidates, coordinate onboarding, and manage lifecycle tasks.",
+      //     },
+      //     {
+      //       title: "Operations & Compliance",
+      //       description:
+      //         "AI-Orchestrated Risk & Compliance Workflows: Autonomous monitoring and regulatory reporting with built-in governance.",
+      //     },
+      //     {
+      //       title: "Project Management & Data",
+      //       description:
+      //         "Intelligent Delivery & Data Workflows: AI agents allocate resources, track progress, and generate predictive insights.",
+      //       iconName: "link",
+      //       iconColorClass: "bg-[#D348EA]",
+      //     },
+      //   ],
+      // },
+    ],
+  },
+  "ai-workflows": {
+    eyebrow: "AI Workflows",
+    title: "Where AI Meets Execution",
+    description:
+      "We don't just build software; we engineer business outcomes. By fusing deep industry expertise with our Agentic Orchestration, we design intelligent workflows that automate decisions, accelerate execution, and create measurable business value.",
+    columns: [
+      {
+        title: "Workflow Areas",
+        items: [
+          {
+            title: "Customer Service & Support",
+            description:
+              "Autonomous Customer Service Workflows: AI agents route, respond, analyze sentiment, and continuously optimize customer interactions.",
+            iconName: "user-group",
+            iconColorClass: "bg-primary-pink",
+          },
+          {
+            title: "Sales & Marketing",
+            description:
+              "Agentic Revenue Workflows: AI agents qualify leads, generate proposals, and accelerate deal cycles.",
+            iconName: "lightning-bolt",
+            iconColorClass: "bg-primary-pink",
+          },
+          {
+            title: "Financial Operations",
+            description:
+              "Autonomous Financial Workflows: AI agents process invoices, detect fraud, and ensure continuous compliance.",
+            iconName: "currency-dollar",
+            iconColorClass: "bg-primary-pink",
+          },
+        ],
+      },
+      {
+        title: "More Workflows",
+        items: [
+          {
+            title: "Human Resources",
+            description:
+              "Agentic Talent Workflows: AI agents screen candidates, coordinate onboarding, and manage lifecycle tasks.",
+            iconName: "badge-check",
+            iconColorClass: "bg-primary-pink",
+          },
+          {
+            title: "Operations & Compliance",
+            description:
+              "AI-Orchestrated Risk & Compliance Workflows: Autonomous monitoring and regulatory reporting with built-in governance.",
             iconName: "shield-check",
-            iconColorClass: "bg-[#0f172a]",
-            href: "/capabilities/cybersecurity",
+            iconColorClass: "bg-primary-pink",
           },
           {
-            title: "Platform Engineering",
-            description: "Robust infrastructures, scalable APIs, efficient deployment.",
-            iconName: "cog",
-            iconColorClass: "bg-[#1e3a8a]",
-            href: "/capabilities/platform-engineering",
-          },
-          {
-            title: "Quality Assurance",
-            description: "AI-augmented QA, test automation, CI/CD, load and performance testing, data testing.",
-            iconName: "check-circle",
-            iconColorClass: "bg-[#22c55e]",
-            href: "/capabilities/quality-assurance",
-          },
-          {
-            title: "Embedded Engineering",
-            description: "Development for semiconductors, embedded systems, IoT, & microcontrollers.",
-            iconName: "cube",
-            iconColorClass: "bg-[#7C4CFF]",
-            href: "/capabilities/embedded-engineering",
-          },
-          {
-            title: "Product Management",
-            description: "Product consulting, process management, monetization.",
-            iconName: "view-grid",
-            iconColorClass: "bg-[#2563eb]",
-            href: "/capabilities/product-management",
-          },
-          {
-            title: "Blockchain",
-            description: "Smart contracts, decentralized apps, blockchain integration.",
-            iconName: "link",
-            iconColorClass: "bg-[#D348EA]",
-            href: "/capabilities/blockchain",
+            title: "Project Management & Data",
+            description:
+              "Intelligent Delivery & Data Workflows: AI agents allocate resources, track progress, and generate predictive insights.",
+            iconName: "database",
+            iconColorClass: "bg-primary-pink",
           },
         ],
       },
@@ -261,79 +384,113 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
   },
   industries: {
     eyebrow: "Industries",
-    title: "Industries",
+    title: "Our Industries",
     description:
-      "We partner with leading organizations across industries, delivering technology solutions that drive transformation and measurable results. Our expertise empowers clients to achieve business goals through tailored digital strategies.",
+      "We partner with leading organizations across industries, delivering tailored AI and data solutions that drive transformation and measurable business value.",
     columns: [
       {
         title: "Our Industries",
         items: [
           {
-            title: "Banking",
-            description: "Modernize banking systems for a secure, compliant, AI-ready enterprise ecosystem.",
-            iconName: "office-building",
-            iconColorClass: "bg-[#7C4CFF]",
-            href: "/industries/banking",
-          },
-          {
-            title: "Financial Services",
-            description: "Secure, data and AI-driven financial services - from paytech and financial infrastructure to risk, compliance and analytics.",
-            iconName: "currency-dollar",
-            iconColorClass: "bg-[#7C4CFF]",
-            href: "/industries/financial-services",
-          },
-          {
             title: "Health & Wellbeing",
-            description: "People-centric healthcare solutions, from virtual care to integrations and smart devices.",
+            description:
+              "AI-driven healthcare solutions improving patient outcomes, operational efficiency, and personalized care.",
             iconName: "heart",
             iconColorClass: "bg-[#7C4CFF]",
             href: "/industries/healthcare",
           },
           {
+            title: "Finance",
+            description:
+              "Intelligent AI and data platforms enabling smarter decisions, risk mitigation, and digital financial transformation.",
+            iconName: "currency-dollar",
+            iconColorClass: "bg-[#7C4CFF]",
+            href: "/industries/financial-services",
+          },
+          {
             title: "Insurance",
-            description: "AI-powered insurance solutions - from accelerating policy lifecycle management to accelerating claims processing.",
+            description:
+              "AI-powered automation and analytics streamlining underwriting, claims processing, and customer engagement.",
             iconName: "shield-check",
             iconColorClass: "bg-[#7C4CFF]",
             href: "/industries/insurance",
           },
           {
-            title: "Media & Entertainment",
-            description: "AI-native solutions to deliver personalized, real-time, and immersive experiences at scale.",
-            iconName: "play",
+            title: "Automobile",
+            description:
+              "Advanced AI enabling connected vehicles, predictive maintenance, and intelligent manufacturing ecosystems.",
+            iconName: "device-mobile",
             iconColorClass: "bg-[#7C4CFF]",
-            href: "/industries/media-entertainment",
           },
           {
-            title: "Hi-Tech & Semiconductors",
-            description: "Semiconductor design, firmware, and IoT development, AI-powered embedded systems.",
-            iconName: "chip",
+            title: "Heavy Industries",
+            description:
+              "Industrial AI solutions driving predictive maintenance, operational excellence, and smart factory transformation.",
+            iconName: "office-building",
             iconColorClass: "bg-[#7C4CFF]",
-            href: "/industries/embedded-engineering",
           },
+          {
+            title: "BPO & Shared Services",
+            description:
+              "Agentic AI and automation enhancing service delivery, productivity, and scalable customer operations.",
+            iconName: "user-group",
+            iconColorClass: "bg-[#7C4CFF]",
+          },
+          {
+            title: "Hospitality",
+            description:
+              "AI-powered personalization and operational intelligence elevating guest experiences and optimizing hospitality operations.",
+            iconName: "badge-check",
+            iconColorClass: "bg-[#7C4CFF]",
+          },
+          // Legacy industries preserved for future reuse:
+          // {
+          //   title: "Banking",
+          //   description:
+          //     "Modernize banking systems for a secure, compliant, AI-ready enterprise ecosystem.",
+          //   iconName: "office-building",
+          //   iconColorClass: "bg-[#7C4CFF]",
+          //   href: "/industries/banking",
+          // },
+          // {
+          //   title: "Media & Entertainment",
+          //   description:
+          //     "AI-native solutions to deliver personalized, real-time, and immersive experiences at scale.",
+          //   iconName: "play",
+          //   iconColorClass: "bg-[#7C4CFF]",
+          //   href: "/industries/media-entertainment",
+          // },
+          // {
+          //   title: "Hi-Tech & Semiconductors",
+          //   description:
+          //     "Semiconductor design, firmware, and IoT development, AI-powered embedded systems.",
+          //   iconName: "chip",
+          //   iconColorClass: "bg-[#7C4CFF]",
+          //   href: "/industries/embedded-engineering",
+          // },
         ],
       },
       {
         title: "Industry Insights",
         items: [
           {
-            title: "The healthcare cybersecurity crisis: Lessons from Blackout-26 and how to protect patient data under HIPAA",
-            description: "Blackout-26 revealed how cyberattacks can cripple healthcare operations and dire...",
-            imageSrc: "/assets/images/velocity-ai/insight-1.png",
-          },
-          {
-            title: "List of digital health, healthcare IT, & medtech conferences in 2026",
-            description: "Check out our curated list of the most important summits for 2026 in the Digital...",
+            title:
+              "List of digital health, healthcare IT, & medtech conferences in 2026",
             imageSrc: "/assets/images/velocity-ai/insight-2.png",
           },
           {
             title: "List of fintech conferences in 2026",
-            description: "If you're interested in expanding your understanding of the Fintech industry, co...",
             imageSrc: "/assets/images/velocity-ai/insight-3.png",
           },
           {
-            title: "Webinar: Agentic AI in finance - How to build Agents using Databricks and LangGraph",
-            description: "In this post, I share how to build production-grade systems in finance. By combi...",
+            title:
+              "Webinar: Agentic AI in finance - How to build Agents using Databricks and LangGraph",
             imageSrc: "/assets/images/velocity-ai/case-study-myrow.png",
+          },
+          {
+            title:
+              "Insights from the AI-Native Banking & Fintech Conference",
+            imageSrc: "/assets/images/velocity-ai/insight-1.png",
           },
         ],
       },
@@ -348,6 +505,15 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
       {
         title: "Case Studies",
         items: impactStudiesMenuItems,
+        // Manual replacement list preserved for future reuse:
+        // items: [
+        //   { title: "M&A Process Automation for Iberian Ventures", href: "/impact-studies" },
+        //   { title: "Trade Process Automation for GlobalTrade Solutions", href: "/impact-studies" },
+        //   { title: "Insurance Claims Processing Automation for Allied Insurance", href: "/impact-studies" },
+        //   { title: "Clinical Trial Data Management for BioResearch Labs", href: "/impact-studies" },
+        //   { title: "Accounts Payable Automation for Global Manufacturing Corp", href: "/impact-studies" },
+        //   { title: "Tach Ignite (Day Zero startup accelerator partnership)", href: "/impact-studies" },
+        // ],
       },
     ],
   },
@@ -428,101 +594,121 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
   },
   "about-us": {
     eyebrow: "About Us",
-    title: "From digital-native to AI-native",
+    title: "About us",
     description:
-      "With decades of experience, we bring together strategy, design, data, and engineering to deliver AI-native products.",
+      "eForte helps businesses evolve from Digital-Native to AI-Native.",
     columns: [
       {
         title: "About Us",
         items: [
           {
             title: "About eForte",
-            tag: "ABOUT US",
-            description: "With 20+ years of experience, our expertise spans the AI lifecycle, from data platforms to agentic products.",
+            tag: "Learn more",
+            description:
+              "eForte helps businesses evolve from Digital-Native to AI-Native.",
             imageSrc: "/assets/images/landing/Expertise.png",
             href: "/about-us",
           },
           {
+            title: "Partners",
+            tag: "PARTNERS",
+            description:
+              "Explore our ecosystem of technology and delivery partnerships powering AI and data transformation.",
+            imageSrc: "/assets/images/about/handshake.svg",
+          },
+          {
             title: "Careers",
             tag: "CAREERS",
-            description: "Shape the AI future with cross-functional teams working on data, AI, and human-centered product design.",
+            description:
+              "Backed by 20 years of experience, we deliver end-to-end AI capabilities across data engineering, agentic AI development, cloud integration, and human-centric product design.",
             imageSrc: "/assets/images/velocity-ai/cta-team.png",
             href: "/careers",
           },
-          {
-            title: "Locations",
-            tag: "LOCATIONS",
-            description: "Global presence with local delivery, so we can partner with you wherever you are.",
-            imageSrc: "/assets/images/landing/navigate.png",
-            href: "/locations",
-          },
         ],
       },
-      {
-        title: "More About Us",
-        items: [
-          { title: "Events & Webinars" },
-          { title: "Press & Announcements" },
-          { title: "Diversity & Inclusion" },
-          { title: "Trust & Security" },
-        ],
-      },
+      // Legacy company items preserved for future reuse:
+      // {
+      //   title: "Locations",
+      //   tag: "LOCATIONS",
+      //   description:
+      //     "Global presence with local delivery, so we can partner with you wherever you are.",
+      //   imageSrc: "/assets/images/landing/navigate.png",
+      //   href: "/locations",
+      // },
+      // {
+      //   title: "More About Us",
+      //   items: [
+      //     { title: "Events & Webinars" },
+      //     { title: "Press & Announcements" },
+      //     { title: "Diversity & Inclusion" },
+      //     { title: "Trust & Security" },
+      //   ],
+      // },
     ],
   },
-  databricks: {
-    eyebrow: "Databricks",
-    title: "Databricks Solutions",
-    description:
-      "We've empowered numerous industry leaders to harness the full potential of Databricks' Intelligence platform, driving transformative results and measurable business impact.",
-    columns: [
-      {
-        title: "Highlights of Our Partnership",
-        items: [
-          {
-            title: "Select Tier Partner",
-            description: "We are a Select Tier Databricks partner, delivering scalable, secure data and AI solutions on Databricks.",
-            iconName: "badge-check",
-            iconColorClass: "bg-primary-pink",
-            href: "/databricks",
-          },
-          {
-            title: "200+ certified Databricks engineers",
-            description: "We have 200+ certified engineers on the Databricks Intelligence Platform.",
-            iconName: "user-group",
-            iconColorClass: "bg-primary-pink",
-            href: "/databricks",
-          },
-          {
-            title: "20+ years of data experience",
-            description: "We have been providing end-to-end data services for over 20 years.",
-            iconName: "calendar",
-            iconColorClass: "bg-primary-pink",
-            href: "/databricks",
-          },
-        ],
-      },
-      {
-        title: "Databricks Insights",
-        items: [
-          {
-            title: "Solving Warehouse Migration at scale with our Governance Migration Accelerator",
-            description: "Our Governance Migration Accelerator automates the migration of governable...",
-            imageSrc: "/assets/images/landing/nist.png",
-          },
-          {
-            title: "Our Unstructured Knowledge Assistant: Turning dispersed documents into searchable intelligence",
-            description: "Turn enterprise files into a governed knowledge layer on Databricks with semanti...",
-            imageSrc: "/assets/images/velocity-ai/case-study-myrow.png",
-          },
-          {
-            title: "Building Secure and Reliable RAG in Databricks",
-            description: "A standard RAG stack is not enough for production. This article shows how to bui...",
-            imageSrc: "/assets/images/velocity-ai/insight-2.png",
-          },
-        ],
-      },
-    ],
-  },
+  // Legacy Databricks mega menu preserved for future reuse:
+  // databricks: {
+  //   eyebrow: "Databricks",
+  //   title: "Databricks Solutions",
+  //   description:
+  //     "We've empowered numerous industry leaders to harness the full potential of Databricks' Intelligence platform, driving transformative results and measurable business impact.",
+  //   columns: [
+  //     {
+  //       title: "Highlights of Our Partnership",
+  //       items: [
+  //         {
+  //           title: "Select Tier Partner",
+  //           description:
+  //             "We are a Select Tier Databricks partner, delivering scalable, secure data and AI solutions on Databricks.",
+  //           iconName: "badge-check",
+  //           iconColorClass: "bg-primary-pink",
+  //           href: "/databricks",
+  //         },
+  //         {
+  //           title: "200+ certified Databricks engineers",
+  //           description:
+  //             "We have 200+ certified engineers on the Databricks Intelligence Platform.",
+  //           iconName: "user-group",
+  //           iconColorClass: "bg-primary-pink",
+  //           href: "/databricks",
+  //         },
+  //         {
+  //           title: "20+ years of data experience",
+  //           description:
+  //             "We have been providing end-to-end data services for over 20 years.",
+  //           iconName: "calendar",
+  //           iconColorClass: "bg-primary-pink",
+  //           href: "/databricks",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Databricks Insights",
+  //       items: [
+  //         {
+  //           title:
+  //             "Solving Warehouse Migration at scale with our Governance Migration Accelerator",
+  //           description:
+  //             "Our Governance Migration Accelerator automates the migration of governable...",
+  //           imageSrc: "/assets/images/landing/nist.png",
+  //         },
+  //         {
+  //           title:
+  //             "Our Unstructured Knowledge Assistant: Turning dispersed documents into searchable intelligence",
+  //           description:
+  //             "Turn enterprise files into a governed knowledge layer on Databricks with semanti...",
+  //           imageSrc: "/assets/images/velocity-ai/case-study-myrow.png",
+  //         },
+  //         {
+  //           title: "Building Secure and Reliable RAG in Databricks",
+  //           description:
+  //             "A standard RAG stack is not enough for production. This article shows how to bui...",
+  //           imageSrc: "/assets/images/velocity-ai/insight-2.png",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
 };
 
 export interface NavbarProps {
@@ -573,11 +759,11 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
 
     // Special layout for About Us to more closely match reference structure
     if (activeMenu === "about-us") {
-      const aboutCards = config.columns[0]?.items ?? [];
+      const companyCards = config.columns[0]?.items ?? [];
 
       return (
         <div
-          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
+          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-[100]"
         >
           {/* Backdrop */}
           <div
@@ -591,7 +777,7 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
             onMouseLeave={closeMegaMenu}
           >
             <Container className="py-10 flex gap-10 text-white">
-              {/* Left narrative + link groups */}
+              {/* Left narrative */}
               <div className="w-1/3 space-y-6 max-w-sm">
                 {config.eyebrow && (
                   <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary-pink">
@@ -602,58 +788,25 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
                   {config.title}
                 </h2>
                 <p className="text-sm text-desc">{config.description}</p>
-                <button className="mt-1 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80">
+                <div className="mt-4 h-px w-10 bg-white/10" />
+
+                <Link
+                  href="/about-us"
+                  onClick={closeMegaMenu}
+                  className="inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80"
+                >
                   Learn more
                   <span className="ml-1 text-base" aria-hidden="true">
                     →
                   </span>
-                </button>
+                </Link>
 
-                <div className="mt-4 h-px w-10 bg-white/10" />
-
-                <div className="space-y-6 text-sm">
-                  <div>
-                    <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary-pink">
-                      About Us
-                    </p>
-                    <ul className="mt-2 space-y-1.5 text-desc">
-                      <li className="cursor-pointer hover:text-white">
-                        Events &amp; Webinars
-                      </li>
-                      <li className="cursor-pointer hover:text-white">
-                        Press &amp; Announcements
-                      </li>
-                      <li className="cursor-pointer hover:text-white">
-                        Diversity &amp; Inclusion
-                      </li>
-                      <li className="cursor-pointer hover:text-white">
-                        Trust &amp; Security
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary-pink">
-                      Partners
-                    </p>
-                    <ul className="mt-2 space-y-1.5 text-desc">
-                      <li className="cursor-pointer hover:text-white">
-                        Databricks
-                      </li>
-                      <li className="cursor-pointer hover:text-white">
-                        Amazon Web Services (AWS)
-                      </li>
-                      <li className="cursor-pointer hover:text-white">
-                        Snowflake
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                {/* Legacy company link groups intentionally preserved in config comments */}
               </div>
 
               {/* Right image cards row */}
               <div className="flex-1 grid grid-cols-3 gap-6">
-                {aboutCards.map((item) => {
+                {companyCards.map((item) => {
                   const cardClass =
                     "group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/6 shadow-lg shadow-black/20 hover:bg-white/8 hover:border-white/15 transition-all duration-200 cursor-pointer";
 
@@ -716,12 +869,12 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
       );
     }
 
-    // Capabilities: left intro + right = single "OUR STUDIOS" grid (11 items, 2 columns)
+    // Capabilities: left intro + right = single "OUR STUDIOS" grid
     if (activeMenu === "capabilities") {
       const studios = config.columns[0]?.items ?? [];
       return (
         <div
-          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
+          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-[100]"
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
@@ -737,10 +890,14 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
                 )}
                 <h2 className="text-2xl font-semibold leading-snug">{config.title}</h2>
                 <p className="text-sm text-desc">{config.description}</p>
-                <button className="mt-1 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80">
+                <Link
+                  href="/capabilities"
+                  onClick={closeMegaMenu}
+                  className="mt-1 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80"
+                >
                   Learn more
                   <span className="ml-1 text-base" aria-hidden="true">→</span>
-                </button>
+                </Link>
                 <div className="mt-4 h-px w-10 bg-white/10" />
               </div>
               <div className="flex-1">
@@ -799,7 +956,7 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
       const caseStudies = config.columns[0]?.items ?? [];
       return (
         <div
-          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
+          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-[100]"
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
@@ -815,10 +972,14 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
                 )}
                 <h2 className="text-2xl font-semibold leading-snug">{config.title}</h2>
                 <p className="text-sm text-desc">{config.description}</p>
-                <button className="mt-1 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80">
+                <Link
+                  href="/impact-studies"
+                  onClick={closeMegaMenu}
+                  className="mt-1 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80"
+                >
                   Learn more
                   <span className="ml-1 text-base" aria-hidden="true">→</span>
-                </button>
+                </Link>
                 <div className="mt-4 h-px w-10 bg-white/10" />
               </div>
               <div className="flex-1 grid grid-cols-2 gap-x-10 gap-y-0">
@@ -870,7 +1031,7 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
       const moreInsights = config.columns[3]?.items ?? [];
       return (
         <div
-          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
+          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-[100]"
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
@@ -886,10 +1047,14 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
                 )}
                 <h2 className="text-2xl font-semibold leading-snug">{config.title}</h2>
                 <p className="text-sm text-desc">{config.description}</p>
-                <button className="mt-1 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80">
+                <Link
+                  href="/blog"
+                  onClick={closeMegaMenu}
+                  className="mt-1 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80"
+                >
                   Learn more
                   <span className="ml-1 text-base" aria-hidden="true">→</span>
-                </button>
+                </Link>
                 <div className="h-px w-10 bg-white/10" />
                 <div>
                   <p className="text-xs font-semibold tracking-[0.2em] uppercase text-desc">
@@ -980,7 +1145,7 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
       const insightCards = config.columns[1]?.items ?? [];
       return (
         <div
-          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
+          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-[100]"
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
@@ -1075,7 +1240,7 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
 
     return (
       <div
-        className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-40"
+        className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-[100]"
       >
         {/* Backdrop */}
         <div
@@ -1100,12 +1265,18 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
                 {config.title}
               </h2>
               <p className="text-sm text-desc">{config.description}</p>
-              <button className="mt-2 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80">
-                Learn more
-                <span className="ml-1 text-base" aria-hidden="true">
-                  →
-                </span>
-              </button>
+              {activeMenu !== "ai-pillars" ? (
+                <Link
+                  href={activeMenu === "industries" ? "/industries" : "#"}
+                  onClick={closeMegaMenu}
+                  className="mt-2 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80"
+                >
+                  Learn more
+                  <span className="ml-1 text-base" aria-hidden="true">
+                    →
+                  </span>
+                </Link>
+              ) : null}
             </div>
 
             {/* Right content columns */}
@@ -1237,7 +1408,7 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
     <>
       <nav
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "fixed top-0 left-0 right-0 z-[110] transition-all duration-300",
           "h-16 md:h-20",
           useSolidNav
             ? "bg-black/60 backdrop-blur-md shadow-sm"
@@ -1321,7 +1492,7 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
       {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          "fixed inset-0 z-50 xl:hidden transition-all duration-300",
+          "fixed inset-0 z-[110] xl:hidden transition-all duration-300",
           isMobileMenuOpen
             ? "opacity-100 visible"
             : "opacity-0 invisible"

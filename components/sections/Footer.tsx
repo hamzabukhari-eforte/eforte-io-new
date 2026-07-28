@@ -42,16 +42,16 @@ export default function Footer() {
             </Link>
           </motion.div>
 
-          {/* Footer Columns */}
+          {/* Footer Columns — one row on lg (7 cols matching top nav; Databricks commented out) */}
           <motion.div
-            className="columns-2 md:columns-3 lg:columns-4 xl:columns-7 gap-8 md:gap-12 mb-12 md:mb-16"
+            className="mb-12 grid grid-cols-2 gap-8 md:mb-16 md:grid-cols-3 lg:grid-cols-7 md:gap-10 lg:gap-6"
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           >
             {footerColumns.map((column) => (
-              <div key={column.title} className="break-inside-avoid mb-8">
-                <h3 className="text-sm md:text-base font-semibold text-white mb-4">
+              <div key={column.title}>
+                <h3 className="mb-4 text-sm font-semibold text-white md:text-base">
                   {column.title}
                 </h3>
                 <ul className="space-y-3">
@@ -59,7 +59,7 @@ export default function Footer() {
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className="text-sm text-desc hover:text-white transition-colors duration-200"
+                        className="text-sm text-desc transition-colors duration-200 hover:text-white"
                       >
                         {link.label}
                       </Link>
