@@ -45,12 +45,13 @@ export const footerColumns: FooterColumn[] = [
   {
     title: "AI Workflows",
     links: [
-      { label: "Customer Service & Support", href: "#" },
-      { label: "Sales & Marketing", href: "#" },
-      { label: "Financial Operations", href: "#" },
-      { label: "Human Resources", href: "#" },
-      { label: "Operations & Compliance", href: "#" },
-      { label: "Project Management & Data", href: "#" },
+      { label: "AI Workflows Overview", href: "/ai-workflows" },
+      { label: "Customer Service & Support", href: "/ai-workflows/customer-service" },
+      { label: "Sales & Marketing", href: "/ai-workflows/sales-marketing" },
+      { label: "Financial Operations", href: "/ai-workflows/financial-operations" },
+      { label: "Human Resources", href: "/ai-workflows/human-resources" },
+      { label: "Operations & Compliance", href: "/ai-workflows/operations-compliance" },
+      { label: "Project Management & Data", href: "/ai-workflows/project-management-data" },
     ],
   },
   {

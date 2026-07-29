@@ -97,8 +97,8 @@ const impactStudiesMenuItems: MegaMenuItem[] = caseStudies.map((cs) => ({
 
 const navLinks: NavLink[] = [
   { id: "ai-pillars", label: "AI Pillars", href: "#ai-pillars" },
-  { id: "capabilities", label: "Capabilities", href: "#capabilities" },
-  { id: "ai-workflows", label: "AI Workflows", href: "#ai-workflows" },
+  { id: "capabilities", label: "Capabilities", href: "/capabilities" },
+  { id: "ai-workflows", label: "AI Workflows", href: "/ai-workflows" },
   { id: "industries", label: "Industries", href: "/industries" },
   { id: "impact-studies", label: "Impact Studies", href: "/impact-studies" },
   { id: "insights", label: "Insights", href: "/blog" },
@@ -337,6 +337,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
               "Autonomous Customer Service Workflows: AI agents route, respond, analyze sentiment, and continuously optimize customer interactions.",
             iconName: "user-group",
             iconColorClass: "bg-primary-pink",
+            href: "/ai-workflows/customer-service",
           },
           {
             title: "Sales & Marketing",
@@ -344,6 +345,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
               "Agentic Revenue Workflows: AI agents qualify leads, generate proposals, and accelerate deal cycles.",
             iconName: "lightning-bolt",
             iconColorClass: "bg-primary-pink",
+            href: "/ai-workflows/sales-marketing",
           },
           {
             title: "Financial Operations",
@@ -351,6 +353,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
               "Autonomous Financial Workflows: AI agents process invoices, detect fraud, and ensure continuous compliance.",
             iconName: "currency-dollar",
             iconColorClass: "bg-primary-pink",
+            href: "/ai-workflows/financial-operations",
           },
         ],
       },
@@ -363,6 +366,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
               "Agentic Talent Workflows: AI agents screen candidates, coordinate onboarding, and manage lifecycle tasks.",
             iconName: "badge-check",
             iconColorClass: "bg-primary-pink",
+            href: "/ai-workflows/human-resources",
           },
           {
             title: "Operations & Compliance",
@@ -370,6 +374,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
               "AI-Orchestrated Risk & Compliance Workflows: Autonomous monitoring and regulatory reporting with built-in governance.",
             iconName: "shield-check",
             iconColorClass: "bg-primary-pink",
+            href: "/ai-workflows/operations-compliance",
           },
           {
             title: "Project Management & Data",
@@ -377,6 +382,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
               "Intelligent Delivery & Data Workflows: AI agents allocate resources, track progress, and generate predictive insights.",
             iconName: "database",
             iconColorClass: "bg-primary-pink",
+            href: "/ai-workflows/project-management-data",
           },
         ],
       },
@@ -1267,7 +1273,15 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
               <p className="text-sm text-desc">{config.description}</p>
               {activeMenu !== "ai-pillars" ? (
                 <Link
-                  href={activeMenu === "industries" ? "/industries" : "#"}
+                  href={
+                    activeMenu === "industries"
+                      ? "/industries"
+                      : activeMenu === "ai-workflows"
+                        ? "/ai-workflows"
+                        : activeMenu === "capabilities"
+                          ? "/capabilities"
+                          : "#"
+                  }
                   onClick={closeMegaMenu}
                   className="mt-2 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80"
                 >

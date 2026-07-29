@@ -2,6 +2,7 @@
 
 import ContactCTA from "@/components/atoms/ContactCTA";
 import { capabilityHero, capabilityMedia } from "@/data/capabilitiesOverview";
+import { HiSparkles } from "react-icons/hi2";
 import CapabilitiesReveal from "./CapabilitiesReveal";
 import styles from "./capabilitiesOverview.module.css";
 
@@ -29,7 +30,10 @@ export default function CapabilitiesOverviewHeroSection() {
           mobileDuration={400}
           once
         >
-          <p className={styles.heroLabel}>{capabilityHero.label}</p>
+          <p className={styles.heroLabel}>
+            <HiSparkles aria-hidden />
+            {capabilityHero.label}
+          </p>
           <h1 className={styles.heroTitle}>
             {capabilityHero.titleLines.map((line) => (
               <span key={line}>{line} </span>
