@@ -642,11 +642,12 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             href: "/about-us",
           },
           {
-            title: "Partners",
+            title: "Technology Partners",
             tag: "PARTNERS",
             description:
               "Explore our ecosystem of technology and delivery partnerships powering AI and data transformation.",
             imageSrc: "/assets/images/about/handshake.svg",
+            href: "/technology-partners",
           },
           {
             title: "Careers",

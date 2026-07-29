@@ -103,7 +103,7 @@ export const footerColumns: FooterColumn[] = [
     title: "About Us",
     links: [
       { label: "About eForte", href: "/about-us" },
-      { label: "Partners", href: "#" },
+      { label: "Technology Partners", href: "/technology-partners" },
       { label: "Careers", href: "/careers" },
       // Legacy company items preserved for future reuse (also commented in navbar):
       // { label: "Locations", href: "/locations" },
