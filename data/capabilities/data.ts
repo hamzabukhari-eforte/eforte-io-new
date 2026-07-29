@@ -28,75 +28,83 @@ export const dataStudioTabs = [
     id: "governance",
     label: "Data governance",
     description:
-      "Our specialized data governance services are the base of all data initiatives - ensuring data quality, compliance, and security.",
+      "Foundational governance services that underpin every data initiative, protecting quality, compliance, and security.",
     image: "/assets/images/capabilities/data-governance.png",
   },
   {
     id: "storage",
     label: "Data storage",
     description:
-      "We create modern data warehouse and data lake solutions on top of technologies including, but not limited to, Snowflake, Synapse and Redshift.",
+      "Modern storage architectures designed for performance, scalability, and cost efficiency.",
     image: "/assets/images/capabilities/data-storage.webp",
   },
   {
     id: "management",
     label: "Data management",
     description:
-      "Our experts will efficiently organize and maintain your data for easy access and use.",
+      "Structured processes to organize, catalog, and control data throughout its lifecycle.",
     image: "/assets/images/capabilities/data-management.webp",
   },
   {
     id: "analytics",
     label: "Analytics & insight generation",
     description:
-      "Our data analyst experts use advanced statistical techniques, find patterns, and discover insights. BI tools include PowerBI, Tableau, QlikView, Sense, Domo.",
+      "Capabilities that turn raw information into actionable, decision-ready insights.",
     image: "/assets/images/capabilities/analytics.webp",
   },
   {
     id: "genai",
     label: "AI & GenAI",
     description:
-      "We build secure, proprietary knowledge-bases that can be queried with natural language, with 95%+ accuracy and zero hallucinations. LLM tech includes Langchain, GPT, and others.",
+      "Data foundations that support advanced AI and generative AI use cases.",
     image: "/assets/images/capabilities/genai.webp",
   },
 ] as const;
 
 export const dataServices = [
   {
-    id: "data-quality",
-    title: "Data Quality and Governance",
+    id: "platform",
+    title: "Data platform creation",
     bullets: [
-      "Define quality standards and monitoring across pipelines",
-      "Establish ownership, stewardship, and accountability models",
+      "eForte designs and builds comprehensive data platforms tailored to your needs, spanning cloud, on-premises, and hybrid environments. Solutions are built to be scalable and maintainable, with strong performance, security, and seamless integration at their core.",
     ],
-    tags: ["Data Discovery", "Data Quality Management"],
+    tags: [
+      "Architecture design",
+      "Batch & realtime data processing",
+      "Data security & compliance",
+    ],
   },
   {
-    id: "mdm",
-    title: "Master Data Management (MDM)",
+    id: "team",
+    title: "Expand your team with expert data engineers",
     bullets: [
-      "Unify golden records across business domains",
-      "Enable trusted reference data for analytics and operations",
+      "Tap into a flexible pool of data engineering specialists to grow your capabilities, enhance data quality, and move faster. eForte's modular teams integrate smoothly into your existing structures, tools, and workflows.",
     ],
-    tags: ["Data Stewardship", "Data Lineage"],
+    tags: ["Rapid team expansion", "Knowledge transfer", "Project acceleration"],
   },
   {
-    id: "metadata",
-    title: "Metadata Management",
+    id: "integrate",
+    title: "Integrate new data sources into your platform",
     bullets: [
-      "Catalog datasets, schemas, and transformations",
-      "Improve discoverability for analysts and engineers",
+      "eForte integrates diverse data sources into unified platforms using modern tools and protocols. This gives users a single place to access and analyze information from databases, warehouses, and live data streams.",
     ],
-    tags: ["Data Cataloging", "Metadata Search"],
+    tags: [
+      "Diverse data source connectivity",
+      "Data quality management",
+      "Realtime or batch integrations",
+    ],
   },
   {
-    id: "policy",
-    title: "Policy and Privacy",
+    id: "governance",
+    title: "Data governance consultancy & mentoring",
     bullets: [
-      "Align data usage with regulatory requirements",
-      "Implement consent, retention, and access controls",
+      "eForte's cloud-aware governance and security approach helps organizations reduce risk and avoid disruptions. The team supports you with advanced assessments and ongoing guidance to keep your data estate safe and compliant.",
     ],
-    tags: ["Data Privacy", "Consent Management"],
+    tags: [
+      "Data policy design",
+      "Governance best practices",
+      "Regulatory compliance",
+    ],
   },
 ];
 
@@ -239,26 +247,41 @@ export const dataFaqs = [
   {
     question: "How does eForte improve data quality?",
     answer:
-      "We embed quality checks, monitoring, and stewardship into pipelines so issues are caught early. That includes automated tests, SLAs, observability, and clear ownership models for critical datasets.",
+      "eForte improves data quality through profiling, validation, and monitoring, ensuring consistency and compliance with business standards.",
   },
   {
     question: "What data sources does eForte typically integrate?",
     answer:
-      "We integrate databases, warehouses, SaaS platforms, event streams, files, and APIs — from transactional systems to real-time feeds — into a unified analytics-ready platform.",
+      "We seamlessly connect to a wide range of data sources, including Amazon S3, Azure Blob Storage, Google Cloud Storage, Snowflake, SQL and NoSQL databases, Hadoop file systems, and formats like CSV, XML, and JSON. For data integration, we use tools such as Matillion, Alteryx, and Fivetran, or build custom solutions using Python, Airflow, and cloud computing when needed.",
   },
   {
     question: "How can data engineering improve my business performance?",
     answer:
-      "Reliable data engineering shortens time-to-insight, improves decision quality, and unlocks AI use cases. Teams spend less time fixing data and more time acting on it.",
+      "eForte's data engineering services streamline your data workflows, delivering faster processing with reduced latency, real-time insights for informed decisions, and reliable, accessible data for stronger strategy.",
   },
   {
     question: "Can eForte help monetize my data?",
     answer:
-      "Yes. We help identify high-value data products, build trusted pipelines and metrics, and create platforms that support internal and external data monetization models.",
+      "Yes, eForte helps businesses monetize their data by uncovering new data-driven opportunities — building new products and services, optimizing pricing, and improving customer targeting to drive higher sales and profitability.",
   },
   {
     question: "What cloud platforms does eForte work with for data storage?",
     answer:
-      "We work across AWS, Azure, and GCP, with deep experience on Databricks, Snowflake, and modern orchestration tools like Airflow and dbt.",
+      "We specialize in solutions built on AWS Redshift, Snowflake, Databricks, and Azure Synapse, delivering scalable and secure data storage.",
+  },
+  {
+    question: "How can business intelligence solutions from eForte help my company?",
+    answer:
+      "We use BI tools such as Power BI, Tableau, Qlik, and Domo to create actionable reports that empower leadership teams to make data-driven decisions.",
+  },
+  {
+    question: "How does eForte manage data migration?",
+    answer:
+      "eForte ensures seamless data migration with minimal disruption, using proven tools and strategies to protect data integrity. Timelines vary based on migration approach, infrastructure complexity, data volume, and third-party integrations.",
+  },
+  {
+    question: "What AI services does eForte provide?",
+    answer:
+      "Our team brings deep expertise in AI, including LLM development, Generative AI, and advanced computer vision. We help businesses optimize operations, automate complex tasks, and extract insights through tailored AI solutions.",
   },
 ];

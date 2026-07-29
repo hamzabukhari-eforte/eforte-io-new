@@ -3,16 +3,15 @@ export const AI_ACCENT = "#D3287A";
 export const aiCaseStudy = {
   title: "AI solutions in action: Real-world implementations",
   subtitle:
-    "Building an LLM solution for one of the USA's largest and most respected educational institutions",
+    "Building an LLM solution for a leading US educational institution",
   paragraphs: [
-    "We built a large language model to provide the organization a way to use natural language prompts to gain new insights.",
-    "We believe that such enterprise grade LLMs have the power to transform organizations - putting deep, custom insights into the hands of individuals at a fraction of the speed or cost that it would usually take with typical business intelligence technologies.",
+    "eForte developed a large language model to let the organization query complex information with natural language. This enterprise-grade LLM empowers teams with deep, custom insights at a fraction of the time and cost of traditional BI tools.",
   ],
   outcomesLabel: "Outcomes achieved so far include",
   outcomes: [
-    "Quick access to business insights and crucial organizational information using natural language",
-    "More accessibility to data, removing barriers like SQL knowledge to get information",
-    "Enterprise grade security to safeguard operations and instill stakeholder confidence",
+    "Fast access to business insights and critical organizational knowledge using natural language.",
+    "Broader data accessibility by removing technical barriers such as the need for SQL.",
+    "Enterprise-level security to protect operations and build stakeholder trust.",
   ],
   diagramSrc: "/assets/images/capabilities/ai/solution-in-action.svg",
 };
@@ -59,46 +58,46 @@ export const aiQbricksBenefits = [
 export const aiSolutions = [
   {
     id: "agentic",
-    title: "Agentic AI & Generative AI",
+    title: "Generative AI",
     description:
-      "eForte designs and deploys agentic and generative AI systems that move beyond experimentation to deliver measurable business value. From autonomous AI agents to content creation and enterprise-grade systems, we build solutions that drive real outcomes.",
+      "Transform your business with GenAI, powered by leading LLMs and image generation tools. Create compelling visuals, personalized content, and automate complex tasks end-to-end.",
     image: "/assets/images/capabilities/accelerators-1.jpg",
   },
   {
     id: "vision",
     title: "Computer vision",
     description:
-      "Transform visual data into actionable insights. We'll use advanced algorithms to analyze images or videos, enabling automated object detection, recognition, and tracking.",
+      "Design and deploy computer vision solutions for detection, classification, measurement, and more across industries.",
     image: "/assets/images/capabilities/computer-vision.jpg",
   },
   {
     id: "discovery",
     title: "AI Discovery",
     description:
-      "A dedicated service to create AI-driven solutions. After defining and refining your initial product idea, we'll build machine learning prototypes to analyze feasibility.",
+      "Run structured discovery to identify the most impactful AI opportunities, assess feasibility, and prioritize a clear roadmap.",
     image: "/assets/images/capabilities/ai-discovery.jpg",
   },
   {
     id: "ml",
     title: "Machine learning product development and deployment",
     description:
-      "Harness the full potential of machine learning with our end-to-end development and deployment services.",
+      "Build, test, and productionize ML models as part of robust products and services.",
     image: "/assets/images/capabilities/machine-learning.jpg",
   },
   {
     id: "team",
     title: "AI as part of your team",
     description:
-      "Stay at the forefront of the AI revolution with our training and consulting services. From technical deep learning training to executive workshops, we equip organizations with the knowledge needed to thrive in the age of AI.",
+      "Integrate AI into day-to-day workflows so it acts as an embedded partner for your teams, not just a separate tool.",
     image: "/assets/images/capabilities/team.jpg",
   },
 ];
 
 export const aiWhitePaper = {
   eyebrow: "WHITE PAPER",
-  title: "The Enterprise AI Playbook: From Data Foundations to Agentic Systems",
+  title: "Implementing AI in today's world",
   description:
-    "This report outlines the three stages of enterprise AI maturity — from building data foundations, to operationalizing AI in products and workflows, to deploying fully agentic systems that automate complex decisions. It draws on eForte's experience across industries like financial services and hi-tech to illustrate how organizations can move from experimentation to production-ready AI. Whether you're modernizing your data infrastructure or exploring AI agents, it's a roadmap for what comes next.",
+    "AI is transforming industries, but adoption still comes with technical, organizational, and governance challenges. eForte helps companies tackle these issues and implement AI that delivers real impact. From bankruptcy prediction and fraud detection in financial services to hyper-personalized learning in edtech, eForte has built AI systems that drive efficiency and innovation.",
   ctaLabel: "Read now",
   ctaHref: "/blog",
   coverImage: "/assets/images/capabilities/white-paper.webp",
@@ -117,12 +116,12 @@ export const aiConstellation = {
 
 export const aiCustomerSatisfaction = {
   eyebrow: "CUSTOMER SATISFACTION",
-  title: "We're proud of our top-rated AI services",
+  title: "Customer satisfaction – top-rated AI services",
   image: "/assets/images/industry/recognitions.jpg",
   clutch: {
     title: "Clutch",
     description:
-      "Our high ratings reflect our dedication to delivering top-notch solutions and exceptional customer experiences.",
+      "eForte maintains top ratings for AI projects, reflecting a commitment to high-quality delivery and strong customer experience.",
     reviewRating: "4.9",
     reviewCount: "57 reviews",
     referralRating: "5.0",
@@ -171,27 +170,51 @@ export const aiFaqs = [
   {
     question: "What are Compound AI Systems?",
     answer:
-      "Compound AI systems combine multiple components, like AI models, data retrievers, or tools, to solve tasks more effectively. A prime example is Retrieval Augmented Generation (RAG), which merges a language model with a system for retrieving relevant information. eForte builds such systems to drive real business impact using AI.",
+      "Compound AI Systems combine multiple AI and data components to handle complex tasks more reliably than a single model alone.",
   },
   {
     question: "How can GenAI enhance my business operations?",
     answer:
-      "By optimizing workflows and providing data-driven insights, GenAI drives efficiency, reduces costs, and fuels innovation. One of the most valuable areas is “data analyst” capabilities — enabling executives to receive immediate responses to complex questions that used to take analysts days.",
+      "GenAI can automate content creation, assist decision-making, personalize experiences, and reduce manual effort across teams.",
   },
   {
-    question:
-      "What are the typical roles that a business needs in order to build an AI solution?",
+    question: "What roles are typically needed to build an AI solution?",
     answer:
-      "Building successful AI products requires a collaborative effort: Data Engineers who build and maintain data infrastructure; Data Analysts who extract insights; Machine Learning Engineers who design, test, and deploy models; and Data Scientists who drive innovation and ensure solutions are robust.",
+      "Most projects involve product, data, ML/AI engineers, designers, and domain experts, supported by security and infrastructure specialists.",
+  },
+  {
+    question: "What AI services do you offer?",
+    answer:
+      "eForte provides GenAI, LLM solutions, computer vision, AI discovery, ML development, and AI integration into existing products.",
   },
   {
     question: "Do you provide end-to-end AI solutions?",
     answer:
-      "Yes. We provide end-to-end solutions — from identifying the right AI opportunities to deploying and monitoring performance. We handle data preparation, model development and testing, and integration with your existing systems.",
+      "Yes, from strategy and discovery through design, implementation, and ongoing optimization.",
+  },
+  {
+    question: "How long does an AI project usually take?",
+    answer:
+      "Timelines vary by scope, but many initial pilots run in weeks, with full implementations following an agreed roadmap.",
+  },
+  {
+    question: "Do you work with small businesses or startups?",
+    answer:
+      "eForte partners with startups, scale-ups, and enterprises, tailoring engagement models to each stage.",
   },
   {
     question: "How secure is my data during an AI project?",
     answer:
-      "Data security is our top priority. We follow industry best practices including encryption, secure access protocols, and compliance with regulations like GDPR and CCPA. eForte is SOC 2 Type 2 and ISO 27001 certified.",
+      "Security is enforced through certifications, strict controls, and best practices in data governance and access.",
+  },
+  {
+    question: "Can you integrate AI with our existing systems?",
+    answer:
+      "Yes, integrations with current products, platforms, and infrastructure are a core part of delivery.",
+  },
+  {
+    question: "What makes your consultancy different?",
+    answer:
+      "eForte blends deep technical expertise, strong product thinking, and a user-centric mindset to ship AI that people actually use.",
   },
 ];

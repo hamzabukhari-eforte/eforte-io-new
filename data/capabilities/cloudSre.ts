@@ -5,7 +5,7 @@ export const cloudSreSplitCards = [
     id: "cloud-sre",
     title: "Cloud, SRE, and DevOps",
     description:
-      "Accelerated development combined with reliable, secure and scalable environments.",
+      "Accelerated development combined with reliable, secure, and scalable environments.",
     cta: "Keep reading",
     href: "#studio",
     iconId: "cloud" as const,
@@ -14,7 +14,7 @@ export const cloudSreSplitCards = [
     id: "cybersecurity",
     title: "Cybersecurity",
     description:
-      "Comprehensive, adaptable security services that safeguard data, reputation, and ensure business continuity.",
+      "Comprehensive, adaptable security services that protect data and reputation, and maintain business continuity.",
     cta: "Learn more",
     href: "#solutions",
     iconId: "shield" as const,
@@ -26,7 +26,7 @@ export const cloudSrePrinciples = [
     id: "iac",
     title: "Infrastructure as code",
     description:
-      "We treat infrastructure like code, using a version management system to log the history of changes and bug fixes. The aim is to create a consistent and reliable build that can be repeated.",
+      "Treating infrastructure like code with version control, so changes and fixes are traceable and builds are consistent and repeatable.",
     image: "/assets/images/industry/cloud.jpg",
     tools: [
       "Azure Resource Manager",
@@ -39,7 +39,7 @@ export const cloudSrePrinciples = [
     id: "automation",
     title: "Automation",
     description:
-      "We automate key processes such as deployment and local setup for developers. This means we achieve the maximum productivity of development teams while promoting service ownership.",
+      "Automating repetitive and error-prone tasks to improve speed, reliability, and consistency across environments.",
     image: "/assets/images/industry/qa.jpg",
     tools: ["Ansible", "Terraform", "Jenkins", "GitHub Actions"],
   },
@@ -47,7 +47,7 @@ export const cloudSrePrinciples = [
     id: "monitoring",
     title: "Monitoring & Error tracking",
     description:
-      "Monitoring the performance of services is essential to ensure a quality service. By using monitoring and error tracing tools, we manage to minimize failures and increase stability.",
+      "Implementing observability, alerting, and error tracking to detect issues early and maintain high system reliability.",
     image: "/assets/images/industry/monitoring.jpg",
     tools: ["Elastic", "Dynatrace", "Splunk", "Datadog", "New Relic"],
   },
@@ -55,7 +55,7 @@ export const cloudSrePrinciples = [
     id: "scalability",
     title: "Scalability",
     description:
-      "We use container platforms, like Kubernetes, that can adjust performance and cost to changing demands. Efficient resource utilization and dynamic power addition are possible without major cost changes or refactoring.",
+      "Designing architectures that scale up or down smoothly based on demand, while maintaining performance and cost efficiency.",
     image: "/assets/images/industry/accelerators-3.jpg",
     tools: ["Kubernetes"],
   },
@@ -63,7 +63,7 @@ export const cloudSrePrinciples = [
     id: "security",
     title: "Security",
     description:
-      "Our infrastructure always includes fundamental security measures. These include encryption, secure database access, strong authentication methods and automated backups.",
+      "Embedding security at every layer, from infrastructure and networks to applications and data.",
     image: "/assets/images/industry/bg-security.jpg",
     tools: ["Datadog", "Istio", "checkov", "tfsec"],
   },
@@ -74,49 +74,49 @@ export const cloudSreSolutions = [
     id: "finops",
     title: "FinOps & cost optimization",
     description:
-      "We help businesses maximize cloud spending efficiency through monitoring, rightsizing, and automation — without sacrificing performance.",
+      "Using FinOps best practices, eForte helps organizations get maximum value from cloud spending through real-time monitoring, rightsizing, and automation that aligns costs with business goals.",
     iconId: "rocket" as const,
   },
   {
     id: "migration",
     title: "Cloud migration",
     description:
-      "A multi-phased approach for cloud migrations, optimizing architecture for performance and scalability using Kubernetes and serverless technologies.",
+      "A mature, multi-phase migration approach tailored to your objectives, optimizing architectures for performance and scalability with technologies such as Kubernetes and serverless.",
     iconId: "migrate" as const,
   },
   {
     id: "modernization",
     title: "Cloud modernization",
     description:
-      "We help teams adopt modern architectures, automation, containerization, and Infrastructure as Code to evolve legacy systems.",
+      "Support for moving to modern architectures, automation, and best practices — including decomposing monoliths, adopting containers, and implementing Infrastructure as Code — to improve agility, security, and cost effectiveness.",
     iconId: "monitor" as const,
   },
   {
     id: "sre",
     title: "SRE & observability",
     description:
-      "We implement Site Reliability Engineering practices, cloud-native observability stacks, and Service Level Objectives (SLOs).",
+      "Implementation of Site Reliability Engineering practices to improve reliability, automate operations, and strengthen incident response, leveraging observability stacks, SLOs, and error budgets tied to business outcomes.",
     iconId: "search" as const,
   },
   {
     id: "mlops",
     title: "AI & ML model deployment",
     description:
-      "We enable seamless deployment and scaling of machine learning stacks in cloud environments, ensuring reliability, performance, and cost efficiency. Our approach integrates MLOps best practices, automating the lifecycle from model training to serving and monitoring.",
+      "Seamless deployment and scaling of machine learning stacks in the cloud, integrating MLOps practices from training to serving and monitoring to ensure performance and efficiency.",
     iconId: "sparkles" as const,
   },
   {
     id: "cicd",
     title: "CI/CD & DevOps automation",
     description:
-      "We build automated workflows that streamline software delivery, reducing manual effort and minimizing deployment risks. Our approach ensures fast, consistent, and secure releases by integrating CI/CD pipelines, infrastructure automation, and cloud-native tooling.",
+      "Automated delivery workflows that reduce manual steps and deployment risk, combining CI/CD pipelines, infrastructure automation, and cloud-native tooling for fast, consistent, and secure releases.",
     iconId: "timer" as const,
   },
   {
     id: "security",
     title: "Cloud security & compliance",
     description:
-      "We help organizations secure their cloud environments and maintain compliance with industry standards, regulations, and best practices. Our approach combines automated security controls, proactive monitoring, and continuous compliance assessments.",
+      "Services to secure cloud environments and maintain compliance with regulations and standards, using automated controls, proactive monitoring, and continuous compliance assessments.",
     iconId: "secure" as const,
   },
 ];

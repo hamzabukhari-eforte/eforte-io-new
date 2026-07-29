@@ -1,16 +1,16 @@
 import {
   HiChip,
   HiCloud,
-  HiCube,
+  // HiCube, // reserved with Embedded Engineering entry below
   HiDeviceMobile,
   HiLightningBolt,
   HiPencil,
-  HiShieldCheck,
-  HiCog,
-  HiCheckCircle,
-  HiViewGrid,
-  HiLink,
-  // HiUserGroup, // reserved with Staff Augmentation entry below
+  // HiShieldCheck, // reserved with Cybersecurity entry below
+  // HiCog, // reserved with Platform Engineering entry below
+  // HiCheckCircle, // reserved with Quality Assurance entry below
+  // HiViewGrid, // reserved with Product Management entry below
+  // HiLink, // reserved with Blockchain entry below
+  HiUserGroup,
   HiSwitchHorizontal,
   HiBadgeCheck,
   HiAcademicCap,
@@ -42,7 +42,7 @@ export type CapabilityJourneyStep = {
   step: string;
   title: string;
   description: string;
-  descriptionLines: [string, string] | [string];
+  descriptionLines: [string, string, string] | [string, string] | [string];
   pills: string[];
   imageSrc: string;
 };
@@ -75,14 +75,13 @@ export const capabilityHero = {
   label: "Our Studios",
   titleLines: ["Unleash the power", "of technology with", "eForte Studios"],
   description:
-    "Our Studio delivery model enables us to address challenges head-on by bringing technology and domain experts together. This ensures we deliver immediate business value with our customized solutions.",
+    "The eForte Studio model assembles specialist teams across Data & AI, Design, Cybersecurity, Engineering, Quality, and Product Management to address challenges from multiple angles and deliver holistic solutions.",
 };
 
 export const capabilityStudioModel = {
   titleLines: ["We'll create your specialist", "team from our Studios"],
   paragraphs: [
-    "Drawing inspiration from our name, we introduce the eForte Studio Model.",
-    "Just as a cube has six faces, each offering a unique viewpoint, eForte tackles challenges from multiple angles, ensuring a holistic approach to every solution.",
+    "Drawing inspiration from the idea of multiple perspectives, eForte Studios approach each problem from several dimensions, ensuring no critical angle is missed and every solution is well-rounded.",
   ],
   facets: [
     { label: "Data & AI", className: "data" },
@@ -96,7 +95,7 @@ export const capabilityStudioModel = {
     {
       title: "Step 1",
       descriptionLines: [
-        "We'll assemble a multidisciplinary",
+        "eForte assembles a multidisciplinary",
         "team of specialists to work on your",
         "digital products and challenges.",
       ],
@@ -104,9 +103,9 @@ export const capabilityStudioModel = {
     {
       title: "Step 2",
       descriptionLines: [
-        "As your product advances, or",
-        "your needs change, the team",
-        "composition adapts as required.",
+        "As your product evolves or your",
+        "priorities shift, the team composition",
+        "is adapted to match new requirements.",
       ],
     },
   ],
@@ -114,14 +113,14 @@ export const capabilityStudioModel = {
 
 export const capabilityStudios: CapabilityStudioItem[] = [
   {
-    title: "Data",
-    description: "Data manipulation, engineering, visualization, and prediction",
-    descriptionLines: ["Data manipulation, engineering,", "visualization, and prediction"],
-    href: "/capabilities/data",
-    icon: HiLightningBolt,
-    slug: "data",
-    iconColor: "#96C5FF",
-    hoverGradient: "linear-gradient(267.87deg, #96C5FF 8%, #5FA7FF 98.69%)",
+    title: "Product Design",
+    description: "UX research, service design, design thinking, and UI design",
+    descriptionLines: ["UX research, service design, design", "thinking, and UI design"],
+    href: "/capabilities/product-design",
+    icon: HiPencil,
+    slug: "product-design",
+    iconColor: "#AB77FF",
+    hoverGradient: "linear-gradient(270deg, #FFFFFF -61.24%, #AB77FF 94.42%)",
   },
   {
     title: "AI & Machine Learning",
@@ -134,48 +133,14 @@ export const capabilityStudios: CapabilityStudioItem[] = [
     hoverGradient: "linear-gradient(270deg, #FFFFFF -80.35%, #FFA29B 82.94%)",
   },
   {
-    title: "Cloud, SRE, and DevOps",
-    description: "Cloud migration, CI/CD pipeline development, IaC, MLOps, FinOps",
-    descriptionLines: ["Cloud migration, CI/CD pipeline", "development, IaC, MLOps, FinOps"],
-    href: "/capabilities/cloud-sre",
-    icon: HiCloud,
-    slug: "cloud",
-    iconColor: "#0D5BFF",
-    hoverGradient: "linear-gradient(270deg, #FFFFFF -39.31%, #0D5BFF 95.36%)",
-  },
-  {
-    title: "Cybersecurity",
-    description:
-      "AI security transformation, secure SSDLC, vCISO, penetration testing, DevSecOps",
-    descriptionLines: [
-      "AI security transformation, secure SSDLC,",
-      "vCISO, penetration testing, DevSecOps",
-    ],
-    href: "/capabilities/cybersecurity",
-    icon: HiShieldCheck,
-    slug: "cybersecurity",
-    iconColor: "#1E1E1E",
-    hoverGradient: "linear-gradient(270deg, #FFFFFF -94.42%, #1E1E1E 97.88%)",
-  },
-  {
-    title: "Platform Engineering",
-    description: "Robust infrastructures, scalable APIs, efficient deployment",
-    descriptionLines: ["Robust infrastructures, scalable", "APIs, efficient deployment"],
-    href: "/capabilities/platform-engineering",
-    icon: HiCog,
-    slug: "engineering",
-    iconColor: "#2946CF",
-    hoverGradient: "linear-gradient(270deg, #FFFFFF -33.73%, #2946CF 94.97%)",
-  },
-  {
-    title: "Product Design",
-    description: "UX research, service design, design thinking, and UI design",
-    descriptionLines: ["UX research, service design, design", "thinking, and UI design"],
-    href: "/capabilities/product-design",
-    icon: HiPencil,
-    slug: "product-design",
-    iconColor: "#AB77FF",
-    hoverGradient: "linear-gradient(270deg, #FFFFFF -61.24%, #AB77FF 94.42%)",
+    title: "Data",
+    description: "Data manipulation, engineering, visualization, and prediction",
+    descriptionLines: ["Data manipulation, engineering,", "visualization, and prediction"],
+    href: "/capabilities/data",
+    icon: HiLightningBolt,
+    slug: "data",
+    iconColor: "#96C5FF",
+    hoverGradient: "linear-gradient(267.87deg, #96C5FF 8%, #5FA7FF 98.69%)",
   },
   {
     title: "App Solutions",
@@ -192,58 +157,97 @@ export const capabilityStudios: CapabilityStudioItem[] = [
     hoverGradient: "linear-gradient(270deg, #FFFFFF -37.81%, #F4594E 94.34%)",
   },
   {
-    title: "Embedded Engineering",
+    title: "Cloud, SRE, and DevOps",
+    description: "Cloud migration, CI/CD pipeline development, IaC, MLOps, FinOps",
+    descriptionLines: ["Cloud migration, CI/CD pipeline", "development, IaC, MLOps, FinOps"],
+    href: "/capabilities/cloud-sre",
+    icon: HiCloud,
+    slug: "cloud",
+    iconColor: "#0D5BFF",
+    hoverGradient: "linear-gradient(270deg, #FFFFFF -39.31%, #0D5BFF 95.36%)",
+  },
+  {
+    title: "Staff Augmentation – Dedicated Resource Hiring",
     description:
-      "Development for semiconductors, embedded systems, IoT, microcontrollers",
+      "Dedicated resource hiring across AI, data, cloud, and engineering teams",
     descriptionLines: [
-      "Development for semiconductors,",
-      "embedded systems, IoT, microcontrollers",
+      "Dedicated resource hiring across AI, data,",
+      "cloud, and engineering teams",
     ],
-    href: "/capabilities/embedded-engineering",
-    icon: HiCube,
-    slug: "firmware",
-    iconColor: "#FFB600",
-    hoverGradient: "linear-gradient(270deg, #FFFFFF -77.83%, #FFB600 96.86%)",
+    href: "/capabilities/staff-augmentation",
+    icon: HiUserGroup,
+    slug: "staff",
+    iconColor: "#D3287A",
+    hoverGradient: "linear-gradient(270deg, #FFFFFF -80%, #D3287A 95%)",
   },
-  {
-    title: "Blockchain",
-    description: "Smart contracts, decentralized apps, blockchain integration",
-    descriptionLines: ["Smart contracts, decentralized", "apps, blockchain integration"],
-    href: "/capabilities/blockchain",
-    icon: HiLink,
-    slug: "blockchain",
-    iconColor: "#D348EA",
-    hoverGradient: "linear-gradient(270deg, #FFFFFF -67.22%, #D348EA 91.82%)",
-  },
-  {
-    title: "Product Management",
-    description: "Product consulting, process management, monetization",
-    descriptionLines: ["Product consulting, process", "management, monetization"],
-    href: "/capabilities/product-management",
-    icon: HiViewGrid,
-    slug: "product-management",
-    iconColor: "#3379CC",
-    hoverGradient: "linear-gradient(270deg, #FFFFFF -88.84%, #3379CC 97.25%)",
-  },
-  {
-    title: "Quality Assurance",
-    description: "Test automation, CI/CD, load and performance testing",
-    descriptionLines: ["Test automation, CI/CD, load and", "performance testing"],
-    href: "/capabilities/quality-assurance",
-    icon: HiCheckCircle,
-    slug: "qa",
-    iconColor: "#00BD5F",
-    hoverGradient: "linear-gradient(270deg, #FFFFFF -94.42%, #0EBB65 97.88%)",
-  },
-  // Preserved for possible future reuse — not in capabilities-design.html studio list
+  // Legacy studios preserved for future reuse — not in current mega-menu
   // {
-  //   title: "Staff Augmentation",
+  //   title: "Cybersecurity",
   //   description:
-  //     "Dedicated resource hiring across AI, data, cloud, and engineering teams",
-  //   icon: HiUserGroup,
-  //   slug: "staff",
-  //   iconColor: "#D3287A",
-  //   hoverGradient: "linear-gradient(270deg, #FFFFFF -80%, #D3287A 95%)",
+  //     "AI security transformation, secure SSDLC, vCISO, penetration testing, DevSecOps",
+  //   descriptionLines: [
+  //     "AI security transformation, secure SSDLC,",
+  //     "vCISO, penetration testing, DevSecOps",
+  //   ],
+  //   href: "/capabilities/cybersecurity",
+  //   icon: HiShieldCheck,
+  //   slug: "cybersecurity",
+  //   iconColor: "#1E1E1E",
+  //   hoverGradient: "linear-gradient(270deg, #FFFFFF -94.42%, #1E1E1E 97.88%)",
+  // },
+  // {
+  //   title: "Platform Engineering",
+  //   description: "Robust infrastructures, scalable APIs, efficient deployment",
+  //   descriptionLines: ["Robust infrastructures, scalable", "APIs, efficient deployment"],
+  //   href: "/capabilities/platform-engineering",
+  //   icon: HiCog,
+  //   slug: "engineering",
+  //   iconColor: "#2946CF",
+  //   hoverGradient: "linear-gradient(270deg, #FFFFFF -33.73%, #2946CF 94.97%)",
+  // },
+  // {
+  //   title: "Embedded Engineering",
+  //   description:
+  //     "Development for semiconductors, embedded systems, IoT, microcontrollers",
+  //   descriptionLines: [
+  //     "Development for semiconductors,",
+  //     "embedded systems, IoT, microcontrollers",
+  //   ],
+  //   href: "/capabilities/embedded-engineering",
+  //   icon: HiCube,
+  //   slug: "firmware",
+  //   iconColor: "#FFB600",
+  //   hoverGradient: "linear-gradient(270deg, #FFFFFF -77.83%, #FFB600 96.86%)",
+  // },
+  // {
+  //   title: "Blockchain",
+  //   description: "Smart contracts, decentralized apps, blockchain integration",
+  //   descriptionLines: ["Smart contracts, decentralized", "apps, blockchain integration"],
+  //   href: "/capabilities/blockchain",
+  //   icon: HiLink,
+  //   slug: "blockchain",
+  //   iconColor: "#D348EA",
+  //   hoverGradient: "linear-gradient(270deg, #FFFFFF -67.22%, #D348EA 91.82%)",
+  // },
+  // {
+  //   title: "Product Management",
+  //   description: "Product consulting, process management, monetization",
+  //   descriptionLines: ["Product consulting, process", "management, monetization"],
+  //   href: "/capabilities/product-management",
+  //   icon: HiViewGrid,
+  //   slug: "product-management",
+  //   iconColor: "#3379CC",
+  //   hoverGradient: "linear-gradient(270deg, #FFFFFF -88.84%, #3379CC 97.25%)",
+  // },
+  // {
+  //   title: "Quality Assurance",
+  //   description: "Test automation, CI/CD, load and performance testing",
+  //   descriptionLines: ["Test automation, CI/CD, load and", "performance testing"],
+  //   href: "/capabilities/quality-assurance",
+  //   icon: HiCheckCircle,
+  //   slug: "qa",
+  //   iconColor: "#00BD5F",
+  //   hoverGradient: "linear-gradient(270deg, #FFFFFF -94.42%, #0EBB65 97.88%)",
   // },
 ];
 
@@ -251,7 +255,7 @@ export const capabilityBenefits: CapabilityBenefit[] = [
   {
     title: "Unified service",
     description:
-      "We assist organizations in developing digital products through a holistic approach. Integral to this is uniting teams of professionals from diverse backgrounds, who then collaborate as a singular, cohesive unit to achieve our client's goals.",
+      "eForte helps organizations build digital products through a holistic model that unites specialists from different disciplines into one coordinated team.",
     icon: HiCollection,
     iconBg: "#EDDCFF",
     iconColor: "#8844D2",
@@ -260,16 +264,16 @@ export const capabilityBenefits: CapabilityBenefit[] = [
   {
     title: "Flexibility",
     description:
-      "The various studios offer businesses the flexibility required to flourish. Modern businesses demand rapid team adjustments to tackle new challenges. A flexible framework allows our clients to swiftly adapt to each product and market phase.",
+      "Studio-based teams can be reconfigured quickly as products and markets change, giving businesses the agility they need to thrive.",
     icon: HiSwitchHorizontal,
     iconBg: "#BCF2C6",
     iconColor: "#309A45",
     slug: "flexibility",
   },
   {
-    title: "High-quality",
+    title: "High quality",
     description:
-      "Our Studios bring a set of best practices and industry standards for building high-quality digital experiences. When we assemble a multidisciplinary team, each professional arrives armed with those toolsets to elevate our service to industry-leading levels.",
+      "Each Studio brings proven practices and industry standards, so every multidisciplinary team arrives equipped to deliver at a consistently high level.",
     icon: HiBadgeCheck,
     iconBg: "#FFECA9",
     iconColor: "#938613",
@@ -278,7 +282,7 @@ export const capabilityBenefits: CapabilityBenefit[] = [
   {
     title: "Expertise & knowledge",
     description:
-      "Our Studios focus on specific technology and business areas, gaining deep knowledge and experience. This means we can give you expert advice and insights, thanks to our specialized experts.",
+      "Studios focus on specific technology and business domains, giving clients direct access to deep, specialized expertise and practical insight.",
     icon: HiAcademicCap,
     iconBg: "#D6F4FF",
     iconColor: "#29B5E8",
@@ -290,8 +294,13 @@ export const capabilityJourney: CapabilityJourneyStep[] = [
   {
     step: "Step 1",
     title: "Discovery",
-    description: "We get to know you and your challenges.",
-    descriptionLines: ["We get to know you", "and your challenges."],
+    description:
+      "eForte gets to know your organization and challenges through assessments, prototyping, workshops, and research.",
+    descriptionLines: [
+      "eForte gets to know your organization",
+      "and challenges through assessments,",
+      "prototyping, workshops, and research.",
+    ],
     pills: ["Tech Assessments", "Prototyping", "Workshops", "Research"],
     imageSrc: "/assets/images/capabilities/1.svg",
   },
@@ -299,10 +308,10 @@ export const capabilityJourney: CapabilityJourneyStep[] = [
     step: "Step 2",
     title: "Strategy & Roadmap",
     description:
-      "The creation of the roadmap includes the work of different studios.",
+      "Collaborative roadmaps are created with input from multiple Studios, covering product development, cloud and cybersecurity, and Data & AI.",
     descriptionLines: [
-      "The creation of the roadmap includes",
-      "the work of different studios.",
+      "Collaborative roadmaps are created with",
+      "input from multiple Studios.",
     ],
     pills: [
       "Product Development Roadpmaps",
@@ -314,10 +323,11 @@ export const capabilityJourney: CapabilityJourneyStep[] = [
   {
     step: "Step 3",
     title: "Implementation & Metrics",
-    description: "In this phase the Agile Delivery Pods start executing.",
+    description:
+      "Agile Delivery Pods execute the plan while tracking metrics, benchmarks, and KPIs to ensure tangible results.",
     descriptionLines: [
-      "In this phase the Agile Delivery",
-      "Pods start executing.",
+      "Agile Delivery Pods execute the plan",
+      "while tracking metrics, benchmarks, and KPIs.",
     ],
     pills: ["Metrics", "Agile Excecution", "Benchmarks", "KPIs"],
     imageSrc: "/assets/images/capabilities/3.svg",

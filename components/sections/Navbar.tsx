@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useScroll } from "@/hooks/useScroll";
+import { useLenisControl } from "@/components/providers/SmoothScrollProvider";
 import { cn } from "@/lib/utils";
 import Container from "@/components/atoms/Container";
 import ContactCTA from "@/components/atoms/ContactCTA";
@@ -31,6 +32,7 @@ import {
   HiBadgeCheck,
   HiUserGroup,
   HiCalendar,
+  HiChevronDown,
 } from "react-icons/hi";
 import { FiLink } from "react-icons/fi";
 import type { IconType } from "react-icons";
@@ -87,6 +89,29 @@ interface MegaMenuConfig {
   title: string;
   description: string;
   columns: MegaMenuColumn[];
+}
+
+/**
+ * Editorial columns (post teasers) that add noise to the collapsed mobile menu,
+ * where navigable pages matter more than article cards.
+ */
+const MOBILE_MENU_SKIPPED_COLUMNS: Record<string, string[]> = {
+  "ai-pillars": ["AI Insights"],
+  industries: ["Industry Insights"],
+  insights: ["Highlighted Posts", "Latest Posts"],
+};
+
+function getMobileMenuColumns(
+  id: string,
+  config?: MegaMenuConfig
+): MegaMenuColumn[] {
+  if (!config) return [];
+
+  const skipped = MOBILE_MENU_SKIPPED_COLUMNS[id] ?? [];
+
+  return config.columns.filter(
+    (column) => !skipped.includes(column.title) && column.items.length > 0
+  );
 }
 
 const impactStudiesMenuItems: MegaMenuItem[] = caseStudies.map((cs) => ({
@@ -227,6 +252,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
               "Accelerate delivery with dedicated AI, data, cloud, and engineering talent seamlessly embedded into your teams, eliminating hiring complexity and ramp-up time.",
             iconName: "user-group",
             iconColorClass: "bg-primary-pink",
+            href: "/capabilities/staff-augmentation",
           },
           // Legacy studios preserved for future reuse:
           // {
@@ -735,13 +761,40 @@ const LIGHT_HERO_NAV_ROUTES = [
 export default function Navbar({ insightsMenuData }: NavbarProps) {
   const pathname = usePathname();
   const isScrolled = useScroll(10);
+  const lenisControl = useLenisControl();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  /** Multiple mobile sections can stay expanded at once. */
+  const [expandedMobileIds, setExpandedMobileIds] = useState<string[]>([]);
+
+  const toggleMobileSection = (id: string) => {
+    setExpandedMobileIds((current) =>
+      current.includes(id)
+        ? current.filter((entry) => entry !== id)
+        : [...current, id]
+    );
+  };
 
   const isLightHeroPage = LIGHT_HERO_NAV_ROUTES.some(
     (route) => pathname === route || pathname?.startsWith(`${route}/`)
   );
   const useSolidNav = isScrolled || isMobileMenuOpen || isLightHeroPage;
+
+  useEffect(() => {
+    const shouldLockScroll = isMobileMenuOpen || Boolean(activeMenu);
+    if (!shouldLockScroll) return;
+
+    // Lenis animates window scroll itself, so body overflow alone can't hold it.
+    lenisControl?.stop();
+    const { body } = document;
+    const previousOverflow = body.style.overflow;
+    body.style.overflow = "hidden";
+
+    return () => {
+      lenisControl?.start();
+      body.style.overflow = previousOverflow;
+    };
+  }, [isMobileMenuOpen, activeMenu, lenisControl]);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -751,6 +804,7 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
     setActiveMenu(null);
+    setExpandedMobileIds([]);
   };
 
   const closeMegaMenu = () => {
@@ -779,10 +833,10 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
 
           {/* Mega menu panel */}
           <div
-            className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            className="absolute inset-x-0 top-0 max-h-full overflow-hidden bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
             onMouseLeave={closeMegaMenu}
           >
-            <Container className="py-10 flex gap-10 text-white">
+            <Container className="py-6 2xl:py-8 flex gap-6 2xl:gap-8 text-white">
               {/* Left narrative */}
               <div className="w-1/3 space-y-6 max-w-sm">
                 {config.eyebrow && (
@@ -884,10 +938,10 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
-            className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            className="absolute inset-x-0 top-0 max-h-full overflow-hidden bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
             onMouseLeave={closeMegaMenu}
           >
-            <Container className="py-10 flex gap-10 text-white">
+            <Container className="py-6 2xl:py-8 flex gap-6 2xl:gap-8 text-white">
               <div className="w-1/3 space-y-4 max-w-sm">
                 {config.eyebrow && (
                   <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary-pink">
@@ -966,10 +1020,10 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
-            className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            className="absolute inset-x-0 top-0 max-h-full overflow-hidden bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
             onMouseLeave={closeMegaMenu}
           >
-            <Container className="py-10 flex gap-10 text-white">
+            <Container className="py-6 2xl:py-8 flex gap-6 2xl:gap-8 text-white">
               <div className="w-1/3 space-y-4 max-w-sm">
                 {config.eyebrow && (
                   <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary-pink">
@@ -1041,10 +1095,10 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
-            className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            className="absolute inset-x-0 top-0 max-h-full overflow-hidden bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
             onMouseLeave={closeMegaMenu}
           >
-            <Container className="py-10 flex gap-10 text-white">
+            <Container className="py-6 2xl:py-8 flex gap-6 2xl:gap-8 text-white">
               <div className="w-1/4 space-y-6 max-w-xs">
                 {config.eyebrow && (
                   <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary-pink">
@@ -1155,10 +1209,10 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
-            className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            className="absolute inset-x-0 top-0 max-h-full overflow-hidden bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
             onMouseLeave={closeMegaMenu}
           >
-            <Container className="py-10 flex gap-8 text-white">
+            <Container className="py-6 2xl:py-8 flex gap-6 2xl:gap-8 text-white">
               <div className="w-1/4 space-y-4 max-w-xs">
                 {config.eyebrow && (
                   <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary-pink">
@@ -1256,12 +1310,12 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
 
         {/* Mega menu panel */}
         <div
-          className="absolute inset-x-0 top-0 bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+          className="absolute inset-x-0 top-0 max-h-full overflow-hidden bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
           onMouseLeave={closeMegaMenu}
         >
-          <Container className="py-10 flex gap-10 text-white">
+          <Container className="flex gap-6 py-5 text-white 2xl:gap-8 2xl:py-6">
             {/* Left narrative column */}
-            <div className="w-1/3 space-y-4 max-w-sm">
+            <div className="w-1/4 max-w-xs shrink-0 space-y-3">
               {config.eyebrow && (
                 <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary-pink">
                   {config.eyebrow}
@@ -1294,18 +1348,32 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
             </div>
 
             {/* Right content columns */}
-            <div className="flex-1 grid grid-cols-2 gap-10">
+            <div
+              className={cn(
+                "grid flex-1 gap-x-5 gap-y-4 2xl:gap-x-7",
+                activeMenu === "industries"
+                  ? "grid-cols-[minmax(0,2fr)_minmax(240px,1fr)]"
+                  : "grid-cols-2"
+              )}
+            >
               {config.columns.map((column) => (
-                <div key={column.title} className="space-y-4">
+                <div key={column.title} className="flex flex-col space-y-3">
                   <p className="text-xs font-semibold tracking-[0.2em] uppercase text-desc">
                     {column.title}
                   </p>
-                  <div className="space-y-3">
+                  <div
+                    className={cn(
+                      "space-y-2",
+                      activeMenu === "industries" &&
+                        column.title === "Our Industries" &&
+                        "grid grid-cols-2 gap-2 space-y-0"
+                    )}
+                  >
                     {column.items.map((item) => {
                       const hasImage = !!item.imageSrc;
                       const cardClass = cn(
                         "group rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 transition-colors duration-200 cursor-pointer block",
-                        hasImage ? "p-2" : "px-4 py-3"
+                        hasImage ? "p-2" : "px-3 py-2.5"
                       );
                       const cardContent = (
                         <>
@@ -1527,18 +1595,115 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
         >
           <div className="flex flex-col h-full">
             {/* Mobile Navigation Links */}
-            <nav className="flex-1 overflow-y-auto py-6">
+            <nav
+              className="flex-1 overflow-y-auto overscroll-contain py-4"
+              data-lenis-prevent
+            >
               <div className="flex flex-col">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    onClick={closeMobileMenu}
-                    className="px-6 py-4 text-base font-normal text-white hover:bg-white/10 transition-colors duration-200 border-b border-white/10"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+                {navLinks.map((link) => {
+                  const config = megaMenuConfig[link.id];
+                  const columns = getMobileMenuColumns(link.id, config);
+                  const hasChildren = columns.length > 0;
+                  const isExpanded = expandedMobileIds.includes(link.id);
+
+                  return (
+                    <div
+                      key={link.id}
+                      className="border-b border-white/10"
+                    >
+                      {hasChildren ? (
+                        <button
+                          type="button"
+                          onClick={() => toggleMobileSection(link.id)}
+                          aria-expanded={isExpanded}
+                          className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left text-base font-normal text-white transition-colors duration-200 hover:bg-white/10"
+                        >
+                          <span>{link.label}</span>
+                          <HiChevronDown
+                            className={cn(
+                              "h-5 w-5 shrink-0 text-white/70 transition-transform duration-200",
+                              isExpanded && "rotate-180"
+                            )}
+                          />
+                        </button>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          onClick={closeMobileMenu}
+                          className="block px-6 py-4 text-base font-normal text-white transition-colors duration-200 hover:bg-white/10"
+                        >
+                          {link.label}
+                        </Link>
+                      )}
+
+                      {hasChildren && isExpanded && (
+                        <div className="space-y-5 bg-black/30 px-6 pb-5 pt-1">
+                          <Link
+                            href={link.href}
+                            onClick={closeMobileMenu}
+                            className="inline-flex items-center text-sm font-semibold text-primary-pink"
+                          >
+                            View all
+                            <span className="ml-1" aria-hidden="true">
+                              →
+                            </span>
+                          </Link>
+
+                          {columns.map((column) => (
+                            <div key={column.title}>
+                              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-desc">
+                                {column.title}
+                              </p>
+                              <div className="mt-2 space-y-1">
+                                {column.items.map((item) => {
+                                  const ItemIcon = item.iconName
+                                    ? menuIconMap[item.iconName]
+                                    : null;
+
+                                  const itemContent = (
+                                    <>
+                                      {ItemIcon && (
+                                        <span
+                                          className={cn(
+                                            "mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-white",
+                                            item.iconColorClass ?? "bg-primary-pink"
+                                          )}
+                                        >
+                                          <ItemIcon className="h-4 w-4" />
+                                        </span>
+                                      )}
+                                      <span className="text-sm leading-snug text-white/90">
+                                        {item.title}
+                                      </span>
+                                    </>
+                                  );
+
+                                  return item.href ? (
+                                    <Link
+                                      key={item.title}
+                                      href={item.href}
+                                      onClick={closeMobileMenu}
+                                      className="flex items-start gap-3 rounded-lg px-2 py-2 transition-colors duration-200 hover:bg-white/10"
+                                    >
+                                      {itemContent}
+                                    </Link>
+                                  ) : (
+                                    <div
+                                      key={item.title}
+                                      className="flex items-start gap-3 rounded-lg px-2 py-2"
+                                    >
+                                      {itemContent}
+                                    </div>
+                                  );
+                                })}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             </nav>
 

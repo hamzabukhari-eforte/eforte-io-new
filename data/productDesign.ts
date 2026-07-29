@@ -32,7 +32,7 @@ export const productDesignValues: ProductDesignValue[] = [
     id: "quality",
     title: "Quality",
     description:
-      "We deliver top-notch solutions that meet the highest standards.",
+      "eForte delivers design solutions that align with usability standards and your product goals, from first concept to final handoff.",
     icon: "/assets/images/capabilities/asterisk.svg",
     variant: "dark",
   },
@@ -40,7 +40,7 @@ export const productDesignValues: ProductDesignValue[] = [
     id: "collaboration",
     title: "Collaboration",
     description:
-      "We partner closely with clients, involving them in every step of the process.",
+      "eForte works as an embedded partner, involving stakeholders throughout the process to ensure alignment and fast feedback cycles.",
     icon: "/assets/images/capabilities/venn.svg",
     variant: "muted",
   },
@@ -48,7 +48,7 @@ export const productDesignValues: ProductDesignValue[] = [
     id: "flexibility",
     title: "Flexibility",
     description:
-      "We adapt to each client's unique requirements and project needs.",
+      "eForte adapts to your context – joining existing teams, leading from discovery, or supporting specific product workstreams.",
     icon: "/assets/images/capabilities/zag.svg",
     variant: "light",
   },
@@ -56,126 +56,141 @@ export const productDesignValues: ProductDesignValue[] = [
 
 export const productDesignProcess: ProductDesignProcessItem[] = [
   {
-    eyebrow: "Discover",
-    title: "Craft product strategy from real user insight",
+    eyebrow: "UX Design",
+    title: "Design seamless journeys that match user goals and business outcomes",
     description:
-      "We start with research, stakeholder alignment, competitive scans, and journey mapping so the product direction is grounded in evidence instead of assumptions.",
+      "UX design to define flows, journeys, and interactions that reduce friction and increase conversion.",
     image: "/assets/images/case-study/InstApp-Dealbanner.png",
-    imageAlt: "Mobile product screens used during a product design discovery process",
+    imageAlt: "UX design wireframes and user flows",
     imageSide: "right",
-    tags: ["Research", "Journey mapping", "Product strategy"],
+    tags: ["Wireframing", "Prototyping", "User Flows", "Journey Maps"],
   },
   {
-    eyebrow: "Design",
-    title: "Prototype experiences that reduce delivery risk",
+    eyebrow: "UI Design",
+    title: "Create interfaces that are intuitive, accessible, and easy to build",
     description:
-      "From wireframes to high-fidelity prototypes, our designers help teams test flows early, sharpen requirements, and build shared confidence before engineering scales.",
+      "UI design that is clean, intuitive, and implementation-ready for your development teams.",
     image: "/assets/images/case-study/komb-banner.png",
-    imageAlt: "Web and mobile product interface mockups",
+    imageAlt: "Clean UI design mockups",
     imageSide: "left",
-    tags: ["Wireframes", "Prototypes", "Usability testing"],
+    tags: ["Usability", "Accessibility", "Visual Hierarchy", "Design Systems"],
   },
   {
-    eyebrow: "Validate",
-    title: "Turn feedback into measurable product improvements",
+    eyebrow: "Service Design",
+    title: "Shape holistic experiences across digital and non-digital touchpoints",
     description:
-      "We combine qualitative signals with analytics to refine onboarding, conversion, retention, and task completion across the user lifecycle.",
+      "Service design that looks across channels and processes to deliver a consistent, connected experience.",
     image: "/assets/images/case-study/oddysee-banner.png",
-    imageAlt: "Mobile app interface representing validated product improvements",
+    imageAlt: "Service design blueprint diagram",
     imageSide: "right",
-    tags: ["Analytics", "Experimentation", "Design QA"],
+    tags: ["Customer Journeys", "Service Blueprint", "Stakeholder Mapping", "Empathy Maps"],
   },
   {
-    eyebrow: "Scale",
-    title: "Build people-centric systems at enterprise speed",
+    eyebrow: "UX Research",
+    title: "Make product decisions grounded in evidence, not assumptions",
     description:
-      "Reusable design systems, component libraries, and documentation help product teams ship consistent experiences faster across markets and platforms.",
-    image: "/assets/images/case-study/prism-banner.png",
-    imageAlt: "Enterprise product dashboard and tablet screens",
+      "UX research that brings real user evidence into every key decision.",
+    image: "/assets/images/case-study/CulturalFit.jpg",
+    imageAlt: "UX research session with participants",
     imageSide: "left",
-    tags: ["Design systems", "Accessibility", "Delivery handoff"],
+    tags: ["Interviews", "A/B Testing", "Surveys", "Personas"],
+  },
+  {
+    eyebrow: "Visual Design",
+    title: "Give your product a distinctive visual language that reinforces your brand",
+    description:
+      "Visual design that shapes a distinctive, on-brand look and feel with scalable assets.",
+    image: "/assets/images/case-study/krank-banner.png",
+    imageAlt: "Visual design system components",
+    imageSide: "right",
+    tags: ["Aesthetics", "Illustrations", "Iconography", "Animations"],
   },
 ];
 
 export const productDesignShowcase: ProductDesignShowcaseItem[] = [
   {
-    id: "krank",
-    brand: "Krank",
-    title: "Empowering women's health: Redesigning a seamless patient experience",
+    id: "health",
+    brand: "Health Experience",
+    title: "Empowering better health experiences",
     paragraphs: [
-      "Krank partnered with eForte to create a seamless and empathetic digital experience for patients navigating complex care journeys.",
-      "Our design team crafted a clean, intuitive UI/UX with a relaxed and sympathetic look and feel that supports trust and engagement.",
-    ],
-    image: "/assets/images/case-study/krank-banner.png",
-    imageAlt: "Krank healthcare app product design",
-    background: "#4E2D6B",
-    href: "/case-studies/krank",
-  },
-  {
-    id: "oddysee",
-    brand: "Oddysee",
-    title: "Enabling personalized guidance with Oddysee",
-    paragraphs: [
-      "Oddysee partnered with eForte to enhance the user experience and turn data into meaningful guidance across the platform.",
-      "We redesigned core journeys to improve clarity, retention, and confidence for users making important decisions.",
+      "A health-focused product team partnered with eForte to redesign their patient journey and app interface.",
+      "eForte delivered a calm, empathetic UI and streamlined flows, making it easier for users to understand results and stay engaged with their care.",
     ],
     image: "/assets/images/case-study/oddysee-banner.png",
-    imageAlt: "Oddysee platform screens",
-    background: "#B83280",
-    href: "/case-studies/oddysee",
+    imageAlt: "Health app redesign",
+    background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
+    href: "/contact-us",
   },
   {
-    id: "instapp-deal",
-    brand: "InstApp Deal",
-    title: "Designing mobile onboarding that converts",
+    id: "learning",
+    brand: "Education Platform",
+    title: "Personalizing learning and careers",
     paragraphs: [
-      "We helped InstApp Deal simplify activation with a mobile-first flow that reduces friction and improves completion rates.",
-      "The new experience pairs clear hierarchy with polished UI patterns that scale across future product releases.",
+      "An education platform engaged eForte to refine its experience for students, teachers, and counselors.",
+      "eForte combined product design and data-driven insights to build interfaces that make personalized recommendations transparent, actionable, and easy to navigate.",
     ],
-    image: "/assets/images/case-study/InstApp-Deal-Mobilebanner.png",
-    imageAlt: "InstApp Deal mobile product screens",
-    background: "#6E2585",
-    href: "/case-studies/instapp-deal",
+    image: "/assets/images/case-study/InstApp-Dealbanner.png",
+    imageAlt: "Education platform design",
+    background: "linear-gradient(135deg, #0f2027 0%, #203a43 100%)",
+    href: "/contact-us",
   },
   {
-    id: "komb",
-    brand: "Komb",
-    title: "A scalable design system for multi-platform products",
+    id: "fintech",
+    brand: "Fintech Product",
+    title: "Enabling data-driven fintech products",
     paragraphs: [
-      "Komb worked with eForte to unify web and mobile experiences under a coherent visual language and component library.",
-      "The result is a faster delivery model with stronger consistency across customer touchpoints.",
+      "A growing fintech brand collaborated with eForte to improve onboarding, account management, and in-app communication.",
+      "eForte used UX research and design systems to drive clarity, trust, and measurable improvements in activation and retention.",
     ],
     image: "/assets/images/case-study/komb-banner.png",
-    imageAlt: "Komb product design screens",
-    background: "#5B3FD6",
-    href: "/case-studies/komb",
+    imageAlt: "Fintech product design",
+    background: "linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 100%)",
+    href: "/contact-us",
+  },
+  {
+    id: "edtech",
+    brand: "EdTech Company",
+    title: "Designing for families and educators",
+    paragraphs: [
+      "An edtech company worked with eForte to create a friendly, inclusive product for kids, parents, and teachers.",
+      "eForte built a scalable design system with typography, color, and reusable components that support accessibility and future product growth.",
+    ],
+    image: "/assets/images/case-study/krank-banner.png",
+    imageAlt: "EdTech product design system",
+    background: "linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%)",
+    href: "/contact-us",
   },
 ];
 
 export const productDesignFaqs = [
   {
-    question: "What involvement do clients have in product design?",
+    question: "What product design and usability services does eForte provide?",
     answer:
-      "We run collaborative workshops, regular design reviews, and validation checkpoints so product, business, and engineering stakeholders stay aligned throughout the engagement.",
+      "eForte offers UX design, UI design, service design, UX research, and visual design services, covering the full lifecycle from discovery and concepting through delivery-ready interfaces and systems.",
   },
   {
-    question: "What outputs can we expect from a design process?",
+    question: "How does eForte approach the design process?",
     answer:
-      "Typical outputs include research synthesis, journeys, wireframes, prototypes, usability findings, UI designs, design systems, and engineering-ready specs.",
+      "eForte follows a user-centered, iterative workflow that combines research, ideation, prototyping, testing, and refinement, always tied to your product metrics and roadmap.",
   },
   {
-    question: "Can you improve an existing product?",
+    question: "How does eForte collaborate with clients during projects?",
     answer:
-      "Yes. We audit existing flows, identify usability and conversion gaps, and prioritize improvements that can be delivered in practical increments.",
+      "eForte integrates with your product, design, and engineering teams through regular workshops, reviews, and async collaboration tools to keep decisions transparent and aligned.",
   },
   {
-    question: "How do designers work with engineering teams?",
+    question: "How does UX research improve product design?",
     answer:
-      "Designers partner closely with engineers through feasibility reviews, component specs, responsive behavior, accessibility details, and design QA.",
+      "UX research from eForte exposes real user needs and behaviors, helping prioritize features, validate concepts early, and reduce rework later in development.",
   },
   {
-    question: "Do you support accessibility?",
+    question: "What is the role of usability testing in the design process?",
     answer:
-      "Yes. We design with accessibility standards in mind, including contrast, interaction states, keyboard paths, semantic structure, and readable content patterns.",
+      "Usability testing allows eForte to observe how people use prototypes, identify friction, and refine flows before they reach production, saving time and budget.",
+  },
+  {
+    question: "Why choose eForte for UI/UX design?",
+    answer:
+      "eForte combines user-centric methods, strong visual craft, and delivery-ready systems, helping teams launch products that are both delightful to use and straightforward to implement.",
   },
 ];

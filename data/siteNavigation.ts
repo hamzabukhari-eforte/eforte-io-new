@@ -31,7 +31,7 @@ export const footerColumns: FooterColumn[] = [
       { label: "Cloud, SRE, & DevOps", href: "/capabilities/cloud-sre" },
       {
         label: "Staff Augmentation - Dedicated Resource Hiring",
-        href: "#",
+        href: "/capabilities/staff-augmentation",
       },
       // Legacy studios preserved for future reuse (also commented in navbar):
       // { label: "Cybersecurity", href: "/capabilities/cybersecurity" },

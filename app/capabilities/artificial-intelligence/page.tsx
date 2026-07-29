@@ -7,9 +7,10 @@ import {
   AiHeroSection,
   AiInsightsSection,
   AiPartnersSection,
-  AiQbricksBenefitsSection,
-  AiQbricksSection,
-  AiQbricksVideoSection,
+  // QBricks sections not in current document — preserved for future reuse
+  // AiQbricksBenefitsSection,
+  // AiQbricksSection,
+  // AiQbricksVideoSection,
   AiSolutionsInActionSection,
   AiSolutionsSection,
   AiWhitePaperSection,
@@ -27,9 +28,10 @@ export default function ArtificialIntelligencePage() {
       <AiHeroSection />
       <AiSolutionsInActionSection />
       <AiCompoundSystemsSection />
-      <AiQbricksSection />
-      <AiQbricksBenefitsSection />
-      <AiQbricksVideoSection />
+      {/* QBricks sections not in current document — preserved for future reuse */}
+      {/* <AiQbricksSection /> */}
+      {/* <AiQbricksBenefitsSection /> */}
+      {/* <AiQbricksVideoSection /> */}
       <AiDataCtaSection />
       <AiPartnersSection />
       <AiSolutionsSection />

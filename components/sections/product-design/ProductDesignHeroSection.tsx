@@ -40,7 +40,7 @@ export default function ProductDesignHeroSection() {
             transition={{ duration: 0.55, delay: 0.08 }}
             className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[48px]"
           >
-            Craft captivating and memorable digital experiences
+            Design digital products your users remember
           </motion.h1>
 
           <motion.p
@@ -49,9 +49,10 @@ export default function ProductDesignHeroSection() {
             transition={{ duration: 0.55, delay: 0.16 }}
             className="mt-6 max-w-2xl text-base leading-7 text-white/82 md:text-lg"
           >
-            We help teams move from idea to market-ready product through research,
-            strategy, UX, UI, and design systems that connect business outcomes
-            with real human needs.
+            eForte&apos;s Product Design Studio helps you craft engaging, intuitive
+            experiences that feel effortless to use and easy to love. Our team
+            blends UX strategy, interface design, and research to turn ideas into
+            products that perform.
           </motion.p>
 
           <motion.div

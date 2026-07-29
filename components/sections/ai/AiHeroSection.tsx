@@ -2,75 +2,75 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { HiSparkles } from "react-icons/hi2";
 import ContactCTA from "@/components/atoms/ContactCTA";
 import Container from "@/components/atoms/Container";
-import { AI_ACCENT } from "@/data/capabilities/ai";
 
 export default function AiHeroSection() {
   return (
-    <section className="relative flex min-h-[720px] flex-col justify-center overflow-hidden bg-black pt-28 pb-24 md:min-h-[860px] md:pt-36 md:pb-32">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.92 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.1 }}
-        className="pointer-events-none absolute -right-[8%] top-[42%] h-[85%] w-[95%] -translate-y-1/2 sm:w-[80%] md:top-1/2 md:h-[110%] md:w-[70%] lg:-right-[4%] lg:w-[68%] xl:w-[62%]"
-      >
+    <section className="relative flex min-h-[760px] flex-col justify-center overflow-hidden bg-default pt-28 pb-20 md:min-h-screen md:pt-36">
+      <div className="absolute inset-0">
         <Image
           src="/assets/images/capabilities/ai/hero.png"
           alt=""
           fill
           priority
-          sizes="(max-width: 768px) 95vw, 70vw"
-          className="object-contain object-center"
+          className="object-cover object-right"
           aria-hidden
         />
-      </motion.div>
-
-      <div
-        className="pointer-events-none absolute inset-0 bg-linear-to-r from-black via-black/85 to-black/20 md:via-black/75 md:to-transparent"
-        aria-hidden
-      />
+        <div className="absolute inset-0 bg-linear-to-r from-black/95 via-black/75 to-black/35" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_35%,rgba(211,40,122,0.35),transparent_34%)]" />
+      </div>
 
       <Container className="relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55 }}
-          className="max-w-3xl lg:max-w-[640px] xl:max-w-[720px]"
-        >
-          <p
-            className="text-[13px] font-semibold uppercase tracking-[0.18em]"
-            style={{ color: AI_ACCENT }}
+        <div className="max-w-3xl">
+          <motion.span
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[13px] font-medium uppercase tracking-[0.18em] text-white backdrop-blur"
           >
-            Artificial Intelligence Solutions
-          </p>
-          <h1 className="mt-5 text-4xl font-semibold leading-[1.12] text-white sm:text-5xl lg:text-[48px]">
-            eForte&apos;s AI Studio specializes in building industry-specific,
-            enterprise-grade AI solutions
-          </h1>
-          <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-white/75 md:text-lg">
+            <HiSparkles className="h-3.5 w-3.5 text-primary-pink" />
+            Artificial Intelligence
+          </motion.span>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.08 }}
+            className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[48px]"
+          >
+            eForte&apos;s AI Studio builds industry-specific, enterprise-grade AI solutions
+          </motion.h1>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.16 }}
+            className="mt-6 max-w-2xl space-y-4 text-base leading-7 text-white/82 md:text-lg"
+          >
             <p>
-              eForte&apos;s AI Studio helps organizations transform ideas into
-              production-ready AI solutions. Our capabilities include building
-              custom AI agents, generative AI and LLM-powered applications,
-              computer vision, predictive analytics, and intelligent automation.
+              The studio covers LLM development, generative AI, and computer
+              vision, helping you enhance processes, unlock insights from data,
+              and automate complex work.
             </p>
             <p>
-              Whether you&apos;re modernizing workflows, empowering teams with AI
-              copilots, extracting insights from complex data, or creating new
-              AI-driven products, our experts deliver tailored solutions aligned
-              with your business objectives.
+              A dedicated team designs tailored solutions aligned to your
+              strategy and constraints.
             </p>
-          </div>
-          <div className="mt-9">
-            <ContactCTA
-              className="inline-flex h-12 items-center justify-center rounded-full px-8 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: AI_ACCENT }}
-            >
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.24 }}
+            className="mt-9"
+          >
+            <ContactCTA className="inline-flex h-12 items-center justify-center rounded-full bg-primary-pink px-8 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(211,40,122,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-pink/90">
               Contact Us
             </ContactCTA>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </Container>
     </section>
   );

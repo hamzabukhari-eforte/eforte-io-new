@@ -2,7 +2,8 @@ import {
   DataAcceleratorsSection,
   DataCaseStudySection,
   DataCtaBannerSection,
-  DataDatabricksPartnerSection,
+  // Databricks Gold Partner section not in current document — preserved for future reuse
+  // DataDatabricksPartnerSection,
   DataFaqSection,
   DataGovernanceSection,
   DataHeroSection,
@@ -23,7 +24,8 @@ export default function DataCapabilityPage() {
       <DataHeroSection />
       <DataGovernanceSection />
       <DataPartnersSection />
-      <DataDatabricksPartnerSection />
+      {/* Databricks Gold Partner section not in current document — preserved for future reuse */}
+      {/* <DataDatabricksPartnerSection /> */}
       <DataServicesSection />
       <DataAcceleratorsSection />
       <DataCaseStudySection />

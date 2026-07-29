@@ -5,13 +5,16 @@ import { motion } from "framer-motion";
 import { HiSparkles } from "react-icons/hi2";
 import ContactCTA from "@/components/atoms/ContactCTA";
 import Container from "@/components/atoms/Container";
+import { staffAugmentationContent } from "@/data/capabilities/staffAugmentation";
 
-export default function DataHeroSection() {
+const { hero } = staffAugmentationContent;
+
+export default function StaffAugmentationHeroSection() {
   return (
     <section className="relative flex min-h-[760px] flex-col justify-center overflow-hidden bg-default pt-28 pb-20 md:min-h-screen md:pt-36">
       <div className="absolute inset-0">
         <Image
-          src="/assets/images/industry/bi.jpg"
+          src="/assets/images/industry/working.jpg"
           alt=""
           fill
           priority
@@ -31,7 +34,7 @@ export default function DataHeroSection() {
             className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[13px] font-medium uppercase tracking-[0.18em] text-white backdrop-blur"
           >
             <HiSparkles className="h-3.5 w-3.5 text-primary-pink" />
-            Data
+            {hero.badge}
           </motion.span>
 
           <motion.h1
@@ -40,20 +43,18 @@ export default function DataHeroSection() {
             transition={{ duration: 0.55, delay: 0.08 }}
             className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[48px]"
           >
-            Unlock the full value of your data with our data engineering services
+            {hero.headline}
           </motion.h1>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.16 }}
-            className="mt-6 max-w-2xl text-base leading-7 text-white/82 md:text-lg"
+            className="mt-6 max-w-2xl space-y-4 text-base leading-7 text-white/82 md:text-lg"
           >
-            eForte&apos;s Data Studio helps you understand your data, improve its
-            quality, and turn it into a driver of growth and innovation. From
-            discovery to delivery, the team ensures your data assets are
-            reliable, secure, and ready to power AI and analytics.
-          </motion.p>
+            <p>{hero.body}</p>
+            <p>{hero.subBody}</p>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 16 }}

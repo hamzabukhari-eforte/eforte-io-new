@@ -14,31 +14,30 @@ interface Testimonial {
   title: string;
 }
 
-/** Same eForte client quotes used on financial-services / home */
 const testimonials: Testimonial[] = [
   {
-    id: "krank",
-    companyName: "Krank",
+    id: "financial-services",
+    companyName: "Financial Services Leader",
     testimonial:
-      "Consider the expertise that you require. They are one of the best groups around. Trust that they'll put good people into the project. They want to do the right thing.",
-    author: "Mark Turner",
-    title: "CEO & Founder, Krank",
+      "eForte is a trusted partner with deep technical expertise that consistently delivers innovative, high-value solutions.",
+    author: "Financial Services Leader",
+    title: "Enterprise Client",
   },
   {
-    id: "investment-markets",
-    companyName: "Investment Markets",
+    id: "health-wellbeing",
+    companyName: "Health & Wellbeing Company",
     testimonial:
-      "We've tripled our output from 20-25 to about 60-70 story points per week. They're fantastic to work with. Everyone I've worked with on their team has gone over and beyond to understand our goals and been very thorough in their approach.",
-    author: "Chris Mortan",
-    title: "Owner, Investment Markets",
+      "eForte played a key role in achieving an on-time launch. The team's integration, availability, and commitment to going the extra mile made all the difference.",
+    author: "Health & Wellbeing Company",
+    title: "Product Launch Client",
   },
   {
-    id: "oddysee",
-    companyName: "Oddysee",
+    id: "product-company",
+    companyName: "Product Company",
     testimonial:
-      "I appreciate their ability to respond and be dynamic. They've taken an individual interest in understanding our business. As soon as I started working with them, their lead sat with us for 2 weeks in order to understand everything before providing direction.",
-    author: "Zeta Ceti",
-    title: "CEO, Oddysee",
+      "eForte's UX and UI skills are outstanding. The team genuinely cares about client outcomes and user experience quality.",
+    author: "Product Company",
+    title: "Design Client",
   },
 ];
 
