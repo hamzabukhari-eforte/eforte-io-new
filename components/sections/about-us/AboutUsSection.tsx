@@ -12,7 +12,7 @@ const ReactPlayer = dynamic(() => import("react-player"), {
 });
 
 const ABOUT_TEXT =
-  "With 20+ years of experience and 900+ highly skilled professionals, we deliver high quality digital solutions.";
+  "With over a decade of experience and a growing team of dedicated engineers, designers, and consultants, eForte delivers high quality, AI native software solutions built around Velocity AI, Agentic Orchestration, and the Foundational Data Layer.";
 
 const YOUTUBE_URL = "https://www.youtube.com/watch?v=AxnIFqEakag";
 

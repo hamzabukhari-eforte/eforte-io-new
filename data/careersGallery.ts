@@ -1,11 +1,10 @@
 export type GalleryCategory =
   | "great-place-to-work"
-  | "our-offices"
-  | "bootcamp"
-  | "after-office"
-  | "pet-friendly"
-  | "expert-talks"
-  | "our-chef";
+  | "our-workspaces"
+  | "team-events"
+  | "learning-days"
+  | "community-give-back"
+  | "wins-milestones";
 
 export type GalleryCategoryOption = {
   id: GalleryCategory;
@@ -43,59 +42,58 @@ export const bentoColumnConfig: [
 
 export const galleryCategories: GalleryCategoryOption[] = [
   { id: "great-place-to-work", label: "Great Place to Work" },
-  { id: "our-offices", label: "Our offices" },
-  { id: "bootcamp", label: "Bootcamp" },
-  { id: "after-office", label: "After office" },
-  { id: "pet-friendly", label: "Pet friendly" },
-  { id: "expert-talks", label: "Expert talks" },
-  { id: "our-chef", label: "Our chef" },
+  { id: "our-workspaces", label: "Our Workspaces" },
+  { id: "team-events", label: "Team Events" },
+  { id: "learning-days", label: "Learning Days" },
+  { id: "community-give-back", label: "Community Give Back" },
+  { id: "wins-milestones", label: "Wins & Milestones" },
 ];
 
 const imagePool = {
   officeWork: {
     id: "office-work",
     src: "/assets/images/industry/working.jpg",
-    alt: "Team working in the office",
+    alt: "Team collaboration session",
   },
   lounge: {
     id: "lounge",
     src: "/assets/images/case-study/CulturalFit.jpg",
-    alt: "Team in the office lounge",
+    alt: "Team in the workspace lounge",
   },
   pingPong: {
     id: "ping-pong",
     src: "/assets/images/industry/driving-1.jpg",
-    alt: "Team activity at the office",
+    alt: "Team activity",
   },
   outdoorEvent: {
     id: "outdoor-event",
     src: "/assets/images/industry/driving-2.jpg",
-    alt: "Outdoor team gathering",
+    alt: "Team event outdoors",
   },
   nightEvent: {
     id: "night-event",
     src: "/assets/images/industry/events.jpg",
-    alt: "Company event with the team",
+    alt: "Milestone celebration",
   },
   hallway: {
     id: "hallway",
     src: "/assets/images/industry/recognitions.jpg",
-    alt: "Colleagues collaborating in the hallway",
+    alt: "Colleagues collaborating",
   },
   bootcamp: {
     id: "bootcamp",
     src: "/assets/images/industry/accelerators-1.jpg",
-    alt: "Bootcamp session",
+    alt: "Learning day session",
   },
   kitchen: {
     id: "kitchen",
     src: "/assets/images/industry/accelerators-2.jpg",
-    alt: "Team sharing a meal",
+    alt: "Team gathering",
   },
   pets: {
     id: "pets",
     src: "/assets/images/industry/accelerators-3.jpg",
-    alt: "Pet-friendly office moment",
+    alt: "Community give back moment",
   },
   team: {
     id: "team",
@@ -105,12 +103,12 @@ const imagePool = {
   accelerators4: {
     id: "accelerators-4",
     src: "/assets/images/industry/accelerators-4.jpg",
-    alt: "Team collaboration session",
+    alt: "Virtual town hall collaboration",
   },
   accelerators5: {
     id: "accelerators-5",
     src: "/assets/images/industry/accelerators-5.jpg",
-    alt: "Office culture moment",
+    alt: "Workspace culture moment",
   },
 } as const;
 
@@ -134,34 +132,29 @@ export const bentoLayouts: Record<GalleryCategory, BentoLayout> = {
     [imagePool.pingPong, imagePool.outdoorEvent],
     [imagePool.nightEvent, imagePool.hallway]
   ),
-  "our-offices": makeBentoLayout(
+  "our-workspaces": makeBentoLayout(
     [imagePool.hallway, imagePool.lounge],
     [imagePool.officeWork, imagePool.accelerators5],
-    [imagePool.team, imagePool.pets]
+    [imagePool.team, imagePool.kitchen]
   ),
-  bootcamp: makeBentoLayout(
-    [imagePool.bootcamp, imagePool.officeWork],
-    [imagePool.accelerators4, imagePool.hallway],
-    [imagePool.team, imagePool.accelerators5]
-  ),
-  "after-office": makeBentoLayout(
+  "team-events": makeBentoLayout(
     [imagePool.pingPong, imagePool.lounge],
     [imagePool.nightEvent, imagePool.outdoorEvent],
     [imagePool.outdoorEvent, imagePool.kitchen]
   ),
-  "pet-friendly": makeBentoLayout(
-    [imagePool.pets, imagePool.officeWork],
-    [imagePool.lounge, imagePool.hallway],
-    [imagePool.team, imagePool.pets]
-  ),
-  "expert-talks": makeBentoLayout(
+  "learning-days": makeBentoLayout(
     [imagePool.bootcamp, imagePool.officeWork],
     [imagePool.accelerators4, imagePool.team],
     [imagePool.hallway, imagePool.accelerators5]
   ),
-  "our-chef": makeBentoLayout(
-    [imagePool.kitchen, imagePool.outdoorEvent],
-    [imagePool.lounge, imagePool.kitchen],
-    [imagePool.nightEvent, imagePool.pets]
+  "community-give-back": makeBentoLayout(
+    [imagePool.pets, imagePool.officeWork],
+    [imagePool.lounge, imagePool.hallway],
+    [imagePool.team, imagePool.outdoorEvent]
+  ),
+  "wins-milestones": makeBentoLayout(
+    [imagePool.nightEvent, imagePool.outdoorEvent],
+    [imagePool.team, imagePool.accelerators4],
+    [imagePool.hallway, imagePool.accelerators5]
   ),
 };

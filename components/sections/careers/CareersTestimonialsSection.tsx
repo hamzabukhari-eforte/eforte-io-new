@@ -135,7 +135,7 @@ export default function CareersTestimonialsSection() {
           className="mb-12 text-center md:mb-16"
         >
           <h2 className="text-3xl font-semibold text-default md:text-4xl lg:text-[42px]">
-            What eForters say
+            What our team says
           </h2>
         </motion.div>
       </Container>

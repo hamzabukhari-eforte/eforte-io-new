@@ -90,8 +90,11 @@ export default function CareersPhotoGallerySection() {
           className="mb-8 text-center md:mb-10"
         >
           <h2 className="text-3xl font-semibold text-default md:text-4xl lg:text-[42px]">
-            Discover more about us!
+            Life at eForte
           </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-gray-600 md:text-lg">
+            A glimpse into how our team works, learns, and celebrates together.
+          </p>
         </motion.div>
 
         <div className="mb-10 flex flex-wrap justify-center gap-2 md:mb-12 md:gap-3">

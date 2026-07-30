@@ -9,57 +9,39 @@ export type EmployeeTestimonial = {
 
 export const employeeTestimonials: EmployeeTestimonial[] = [
   {
-    id: "jose",
+    id: "priya",
     quote:
-      "Working at eForte has been a game-changer for my career. The culture of innovation and the support from leadership make every day exciting and rewarding.",
-    name: "Jose Manuel Piro",
-    role: "SRE",
+      "What I love most about eForte is that no one treats you like a junior or a senior everyone's ideas get heard. I've worked on three different industries in two years, and every project has sharpened a different skill.",
+    name: "Priya Nandakumar",
+    role: "Software Engineer",
     avatarSrc: "/assets/images/velocity-ai/avatar-2.jpg",
     bgClass: "bg-emerald-50",
   },
   {
-    id: "sebastian",
+    id: "marcus",
     quote:
-      "The collaborative environment here is unmatched. I've grown more in two years at eForte than in five years at my previous company. The team truly invests in your development.",
-    name: "Sebastián Díaz",
-    role: "Data Studio Manager",
-    avatarSrc: "/assets/images/velocity-ai/avatar-3.jpg",
-    bgClass: "bg-sky-50",
-  },
-  {
-    id: "maria",
-    quote:
-      "What I love most is the balance between challenging projects and a supportive team. eForte gives you the space to innovate while ensuring you never feel alone in the process.",
-    name: "María González",
+      "Coming from a much larger company, the thing that surprised me most was how much ownership you get here. If you see a better way to solve a problem, you're trusted to go build it.",
+    name: "Marcus Idowu",
     role: "Product Designer",
     avatarSrc: "/assets/images/velocity-ai/avatar-4.jpg",
-    bgClass: "bg-violet-50",
-  },
-  {
-    id: "alex",
-    quote:
-      "From day one, I felt welcomed and valued. The mentorship programs and learning opportunities have helped me advance my skills while working on meaningful AI-native products.",
-    name: "Alex Chen",
-    role: "AI Engineer",
-    avatarSrc: "/assets/images/velocity-ai/avatar-5.jpg",
-    bgClass: "bg-rose-50",
+    bgClass: "bg-sky-50",
   },
   {
     id: "lucia",
     quote:
-      "eForte's commitment to excellence pushes you to do your best work, but always with empathy. It's rare to find a company that cares this much about both clients and people.",
+      "eForte's 'one Team, one Client' mindset isn't just a slogan, it genuinely shapes how we're staffed and how we collaborate day to day. It makes the work feel like ours, not just a ticket to close.",
     name: "Lucía Fernández",
-    role: "Engineering Manager",
+    role: "Project Manager",
     avatarSrc: "/assets/images/case-study/Chris_Morton.jpg",
-    bgClass: "bg-amber-50",
+    bgClass: "bg-violet-50",
   },
   {
-    id: "daniel",
+    id: "daniyar",
     quote:
-      "The flexibility to work across offices and the emphasis on work-life balance make eForte stand out. I've built lasting friendships while delivering impactful solutions.",
-    name: "Daniel Rivera",
-    role: "Full Stack Developer",
-    avatarSrc: "/assets/images/case-study/Raymond_Rienks.jpg",
-    bgClass: "bg-indigo-50",
+      "I joined as a QA engineer and within a year I was leading test automation strategy for one of our biggest accounts. The growth here happens as fast as you're ready for it.",
+    name: "Daniyar Bekov",
+    role: "QA Lead",
+    avatarSrc: "/assets/images/velocity-ai/avatar-3.jpg",
+    bgClass: "bg-rose-50",
   },
 ];

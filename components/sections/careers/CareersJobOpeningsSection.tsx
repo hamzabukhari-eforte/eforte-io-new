@@ -45,7 +45,10 @@ export default function CareersJobOpeningsSection() {
   const introInView = useInViewReplay(introRef, { margin: "-60px", amount: 0.15 });
 
   return (
-    <section className="relative z-10 -mt-10 rounded-t-[40px] bg-default pb-20 pt-14 md:-mt-14 md:pb-28 md:pt-20">
+    <section
+      id="open-roles"
+      className="relative z-10 -mt-10 scroll-mt-24 rounded-t-[40px] bg-default pb-20 pt-14 md:-mt-14 md:pb-28 md:pt-20"
+    >
       <Container>
         <motion.div
           ref={introRef}
@@ -55,11 +58,18 @@ export default function CareersJobOpeningsSection() {
           className="mb-10 text-center md:mb-14"
         >
           <h2 className="text-3xl font-semibold text-white md:text-4xl lg:text-[42px]">
-            Job Openings
+            Open Roles
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-desc md:text-lg">
-            Explore opportunities to grow your career with eForte across AI,
-            data, design, and engineering.
+            New opportunities open up as our teams grow. Take a look at
+            what&apos;s available now.
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-desc md:text-base">
+            Browse current openings across Engineering, Data &amp; AI, Product
+            Design, Quality Assurance, Cloud &amp; DevOps, and Project
+            Management. Don&apos;t see the exact right fit today? Send us your
+            resume anyway. We keep strong candidates in mind for what&apos;s
+            next.
           </p>
         </motion.div>
 

@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
-import ContactCTA from "@/components/atoms/ContactCTA";
 
 const HERO_IMAGE = "/assets/images/industry/working.jpg";
 
@@ -45,20 +45,32 @@ export default function CareersHeroSection() {
             variants={heroItem}
             className="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[56px] lg:leading-[1.12]"
           >
-            Make a Difference, Thrive, and Enjoy Every Moment!
+            Grow, Build, and Belong.
           </motion.h1>
           <motion.p
             variants={heroItem}
             className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-white/90 md:mt-6 md:text-lg"
           >
-            We&apos;re proud partners of market leaders, collaborating to innovate,
-            inspire, and build a brighter tomorrow. Join our fast-growing team of
-            visionaries and take your career to the next level.
+            At eForte, we believe great software is built by great people. Join a
+            team of engineers, designers, and strategists who turn ambitious ideas
+            into working products and take your career further while you do it.
           </motion.p>
-          <motion.div variants={heroItem} className="mt-8 md:mt-10">
-            <ContactCTA className="inline-flex h-12 items-center justify-center rounded-full bg-gradient-to-r from-[#be185d] to-[#db2777] px-10 text-sm font-medium text-white transition-all hover:from-[#db2777] hover:to-[#be185d] hover:-translate-y-0.5 shadow-[0_4px_14px_0_rgba(219,39,119,0.39)]">
-              Contact Us
-            </ContactCTA>
+          <motion.div
+            variants={heroItem}
+            className="mt-8 flex flex-wrap items-center justify-center gap-4 md:mt-10"
+          >
+            <Link
+              href="#open-roles"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-gradient-to-r from-[#be185d] to-[#db2777] px-8 text-sm font-medium text-white shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] transition-all hover:-translate-y-0.5 hover:from-[#db2777] hover:to-[#be185d]"
+            >
+              Explore Open Roles
+            </Link>
+            <Link
+              href="#our-values"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-white/50 px-8 text-sm font-medium text-white transition-all hover:border-white hover:bg-white hover:text-default"
+            >
+              Learn About Our Culture
+            </Link>
           </motion.div>
         </motion.div>
       </Container>

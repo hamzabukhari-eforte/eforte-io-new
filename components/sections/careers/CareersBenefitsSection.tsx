@@ -51,8 +51,7 @@ export default function CareersBenefitsSection() {
             What&apos;s in it for you?
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-gray-600 md:mt-6 md:text-lg">
-            We foster a collaborative and uplifting workplace environment, where
-            personal growth is not just encouraged, but integral to who we are.
+            We invest in the people who invest in us.
           </p>
         </motion.div>
 

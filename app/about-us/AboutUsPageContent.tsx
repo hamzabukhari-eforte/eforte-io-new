@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import AboutLocationsSection from "@/components/sections/about-us/AboutLocationsSection";
 import AboutUsSection from "@/components/sections/about-us/AboutUsSection";
 import OurTimelineSection from "@/components/sections/about-us/OurTimelineSection";
 import OurValuesSection from "@/components/sections/about-us/OurValuesSection";
@@ -57,6 +58,15 @@ export default function AboutUsPageContent() {
         variants={sectionVariants}
       >
         <OurValuesSection />
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, margin: "-80px", amount: 0.15 }}
+        variants={sectionVariants}
+      >
+        <AboutLocationsSection />
       </motion.div>
     </main>
   );

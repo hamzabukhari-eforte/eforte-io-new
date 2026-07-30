@@ -16,8 +16,8 @@ export default function OurValuesSection() {
           Our values
         </h2>
         <p className="text-base md:text-lg text-white text-center mt-4 mb-14 max-w-2xl mx-auto leading-relaxed">
-          We foster a collaborative and uplifting workplace environment, where personal growth is
-          not just encouraged, but integral to who we are.
+          We foster a collaborative and uplifting workplace environment, where
+          personal growth and professional excellence go hand in hand.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-12 md:gap-y-14">

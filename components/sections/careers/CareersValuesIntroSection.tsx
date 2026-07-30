@@ -15,7 +15,7 @@ export default function CareersValuesIntroSection() {
   const isInView = useInViewReplay(ref, { margin: "-60px", amount: 0.15 });
 
   return (
-    <section className="bg-default pb-10 pt-16 md:pb-14 md:pt-20">
+    <section id="our-values" className="scroll-mt-24 bg-default pb-10 pt-16 md:pb-14 md:pt-20">
       <Container>
         <motion.div
           ref={ref}
@@ -28,8 +28,7 @@ export default function CareersValuesIntroSection() {
             Our Values
           </h2>
           <p className="text-base leading-relaxed text-desc md:text-lg md:leading-relaxed">
-            We foster a collaborative and uplifting workplace environment, where
-            personal growth is not just encouraged, but integral to who we are.
+            The principles that guide how we work, every single day.
           </p>
         </motion.div>
 

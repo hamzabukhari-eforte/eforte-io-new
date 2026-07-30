@@ -19,72 +19,63 @@ export interface DifferentiatorCard {
 export const differentiatorsCards: DifferentiatorCard[] = [
   {
     id: 1,
-    title: "Partnerships",
+    title: "Staff Augmentation Excellence",
     description:
-      "We're partners with, and collaborate closely with, Databricks, Snowflake, GCP, Azure, AWS and others.",
-    iconName: "grid",
-    accentColor: "#A855F7",
-    accentGlow: "rgba(168, 85, 247, 0.4)",
+      "We embed highly skilled engineers directly into client teams, with a dynamic onboarding model built to ramp up fast without sacrificing quality.",
+    iconName: "layers",
+    accentColor: "#22C55E",
+    accentGlow: "rgba(34, 197, 94, 0.4)",
   },
   {
     id: 2,
-    title: "Modern Approach",
+    title: "Full Focus, One Team, One Client",
     description:
-      "We offer our clients creativity, innovation and engineering executed with tried and tested methodologies.",
+      "Every Scrum team we assign works with complete focus on a single client relationship, avoiding the context switching that slows other outsourcing models down.",
     iconName: "compass",
     accentColor: "#F97316",
     accentGlow: "rgba(249, 115, 22, 0.4)",
   },
   {
     id: 3,
-    title: "Scalability",
+    title: "Top Talent, Low Attrition",
     description:
-      "We help our clients ramp up fast. With our dynamic onboarding model we have the processes to onboard highly educated IT professionals at speed.",
-    iconName: "layers",
-    accentColor: "#22C55E",
-    accentGlow: "rgba(34, 197, 94, 0.4)",
-  },
-  {
-    id: 4,
-    title: "Top Talent",
-    description:
-      "Fast-growth, and emphasis on professional development mean very low attrition rates.",
+      "Our emphasis on professional development and a genuinely engaged culture keeps attrition low and institutional knowledge with your project.",
     iconName: "medal",
     accentColor: "#EAB308",
     accentGlow: "rgba(234, 179, 8, 0.4)",
   },
   {
-    id: 5,
-    title: "Nearshore",
+    id: 4,
+    title: "Nearshore & Global Delivery",
     description:
-      "Our USA and South America locations ensure time zone alignment for efficient execution.",
+      "Our delivery centers are positioned for efficient time zone alignment with North American clients, without sacrificing access to global talent.",
     iconName: "flag",
     accentColor: "#0EA5E9",
     accentGlow: "rgba(14, 165, 233, 0.4)",
   },
   {
+    id: 5,
+    title: "AI Native Engineering",
+    description:
+      "Velocity AI, Agentic Orchestration, and the Foundational Data Layer are built into how we approach every engagement, not bolted on afterward.",
+    iconName: "lightning",
+    accentColor: "#A855F7",
+    accentGlow: "rgba(168, 85, 247, 0.4)",
+  },
+  {
     id: 6,
     title: "Industry Expertise",
     description:
-      "Deep experience in financial services, healthcare, insurance, retail, education.",
+      "Deep experience across Finance, Insurance, Health & Wellbeing, Heavy Industry, Automobile, Hospitality, and BPO & Shared Services.",
     iconName: "shield",
     accentColor: "#A855F7",
     accentGlow: "rgba(168, 85, 247, 0.35)",
   },
   {
     id: 7,
-    title: "Innovation",
-    description:
-      "Innovation, continuous growth and optimization are key parts of our DNA.",
-    iconName: "lightning",
-    accentColor: "#EAB308",
-    accentGlow: "rgba(234, 179, 8, 0.4)",
-  },
-  {
-    id: 8,
     title: "Predictable Delivery",
     description:
-      "Quality and exceptional business value drive every process we undertake.",
+      "Quality and exceptional business value drive every process we undertake, backed by transparent communication and consistent documentation.",
     iconName: "cube",
     accentColor: "#EA580C",
     accentGlow: "rgba(234, 88, 12, 0.4)",
