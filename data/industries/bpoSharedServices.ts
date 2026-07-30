@@ -1,16 +1,16 @@
 import type { IndustryPageContent } from "./types";
 
 export const bpoSharedServicesIndustry: IndustryPageContent = {
-  slug: "bpo-shared-services",
+  slug: "bpo-shared services",
   metadata: {
     title: "BPO & Shared Services | eForte",
-    description: "Scaling service delivery with intelligent automation — Agentic Orchestration, client self-service, and a Foundational Data Layer for shared services.",
+    description: "Scaling service delivery with intelligent automation, Agentic Orchestration, client self service, and a Foundational Data Layer for shared services.",
   },
   hero: {
     badge: "BPO & SHARED SERVICES",
     headline: "Scaling service delivery with intelligent automation",
     paragraphs: [
-      "eForte partners with outsourcing providers and shared service centers to modernize how they deliver support at scale — applying Velocity AI to accelerate delivery, Agentic Orchestration to automate routine work, and a Foundational Data Layer to keep client data secure and organized across large, distributed teams."
+      "eForte partners with outsourcing providers and shared service centers to modernize how they deliver support at scale, applying Velocity AI to accelerate delivery, Agentic Orchestration to automate routine work, and a Foundational Data Layer to keep client data secure and organized across large, distributed teams."
     ],
     ctaLabel: "Contact Us",
     imageSrc: "/assets/images/industry/driving-1.jpg",
@@ -56,12 +56,12 @@ export const bpoSharedServicesIndustry: IndustryPageContent = {
       },
       {
         id: "client-engagement",
-        title: "Client engagement & self-service",
+        title: "Client engagement & self service",
         glow: "/assets/images/industry/bg-1.png",
         bullets: [
           {
             title: "Client reporting portals",
-            text: "give clients real-time visibility into service metrics without manual reports.",
+            text: "give clients real time visibility into service metrics without manual reports.",
           },
           {
             title: "Omnichannel support platforms",
@@ -87,7 +87,7 @@ export const bpoSharedServicesIndustry: IndustryPageContent = {
             text: "connect shared service platforms with client systems for seamless data exchange.",
           },
           {
-            title: "Secure multi-tenant architecture",
+            title: "Secure multi tenant architecture",
             text: "support many clients on shared infrastructure without compromising data separation.",
           },
         ],
@@ -97,31 +97,31 @@ export const bpoSharedServicesIndustry: IndustryPageContent = {
   highlights: [
     {
       value: "01",
-      label: "Delivered intelligent automation reducing average handling time significantly for a multi-client BPO provider.",
+      label: "Delivered intelligent automation reducing average handling time significantly for a multi client BPO provider.",
     },
     {
       value: "02",
-      label: "Built quality-monitoring systems analyzing interactions at a scale no manual team could match.",
+      label: "Built quality monitoring systems analyzing interactions at a scale no manual team could match.",
     },
     {
       value: "03",
-      label: "Established secure, multi-tenant platforms supporting dozens of enterprise clients simultaneously.",
+      label: "Established secure, multi tenant platforms supporting dozens of enterprise clients simultaneously.",
     },
     {
       value: "04",
-      label: "Proven expertise in SOC 2- and ISO-aligned client data handling.",
+      label: "Proven expertise in SOC 2- and ISO aligned client data handling.",
     },
   ],
   security: {
     heading: "Rigorous data and security processes",
-    body: "eForte maintains ISO 27001 and SOC 2 Type 2 certifications, with architecture practices designed specifically for multi-tenant environments where client data separation and auditability are non-negotiable.",
+    body: "eForte maintains ISO 27001 and SOC 2 Type 2 certifications, with architecture practices designed specifically for multi tenant environments where client data separation and auditability are non negotiable.",
   },
   successStories: [
     {
       id: "meridian-outsourcing",
       title: "Meridian Outsourcing Solutions",
       paragraphs: [
-        "Meridian Outsourcing Solutions needed to grow its client base without proportionally growing headcount. eForte built ticket triage and knowledge-assistant agents that handle routine classification and lookups automatically, freeing agents for higher-value work."
+        "Meridian Outsourcing Solutions needed to grow its client base without proportionally growing headcount. eForte built ticket triage and knowledge assistant agents that handle routine classification and lookups automatically, freeing agents for higher value work."
       ],
       tags: [
         "Grew client base without proportional hiring",
@@ -138,7 +138,7 @@ export const bpoSharedServicesIndustry: IndustryPageContent = {
       id: "apex-shared",
       title: "Apex Shared Services",
       paragraphs: [
-        "Apex Shared Services could only manually review a small sample of client interactions for quality, missing many compliance issues. eForte built quality-monitoring agents analyzing the vast majority of interactions automatically, flagging issues for human review."
+        "Apex Shared Services could only manually review a small sample of client interactions for quality, missing many compliance issues. eForte built quality monitoring agents analyzing the vast majority of interactions automatically, flagging issues for human review."
       ],
       tags: [
         "Expanded quality coverage",
@@ -155,14 +155,14 @@ export const bpoSharedServicesIndustry: IndustryPageContent = {
       id: "crestline",
       title: "Crestline BPO Group",
       paragraphs: [
-        "Crestline BPO Group's clients were frustrated waiting days for performance reports. eForte built a Foundational Data Layer feeding a real-time client reporting portal, eliminating manual report preparation entirely."
+        "Crestline BPO Group's clients were frustrated waiting days for performance reports. eForte built a Foundational Data Layer feeding a real time client reporting portal, eliminating manual report preparation entirely."
       ],
       tags: [
-        "Real-time client reporting",
+        "Real time client reporting",
         "Eliminated manual reporting work",
         "Improved client satisfaction"
       ],
-      cardHeading: "Real-time client reporting portals",
+      cardHeading: "Real time client reporting portals",
       imageSrc: "/assets/images/industry/baas.jpg",
       imageAlt: "Crestline BPO Group",
       accentClass: "bg-[#0A2EC1]",

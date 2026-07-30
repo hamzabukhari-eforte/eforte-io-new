@@ -4,13 +4,13 @@ export const automobileIndustry: IndustryPageContent = {
   slug: "automobile",
   metadata: {
     title: "Automotive | eForte",
-    description: "Building connected, intelligent vehicles — Velocity AI, Agentic Orchestration, and a resilient Foundational Data Layer for fleet and telemetry data.",
+    description: "Building connected, intelligent vehicles, Velocity AI, Agentic Orchestration, and a resilient Foundational Data Layer for fleet and telemetry data.",
   },
   hero: {
     badge: "AUTOMOTIVE",
     headline: "Building the connected, intelligent vehicles of tomorrow",
     paragraphs: [
-      "eForte partners with automotive manufacturers, suppliers, and mobility companies to bring connected, AI-driven experiences to the road — powered by Velocity AI for rapid product delivery, Agentic Orchestration for intelligent vehicle systems, and a resilient Foundational Data Layer for fleet and telemetry data."
+      "eForte partners with automotive manufacturers, suppliers, and mobility companies to bring connected, AI driven experiences to the road, powered by Velocity AI for rapid product delivery, Agentic Orchestration for intelligent vehicle systems, and a resilient Foundational Data Layer for fleet and telemetry data."
     ],
     ctaLabel: "Contact Us",
     imageSrc: "/assets/images/industry/driving-1.jpg",
@@ -46,7 +46,7 @@ export const automobileIndustry: IndustryPageContent = {
           },
           {
             title: "Driver assistance agents",
-            text: "support ADAS features with real-time decision support.",
+            text: "support ADAS features with real time decision support.",
           },
           {
             title: "Service scheduling agents",
@@ -60,16 +60,16 @@ export const automobileIndustry: IndustryPageContent = {
         glow: "/assets/images/industry/bg-1.png",
         bullets: [
           {
-            title: "In-vehicle infotainment platforms",
+            title: "In vehicle infotainment platforms",
             text: "build engaging, personalized dashboards and entertainment systems.",
           },
           {
-            title: "Owner self-service apps",
+            title: "Owner self service apps",
             text: "let drivers manage service, warranty, and vehicle health from their phone.",
           },
           {
             title: "Fleet visibility dashboards",
-            text: "give fleet operators real-time insight into location, health, and utilization.",
+            text: "give fleet operators real time insight into location, health, and utilization.",
           },
         ],
       },
@@ -80,15 +80,15 @@ export const automobileIndustry: IndustryPageContent = {
         bullets: [
           {
             title: "Vehicle telemetry data platforms",
-            text: "ingest and structure high-volume sensor data reliably at scale.",
+            text: "ingest and structure high volume sensor data reliably at scale.",
           },
           {
             title: "OTA update infrastructure",
-            text: "deliver secure over-the-air software updates without dealer visits.",
+            text: "deliver secure over the air software updates without dealer visits.",
           },
           {
             title: "Manufacturing quality data integration",
-            text: "connect production-line data with post-sale vehicle performance.",
+            text: "connect production line data with post sale vehicle performance.",
           },
         ],
       },
@@ -105,16 +105,16 @@ export const automobileIndustry: IndustryPageContent = {
     },
     {
       value: "03",
-      label: "Established OTA update infrastructure supporting secure, at-scale software delivery.",
+      label: "Established OTA update infrastructure supporting secure, at scale software delivery.",
     },
     {
       value: "04",
-      label: "Proven experience with BLE- and cellular-connected vehicle systems.",
+      label: "Proven experience with BLE and cellular connected vehicle systems.",
     },
   ],
   security: {
     heading: "Rigorous data and security processes",
-    body: "eForte applies ISO 27001-aligned and SOC 2 Type 2 security principles to protect vehicle telemetry and connected-car data, with particular attention to the safety-critical nature of automotive software systems.",
+    body: "eForte applies ISO 27001 aligned and SOC 2 Type 2 security principles to protect vehicle telemetry and connected car data, with particular attention to the safety critical nature of automotive software systems.",
   },
   successStories: [
     {
@@ -138,14 +138,14 @@ export const automobileIndustry: IndustryPageContent = {
       id: "vantage-mobility",
       title: "Vantage Mobility",
       paragraphs: [
-        "Vantage Mobility's fleet customers were frustrated by delayed visibility into vehicle location and health. eForte built a real-time fleet dashboard on a new Foundational Data Layer, giving operators live insight across thousands of vehicles."
+        "Vantage Mobility's fleet customers were frustrated by delayed visibility into vehicle location and health. eForte built a real time fleet dashboard on a new Foundational Data Layer, giving operators live insight across thousands of vehicles."
       ],
       tags: [
-        "Real-time fleet visibility",
+        "Real time fleet visibility",
         "Improved customer retention",
         "Reduced support tickets"
       ],
-      cardHeading: "Real-time fleet visibility",
+      cardHeading: "Real time fleet visibility",
       imageSrc: "/assets/images/industry/driving-2.jpg",
       imageAlt: "Vantage Mobility",
       accentClass: "bg-[#E8822E]",

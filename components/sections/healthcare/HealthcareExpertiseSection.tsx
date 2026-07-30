@@ -16,7 +16,7 @@ const stats = [
   {
     value: "6+",
     label:
-      "6+ years, the average length of our long-term healthcare client partnerships",
+      "6+ years, the average length of our long term healthcare client partnerships",
   },
   {
     value: "#5",
@@ -35,7 +35,7 @@ export default function HealthcareExpertiseSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:gap-16"
+          className="grid gap-8 lg:grid-cols-[minmax(0, 1fr)_minmax(0, 1.2fr)] lg:gap-16"
         >
           <h2 className="text-[38px] font-semibold leading-[42px] text-[#011C57]">
             Our health & wellbeing expertise

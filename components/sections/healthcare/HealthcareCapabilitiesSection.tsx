@@ -42,7 +42,7 @@ const capabilities: Capability[] = [
       },
       {
         title: "Health-specific CRM tooling",
-        text: "Manage and strengthen every patient relationship with purpose-built systems.",
+        text: "Manage and strengthen every patient relationship with purpose built systems.",
       },
       {
         title: "Accessible, inclusive design",
@@ -68,7 +68,7 @@ const capabilities: Capability[] = [
       },
       {
         title: "Custom wearable engineering",
-        text: "Design connected devices over BLE, WiFi, or NFC that deliver meaningful, real-time health metrics.",
+        text: "Design connected devices over BLE, WiFi, or NFC that deliver meaningful, real time health metrics.",
       },
     ],
     image: "/assets/images/case-study/oddysee-banner.png",
@@ -82,11 +82,11 @@ const capabilities: Capability[] = [
     bullets: [
       {
         title: "Telehealth platforms",
-        text: "Support high-quality video and audio consultations that feel as good as an in-person visit.",
+        text: "Support high quality video and audio consultations that feel as good as an in-person visit.",
       },
       {
         title: "Remote patient monitoring",
-        text: "Connect at-home devices and clinical systems so care teams can act before small issues become emergencies.",
+        text: "Connect at home devices and clinical systems so care teams can act before small issues become emergencies.",
       },
       {
         title: "Medication adherence tools",
@@ -125,7 +125,7 @@ const capabilities: Capability[] = [
     heading: "Foundational Data Layer for Health Systems",
     bullets: [
       {
-        title: "HIPAA-aligned data architecture",
+        title: "HIPAA aligned data architecture",
         text: "Build governed, secure pipelines for ingesting and storing sensitive health data.",
       },
       {

@@ -22,11 +22,11 @@ const tabs: Tab[] = [
     label: "Payments & settlement",
     title: "Payments & settlement",
     description:
-      "Purpose-built AI agents for the workflows that run modern payments and settlement operations.",
+      "Purpose built AI agents for the workflows that run modern payments and settlement operations.",
     bullets: [
-      "Settlement reconciliation agent — matches transactions across ledgers and flags mismatches before they become disputes.",
-      "Chargeback response agent — assembles evidence packets automatically to contest disputed transactions faster.",
-      "Real-time fraud triage agent — scores incoming transactions instantly and routes suspicious activity for review.",
+      "Settlement reconciliation agent matches transactions across ledgers and flags mismatches before they become disputes.",
+      "Chargeback response agent assembles evidence packets automatically to contest disputed transactions faster.",
+      "Real time fraud triage agent scores incoming transactions instantly and routes suspicious activity for review.",
     ],
     imageSrc: "/assets/images/industry/accelerators-1.jpg",
   },
@@ -35,11 +35,11 @@ const tabs: Tab[] = [
     label: "Lending & credit",
     title: "Lending & credit",
     description:
-      "Purpose-built AI agents for the workflows that run modern lending and credit operations.",
+      "Purpose built AI agents for the workflows that run modern lending and credit operations.",
     bullets: [
-      "Application intake agent — extracts and validates borrower data from documents and forms automatically.",
-      "Adverse action agent — generates compliant, clearly worded decline explanations for regulatory requirements.",
-      "Portfolio risk monitoring agent — continuously rescans the loan book for early signs of deteriorating credit quality.",
+      "Application intake agent extracts and validates borrower data from documents and forms automatically.",
+      "Adverse action agent generates compliant, clearly worded decline explanations for regulatory requirements.",
+      "Portfolio risk monitoring agent continuously rescans the loan book for early signs of deteriorating credit quality.",
     ],
     imageSrc: "/assets/images/industry/accelerators-2.jpg",
   },
@@ -48,11 +48,11 @@ const tabs: Tab[] = [
     label: "Financial infrastructure",
     title: "Financial infrastructure",
     description:
-      "Purpose-built AI agents for the workflows that run modern financial infrastructure.",
+      "Purpose built AI agents for the workflows that run modern financial infrastructure.",
     bullets: [
-      "Ledger reconciliation agent — keeps internal and partner-bank ledgers synchronized in near real time.",
-      "Compliance document agent — screens onboarding documents against KYC/AML requirements automatically.",
-      "Vendor payment agent — automates invoice matching and payment scheduling across finance operations.",
+      "Ledger reconciliation agent keeps internal and partner bank ledgers synchronized in near real time.",
+      "Compliance document agent screens onboarding documents against KYC/AML requirements automatically.",
+      "Vendor payment agent automates invoice matching and payment scheduling across finance operations.",
     ],
     imageSrc: "/assets/images/industry/accelerators-3.jpg",
   },
@@ -61,11 +61,11 @@ const tabs: Tab[] = [
     label: "Banking & banktech",
     title: "Banking & banktech",
     description:
-      "Purpose-built AI agents for the workflows that run modern banking and banktech operations.",
+      "Purpose built AI agents for the workflows that run modern banking and banktech operations.",
     bullets: [
-      "Account servicing agent — handles routine servicing requests like statements, limit changes, and disputes.",
-      "Onboarding concierge agent — guides new account holders through KYC and setup with conversational support.",
-      "Regulatory reporting agent — assembles and validates recurring compliance reports before submission deadlines.",
+      "Account servicing agent handles routine servicing requests like statements, limit changes, and disputes.",
+      "Onboarding concierge agent guides new account holders through KYC and setup with conversational support.",
+      "Regulatory reporting agent assembles and validates recurring compliance reports before submission deadlines.",
     ],
     imageSrc: "/assets/images/industry/accelerators-4.jpg",
   },
@@ -96,7 +96,7 @@ export default function FinancialServicesAgentsSection() {
           transition={{ duration: 0.5, delay: 0.08 }}
           className="mx-auto mt-4 max-w-2xl text-center text-3xl font-semibold leading-tight text-default md:text-4xl"
         >
-          Purpose-built AI agents for the workflows that run modern finance
+          Purpose built AI agents for the workflows that run modern finance
         </motion.h2>
 
         <div className="mt-12 flex justify-center md:mt-16">
@@ -119,7 +119,7 @@ export default function FinancialServicesAgentsSection() {
                   className={cn(
                     "cursor-pointer rounded-full px-4 py-2.5 text-sm font-medium transition-all duration-200 md:px-6",
                     isActive
-                      ? "bg-default text-white shadow-[0_2px_8px_rgba(0,0,0,0.15)]"
+                      ? "bg-default text-white shadow-[0_2px_8px_rgba(0, 0, 0, 0.15)]"
                       : "text-default/70 hover:bg-default hover:text-white"
                   )}
                 >

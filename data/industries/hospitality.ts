@@ -4,7 +4,7 @@ export const hospitalityIndustry: IndustryPageContent = {
   slug: "hospitality",
   metadata: {
     title: "Hospitality | eForte",
-    description: "Designing guest experiences that keep people coming back — personalization, mobile check-in, and Agentic Orchestration for hospitality brands.",
+    description: "Designing guest experiences that keep people coming back, personalization, mobile check in, and Agentic Orchestration for hospitality brands.",
   },
   hero: {
     badge: "HOSPITALITY",
@@ -46,7 +46,7 @@ export const hospitalityIndustry: IndustryPageContent = {
           },
           {
             title: "Dynamic pricing agents",
-            text: "adjust room and service pricing in response to real-time demand signals.",
+            text: "adjust room and service pricing in response to real time demand signals.",
           },
           {
             title: "Personalized recommendation agents",
@@ -60,16 +60,16 @@ export const hospitalityIndustry: IndustryPageContent = {
         glow: "/assets/images/industry/bg-1.png",
         bullets: [
           {
-            title: "Mobile check-in & check-out",
-            text: "reduce front-desk wait times with frictionless self-service.",
+            title: "Mobile check in & check out",
+            text: "reduce front desk wait times with frictionless self service.",
           },
           {
-            title: "In-room guest apps",
+            title: "In room guest apps",
             text: "let guests control room settings and request services from their phone.",
           },
           {
             title: "Loyalty & rewards platforms",
-            text: "build systems that turn one-time guests into repeat visitors.",
+            text: "build systems that turn one time guests into repeat visitors.",
           },
         ],
       },
@@ -101,34 +101,34 @@ export const hospitalityIndustry: IndustryPageContent = {
     },
     {
       value: "02",
-      label: "Built mobile check-in systems adopted across multi-property hotel groups.",
+      label: "Built mobile check in systems adopted across multi property hotel groups.",
     },
     {
       value: "03",
-      label: "Established secure, PCI-DSS-aligned payment experiences across dining and retail touchpoints.",
+      label: "Established secure, PCI DSS aligned payment experiences across dining and retail touchpoints.",
     },
     {
       value: "04",
-      label: "Proven experience integrating IoT-enabled smart-room devices.",
+      label: "Proven experience integrating IoT enabled smart room devices.",
     },
   ],
   security: {
     heading: "Rigorous data and security processes",
-    body: "eForte applies ISO 27001-aligned and SOC 2 Type 2 security principles, with additional attention to PCI-DSS compliance for guest payment data across dining, retail, and room-service touchpoints.",
+    body: "eForte applies ISO 27001 aligned and SOC 2 Type 2 security principles, with additional attention to PCI DSS compliance for guest payment data across dining, retail, and room service touchpoints.",
   },
   successStories: [
     {
       id: "lantern",
       title: "Lantern Hotel Collective",
       paragraphs: [
-        "Lantern Hotel Collective's front desks were overwhelmed during peak check-in hours across its boutique properties. eForte built a mobile check-in system with Agentic Orchestration routing room-ready notifications and special requests automatically to housekeeping and concierge staff."
+        "Lantern Hotel Collective's front desks were overwhelmed during peak check in hours across its boutique properties. eForte built a mobile check in system with Agentic Orchestration routing room ready notifications and special requests automatically to housekeeping and concierge staff."
       ],
       tags: [
-        "Reduced front-desk wait times",
+        "Reduced front desk wait times",
         "Faster request resolution",
         "Improved guest satisfaction scores"
       ],
-      cardHeading: "Mobile check-in at peak season",
+      cardHeading: "Mobile check in at peak season",
       imageSrc: "/assets/images/industry/solutions-1.jpg",
       imageAlt: "Lantern Hotel Collective",
       accentClass: "bg-[#1f7a6b]",
@@ -138,7 +138,7 @@ export const hospitalityIndustry: IndustryPageContent = {
       id: "coastline",
       title: "Coastline Resorts",
       paragraphs: [
-        "Coastline Resorts relied heavily on third-party OTAs and wanted to grow direct bookings without a large marketing budget increase. eForte built a personalization engine recommending tailored packages and amenities based on guest history and preferences."
+        "Coastline Resorts relied heavily on third party OTAs and wanted to grow direct bookings without a large marketing budget increase. eForte built a personalization engine recommending tailored packages and amenities based on guest history and preferences."
       ],
       tags: [
         "Increased direct bookings",
@@ -158,7 +158,7 @@ export const hospitalityIndustry: IndustryPageContent = {
         "Birchwood Hospitality Group's staff juggled multiple disconnected systems to manage guest requests across properties. eForte unified these into a single Foundational Data Layer with automated request routing, giving managers one operational view across all locations."
       ],
       tags: [
-        "Unified multi-property operations",
+        "Unified multi property operations",
         "Faster staff response times",
         "Improved manager visibility"
       ],

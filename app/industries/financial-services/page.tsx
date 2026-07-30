@@ -18,7 +18,7 @@ import { defaultTrustedByLogosDark } from "@/data/trustedByLogos";
 
 export const metadata = {
   title: "Finance | eForte",
-  description: "Intelligent infrastructure for the next era of financial services — secure, scalable systems across lending, payments, and embedded finance.",
+  description: "Intelligent infrastructure for the next era of financial services, secure, scalable systems across lending, payments, and embedded finance.",
 };
 
 export default function FinancialServicesPage() {

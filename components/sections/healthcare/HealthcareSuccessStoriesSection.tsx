@@ -24,11 +24,11 @@ const stories: SuccessStory[] = [
     id: "harborlight",
     title: "Harborlight Recovery",
     paragraphs: [
-      "Harborlight Recovery, a behavioral health provider, needed a way to keep clients engaged between in-person sessions without overwhelming its clinical staff. eForte built a companion app combining mood check-ins, care-team messaging, and progress dashboards that clinicians could review in minutes, not hours.",
+      "Harborlight Recovery, a behavioral health provider, needed a way to keep clients engaged between in-person sessions without overwhelming its clinical staff. eForte built a companion app combining mood check ins, care team messaging, and progress dashboards that clinicians could review in minutes, not hours.",
       "Client engagement between sessions increased substantially, and clinicians reported catching early warning signs of relapse more often than before, leading to timely intervention.",
     ],
     tags: [
-      "Improved between-visit engagement",
+      "Improved between visit engagement",
       "Earlier clinical intervention",
       "Reduced clinician review time",
     ],
@@ -42,12 +42,12 @@ const stories: SuccessStory[] = [
     id: "pulsewell",
     title: "PulseWell Fitness",
     paragraphs: [
-      "PulseWell Fitness, a connected-fitness hardware company, needed to move its wearable data pipeline from a fragile, manually managed system to something that could support hundreds of thousands of daily-active users. eForte rebuilt PulseWell's Foundational Data Layer to handle high-volume sensor data reliably and rearchitected its mobile app for real-time coaching feedback.",
-      "The new architecture supported a major surge in device sales without downtime, and real-time coaching features became one of the most used parts of the app within weeks of launch.",
+      "PulseWell Fitness, a connected-fitness hardware company, needed to move its wearable data pipeline from a fragile, manually managed system to something that could support hundreds of thousands of daily-active users. eForte rebuilt PulseWell's Foundational Data Layer to handle high volume sensor data reliably and rearchitected its mobile app for real time coaching feedback.",
+      "The new architecture supported a major surge in device sales without downtime, and real time coaching features became one of the most used parts of the app within weeks of launch.",
     ],
     tags: [
-      "Scaled to high-volume sensor data",
-      "Zero-downtime device launch",
+      "Scaled to high volume sensor data",
+      "Zero downtime device launch",
       "Increased daily app engagement",
     ],
     cardHeading: "Wearable data platform built to scale",
@@ -60,8 +60,8 @@ const stories: SuccessStory[] = [
     id: "clearpath",
     title: "ClearPath Diabetes Care",
     paragraphs: [
-      "ClearPath Diabetes Care wanted to give patients and care teams a shared, real-time view of glucose trends without requiring patients to manually log every reading. eForte integrated continuous glucose monitors directly into a patient-facing app and clinician dashboard, with Agentic Orchestration flagging concerning trends for care-team follow-up automatically.",
-      "Care teams were able to reach out to at-risk patients proactively rather than waiting for scheduled visits, and patients reported feeling more supported managing a condition that can otherwise feel isolating.",
+      "ClearPath Diabetes Care wanted to give patients and care teams a shared, real time view of glucose trends without requiring patients to manually log every reading. eForte integrated continuous glucose monitors directly into a patient-facing app and clinician dashboard, with Agentic Orchestration flagging concerning trends for care team follow-up automatically.",
+      "Care teams were able to reach out to at risk patients proactively rather than waiting for scheduled visits, and patients reported feeling more supported managing a condition that can otherwise feel isolating.",
     ],
     tags: [
       "Proactive patient outreach",

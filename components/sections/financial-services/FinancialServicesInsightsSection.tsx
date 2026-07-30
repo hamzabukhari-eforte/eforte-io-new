@@ -24,7 +24,7 @@ const whitePapers: WhitePaper[] = [
     imageSrc: "/assets/images/velocity-ai/insight-1.png",
     imageAlt: "Designing Trustworthy AI Agents for Regulated Finance white paper",
   },
-  // Preserved — July 30 doc lists one primary white paper promo
+  // Preserved, July 30 doc lists one primary white paper promo
   {
     id: "ux-ui-fintech",
     subtitle: "Best UX/UI practices to create differentiation in fintech",

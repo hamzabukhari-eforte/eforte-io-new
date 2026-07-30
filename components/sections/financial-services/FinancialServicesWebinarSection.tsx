@@ -36,7 +36,7 @@ export default function FinancialServicesWebinarSection() {
           transition={{ duration: 0.5, delay: 0.08 }}
           className="mx-auto mt-4 max-w-2xl text-center text-3xl font-medium leading-tight text-white md:text-4xl lg:text-[44px]"
         >
-          Agentic Orchestration in Finance: How eForte Builds Production-Grade
+          Agentic Orchestration in Finance: How eForte Builds Production Grade
           Agents with Databricks and LangGraph
         </motion.h2>
 
@@ -63,7 +63,7 @@ export default function FinancialServicesWebinarSection() {
           transition={{ duration: 0.6, delay: 0.24 }}
           className="mx-auto mt-12 max-w-5xl md:mt-16"
         >
-          <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
+          <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_60px_rgba(0, 0, 0, 0.4)]">
             <ReactPlayer
               src={YOUTUBE_URL}
               width="100%"

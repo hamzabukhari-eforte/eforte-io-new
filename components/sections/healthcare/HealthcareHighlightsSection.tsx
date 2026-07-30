@@ -12,11 +12,11 @@ import Container from "@/components/atoms/Container";
 const highlights = [
   {
     icon: HiOutlineCube,
-    text: "Full-cycle product design and delivery for remote care and digital therapeutics platforms.",
+    text: "Full cycle product design and delivery for remote care and digital therapeutics platforms.",
   },
   {
     icon: HiOutlineChatAlt2,
-    text: "Deep experience building consumer and clinical apps aligned with HIPAA and related health-data regulations.",
+    text: "Deep experience building consumer and clinical apps aligned with HIPAA and related health data regulations.",
   },
   {
     icon: HiOutlineSwitchHorizontal,
@@ -24,7 +24,7 @@ const highlights = [
   },
   {
     icon: HiOutlineDeviceMobile,
-    text: "Extensive hands-on experience with wearables and BLE/NFC-connected health devices.",
+    text: "Extensive hands on experience with wearables and BLE/NFC-connected health devices.",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function HealthcareHighlightsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, margin: "-80px", amount: 0.15 }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="rounded-2xl border border-black/5 bg-white p-7 shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
+                className="rounded-2xl border border-black/5 bg-white p-7 shadow-[0_10px_30px_rgba(0, 0, 0, 0.08)]"
               >
                 <Icon className="h-9 w-9 text-[#002EC1]" strokeWidth={2} />
                 <p className="mt-6 text-[15px] leading-relaxed text-[#888888]">

@@ -58,9 +58,9 @@ export const industriesMedia = {
 export const industriesHero = {
   title: "Deep industry expertise, engineered around your reality",
   subtitle:
-    "eForte delivers AI-native technology solutions across finance, insurance, health & wellbeing, heavy industry, automotive, hospitality, and BPO & shared services.",
+    "eForte delivers AI native technology solutions across finance, insurance, health & wellbeing, heavy industry, automotive, hospitality, and BPO & shared services.",
   description:
-    "We partner with organizations across these seven industries to deliver technology that drives measurable transformation — combining specialized domain knowledge with our Velocity AI, Agentic Orchestration, and Foundational Data Layer pillars.",
+    "We partner with organizations across these seven industries to deliver technology that drives measurable transformation, combining specialized domain knowledge with our Velocity AI, Agentic Orchestration, and Foundational Data Layer pillars.",
 };
 
 export const industriesWhy = {
@@ -73,29 +73,29 @@ export const industriesWhy = {
     {
       title: "Domain experts in every studio",
       description:
-        "Our Studios bring together technologists and industry specialists — insurance underwriting leads, industrial safety engineers, hospitality operations experts — to deliver solutions that understand your day-to-day operational reality, not just your tech stack.",
+        "Our Studios bring together technologists and industry specialists, insurance underwriting leads, industrial safety engineers, hospitality operations experts, to deliver solutions that understand your day to day operational reality, not just your tech stack.",
       iconKey: "experts" as const,
     },
     {
-      title: "AI-native from strategy to deployment",
+      title: "AI native from strategy to deployment",
       description:
-        "Our three pillars — Velocity AI, Agentic Orchestration, and Foundational Data Layer — are tuned to the specific challenges of each industry we serve, backed by certified engineers and proven accelerators.",
+        "Our three pillars, Velocity AI, Agentic Orchestration, and Foundational Data Layer, are tuned to the specific challenges of each industry we serve, backed by certified engineers and proven accelerators.",
       iconKey: "silicon" as const,
     },
     {
       title: "Secure and compliant by design",
       description:
-        "SOC 2 Type II, ISO 27001, and NIST AI RMF compliance are built into how we deliver, so regulated and safety-critical industries like finance, insurance, and healthcare can move quickly without compromising on trust.",
+        "SOC 2 Type II, ISO 27001, and NIST AI RMF compliance are built into how we deliver, so regulated and safety critical industries like finance, insurance, and healthcare can move quickly without compromising on trust.",
       iconKey: "secure" as const,
     },
   ],
 };
 
 export const industriesGridIntro = {
-  titleLine1: "A full-stack AI",
+  titleLine1: "A full stack AI",
   titleLine2: "services partner",
   descriptionBefore:
-    "From digital banking and connected claims to smart factories and guest experiences — eForte delivers across the industries",
+    "From digital banking and connected claims to smart factories and guest experiences, eForte delivers across the industries",
   descriptionHighlight: "where AI, data, and software are reshaping how work gets done.",
 };
 
@@ -112,7 +112,7 @@ export const industriesCards: IndustryCard[] = [
   {
     title: "Finance",
     description:
-      "Modernize lending, payments, and banking with secure, AI-driven financial infrastructure.",
+      "Modernize lending, payments, and banking with secure, AI driven financial infrastructure.",
     pills: ["Digital banking", "AI credit scoring", "Agentic Orchestration"],
     href: "/industries/financial-services",
     iconKey: "financial",
@@ -122,7 +122,7 @@ export const industriesCards: IndustryCard[] = [
     title: "Insurance",
     description:
       "Transform underwriting and claims with connected data and intelligent automation.",
-    pills: ["Claims automation", "Usage-based coverage", "Foundational Data Layer"],
+    pills: ["Claims automation", "Usage based coverage", "Foundational Data Layer"],
     href: "/industries/insurance",
     iconKey: "insurance",
     slug: "insurance",
@@ -130,7 +130,7 @@ export const industriesCards: IndustryCard[] = [
   {
     title: "Health & Wellbeing",
     description:
-      "Build patient-first digital health experiences, from virtual care to connected wearables.",
+      "Build patient first digital health experiences, from virtual care to connected wearables.",
     pills: ["Virtual care", "mHealth & wearables", "Agentic Orchestration"],
     href: "/industries/healthcare",
     iconKey: "health",
@@ -148,7 +148,7 @@ export const industriesCards: IndustryCard[] = [
   {
     title: "Automobile",
     description:
-      "Power connected vehicles and smarter fleets with real-time telemetry and AI diagnostics.",
+      "Power connected vehicles and smarter fleets with real time telemetry and AI diagnostics.",
     pills: ["Predictive diagnostics", "Connected vehicle platforms", "Velocity AI"],
     href: "/industries/automobile",
     iconKey: "automobile",
@@ -158,7 +158,7 @@ export const industriesCards: IndustryCard[] = [
     title: "Hospitality",
     description:
       "Deliver guest experiences that convert and retain, powered by personalization at scale.",
-    pills: ["Guest personalization", "Mobile check-in", "Agentic Orchestration"],
+    pills: ["Guest personalization", "Mobile check in", "Agentic Orchestration"],
     href: "/industries/hospitality",
     iconKey: "hospitality",
     slug: "hospitality",
@@ -209,7 +209,7 @@ export const industriesCaseStudies: IndustryCaseStudy[] = [
     logoWidth: 270,
     bgSrc: industriesMedia.caseStudyBgs.avant,
     pill: "Finance",
-    title: "Scaling cross-border payments without scaling risk",
+    title: "Scaling cross border payments without scaling risk",
     description:
       "eForte helped Meridian Pay automate compliance screening so it could expand into new markets without growing its compliance team at the same rate.",
     href: "/industries/financial-services",
@@ -239,7 +239,7 @@ export const industriesCaseStudies: IndustryCaseStudy[] = [
     pill: "Health & Wellbeing",
     title: "Scaling a wearable data platform for a major product launch",
     description:
-      "eForte rebuilt PulseWell's data foundation to handle a surge in connected-device users without downtime.",
+      "eForte rebuilt PulseWell's data foundation to handle a surge in connected device users without downtime.",
     href: "/industries/healthcare",
     metrics: [
       {

@@ -93,7 +93,7 @@ export default function HealthcareCertificationsSection() {
           className="mx-auto mt-8 max-w-2xl text-center text-[15px] leading-relaxed text-[#888888]"
         >
           Our team has supported FDA-cleared product submissions and built
-          numerous HIPAA-aligned platforms across clinical and consumer health
+          numerous HIPAA aligned platforms across clinical and consumer health
           settings.
         </motion.p>
       </Container>

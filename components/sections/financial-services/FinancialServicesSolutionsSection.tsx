@@ -23,7 +23,7 @@ const solutions: Solution[] = [
   {
     title: "Embedded Banking",
     description:
-      "Pre-built modules that let non-bank platforms launch banking features without building from scratch.",
+      "Pre built modules that let non bank platforms launch banking features without building from scratch.",
   },
   {
     title: "AI Credit Scoring",
@@ -38,12 +38,12 @@ const solutions: Solution[] = [
   {
     title: "AI Financial Analyst",
     description:
-      "A compound AI system that reads structured and unstructured financial data to answer analyst-style questions on demand.",
+      "A compound AI system that reads structured and unstructured financial data to answer analyst style questions on demand.",
   },
   {
     title: "Core Banking API Integration",
     description:
-      "Deep integration expertise across modern banking-as-a-service ecosystems.",
+      "Deep integration expertise across modern banking as a service ecosystems.",
   },
   {
     title: "Early Delinquency Prediction",
@@ -61,8 +61,8 @@ const accelerators: Accelerator[] = [
     imageSrc: "/assets/images/industry/wrappers.jpg",
     imageAlt: "Banking UI component library preview",
     paragraphs: [
-      "Pre-built, brandable interface components for banking and lending apps.",
-      "eForte's Velocities are pre-built assets that are integral to our solutions and drive faster delivery without sacrificing quality.",
+      "Pre built, brandable interface components for banking and lending apps.",
+      "eForte's Velocities are pre built assets that are integral to our solutions and drive faster delivery without sacrificing quality.",
     ],
   },
   {
@@ -71,7 +71,7 @@ const accelerators: Accelerator[] = [
     imageSrc: "/assets/images/industry/airflow.jpg",
     imageAlt: "Workflow orchestration blueprints",
     paragraphs: [
-      "Reusable pipeline templates that cut new data-workflow setup time significantly.",
+      "Reusable pipeline templates that cut new data workflow setup time significantly.",
       "Jumpstart delivery with proven orchestration patterns tuned for financial workloads.",
     ],
   },
@@ -81,7 +81,7 @@ const accelerators: Accelerator[] = [
     imageSrc: "/assets/images/industry/monitoring.jpg",
     imageAlt: "Model performance dashboards preview",
     paragraphs: [
-      "Pre-built monitoring views that track model drift and accuracy in production.",
+      "Pre built monitoring views that track model drift and accuracy in production.",
       "Keep financial AI models observable and reliable after go-live.",
     ],
   },
@@ -112,7 +112,7 @@ export default function FinancialServicesSolutionsSection() {
           transition={{ duration: 0.5 }}
           className="text-center text-sm font-medium italic text-white/80"
         >
-          eForte Finance Studio — IP-driven solutions
+          eForte Finance Studio, IP driven solutions
         </motion.p>
 
         <motion.h2
@@ -123,7 +123,7 @@ export default function FinancialServicesSolutionsSection() {
           className="mx-auto mt-4 max-w-3xl text-center text-3xl font-medium leading-tight text-white md:text-4xl lg:text-[44px]"
         >
           Six customizable finance solutions built to add velocity for
-          time-to-market
+          time to market
         </motion.h2>
 
         <motion.div
@@ -186,7 +186,7 @@ export default function FinancialServicesSolutionsSection() {
             transition={{ duration: 0.5, delay: 0.08 }}
             className="mx-auto mt-4 max-w-3xl text-center text-3xl font-medium leading-tight text-white md:text-4xl lg:text-[40px]"
           >
-            eForte&apos;s Velocities are pre-built assets that are integral to
+            eForte&apos;s Velocities are pre built assets that are integral to
             our solutions and drive faster delivery without sacrificing quality.
           </motion.h2>
 
@@ -222,7 +222,7 @@ export default function FinancialServicesSolutionsSection() {
                     className={cn(
                       "cursor-pointer rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 md:px-6",
                       isActive
-                        ? "bg-primary-pink text-white shadow-[0_4px_18px_rgba(211,40,122,0.4)]"
+                        ? "bg-primary-pink text-white shadow-[0_4px_18px_rgba(211, 40, 122, 0.4)]"
                         : "bg-white/15 text-white/80 hover:bg-primary-pink hover:text-white"
                     )}
                   >

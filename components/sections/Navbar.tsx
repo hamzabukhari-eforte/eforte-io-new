@@ -187,7 +187,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           },
           {
             title:
-              "Insight: How eForte's Prompt System brings structure to AI-powered developments",
+              "Insight: How eForte's Prompt System brings structure to AI powered developments",
             description:
               "eForte's Prompt System (EPS) adds an orchestrated, multi-agent workflow inside tools like Cursor and Copilot.",
             tag: "Insight",
@@ -258,7 +258,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           // {
           //   title: "Cybersecurity",
           //   description:
-          //     "Secure SDLC, AI-powered cybersecurity, vCISO, penetration testing, AI security assessments.",
+          //     "Secure SDLC, AI powered cybersecurity, vCISO, penetration testing, AI security assessments.",
           //   iconName: "shield-check",
           //   iconColorClass: "bg-[#0f172a]",
           //   href: "/capabilities/cybersecurity",
@@ -418,7 +418,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
     eyebrow: "Industries",
     title: "Our Industries",
     description:
-      "We partner with organizations across seven industries to deliver technology that drives measurable transformation — combining specialized domain knowledge with Velocity AI, Agentic Orchestration, and Foundational Data Layer.",
+      "We partner with organizations across seven industries to deliver technology that drives measurable transformation, combining specialized domain knowledge with Velocity AI, Agentic Orchestration, and Foundational Data Layer.",
     columns: [
       {
         title: "Our Industries",
@@ -426,7 +426,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "Health & Wellbeing",
             description:
-              "Build patient-first digital health experiences, from virtual care to connected wearables.",
+              "Build patient first digital health experiences, from virtual care to connected wearables.",
             iconName: "heart",
             iconColorClass: "bg-[#7C4CFF]",
             href: "/industries/healthcare",
@@ -434,7 +434,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "Finance",
             description:
-              "Modernize lending, payments, and banking with secure, AI-driven financial infrastructure.",
+              "Modernize lending, payments, and banking with secure, AI driven financial infrastructure.",
             iconName: "currency-dollar",
             iconColorClass: "bg-[#7C4CFF]",
             href: "/industries/financial-services",
@@ -450,7 +450,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "Automobile",
             description:
-              "Power connected vehicles and smarter fleets with real-time telemetry and AI diagnostics.",
+              "Power connected vehicles and smarter fleets with real time telemetry and AI diagnostics.",
             iconName: "device-mobile",
             iconColorClass: "bg-[#7C4CFF]",
             href: "/industries/automobile",
@@ -483,7 +483,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           // {
           //   title: "Banking",
           //   description:
-          //     "Modernize banking systems for a secure, compliant, AI-ready enterprise ecosystem.",
+          //     "Modernize banking systems for a secure, compliant, AI ready enterprise ecosystem.",
           //   iconName: "office-building",
           //   iconColorClass: "bg-[#7C4CFF]",
           //   href: "/industries/banking",
@@ -491,7 +491,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           // {
           //   title: "Media & Entertainment",
           //   description:
-          //     "AI-native solutions to deliver personalized, real-time, and immersive experiences at scale.",
+          //     "AI native solutions to deliver personalized, real time, and immersive experiences at scale.",
           //   iconName: "play",
           //   iconColorClass: "bg-[#7C4CFF]",
           //   href: "/industries/media-entertainment",
@@ -499,7 +499,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           // {
           //   title: "Hi-Tech & Semiconductors",
           //   description:
-          //     "Semiconductor design, firmware, and IoT development, AI-powered embedded systems.",
+          //     "Semiconductor design, firmware, and IoT development, AI powered embedded systems.",
           //   iconName: "chip",
           //   iconColorClass: "bg-[#7C4CFF]",
           //   href: "/industries/embedded-engineering",
@@ -525,7 +525,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           },
           {
             title:
-              "Insights from the AI-Native Banking & Fintech Conference",
+              "Insights from the AI Native Banking & Fintech Conference",
             imageSrc: "/assets/images/velocity-ai/insight-1.png",
           },
         ],
@@ -632,7 +632,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
     eyebrow: "About Us",
     title: "About us",
     description:
-      "eForte helps businesses evolve from Digital-Native to AI-Native.",
+      "eForte helps businesses evolve from Digital-Native to AI Native.",
     columns: [
       {
         title: "About Us",
@@ -641,7 +641,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             title: "About eForte",
             tag: "Learn more",
             description:
-              "eForte helps businesses evolve from Digital-Native to AI-Native.",
+              "eForte helps businesses evolve from Digital-Native to AI Native.",
             imageSrc: "/assets/images/landing/Expertise.png",
             href: "/about-us",
           },
@@ -1357,7 +1357,7 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
               className={cn(
                 "grid flex-1 gap-x-5 gap-y-4 2xl:gap-x-7",
                 activeMenu === "industries"
-                  ? "grid-cols-[minmax(0,2fr)_minmax(240px,1fr)]"
+                  ? "grid-cols-[minmax(0, 2fr)_minmax(240px, 1fr)]"
                   : "grid-cols-2"
               )}
             >

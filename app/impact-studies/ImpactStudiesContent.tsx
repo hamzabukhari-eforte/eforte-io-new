@@ -56,7 +56,7 @@ const cards = [
   {
     image: "/assets/images/case-study/krank-banner.png",
     title: "Krank",
-    heading: "Heavy Machinery",
+    heading: "Reinventing workflow automation with agentic AI",
     description:
       "Krank is a platform for the heavy machinery industry. Their aim is to revolutionize how market buys and sells heavy equipment. For that reason Krank offers to make a sales network for your own company where you can list your machinery for sell/rent/auction. The privacy of the platform ensures that the integrity of a network remains intact while others on the platform interact with the company's news, posts, sell/rent/auction listings and most of all the contacts book.",
     link: "/case-studies/krank",
@@ -64,7 +64,7 @@ const cards = [
   {
     image: "/assets/images/case-study/oddysee-banner.png",
     title: "Oddysee",
-    heading: "Civic Municipal, Project Management",
+    heading: "Bringing rapid, intelligent decisioning to everyday user journeys",
     description:
       "Oddysee is the platform to automate the licensing process for domains that require a lot of documentation/plans. It has a documentation module with pre written templates of documents to choose from. A business plan module to automate business plans writing according to the industry and a financial forecast module. All supported with project management tools so to meet deadlines and evaluate team performances.",
     link: "/case-studies/oddysee",
@@ -72,7 +72,7 @@ const cards = [
   {
     image: "/assets/images/case-study/invesment-banner.png",
     title: "Investment Markets",
-    heading: "Investments | Finance",
+    heading: "Unifying fragmented market data into one trusted, AI ready source",
     description:
       "InvestmentMarkets is a platform for the potential investors that brings them high net worth investment opportunities, primarily aiming for growth, income or both. The platform offers investors a wide range of investment listings and be directly connected with the listee's. In addition to establishing business networking, InvestmentMarkets provides potential investors with and investment seekers latest news and events to stay informed and gain the market insights to inspire their investment journey.",
     link: "/case-studies/investment-markets",
@@ -80,7 +80,7 @@ const cards = [
   {
     image: "/assets/images/case-study/prism-banner.png",
     title: "Prism",
-    heading: "Retail Forecasting",
+    heading: "Coordinating autonomous agents across complex data pipelines",
     description:
       "A trends forecasting engine, Prism is a procedure for forecasting time series data based on an additive model.",
     link: "/case-studies/prism",
@@ -88,7 +88,7 @@ const cards = [
   {
     image: "/assets/images/case-study/scheduling1.png",
     title: "Scheduling Engine",
-    heading: "Work Force Management | Support Center",
+    heading: "Cutting planning time with continuously self optimizing schedules",
     description:
       "The scheduling engine software developed for Stratex was successful in automating the scheduling process and reducing labor costs for their clients.",
     link: "/case-studies/scheduling-engine",
@@ -96,7 +96,7 @@ const cards = [
   {
     image: "/assets/images/case-study/sellsMart4.png",
     title: "Sellsmart",
-    heading: "Retail | Finance | Accounting | Supply-chain",
+    heading: "Turning sales operations into a self running growth engine",
     description:
       "Sellsmart.biz is an online Point of Sale System aimed to be a SaaS platform and equipped with all the right features of an online POS system.",
     link: "/case-studies/sellsmart",
@@ -104,7 +104,7 @@ const cards = [
   {
     image: "/assets/images/case-study/Validatr.png",
     title: "Validatr",
-    heading: "Startup / Business Management",
+    heading: "Catching data errors before they ever reach production",
     description:
       "Validatr.io is a tool for startups and businesses to do market validation of new ideas and generate detailed report-style documents for business plans and investor rounds.",
     link: "/case-studies/validatr",
@@ -122,14 +122,12 @@ export default function ImpactStudiesContent() {
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           className="text-3xl lg:text-4xl font-semibold text-center text-white"
         >
-          Empowering positive change,
+          We have been building intelligent,
           <br />
-          One client at a time.
-          <br />
-          Experience the best, because you deserve the best.
+          agent driven software for over a decade
         </motion.div>
 
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-size-[20px_20px] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255, 255, 255, 0.05)_1px, transparent_1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05)_1px, transparent_1px)] bg-size-[20px_20px] pointer-events-none" />
 
         <Container className="relative z-10 flex flex-col items-center gap-10">
           {cards.map((item) => (

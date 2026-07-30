@@ -23,7 +23,7 @@ export default function FinancialServicesHeroSection() {
         }}
         aria-hidden
       />
-      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-[radial-gradient(ellipse_at_center,rgba(124,76,255,0.18),transparent_70%)] lg:block" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/2 bg-[radial-gradient(ellipse_at_center, rgba(124, 76, 255, 0.18), transparent_70%)] lg:block" />
 
       <Container className="relative z-10">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
@@ -53,7 +53,7 @@ export default function FinancialServicesHeroSection() {
               className="mt-6 max-w-lg text-base leading-relaxed text-desc md:text-[17px]"
             >
               eForte partners with banks, lenders, and payment innovators to turn
-              financial services ambitions into shipped products — engineering
+              financial services ambitions into shipped products, engineering
               secure, scalable systems across lending, payments, and embedded
               finance, powered by data and applied AI.
             </motion.p>

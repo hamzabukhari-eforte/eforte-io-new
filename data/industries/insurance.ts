@@ -4,14 +4,14 @@ export const insuranceIndustry: IndustryPageContent = {
   slug: "insurance",
   metadata: {
     title: "Insurance | eForte",
-    description: "Modernizing insurance with intelligent, connected systems — Velocity AI, Agentic Orchestration, and a secure Foundational Data Layer for underwriting, claims, and policy administration.",
+    description: "Modernizing insurance with intelligent, connected systems, Velocity AI, Agentic Orchestration, and a secure Foundational Data Layer for underwriting, claims, and policy administration.",
   },
   hero: {
     badge: "INSURANCE",
     headline: "Modernizing insurance with intelligent, connected systems",
     paragraphs: [
-      "Policyholders now expect the same speed and simplicity from their insurer that they get from any other digital service. eForte helps carriers and MGAs meet that expectation — combining Velocity AI, Agentic Orchestration, and a secure Foundational Data Layer to modernize underwriting, claims, and policy administration.",
-      "From automating first notice of loss to building fairer, usage-based pricing models, we help insurers turn slow, manual processes into fast, trustworthy digital experiences."
+      "Policyholders now expect the same speed and simplicity from their insurer that they get from any other digital service. eForte helps carriers and MGAs meet that expectation, combining Velocity AI, Agentic Orchestration, and a secure Foundational Data Layer to modernize underwriting, claims, and policy administration.",
+      "From automating first notice of loss to building fairer, usage based pricing models, we help insurers turn slow, manual processes into fast, trustworthy digital experiences."
     ],
     ctaLabel: "Contact Us",
     imageSrc: "/assets/images/industry/insurance-banner.jpg",
@@ -46,8 +46,8 @@ export const insuranceIndustry: IndustryPageContent = {
             text: "capture and triage new claims the moment they're reported, routing urgent cases to adjusters instantly.",
           },
           {
-            title: "AI-assisted underwriting review",
-            text: "agents pre-screen applications against risk criteria, flagging only the cases that need human judgment.",
+            title: "AI assisted underwriting review",
+            text: "agents pre screen applications against risk criteria, flagging only the cases that need human judgment.",
           },
           {
             title: "Claims document agents",
@@ -61,12 +61,12 @@ export const insuranceIndustry: IndustryPageContent = {
         glow: "/assets/images/industry/bg-1.png",
         bullets: [
           {
-            title: "Self-service claims portals",
+            title: "Self service claims portals",
             text: "let policyholders file, track, and resolve claims without picking up the phone.",
           },
           {
             title: "Digital onboarding & quoting",
-            text: "reduce time-to-bind with streamlined, guided application flows.",
+            text: "reduce time to bind with streamlined, guided application flows.",
           },
           {
             title: "Personalized policyholder communications",
@@ -76,19 +76,19 @@ export const insuranceIndustry: IndustryPageContent = {
       },
       {
         id: "connected-products",
-        title: "Usage-based & connected insurance products",
+        title: "Usage based & connected insurance products",
         glow: "/assets/images/industry/bg-2.png",
         bullets: [
           {
-            title: "Telematics-based auto pricing",
+            title: "Telematics based auto pricing",
             text: "reward safer driving with premiums that reflect real behavior.",
           },
           {
-            title: "Connected-home risk monitoring",
-            text: "partner with smart-home devices to help prevent losses before they happen, not just pay for them after.",
+            title: "Connected home risk monitoring",
+            text: "partner with smart home devices to help prevent losses before they happen, not just pay for them after.",
           },
           {
-            title: "Parametric & on-demand coverage",
+            title: "Parametric & on demand coverage",
             text: "build insurance products that activate exactly when and where customers need them.",
           },
         ],
@@ -107,7 +107,7 @@ export const insuranceIndustry: IndustryPageContent = {
             text: "give actuarial and pricing teams faster access to the data they need to model risk accurately.",
           },
           {
-            title: "Secure third-party integrations",
+            title: "Secure third party integrations",
             text: "connect safely with reinsurers, agents, and repair networks.",
           },
         ],
@@ -117,11 +117,11 @@ export const insuranceIndustry: IndustryPageContent = {
   highlights: [
     {
       value: "01",
-      label: "Built claims automation systems that cut average processing time significantly for a multi-line carrier.",
+      label: "Built claims automation systems that cut average processing time significantly for a multi line carrier.",
     },
     {
       value: "02",
-      label: "Delivered usage-based insurance platforms integrated with millions of connected vehicles and devices.",
+      label: "Delivered usage based insurance platforms integrated with millions of connected vehicles and devices.",
     },
     {
       value: "03",
@@ -129,12 +129,12 @@ export const insuranceIndustry: IndustryPageContent = {
     },
     {
       value: "04",
-      label: "Established deep expertise in HIPAA- and state-regulation-aligned data handling for life and health lines.",
+      label: "Established deep expertise in HIPAA- and state regulation aligned data handling for life and health lines.",
     },
   ],
   security: {
     heading: "Rigorous data and security processes",
-    body: "eForte maintains ISO 27001 and SOC 2 Type 2 certifications and aligns with the NIST AI Risk Management Framework — giving insurance partners confidence that sensitive policyholder and claims data is protected at every step, across every system we help build.",
+    body: "eForte maintains ISO 27001 and SOC 2 Type 2 certifications and aligns with the NIST AI Risk Management Framework, giving insurance partners confidence that sensitive policyholder and claims data is protected at every step, across every system we help build.",
   },
   successStories: [
     {
@@ -159,15 +159,15 @@ export const insuranceIndustry: IndustryPageContent = {
       id: "coastal-assurance",
       title: "Coastal Assurance Group",
       paragraphs: [
-        "Coastal Assurance Group wanted to launch a usage-based auto insurance product but lacked the data infrastructure to price policies from real driving behavior. eForte built a Foundational Data Layer that ingests telematics data securely and feeds it into a dynamic pricing engine.",
-        "The new product attracted a meaningfully younger customer base than Coastal's traditional policies and became one of the company's fastest-growing lines within its first year."
+        "Coastal Assurance Group wanted to launch a usage based auto insurance product but lacked the data infrastructure to price policies from real driving behavior. eForte built a Foundational Data Layer that ingests telematics data securely and feeds it into a dynamic pricing engine.",
+        "The new product attracted a meaningfully younger customer base than Coastal's traditional policies and became one of the company's fastest growing lines within its first year."
       ],
       tags: [
         "New product line launched",
         "Attracted new customer segment",
-        "Data-driven pricing accuracy"
+        "Data driven pricing accuracy"
       ],
-      cardHeading: "Usage-based pricing from telematics",
+      cardHeading: "Usage based pricing from telematics",
       imageSrc: "/assets/images/industry/driving-2.jpg",
       imageAlt: "Coastal Assurance Group",
       accentClass: "bg-[#E8822E]",
@@ -177,7 +177,7 @@ export const insuranceIndustry: IndustryPageContent = {
       id: "anchor-point",
       title: "Anchor Point Insurance",
       paragraphs: [
-        "Anchor Point Insurance's underwriting team was buried in manual document review for commercial policy applications, slowing down quote turnaround. eForte introduced AI-assisted underwriting agents that pre-screen applications and highlight key risk factors for underwriters to review.",
+        "Anchor Point Insurance's underwriting team was buried in manual document review for commercial policy applications, slowing down quote turnaround. eForte introduced AI assisted underwriting agents that pre screen applications and highlight key risk factors for underwriters to review.",
         "Underwriters reported reclaiming hours each week previously spent on document review, and Anchor Point cut its average quote turnaround time substantially without adding underwriting staff."
       ],
       tags: [
@@ -185,7 +185,7 @@ export const insuranceIndustry: IndustryPageContent = {
         "Reduced manual review",
         "Flat underwriting headcount"
       ],
-      cardHeading: "AI-assisted underwriting review",
+      cardHeading: "AI assisted underwriting review",
       imageSrc: "/assets/images/industry/baas.jpg",
       imageAlt: "Anchor Point Insurance",
       accentClass: "bg-[#0A2EC1]",

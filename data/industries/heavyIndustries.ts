@@ -4,7 +4,7 @@ export const heavyIndustriesIndustry: IndustryPageContent = {
   slug: "heavy-industries",
   metadata: {
     title: "Heavy Industry | eForte",
-    description: "Engineering resilient operations for heavy industry with applied AI — predictive maintenance, connected worker safety, and a secure Foundational Data Layer.",
+    description: "Engineering resilient operations for heavy industry with applied AI, predictive maintenance, connected worker safety, and a secure Foundational Data Layer.",
   },
   hero: {
     badge: "HEAVY INDUSTRY",
@@ -55,7 +55,7 @@ export const heavyIndustriesIndustry: IndustryPageContent = {
         ],
       },
       {
-        id: "connected-worker",
+        id: "connected worker",
         title: "Connected worker & facility solutions",
         glow: "/assets/images/industry/bg-1.png",
         bullets: [
@@ -80,7 +80,7 @@ export const heavyIndustriesIndustry: IndustryPageContent = {
         bullets: [
           {
             title: "Unified sensor & ERP data platform",
-            text: "bring shop-floor and enterprise data into a single governed foundation.",
+            text: "bring shop floor and enterprise data into a single governed foundation.",
           },
           {
             title: "Energy usage analytics",
@@ -88,7 +88,7 @@ export const heavyIndustriesIndustry: IndustryPageContent = {
           },
           {
             title: "Legacy system modernization",
-            text: "migrate industrial control data to modern, cloud-connected infrastructure.",
+            text: "migrate industrial control data to modern, cloud connected infrastructure.",
           },
         ],
       },
@@ -101,7 +101,7 @@ export const heavyIndustriesIndustry: IndustryPageContent = {
     },
     {
       value: "02",
-      label: "Built connected-worker safety systems credited with measurable reductions in reported incidents.",
+      label: "Built connected worker safety systems credited with measurable reductions in reported incidents.",
     },
     {
       value: "03",
@@ -109,12 +109,12 @@ export const heavyIndustriesIndustry: IndustryPageContent = {
     },
     {
       value: "04",
-      label: "Deep experience with BLE- and industrial-IoT-connected devices in demanding physical environments.",
+      label: "Deep experience with BLE and industrial-IoT connected devices in demanding physical environments.",
     },
   ],
   security: {
     heading: "Rigorous data and security processes",
-    body: "eForte applies ISO 27001-aligned security practices and SOC 2 Type 2 principles to protect operational technology and industrial data, recognizing that OT security requires different safeguards than typical enterprise IT.",
+    body: "eForte applies ISO 27001 aligned security practices and SOC 2 Type 2 principles to protect operational technology and industrial data, recognizing that OT security requires different safeguards than typical enterprise IT.",
   },
   successStories: [
     {
@@ -143,9 +143,9 @@ export const heavyIndustriesIndustry: IndustryPageContent = {
       tags: [
         "Reduced energy waste",
         "Met sustainability targets",
-        "Unified multi-plant visibility"
+        "Unified multi plant visibility"
       ],
-      cardHeading: "Unified multi-plant energy visibility",
+      cardHeading: "Unified multi plant energy visibility",
       imageSrc: "/assets/images/industry/driving-2.jpg",
       imageAlt: "Summit Steel Works",
       accentClass: "bg-[#E8822E]",
@@ -155,10 +155,10 @@ export const heavyIndustriesIndustry: IndustryPageContent = {
       id: "frontier-energy",
       title: "Frontier Energy Partners",
       paragraphs: [
-        "Frontier Energy Partners' field teams lacked real-time visibility into worker safety conditions across remote sites. eForte built a connected wearable system feeding into a central safety dashboard with automated alerting for hazardous conditions."
+        "Frontier Energy Partners' field teams lacked real time visibility into worker safety conditions across remote sites. eForte built a connected wearable system feeding into a central safety dashboard with automated alerting for hazardous conditions."
       ],
       tags: [
-        "Real-time safety visibility",
+        "Real time safety visibility",
         "Faster incident response",
         "Improved field team confidence"
       ],

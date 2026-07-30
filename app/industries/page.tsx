@@ -1,6 +1,6 @@
 import {
   IndustriesOverviewBadgesSection,
-  // IndustriesOverviewDatabricksSection — preserved; no home-page content currently
+  // IndustriesOverviewDatabricksSection, preserved; no home-page content currently
   IndustriesOverviewGridSection,
   IndustriesOverviewHeroSection,
   IndustriesOverviewOutcomesSection,
@@ -20,7 +20,7 @@ export default function IndustriesPage() {
       <IndustriesOverviewHeroSection />
       <IndustriesOverviewWhySection />
       <IndustriesOverviewGridSection />
-      {/* <IndustriesOverviewDatabricksSection /> — preserved for possible future reuse */}
+      {/* <IndustriesOverviewDatabricksSection />, preserved for possible future reuse */}
       <IndustriesOverviewBadgesSection />
       <IndustriesOverviewOutcomesSection />
       {/* Work together CTA lives in shared layout */}

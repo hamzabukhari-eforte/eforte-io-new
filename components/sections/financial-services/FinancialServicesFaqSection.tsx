@@ -8,24 +8,24 @@ import Container from "@/components/atoms/Container";
 
 const faqs = [
   {
-    question: "What does eForte do in the financial-services sector?",
+    question: "What does eForte do in the financial services sector?",
     answer:
-      "eForte partners with banks, lenders, payment providers, and fintech innovators to design, build, and scale secure, data- and AI-driven financial products — from core banking modernization and embedded payments to AI-powered credit decisioning and risk monitoring. We work across the full lifecycle, from early product strategy through production deployment and ongoing support.",
+      "eForte partners with banks, lenders, payment providers, and fintech innovators to design, build, and scale secure, data- and AI driven financial products, from core banking modernization and embedded payments to AI powered credit decisioning and risk monitoring. We work across the full lifecycle, from early product strategy through production deployment and ongoing support.",
   },
   {
     question: "What types of financial institutions does eForte typically work with?",
     answer:
-      "We work with a broad range of organizations, including community and regional banks, credit unions, consumer and small-business lenders, cross-border and embedded payment providers, wealth management firms, and venture-backed fintech startups looking to scale quickly without compromising security or compliance.",
+      "We work with a broad range of organizations, including community and regional banks, credit unions, consumer and small business lenders, cross border and embedded payment providers, wealth management firms, and venture backed fintech startups looking to scale quickly without compromising security or compliance.",
   },
   {
     question: "What AI capabilities does eForte offer for lending, payments, and banking?",
     answer:
-      "Our finance AI capabilities span credit scoring and risk modeling, fraud and anomaly detection, automated compliance and KYC/AML screening, conversational support agents, and AI-assisted financial analysis. We combine off-the-shelf and custom-built models depending on the accuracy, explainability, and regulatory requirements of each use case.",
+      "Our finance AI capabilities span credit scoring and risk modeling, fraud and anomaly detection, automated compliance and KYC/AML screening, conversational support agents, and AI assisted financial analysis. We combine off-the-shelf and custom-built models depending on the accuracy, explainability, and regulatory requirements of each use case.",
   },
   {
     question: "Does eForte have experience building production AI agents for regulated environments?",
     answer:
-      "Yes. Our Agentic Orchestration practice focuses specifically on building AI agents that are explainable, auditable, and safe to deploy in regulated settings — with guardrails, human-in-the-loop review points, and monitoring built in from day one, not added as an afterthought.",
+      "Yes. Our Agentic Orchestration practice focuses specifically on building AI agents that are explainable, auditable, and safe to deploy in regulated settings, with guardrails, human in the loop review points, and monitoring built in from day one, not added as an afterthought.",
   },
   {
     question: "Is eForte certified in relevant security and compliance frameworks?",
@@ -35,7 +35,7 @@ const faqs = [
   {
     question: "What cloud and data platforms does eForte work with?",
     answer:
-      "We're a Databricks Gold Partner and also work extensively with AWS and other major cloud providers. Our Foundational Data practice is built to support cloud-native, secure, and scalable data architectures regardless of which platform a client has standardized on.",
+      "We're a Databricks Gold Partner and also work extensively with AWS and other major cloud providers. Our Foundational Data practice is built to support cloud native, secure, and scalable data architectures regardless of which platform a client has standardized on.",
   },
 ];
 

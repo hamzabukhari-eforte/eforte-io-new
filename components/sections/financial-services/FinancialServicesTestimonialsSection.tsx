@@ -19,7 +19,7 @@ const testimonials: Testimonial[] = [
     id: "northbridge",
     companyName: "Northbridge",
     testimonial:
-      "eForte didn't just build a model — they understood our risk appetite and built guardrails around it. Our underwriting team trusts the system because they were part of building it.",
+      "eForte didn't just build a model, they understood our risk appetite and built guardrails around it. Our underwriting team trusts the system because they were part of building it.",
     author: "VP of Credit Risk",
     title: "Northbridge",
   },
@@ -43,7 +43,7 @@ const testimonials: Testimonial[] = [
     id: "fenwick",
     companyName: "Fenwick Capital Markets",
     testimonial:
-      "When the market got volatile, our new risk platform flagged exposures we would have caught too late with our old spreadsheet-based process. That single catch justified the whole project.",
+      "When the market got volatile, our new risk platform flagged exposures we would have caught too late with our old spreadsheet based process. That single catch justified the whole project.",
     author: "Chief Risk Officer",
     title: "Fenwick Capital Markets",
   },

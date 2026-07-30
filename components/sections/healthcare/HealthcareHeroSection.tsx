@@ -89,7 +89,7 @@ export default function HealthcareHeroSection() {
               transition={{ duration: 0.5 }}
               className="text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl"
             >
-              Human-centered health technology, built with Velocity AI
+              Human centered health technology, built with Velocity AI
             </motion.h1>
 
             <motion.p
@@ -100,8 +100,8 @@ export default function HealthcareHeroSection() {
             >
               For over 18 years, eForte has helped health systems, digital
               therapeutics companies, and wellness brands turn ambitious ideas
-              into secure, scalable products — spanning patient portals,
-              connected devices, virtual care platforms, and AI-assisted clinical
+              into secure, scalable products, spanning patient portals,
+              connected devices, virtual care platforms, and AI assisted clinical
               tools.
             </motion.p>
             <motion.p
@@ -113,7 +113,7 @@ export default function HealthcareHeroSection() {
               We combine deep health-domain knowledge with our Velocity AI,
               Agentic Orchestration, and Foundational Data Layer pillars to help
               healthcare innovators move from concept to compliant,
-              production-ready software faster.
+              production ready software faster.
             </motion.p>
 
             <motion.div

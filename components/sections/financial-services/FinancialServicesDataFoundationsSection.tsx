@@ -24,13 +24,13 @@ const capabilities: Capability[] = [
     icon: HiTrendingUp,
     title: "Data engineering & ETL",
     description:
-      "Build resilient pipelines that ingest high-volume transactional and behavioral data without bottlenecks.",
+      "Build resilient pipelines that ingest high volume transactional and behavioral data without bottlenecks.",
   },
   {
     icon: HiCloud,
     title: "Data platform development",
     description:
-      "Architect secure, cloud-native platforms (Databricks and beyond) built for financial-grade scale.",
+      "Architect secure, cloud native platforms (Databricks and beyond) built for financial grade scale.",
   },
   {
     icon: HiShieldCheck,
@@ -42,7 +42,7 @@ const capabilities: Capability[] = [
     icon: HiCheckCircle,
     title: "Data quality & governance",
     description:
-      "Establish lineage, accuracy, and audit-ready controls across financial datasets.",
+      "Establish lineage, accuracy, and audit ready controls across financial datasets.",
   },
   {
     icon: HiSwitchHorizontal,

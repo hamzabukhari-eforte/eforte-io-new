@@ -40,7 +40,7 @@ export default function HealthcareEventsSection() {
 
             <p className="mt-6 max-w-md text-[18px] font-normal leading-[25px] text-white/85">
               eForte&apos;s health team regularly speaks at leading digital
-              health, fitness-tech, and connected-device conferences, sharing
+              health, fitness tech, and connected device conferences, sharing
               what we&apos;re learning as the industry moves toward more
               personalized, preventive care.
             </p>

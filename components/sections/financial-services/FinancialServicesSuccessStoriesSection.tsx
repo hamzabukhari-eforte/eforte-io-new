@@ -25,9 +25,9 @@ const stories: SuccessStory[] = [
   {
     id: "meridian-pay",
     brand: "Meridian Pay",
-    title: "Scaling a cross-border payments platform without scaling risk",
+    title: "Scaling a cross border payments platform without scaling risk",
     paragraphs: [
-      "Meridian Pay, a fast-growing cross-border payments provider, was expanding into new markets faster than its manual compliance review process could keep up. eForte built an automated transaction-screening and reporting layer that adapted to each new market's regulatory requirements without slowing down releases.",
+      "Meridian Pay, a fast growing cross border payments provider, was expanding into new markets faster than its manual compliance review process could keep up. eForte built an automated transaction-screening and reporting layer that adapted to each new market's regulatory requirements without slowing down releases.",
       "The result: Meridian Pay entered three new regional markets in under a year while keeping its compliance team the same size, turning what had been a growth bottleneck into a repeatable, scalable process.",
     ],
     tags: [
@@ -35,9 +35,9 @@ const stories: SuccessStory[] = [
       "Automated compliance screening",
       "Flat compliance headcount growth",
     ],
-    cardHeading: "Scaling cross-border payments without scaling risk",
+    cardHeading: "Scaling cross border payments without scaling risk",
     imageSrc: "/assets/images/industry/our-work-2.webp",
-    imageAlt: "Meridian Pay cross-border payments platform",
+    imageAlt: "Meridian Pay cross border payments platform",
     accentClass: "bg-[#3FA0E8]",
     tagClass: "bg-[#3FA0E8]/15 text-[#1f6fb0]",
   },
@@ -46,7 +46,7 @@ const stories: SuccessStory[] = [
     brand: "Cobalt Digital Bank",
     title: "Scaling support without scaling headcount",
     paragraphs: [
-      "Cobalt Digital Bank launched with a strong product but struggled to scale customer support as its account base grew past 200,000 users. eForte built an AI-assisted support layer that resolves routine account questions instantly and routes complex cases to human agents with full context already attached.",
+      "Cobalt Digital Bank launched with a strong product but struggled to scale customer support as its account base grew past 200, 000 users. eForte built an AI assisted support layer that resolves routine account questions instantly and routes complex cases to human agents with full context already attached.",
       "Cobalt cut average resolution time significantly and kept support headcount flat even as its user base kept growing, preserving margins during a critical growth phase.",
     ],
     tags: [
@@ -54,7 +54,7 @@ const stories: SuccessStory[] = [
       "Scalable support model",
       "Preserved unit economics",
     ],
-    cardHeading: "AI-assisted support that scales with growth",
+    cardHeading: "AI assisted support that scales with growth",
     imageSrc: "/assets/images/industry/wrappers.jpg",
     imageAlt: "Cobalt Digital Bank support experience",
     accentClass: "bg-[#6E2585]",
@@ -65,15 +65,15 @@ const stories: SuccessStory[] = [
     brand: "Fenwick Capital Markets",
     title: "Unified risk visibility across settlements",
     paragraphs: [
-      "Fenwick Capital Markets relied on a patchwork of spreadsheets and legacy tools to track trade settlement risk across asset classes, creating blind spots during volatile markets. eForte consolidated Fenwick's settlement data into a unified risk-monitoring platform with real-time alerts for exposures crossing risk thresholds.",
+      "Fenwick Capital Markets relied on a patchwork of spreadsheets and legacy tools to track trade settlement risk across asset classes, creating blind spots during volatile markets. eForte consolidated Fenwick's settlement data into a unified risk-monitoring platform with real time alerts for exposures crossing risk thresholds.",
       "During a period of market volatility shortly after launch, the new platform flagged emerging risk concentrations early enough for Fenwick's risk team to act before they became losses.",
     ],
     tags: [
       "Unified risk visibility",
-      "Real-time exposure alerts",
+      "Real time exposure alerts",
       "Faster risk response",
     ],
-    cardHeading: "Real-time settlement risk monitoring",
+    cardHeading: "Real time settlement risk monitoring",
     imageSrc: "/assets/images/industry/our-work-3.webp",
     imageAlt: "Fenwick Capital Markets risk platform",
     accentClass: "bg-[#1f7a6b]",

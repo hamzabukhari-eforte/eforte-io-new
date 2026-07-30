@@ -30,11 +30,11 @@ const services: ExpertService[] = [
     imageSrc: "/assets/images/industry/bi.jpg",
     imageAlt: "BI dashboards and data engineering visualizations",
     description:
-      "Turn raw financial data into decision-ready insight across the organization.",
+      "Turn raw financial data into decision ready insight across the organization.",
   },
   {
     id: "baas-api-integrations",
-    label: "Banking-as-a-Service & API Integrations",
+    label: "Banking as a Service & API Integrations",
     imageSrc: "/assets/images/industry/baas.jpg",
     imageAlt: "BaaS and API integrations diagram",
     description:
@@ -46,7 +46,7 @@ const services: ExpertService[] = [
     imageSrc: "/assets/images/industry/cloud.jpg",
     imageAlt: "Cloud migration and optimization illustration",
     description:
-      "Move and right-size financial workloads on secure, cost-efficient cloud infrastructure.",
+      "Move and right size financial workloads on secure, cost efficient cloud infrastructure.",
   },
   {
     id: "app-modernization",
@@ -56,14 +56,14 @@ const services: ExpertService[] = [
     description:
       "Rebuild legacy financial applications on modern, maintainable architectures.",
   },
-  /* Preserved for future reuse — not listed in July 30 Finance content
+  /* Preserved for future reuse, not listed in July 30 Finance content
   {
     id: "qa",
     label: "QA",
     imageSrc: "/assets/images/industry/qa.jpg",
     imageAlt: "Quality assurance for financial systems",
     description:
-      "We provide specialized QA services for financial institutions, ensuring that AI-driven systems, digital banking products, payment platforms, data pipelines, meet the highest standards of reliability, security, and regulatory compliance.",
+      "We provide specialized QA services for financial institutions, ensuring that AI driven systems, digital banking products, payment platforms, data pipelines, meet the highest standards of reliability, security, and regulatory compliance.",
   },
   */
 ];
@@ -94,11 +94,11 @@ export default function FinancialServicesExpertiseSection() {
           transition={{ duration: 0.5, delay: 0.08 }}
           className="mx-auto mt-4 max-w-3xl text-center text-3xl font-medium leading-tight text-white md:text-4xl"
         >
-          Beyond IP-driven solutions, expert services built for regulated
+          Beyond IP driven solutions, expert services built for regulated
           finance
         </motion.h2>
 
-        <div className="mt-14 grid items-start gap-8 lg:grid-cols-[minmax(320px,420px)_1fr] lg:gap-12 xl:gap-16">
+        <div className="mt-14 grid items-start gap-8 lg:grid-cols-[minmax(320px, 420px)_1fr] lg:gap-12 xl:gap-16">
           <div role="tablist" aria-label="Expert services" className="space-y-3">
             {services.map((service) => {
               const isActive = service.id === activeId;
@@ -114,7 +114,7 @@ export default function FinancialServicesExpertiseSection() {
                   className={cn(
                     "flex w-full cursor-pointer items-center justify-between gap-4 rounded-2xl px-5 py-4 text-left transition-all duration-200",
                     isActive
-                      ? "bg-white/95 text-primary-pink shadow-[0_8px_28px_rgba(0,0,0,0.18)]"
+                      ? "bg-white/95 text-primary-pink shadow-[0_8px_28px_rgba(0, 0, 0, 0.18)]"
                       : "bg-transparent text-white hover:bg-white/10"
                   )}
                 >

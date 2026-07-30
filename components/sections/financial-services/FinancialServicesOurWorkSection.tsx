@@ -26,8 +26,8 @@ const slides: SlideContent[] = [
     imageAspect: "aspect-549/460",
     brand: "NORTHBRIDGE",
     paragraphs: [
-      "Northbridge, a mid-market small-business lender processing 500,000+ loan applications a year, needed to cut manual underwriting review time without loosening risk standards. eForte built a hybrid scoring engine combining bureau data, cash-flow signals, and behavioral indicators to flag low-risk applications for instant approval.",
-      "We layered a human-in-the-loop review queue on top of the model so underwriters could focus their attention only on borderline cases, cutting average decision time dramatically while keeping a person in control of every declined application.",
+      "Northbridge, a mid market small business lender processing 500, 000+ loan applications a year, needed to cut manual underwriting review time without loosening risk standards. eForte built a hybrid scoring engine combining bureau data, cash-flow signals, and behavioral indicators to flag low-risk applications for instant approval.",
+      "We layered a human in the loop review queue on top of the model so underwriters could focus their attention only on borderline cases, cutting average decision time dramatically while keeping a person in control of every declined application.",
     ],
     tags: [
       "Faster loan decisions.",
@@ -42,12 +42,12 @@ const slides: SlideContent[] = [
     imageAspect: "aspect-1319/1209",
     brand: "VELORA FINANCIAL",
     paragraphs: [
-      "Velora Financial, a regional credit union network, was losing members to digital-first competitors because its mobile banking app couldn't support real-time transfers or spending insights. eForte rebuilt Velora's mobile experience on a modern core-banking API layer, adding real-time payment rails and a personalized spending-insights dashboard powered by transaction categorization models.",
-      "Within months of launch, Velora saw a sharp rise in mobile engagement and a meaningful drop in member attrition to competing digital banks — proving that a credit union could compete on experience, not just rates.",
+      "Velora Financial, a regional credit union network, was losing members to digital first competitors because its mobile banking app couldn't support real time transfers or spending insights. eForte rebuilt Velora's mobile experience on a modern core-banking API layer, adding real time payment rails and a personalized spending-insights dashboard powered by transaction categorization models.",
+      "Within months of launch, Velora saw a sharp rise in mobile engagement and a meaningful drop in member attrition to competing digital banks, proving that a credit union could compete on experience, not just rates.",
     ],
     tags: [
       "Modernized mobile banking.",
-      "Real-time payments.",
+      "Real time payments.",
       "Reduced member attrition.",
     ],
   },

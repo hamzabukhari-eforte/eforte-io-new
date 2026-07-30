@@ -35,7 +35,7 @@ const testimonials: Testimonial[] = [
     id: "pulsewell",
     companyName: "PulseWell Fitness",
     testimonial:
-      "We had a huge product launch riding on our data pipeline holding up under pressure. eForte rebuilt it in time, and it didn't just hold up — it gave us real-time coaching features our competitors still don't have.",
+      "We had a huge product launch riding on our data pipeline holding up under pressure. eForte rebuilt it in time, and it didn't just hold up, it gave us real time coaching features our competitors still don't have.",
     author: "VP of Engineering",
     title: "PulseWell Fitness",
   },
