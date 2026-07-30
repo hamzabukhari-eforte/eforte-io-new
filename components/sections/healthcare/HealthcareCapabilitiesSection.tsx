@@ -28,25 +28,25 @@ type Capability = {
 const capabilities: Capability[] = [
   {
     id: "digital-patient",
-    label: "Digital Patient",
+    label: "Digital Patient Experience",
     icon: HiOutlineIdentification,
-    heading: "Digital patient interaction & engagement",
+    heading: "Digital Patient Experience",
     bullets: [
       {
-        title: "Digital patient experiences.",
-        text: "Develop interfaces and platforms that improve and transform patient experiences across the digital touchpoints that people use to engage with healthcare providers.",
+        title: "Patient-first interface design",
+        text: "Reimagine how patients interact with providers across web, mobile, and messaging channels.",
       },
       {
-        title: "Patient engagement platforms.",
-        text: "Build platforms that significantly enhance patient engagement - such as with easy access to medical records and personalized health messaging.",
+        title: "Engagement & retention platforms",
+        text: "Give patients simple access to records, reminders, and personalized health content.",
       },
       {
-        title: "Patient relationship management.",
-        text: "Create and implement CRM-like systems tailored for healthcare to manage, analyze, and improve patient interactions.",
+        title: "Health-specific CRM tooling",
+        text: "Manage and strengthen every patient relationship with purpose-built systems.",
       },
       {
-        title: "Health design thinking and accessibility.",
-        text: "Adopt health design thinking and accessibility frameworks to create patient-centric digital healthcare solutions.",
+        title: "Accessible, inclusive design",
+        text: "Apply health design thinking so digital tools work for every patient, not just the tech-savvy ones.",
       },
     ],
     image: "/assets/images/case-study/krank-banner.png",
@@ -54,21 +54,21 @@ const capabilities: Capability[] = [
   },
   {
     id: "mhealth",
-    label: "mHealth & Wearables",
+    label: "mHealth & Connected Devices",
     icon: HiOutlineDeviceMobile,
-    heading: "mHealth & wearable tech",
+    heading: "mHealth & Connected Devices",
     bullets: [
       {
-        title: "Mobile health applications/ mHealth.",
-        text: "Create mobile apps that bring health-related services directly to people's smartphones.",
+        title: "Consumer health apps",
+        text: "Bring services like symptom tracking, coaching, and reminders directly to patients' phones.",
       },
       {
-        title: "iOS & Android frameworks for health data.",
-        text: "Utilize mobile development frameworks, in particular Apple Health and Google Fit.",
+        title: "Apple Health / Google Fit integrations",
+        text: "Build on established mobile health data ecosystems.",
       },
       {
-        title: "Cutting-edge wearables.",
-        text: "Build wearables that offer in-depth health metrics and data powered by BLE, WiFi, or NFC.",
+        title: "Custom wearable engineering",
+        text: "Design connected devices over BLE, WiFi, or NFC that deliver meaningful, real-time health metrics.",
       },
     ],
     image: "/assets/images/case-study/oddysee-banner.png",
@@ -76,67 +76,72 @@ const capabilities: Capability[] = [
   },
   {
     id: "virtual-care",
-    label: "Virtual Care",
+    label: "Virtual Care & Remote Monitoring",
     icon: HiOutlineVideoCamera,
-    heading: "Virtual care platforms & remote care",
+    heading: "Virtual Care & Remote Monitoring",
     bullets: [
       {
-        title: "Telehealth applications.",
-        text: "Enable medical professionals to provide top-notch remote services and seamlessly transition to virtual care.",
+        title: "Telehealth platforms",
+        text: "Support high-quality video and audio consultations that feel as good as an in-person visit.",
       },
       {
-        title: "Remote video & audio applications.",
-        text: "Utilize advanced tools and technologies that make virtual patient visits a reality and ensure clear, uninterrupted communication between physicians and patients.",
+        title: "Remote patient monitoring",
+        text: "Connect at-home devices and clinical systems so care teams can act before small issues become emergencies.",
       },
       {
-        title: "Medication management.",
-        text: "Leverage tools and platforms that streamline the tracking and management of medication - to improve accuracy and efficiency of medication administration.",
+        title: "Medication adherence tools",
+        text: "Help patients and caregivers track and manage prescriptions accurately.",
       },
     ],
     image: "/assets/images/case-study/invesment-banner.png",
     imageSide: "right",
   },
   {
-    id: "genai-data",
-    label: "GenAI & Data",
+    id: "agentic-care",
+    label: "Agentic Orchestration",
     icon: HiOutlineChartSquareBar,
-    heading: "GenAI & data",
+    heading: "Agentic Orchestration for Care Teams",
     bullets: [
       {
-        title: "GenAI.",
-        text: "Our experts are working with GenAI in areas ranging from data analysis to patient care, as well as in various other highly regulated industries such as finance.",
+        title: "Clinical documentation agents",
+        text: "Reduce administrative burden by drafting visit summaries and notes for clinician review.",
       },
       {
-        title: "Data and AI services in accordance with HIPAA.",
-        text: "Benefit from our comprehensive solutions in data governance, ingestion, storage, ETL, machine learning, and AI services.",
+        title: "Patient triage agents",
+        text: "Help route incoming patient questions and requests to the right team member faster.",
       },
       {
-        title: "EHR and PHI data.",
-        text: "Ensure the secure handling, storage, and transmission of Electronic Health Records (EHRs) and Protected Health Information (PHI) data.",
+        title: "Care-coordination agents",
+        text: "Keep multidisciplinary care teams aligned on a patient's evolving treatment plan.",
       },
     ],
     image: "/assets/images/case-study/prism-banner.png",
     imageSide: "left",
   },
   {
-    id: "integration",
-    label: "Integration & Interoperability",
+    id: "foundational-data",
+    label: "Foundational Data Layer",
     icon: HiOutlineViewGridAdd,
-    heading: "Integration & interoperability",
+    heading: "Foundational Data Layer for Health Systems",
     bullets: [
       {
-        title: "Medical device integration.",
-        text: "Enable the smooth integration of medical devices with Electronic Health Records (EHRs) and other platforms.",
+        title: "HIPAA-aligned data architecture",
+        text: "Build governed, secure pipelines for ingesting and storing sensitive health data.",
       },
       {
-        title: "Remote patient monitoring (RPM) integrations.",
-        text: "Implement systems that integrate remote patient monitoring data with other healthcare systems, and drive improved patient outcomes.",
+        title: "EHR & device interoperability",
+        text: "Connect wearables, remote monitoring tools, and medical devices directly into electronic health records.",
+      },
+      {
+        title: "Health data analytics",
+        text: "Turn clinical and operational data into insight that improves both care quality and efficiency.",
       },
     ],
     image: "/assets/images/case-study/sellsMart4.png",
     imageSide: "right",
   },
 ];
+
 
 function CapabilityNav({ activeId }: { activeId: string }) {
   return (

@@ -10,34 +10,35 @@ const faqs = [
   {
     question: "What does eForte do in the financial-services sector?",
     answer:
-      "eForte partners with financial-services organizations to design, build, and scale secure, data- and AI-driven products. From core banking and banking-as-a-service to payments, risk, compliance, and analytics, we engineer the platforms and AI systems that modernize how financial institutions operate, engage, and grow.",
+      "eForte partners with banks, lenders, payment providers, and fintech innovators to design, build, and scale secure, data- and AI-driven financial products — from core banking modernization and embedded payments to AI-powered credit decisioning and risk monitoring. We work across the full lifecycle, from early product strategy through production deployment and ongoing support.",
   },
   {
-    question: "What types of financial institutions does eForte work with?",
+    question: "What types of financial institutions does eForte typically work with?",
     answer:
-      "We work with a broad range of organizations including banks, fintechs, paytechs, lenders, insurers, and financial infrastructure providers - from high-growth startups to established enterprises operating in highly regulated environments.",
+      "We work with a broad range of organizations, including community and regional banks, credit unions, consumer and small-business lenders, cross-border and embedded payment providers, wealth management firms, and venture-backed fintech startups looking to scale quickly without compromising security or compliance.",
   },
   {
-    question: "What AI capabilities does eForte offer for financial services?",
+    question: "What AI capabilities does eForte offer for lending, payments, and banking?",
     answer:
-      "Our capabilities span the full AI lifecycle: data engineering and governed lakehouse foundations, machine learning for credit scoring and risk, agentic AI for operations and compliance, and embedded analytics - all delivered with responsible AI design, model governance, and explainability.",
+      "Our finance AI capabilities span credit scoring and risk modeling, fraud and anomaly detection, automated compliance and KYC/AML screening, conversational support agents, and AI-assisted financial analysis. We combine off-the-shelf and custom-built models depending on the accuracy, explainability, and regulatory requirements of each use case.",
   },
   {
-    question: "Does eForte have expertise in building AI agents for financial services?",
+    question: "Does eForte have experience building production AI agents for regulated environments?",
     answer:
-      "Yes. We design and deploy AI agents tailored to finance use cases such as payments reconciliation, fraud detection, KYC verification, regulatory compliance monitoring, and funds transfer - built on production-ready architectures using platforms like Databricks and LangGraph.",
+      "Yes. Our Agentic Orchestration practice focuses specifically on building AI agents that are explainable, auditable, and safe to deploy in regulated settings — with guardrails, human-in-the-loop review points, and monitoring built in from day one, not added as an afterthought.",
   },
   {
-    question: "Is eForte certified in security and compliance frameworks?",
+    question: "Is eForte certified in relevant security and compliance frameworks?",
     answer:
-      "Security and compliance are foundational to how we work. eForte is SOC 2 Type II certified, ISO/IEC 27001 certified, and compliant with the NIST AI Risk Management Framework, ensuring our processes, controls, and systems meet rigorous standards for information security and risk management.",
+      "Yes. eForte is SOC 2 Type 2 certified, ISO 27001 certified, and compliant with the NIST AI Risk Management Framework. These certifications are backed by security practices we apply consistently across every financial services engagement, including encryption, access controls, and continuous monitoring.",
   },
   {
-    question: "What cloud and technology platforms does eForte work with?",
+    question: "What cloud and data platforms does eForte work with?",
     answer:
-      "We deliver on industry-leading platforms including Databricks, Snowflake, AWS, Azure, Airflow, dbt, and MLflow, and integrate with modern banking ecosystems such as Galileo and Fiserv to extend and modernize financial technology stacks.",
+      "We're a Databricks Gold Partner and also work extensively with AWS and other major cloud providers. Our Foundational Data practice is built to support cloud-native, secure, and scalable data architectures regardless of which platform a client has standardized on.",
   },
 ];
+
 
 export default function FinancialServicesFaqSection() {
   const [openFaqs, setOpenFaqs] = useState<number[]>([0]);

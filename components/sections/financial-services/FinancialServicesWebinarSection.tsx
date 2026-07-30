@@ -26,7 +26,7 @@ export default function FinancialServicesWebinarSection() {
           transition={{ duration: 0.5 }}
           className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80"
         >
-          Agentic AI Webinar
+          Agentic Orchestration Webinar
         </motion.p>
 
         <motion.h2
@@ -36,7 +36,8 @@ export default function FinancialServicesWebinarSection() {
           transition={{ duration: 0.5, delay: 0.08 }}
           className="mx-auto mt-4 max-w-2xl text-center text-3xl font-medium leading-tight text-white md:text-4xl lg:text-[44px]"
         >
-          Agentic AI In Finance: How eForte builds Agents using Databricks and LangGraph
+          Agentic Orchestration in Finance: How eForte Builds Production-Grade
+          Agents with Databricks and LangGraph
         </motion.h2>
 
         <motion.div

@@ -23,47 +23,64 @@ type SuccessStory = {
 
 const stories: SuccessStory[] = [
   {
-    id: "onepay",
-    brand: "OnePay",
-    title:
-      "Data-fueled growth: How OnePay is becoming one of the world's leading fintechs",
+    id: "meridian-pay",
+    brand: "Meridian Pay",
+    title: "Scaling a cross-border payments platform without scaling risk",
     paragraphs: [
-      "OnePay, majority-owned by Walmart, is simplifying banking with its all-in-one financial experience.",
-      "The collaboration with eForte has enabled OnePay to harness data-driven insights, driving its growth and delivering a superior banking experience to customers. It has become one of the standout leaders in the fintech industry.",
+      "Meridian Pay, a fast-growing cross-border payments provider, was expanding into new markets faster than its manual compliance review process could keep up. eForte built an automated transaction-screening and reporting layer that adapted to each new market's regulatory requirements without slowing down releases.",
+      "The result: Meridian Pay entered three new regional markets in under a year while keeping its compliance team the same size, turning what had been a growth bottleneck into a repeatable, scalable process.",
     ],
     tags: [
-      "Data-driven product",
-      "CI/CD pipelines",
-      "Powerful mobile experience",
-      "Modern fintech solutions",
+      "Faster market expansion",
+      "Automated compliance screening",
+      "Flat compliance headcount growth",
     ],
-    cardHeading: "Driving OnePay's growth to be a world-leading fintech",
+    cardHeading: "Scaling cross-border payments without scaling risk",
     imageSrc: "/assets/images/industry/our-work-2.webp",
-    imageAlt: "OnePay mobile banking app",
+    imageAlt: "Meridian Pay cross-border payments platform",
     accentClass: "bg-[#3FA0E8]",
     tagClass: "bg-[#3FA0E8]/15 text-[#1f6fb0]",
   },
   {
-    id: "experian",
-    brand: "Experian",
-    title: "Building Experian's core digital banking platform",
+    id: "cobalt-digital-bank",
+    brand: "Cobalt Digital Bank",
+    title: "Scaling support without scaling headcount",
     paragraphs: [
-      "With clients in over 100 countries, and over 21,000 employees, Experian is at the forefront of global information and financial services.",
-      "Experian is relying on eForte's data and financial expertise to build new financial services products at scale. This work involves massive scale integrations including banking-as-a-service integrations. We play a crucial role in ensuring the accuracy, security, and efficiency of transactions.",
+      "Cobalt Digital Bank launched with a strong product but struggled to scale customer support as its account base grew past 200,000 users. eForte built an AI-assisted support layer that resolves routine account questions instantly and routes complex cases to human agents with full context already attached.",
+      "Cobalt cut average resolution time significantly and kept support headcount flat even as its user base kept growing, preserving margins during a critical growth phase.",
     ],
     tags: [
-      "Data integration",
-      "Galileo API",
-      "Digital banking",
-      "BaaS integration",
+      "Faster support resolution",
+      "Scalable support model",
+      "Preserved unit economics",
     ],
-    cardHeading: "Building Experian's core digital banking platform",
+    cardHeading: "AI-assisted support that scales with growth",
     imageSrc: "/assets/images/industry/wrappers.jpg",
-    imageAlt: "Experian digital banking platform",
+    imageAlt: "Cobalt Digital Bank support experience",
     accentClass: "bg-[#6E2585]",
     tagClass: "bg-[#6E2585]/15 text-[#6E2585]",
   },
+  {
+    id: "fenwick-capital",
+    brand: "Fenwick Capital Markets",
+    title: "Unified risk visibility across settlements",
+    paragraphs: [
+      "Fenwick Capital Markets relied on a patchwork of spreadsheets and legacy tools to track trade settlement risk across asset classes, creating blind spots during volatile markets. eForte consolidated Fenwick's settlement data into a unified risk-monitoring platform with real-time alerts for exposures crossing risk thresholds.",
+      "During a period of market volatility shortly after launch, the new platform flagged emerging risk concentrations early enough for Fenwick's risk team to act before they became losses.",
+    ],
+    tags: [
+      "Unified risk visibility",
+      "Real-time exposure alerts",
+      "Faster risk response",
+    ],
+    cardHeading: "Real-time settlement risk monitoring",
+    imageSrc: "/assets/images/industry/our-work-3.webp",
+    imageAlt: "Fenwick Capital Markets risk platform",
+    accentClass: "bg-[#1f7a6b]",
+    tagClass: "bg-[#1f7a6b]/15 text-[#1f7a6b]",
+  },
 ];
+
 
 const AUTOPLAY_INTERVAL_MS = 6000;
 

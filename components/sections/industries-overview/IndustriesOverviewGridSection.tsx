@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { industriesCards, industriesMedia } from "@/data/industriesOverview";
+import {
+  industriesCards,
+  industriesGridIntro,
+  industriesMedia,
+} from "@/data/industriesOverview";
 import IndustriesReveal from "./IndustriesReveal";
 import styles from "./industriesOverview.module.css";
 
@@ -12,14 +16,12 @@ export default function IndustriesOverviewGridSection() {
       <div className={styles.content}>
         <IndustriesReveal className={styles.head} direction="bottom" duration={400}>
           <h2 className={styles.title}>
-            <span>A full-stack AI</span> services partner
+            <span>{industriesGridIntro.titleLine1}</span>{" "}
+            {industriesGridIntro.titleLine2}
           </h2>
           <p className={styles.description}>
-            From digital banking and paytech to virtual care and{" "}
-            <span>
-              embedded systems — eForte delivers across the industries
-            </span>{" "}
-            where AI, data, and software are reshaping the rules.
+            {industriesGridIntro.descriptionBefore}{" "}
+            <span>{industriesGridIntro.descriptionHighlight}</span>
           </p>
         </IndustriesReveal>
 

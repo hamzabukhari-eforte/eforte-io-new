@@ -19,27 +19,27 @@ type Tab = {
 const tabs: Tab[] = [
   {
     id: "paytech",
-    label: "Paytech & payment processing",
-    title: "Paytech & payment processing",
+    label: "Payments & settlement",
+    title: "Payments & settlement",
     description:
-      "We design intelligent agents that automate critical payment workflows, reduce manual effort, and improve accuracy across the entire transaction lifecycle.",
+      "Purpose-built AI agents for the workflows that run modern payments and settlement operations.",
     bullets: [
-      "Customer journey agent",
-      "AI reconciliation agent",
-      "Fraud detection agent",
+      "Settlement reconciliation agent — matches transactions across ledgers and flags mismatches before they become disputes.",
+      "Chargeback response agent — assembles evidence packets automatically to contest disputed transactions faster.",
+      "Real-time fraud triage agent — scores incoming transactions instantly and routes suspicious activity for review.",
     ],
     imageSrc: "/assets/images/industry/accelerators-1.jpg",
   },
   {
     id: "lendtech",
-    label: "Lendtech & consumer lending",
-    title: "Lendtech & consumer lending",
+    label: "Lending & credit",
+    title: "Lending & credit",
     description:
-      "We build AI agents that streamline lending operations, enhance decision accuracy, and create faster, more reliable borrower experiences.",
+      "Purpose-built AI agents for the workflows that run modern lending and credit operations.",
     bullets: [
-      "AI reconciliation agent",
-      "KYC agent",
-      "Digital agreement agent",
+      "Application intake agent — extracts and validates borrower data from documents and forms automatically.",
+      "Adverse action agent — generates compliant, clearly worded decline explanations for regulatory requirements.",
+      "Portfolio risk monitoring agent — continuously rescans the loan book for early signs of deteriorating credit quality.",
     ],
     imageSrc: "/assets/images/industry/accelerators-2.jpg",
   },
@@ -48,11 +48,11 @@ const tabs: Tab[] = [
     label: "Financial infrastructure",
     title: "Financial infrastructure",
     description:
-      "Our agents strengthen the backbone of financial platforms - enhancing security, simplifying integrations, and monitoring transactions.",
+      "Purpose-built AI agents for the workflows that run modern financial infrastructure.",
     bullets: [
-      "OWASP security agent",
-      "API integration agent",
-      "Transaction monitoring agent",
+      "Ledger reconciliation agent — keeps internal and partner-bank ledgers synchronized in near real time.",
+      "Compliance document agent — screens onboarding documents against KYC/AML requirements automatically.",
+      "Vendor payment agent — automates invoice matching and payment scheduling across finance operations.",
     ],
     imageSrc: "/assets/images/industry/accelerators-3.jpg",
   },
@@ -61,15 +61,16 @@ const tabs: Tab[] = [
     label: "Banking & banktech",
     title: "Banking & banktech",
     description:
-      "Combining deep banktech expertise with advanced AI, we design agents that enhance compliance monitoring, automate KYC workflows, and ensure reliable execution of funds transfers.",
+      "Purpose-built AI agents for the workflows that run modern banking and banktech operations.",
     bullets: [
-      "Regulatory compliance agent",
-      "KYC verification agent",
-      "Funds transfer agent",
+      "Account servicing agent — handles routine servicing requests like statements, limit changes, and disputes.",
+      "Onboarding concierge agent — guides new account holders through KYC and setup with conversational support.",
+      "Regulatory reporting agent — assembles and validates recurring compliance reports before submission deadlines.",
     ],
     imageSrc: "/assets/images/industry/accelerators-4.jpg",
   },
 ];
+
 
 export default function FinancialServicesAgentsSection() {
   const [activeId, setActiveId] = useState<string>(tabs[0].id);
@@ -85,7 +86,7 @@ export default function FinancialServicesAgentsSection() {
           transition={{ duration: 0.5 }}
           className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-default/70"
         >
-          Sample Agents Built &amp; Deployed by eForte
+          Sample Agents Categories
         </motion.p>
 
         <motion.h2
@@ -95,7 +96,7 @@ export default function FinancialServicesAgentsSection() {
           transition={{ duration: 0.5, delay: 0.08 }}
           className="mx-auto mt-4 max-w-2xl text-center text-3xl font-semibold leading-tight text-default md:text-4xl"
         >
-          We build AI agents that align directly with core finance processes
+          Purpose-built AI agents for the workflows that run modern finance
         </motion.h2>
 
         <div className="mt-12 flex justify-center md:mt-16">
@@ -152,7 +153,7 @@ export default function FinancialServicesAgentsSection() {
 
                 <ul className="mt-8 space-y-3 text-[15px] text-default md:text-base">
                   {activeTab.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-center gap-2.5">
+                    <li key={bullet} className="flex items-start gap-2.5">
                       <HiCheckCircle className="h-5 w-5 shrink-0 text-default/70" />
                       <span>{bullet}</span>
                     </li>

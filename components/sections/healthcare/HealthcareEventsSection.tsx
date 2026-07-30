@@ -35,12 +35,14 @@ export default function HealthcareEventsSection() {
             </div>
 
             <h2 className="mt-8 text-[46px] font-extralight leading-[51px] text-white">
-              We&apos;re on a mission to improve the healthcare space
+              We&apos;re on a mission to make healthcare more human
             </h2>
 
             <p className="mt-6 max-w-md text-[18px] font-normal leading-[25px] text-white/85">
-              eForte shares its experience and knowledge at renowned health tech,
-              fitness and wearable events and podcasts.
+              eForte&apos;s health team regularly speaks at leading digital
+              health, fitness-tech, and connected-device conferences, sharing
+              what we&apos;re learning as the industry moves toward more
+              personalized, preventive care.
             </p>
 
             <ContactCTA className="mt-9 inline-flex h-12 w-fit items-center justify-center rounded-full border border-white bg-white px-8 text-sm font-medium text-default transition-all duration-300 hover:bg-transparent hover:text-white">

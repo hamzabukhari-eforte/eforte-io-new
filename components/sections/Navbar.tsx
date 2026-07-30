@@ -418,7 +418,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
     eyebrow: "Industries",
     title: "Our Industries",
     description:
-      "We partner with leading organizations across industries, delivering tailored AI and data solutions that drive transformation and measurable business value.",
+      "We partner with organizations across seven industries to deliver technology that drives measurable transformation — combining specialized domain knowledge with Velocity AI, Agentic Orchestration, and Foundational Data Layer.",
     columns: [
       {
         title: "Our Industries",
@@ -426,7 +426,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "Health & Wellbeing",
             description:
-              "AI-driven healthcare solutions improving patient outcomes, operational efficiency, and personalized care.",
+              "Build patient-first digital health experiences, from virtual care to connected wearables.",
             iconName: "heart",
             iconColorClass: "bg-[#7C4CFF]",
             href: "/industries/healthcare",
@@ -434,7 +434,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "Finance",
             description:
-              "Intelligent AI and data platforms enabling smarter decisions, risk mitigation, and digital financial transformation.",
+              "Modernize lending, payments, and banking with secure, AI-driven financial infrastructure.",
             iconName: "currency-dollar",
             iconColorClass: "bg-[#7C4CFF]",
             href: "/industries/financial-services",
@@ -442,7 +442,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "Insurance",
             description:
-              "AI-powered automation and analytics streamlining underwriting, claims processing, and customer engagement.",
+              "Transform underwriting and claims with connected data and intelligent automation.",
             iconName: "shield-check",
             iconColorClass: "bg-[#7C4CFF]",
             href: "/industries/insurance",
@@ -450,30 +450,34 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "Automobile",
             description:
-              "Advanced AI enabling connected vehicles, predictive maintenance, and intelligent manufacturing ecosystems.",
+              "Power connected vehicles and smarter fleets with real-time telemetry and AI diagnostics.",
             iconName: "device-mobile",
             iconColorClass: "bg-[#7C4CFF]",
+            href: "/industries/automobile",
           },
           {
             title: "Heavy Industries",
             description:
-              "Industrial AI solutions driving predictive maintenance, operational excellence, and smart factory transformation.",
+              "Keep plants running and workers safe with predictive maintenance and connected operations.",
             iconName: "office-building",
             iconColorClass: "bg-[#7C4CFF]",
+            href: "/industries/heavy-industries",
           },
           {
             title: "BPO & Shared Services",
             description:
-              "Agentic AI and automation enhancing service delivery, productivity, and scalable customer operations.",
+              "Scale service delivery with intelligent automation and unified workforce data.",
             iconName: "user-group",
             iconColorClass: "bg-[#7C4CFF]",
+            href: "/industries/bpo-shared-services",
           },
           {
             title: "Hospitality",
             description:
-              "AI-powered personalization and operational intelligence elevating guest experiences and optimizing hospitality operations.",
+              "Deliver guest experiences that convert and retain, powered by personalization at scale.",
             iconName: "badge-check",
             iconColorClass: "bg-[#7C4CFF]",
+            href: "/industries/hospitality",
           },
           // Legacy industries preserved for future reuse:
           // {

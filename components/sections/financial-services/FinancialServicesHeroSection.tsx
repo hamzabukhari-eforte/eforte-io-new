@@ -43,7 +43,7 @@ export default function FinancialServicesHeroSection() {
               transition={{ duration: 0.5, delay: 0.08 }}
               className="text-4xl font-medium leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[48px]"
             >
-              Modern data and AI-driven financial services solutions
+              Intelligent infrastructure for the next era of financial services
             </motion.h1>
 
             <motion.p
@@ -52,10 +52,10 @@ export default function FinancialServicesHeroSection() {
               transition={{ duration: 0.5, delay: 0.16 }}
               className="mt-6 max-w-lg text-base leading-relaxed text-desc md:text-[17px]"
             >
-              eForte is a next generation service provider that partners to
-              reimagine financial services with technology. From core banking
-              and BaaS to financial AI agents and payments, we engineer secure,
-              scalable, data- and AI-driven solutions.
+              eForte partners with banks, lenders, and payment innovators to turn
+              financial services ambitions into shipped products — engineering
+              secure, scalable systems across lending, payments, and embedded
+              finance, powered by data and applied AI.
             </motion.p>
 
             <motion.div
@@ -94,10 +94,11 @@ export default function FinancialServicesHeroSection() {
 
               <div className="flex flex-col items-baseline gap-3">
                 <span className="text-4xl font-semibold leading-none text-white md:text-[40px]">
-                  75%
+                  80%
                 </span>
                 <span className="max-w-[240px] text-xs leading-snug text-desc">
-                  of eForte&apos;s largest clients are in financial services
+                  of eForte&apos;s finance clients have partnered with us for more
+                  than three years
                 </span>
               </div>
             </motion.div>

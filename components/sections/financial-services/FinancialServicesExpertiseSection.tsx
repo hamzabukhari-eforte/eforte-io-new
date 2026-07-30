@@ -22,23 +22,23 @@ const services: ExpertService[] = [
     imageSrc: "/assets/images/industry/cybersecurity.jpg",
     imageAlt: "Cybersecurity shield protecting financial data",
     description:
-      "Protect your sensitive data and maintain customer trust with our robust cybersecurity solutions. We help you identify vulnerabilities, implement best practices, and ensure compliance with industry regulations.",
+      "Protect sensitive financial data with layered, continuously monitored security architecture.",
   },
   {
     id: "bi-data-engineering",
-    label: "BI and Data Engineering",
+    label: "BI & Data Engineering",
     imageSrc: "/assets/images/industry/bi.jpg",
     imageAlt: "BI dashboards and data engineering visualizations",
     description:
-      "Harness the power of your data with our BI and data engineering expertise. We help you collect, store, analyze, and visualize data to gain valuable insights and make informed business decisions.",
+      "Turn raw financial data into decision-ready insight across the organization.",
   },
   {
     id: "baas-api-integrations",
-    label: "BaaS Integrations/API Integrations",
+    label: "Banking-as-a-Service & API Integrations",
     imageSrc: "/assets/images/industry/baas.jpg",
     imageAlt: "BaaS and API integrations diagram",
     description:
-      "Seamlessly connect your systems and leverage third-party services with our BaaS and API integration expertise. We ensure smooth data flow and enable you to build a truly integrated financial ecosystem.",
+      "Connect core systems to modern banking infrastructure providers.",
   },
   {
     id: "cloud-migration",
@@ -46,7 +46,7 @@ const services: ExpertService[] = [
     imageSrc: "/assets/images/industry/cloud.jpg",
     imageAlt: "Cloud migration and optimization illustration",
     description:
-      "Accelerate your journey to the cloud with our migration and optimization services. We help you modernize your infrastructure, reduce costs, and achieve greater scalability and flexibility.",
+      "Move and right-size financial workloads on secure, cost-efficient cloud infrastructure.",
   },
   {
     id: "app-modernization",
@@ -54,8 +54,9 @@ const services: ExpertService[] = [
     imageSrc: "/assets/images/industry/app-modernization.jpg",
     imageAlt: "Omnichannel banking app modernization diagram",
     description:
-      "Transform your legacy applications into modern, cloud-native solutions. We help you enhance performance, improve user experience, and reduce maintenance costs.",
+      "Rebuild legacy financial applications on modern, maintainable architectures.",
   },
+  /* Preserved for future reuse — not listed in July 30 Finance content
   {
     id: "qa",
     label: "QA",
@@ -64,7 +65,9 @@ const services: ExpertService[] = [
     description:
       "We provide specialized QA services for financial institutions, ensuring that AI-driven systems, digital banking products, payment platforms, data pipelines, meet the highest standards of reliability, security, and regulatory compliance.",
   },
+  */
 ];
+
 
 export default function FinancialServicesExpertiseSection() {
   const [activeId, setActiveId] = useState<string>(services[0].id);
@@ -91,9 +94,8 @@ export default function FinancialServicesExpertiseSection() {
           transition={{ duration: 0.5, delay: 0.08 }}
           className="mx-auto mt-4 max-w-3xl text-center text-3xl font-medium leading-tight text-white md:text-4xl"
         >
-          Beyond our IP-driven solutions, eForte offers a range of expert
-          services to ensure your financial services transformation is
-          seamless, secure, and optimized for success.
+          Beyond IP-driven solutions, expert services built for regulated
+          finance
         </motion.h2>
 
         <div className="mt-14 grid items-start gap-8 lg:grid-cols-[minmax(320px,420px)_1fr] lg:gap-12 xl:gap-16">

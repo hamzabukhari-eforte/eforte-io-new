@@ -16,30 +16,39 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    id: "krank",
-    companyName: "Krank",
+    id: "northbridge",
+    companyName: "Northbridge",
     testimonial:
-      "Consider the expertise that you require. They are one of the best groups around. Trust that they'll put good people into the project. They want to do the right thing.",
-    author: "Mark Turner",
-    title: "CEO & Founder, Krank",
+      "eForte didn't just build a model — they understood our risk appetite and built guardrails around it. Our underwriting team trusts the system because they were part of building it.",
+    author: "VP of Credit Risk",
+    title: "Northbridge",
   },
   {
-    id: "investment-markets",
-    companyName: "Investment Markets",
+    id: "velora",
+    companyName: "Velora Financial",
     testimonial:
-      "We've tripled our output from 20-25 to about 60-70 story points per week. They're fantastic to work with. Everyone I've worked with on their team has gone over and beyond to understand our goals and been very thorough in their approach.",
-    author: "Chris Mortan",
-    title: "Owner, Investment Markets",
+      "eForte rebuilt our mobile banking experience without making our members feel like guinea pigs. The rollout was seamless, and engagement numbers we've been chasing for years finally moved.",
+    author: "Chief Digital Officer",
+    title: "Velora Financial",
   },
   {
-    id: "oddysee",
-    companyName: "Oddysee",
+    id: "arclight",
+    companyName: "Arclight Capital",
     testimonial:
-      "I appreciate their ability to respond and be dynamic. They've taken an individual interest in understanding our business. As soon as I started working with them, their lead sat with us for 2 weeks in order to understand everything before providing direction.",
-    author: "Zeta Ceti",
-    title: "CEO, Oddysee",
+      "Our advisors used to spend their mornings prepping for client calls. Now the AI financial analyst tool does that groundwork, and our team spends that time actually building relationships.",
+    author: "Head of Wealth Technology",
+    title: "Arclight Capital",
+  },
+  {
+    id: "fenwick",
+    companyName: "Fenwick Capital Markets",
+    testimonial:
+      "When the market got volatile, our new risk platform flagged exposures we would have caught too late with our old spreadsheet-based process. That single catch justified the whole project.",
+    author: "Chief Risk Officer",
+    title: "Fenwick Capital Markets",
   },
 ];
+
 
 const AUTOPLAY_INTERVAL_MS = 6000;
 

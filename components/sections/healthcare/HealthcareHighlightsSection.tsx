@@ -12,21 +12,22 @@ import Container from "@/components/atoms/Container";
 const highlights = [
   {
     icon: HiOutlineCube,
-    text: "End-to-end 360 product design & management, including telehealth product development.",
+    text: "Full-cycle product design and delivery for remote care and digital therapeutics platforms.",
   },
   {
     icon: HiOutlineChatAlt2,
-    text: "Established expertise in building user-centric apps & chatbots complying with regulations such as HIPAA.",
+    text: "Deep experience building consumer and clinical apps aligned with HIPAA and related health-data regulations.",
   },
   {
     icon: HiOutlineSwitchHorizontal,
-    text: "Streamlined healthcare integrations, such as with insurance providers.",
+    text: "Proven integrations connecting care platforms with insurers, labs, and pharmacy networks.",
   },
   {
     icon: HiOutlineDeviceMobile,
-    text: "Proven experience in wearables and BLE connected devices.",
+    text: "Extensive hands-on experience with wearables and BLE/NFC-connected health devices.",
   },
 ];
+
 
 export default function HealthcareHighlightsSection() {
   return (

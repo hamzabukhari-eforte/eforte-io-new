@@ -13,9 +13,8 @@ import {
 } from "@/components/sections/healthcare";
 
 export const metadata = {
-  title: "Healthcare | eForte",
-  description:
-    "Healthcare solutions with AI and mHealth technologies - from patient management systems and virtual care to health integrations, wearable tech, smart devices, and fitness apps.",
+  title: "Health & Wellbeing | eForte",
+  description: "Human-centered health technology built with Velocity AI — virtual care, connected devices, Agentic Orchestration, and a Foundational Data Layer for health systems.",
 };
 
 export default function HealthcarePage() {

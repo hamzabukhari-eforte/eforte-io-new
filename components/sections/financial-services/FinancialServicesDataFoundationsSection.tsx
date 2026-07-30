@@ -22,41 +22,42 @@ type Capability = {
 const capabilities: Capability[] = [
   {
     icon: HiTrendingUp,
-    title: "Data engineering and ETL services",
+    title: "Data engineering & ETL",
     description:
-      "Design, build, and maintain robust data pipelines optimized for high-volume financial data ingestion, transformation, and reconciliation—supporting real-time processing, regulatory reporting, and risk analytics.",
+      "Build resilient pipelines that ingest high-volume transactional and behavioral data without bottlenecks.",
   },
   {
     icon: HiCloud,
     title: "Data platform development",
     description:
-      "Architect scalable, secure data platforms (e.g., on Databricks or other cloud-native ecosystems) capable of handling complex financial datasets, including transactional records, market data, customer interactions, and fraud analytics workloads.",
+      "Architect secure, cloud-native platforms (Databricks and beyond) built for financial-grade scale.",
   },
   {
     icon: HiShieldCheck,
-    title: "Data security and compliance",
+    title: "Data security & compliance",
     description:
-      "Implement advanced data security frameworks, encryption strategies, access controls, and continuous audits aligned with financial regulations such as PCI-DSS, GDPR, GLBA, SOX, and region-specific banking compliance requirements.",
+      "Protect financial data with encryption, access controls, and continuous monitoring aligned to regulated environments.",
   },
   {
     icon: HiCheckCircle,
-    title: "Data quality and governance",
+    title: "Data quality & governance",
     description:
-      "Establish rigorous governance processes to ensure accuracy, completeness, lineage, and consistency across financial datasets - supporting audit readiness, risk management, and regulatory reporting standards.",
+      "Establish lineage, accuracy, and audit-ready controls across financial datasets.",
   },
   {
     icon: HiSwitchHorizontal,
     title: "Data migration services",
     description:
-      "Seamless transition of legacy data systems to modern, cloud-based platforms. Enable seamless migration from legacy financial systems (core banking, underwriting, payments, trading platforms, etc.) to modern, cloud-based architectures - ensuring data integrity, lineage tracking, and zero-downtime cutovers where required.",
+      "Move legacy financial systems to modern platforms without disrupting daily operations.",
   },
   {
     icon: HiChartBar,
-    title: "Data analytics and visualization",
+    title: "Data analytics & visualization",
     description:
-      "Develop advanced dashboards, reporting systems, and embedded analytics tailored for financial operations - including portfolio insights, risk and fraud monitoring, customer analytics, and operational KPIs.",
+      "Deliver dashboards and embedded reporting built for financial operations teams.",
   },
 ];
+
 
 export default function FinancialServicesDataFoundationsSection() {
   return (
@@ -79,7 +80,8 @@ export default function FinancialServicesDataFoundationsSection() {
           transition={{ duration: 0.5, delay: 0.08 }}
           className="mx-auto mt-4 max-w-3xl text-center text-3xl font-medium leading-tight text-default md:text-4xl lg:text-[44px]"
         >
-          We architect the data foundations to support modern financial services
+          We engineer the Foundational Data layer behind modern financial
+          products
         </motion.h2>
 
         <motion.div

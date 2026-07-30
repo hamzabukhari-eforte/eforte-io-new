@@ -17,9 +17,8 @@ import TrustedBySection from "@/components/sections/TrustedBySection";
 import { defaultTrustedByLogosDark } from "@/data/trustedByLogos";
 
 export const metadata = {
-  title: "Financial Services | eForte",
-  description:
-    "Modern data and AI-driven financial services solutions - from core banking and BaaS to financial AI agents and payments.",
+  title: "Finance | eForte",
+  description: "Intelligent infrastructure for the next era of financial services — secure, scalable systems across lending, payments, and embedded finance.",
 };
 
 export default function FinancialServicesPage() {

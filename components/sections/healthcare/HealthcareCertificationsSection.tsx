@@ -32,7 +32,7 @@ export default function HealthcareCertificationsSection() {
           transition={{ duration: 0.5 }}
           className="text-center text-3xl font-semibold text-[#011C57] md:text-4xl"
         >
-          Our Certifications
+          Certified for the standards healthcare demands
         </motion.h2>
 
         <motion.div
@@ -61,10 +61,9 @@ export default function HealthcareCertificationsSection() {
           transition={{ duration: 0.5, delay: 0.12 }}
           className="mx-auto mt-8 max-w-2xl text-center text-[15px] leading-relaxed text-[#888888]"
         >
-          We are ISO 27001, SOC 2 Type 2 certified, and also compliant with the
-          NIST AI Risk Management Framework. The multi-certification approach not
-          only mitigates legal and regulatory risks but also drives continuous
-          improvement.
+          eForte holds ISO 27001 and SOC 2 Type 2 certifications and aligns with
+          the NIST AI Risk Management Framework, giving healthcare partners
+          confidence in how we handle sensitive data at every stage.
         </motion.p>
 
         <motion.div
@@ -93,9 +92,9 @@ export default function HealthcareCertificationsSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mx-auto mt-8 max-w-2xl text-center text-[15px] leading-relaxed text-[#888888]"
         >
-          eForte has driven the development of countless FDA-certified products
-          and HIPAA-compliant solutions, ensuring top-quality, safe, and secure
-          software in healthcare and medical fields.
+          Our team has supported FDA-cleared product submissions and built
+          numerous HIPAA-aligned platforms across clinical and consumer health
+          settings.
         </motion.p>
       </Container>
     </section>

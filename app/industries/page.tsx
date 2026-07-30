@@ -1,6 +1,6 @@
 import {
   IndustriesOverviewBadgesSection,
-  IndustriesOverviewDatabricksSection,
+  // IndustriesOverviewDatabricksSection — preserved; no home-page content currently
   IndustriesOverviewGridSection,
   IndustriesOverviewHeroSection,
   IndustriesOverviewOutcomesSection,
@@ -11,7 +11,7 @@ import styles from "@/components/sections/industries-overview/industriesOverview
 export const metadata = {
   title: "Industries | eForte",
   description:
-    "Explore eForte's industry expertise across banking, financial services, healthcare, insurance, media, and hi-tech.",
+    "Explore eForte's industry expertise across finance, insurance, health & wellbeing, heavy industry, automotive, hospitality, and BPO & shared services.",
 };
 
 export default function IndustriesPage() {
@@ -20,7 +20,7 @@ export default function IndustriesPage() {
       <IndustriesOverviewHeroSection />
       <IndustriesOverviewWhySection />
       <IndustriesOverviewGridSection />
-      <IndustriesOverviewDatabricksSection />
+      {/* <IndustriesOverviewDatabricksSection /> — preserved for possible future reuse */}
       <IndustriesOverviewBadgesSection />
       <IndustriesOverviewOutcomesSection />
       {/* Work together CTA lives in shared layout */}

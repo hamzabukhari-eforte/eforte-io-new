@@ -5,24 +5,26 @@ import Container from "@/components/atoms/Container";
 
 const stats = [
   {
-    value: "20+",
-    label: "20+ years of experience in healthcare.",
+    value: "13+",
+    label: "13+ years of experience in health, fitness, and wellness technology",
   },
   {
-    value: "1/3",
-    label: "Over ⅓ of our revenue comes from health, fitness, and wellness.",
-  },
-  {
-    value: "5+",
+    value: "40%",
     label:
-      "Clients work with us on long-term, transformative engagements. Over 5 years is average.",
+      "40% of eForte's active engagements are in health and wellness product development",
   },
   {
-    value: "#1",
+    value: "6+",
     label:
-      "We've been recognized as the #1 Health App developer by B2B research firm, Clutch.",
+      "6+ years, the average length of our long-term healthcare client partnerships",
+  },
+  {
+    value: "#5",
+    label:
+      "Top 5 ranked healthtech engineering partner by an independent B2B research firm",
   },
 ];
+
 
 export default function HealthcareExpertiseSection() {
   return (
@@ -36,12 +38,12 @@ export default function HealthcareExpertiseSection() {
           className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:gap-16"
         >
           <h2 className="text-[38px] font-semibold leading-[42px] text-[#011C57]">
-            Our healthcare expertise
+            Our health & wellbeing expertise
           </h2>
           <p className="max-w-xl text-[17px] leading-[26px] text-[#888888]">
-            Our experienced team collaborates with leading healthcare
-            organizations and innovative healthtech startups. We build powerful,
-            secure digital experiences.
+            Our team partners with hospital networks, digital health startups,
+            and consumer wellness brands to design experiences people actually
+            want to use.
           </p>
         </motion.div>
 

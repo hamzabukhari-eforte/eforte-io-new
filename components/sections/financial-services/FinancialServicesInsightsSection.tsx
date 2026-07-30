@@ -18,12 +18,13 @@ type WhitePaper = {
 const whitePapers: WhitePaper[] = [
   {
     id: "ai-agents",
-    subtitle: "Building powerful & scalable AI Agents",
+    subtitle: "Designing Trustworthy AI Agents for Regulated Finance",
     description:
-      "This white paper introduces eForte's modular, production-ready architecture for building agentic AI systems using Databricks and LangGraph - designed for scalability, observability, and business impact.",
+      "A practical guide to building agentic AI systems in finance that remain explainable, auditable, and safe to deploy in production.",
     imageSrc: "/assets/images/velocity-ai/insight-1.png",
-    imageAlt: "Building powerful & scalable AI Agents white paper",
+    imageAlt: "Designing Trustworthy AI Agents for Regulated Finance white paper",
   },
+  // Preserved — July 30 doc lists one primary white paper promo
   {
     id: "ux-ui-fintech",
     subtitle: "Best UX/UI practices to create differentiation in fintech",
@@ -33,6 +34,7 @@ const whitePapers: WhitePaper[] = [
     imageAlt: "Best UX/UI practices to create differentiation in fintech white paper",
   },
 ];
+
 
 const AUTOPLAY_INTERVAL_MS = 6000;
 

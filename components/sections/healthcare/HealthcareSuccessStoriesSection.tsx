@@ -21,34 +21,61 @@ type SuccessStory = {
 
 const stories: SuccessStory[] = [
   {
-    id: "thmydoc",
-    title: "Remote patient monitoring & chronic disease management",
+    id: "harborlight",
+    title: "Harborlight Recovery",
     paragraphs: [
-      "THmyDOC is a telehealth technology platform enabling regional healthcare providers to deliver higher standards of remote patient monitoring.",
-      "Working with eForte, the team built a secure, scalable platform that brings care closer to patients with chronic conditions - improving outcomes while reducing operational burden on care teams.",
+      "Harborlight Recovery, a behavioral health provider, needed a way to keep clients engaged between in-person sessions without overwhelming its clinical staff. eForte built a companion app combining mood check-ins, care-team messaging, and progress dashboards that clinicians could review in minutes, not hours.",
+      "Client engagement between sessions increased substantially, and clinicians reported catching early warning signs of relapse more often than before, leading to timely intervention.",
     ],
-    tags: ["Telehealth", "Remote monitoring", "Secure infrastructure"],
-    cardHeading: "Telehealth technology for remote patient monitoring",
+    tags: [
+      "Improved between-visit engagement",
+      "Earlier clinical intervention",
+      "Reduced clinician review time",
+    ],
+    cardHeading: "Between-visit engagement for behavioral health",
     imageSrc: "/assets/images/case-study/scheduling1.png",
-    imageAlt: "THmyDOC remote patient monitoring platform",
+    imageAlt: "Harborlight Recovery companion app",
     accentClass: "bg-[#2D68F0]",
     tagClass: "bg-[#2D68F0] text-white",
   },
   {
-    id: "vivihealth",
-    title: "Patient monitoring for recovery & behavioral health",
+    id: "pulsewell",
+    title: "PulseWell Fitness",
     paragraphs: [
-      "Vivi360 is a comprehensive insight platform that combines real-time health monitoring devices, clinical insight dashboards, telehealth support, and personalized client care applications.",
-      "eForte helped deliver evidence-based outcomes built on years of clinical research - making recovery treatment more effective and engaging for patients and providers alike.",
+      "PulseWell Fitness, a connected-fitness hardware company, needed to move its wearable data pipeline from a fragile, manually managed system to something that could support hundreds of thousands of daily-active users. eForte rebuilt PulseWell's Foundational Data Layer to handle high-volume sensor data reliably and rearchitected its mobile app for real-time coaching feedback.",
+      "The new architecture supported a major surge in device sales without downtime, and real-time coaching features became one of the most used parts of the app within weeks of launch.",
     ],
-    tags: ["Behavioral health", "Connected devices", "Clinical insights"],
-    cardHeading: "Patient monitoring for recovery & behavioral health",
+    tags: [
+      "Scaled to high-volume sensor data",
+      "Zero-downtime device launch",
+      "Increased daily app engagement",
+    ],
+    cardHeading: "Wearable data platform built to scale",
     imageSrc: "/assets/images/case-study/prism-banner.png",
-    imageAlt: "ViviHealth patient monitoring platform",
+    imageAlt: "PulseWell Fitness wearable platform",
     accentClass: "bg-[#1f7a6b]",
     tagClass: "bg-[#1f7a6b] text-white",
   },
+  {
+    id: "clearpath",
+    title: "ClearPath Diabetes Care",
+    paragraphs: [
+      "ClearPath Diabetes Care wanted to give patients and care teams a shared, real-time view of glucose trends without requiring patients to manually log every reading. eForte integrated continuous glucose monitors directly into a patient-facing app and clinician dashboard, with Agentic Orchestration flagging concerning trends for care-team follow-up automatically.",
+      "Care teams were able to reach out to at-risk patients proactively rather than waiting for scheduled visits, and patients reported feeling more supported managing a condition that can otherwise feel isolating.",
+    ],
+    tags: [
+      "Proactive patient outreach",
+      "Automated trend monitoring",
+      "Improved patient-reported support",
+    ],
+    cardHeading: "Proactive diabetes care with connected CGM",
+    imageSrc: "/assets/images/case-study/oddysee-banner.png",
+    imageAlt: "ClearPath Diabetes Care platform",
+    accentClass: "bg-[#E8822E]",
+    tagClass: "bg-[#E8822E] text-white",
+  },
 ];
+
 
 const AUTOPLAY_INTERVAL_MS = 6000;
 

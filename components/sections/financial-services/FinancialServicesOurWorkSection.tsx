@@ -20,92 +20,55 @@ type SlideContent = {
 
 const slides: SlideContent[] = [
   {
-    id: "avant",
+    id: "northbridge",
     imageSrc: "/assets/images/industry/our-work-1.svg",
-    imageAlt: "Avant data and machine learning credit assessment pipeline",
+    imageAlt: "Northbridge hybrid credit scoring engine",
     imageAspect: "aspect-549/460",
-    brand: "AVANT",
+    brand: "NORTHBRIDGE",
     paragraphs: [
-      "Avant with 3 million+ customers & 1 million+ issued credit cards released a machine learning driven credit assessment to quickly & accurately assess the credit worthiness of custom",
-      "We developed proprietary & used existing machine learning models to dig into metrics including credit bureau reports & transaction data",
+      "Northbridge, a mid-market small-business lender processing 500,000+ loan applications a year, needed to cut manual underwriting review time without loosening risk standards. eForte built a hybrid scoring engine combining bureau data, cash-flow signals, and behavioral indicators to flag low-risk applications for instant approval.",
+      "We layered a human-in-the-loop review queue on top of the model so underwriters could focus their attention only on borderline cases, cutting average decision time dramatically while keeping a person in control of every declined application.",
     ],
     tags: [
-      "Reduced default rates.",
-      "Improved cash flows.",
-      "Enhanced customer experience",
+      "Faster loan decisions.",
+      "Lower cost-per-application.",
+      "Reduced underwriter workload.",
     ],
   },
   {
-    id: "mobile-app",
+    id: "velora",
     imageSrc: "/assets/images/industry/our-work-2.webp",
-    imageAlt: "Best-in-class mobile banking app",
+    imageAlt: "Velora Financial modernized mobile banking",
     imageAspect: "aspect-1319/1209",
+    brand: "VELORA FINANCIAL",
     paragraphs: [
-      "Our client's vision was to provide an all-in-one financial experience, offering debit cards, bank accounts, credit services, and a budgeting app in one easy-to-use mobile platform.",
-      "Our team worked to build the app from scratch using React Native. We integrated complex and diverse banking features into the app, while ensuring ease of use, high performance, and robust security.",
+      "Velora Financial, a regional credit union network, was losing members to digital-first competitors because its mobile banking app couldn't support real-time transfers or spending insights. eForte rebuilt Velora's mobile experience on a modern core-banking API layer, adding real-time payment rails and a personalized spending-insights dashboard powered by transaction categorization models.",
+      "Within months of launch, Velora saw a sharp rise in mobile engagement and a meaningful drop in member attrition to competing digital banks — proving that a credit union could compete on experience, not just rates.",
     ],
-    bullets: [
-      {
-        text: (
-          <>
-            A <strong className="font-semibold">4.7 App Store ranking</strong>{" "}
-            from 20,000+ people.
-          </>
-        ),
-      },
-      {
-        text: (
-          <>
-            A{" "}
-            <strong className="font-semibold">
-              visually stunning & intuitively navigable user interface
-            </strong>{" "}
-            across different services, all within the app.
-          </>
-        ),
-      },
-      {
-        text: (
-          <>
-            Enhanced app performance & smooth{" "}
-            <strong className="font-semibold">user experiences</strong>.
-          </>
-        ),
-      },
-      {
-        text: (
-          <>
-            Streamlined & efficient{" "}
-            <strong className="font-semibold">app development process</strong>.
-          </>
-        ),
-      },
+    tags: [
+      "Modernized mobile banking.",
+      "Real-time payments.",
+      "Reduced member attrition.",
     ],
   },
   {
-    id: "core-banking",
+    id: "arclight",
     imageSrc: "/assets/images/industry/our-work-3.webp",
-    imageAlt: "Building the foundation of a core banking platform with Galileo",
+    imageAlt: "Arclight Capital AI financial analyst",
     imageAspect: "aspect-1260/814",
+    brand: "ARCLIGHT CAPITAL",
     paragraphs: [
-      "Our client that boasts 28 million+ customers, and is one of America's most renowned financial institutions, is redefining modern banking.",
-      "They're providing all the modern financial services people expect today, such as being able to transfer money, pay bills and more, online or on your phone — without a physical bank.",
+      "Arclight Capital, a wealth management firm, needed to give advisors faster access to portfolio insights without asking clients to repeat information across systems. eForte built an AI financial analyst tool that pulls from custodial data, market feeds, and client notes to generate advisor-ready portfolio summaries in seconds instead of hours.",
+      "Advisors reported spending far less time on prep work and more time in front of clients, and the firm was able to expand its advisor-to-client ratio without sacrificing service quality.",
     ],
-    highlight:
-      "To achieve this, eForte brought together a set of digital banking technology services, including",
-    bullets: [
-      {
-        text: "Integrating the financial API, Galileo, to ensure robust and versatile financial data interactions.",
-      },
-      {
-        text: "Development of a sophisticated system for managing account balances and transactions, crucial for real-time data processing and accuracy.",
-      },
-      {
-        text: "Design of an RDF Processor System to enable the aggregation and refinement of data from diverse sources into a unified, reliable database.",
-      },
+    tags: [
+      "Faster portfolio insights.",
+      "More advisor capacity.",
+      "Improved client-facing time.",
     ],
   },
 ];
+
 
 export default function FinancialServicesOurWorkSection() {
   const [activeIndex, setActiveIndex] = useState(0);

@@ -34,7 +34,8 @@ export default function FinancialServicesFinanceStudioSection() {
           transition={{ duration: 0.5, delay: 0.08 }}
           className="mx-auto mt-4 max-w-2xl text-center text-3xl font-medium leading-tight text-white md:text-4xl lg:text-[44px]"
         >
-          A look inside eForte&apos;s Finance Studio
+          Inside eForte&apos;s Finance Studio: engineering trust into every
+          transaction
         </motion.h2>
 
         <motion.div

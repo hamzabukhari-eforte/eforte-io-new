@@ -75,13 +75,21 @@ export default function HealthcareHeroSection() {
       <Container className="relative z-10">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-10">
           <div className="max-w-2xl">
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-5 text-[12px] font-semibold uppercase tracking-[0.22em] text-white/80"
+            >
+              Health &amp; Wellbeing
+            </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl"
             >
-              Healthcare Solutions with AI and mHealth Technologies
+              Human-centered health technology, built with Velocity AI
             </motion.h1>
 
             <motion.p
@@ -90,10 +98,22 @@ export default function HealthcareHeroSection() {
               transition={{ duration: 0.5, delay: 0.12 }}
               className="mt-7 max-w-xl text-base leading-relaxed text-white/80 md:text-lg"
             >
-              For over 20+ years, eForte has been providing comprehensive
-              healthcare design and development services, encompassing everything
-              from patient management systems, virtual care, health integrations,
-              wearable tech, smart devices, to fitness apps.
+              For over 18 years, eForte has helped health systems, digital
+              therapeutics companies, and wellness brands turn ambitious ideas
+              into secure, scalable products — spanning patient portals,
+              connected devices, virtual care platforms, and AI-assisted clinical
+              tools.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.16 }}
+              className="mt-4 max-w-xl text-base leading-relaxed text-white/80 md:text-lg"
+            >
+              We combine deep health-domain knowledge with our Velocity AI,
+              Agentic Orchestration, and Foundational Data Layer pillars to help
+              healthcare innovators move from concept to compliant,
+              production-ready software faster.
             </motion.p>
 
             <motion.div

@@ -35,8 +35,8 @@ export default function HealthcareVideoSection() {
           transition={{ duration: 0.5, delay: 0.08 }}
           className="mx-auto mt-4 max-w-2xl text-center text-3xl font-medium leading-tight text-white md:text-4xl lg:text-[44px]"
         >
-          Transforming healthcare: A look inside eForte&apos;s Health &amp;
-          Wellbeing Studio
+          Inside eForte&apos;s Health &amp; Wellbeing Studio: where clinical
+          insight meets applied AI
         </motion.h2>
 
         <motion.div

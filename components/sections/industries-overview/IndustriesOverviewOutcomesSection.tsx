@@ -2,7 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { industriesCaseStudies } from "@/data/industriesOverview";
+import {
+  industriesCaseStudies,
+  industriesOutcomesIntro,
+} from "@/data/industriesOverview";
 import IndustriesReveal from "./IndustriesReveal";
 import styles from "./industriesOverview.module.css";
 
@@ -12,14 +15,11 @@ export default function IndustriesOverviewOutcomesSection() {
       <div className={styles.content}>
         <IndustriesReveal className={styles.head} direction="bottom" duration={400}>
           <h2 className={styles.title}>
-            <span>Outcomes achieved for</span> clients across industries
+            <span>{industriesOutcomesIntro.titleLine1}</span>{" "}
+            {industriesOutcomesIntro.titleLine2}
           </h2>
           <p className={styles.description}>
-            <span>
-              A selection of our work with our clients shaping the next
-              generation
-            </span>{" "}
-            of financial services, healthcare, and consumer experiences.
+            {industriesOutcomesIntro.description}
           </p>
         </IndustriesReveal>
 

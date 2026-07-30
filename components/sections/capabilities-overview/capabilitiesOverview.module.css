@@ -8,6 +8,9 @@
   background: var(--cap-black);
   color: var(--cap-white);
   overflow-x: clip;
+  /* Own stacking context so section z-index values stay below the fixed navbar/mega menu */
+  position: relative;
+  z-index: 0;
 }
 
 .content {

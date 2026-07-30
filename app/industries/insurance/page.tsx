@@ -1,25 +1,15 @@
-import {
-  InsuranceExpertiseSection,
-  InsuranceHeroSection,
-  InsuranceHighlightsSection,
-  InsuranceSecuritySection,
-  InsuranceSuccessStoriesSection,
-} from "@/components/sections/insurance";
+import { IndustryPageSections } from "@/components/sections/industry-page";
+import { insuranceIndustry } from "@/data/industries/insurance";
 
 export const metadata = {
-  title: "Insurance | eForte",
-  description:
-    "Reimagining insurance with data and AI - from usage-based coverage to personalized policies and advanced algorithms across the insurance value chain.",
+  title: insuranceIndustry.metadata.title,
+  description: insuranceIndustry.metadata.description,
 };
 
 export default function InsurancePage() {
   return (
     <main className="min-h-screen bg-default text-white">
-      <InsuranceHeroSection />
-      <InsuranceExpertiseSection />
-      <InsuranceHighlightsSection />
-      <InsuranceSecuritySection />
-      <InsuranceSuccessStoriesSection />
+      <IndustryPageSections content={insuranceIndustry} />
     </main>
   );
 }

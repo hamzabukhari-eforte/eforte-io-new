@@ -21,78 +21,81 @@ type Accelerator = {
 
 const solutions: Solution[] = [
   {
-    title: "Digital Banking",
+    title: "Embedded Banking",
     description:
-      "We help clients conceive, build, and launch full-featured digital banking products and platforms. This ranges from user onboarding, wallets, payments, ledger and account management, to customer-facing banking experiences.",
+      "Pre-built modules that let non-bank platforms launch banking features without building from scratch.",
   },
   {
     title: "AI Credit Scoring",
     description:
-      "We develop AI-driven credit scoring models that leverage a broader set of data (customer behavior, transactions, external credit bureau data, etc.) to generate more accurate, dynamic assessments of creditworthiness.",
+      "Scoring models that draw on alternative data sources to assess borrowers traditional models miss.",
   },
   {
-    title: "Debt Collection Risk & Bankruptcy Prediction",
+    title: "Collections & Recovery Optimization",
     description:
-      "Using machine-learning and data science, we build predictive models that assess borrower risk: estimating default probability, bankruptcy risk, or debt-collection likelihood based on payment histories, transaction data, credit bureau information and behavioral signals.",
+      "Machine-learning models that prioritize collections outreach by likelihood and value of recovery.",
   },
   {
     title: "AI Financial Analyst",
     description:
-      "Our AI Financial Analyst solution is based on a compound AI system that processes structured and unstructured data and allows a company to very quickly answer complex questions about its data.",
+      "A compound AI system that reads structured and unstructured financial data to answer analyst-style questions on demand.",
   },
   {
-    title: "Galileo API Integration",
+    title: "Core Banking API Integration",
     description:
-      "We have deep expertise integrating with modern banking-as-a-service (BaaS) ecosystems such as Galileo, APIs, and third-party core banking or payments platforms. This allows clients to plug in financial services without reinventing core banking infrastructure.",
+      "Deep integration expertise across modern banking-as-a-service ecosystems.",
   },
   {
-    title: "Predictive First Payment Default",
+    title: "Early Delinquency Prediction",
     description:
-      "Leveraging algorithms (both off-the-shelf as well as custom) including XG-Boost based AI risk models, eForte builds intelligent fraud-detection systems tailored for financial services. This specific solution focuses on the probability of 3rd party fraud, using the first 6 months on book as the time window.",
+      "Predictive models that flag accounts at risk of first missed payment before it happens.",
   },
 ];
+
+
 
 const accelerators: Accelerator[] = [
   {
     id: "ui-banking-wrappers",
-    label: "UI banking wrappers",
+    label: "Banking UI component library",
     imageSrc: "/assets/images/industry/wrappers.jpg",
-    imageAlt: "Mobile banking app UI wrappers preview",
+    imageAlt: "Banking UI component library preview",
     paragraphs: [
-      "Streamline your banking app development with our intuitive UI wrappers.",
-      "Rapidly prototype and then customize user interfaces, empowering you to craft distinctive, engaging financial experiences that resonate with your customers.",
+      "Pre-built, brandable interface components for banking and lending apps.",
+      "eForte's Velocities are pre-built assets that are integral to our solutions and drive faster delivery without sacrificing quality.",
     ],
   },
   {
     id: "airflow-blueprints",
-    label: "Airflow blueprints",
+    label: "Workflow orchestration blueprints",
     imageSrc: "/assets/images/industry/airflow.jpg",
-    imageAlt: "Apache Airflow logo",
+    imageAlt: "Workflow orchestration blueprints",
     paragraphs: [
-      "Businesses can jumpstart their machine learning workflows with eForte's Airflow Blueprints.",
-      "Our pre-built templates and reusable components streamline pipeline creation and optimize resource utilization within the Airflow environment.",
+      "Reusable pipeline templates that cut new data-workflow setup time significantly.",
+      "Jumpstart delivery with proven orchestration patterns tuned for financial workloads.",
     ],
   },
   {
     id: "model-monitoring-dashboards",
-    label: "Model monitoring dashboards",
+    label: "Model performance dashboards",
     imageSrc: "/assets/images/industry/monitoring.jpg",
-    imageAlt: "Model monitoring dashboards preview",
+    imageAlt: "Model performance dashboards preview",
     paragraphs: [
-      "Gain real-time insights into the health of your machine learning models with our pre-configured dashboards. Visualize key performance metrics like accuracy, precision, and drift over time.",
-      "Set automated alerts to proactively address any performance degradation, ensuring your models remain effective and reliable.",
+      "Pre-built monitoring views that track model drift and accuracy in production.",
+      "Keep financial AI models observable and reliable after go-live.",
     ],
   },
   {
     id: "ai-cloud-engine",
-    label: "AI Cloud Engine",
+    label: "AI infrastructure engine",
     imageSrc: "/assets/images/industry/accelerators-5.jpg",
-    imageAlt: "AI Cloud Engine architecture diagram",
+    imageAlt: "AI infrastructure engine architecture diagram",
     paragraphs: [
-      "Streamline AI/ML infrastructure deployment and management using industry-leading platforms like Databricks, Snowflake, Airflow, dbt, and MLflow.",
+      "A managed foundation for deploying and scaling financial AI models securely.",
     ],
   },
 ];
+
 
 export default function FinancialServicesSolutionsSection() {
   const [activeId, setActiveId] = useState<string>(accelerators[0].id);
@@ -109,7 +112,7 @@ export default function FinancialServicesSolutionsSection() {
           transition={{ duration: 0.5 }}
           className="text-center text-sm font-medium italic text-white/80"
         >
-          Learn more about eForte Finance Solutions
+          eForte Finance Studio — IP-driven solutions
         </motion.p>
 
         <motion.h2
@@ -119,8 +122,8 @@ export default function FinancialServicesSolutionsSection() {
           transition={{ duration: 0.5, delay: 0.08 }}
           className="mx-auto mt-4 max-w-3xl text-center text-3xl font-medium leading-tight text-white md:text-4xl lg:text-[44px]"
         >
-          eForte Finance Studio has 6 customizable, IP-driven solutions to
-          accelerate time-to-market
+          Six customizable finance solutions built to add velocity for
+          time-to-market
         </motion.h2>
 
         <motion.div
@@ -173,7 +176,7 @@ export default function FinancialServicesSolutionsSection() {
             transition={{ duration: 0.5 }}
             className="text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-white"
           >
-            Accelerators
+            Velocities
           </motion.p>
 
           <motion.h2
@@ -183,9 +186,8 @@ export default function FinancialServicesSolutionsSection() {
             transition={{ duration: 0.5, delay: 0.08 }}
             className="mx-auto mt-4 max-w-3xl text-center text-3xl font-medium leading-tight text-white md:text-4xl lg:text-[40px]"
           >
-            eForte Accelerators are assets that are integral parts of our
-            solutions and drive 50%+ increase in productivity, efficiency, and
-            time to market.
+            eForte&apos;s Velocities are pre-built assets that are integral to
+            our solutions and drive faster delivery without sacrificing quality.
           </motion.h2>
 
           <motion.p
@@ -203,7 +205,7 @@ export default function FinancialServicesSolutionsSection() {
           <div className="mt-12 flex justify-center md:mt-16">
             <div
               role="tablist"
-              aria-label="Accelerators"
+              aria-label="Velocities"
               className="flex flex-wrap items-center justify-center gap-3"
             >
               {accelerators.map((accelerator) => {

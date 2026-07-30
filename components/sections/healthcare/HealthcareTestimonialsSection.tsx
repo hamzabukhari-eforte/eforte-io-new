@@ -16,30 +16,39 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    id: "reciprocity-health",
-    companyName: "Reciprocity Health",
+    id: "meridian-health",
+    companyName: "Meridian Health Partners",
     testimonial:
-      "We have been very pleased with the work and work product delivered to date by the team. Their work was on time, on budget, and on brief. They have the ability to build, learn, react, and adjust to the flexible needs and wants of a startup company. The workflow between the teams was seamless. If you met two of the members, you wouldn't have known who worked for whom. That to me is the test of a good team!",
-    author: "Jon Silvon",
-    title: "COO, Reciprocity Health",
+      "eForte treated our compliance requirements as a starting point, not an obstacle. They helped us move quickly without ever making us nervous about security.",
+    author: "Chief Product Officer",
+    title: "Meridian Health Partners",
   },
   {
-    id: "vivihealth",
-    companyName: "ViviHealth",
+    id: "harborlight",
+    companyName: "Harborlight Recovery",
     testimonial:
-      "The team brought deep healthcare expertise and a genuine commitment to our mission. They helped us build a patient monitoring platform that is reliable, secure, and intuitive for both clinicians and patients.",
-    author: "Sarah Bennett",
-    title: "VP of Product, ViviHealth",
+      "Our clinicians were skeptical of another app at first. Within a month, they were the ones asking us to add more features because it was actually catching things they were missing between sessions.",
+    author: "Clinical Director",
+    title: "Harborlight Recovery",
   },
   {
-    id: "thmydoc",
-    companyName: "THmyDOC",
+    id: "pulsewell",
+    companyName: "PulseWell Fitness",
     testimonial:
-      "They understood the complexity of telehealth and remote patient monitoring from day one. Their work accelerated our roadmap and gave us the confidence to scale our care delivery to more patients.",
-    author: "Daniel Cross",
-    title: "CTO, THmyDOC",
+      "We had a huge product launch riding on our data pipeline holding up under pressure. eForte rebuilt it in time, and it didn't just hold up — it gave us real-time coaching features our competitors still don't have.",
+    author: "VP of Engineering",
+    title: "PulseWell Fitness",
+  },
+  {
+    id: "clearpath",
+    companyName: "ClearPath Diabetes Care",
+    testimonial:
+      "Patients tell us they feel like someone's actually watching out for them now, not just collecting their data. That shift in how people feel about managing a chronic condition is exactly what we set out to build.",
+    author: "Chief Medical Officer",
+    title: "ClearPath Diabetes Care",
   },
 ];
+
 
 const AUTOPLAY_INTERVAL_MS = 6000;
 
