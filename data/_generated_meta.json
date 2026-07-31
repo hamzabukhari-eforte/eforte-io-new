@@ -1,0 +1,482 @@
+[
+  {
+    "slug": "iberian-ventures",
+    "name": "Iberian Ventures",
+    "headline": "Cutting deal matching time and accelerating buy side mandates with agentic M&A automation",
+    "intro": "Iberian Ventures is a mid sized M&A advisory firm based in Lisbon, Portugal, managing more than 30 active buy side mandates and tracking over 500 potential acquisition targets at any given time. As mandate volume grew, the firm's analysts found themselves buried in administrative work instead of advisory work.",
+    "bannerImage": "/assets/images/industry/our-work-2.webp",
+    "theme": [
+      14,
+      119,
+      244
+    ]
+  },
+  {
+    "slug": "globaltrade-solutions",
+    "name": "GlobalTrade Solutions",
+    "headline": "Turning multi day trade quotes into a same day process",
+    "intro": "GlobalTrade Solutions is an international trading house managing over 1,200 annual transactions across multiple commodity categories, supported by a network of more than 350 suppliers. As transaction volume grew, the firm's trading workflow struggled to keep pace.",
+    "bannerImage": "/assets/images/industry/cloud.jpg",
+    "theme": [
+      211,
+      40,
+      122
+    ]
+  },
+  {
+    "slug": "allied-insurance",
+    "name": "Allied Insurance",
+    "headline": "Processing insurance claims in hours instead of days",
+    "intro": "Allied Insurance is a regional insurance provider processing more than 50,000 claims annually across auto, home, and commercial lines. Its legacy claims process required extensive manual intervention at nearly every step.",
+    "bannerImage": "/assets/images/industry/insurance-banner.jpg",
+    "theme": [
+      40,
+      89,
+      246
+    ]
+  },
+  {
+    "slug": "bioresearch-labs",
+    "name": "BioResearch Labs",
+    "headline": "Keeping clinical trial data audit ready across 40+ research sites",
+    "intro": "BioResearch Labs is a pharmaceutical research organization conducting multiple Phase II and III clinical trials across more than 40 global research sites. Managing data consistency and compliance across that many sites had become an increasingly heavy burden on the research team.",
+    "bannerImage": "/assets/images/industry/bg-portfolio.jpg",
+    "theme": [
+      13,
+      48,
+      69
+    ]
+  },
+  {
+    "slug": "global-manufacturing-corp",
+    "name": "Global Manufacturing Corp",
+    "headline": "Cutting invoice processing costs by over 80% across every region",
+    "intro": "Global Manufacturing Corp is a regional insurance provider processing more than 50,000 claims annually across auto, home, and commercial lines. As invoice volume grew across disparate systems, the company's accounts payable department became increasingly strained.",
+    "bannerImage": "/assets/images/industry/app-modernization.jpg",
+    "theme": [
+      90,
+      189,
+      85
+    ]
+  },
+  {
+    "slug": "krank",
+    "name": "Krank",
+    "headline": "Powering a Heavy Machinery Marketplace with Agentic Auction Intelligence",
+    "intro": "Krank set out to modernize one of the most old fashioned corners of industrial commerce: the buying, selling, renting, and auctioning of heavy machinery. eForte partnered with Krank to build a private sales network where equipment owners could list machinery for sale, rent, or auction, while keeping their business contacts and listings protected within their own company network.",
+    "bannerImage": "/assets/images/case-study/krank-banner.png",
+    "theme": [
+      61,
+      42,
+      237
+    ]
+  },
+  {
+    "slug": "oddysee",
+    "name": "Oddysee",
+    "headline": "Automating Documentation Heavy Licensing with Oddysee",
+    "intro": "Certain industries, cannabis licensing chief among them, require extensive documentation and state level compliance before a business can even open its doors. Oddysee approached eForte to build a platform that could take on that documentation burden directly, offering pre written templates, guided editing, and the surrounding business tools needed to get a license application across the finish line.",
+    "bannerImage": "/assets/images/case-study/oddysee-banner.png",
+    "theme": [
+      211,
+      72,
+      84
+    ]
+  },
+  {
+    "slug": "investment-markets",
+    "name": "Investment Markets",
+    "headline": "A Discovery Platform for High Net Worth Investors",
+    "intro": "InvestmentMarkets came to eForte with a clear but ambitious goal: bridge the gap between investment seeking companies and high net worth individuals, without the noise or gatekeeping typical of traditional investment networking. The founders arrived with a scope document running hundreds of pages, and needed a technical partner who could turn that level of detail into a working, scalable platform.",
+    "bannerImage": "/assets/images/case-study/invesment-banner.png",
+    "theme": [
+      14,
+      119,
+      244
+    ]
+  },
+  {
+    "slug": "prism",
+    "name": "Prism",
+    "headline": "Forecasting Retail Trends with Facebook's Prophet API",
+    "intro": "Retailers live and die by their ability to anticipate demand, but seasonal effects, holidays, and unpredictable outliers make accurate forecasting genuinely hard. PRISM was built to solve exactly that problem: a trends forecasting engine designed to handle strong seasonal patterns and messy real world data without losing accuracy.",
+    "bannerImage": "/assets/images/case-study/prism-banner.png",
+    "theme": [
+      211,
+      40,
+      122
+    ]
+  },
+  {
+    "slug": "scheduling-engine",
+    "name": "Scheduling Engine",
+    "headline": "Automating Workforce Management for StrateX",
+    "intro": "StrateX, a solutions provider serving call center and retail chain clients, recognized that manual scheduling was costing their clients real money and real employee goodwill. High labor costs, low satisfaction, and compliance risk were all symptoms of the same root problem: scheduling that depended entirely on manual effort. StrateX partnered with eForte to build a scheduling engine that could serve clients across multiple industry verticals.",
+    "bannerImage": "/assets/images/case-study/scheduling1.png",
+    "theme": [
+      40,
+      89,
+      246
+    ]
+  },
+  {
+    "slug": "sellsmart",
+    "name": "Sellsmart",
+    "headline": "Driving autonomous sales workflows from lead to close",
+    "intro": "Sellsmart is a sales platform that helps growing companies manage leads, follow ups, and pipeline progression. As sales teams scaled, keeping every lead moving through the pipeline consistently became harder to manage manually.",
+    "bannerImage": "/assets/images/case-study/sellsMart4.png",
+    "theme": [
+      13,
+      48,
+      69
+    ]
+  },
+  {
+    "slug": "validatr",
+    "name": "Validatr",
+    "headline": "Turning Startup Ideas into Investor Ready Reports with Validatr",
+    "intro": "Every founder believes in their idea, but belief isn't the same as validation. Validatr.io approached eForte to build a platform that could guide startups and businesses through structured market validation and market research, producing polished report style documents founders could use directly in business plans and investor conversations.",
+    "bannerImage": "/assets/images/case-study/Validatr.png",
+    "theme": [
+      90,
+      189,
+      85
+    ]
+  },
+  {
+    "slug": "tachignite",
+    "name": "TachIgnite",
+    "headline": "Strengthening a Day Zero accelerator's talent pipeline and flagship contest",
+    "intro": "TachIgnite is a Day Zero startup accelerator that partnered with eForte in 2025 to strengthen its talent pipeline and deliver its flagship startup contest.",
+    "bannerImage": "/assets/images/industry/accelerators-1.jpg",
+    "theme": [
+      61,
+      42,
+      237
+    ]
+  },
+  {
+    "slug": "dostpay",
+    "name": "Dostpay",
+    "headline": "Turning a digital banking payments platform into a self monitoring, always compliant system",
+    "intro": "Dostpay is a mobile based digital banking payments platform designed to integrate with a bank's core banking systems, giving end users the power of digital banking in a flexible, branded experience. As transaction volume grew, keeping the platform compliant and secure without slowing down user experience became a growing challenge.",
+    "bannerImage": "/assets/images/case-study/Dostpay-banner.png",
+    "theme": [
+      211,
+      72,
+      84
+    ]
+  },
+  {
+    "slug": "emerge-forward",
+    "name": "Emerge Forward",
+    "headline": "Building Soft Skills for the Next Generation",
+    "intro": "Emerge came to eForte with a mission driven idea: build a platform to train youth in the soft skills that matter for real world success, skills rarely covered by traditional academic curricula. The vision combined structured lessons, testing and grading, a knowledge library, and a professional profile system to help participants carry what they learned into their careers.",
+    "bannerImage": "/assets/images/case-study/emerge-banner.png",
+    "theme": [
+      14,
+      119,
+      244
+    ]
+  },
+  {
+    "slug": "komb",
+    "name": "Komb",
+    "headline": "Streamlining Salon Operations for Komb, a UK Personal Care Startup",
+    "intro": "Salons run on tight schedules, personal relationships, and constant day to day operations, from booking appointments to managing inventory. Komb, a UK based startup, saw a gap in the market for software built specifically around how salons actually operate, and partnered with eForte to bring that vision to life across web and mobile.",
+    "bannerImage": "/assets/images/case-study/komb-banner.png",
+    "theme": [
+      211,
+      40,
+      122
+    ]
+  },
+  {
+    "slug": "food-cast",
+    "name": "FoodCast",
+    "headline": "Individual Detail Page:",
+    "intro": "FoodCast: Helping Families Forecast Their Food Supply During COVID 19",
+    "bannerImage": "/assets/images/case-study/Food-castbanner.png",
+    "theme": [
+      40,
+      89,
+      246
+    ]
+  },
+  {
+    "slug": "crowd-check",
+    "name": "Crowdcheck",
+    "headline": "Real Time Crowd Insight for Safer Social Distancing",
+    "intro": "During COVID 19, one of the simplest but most valuable pieces of information people needed was also one of the hardest to find: how crowded is this place right now? Crowdcheck was built to answer exactly that question, giving users a real time, map based view of crowd density at locations around them.",
+    "bannerImage": "/assets/images/case-study/CrowdCheck-bannner.png",
+    "theme": [
+      13,
+      48,
+      69
+    ]
+  },
+  {
+    "slug": "instapp-deal",
+    "name": "InstApp Deal",
+    "headline": "Matching shoppers to the deals they're most likely to redeem",
+    "intro": "InstApp Deal is a mobile application that lets users search for and redeem coupons at participating retailers, built around word of mouth style discovery and push notifications for new deals. As the number of participating retailers and deals grew, helping users find offers actually relevant to them became more difficult.",
+    "bannerImage": "/assets/images/case-study/InstApp-Dealbanner.png",
+    "theme": [
+      90,
+      189,
+      85
+    ]
+  },
+  {
+    "slug": "meridian-pay",
+    "name": "Meridian Pay",
+    "headline": "Reinventing core payment functions with data and agentic AI",
+    "intro": "Meridian Pay is a digital payments provider processing millions of consumer and merchant transactions every month. As transaction volume grew, so did the complexity of detecting fraud, resolving disputes, and keeping settlement operations running without delay.",
+    "bannerImage": "/assets/images/industry/banking-bg-hero.jpg",
+    "theme": [
+      61,
+      42,
+      237
+    ]
+  },
+  {
+    "slug": "cobalt-digital-bank",
+    "name": "Cobalt Digital Bank",
+    "headline": "Scaling digital banking with a unified data foundation",
+    "intro": "Cobalt Digital Bank is a fast growing challenger bank offering checking, savings, and lending products entirely through its mobile app. As its customer base expanded across regions, its data infrastructure struggled to keep up with the demands of real time banking.",
+    "bannerImage": "/assets/images/industry/financial-service-hero.webp",
+    "theme": [
+      211,
+      72,
+      84
+    ]
+  },
+  {
+    "slug": "fenwick-capital-markets",
+    "name": "Fenwick Capital Markets",
+    "headline": "Speeding up trade decisioning with real time AI models",
+    "intro": "Fenwick Capital Markets manages trading and portfolio strategy for institutional clients across equities, fixed income, and derivatives. With markets moving faster than ever, the firm needed its systems to keep pace with real time decision making.",
+    "bannerImage": "/assets/images/industry/banking-bg-hero.jpg",
+    "theme": [
+      14,
+      119,
+      244
+    ]
+  },
+  {
+    "slug": "brightwell-mutual",
+    "name": "Brightwell Mutual",
+    "headline": "Modernizing claims with agentic orchestration across the policy lifecycle",
+    "intro": "Brightwell Mutual is a regional insurer offering home, auto, and umbrella coverage to policyholders across the country. As claims volume grew, the company's manual review process became a bottleneck that frustrated both adjusters and policyholders.",
+    "bannerImage": "/assets/images/industry/bg-expertise.jpg",
+    "theme": [
+      211,
+      40,
+      122
+    ]
+  },
+  {
+    "slug": "coastal-assurance-group",
+    "name": "Coastal Assurance Group",
+    "headline": "Reducing underwriting turnaround from days to minutes",
+    "intro": "Coastal Assurance Group provides commercial property and casualty insurance to businesses along the coast, where weather related risk assessment adds significant complexity to underwriting. Growing application volume was straining the company's manual underwriting process.",
+    "bannerImage": "/assets/images/industry/insurance-banner.jpg",
+    "theme": [
+      40,
+      89,
+      246
+    ]
+  },
+  {
+    "slug": "anchor-point-insurance",
+    "name": "Anchor Point Insurance",
+    "headline": "Detecting fraud patterns before claims are paid out",
+    "intro": "Anchor Point Insurance offers life and health coverage to individuals and families, processing a high volume of claims each month. As fraudulent claims grew more sophisticated, the company's existing detection methods struggled to keep up.",
+    "bannerImage": "/assets/images/industry/cybersecurity.jpg",
+    "theme": [
+      13,
+      48,
+      69
+    ]
+  },
+  {
+    "slug": "harborlight-recovery",
+    "name": "Harborlight Recovery",
+    "headline": "Bringing personalized, data driven care pathways to behavioral health",
+    "intro": "Harborlight Recovery operates a network of behavioral health and addiction recovery centers, supporting patients through multi stage treatment programs. As patient volume grew across locations, delivering consistent, personalized care plans became increasingly difficult to manage.",
+    "bannerImage": "/assets/images/case-study/health.webp",
+    "theme": [
+      90,
+      189,
+      85
+    ]
+  },
+  {
+    "slug": "pulsewell-fitness",
+    "name": "PulseWell Fitness",
+    "headline": "Personalizing member wellness plans at scale",
+    "intro": "PulseWell Fitness operates a chain of health and wellness clubs offering fitness coaching, nutrition guidance, and recovery services to members nationwide. As membership grew, delivering genuinely personalized wellness plans became difficult without more scalable tools.",
+    "bannerImage": "/assets/images/case-study/health.webp",
+    "theme": [
+      61,
+      42,
+      237
+    ]
+  },
+  {
+    "slug": "clearpath-diabetes-care",
+    "name": "ClearPath Diabetes Care",
+    "headline": "Connecting care teams with real time patient data",
+    "intro": "ClearPath Diabetes Care provides remote monitoring and care coordination for patients managing diabetes, working closely with endocrinologists, dietitians, and care coordinators. As its patient base grew, keeping every care team member informed in real time became a growing challenge.",
+    "bannerImage": "/assets/images/industry/cardiex-machine.jpg",
+    "theme": [
+      211,
+      72,
+      84
+    ]
+  },
+  {
+    "slug": "ironclad-manufacturing",
+    "name": "Ironclad Manufacturing",
+    "headline": "Predicting downtime before it happens on the plant floor",
+    "intro": "Ironclad Manufacturing operates multiple heavy equipment production facilities, running machinery around the clock to meet demand. Unplanned equipment downtime was costing the company significant production time and revenue.",
+    "bannerImage": "/assets/images/industry/monitoring.jpg",
+    "theme": [
+      14,
+      119,
+      244
+    ]
+  },
+  {
+    "slug": "summit-steel-works",
+    "name": "Summit Steel Works",
+    "headline": "Optimizing production yield with foundational plant data",
+    "intro": "Summit Steel Works operates steel production facilities that convert raw materials into finished products through a multi stage process. Inconsistent yield across production runs was eating into margins and complicating capacity planning.",
+    "bannerImage": "/assets/images/industry/working.jpg",
+    "theme": [
+      211,
+      40,
+      122
+    ]
+  },
+  {
+    "slug": "frontier-energy-partners",
+    "name": "Frontier Energy Partners",
+    "headline": "Forecasting equipment failure across distributed energy assets",
+    "intro": "Frontier Energy Partners manages a distributed network of energy generation and transmission assets across multiple regions. Coordinating maintenance across so many geographically dispersed assets was becoming increasingly difficult to manage manually.",
+    "bannerImage": "/assets/images/industry/solutions-1.jpg",
+    "theme": [
+      40,
+      89,
+      246
+    ]
+  },
+  {
+    "slug": "altura-motors",
+    "name": "Altura Motors",
+    "headline": "Accelerating vehicle design cycles with agentic engineering workflows",
+    "intro": "Altura Motors designs and manufactures passenger vehicles, running engineering simulations and design reviews across multiple teams for every new model. Long design iteration cycles were slowing the company's ability to bring new vehicles to market.",
+    "bannerImage": "/assets/images/industry/driving-1.jpg",
+    "theme": [
+      13,
+      48,
+      69
+    ]
+  },
+  {
+    "slug": "vantage-mobility",
+    "name": "Vantage Mobility",
+    "headline": "Streamlining fleet operations with autonomous scheduling agents",
+    "intro": "Vantage Mobility manages a large commercial vehicle fleet providing logistics and delivery services across multiple regions. Coordinating vehicle assignments, maintenance windows, and driver schedules manually was becoming a growing operational burden.",
+    "bannerImage": "/assets/images/industry/driving-2.jpg",
+    "theme": [
+      90,
+      189,
+      85
+    ]
+  },
+  {
+    "slug": "ridgeline-auto-group",
+    "name": "Ridgeline Auto Group",
+    "headline": "Unifying dealership data into one AI ready platform",
+    "intro": "Ridgeline Auto Group operates a network of dealerships selling and servicing vehicles across multiple brands. Each dealership's sales, service, and inventory data lived in its own system, making it difficult for group leadership to get a consolidated view of the business.",
+    "bannerImage": "/assets/images/industry/driving-3.jpg",
+    "theme": [
+      61,
+      42,
+      237
+    ]
+  },
+  {
+    "slug": "lantern-hotel-collective",
+    "name": "Lantern Hotel Collective",
+    "headline": "Personalizing every guest journey across a growing hotel portfolio",
+    "intro": "Lantern Hotel Collective operates a portfolio of boutique hotels across multiple markets, aiming to give every guest a personalized stay regardless of location. As the portfolio grew, delivering that consistency without a much larger staff became a real challenge.",
+    "bannerImage": "/assets/images/industry/media-entertainment-bg.jpg",
+    "theme": [
+      211,
+      72,
+      84
+    ]
+  },
+  {
+    "slug": "coastline-resorts",
+    "name": "Coastline Resorts",
+    "headline": "Automating guest service requests across a multi property resort group",
+    "intro": "Coastline Resorts operates a group of beachfront resorts offering dining, spa, and activity services alongside accommodations. Guest service requests routed manually across departments were creating delays that affected the guest experience.",
+    "bannerImage": "/assets/images/industry/events.jpg",
+    "theme": [
+      14,
+      119,
+      244
+    ]
+  },
+  {
+    "slug": "birchwood-hospitality-group",
+    "name": "Birchwood Hospitality Group",
+    "headline": "Cutting operational costs with foundational data visibility",
+    "intro": "Birchwood Hospitality Group manages a collection of hotels and event venues, overseeing everything from staffing to procurement across properties. Rising operational costs were squeezing margins, and leadership lacked the visibility needed to identify where savings could be found.",
+    "bannerImage": "/assets/images/industry/our-work-3.webp",
+    "theme": [
+      211,
+      40,
+      122
+    ]
+  },
+  {
+    "slug": "meridian-outsourcing-solutions",
+    "name": "Meridian Outsourcing Solutions",
+    "headline": "Automating back office operations at enterprise scale",
+    "intro": "Meridian Outsourcing Solutions provides back office processing services, including data entry, document processing, and customer support administration, to enterprise clients across industries. As client volume grew, manual processing was becoming a bottleneck to scaling the business.",
+    "bannerImage": "/assets/images/industry/baas.jpg",
+    "theme": [
+      40,
+      89,
+      246
+    ]
+  },
+  {
+    "slug": "apex-shared-services",
+    "name": "Apex Shared Services",
+    "headline": "Orchestrating shared service workflows across business units",
+    "intro": "Apex Shared Services provides centralized finance, HR, and IT support functions to multiple business units within a large parent organization. Coordinating requests across so many internal customers had become a significant operational challenge.",
+    "bannerImage": "/assets/images/industry/wrappers.jpg",
+    "theme": [
+      13,
+      48,
+      69
+    ]
+  },
+  {
+    "slug": "crestline-bpo-group",
+    "name": "Crestline BPO Group",
+    "headline": "Bringing agentic automation to high volume back office processes",
+    "intro": "Crestline BPO Group provides outsourced transaction processing and customer administration services to clients in retail, healthcare, and financial services. High transaction volume and tight service level agreements were putting increasing pressure on manual processing teams.",
+    "bannerImage": "/assets/images/industry/qa.jpg",
+    "theme": [
+      90,
+      189,
+      85
+    ]
+  }
+]

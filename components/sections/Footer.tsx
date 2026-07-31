@@ -9,6 +9,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 import { footerColumns } from "@/data/siteNavigation";
+import FooterImpactStudiesColumn from "@/components/sections/FooterImpactStudiesColumn";
 
 const socialLinks = [
   { icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
@@ -49,25 +50,33 @@ export default function Footer() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           >
-            {footerColumns.map((column) => (
-              <div key={column.title}>
-                <h3 className="mb-4 text-sm font-semibold text-white md:text-base">
-                  {column.title}
-                </h3>
-                <ul className="space-y-3">
-                  {column.links.map((link) => (
-                    <li key={link.label}>
-                      <Link
-                        href={link.href}
-                        className="text-sm text-desc transition-colors duration-200 hover:text-white"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+            {footerColumns.map((column) =>
+              column.title === "Impact Studies" ? (
+                <FooterImpactStudiesColumn
+                  key={column.title}
+                  title={column.title}
+                  links={column.links}
+                />
+              ) : (
+                <div key={column.title}>
+                  <h3 className="mb-4 text-sm font-semibold text-white md:text-base">
+                    {column.title}
+                  </h3>
+                  <ul className="space-y-3">
+                    {column.links.map((link) => (
+                      <li key={link.label}>
+                        <Link
+                          href={link.href}
+                          className="text-sm text-desc transition-colors duration-200 hover:text-white"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            )}
           </motion.div>
 
           {/* Bottom Section */}

@@ -60,7 +60,7 @@ export default function TechnologiesSection({
         whileInView="visible"
         viewport={{ once: false, amount: 0.15 }}
         variants={fadeUp}
-        className="relative w-full py-12 px-12 lg:px-20 bg-[#05060f] overflow-hidden"
+        className="relative w-full overflow-hidden bg-[#05060f] px-12 pb-24 pt-12 lg:px-20 lg:pb-28"
       >
         <motion.div
           variants={scaleIn}

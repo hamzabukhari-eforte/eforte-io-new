@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type MutableRefObject } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -771,6 +771,45 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   /** Multiple mobile sections can stay expanded at once. */
   const [expandedMobileIds, setExpandedMobileIds] = useState<string[]>([]);
+  const impactStudiesWheelCleanup = useRef<(() => void) | null>(null);
+  const industriesWheelCleanup = useRef<(() => void) | null>(null);
+
+  const bindMegaMenuWheelScroll = useCallback(
+    (
+      node: HTMLDivElement | null,
+      cleanupRef: MutableRefObject<(() => void) | null>
+    ) => {
+      cleanupRef.current?.();
+      cleanupRef.current = null;
+      if (!node) return;
+
+      const onWheel = (event: WheelEvent) => {
+        node.scrollTop += event.deltaY;
+        event.preventDefault();
+        event.stopPropagation();
+      };
+
+      node.addEventListener("wheel", onWheel, { passive: false });
+      cleanupRef.current = () => {
+        node.removeEventListener("wheel", onWheel);
+      };
+    },
+    []
+  );
+
+  const setImpactStudiesScrollNode = useCallback(
+    (node: HTMLDivElement | null) => {
+      bindMegaMenuWheelScroll(node, impactStudiesWheelCleanup);
+    },
+    [bindMegaMenuWheelScroll]
+  );
+
+  const setIndustriesScrollNode = useCallback(
+    (node: HTMLDivElement | null) => {
+      bindMegaMenuWheelScroll(node, industriesWheelCleanup);
+    },
+    [bindMegaMenuWheelScroll]
+  );
 
   const toggleMobileSection = (id: string) => {
     setExpandedMobileIds((current) =>
@@ -800,6 +839,15 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
       body.style.overflow = previousOverflow;
     };
   }, [isMobileMenuOpen, activeMenu, lenisControl]);
+
+  useEffect(() => {
+    return () => {
+      impactStudiesWheelCleanup.current?.();
+      impactStudiesWheelCleanup.current = null;
+      industriesWheelCleanup.current?.();
+      industriesWheelCleanup.current = null;
+    };
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -1016,7 +1064,7 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
       );
     }
 
-    // Impact Studies: left intro + right = 8 case studies in 2-column grid
+    // Impact Studies: left intro + scrollable case-study list (max 90% viewport)
     if (activeMenu === "impact-studies") {
       const caseStudies = config.columns[0]?.items ?? [];
       return (
@@ -1025,11 +1073,11 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
-            className="absolute inset-x-0 top-0 max-h-full overflow-hidden bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            className="absolute inset-x-0 top-0 flex max-h-[90%] flex-col overflow-hidden bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
             onMouseLeave={closeMegaMenu}
           >
-            <Container className="py-6 2xl:py-8 flex gap-6 2xl:gap-8 text-white">
-              <div className="w-1/3 space-y-4 max-w-sm">
+            <Container className="flex min-h-0 flex-1 gap-6 overflow-hidden py-6 text-white 2xl:gap-8 2xl:py-8">
+              <div className="w-1/3 max-w-sm shrink-0 space-y-4">
                 {config.eyebrow && (
                   <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary-pink">
                     {config.eyebrow}
@@ -1047,40 +1095,47 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
                 </Link>
                 <div className="mt-4 h-px w-10 bg-white/10" />
               </div>
-              <div className="flex-1 grid grid-cols-2 gap-x-10 gap-y-0">
-                {caseStudies.map((item) => {
-                  const href = item.href;
-                  const cardClass =
-                    "border-b border-white/10 pb-4 mb-4 cursor-pointer hover:opacity-90";
+              <div
+                ref={setImpactStudiesScrollNode}
+                data-lenis-prevent
+                data-lenis-prevent-wheel
+                className="min-h-0 max-h-full flex-1 overflow-y-auto overscroll-contain pr-2 [scrollbar-gutter:stable]"
+              >
+                <div className="grid grid-cols-2 gap-x-10 gap-y-0">
+                  {caseStudies.map((item) => {
+                    const href = item.href;
+                    const cardClass =
+                      "border-b border-white/10 pb-4 mb-4 cursor-pointer hover:opacity-90";
 
-                  const content = (
-                    <>
-                      <p className="text-sm font-semibold text-white">
-                        {item.title}
-                      </p>
-                      {item.description && (
-                        <p className="mt-1 text-xs text-desc line-clamp-2">
-                          {item.description}
+                    const content = (
+                      <>
+                        <p className="text-sm font-semibold text-white">
+                          {item.title}
                         </p>
-                      )}
-                    </>
-                  );
+                        {item.description && (
+                          <p className="mt-1 text-xs text-desc line-clamp-2">
+                            {item.description}
+                          </p>
+                        )}
+                      </>
+                    );
 
-                  return href ? (
-                    <Link
-                      key={item.title}
-                      href={href}
-                      onClick={closeMegaMenu}
-                      className={cardClass}
-                    >
-                      {content}
-                    </Link>
-                  ) : (
-                    <div key={item.title} className={cardClass}>
-                      {content}
-                    </div>
-                  );
-                })}
+                    return href ? (
+                      <Link
+                        key={item.title}
+                        href={href}
+                        onClick={closeMegaMenu}
+                        className={cardClass}
+                      >
+                        {content}
+                      </Link>
+                    ) : (
+                      <div key={item.title} className={cardClass}>
+                        {content}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </Container>
           </div>
@@ -1303,6 +1358,142 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
       );
     }
 
+    // Industries: intro | scrollable Our Industries | Industry Insights
+    if (activeMenu === "industries") {
+      const industryItems = config.columns[0]?.items ?? [];
+      const insightItems = config.columns[1]?.items ?? [];
+
+      return (
+        <div className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-[100]">
+          <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
+          <div
+            className="absolute inset-x-0 top-0 flex max-h-[90%] flex-col overflow-hidden bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            onMouseLeave={closeMegaMenu}
+          >
+            <Container className="flex min-h-0 flex-1 gap-6 overflow-hidden py-6 text-white 2xl:gap-8 2xl:py-8">
+              <div className="w-1/4 max-w-xs shrink-0 space-y-3">
+                {config.eyebrow && (
+                  <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary-pink">
+                    {config.eyebrow}
+                  </p>
+                )}
+                <h2 className="text-2xl font-semibold leading-snug">
+                  {config.title}
+                </h2>
+                <p className="text-sm text-desc">{config.description}</p>
+                <Link
+                  href="/industries"
+                  onClick={closeMegaMenu}
+                  className="mt-2 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80"
+                >
+                  Learn more
+                  <span className="ml-1 text-base" aria-hidden="true">
+                    →
+                  </span>
+                </Link>
+              </div>
+
+              <div className="flex min-h-0 min-w-0 flex-1 gap-6 2xl:gap-8">
+                <div className="flex min-h-0 min-w-0 flex-[1.35] flex-col">
+                  <p className="mb-3 shrink-0 text-xs font-semibold tracking-[0.2em] uppercase text-desc">
+                    Our Industries
+                  </p>
+                  <div
+                    ref={setIndustriesScrollNode}
+                    data-lenis-prevent
+                    data-lenis-prevent-wheel
+                    className="min-h-0 flex-1 space-y-2 overflow-y-auto overscroll-contain pr-2 [scrollbar-gutter:stable]"
+                  >
+                    {industryItems.map((item) => {
+                      const IconComponent = item.iconName
+                        ? menuIconMap[item.iconName]
+                        : null;
+                      const cardClass =
+                        "group flex gap-3 items-start rounded-2xl border border-white/5 bg-white/5 px-3 py-2.5 transition-colors duration-200 hover:bg-white/10 cursor-pointer";
+                      const content = (
+                        <>
+                          <div
+                            className={cn(
+                              "mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white",
+                              item.iconColorClass ?? "bg-primary-pink"
+                            )}
+                          >
+                            {IconComponent ? (
+                              <IconComponent className="h-5 w-5 shrink-0" />
+                            ) : null}
+                          </div>
+                          <div>
+                            <p className="text-sm font-medium text-white">
+                              {item.title}
+                            </p>
+                            {item.description ? (
+                              <p className="mt-1 text-xs text-desc">
+                                {item.description}
+                              </p>
+                            ) : null}
+                          </div>
+                        </>
+                      );
+
+                      return item.href ? (
+                        <Link
+                          key={item.title}
+                          href={item.href}
+                          onClick={closeMegaMenu}
+                          className={cardClass}
+                        >
+                          {content}
+                        </Link>
+                      ) : (
+                        <div key={item.title} className={cardClass}>
+                          {content}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div className="flex w-[min(340px,38%)] shrink-0 flex-col">
+                  <p className="mb-3 text-xs font-semibold tracking-[0.2em] uppercase text-desc">
+                    Industry Insights
+                  </p>
+                  <div className="space-y-2">
+                    {insightItems.map((item) => (
+                      <div
+                        key={item.title}
+                        className="flex cursor-pointer gap-3 rounded-2xl border border-white/5 bg-white/5 p-2 transition-colors duration-200 hover:bg-white/10"
+                      >
+                        <div className="relative h-14 w-16 shrink-0 overflow-hidden rounded-xl bg-black/40">
+                          {item.imageSrc ? (
+                            <Image
+                              src={item.imageSrc}
+                              alt={item.title}
+                              fill
+                              className="object-cover"
+                            />
+                          ) : null}
+                        </div>
+                        <div className="flex min-w-0 flex-col justify-center">
+                          <p className="text-sm font-medium text-white line-clamp-2">
+                            {item.title}
+                          </p>
+                          {item.description ? (
+                            <p className="mt-1 text-xs text-desc line-clamp-2">
+                              {item.description}
+                            </p>
+                          ) : null}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Container>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div
         className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-[100]"
@@ -1333,13 +1524,11 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
               {activeMenu !== "ai-pillars" ? (
                 <Link
                   href={
-                    activeMenu === "industries"
-                      ? "/industries"
-                      : activeMenu === "ai-workflows"
-                        ? "/ai-workflows"
-                        : activeMenu === "capabilities"
-                          ? "/capabilities"
-                          : "#"
+                    activeMenu === "ai-workflows"
+                      ? "/ai-workflows"
+                      : activeMenu === "capabilities"
+                        ? "/capabilities"
+                        : "#"
                   }
                   onClick={closeMegaMenu}
                   className="mt-2 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80"
@@ -1353,27 +1542,13 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
             </div>
 
             {/* Right content columns */}
-            <div
-              className={cn(
-                "grid flex-1 gap-x-5 gap-y-4 2xl:gap-x-7",
-                activeMenu === "industries"
-                  ? "grid-cols-[minmax(0, 2fr)_minmax(240px, 1fr)]"
-                  : "grid-cols-2"
-              )}
-            >
+            <div className="grid flex-1 grid-cols-2 gap-x-5 gap-y-4 2xl:gap-x-7">
               {config.columns.map((column) => (
                 <div key={column.title} className="flex flex-col space-y-3">
                   <p className="text-xs font-semibold tracking-[0.2em] uppercase text-desc">
                     {column.title}
                   </p>
-                  <div
-                    className={cn(
-                      "space-y-2",
-                      activeMenu === "industries" &&
-                        column.title === "Our Industries" &&
-                        "grid grid-cols-2 gap-2 space-y-0"
-                    )}
-                  >
+                  <div className="space-y-2">
                     {column.items.map((item) => {
                       const hasImage = !!item.imageSrc;
                       const cardClass = cn(

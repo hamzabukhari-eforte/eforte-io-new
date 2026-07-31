@@ -2,8 +2,10 @@ import { notFound } from "next/navigation";
 import IntroSection from "@/components/sections/case-studies/IntroSection";
 import TechnologiesSection from "@/components/sections/case-studies/TechnologiesSection";
 import DetailsSection from "@/components/sections/case-studies/DetailsSection";
-import BForm from "@/components/sections/case-studies/BForm";
+import CaseStudyNarrative from "@/components/sections/case-studies/CaseStudyNarrative";
+// import BForm from "@/components/sections/case-studies/BForm";
 import { caseStudies } from "@/data/caseStudies";
+import { impactStudyNarratives } from "@/data/impactStudyNarratives";
 
 export const dynamicParams = true;
 
@@ -37,6 +39,8 @@ export default async function CaseStudyPage({
 
   if (!p) return notFound();
 
+  const narrative = impactStudyNarratives[normalizedSlug];
+
   return (
     <div className="relative">
       <IntroSection
@@ -55,14 +59,20 @@ export default async function CaseStudyPage({
         others={p.technologySection.Others}
       />
 
-      <DetailsSection
-        title={p.Details.title}
-        theme={p.Details.theme}
-        sections={p.Details.sections}
-      />
+      {narrative ? (
+        <CaseStudyNarrative
+          content={narrative}
+          theme={p.introSection.theme}
+        />
+      ) : (
+        <DetailsSection
+          title={p.Details.title}
+          theme={p.Details.theme}
+          sections={p.Details.sections}
+        />
+      )}
 
       {/* <BForm /> */}
     </div>
   );
 }
-
