@@ -300,11 +300,13 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                 <Reveal key={item.title} delay={index * 0.06}>
                   <article
                     className={cn(
-                      "grid overflow-hidden rounded-[28px] border border-black/5 bg-[#f7f7fb] shadow-[0_16px_48px_rgba(0,0,0,0.06)] md:rounded-[36px] lg:grid-cols-2",
-                      reverse && "lg:[&>*:first-child]:order-2"
+                      "grid overflow-hidden rounded-[28px] border border-black/5 bg-[#f7f7fb] shadow-[0_16px_48px_rgba(0,0,0,0.06)] md:rounded-[36px]",
+                      reverse
+                        ? "lg:grid-cols-[minmax(0,1.45fr)_minmax(0,1fr)] lg:[&>*:first-child]:order-2"
+                        : "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.45fr)]"
                     )}
                   >
-                    <div className="flex flex-col justify-center p-8 md:p-12 lg:p-14">
+                    <div className="flex flex-col justify-center p-8 md:p-10 lg:p-12">
                       <span
                         className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl text-white"
                         style={{ backgroundColor: accent }}
@@ -327,7 +329,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                       <p className={cn("mt-3", cardBody)}>{item.body}</p>
                     </div>
                     <div
-                      className="relative min-h-[240px] md:min-h-[320px]"
+                      className="relative min-h-[280px] md:min-h-[380px] lg:min-h-[440px]"
                       style={{
                         background: `linear-gradient(145deg, ${accent} 0%, #0a0a1a 70%)`,
                       }}
@@ -340,8 +342,8 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                         }}
                         aria-hidden
                       />
-                      <div className="absolute inset-0 flex items-center justify-center p-8">
-                        <div className="relative h-full w-full max-w-sm">
+                      <div className="absolute inset-0 flex items-center justify-center p-5 md:p-7 lg:p-8">
+                        <div className="relative h-full w-full">
                           <Image
                             src={
                               index === 0
@@ -350,7 +352,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                             }
                             alt=""
                             fill
-                            sizes="(max-width: 1024px) 90vw, 40vw"
+                            sizes="(max-width: 1024px) 90vw, 55vw"
                             className="object-contain drop-shadow-2xl"
                           />
                         </div>

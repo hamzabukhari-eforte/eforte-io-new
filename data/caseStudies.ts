@@ -42,10 +42,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Krank set out to modernize one of the most old fashioned corners of industrial commerce: the buying, selling, renting, and auctioning of heavy machinery. eForte partnered with Krank to build a private sales network where equipment owners could list machinery for sale, rent, or auction, while keeping their business contacts and listings protected within their own company network.",
       image: "/assets/images/case-study/krank1.png",
       link: "/case-studies/krank",
-      theme: [61, 42, 237],
+      theme: [28, 78, 128],
     },
     technologySection: {
-      theme: [61, 42, 237],
+      theme: [28, 78, 128],
       frontEnd: [
       {
         name: "React",
@@ -117,7 +117,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Krank",
-      theme: [61, 42, 237],
+      theme: [28, 78, 128],
       sections: [
         {
           heading: "Heavy machinery has traditionally been bought and sold through agents and brokers, a sl",
@@ -141,10 +141,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Certain industries, cannabis licensing chief among them, require extensive documentation and state level compliance before a business can even open its doors. Oddysee approached eForte to build a platform that could take on that documentation burden directly, offering pre written templates, guided editing, and the surrounding business tools needed to get a license application across the finish line.",
       image: "/assets/images/case-study/oddysee-banner.png",
       link: "/case-studies/oddysee",
-      theme: [211, 72, 84],
+      theme: [15, 90, 70],
     },
     technologySection: {
-      theme: [211, 72, 84],
+      theme: [15, 90, 70],
       frontEnd: [
       {
         name: "React",
@@ -216,7 +216,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Oddysee",
-      theme: [211, 72, 84],
+      theme: [15, 90, 70],
       sections: [
         {
           heading: "Licensing processes in heavily regulated industries, particularly cannabis licensing at",
@@ -240,10 +240,10 @@ export const caseStudies: CaseStudy[] = [
       description: "InvestmentMarkets came to eForte with a clear but ambitious goal: bridge the gap between investment seeking companies and high net worth individuals, without the noise or gatekeeping typical of traditional investment networking. The founders arrived with a scope document running hundreds of pages, and needed a technical partner who could turn that level of detail into a working, scalable platform.",
       image: "/assets/images/case-study/invesment-banner.png",
       link: "/case-studies/investment-markets",
-      theme: [14, 119, 244],
+      theme: [40, 89, 246],
     },
     technologySection: {
-      theme: [14, 119, 244],
+      theme: [40, 89, 246],
       frontEnd: [
       {
         name: "React",
@@ -315,7 +315,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Investment Markets",
-      theme: [14, 119, 244],
+      theme: [40, 89, 246],
       sections: [
         {
           heading: "High net worth investors and companies seeking capital have traditionally relied on per",
@@ -339,10 +339,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Retailers live and die by their ability to anticipate demand, but seasonal effects, holidays, and unpredictable outliers make accurate forecasting genuinely hard. PRISM was built to solve exactly that problem: a trends forecasting engine designed to handle strong seasonal patterns and messy real world data without losing accuracy.",
       image: "/assets/images/case-study/prism-banner.png",
       link: "/case-studies/prism",
-      theme: [211, 40, 122],
+      theme: [72, 48, 110],
     },
     technologySection: {
-      theme: [211, 40, 122],
+      theme: [72, 48, 110],
       frontEnd: [
       {
         name: "React",
@@ -419,7 +419,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Prism",
-      theme: [211, 40, 122],
+      theme: [72, 48, 110],
       sections: [
         {
           heading: "Retail demand doesn't move in a straight line",
@@ -443,10 +443,10 @@ export const caseStudies: CaseStudy[] = [
       description: "StrateX, a solutions provider serving call center and retail chain clients, recognized that manual scheduling was costing their clients real money and real employee goodwill. High labor costs, low satisfaction, and compliance risk were all symptoms of the same root problem: scheduling that depended entirely on manual effort. StrateX partnered with eForte to build a scheduling engine that could serve clients across multiple industry verticals.",
       image: "/assets/images/case-study/scheduling1.png",
       link: "/case-studies/scheduling-engine",
-      theme: [40, 89, 246],
+      theme: [15, 55, 85],
     },
     technologySection: {
-      theme: [40, 89, 246],
+      theme: [15, 55, 85],
       frontEnd: [
       {
         name: "React",
@@ -518,7 +518,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Scheduling Engine",
-      theme: [40, 89, 246],
+      theme: [15, 55, 85],
       sections: [
         {
           heading: "StrateX's clients in the call center and retail chain industries were scheduling staff ",
@@ -542,10 +542,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Sellsmart is a sales platform that helps growing companies manage leads, follow ups, and pipeline progression. As sales teams scaled, keeping every lead moving through the pipeline consistently became harder to manage manually.",
       image: "/assets/images/case-study/sellsMart4.png",
       link: "/case-studies/sellsmart",
-      theme: [13, 48, 69],
+      theme: [220, 70, 110],
     },
     technologySection: {
-      theme: [13, 48, 69],
+      theme: [220, 70, 110],
       frontEnd: [
       {
         name: "React",
@@ -617,7 +617,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Sellsmart",
-      theme: [13, 48, 69],
+      theme: [220, 70, 110],
       sections: [
         {
           heading: "Sellsmart's sales reps were responsible for manually routing new leads, scheduling foll",
@@ -641,10 +641,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Every founder believes in their idea, but belief isn't the same as validation. Validatr.io approached eForte to build a platform that could guide startups and businesses through structured market validation and market research, producing polished report style documents founders could use directly in business plans and investor conversations.",
       image: "/assets/images/case-study/Validatr.png",
       link: "/case-studies/validatr",
-      theme: [90, 189, 85],
+      theme: [35, 95, 75],
     },
     technologySection: {
-      theme: [90, 189, 85],
+      theme: [35, 95, 75],
       frontEnd: [
       {
         name: "React",
@@ -716,7 +716,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Validatr",
-      theme: [90, 189, 85],
+      theme: [35, 95, 75],
       sections: [
         {
           heading: "Market validation and market research are typically slow, expensive, and require specia",
@@ -740,10 +740,10 @@ export const caseStudies: CaseStudy[] = [
       description: "TachIgnite is a Day Zero startup accelerator that partnered with eForte in 2025 to strengthen its talent pipeline and deliver its flagship startup contest.",
       image: "/assets/images/industry/accelerators-1.jpg",
       link: "/case-studies/tachignite",
-      theme: [61, 42, 237],
+      theme: [1, 72, 90],
     },
     technologySection: {
-      theme: [61, 42, 237],
+      theme: [1, 72, 90],
       frontEnd: [
       {
         name: "React",
@@ -815,7 +815,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "TachIgnite",
-      theme: [61, 42, 237],
+      theme: [1, 72, 90],
       sections: [
         {
           heading: "As a Day Zero accelerator, TachIgnite needed to support early stage founders who requir",
@@ -839,10 +839,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Dostpay is a mobile based digital banking payments platform designed to integrate with a bank's core banking systems, giving end users the power of digital banking in a flexible, branded experience. As transaction volume grew, keeping the platform compliant and secure without slowing down user experience became a growing challenge.",
       image: "/assets/images/case-study/Dostpay-banner.png",
       link: "/case-studies/dostpay",
-      theme: [211, 72, 84],
+      theme: [72, 40, 150],
     },
     technologySection: {
-      theme: [211, 72, 84],
+      theme: [72, 40, 150],
       frontEnd: [
       {
         name: "React Native",
@@ -919,7 +919,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Dostpay",
-      theme: [211, 72, 84],
+      theme: [72, 40, 150],
       sections: [
         {
           heading: "Dostpay's integration with core banking systems meant transaction data flowed in from m",
@@ -943,10 +943,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Emerge came to eForte with a mission driven idea: build a platform to train youth in the soft skills that matter for real world success, skills rarely covered by traditional academic curricula. The vision combined structured lessons, testing and grading, a knowledge library, and a professional profile system to help participants carry what they learned into their careers.",
       image: "/assets/images/case-study/emerge-banner.png",
       link: "/case-studies/emerge-forward",
-      theme: [14, 119, 244],
+      theme: [211, 72, 84],
     },
     technologySection: {
-      theme: [14, 119, 244],
+      theme: [211, 72, 84],
       frontEnd: [
       {
         name: "React",
@@ -1023,7 +1023,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Emerge Forward",
-      theme: [14, 119, 244],
+      theme: [211, 72, 84],
       sections: [
         {
           heading: "Soft skills, communication, collaboration, adaptability, are hard to teach and even har",
@@ -1047,10 +1047,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Salons run on tight schedules, personal relationships, and constant day to day operations, from booking appointments to managing inventory. Komb, a UK based startup, saw a gap in the market for software built specifically around how salons actually operate, and partnered with eForte to bring that vision to life across web and mobile.",
       image: "/assets/images/case-study/komb-banner.png",
       link: "/case-studies/komb",
-      theme: [211, 40, 122],
+      theme: [110, 160, 70],
     },
     technologySection: {
-      theme: [211, 40, 122],
+      theme: [110, 160, 70],
       frontEnd: [
       {
         name: "React Native",
@@ -1122,7 +1122,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Komb",
-      theme: [211, 40, 122],
+      theme: [110, 160, 70],
       sections: [
         {
           heading: "Salon owners were managing appointments, client records, staff schedules, and inventory",
@@ -1146,10 +1146,10 @@ export const caseStudies: CaseStudy[] = [
       description: "FoodCast: Helping Families Forecast Their Food Supply During COVID 19",
       image: "/assets/images/case-study/Food-castbanner.png",
       link: "/case-studies/food-cast",
-      theme: [40, 89, 246],
+      theme: [200, 110, 50],
     },
     technologySection: {
-      theme: [40, 89, 246],
+      theme: [200, 110, 50],
       frontEnd: [
       {
         name: "React Native",
@@ -1221,7 +1221,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "FoodCast",
-      theme: [40, 89, 246],
+      theme: [200, 110, 50],
       sections: [
         {
           heading: "Early in the pandemic, households faced real uncertainty about food supply, leading to ",
@@ -1245,10 +1245,10 @@ export const caseStudies: CaseStudy[] = [
       description: "During COVID 19, one of the simplest but most valuable pieces of information people needed was also one of the hardest to find: how crowded is this place right now? Crowdcheck was built to answer exactly that question, giving users a real time, map based view of crowd density at locations around them.",
       image: "/assets/images/case-study/CrowdCheck-bannner.png",
       link: "/case-studies/crowd-check",
-      theme: [13, 48, 69],
+      theme: [20, 110, 105],
     },
     technologySection: {
-      theme: [13, 48, 69],
+      theme: [20, 110, 105],
       frontEnd: [
       {
         name: "Kotlin",
@@ -1325,7 +1325,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Crowdcheck",
-      theme: [13, 48, 69],
+      theme: [20, 110, 105],
       sections: [
         {
           heading: "Public health guidance during the pandemic emphasized avoiding crowded spaces, but ther",
@@ -1349,10 +1349,10 @@ export const caseStudies: CaseStudy[] = [
       description: "InstApp Deal is a mobile application that lets users search for and redeem coupons at participating retailers, built around word of mouth style discovery and push notifications for new deals. As the number of participating retailers and deals grew, helping users find offers actually relevant to them became more difficult.",
       image: "/assets/images/case-study/InstApp-Dealbanner.png",
       link: "/case-studies/instapp-deal",
-      theme: [90, 189, 85],
+      theme: [90, 40, 120],
     },
     technologySection: {
-      theme: [90, 189, 85],
+      theme: [90, 40, 120],
       frontEnd: [
       {
         name: "React Native",
@@ -1424,7 +1424,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "InstApp Deal",
-      theme: [90, 189, 85],
+      theme: [90, 40, 120],
       sections: [
         {
           heading: "InstApp Deal's original notification system pushed new deals to all users in a category",
@@ -1448,10 +1448,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Meridian Pay is a digital payments provider processing millions of consumer and merchant transactions every month. As transaction volume grew, so did the complexity of detecting fraud, resolving disputes, and keeping settlement operations running without delay.",
       image: "/assets/images/industry/banking-bg-hero.jpg",
       link: "/case-studies/meridian-pay",
-      theme: [61, 42, 237],
+      theme: [20, 90, 140],
     },
     technologySection: {
-      theme: [61, 42, 237],
+      theme: [20, 90, 140],
       frontEnd: [
       {
         name: "React",
@@ -1528,7 +1528,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Meridian Pay",
-      theme: [61, 42, 237],
+      theme: [20, 90, 140],
       sections: [
         {
           heading: "Before working with eForte, Meridian Pay relied on a patchwork of legacy fraud rules an",
@@ -1552,10 +1552,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Iberian Ventures is a mid sized M&A advisory firm based in Lisbon, Portugal, managing more than 30 active buy side mandates and tracking over 500 potential acquisition targets at any given time. As mandate volume grew, the firm's analysts found themselves buried in administrative work instead of advisory work.",
       image: "/assets/images/industry/our-work-2.webp",
       link: "/case-studies/iberian-ventures",
-      theme: [14, 119, 244],
+      theme: [120, 85, 55],
     },
     technologySection: {
-      theme: [14, 119, 244],
+      theme: [120, 85, 55],
       frontEnd: [
       {
         name: "React",
@@ -1632,7 +1632,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Iberian Ventures",
-      theme: [14, 119, 244],
+      theme: [120, 85, 55],
       sections: [
         {
           heading: "Iberian Ventures' analysts spent 70 percent of their time on administrative tasks, revi",
@@ -1656,10 +1656,10 @@ export const caseStudies: CaseStudy[] = [
       description: "GlobalTrade Solutions is an international trading house managing over 1,200 annual transactions across multiple commodity categories, supported by a network of more than 350 suppliers. As transaction volume grew, the firm's trading workflow struggled to keep pace.",
       image: "/assets/images/industry/cloud.jpg",
       link: "/case-studies/globaltrade-solutions",
-      theme: [211, 40, 122],
+      theme: [25, 70, 100],
     },
     technologySection: {
-      theme: [211, 40, 122],
+      theme: [25, 70, 100],
       frontEnd: [
       {
         name: "React",
@@ -1736,7 +1736,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "GlobalTrade Solutions",
-      theme: [211, 40, 122],
+      theme: [25, 70, 100],
       sections: [
         {
           heading: "GlobalTrade Solutions faced significant operational inefficiencies in its trading workflow",
@@ -1760,10 +1760,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Allied Insurance is a regional insurance provider processing more than 50,000 claims annually across auto, home, and commercial lines. Its legacy claims process required extensive manual intervention at nearly every step.",
       image: "/assets/images/industry/insurance-banner.jpg",
       link: "/case-studies/allied-insurance",
-      theme: [40, 89, 246],
+      theme: [30, 70, 120],
     },
     technologySection: {
-      theme: [40, 89, 246],
+      theme: [30, 70, 120],
       frontEnd: [
       {
         name: "React",
@@ -1840,7 +1840,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Allied Insurance",
-      theme: [40, 89, 246],
+      theme: [30, 70, 120],
       sections: [
         {
           heading: "Allied Insurance was struggling with a legacy claims processing system requiring extens",
@@ -1864,10 +1864,10 @@ export const caseStudies: CaseStudy[] = [
       description: "BioResearch Labs is a pharmaceutical research organization conducting multiple Phase II and III clinical trials across more than 40 global research sites. Managing data consistency and compliance across that many sites had become an increasingly heavy burden on the research team.",
       image: "/assets/images/industry/bg-portfolio.jpg",
       link: "/case-studies/bioresearch-labs",
-      theme: [13, 48, 69],
+      theme: [30, 90, 100],
     },
     technologySection: {
-      theme: [13, 48, 69],
+      theme: [30, 90, 100],
       frontEnd: [
       {
         name: "React",
@@ -1944,7 +1944,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "BioResearch Labs",
-      theme: [13, 48, 69],
+      theme: [30, 90, 100],
       sections: [
         {
           heading: "BioResearch Labs was drowning in clinical trial data management challenges",
@@ -1968,10 +1968,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Global Manufacturing Corp is a regional insurance provider processing more than 50,000 claims annually across auto, home, and commercial lines. As invoice volume grew across disparate systems, the company's accounts payable department became increasingly strained.",
       image: "/assets/images/industry/app-modernization.jpg",
       link: "/case-studies/global-manufacturing-corp",
-      theme: [90, 189, 85],
+      theme: [50, 55, 60],
     },
     technologySection: {
-      theme: [90, 189, 85],
+      theme: [50, 55, 60],
       frontEnd: [
       {
         name: "React",
@@ -2048,7 +2048,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Global Manufacturing Corp",
-      theme: [90, 189, 85],
+      theme: [50, 55, 60],
       sections: [
         {
           heading: "Global Manufacturing Corp's accounts payable department was struggling with fragmented ",
@@ -2072,10 +2072,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Altura Motors designs and manufactures passenger vehicles, running engineering simulations and design reviews across multiple teams for every new model. Long design iteration cycles were slowing the company's ability to bring new vehicles to market.",
       image: "/assets/images/industry/driving-1.jpg",
       link: "/case-studies/altura-motors",
-      theme: [13, 48, 69],
+      theme: [40, 40, 45],
     },
     technologySection: {
-      theme: [13, 48, 69],
+      theme: [40, 40, 45],
       frontEnd: [
       {
         name: "React",
@@ -2152,7 +2152,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Altura Motors",
-      theme: [13, 48, 69],
+      theme: [40, 40, 45],
       sections: [
         {
           heading: "Altura Motors' design process required engineers to manually hand off simulation result",
@@ -2176,10 +2176,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Anchor Point Insurance offers life and health coverage to individuals and families, processing a high volume of claims each month. As fraudulent claims grew more sophisticated, the company's existing detection methods struggled to keep up.",
       image: "/assets/images/industry/cybersecurity.jpg",
       link: "/case-studies/anchor-point-insurance",
-      theme: [13, 48, 69],
+      theme: [55, 35, 90],
     },
     technologySection: {
-      theme: [13, 48, 69],
+      theme: [55, 35, 90],
       frontEnd: [
       {
         name: "React",
@@ -2256,7 +2256,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Anchor Point Insurance",
-      theme: [13, 48, 69],
+      theme: [55, 35, 90],
       sections: [
         {
           heading: "Anchor Point Insurance's fraud detection relied on static, rules based checks that flag",
@@ -2280,10 +2280,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Apex Shared Services provides centralized finance, HR, and IT support functions to multiple business units within a large parent organization. Coordinating requests across so many internal customers had become a significant operational challenge.",
       image: "/assets/images/industry/wrappers.jpg",
       link: "/case-studies/apex-shared-services",
-      theme: [13, 48, 69],
+      theme: [30, 45, 70],
     },
     technologySection: {
-      theme: [13, 48, 69],
+      theme: [30, 45, 70],
       frontEnd: [
       {
         name: "React",
@@ -2360,7 +2360,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Apex Shared Services",
-      theme: [13, 48, 69],
+      theme: [30, 45, 70],
       sections: [
         {
           heading: "Apex Shared Services fielded requests from finance, HR, and IT across dozens of interna",
@@ -2384,10 +2384,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Birchwood Hospitality Group manages a collection of hotels and event venues, overseeing everything from staffing to procurement across properties. Rising operational costs were squeezing margins, and leadership lacked the visibility needed to identify where savings could be found.",
       image: "/assets/images/industry/our-work-3.webp",
       link: "/case-studies/birchwood-hospitality-group",
-      theme: [211, 40, 122],
+      theme: [55, 35, 45],
     },
     technologySection: {
-      theme: [211, 40, 122],
+      theme: [55, 35, 45],
       frontEnd: [
       {
         name: "React",
@@ -2464,7 +2464,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Birchwood Hospitality Group",
-      theme: [211, 40, 122],
+      theme: [55, 35, 45],
       sections: [
         {
           heading: "Birchwood Hospitality Group's properties each tracked staffing, procurement, and operat",
@@ -2488,10 +2488,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Brightwell Mutual is a regional insurer offering home, auto, and umbrella coverage to policyholders across the country. As claims volume grew, the company's manual review process became a bottleneck that frustrated both adjusters and policyholders.",
       image: "/assets/images/industry/bg-expertise.jpg",
       link: "/case-studies/brightwell-mutual",
-      theme: [211, 40, 122],
+      theme: [40, 70, 160],
     },
     technologySection: {
-      theme: [211, 40, 122],
+      theme: [40, 70, 160],
       frontEnd: [
       {
         name: "React",
@@ -2568,7 +2568,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Brightwell Mutual",
-      theme: [211, 40, 122],
+      theme: [40, 70, 160],
       sections: [
         {
           heading: "Before partnering with eForte, Brightwell Mutual's claims adjusters manually reviewed e",
@@ -2592,10 +2592,10 @@ export const caseStudies: CaseStudy[] = [
       description: "ClearPath Diabetes Care provides remote monitoring and care coordination for patients managing diabetes, working closely with endocrinologists, dietitians, and care coordinators. As its patient base grew, keeping every care team member informed in real time became a growing challenge.",
       image: "/assets/images/industry/cardiex-machine.jpg",
       link: "/case-studies/clearpath-diabetes-care",
-      theme: [211, 72, 84],
+      theme: [30, 80, 120],
     },
     technologySection: {
-      theme: [211, 72, 84],
+      theme: [30, 80, 120],
       frontEnd: [
       {
         name: "React",
@@ -2672,7 +2672,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "ClearPath Diabetes Care",
-      theme: [211, 72, 84],
+      theme: [30, 80, 120],
       sections: [
         {
           heading: "ClearPath Diabetes Care's patients used connected glucose monitors that generated a ste",
@@ -2696,10 +2696,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Coastal Assurance Group provides commercial property and casualty insurance to businesses along the coast, where weather related risk assessment adds significant complexity to underwriting. Growing application volume was straining the company's manual underwriting process.",
       image: "/assets/images/industry/insurance-banner.jpg",
       link: "/case-studies/coastal-assurance-group",
-      theme: [40, 89, 246],
+      theme: [25, 80, 110],
     },
     technologySection: {
-      theme: [40, 89, 246],
+      theme: [25, 80, 110],
       frontEnd: [
       {
         name: "React",
@@ -2771,7 +2771,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Coastal Assurance Group",
-      theme: [40, 89, 246],
+      theme: [25, 80, 110],
       sections: [
         {
           heading: "Coastal Assurance Group's underwriters manually assessed each commercial property appli",
@@ -2795,10 +2795,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Coastline Resorts operates a group of beachfront resorts offering dining, spa, and activity services alongside accommodations. Guest service requests routed manually across departments were creating delays that affected the guest experience.",
       image: "/assets/images/industry/events.jpg",
       link: "/case-studies/coastline-resorts",
-      theme: [14, 119, 244],
+      theme: [16, 55, 75],
     },
     technologySection: {
-      theme: [14, 119, 244],
+      theme: [16, 55, 75],
       frontEnd: [
       {
         name: "React",
@@ -2875,7 +2875,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Coastline Resorts",
-      theme: [14, 119, 244],
+      theme: [16, 55, 75],
       sections: [
         {
           heading: "Coastline Resorts' guest requests, whether for housekeeping, dining reservations, or sp",
@@ -2899,10 +2899,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Cobalt Digital Bank is a fast growing challenger bank offering checking, savings, and lending products entirely through its mobile app. As its customer base expanded across regions, its data infrastructure struggled to keep up with the demands of real time banking.",
       image: "/assets/images/industry/financial-service-hero.webp",
       link: "/case-studies/cobalt-digital-bank",
-      theme: [211, 72, 84],
+      theme: [11, 61, 92],
     },
     technologySection: {
-      theme: [211, 72, 84],
+      theme: [11, 61, 92],
       frontEnd: [
       {
         name: "React Native",
@@ -2979,7 +2979,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Cobalt Digital Bank",
-      theme: [211, 72, 84],
+      theme: [11, 61, 92],
       sections: [
         {
           heading: "Cobalt Digital Bank's customer data was spread across separate systems for onboarding, ",
@@ -3003,10 +3003,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Crestline BPO Group provides outsourced transaction processing and customer administration services to clients in retail, healthcare, and financial services. High transaction volume and tight service level agreements were putting increasing pressure on manual processing teams.",
       image: "/assets/images/industry/qa.jpg",
       link: "/case-studies/crestline-bpo-group",
-      theme: [90, 189, 85],
+      theme: [50, 35, 65],
     },
     technologySection: {
-      theme: [90, 189, 85],
+      theme: [50, 35, 65],
       frontEnd: [
       {
         name: "React",
@@ -3083,7 +3083,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Crestline BPO Group",
-      theme: [90, 189, 85],
+      theme: [50, 35, 65],
       sections: [
         {
           heading: "Crestline BPO Group's processing teams handled high volumes of client transactions manu",
@@ -3107,10 +3107,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Fenwick Capital Markets manages trading and portfolio strategy for institutional clients across equities, fixed income, and derivatives. With markets moving faster than ever, the firm needed its systems to keep pace with real time decision making.",
       image: "/assets/images/industry/banking-bg-hero.jpg",
       link: "/case-studies/fenwick-capital-markets",
-      theme: [14, 119, 244],
+      theme: [1, 72, 90],
     },
     technologySection: {
-      theme: [14, 119, 244],
+      theme: [1, 72, 90],
       frontEnd: [
       {
         name: "React",
@@ -3187,7 +3187,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Fenwick Capital Markets",
-      theme: [14, 119, 244],
+      theme: [1, 72, 90],
       sections: [
         {
           heading: "Fenwick Capital Markets' trading desks relied on data feeds that updated on a delay, me",
@@ -3211,10 +3211,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Frontier Energy Partners manages a distributed network of energy generation and transmission assets across multiple regions. Coordinating maintenance across so many geographically dispersed assets was becoming increasingly difficult to manage manually.",
       image: "/assets/images/industry/solutions-1.jpg",
       link: "/case-studies/frontier-energy-partners",
-      theme: [40, 89, 246],
+      theme: [20, 80, 55],
     },
     technologySection: {
-      theme: [40, 89, 246],
+      theme: [20, 80, 55],
       frontEnd: [
       {
         name: "React",
@@ -3286,7 +3286,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Frontier Energy Partners",
-      theme: [40, 89, 246],
+      theme: [20, 80, 55],
       sections: [
         {
           heading: "Frontier Energy Partners' assets were spread across a wide geographic area, each report",
@@ -3310,10 +3310,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Harborlight Recovery operates a network of behavioral health and addiction recovery centers, supporting patients through multi stage treatment programs. As patient volume grew across locations, delivering consistent, personalized care plans became increasingly difficult to manage.",
       image: "/assets/images/case-study/health.webp",
       link: "/case-studies/harborlight-recovery",
-      theme: [90, 189, 85],
+      theme: [25, 95, 105],
     },
     technologySection: {
-      theme: [90, 189, 85],
+      theme: [25, 95, 105],
       frontEnd: [
       {
         name: "React",
@@ -3390,7 +3390,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Harborlight Recovery",
-      theme: [90, 189, 85],
+      theme: [25, 95, 105],
       sections: [
         {
           heading: "Harborlight Recovery's patient records were split across separate systems for intake, c",
@@ -3414,10 +3414,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Ironclad Manufacturing operates multiple heavy equipment production facilities, running machinery around the clock to meet demand. Unplanned equipment downtime was costing the company significant production time and revenue.",
       image: "/assets/images/industry/monitoring.jpg",
       link: "/case-studies/ironclad-manufacturing",
-      theme: [14, 119, 244],
+      theme: [70, 50, 30],
     },
     technologySection: {
-      theme: [14, 119, 244],
+      theme: [70, 50, 30],
       frontEnd: [
       {
         name: "React",
@@ -3489,7 +3489,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Ironclad Manufacturing",
-      theme: [14, 119, 244],
+      theme: [70, 50, 30],
       sections: [
         {
           heading: "Ironclad Manufacturing's equipment generated sensor data across dozens of machines per ",
@@ -3513,10 +3513,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Lantern Hotel Collective operates a portfolio of boutique hotels across multiple markets, aiming to give every guest a personalized stay regardless of location. As the portfolio grew, delivering that consistency without a much larger staff became a real challenge.",
       image: "/assets/images/industry/media-entertainment-bg.jpg",
       link: "/case-studies/lantern-hotel-collective",
-      theme: [211, 72, 84],
+      theme: [70, 35, 55],
     },
     technologySection: {
-      theme: [211, 72, 84],
+      theme: [70, 35, 55],
       frontEnd: [
       {
         name: "React",
@@ -3593,7 +3593,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Lantern Hotel Collective",
-      theme: [211, 72, 84],
+      theme: [70, 35, 55],
       sections: [
         {
           heading: "Lantern Hotel Collective's guest data, including preferences, past stays, and special r",
@@ -3617,10 +3617,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Meridian Outsourcing Solutions provides back office processing services, including data entry, document processing, and customer support administration, to enterprise clients across industries. As client volume grew, manual processing was becoming a bottleneck to scaling the business.",
       image: "/assets/images/industry/baas.jpg",
       link: "/case-studies/meridian-outsourcing-solutions",
-      theme: [40, 89, 246],
+      theme: [25, 40, 70],
     },
     technologySection: {
-      theme: [40, 89, 246],
+      theme: [25, 40, 70],
       frontEnd: [
       {
         name: "React",
@@ -3697,7 +3697,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Meridian Outsourcing Solutions",
-      theme: [40, 89, 246],
+      theme: [25, 40, 70],
       sections: [
         {
           heading: "Meridian Outsourcing Solutions' processing teams manually reviewed and entered data fro",
@@ -3721,10 +3721,10 @@ export const caseStudies: CaseStudy[] = [
       description: "PulseWell Fitness operates a chain of health and wellness clubs offering fitness coaching, nutrition guidance, and recovery services to members nationwide. As membership grew, delivering genuinely personalized wellness plans became difficult without more scalable tools.",
       image: "/assets/images/case-study/health.webp",
       link: "/case-studies/pulsewell-fitness",
-      theme: [61, 42, 237],
+      theme: [15, 110, 100],
     },
     technologySection: {
-      theme: [61, 42, 237],
+      theme: [15, 110, 100],
       frontEnd: [
       {
         name: "React",
@@ -3796,7 +3796,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "PulseWell Fitness",
-      theme: [61, 42, 237],
+      theme: [15, 110, 100],
       sections: [
         {
           heading: "PulseWell Fitness's coaches relied on generic program templates that were only lightly ",
@@ -3820,10 +3820,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Ridgeline Auto Group operates a network of dealerships selling and servicing vehicles across multiple brands. Each dealership's sales, service, and inventory data lived in its own system, making it difficult for group leadership to get a consolidated view of the business.",
       image: "/assets/images/industry/driving-3.jpg",
       link: "/case-studies/ridgeline-auto-group",
-      theme: [61, 42, 237],
+      theme: [45, 45, 50],
     },
     technologySection: {
-      theme: [61, 42, 237],
+      theme: [45, 45, 50],
       frontEnd: [
       {
         name: "React",
@@ -3900,7 +3900,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Ridgeline Auto Group",
-      theme: [61, 42, 237],
+      theme: [45, 45, 50],
       sections: [
         {
           heading: "Ridgeline Auto Group's dealerships each ran their own dealership management system, mea",
@@ -3924,10 +3924,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Summit Steel Works operates steel production facilities that convert raw materials into finished products through a multi stage process. Inconsistent yield across production runs was eating into margins and complicating capacity planning.",
       image: "/assets/images/industry/working.jpg",
       link: "/case-studies/summit-steel-works",
-      theme: [211, 40, 122],
+      theme: [55, 45, 35],
     },
     technologySection: {
-      theme: [211, 40, 122],
+      theme: [55, 45, 35],
       frontEnd: [
       {
         name: "React",
@@ -3999,7 +3999,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Summit Steel Works",
-      theme: [211, 40, 122],
+      theme: [55, 45, 35],
       sections: [
         {
           heading: "Summit Steel Works' production process involved dozens of variables, from raw material ",
@@ -4023,10 +4023,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Vantage Mobility manages a large commercial vehicle fleet providing logistics and delivery services across multiple regions. Coordinating vehicle assignments, maintenance windows, and driver schedules manually was becoming a growing operational burden.",
       image: "/assets/images/industry/driving-2.jpg",
       link: "/case-studies/vantage-mobility",
-      theme: [90, 189, 85],
+      theme: [35, 40, 50],
     },
     technologySection: {
-      theme: [90, 189, 85],
+      theme: [35, 40, 50],
       frontEnd: [
       {
         name: "React",
@@ -4098,7 +4098,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Vantage Mobility",
-      theme: [90, 189, 85],
+      theme: [35, 40, 50],
       sections: [
         {
           heading: "Vantage Mobility's dispatchers manually assigned vehicles and drivers to routes each da",
