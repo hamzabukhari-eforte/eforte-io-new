@@ -20,7 +20,7 @@ function SuccessStoryCard({
   return (
     <article
       className="grid min-h-[520px] overflow-hidden rounded-[28px] text-white md:min-h-[560px] lg:grid-cols-[1.05fr_0.95fr]"
-      style={{ backgroundColor: story.background }}
+      style={{ background: story.background }}
     >
       <div className="flex flex-col justify-between p-8 md:p-12 lg:p-14">
         <div>

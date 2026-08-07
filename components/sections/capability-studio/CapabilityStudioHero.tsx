@@ -116,13 +116,13 @@ export default function CapabilityStudioHero({
 
             {/* Right mark + CTA */}
             <div className="flex min-h-[320px] flex-col border-t border-[#E8E8E8] lg:min-h-[480px] lg:border-t-0">
-              <div className="flex flex-1 items-center justify-center bg-[#F5F5F5] px-8 py-12">
+              <div className="relative flex flex-1 items-center justify-center bg-[#F5F5F5] px-6 py-8 sm:px-8 md:py-10 lg:px-10">
                 <Image
                   src={hero.graphicSrc}
                   alt=""
-                  width={220}
-                  height={220}
-                  className="h-40 w-40 object-contain md:h-52 md:w-52"
+                  width={560}
+                  height={560}
+                  className="h-auto w-full max-h-[280px] object-contain sm:max-h-[340px] md:max-h-[400px] lg:max-h-[440px]"
                   priority
                   aria-hidden
                 />

@@ -111,10 +111,10 @@ export const productDesignShowcase: ProductDesignShowcaseItem[] = [
   {
     id: "cascade-utilities",
     brand: "Cascade Utilities Group",
-    title: "Redesigning the field technician app for Cascade Utilities Group",
+    title: "Redesigning the field technician app",
     paragraphs: [
-      "Cascade Utilities Group's field technicians were logging jobs through a clunky legacy app that required constant office callbacks to resolve confusion. We ran on-site research with technicians, rebuilt the app around their actual workflow, and simplified job logging to a handful of guided steps.",
-      "Outcomes so far: 38% reduction in average task completion time, 52% fewer support tickets related to the field app, 96% technician adoption within the first month, and zero required retraining sessions post-launch.",
+      "Cascade Utilities Group partnered with eForte to replace a legacy field app that forced constant office callbacks. Technician research shaped a rebuilt workflow and guided job logging.",
+      "Results: 38% faster task completion, 52% fewer support tickets, and 96% adoption in month one—with no retraining required.",
     ],
     image: "/assets/images/package/studios/cascade-utilities-case.svg",
     imageAlt: "Cascade Utilities Group field technician app redesign",
