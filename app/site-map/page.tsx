@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function SitemapPage() {
   return (
-    <main className="min-h-screen bg-white text-default">
+    <main className="min-h-screen bg-default text-white">
       <SitemapPageSection />
     </main>
   );

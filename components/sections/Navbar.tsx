@@ -743,7 +743,7 @@ const LIGHT_HERO_NAV_ROUTES = [
   "/capabilities/blockchain",
   "/capabilities/quality-assurance",
   "/databricks",
-  "/site-map",
+  "/sitemap",
 ] as const;
 
 export default function Navbar({ insightsMenuData }: NavbarProps) {

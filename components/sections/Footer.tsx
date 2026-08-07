@@ -91,7 +91,10 @@ export default function Footer() {
                 <p className="text-sm text-desc">
                   © {new Date().getFullYear()} eForte.io. All rights reserved.
                 </p>
-                <div className="flex items-center gap-4 text-sm">
+                <nav
+                  aria-label="Legal"
+                  className="flex flex-wrap items-center justify-center gap-4 text-sm"
+                >
                   <Link
                     href="/privacy-policy"
                     className="text-desc transition-colors duration-200 hover:text-white"
@@ -105,12 +108,12 @@ export default function Footer() {
                     Terms &amp; Conditions
                   </Link>
                   <Link
-                    href="/site-map"
+                    href="/sitemap"
                     className="text-desc transition-colors duration-200 hover:text-white"
                   >
                     Sitemap
                   </Link>
-                </div>
+                </nav>
               </div>
 
               {/* Social Media Icons */}

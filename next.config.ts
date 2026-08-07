@@ -34,6 +34,11 @@ const nextConfig: NextConfig = {
       ...(getStrapiRemotePatterns() ?? []),
     ],
   },
+  // HTML page lives at app/site-map (avoids conflict with app/sitemap.ts → /sitemap.xml).
+  // Public URL is /sitemap.
+  async rewrites() {
+    return [{ source: "/sitemap", destination: "/site-map" }];
+  },
 };
 
 export default nextConfig;

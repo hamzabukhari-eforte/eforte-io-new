@@ -8,19 +8,22 @@ export type SitemapLink = {
 export type SitemapGroup = {
   title: string;
   links: SitemapLink[];
+  /** When true, long lists render in a scrollable column (like the reference sitemap) */
+  scrollable?: boolean;
 };
 
-/** Shared site map used by /site-map page and sitemap.xml */
+/** Shared site map used by /sitemap page and sitemap.xml */
 export const sitemapGroups: SitemapGroup[] = [
   {
     title: "Main",
     links: [
       { label: "Home", href: "/" },
       { label: "About eForte", href: "/about-us" },
-      { label: "Locations", href: "/locations" },
+      { label: "Technology Partners", href: "/technology-partners" },
       { label: "Careers", href: "/careers" },
       { label: "Insights", href: "/blog" },
       { label: "Impact Studies", href: "/impact-studies" },
+      { label: "Locations", href: "/locations" },
       { label: "Databricks", href: "/databricks" },
     ],
   },
@@ -35,6 +38,7 @@ export const sitemapGroups: SitemapGroup[] = [
   {
     title: "Capabilities",
     links: [
+      { label: "Capabilities Overview", href: "/capabilities" },
       { label: "Product Design", href: "/capabilities/product-design" },
       {
         label: "Artificial Intelligence",
@@ -66,8 +70,33 @@ export const sitemapGroups: SitemapGroup[] = [
     ],
   },
   {
+    title: "AI Workflows",
+    links: [
+      { label: "AI Workflows Overview", href: "/ai-workflows" },
+      {
+        label: "Customer Service & Support",
+        href: "/ai-workflows/customer-service",
+      },
+      { label: "Sales & Marketing", href: "/ai-workflows/sales-marketing" },
+      {
+        label: "Financial Operations",
+        href: "/ai-workflows/financial-operations",
+      },
+      { label: "Human Resources", href: "/ai-workflows/human-resources" },
+      {
+        label: "Operations & Compliance",
+        href: "/ai-workflows/operations-compliance",
+      },
+      {
+        label: "Project Management & Data",
+        href: "/ai-workflows/project-management-data",
+      },
+    ],
+  },
+  {
     title: "Industries",
     links: [
+      { label: "Industries Overview", href: "/industries" },
       { label: "Health & Wellbeing", href: "/industries/healthcare" },
       { label: "Finance", href: "/industries/financial-services" },
       { label: "Insurance", href: "/industries/insurance" },
@@ -88,7 +117,8 @@ export const sitemapGroups: SitemapGroup[] = [
     ],
   },
   {
-    title: "Impact Studies",
+    title: `Impact Studies (${caseStudies.length})`,
+    scrollable: true,
     links: [
       { label: "All Impact Studies", href: "/impact-studies" },
       ...caseStudies.map((study) => ({
@@ -102,7 +132,7 @@ export const sitemapGroups: SitemapGroup[] = [
     links: [
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms & Conditions", href: "/terms-and-conditions" },
-      { label: "Sitemap", href: "/site-map" },
+      { label: "Sitemap", href: "/sitemap" },
     ],
   },
 ];

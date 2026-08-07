@@ -62,16 +62,16 @@ export default function AgenticOrchestrationUseCasesSection() {
           eForte delivers the full spectrum of GenAI solutions, helping organizations automate, augment, and transform business processes.
         </motion.p>
         <motion.div
-          className="relative mx-auto mt-10 aspect-[1200/360] w-full max-w-4xl md:mt-14"
+          className="relative mx-auto mt-10 aspect-[1079/457] w-full max-w-7xl md:mt-14"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
         >
           <Image
             src="/assets/images/package/ai-pillars/ai-solutions-4cards.svg"
-            alt="eForte AI Solutions: LLM Apps, Chat Bots, Automations, Agentic Workflows"
+            alt="Diagram of eForte AI Solutions showing four offerings: LLM Apps, Chat Bots, Automations, and Agentic Workflows"
             fill
-            sizes="(max-width: 1024px) 100vw, 900px"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1280px"
             className="object-contain"
           />
         </motion.div>

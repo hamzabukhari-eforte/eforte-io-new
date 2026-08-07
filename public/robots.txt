@@ -1,0 +1,104 @@
+User-Agent: *
+Disallow: /
+
+User-Agent: GPTBot
+Disallow: /
+
+User-Agent: ChatGPT-User
+Disallow: /
+
+User-Agent: Google-Extended
+Disallow: /
+
+User-Agent: Googlebot
+Disallow: /
+
+User-Agent: Googlebot-Image
+Disallow: /
+
+User-Agent: Bingbot
+Disallow: /
+
+User-Agent: BingPreview
+Disallow: /
+
+User-Agent: Slurp
+Disallow: /
+
+User-Agent: DuckDuckBot
+Disallow: /
+
+User-Agent: Baiduspider
+Disallow: /
+
+User-Agent: YandexBot
+Disallow: /
+
+User-Agent: facebookexternalhit
+Disallow: /
+
+User-Agent: Twitterbot
+Disallow: /
+
+User-Agent: LinkedInBot
+Disallow: /
+
+User-Agent: Applebot
+Disallow: /
+
+User-Agent: Applebot-Extended
+Disallow: /
+
+User-Agent: anthropic-ai
+Disallow: /
+
+User-Agent: ClaudeBot
+Disallow: /
+
+User-Agent: Claude-Web
+Disallow: /
+
+User-Agent: CCBot
+Disallow: /
+
+User-Agent: Bytespider
+Disallow: /
+
+User-Agent: Meta-ExternalAgent
+Disallow: /
+
+User-Agent: Meta-ExternalFetcher
+Disallow: /
+
+User-Agent: cohere-ai
+Disallow: /
+
+User-Agent: PerplexityBot
+Disallow: /
+
+User-Agent: YouBot
+Disallow: /
+
+User-Agent: Diffbot
+Disallow: /
+
+User-Agent: ia_archiver
+Disallow: /
+
+User-Agent: Amazonbot
+Disallow: /
+
+User-Agent: PetalBot
+Disallow: /
+
+User-Agent: SemrushBot
+Disallow: /
+
+User-Agent: AhrefsBot
+Disallow: /
+
+User-Agent: DotBot
+Disallow: /
+
+User-Agent: MJ12bot
+Disallow: /
