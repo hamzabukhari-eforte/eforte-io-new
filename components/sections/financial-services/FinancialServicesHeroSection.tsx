@@ -112,7 +112,7 @@ export default function FinancialServicesHeroSection() {
           >
             <div className="relative aspect-1230/1054 w-full">
               <Image
-                src="/assets/images/industry/financial-service-hero.webp"
+                src="/assets/images/package/industries/finance-industry-hero.svg"
                 alt="Financial services dashboard preview"
                 fill
                 priority

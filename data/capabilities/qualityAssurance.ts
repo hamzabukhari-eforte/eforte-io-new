@@ -1,12 +1,14 @@
 export const QA_ACCENT = "#D3287A";
 
 export const qualityAssuranceHero = {
-  label: "Quality Assurance Studio",
-  title: "AI-driven QA for impactful digital experiences.",
+  label: "Quality Assurance",
+  title:
+    "eForte's Quality Assurance Studio makes sure what we build actually works",
   description:
-    "Elevate your software's performance with our comprehensive test automation, CI/CD integration, and agile expertise",
-  ctaLabel: "Get in touch",
-  backgroundSrc: "/assets/images/capabilities/quality-assurance-hero.png",
+    "Speed only matters if what ships actually works. Our Quality Assurance Studio builds automated testing frameworks, manages manual and exploratory testing where it matters most, and helps teams catch issues before customers do: across web, mobile, API, and increasingly, AI-driven systems. We treat QA as a discipline that runs throughout a project, not a final gate before launch.",
+  ctaLabel: "Contact Us",
+  backgroundSrc:
+    "/assets/images/package/studios/qa-studio-hero-diagram.svg",
 };
 
 export const qualityAssuranceNumbers = {
@@ -116,6 +118,18 @@ export const qualityAssuranceAccelerators = {
 };
 
 export const qualityAssuranceSuccessStories = [
+  {
+    id: "belmont-financial",
+    title: "Building an automated testing framework for Belmont Financial Group",
+    paragraphs: [
+      "Belmont Financial Group was shipping updates to their trading platform with only manual regression testing, creating a release bottleneck and occasional production incidents. We built a comprehensive automated test suite covering their critical user paths and integrated it directly into their deployment pipeline.",
+      "Outcomes so far: regression testing time cut from 4 days to 3 hours, 89% of critical user paths now covered by automated tests, production incidents related to regressions down 67%, and release frequency increased from bi-weekly to weekly.",
+    ],
+    tags: ["Test automation", "Financial services", "CI/CD"],
+    imageSrc: "/assets/images/package/studios/belmont-financial-case.svg",
+    imageAlt: "Belmont Financial Group automated testing case study",
+    tagClass: "bg-primary-pink/12 text-primary-pink",
+  },
   {
     id: "fintech-automation",
     title: "Automated test coverage for a fintech platform",

@@ -1,6 +1,7 @@
 export { default as AiHeroSection } from "./AiHeroSection";
 export { default as AiSolutionsInActionSection } from "./AiSolutionsInActionSection";
 export { default as AiCompoundSystemsSection } from "./AiCompoundSystemsSection";
+export { default as AiCognitiveGatewaySection } from "./AiCognitiveGatewaySection";
 export { default as AiQbricksSection } from "./AiQbricksSection";
 export { default as AiQbricksBenefitsSection } from "./AiQbricksBenefitsSection";
 export { default as AiQbricksVideoSection } from "./AiQbricksVideoSection";

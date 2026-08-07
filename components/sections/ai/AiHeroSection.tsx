@@ -11,7 +11,7 @@ export default function AiHeroSection() {
     <section className="relative flex min-h-[760px] flex-col justify-center overflow-hidden bg-default pt-28 pb-20 md:min-h-screen md:pt-36">
       <div className="absolute inset-0">
         <Image
-          src="/assets/images/capabilities/ai/hero.png"
+          src="/assets/images/package/studios/ai-studio-hero-diagram.svg"
           alt=""
           fill
           priority
@@ -40,7 +40,8 @@ export default function AiHeroSection() {
             transition={{ duration: 0.55, delay: 0.08 }}
             className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[48px]"
           >
-            eForte&apos;s AI Studio builds industry-specific, enterprise-grade AI solutions
+            eForte&apos;s AI Studio builds industry-specific, enterprise-grade
+            intelligent systems
           </motion.h1>
 
           <motion.div
@@ -50,13 +51,17 @@ export default function AiHeroSection() {
             className="mt-6 max-w-2xl space-y-4 text-base leading-7 text-white/82 md:text-lg"
           >
             <p>
-              The studio covers LLM development, generative AI, and computer
-              vision, helping you enhance processes, unlock insights from data,
-              and automate complex work.
+              Most companies have experimented with AI. Few have put it to
+              work where it actually changes outcomes: inside the workflows
+              their teams run every day. Our AI Studio designs, builds, and
+              operates systems powered by Velocity AI and Agentic
+              Orchestration, moving you from pilots and proofs-of-concept to
+              production AI that reasons, acts, and improves over time.
             </p>
             <p>
-              A dedicated team designs tailored solutions aligned to your
-              strategy and constraints.
+              We don&apos;t hand you a model and walk away. We stay embedded
+              through deployment, monitoring, and iteration, so the system
+              keeps getting smarter as your business changes around it.
             </p>
           </motion.div>
 

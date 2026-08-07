@@ -13,7 +13,7 @@ export const bpoSharedServicesIndustry: IndustryPageContent = {
       "eForte partners with outsourcing providers and shared service centers to modernize how they deliver support at scale, applying Velocity AI to accelerate delivery, Agentic Orchestration to automate routine work, and a Foundational Data Layer to keep client data secure and organized across large, distributed teams."
     ],
     ctaLabel: "Contact Us",
-    imageSrc: "/assets/images/industry/driving-1.jpg",
+    imageSrc: "/assets/images/package/industries/bpo-shared-services-industry-hero.svg",
   },
   expertise: {
     title: "Our BPO & shared services expertise",

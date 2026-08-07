@@ -40,6 +40,9 @@ export const projectManagementDataDomain: AiWorkflowDomain = {
     "Resource allocation",
     "Data quality monitoring",
   ],
+  diagramSrc:
+    "/assets/images/package/business-domains/project-management-data-workflows.svg",
+  diagramAlt: "Intelligent delivery and data workflow diagram",
   pillars: {
     agenticOrchestration: "Planner → Execution → Intelligence → Optimization",
     velocityAi: "Delivery intelligence accelerators.",

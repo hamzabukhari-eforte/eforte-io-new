@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
@@ -54,6 +55,7 @@ export default function AgenticOrchestrationRebuildingSection() {
                 </Link>
               ))}
             </div>
+            {/* industries-tiles.svg intentionally not shown here — duplicates the pill list above */}
           </div>
         </motion.div>
 
@@ -63,63 +65,15 @@ export default function AgenticOrchestrationRebuildingSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
         >
-          <div className="relative w-full max-w-[280px] sm:max-w-[360px] lg:max-w-[420px] aspect-square">
+          <div className="relative w-full max-w-[320px] sm:max-w-[420px] lg:max-w-[480px] aspect-square">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-blue-900/10 rounded-full blur-[80px] md:blur-[100px] pointer-events-none" />
-            <svg
-              viewBox="0 0 600 600"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-full h-full drop-shadow-2xl"
-            >
-              <defs>
-                <linearGradient id="rebuild-circleStroke" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#3B82F6" stopOpacity={0.8} />
-                  <stop offset="100%" stopColor="#1D4ED8" stopOpacity={0.5} />
-                </linearGradient>
-                <radialGradient id="rebuild-circleFill" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                  <stop offset="40%" stopColor="#1E3A8A" stopOpacity={0.1} />
-                  <stop offset="100%" stopColor="#1E3A8A" stopOpacity={0.4} />
-                </radialGradient>
-                <radialGradient id="rebuild-centerGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                  <stop offset="0%" stopColor="#60A5FA" stopOpacity={0.4} />
-                  <stop offset="100%" stopColor="#3B82F6" stopOpacity={0} />
-                </radialGradient>
-                <filter id="rebuild-softGlow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation="4" result="blur" />
-                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                </filter>
-              </defs>
-              <g transform="translate(300, 300)">
-                <g transform="translate(0, -90)" className="group hover:scale-[1.03] transition-transform duration-500 origin-center cursor-pointer">
-                  <circle cx="0" cy="0" r="130" fill="url(#rebuild-circleFill)" stroke="url(#rebuild-circleStroke)" strokeWidth="1.5" className="transition-all duration-500 hover:fill-blue-900/30" />
-                  <text x="0" y="-10" textAnchor="middle" fill="white" fontFamily="Inter, sans-serif" fontSize="18" fontWeight="600" letterSpacing="0.02em" className="drop-shadow-lg">
-                    <tspan x="0" dy="0">Industry</tspan>
-                    <tspan x="0" dy="24">Knowledge</tspan>
-                  </text>
-                </g>
-                <g transform="translate(-85, 60)" className="group hover:scale-[1.03] transition-transform duration-500 origin-center cursor-pointer">
-                  <circle cx="0" cy="0" r="130" fill="url(#rebuild-circleFill)" stroke="url(#rebuild-circleStroke)" strokeWidth="1.5" className="transition-all duration-500 hover:fill-blue-900/30" />
-                  <text x="0" y="20" textAnchor="middle" fill="white" fontFamily="Inter, sans-serif" fontSize="18" fontWeight="600" letterSpacing="0.02em" className="drop-shadow-lg">
-                    <tspan x="0" dy="0">Digital</tspan>
-                    <tspan x="0" dy="24">Capabilities</tspan>
-                  </text>
-                </g>
-                <g transform="translate(85, 60)" className="group hover:scale-[1.03] transition-transform duration-500 origin-center cursor-pointer">
-                  <circle cx="0" cy="0" r="130" fill="url(#rebuild-circleFill)" stroke="url(#rebuild-circleStroke)" strokeWidth="1.5" className="transition-all duration-500 hover:fill-blue-900/30" />
-                  <text x="0" y="20" textAnchor="middle" fill="white" fontFamily="Inter, sans-serif" fontSize="18" fontWeight="600" letterSpacing="0.02em" className="drop-shadow-lg">
-                    <tspan x="0" dy="0">Data</tspan>
-                    <tspan x="0" dy="24">&amp; AI</tspan>
-                  </text>
-                </g>
-                <g>
-                  <path d="M0 -35 Q30 -10 30 25 Q0 50 -30 25 Q-30 -10 0 -35 Z" fill="url(#rebuild-centerGlow)" filter="url(#rebuild-softGlow)" opacity={0.8} className="animate-pulse" style={{ animationDuration: "4s" }} />
-                  <text x="0" y="-5" textAnchor="middle" fill="white" fontFamily="Inter, sans-serif" fontSize="16" fontWeight="700" letterSpacing="0.01em" className="drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]">
-                    <tspan x="0" dy="0">eForte</tspan>
-                    <tspan x="0" dy="20">AI Solutions</tspan>
-                  </text>
-                </g>
-              </g>
-            </svg>
+            <Image
+              src="/assets/images/package/ai-pillars/ai-solutions-hub-diagram.svg"
+              alt="eForte AI Solutions hub diagram: Industry Knowledge, Digital Capabilities, and Data & AI"
+              fill
+              sizes="(max-width: 1024px) 90vw, 480px"
+              className="object-contain drop-shadow-2xl"
+            />
           </div>
         </motion.div>
       </div>

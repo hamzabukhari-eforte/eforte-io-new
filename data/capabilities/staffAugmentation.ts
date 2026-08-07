@@ -7,10 +7,11 @@ import type {
 export const staffAugmentationContent = {
   hero: {
     badge: "Staff Augmentation",
-    headline: "Your Gateway to a Skilled Workforce",
-    body: "Build and scale software faster while reducing costs and maintaining high-quality standards.",
+    headline:
+      "eForte's Staff Augmentation Studio gives you reliable, pre-vetted tech talent without the overhead",
+    body: "Pushing your existing team for relentless output when resources are scarce feels productive, but it usually backfires: burnout, quality issues, and missed deadlines follow close behind. Our Staff Augmentation Studio takes a different approach: providing fully managed, pre-vetted software engineers and technology specialists who integrate directly into your culture, communicate fluently in English, and work within your existing agile processes.",
     subBody:
-      "Find out how eForte's staff augmentation services can help accelerate your software development, AI initiatives, and overall business growth.",
+      "We handle sourcing, screening, and ongoing management of the talent. You get a reliable extension of your team, without the overhead of doing it all in-house.",
   },
   valuesIntro: {
     eyebrow: "Staff Augmentation",
@@ -48,7 +49,7 @@ export const staffAugmentationContent = {
       title: "Quality IT & AI Engineering Professionals",
       description:
         "With over a decade of experience across software development and AI engineering, we have a proven track record of attracting top-tier talent. Our team includes highly skilled software engineers, AI engineers, data scientists, and cloud specialists — most holding four-year degrees — demonstrating our commitment to delivering excellence across every engagement.",
-      image: "/assets/images/capabilities/team.jpg",
+      image: "/assets/images/package/studios/staff-augmentation-team-case.svg",
       imageAlt: "eForte engineering and AI talent collaborating",
       imageSide: "right",
       tags: ["Software Engineers", "AI Engineers", "Data Scientists", "Cloud Specialists"],
@@ -111,3 +112,21 @@ export const staffAugmentationContent = {
     ctaLabel: "Contact Us",
   } satisfies StudioContactBannerContent,
 };
+
+export const staffAugmentationFaqs = [
+  {
+    question: "How is eForte's staffing different from a typical staffing agency?",
+    answer:
+      "We manage the full lifecycle: sourcing, AI-powered screening via DART, ongoing training, and administration: rather than just introducing a candidate and stepping away. You get a managed resource, not just a referral.",
+  },
+  {
+    question: "How much can we save compared to hiring on-shore?",
+    answer:
+      "Typically up to 70% lower cost than equivalent on-shore hiring, while providing the same caliber of talent, since costs reflect local market rates in the regions we source from.",
+  },
+  {
+    question: "How quickly can you provide a resource?",
+    answer:
+      "Most requirements are filled within 5-7 working days with pre-screened, rated candidates matched to your specific tech stack.",
+  },
+];

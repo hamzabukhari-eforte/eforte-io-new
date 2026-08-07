@@ -11,7 +11,7 @@ export default function ProductDesignHeroSection() {
     <section className="relative flex min-h-[760px] flex-col justify-center overflow-hidden bg-default pt-28 pb-20 md:min-h-screen md:pt-36">
       <div className="absolute inset-0">
         <Image
-          src="/assets/images/industry/working.jpg"
+          src="/assets/images/package/studios/product-design-studio-hero-diagram.svg"
           alt=""
           fill
           priority
@@ -40,7 +40,8 @@ export default function ProductDesignHeroSection() {
             transition={{ duration: 0.55, delay: 0.08 }}
             className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[48px]"
           >
-            Design digital products your users remember
+            eForte&apos;s Product Design Studio turns complex workflows into
+            products people actually want to use
           </motion.h1>
 
           <motion.p
@@ -49,10 +50,12 @@ export default function ProductDesignHeroSection() {
             transition={{ duration: 0.55, delay: 0.16 }}
             className="mt-6 max-w-2xl text-base leading-7 text-white/82 md:text-lg"
           >
-            eForte&apos;s Product Design Studio helps you craft engaging, intuitive
-            experiences that feel effortless to use and easy to love. Our team
-            blends UX strategy, interface design, and research to turn ideas into
-            products that perform.
+            The most capable backend in the world fails if the people using it
+            every day find it confusing or slow. Our Product Design Studio does
+            the human-centered work — research, UX, UI, and design systems —
+            that makes Velocity AI and Agentic Orchestration usable, trusted,
+            and adopted. We design for how your teams and customers actually
+            behave, not how a spec sheet assumes they will.
           </motion.p>
 
           <motion.div
@@ -62,7 +65,7 @@ export default function ProductDesignHeroSection() {
             className="mt-9"
           >
             <ContactCTA className="inline-flex h-12 items-center justify-center rounded-full bg-primary-pink px-8 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(211,40,122,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-pink/90">
-              Get in touch
+              Contact Us
             </ContactCTA>
           </motion.div>
         </div>

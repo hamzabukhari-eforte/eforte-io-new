@@ -14,7 +14,7 @@ export default function StaffAugmentationHeroSection() {
     <section className="relative flex min-h-[760px] flex-col justify-center overflow-hidden bg-default pt-28 pb-20 md:min-h-screen md:pt-36">
       <div className="absolute inset-0">
         <Image
-          src="/assets/images/industry/working.jpg"
+          src="/assets/images/package/studios/staff-augmentation-studio-hero-diagram.svg"
           alt=""
           fill
           priority

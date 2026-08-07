@@ -40,6 +40,9 @@ export const salesMarketingDomain: AiWorkflowDomain = {
     "Proposal & quote generation",
     "Pipeline forecasting",
   ],
+  diagramSrc:
+    "/assets/images/package/business-domains/sales-marketing-revenue-workflows.svg",
+  diagramAlt: "Sales and marketing agentic revenue workflow diagram",
   pillars: {
     agenticOrchestration: "Planner → Execution → Intelligence → Governance",
     velocityAi: "Reusable revenue acceleration playbooks.",

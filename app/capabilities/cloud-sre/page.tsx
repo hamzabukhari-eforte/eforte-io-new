@@ -2,6 +2,7 @@ import {
   CloudSreAcceleratorsSection,
   CloudSreApproachSection,
   CloudSreAwsPartnerSection,
+  CloudSreFaqSection,
   CloudSreHeroSection,
   CloudSreInsightsSection,
   CloudSreProvidersSection,
@@ -30,6 +31,7 @@ export default function CloudSrePage() {
       <CloudSreAcceleratorsSection />
       <CloudSreSuccessStoriesSection />
       <CloudSreInsightsSection />
+      <CloudSreFaqSection />
     </main>
   );
 }

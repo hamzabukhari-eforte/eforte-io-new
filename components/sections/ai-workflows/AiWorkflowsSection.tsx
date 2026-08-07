@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import type { AiWorkflowDomain } from "@/data/ai-workflows";
 import AiWorkflowsReveal from "./AiWorkflowsReveal";
 import styles from "./aiWorkflows.module.css";
@@ -24,6 +25,22 @@ export default function AiWorkflowsSection({
           <p className={styles.workflowsHeadLabel}>Capabilities in action</p>
           <h2>The Workflows</h2>
         </AiWorkflowsReveal>
+
+        {domain.diagramSrc ? (
+          <AiWorkflowsReveal
+            className={styles.workflowDiagram}
+            direction="bottom"
+            duration={400}
+          >
+            <Image
+              src={domain.diagramSrc}
+              alt={domain.diagramAlt ?? `${domain.label} workflow diagram`}
+              width={1200}
+              height={900}
+              className={styles.workflowDiagramImage}
+            />
+          </AiWorkflowsReveal>
+        ) : null}
 
         {domain.workflows.map((workflow, index) => (
           <AiWorkflowsReveal

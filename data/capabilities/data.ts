@@ -61,6 +61,19 @@ export const dataStudioTabs = [
   },
 ] as const;
 
+export const dataProcessMiner = {
+  name: "eForte Process Miner™",
+  tagline: "Intelligent workflow analysis",
+  description:
+    "Before building new pipelines, we need to understand how data actually moves through your organization today: not how the org chart says it should. eForte Process Miner™ is an intelligent workflow analysis engine that maps your real data flows, surfacing bottlenecks, redundant steps, and undocumented workarounds that traditional discovery interviews miss.",
+  benefits: [
+    "Maps real, not assumed, workflows: based on actual system activity",
+    "Surfaces hidden inefficiencies: before they get baked into new pipelines",
+    "Reusable across engagements: insights carry forward as your systems evolve",
+    "Feeds directly into automation design: a shared input for our Data and AI Studios",
+  ],
+};
+
 export const dataServices = [
   {
     id: "platform",
@@ -171,6 +184,19 @@ export const dataAcceleratorGroups = [
 ];
 
 export const dataSuccessStories = [
+  {
+    id: "harrow-bay",
+    brand: "HARROW BAY RETAIL GROUP",
+    title: "Unifying five disconnected data warehouses for Harrow Bay Retail Group",
+    paragraphs: [
+      "Harrow Bay Retail Group had five business units running on five separate data warehouses, making company-wide reporting a multi-day manual exercise prone to conflicting numbers. We designed and built a unified data architecture with clear governance and lineage, giving every business unit a single, trusted source of truth.",
+      "Outcomes so far: reporting time cut from 3 days to same-day, a 71% reduction in data quality incidents, a single source of truth adopted across all business units, and real-time dashboards replacing monthly static reports.",
+    ],
+    tags: ["Data architecture", "Governance & lineage", "Retail", "Unified reporting"],
+    cardHeading: "A single source of truth across every business unit",
+    imageSrc: "/assets/images/package/studios/harrow-bay-retail-case.svg",
+    imageAlt: "Harrow Bay Retail Group unified data platform case study",
+  },
   {
     id: "avant",
     brand: "AVANT",

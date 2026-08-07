@@ -64,10 +64,30 @@ export type StudioMidCtaContent = {
   ctaLabel: string;
 };
 
+/** Proprietary eForte technology callout (e.g. eForte Connect™, Legacy Bridge™) */
+export type StudioProprietaryTech = {
+  id: string;
+  /** Display name, e.g. "eForte Connect™" */
+  name: string;
+  tagline?: string;
+  description: string;
+  benefits: string[];
+};
+
+export type StudioFaq = {
+  question: string;
+  answer: string;
+};
+
 export type StudioPageContent = {
   slug: string;
   accent: StudioAccentId;
   hero: StudioHeroContent;
   features: StudioFeature[];
+  /** Optional proprietary technology callouts, rendered before FAQs */
+  proprietaryTech?: StudioProprietaryTech[];
+  /** Optional FAQs, rendered before the mid-page CTA */
+  faqs?: StudioFaq[];
+  faqsSubtitle?: string;
   midCta: StudioMidCtaContent;
 };

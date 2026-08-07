@@ -8,3 +8,4 @@ export { default as CloudSreSolutionsSection } from "./CloudSreSolutionsSection"
 export { default as CloudSreAcceleratorsSection } from "./CloudSreAcceleratorsSection";
 export { default as CloudSreSuccessStoriesSection } from "./CloudSreSuccessStoriesSection";
 export { default as CloudSreInsightsSection } from "./CloudSreInsightsSection";
+export { default as CloudSreFaqSection } from "./CloudSreFaqSection";

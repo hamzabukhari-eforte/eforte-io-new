@@ -1,19 +1,33 @@
 export const AI_ACCENT = "#D3287A";
 
 export const aiCaseStudy = {
-  title: "AI solutions in action: Real-world implementations",
+  title: "AI in action: Real-world implementation",
   subtitle:
-    "Building an LLM solution for a leading US educational institution",
+    "Building an agentic clinical documentation assistant for Thornfield Health Network",
   paragraphs: [
-    "eForte developed a large language model to let the organization query complex information with natural language. This enterprise-grade LLM empowers teams with deep, custom insights at a fraction of the time and cost of traditional BI tools.",
+    "Thornfield Health Network, a mid-sized regional healthcare provider, had clinicians spending nearly a third of every shift on documentation instead of patient care. We built an agentic assistant that listens to clinical conversations, drafts structured notes in real time, flags missing information, and routes anything ambiguous to a human for review before it touches the record.",
   ],
   outcomesLabel: "Outcomes achieved so far include",
   outcomes: [
-    "Fast access to business insights and critical organizational knowledge using natural language.",
-    "Broader data accessibility by removing technical barriers such as the need for SQL.",
-    "Enterprise-level security to protect operations and build stakeholder trust.",
+    "61% reduction in average clinician documentation time.",
+    "44% fewer coding and documentation errors.",
+    "Deployed across 12 facilities within 90 days.",
+    "Clinician satisfaction scores up 33% post-rollout.",
   ],
-  diagramSrc: "/assets/images/capabilities/ai/solution-in-action.svg",
+  diagramSrc: "/assets/images/package/studios/thornfield-health-case.svg",
+};
+
+export const aiCognitiveGateway = {
+  name: "eForte Cognitive Gateway™",
+  tagline: "AI reasoning for brittle automation",
+  description:
+    "Standard robotic process automation is fast but brittle: it breaks the moment a process deviates from the script. eForte Cognitive Gateway™ is a decision-making layer that sits between your existing automation and your enterprise data, adding AI reasoning exactly where rules-based automation runs out of road. Rather than replacing your current RPA investment, it makes it smarter: handling exceptions, judgment calls, and edge cases that used to require a person to stop the process and step in.",
+  benefits: [
+    "Explainable decisions: every judgment call comes with a reasoning trail your team can audit",
+    "Works with your existing automation: layers onto current RPA rather than requiring a rebuild",
+    "Enterprise-grade data privacy: sensitive data never leaves your governed environment",
+    "Continuously improves: learns from outcomes and human corrections over time",
+  ],
 };
 
 export const aiQbricksFeatures = [

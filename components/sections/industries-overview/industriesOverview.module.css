@@ -62,12 +62,26 @@
 }
 
 /*Hero*/
-.hero{ background: var(--ind-black) url("/assets/images/hero.jpg"); background-position: left calc(50% + 210px) top 50%; background-size: 1500px auto; background-repeat: no-repeat; height: 850px; position: relative; z-index: 50; color: var(--ind-white); overflow: hidden; }
-.hero .text{ max-width: 700px; padding-top: 140px; }
-.hero .text .title{ line-height: 1.1; font-weight: 600; margin-bottom: 30px; font-size: 62px; }
+.hero{
+  background: var(--ind-black) url("/assets/images/package/industries/industries-landing-hero.svg");
+  background-position: right center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  height: 560px;
+  min-height: 480px;
+  max-height: 62vh;
+  position: relative;
+  z-index: 50;
+  color: var(--ind-white);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.hero .text{ max-width: 640px; padding-top: 72px; padding-bottom: 40px; }
+.hero .text .title{ line-height: 1.12; font-weight: 600; margin-bottom: 18px; font-size: clamp(2rem, 4vw, 2.75rem); }
 .hero .text .title span{ display: block; }
-.hero .text .subtitle{ line-height: 1.6; font-size: 18px; margin-bottom: 30px; font-weight: 600; }
-.hero .text .description{ line-height: 1.6; font-size: 16px; margin-bottom: 30px; font-weight: 300; }
+.hero .text .subtitle{ line-height: 1.55; font-size: 16px; margin-bottom: 16px; font-weight: 600; }
+.hero .text .description{ line-height: 1.55; font-size: 15px; margin-bottom: 0; font-weight: 300; }
 
 /* Why eForte */
 .why-eforte-boxes{ background: var(--ind-black); color: var(--ind-white); padding: 100px 0 140px; position: relative; }
@@ -202,9 +216,10 @@
 @media screen and (max-width: 1280px){
 
     /* Hero */
-    .hero{ height: 740px; overflow: hidden; }
-    .hero .text .description{ margin-bottom: 40px; }
-    .hero .text .subtitle{ font-size: 16px; }
+    .hero{ height: 480px; max-height: none; min-height: 420px; overflow: hidden; background-size: cover; background-position: center right; }
+    .hero .text{ padding-top: 88px; padding-bottom: 32px; }
+    .hero .text .description{ margin-bottom: 0; }
+    .hero .text .subtitle{ font-size: 15px; }
     
     /* Why eForte */
     .why-eforte-boxes .ai-agents li .box-content{ padding: 30px; }
@@ -236,12 +251,12 @@
 @media screen and (max-width: 1024px){
 
     /* Hero */
-    .hero{ height: 750px; background-size: cover; }
-    .hero .text{ max-width: 100%; position: relative; z-index: 2; }
-    .hero .text .title{ font-size: 36px; }
+    .hero{ height: auto; min-height: 420px; max-height: none; background-size: cover; background-position: center top; padding-bottom: 48px; }
+    .hero .text{ max-width: 100%; position: relative; z-index: 2; padding-top: 100px; padding-bottom: 24px; }
+    .hero .text .title{ font-size: 32px; }
     .hero .text .title span{ display: inline; }
     .hero .text .description{ font-size: 14px; max-width: 100%; }
-    .hero .text .subtitle{ font-size: 15px; }
+    .hero .text .subtitle{ font-size: 14px; }
 
     /* Why eForte */
     .why-eforte-boxes{ padding: 0 0 80px; }

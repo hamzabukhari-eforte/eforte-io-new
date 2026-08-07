@@ -11,7 +11,7 @@ export default function CloudSreHeroSection() {
     <section className="relative flex min-h-[760px] flex-col justify-center overflow-hidden bg-default pt-28 pb-20 md:min-h-screen md:pt-36">
       <div className="absolute inset-0">
         <Image
-          src="/assets/images/industry/cloud.jpg"
+          src="/assets/images/package/studios/cloud-devops-studio-hero-diagram.svg"
           alt=""
           fill
           priority
@@ -40,7 +40,8 @@ export default function CloudSreHeroSection() {
             transition={{ duration: 0.55, delay: 0.08 }}
             className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[48px]"
           >
-            Cloud Services and DevOps Engineering
+            eForte&apos;s Cloud, SRE & DevOps Studio keeps your systems fast,
+            reliable, and ready to scale
           </motion.h1>
 
           <motion.p
@@ -49,9 +50,13 @@ export default function CloudSreHeroSection() {
             transition={{ duration: 0.55, delay: 0.16 }}
             className="mt-6 max-w-2xl text-base leading-7 text-white/82 md:text-lg"
           >
-            With the eForte Cloud, SRE, and DevOps Studio, you can embrace
-            cloud-native solutions to accelerate development while ensuring
-            environments that are secure, reliable, and highly scalable.
+            Every AI system, application, and data pipeline we build needs
+            somewhere reliable to run. Our Cloud, SRE & DevOps Studio designs
+            cloud infrastructure, automates deployment pipelines, and keeps
+            production systems healthy — so the technology we build together
+            stays fast and available as usage grows. We treat reliability as
+            a discipline, not an afterthought: monitoring, incident response,
+            and infrastructure-as-code built in from day one.
           </motion.p>
 
           <motion.div

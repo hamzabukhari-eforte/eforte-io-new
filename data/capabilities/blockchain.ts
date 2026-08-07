@@ -5,19 +5,33 @@ export const blockchainContent: StudioPageContent = {
   slug: "blockchain",
   accent: "purple",
   hero: {
-    label: "Blockchain Development Services",
-    titleBefore:
-      "Cutting-edge technologies and frameworks to deliver secure and efficient ",
-    titleHighlight: "blockchain",
-    titleAfter: " solutions",
+    label: "Blockchain",
+    titleBefore: "eForte's Blockchain Studio builds ",
+    titleHighlight: "trust and traceability",
+    titleAfter: " into systems that need it",
     description:
-      "We specialize in crafting decentralized solutions that enhance strategic business value, promoting efficiency, security, and openness.",
+      "Not every problem needs a blockchain, and we'll tell you when it doesn't. But for systems that need an immutable audit trail, decentralized trust between parties, or verifiable provenance, our Blockchain Studio designs and builds solutions that fit the actual problem: not the hype cycle. We work case by case, from smart contract development to full decentralized application builds, integrated cleanly with the traditional systems around them.",
     brandsLabel: "Brands that trust us",
     brands: studioTrustedBrands,
-    graphicSrc: "/assets/images/capabilities/blockchain/studio-mark.svg?v=3",
+    graphicSrc:
+      "/assets/images/package/studios/blockchain-studio-hero-diagram.svg",
     ctaLabel: "Contact Us",
   },
   features: [
+    {
+      id: "case-study",
+      number: "In action",
+      title: "Building a supply chain provenance system for Marrow Creek Foods",
+      description:
+        "Marrow Creek Foods needed to prove ingredient sourcing claims to retail partners and regulators but had no verifiable record beyond paper documentation and supplier assurances. We built a blockchain-based provenance system that records key supply chain checkpoints immutably, giving retail partners direct, verifiable visibility. Outcomes so far: 100% of tracked ingredients independently verifiable end-to-end, retail partner audit time reduced by 64%, 3 new retail partnerships secured citing verified sourcing, and zero disputed provenance claims since launch.",
+      image: "/assets/images/package/studios/marrow-creek-foods-case.svg",
+      imageAlt: "Marrow Creek Foods supply chain provenance case study",
+      theme: "dark",
+      layout: "row",
+      imageSide: "right",
+      mediaInset: true,
+      cardKind: "text",
+    },
     {
       id: "blockchain-dev",
       number: "01",
@@ -199,11 +213,34 @@ export const blockchainContent: StudioPageContent = {
       cardKind: "media",
     },
   ],
+  faqs: [
+    {
+      question: "How do we know if blockchain is the right fit for our problem?",
+      answer:
+        "We start with a feasibility assessment. If a well-designed traditional database solves your problem just as well, we'll tell you: blockchain is worth the added complexity only when multi-party trust or immutable verification is genuinely required.",
+    },
+    {
+      question: "Do you build public or private blockchain solutions?",
+      answer:
+        "Both, depending on your use case: private/permissioned chains for controlled business networks, public chains where open verification is the point.",
+    },
+    {
+      question: "Can blockchain systems integrate with our existing traditional infrastructure?",
+      answer:
+        "Yes, we design blockchain components to integrate with existing databases and applications rather than requiring your whole system to move on-chain.",
+    },
+    {
+      question: "What industries is this most relevant for?",
+      answer:
+        "Supply chain and provenance, financial services, and any multi-party process requiring an auditable, tamper-evident record are the strongest fits we typically see.",
+    },
+  ],
+  faqsSubtitle: "Frequently asked questions about our Blockchain services",
   midCta: {
-    titleBefore: "Start your journey with our ",
-    titleHighlight: "Blockchain Studio.",
+    titleBefore: "Let's build ",
+    titleHighlight: "trust into your system.",
     description:
-      "Partner with us to design, build, and scale secure decentralized products with confidence.",
+      "We work case by case, from smart contract development to full decentralized application builds, integrated cleanly with the traditional systems around them.",
     ctaLabel: "Contact Us",
   },
 };

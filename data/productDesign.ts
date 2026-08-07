@@ -109,6 +109,19 @@ export const productDesignProcess: ProductDesignProcessItem[] = [
 
 export const productDesignShowcase: ProductDesignShowcaseItem[] = [
   {
+    id: "cascade-utilities",
+    brand: "Cascade Utilities Group",
+    title: "Redesigning the field technician app for Cascade Utilities Group",
+    paragraphs: [
+      "Cascade Utilities Group's field technicians were logging jobs through a clunky legacy app that required constant office callbacks to resolve confusion. We ran on-site research with technicians, rebuilt the app around their actual workflow, and simplified job logging to a handful of guided steps.",
+      "Outcomes so far: 38% reduction in average task completion time, 52% fewer support tickets related to the field app, 96% technician adoption within the first month, and zero required retraining sessions post-launch.",
+    ],
+    image: "/assets/images/package/studios/cascade-utilities-case.svg",
+    imageAlt: "Cascade Utilities Group field technician app redesign",
+    background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
+    href: "/contact-us",
+  },
+  {
     id: "health",
     brand: "Health Experience",
     title: "Empowering better health experiences",

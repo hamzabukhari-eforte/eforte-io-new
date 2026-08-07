@@ -11,7 +11,7 @@ export default function DataHeroSection() {
     <section className="relative flex min-h-[760px] flex-col justify-center overflow-hidden bg-default pt-28 pb-20 md:min-h-screen md:pt-36">
       <div className="absolute inset-0">
         <Image
-          src="/assets/images/industry/bi.jpg"
+          src="/assets/images/package/studios/data-studio-hero-diagram.svg"
           alt=""
           fill
           priority
@@ -40,7 +40,8 @@ export default function DataHeroSection() {
             transition={{ duration: 0.55, delay: 0.08 }}
             className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[48px]"
           >
-            Unlock the full value of your data with our data engineering services
+            eForte&apos;s Data Studio builds the Foundational Data Layer your
+            AI and automation depend on
           </motion.h1>
 
           <motion.p
@@ -49,10 +50,13 @@ export default function DataHeroSection() {
             transition={{ duration: 0.55, delay: 0.16 }}
             className="mt-6 max-w-2xl text-base leading-7 text-white/82 md:text-lg"
           >
-            eForte&apos;s Data Studio helps you understand your data, improve its
-            quality, and turn it into a driver of growth and innovation. From
-            discovery to delivery, the team ensures your data assets are
-            reliable, secure, and ready to power AI and analytics.
+            AI is only as good as the data underneath it. Our Data Studio
+            builds the Foundational Data Layer — clean, connected, governed
+            data infrastructure — that makes Velocity AI and Agentic
+            Orchestration possible in the first place. Whether you&apos;re
+            unifying scattered systems, building real-time pipelines, or
+            preparing data for AI agents to reason over, we treat data
+            architecture as the foundation it is, not an afterthought.
           </motion.p>
 
           <motion.div

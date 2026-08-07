@@ -20,6 +20,19 @@ type SuccessStory = {
 
 const stories: SuccessStory[] = [
   {
+    id: "northgate-financial",
+    title:
+      "Migrating and stabilizing infrastructure for Northgate Financial Services",
+    paragraphs: [
+      "Northgate Financial Services was running critical trading-adjacent systems on aging on-premises infrastructure with frequent unplanned outages. We migrated their infrastructure to the cloud with full infrastructure-as-code, automated CI/CD pipelines, and 24/7 monitoring with proactive alerting.",
+      "Outcomes so far: 99.98% uptime achieved post-migration (up from 97.2%), deployment frequency increased from monthly to daily, mean time to recovery reduced by 78%, and a 34% reduction in infrastructure costs through right-sizing.",
+    ],
+    tags: ["Cloud migration", "Infrastructure as code", "24/7 monitoring", "Financial services"],
+    imageSrc: "/assets/images/package/studios/northgate-financial-case.svg",
+    imageAlt: "Northgate Financial Services cloud migration case study",
+    tagClass: "bg-primary-pink/12 text-primary-pink",
+  },
+  {
     id: "cloud-migration",
     title:
       "Migrating a global platform to AWS with zero-downtime cutover",

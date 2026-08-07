@@ -11,23 +11,19 @@ import InfiniteCarousel from "@/components/sections/InfiniteCarousel";
 import { defaultTrustedByLogos } from "@/data/trustedByLogos";
 
 const rotatingImages = [
-  { src: "/assets/images/case-study/krank-banner.png", alt: "Krank platform" },
   {
-    src: "/assets/images/case-study/oddysee-banner.png",
-    alt: "Oddysee platform",
+    src: "/assets/images/package/industries/health-wellbeing-industry-hero.svg",
+    alt: "Health and wellbeing solutions",
   },
-  {
-    src: "/assets/images/case-study/invesment-banner.png",
-    alt: "Investment Markets platform",
-  },
-  { src: "/assets/images/case-study/prism-banner.png", alt: "Prism platform" },
-  {
-    src: "/assets/images/case-study/scheduling1.png",
-    alt: "Scheduling engine",
-  },
-  { src: "/assets/images/case-study/sellsMart4.png", alt: "Sellsmart POS" },
-  { src: "/assets/images/case-study/Validatr.png", alt: "Validatr platform" },
 ];
+// Previous rotating case-study banners preserved for future reuse:
+// { src: "/assets/images/case-study/krank-banner.png", alt: "Krank platform" },
+// { src: "/assets/images/case-study/oddysee-banner.png", alt: "Oddysee platform" },
+// { src: "/assets/images/case-study/invesment-banner.png", alt: "Investment Markets platform" },
+// { src: "/assets/images/case-study/prism-banner.png", alt: "Prism platform" },
+// { src: "/assets/images/case-study/scheduling1.png", alt: "Scheduling engine" },
+// { src: "/assets/images/case-study/sellsMart4.png", alt: "Sellsmart POS" },
+// { src: "/assets/images/case-study/Validatr.png", alt: "Validatr platform" },
 
 const ROTATE_INTERVAL_MS = 3500;
 

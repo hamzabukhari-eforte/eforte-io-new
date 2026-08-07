@@ -50,31 +50,41 @@ export const sitemapGroups: SitemapGroup[] = [
       },
       { label: "Quality Assurance", href: "/capabilities/quality-assurance" },
       {
-        label: "Embedded Engineering",
-        href: "/capabilities/embedded-engineering",
-      },
-      {
         label: "Product Management",
         href: "/capabilities/product-management",
       },
       { label: "Blockchain", href: "/capabilities/blockchain" },
+      {
+        label: "Staff Augmentation: Dedicated Resource Hiring",
+        href: "/capabilities/staff-augmentation",
+      },
+      // Embedded Engineering preserved for future reuse (not in mega menu DOC):
+      // {
+      //   label: "Embedded Engineering",
+      //   href: "/capabilities/embedded-engineering",
+      // },
     ],
   },
   {
     title: "Industries",
     links: [
-      { label: "Banking", href: "/industries/banking" },
-      { label: "Financial Services", href: "/industries/financial-services" },
       { label: "Health & Wellbeing", href: "/industries/healthcare" },
+      { label: "Finance", href: "/industries/financial-services" },
       { label: "Insurance", href: "/industries/insurance" },
-      {
-        label: "Media & Entertainment",
-        href: "/industries/media-entertainment",
-      },
-      {
-        label: "Hi-Tech & Semiconductors",
-        href: "/industries/embedded-engineering",
-      },
+      { label: "Automobile", href: "/industries/automobile" },
+      { label: "Heavy Industries", href: "/industries/heavy-industries" },
+      { label: "BPO & Shared Services", href: "/industries/bpo-shared-services" },
+      { label: "Hospitality", href: "/industries/hospitality" },
+      // Legacy industries preserved for future reuse:
+      // { label: "Banking", href: "/industries/banking" },
+      // {
+      //   label: "Media & Entertainment",
+      //   href: "/industries/media-entertainment",
+      // },
+      // {
+      //   label: "Hi-Tech & Semiconductors",
+      //   href: "/industries/embedded-engineering",
+      // },
     ],
   },
   {

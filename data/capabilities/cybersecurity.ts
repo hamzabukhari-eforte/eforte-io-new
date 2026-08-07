@@ -2,11 +2,12 @@ export const CYBER_ACCENT = "#D3287A";
 
 export const cyberHero = {
   eyebrow: "CYBERSECURITY",
-  title: "Building the guardrails for innovation — powered by AI",
+  title: "eForte's Cybersecurity Studio protects the systems everything else depends on",
   description:
-    "eForte is a next-generation service provider with extensive expertise in building cybersecurity programs from the ground up, tailored to the needs of modern enterprises.",
-  ctaLabel: "Get in touch",
-  image: "/assets/images/capabilities/cybersecurity-hero.jpg",
+    "As AI systems gain the ability to act, not just recommend, security becomes even more critical: a compromised agent isn't just a data risk, it's an operational one. Our Cybersecurity Studio assesses, hardens, and monitors your systems, applications, and infrastructure so the technology you rely on stays trustworthy. We build security into the design of every engagement across eForte's Studios, rather than bolting it on at the end.",
+  ctaLabel: "Contact Us",
+  image:
+    "/assets/images/package/studios/cybersecurity-studio-hero-diagram.svg",
 };
 
 export const cyberAiSecurityIntro = {
@@ -234,6 +235,19 @@ export const cyberCertifications = {
 };
 
 export const cyberSuccessStories = [
+  {
+    id: "redcliff-pharma",
+    title:
+      "Hardening infrastructure and closing compliance gaps for Redcliff Pharmaceuticals",
+    paragraphs: [
+      "Redcliff Pharmaceuticals needed to close security gaps ahead of a major regulatory audit while continuing normal operations. We ran a full security assessment, remediated critical vulnerabilities, and implemented continuous monitoring aligned to their compliance requirements.",
+      "Outcomes so far: 100% of critical vulnerabilities remediated pre-audit, zero findings in the subsequent regulatory audit, 24/7 threat monitoring implemented across all production systems, and incident response time reduced from days to under 2 hours.",
+    ],
+    tags: ["Security assessment", "Compliance readiness", "24/7 monitoring"],
+    imageSrc: "/assets/images/package/studios/redcliff-pharma-case.svg",
+    imageAlt: "Redcliff Pharmaceuticals security hardening case study",
+    tagClass: "bg-primary-pink/12 text-primary-pink",
+  },
   {
     id: "stride",
     title: "eForte's security consulting with Stride Funding",

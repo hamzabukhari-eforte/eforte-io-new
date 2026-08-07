@@ -13,7 +13,7 @@ export default function AiWorkflowsOverviewHeroSection() {
   return (
     <section className={styles.hero}>
       <Image
-        src="/assets/images/hero.jpg"
+        src="/assets/images/package/business-domains/business-domains-hub-hero.svg"
         alt=""
         fill
         priority

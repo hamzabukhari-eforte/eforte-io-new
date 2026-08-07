@@ -3,6 +3,7 @@ export { default as DataOverviewSection } from "./DataOverviewSection";
 export { default as DataPartnersSection } from "./DataPartnersSection";
 export { default as DataDatabricksPartnerSection } from "./DataDatabricksPartnerSection";
 export { default as DataGovernanceSection } from "./DataGovernanceSection";
+export { default as DataProcessMinerSection } from "./DataProcessMinerSection";
 export { default as DataServicesSection } from "./DataServicesSection";
 export { default as DataAcceleratorsSection } from "./DataAcceleratorsSection";
 export { default as DataCaseStudySection } from "./DataCaseStudySection";

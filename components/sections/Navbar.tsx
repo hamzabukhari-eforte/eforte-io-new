@@ -9,7 +9,6 @@ import { useLenisControl } from "@/components/providers/SmoothScrollProvider";
 import { cn } from "@/lib/utils";
 import Container from "@/components/atoms/Container";
 import ContactCTA from "@/components/atoms/ContactCTA";
-import { caseStudies } from "@/data/caseStudies";
 import {
   HiMenu,
   HiX,
@@ -114,11 +113,45 @@ function getMobileMenuColumns(
   );
 }
 
-const impactStudiesMenuItems: MegaMenuItem[] = caseStudies.map((cs) => ({
-  title: cs.introSection.title,
-  description: cs.introSection.description,
-  href: `/case-studies/${cs.slug}`,
-}));
+/** Featured Impact Studies from mega menu DOC (4August2026). Full list lives on /impact-studies. */
+const impactStudiesMenuItems: MegaMenuItem[] = [
+  {
+    title: "M&A Process Automation for Iberian Ventures",
+    description:
+      "A mid-sized M&A advisory firm in Lisbon, Portugal managing 30+ active buy-side mandates and tracking 500+ potential acquisition targets.",
+    href: "/case-studies/iberian-ventures",
+  },
+  {
+    title: "Trade Process Automation for GlobalTrade Solutions",
+    description:
+      "An international trading house managing 1,200+ annual transactions across multiple commodity categories with a network of 350+ suppliers.",
+    href: "/case-studies/globaltrade-solutions",
+  },
+  {
+    title: "Insurance Claims Processing Automation for Allied Insurance",
+    description:
+      "A regional insurance provider processing 50,000+ claims annually across auto, home, and commercial lines.",
+    href: "/case-studies/allied-insurance",
+  },
+  {
+    title: "Clinical Trial Data Management for BioResearch Labs",
+    description:
+      "A pharmaceutical research organization conducting multiple Phase II and III clinical trials across 40+ global research sites.",
+    href: "/case-studies/bioresearch-labs",
+  },
+  {
+    title: "Accounts Payable Automation for Global Manufacturing Corp",
+    description:
+      "Automating accounts payable across regions with agentic invoice intelligence and ERP integration.",
+    href: "/case-studies/global-manufacturing-corp",
+  },
+  {
+    title: "Tach Ignite",
+    description:
+      "TachIgnite is a Day Zero startup accelerator focused on transforming raw ideas into market-ready innovations.",
+    href: "/case-studies/tachignite",
+  },
+];
 
 const navLinks: NavLink[] = [
   { id: "ai-pillars", label: "AI Pillars", href: "#ai-pillars" },
@@ -247,37 +280,54 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             href: "/capabilities/cloud-sre",
           },
           {
-            title: "Staff Augmentation - Dedicated Resource Hiring",
+            title: "Cybersecurity",
+            description:
+              "Secure SDLC, AI-driven cybersecurity, penetration testing, and AI security assessments.",
+            iconName: "shield-check",
+            iconColorClass: "bg-[#0f172a]",
+            href: "/capabilities/cybersecurity",
+          },
+          {
+            title: "Platform Engineering",
+            description:
+              "Scalable platforms, resilient infrastructure, API development, and efficient deployment strategies.",
+            iconName: "cog",
+            iconColorClass: "bg-[#1e3a8a]",
+            href: "/capabilities/platform-engineering",
+          },
+          {
+            title: "Quality Assurance",
+            description:
+              "AI-augmented testing, test automation, CI/CD integration, performance, load, and data testing.",
+            iconName: "check-circle",
+            iconColorClass: "bg-[#22c55e]",
+            href: "/capabilities/quality-assurance",
+          },
+          {
+            title: "Product Management",
+            description:
+              "Product strategy, lifecycle management, process optimization, and monetization consulting.",
+            iconName: "view-grid",
+            iconColorClass: "bg-[#2563eb]",
+            href: "/capabilities/product-management",
+          },
+          {
+            title: "Blockchain",
+            description:
+              "Smart contract development, decentralized applications, and blockchain system integration.",
+            iconName: "link",
+            iconColorClass: "bg-[#D348EA]",
+            href: "/capabilities/blockchain",
+          },
+          {
+            title: "Staff Augmentation: Dedicated Resource Hiring",
             description:
               "Accelerate delivery with dedicated AI, data, cloud, and engineering talent seamlessly embedded into your teams, eliminating hiring complexity and ramp-up time.",
             iconName: "user-group",
             iconColorClass: "bg-primary-pink",
             href: "/capabilities/staff-augmentation",
           },
-          // Legacy studios preserved for future reuse:
-          // {
-          //   title: "Cybersecurity",
-          //   description:
-          //     "Secure SDLC, AI powered cybersecurity, vCISO, penetration testing, AI security assessments.",
-          //   iconName: "shield-check",
-          //   iconColorClass: "bg-[#0f172a]",
-          //   href: "/capabilities/cybersecurity",
-          // },
-          // {
-          //   title: "Platform Engineering",
-          //   description: "Robust infrastructures, scalable APIs, efficient deployment.",
-          //   iconName: "cog",
-          //   iconColorClass: "bg-[#1e3a8a]",
-          //   href: "/capabilities/platform-engineering",
-          // },
-          // {
-          //   title: "Quality Assurance",
-          //   description:
-          //     "AI-augmented QA, test automation, CI/CD, load and performance testing, data testing.",
-          //   iconName: "check-circle",
-          //   iconColorClass: "bg-[#22c55e]",
-          //   href: "/capabilities/quality-assurance",
-          // },
+          // Embedded Engineering preserved for future reuse (not in mega menu DOC 4August2026):
           // {
           //   title: "Embedded Engineering",
           //   description:
@@ -286,66 +336,8 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           //   iconColorClass: "bg-[#7C4CFF]",
           //   href: "/capabilities/embedded-engineering",
           // },
-          // {
-          //   title: "Product Management",
-          //   description: "Product consulting, process management, monetization.",
-          //   iconName: "view-grid",
-          //   iconColorClass: "bg-[#2563eb]",
-          //   href: "/capabilities/product-management",
-          // },
-          // {
-          //   title: "Blockchain",
-          //   description: "Smart contracts, decentralized apps, blockchain integration.",
-          //   iconName: "link",
-          //   iconColorClass: "bg-[#D348EA]",
-          //   href: "/capabilities/blockchain",
-          // },
         ],
       },
-      // Legacy nested AI Workflows group preserved for future reuse:
-      // {
-      //   title: "AI Workflows",
-      //   items: [
-      //     {
-      //       title: "AI Workflows",
-      //       description:
-      //         "Where AI Meets Execution. We don't just build software; we engineer business outcomes. By fusing deep industry expertise with our Agentic Orchestration...",
-      //       tag: "Learn More",
-      //     },
-      //     {
-      //       title: "Customer Service & Support",
-      //       description:
-      //         "Autonomous Customer Service Workflows: AI agents route, respond, analyze sentiment, and continuously optimize customer interactions.",
-      //     },
-      //     {
-      //       title: "Sales & Marketing",
-      //       description:
-      //         "Agentic Revenue Workflows: AI agents qualify leads, generate proposals, and accelerate deal cycles.",
-      //     },
-      //     {
-      //       title: "Financial Operations",
-      //       description:
-      //         "Autonomous Financial Workflows: AI agents process invoices, detect fraud, and ensure continuous compliance.",
-      //     },
-      //     {
-      //       title: "Human Resources",
-      //       description:
-      //         "Agentic Talent Workflows: AI agents screen candidates, coordinate onboarding, and manage lifecycle tasks.",
-      //     },
-      //     {
-      //       title: "Operations & Compliance",
-      //       description:
-      //         "AI-Orchestrated Risk & Compliance Workflows: Autonomous monitoring and regulatory reporting with built-in governance.",
-      //     },
-      //     {
-      //       title: "Project Management & Data",
-      //       description:
-      //         "Intelligent Delivery & Data Workflows: AI agents allocate resources, track progress, and generate predictive insights.",
-      //       iconName: "link",
-      //       iconColorClass: "bg-[#D348EA]",
-      //     },
-      //   ],
-      // },
     ],
   },
   "ai-workflows": {
@@ -418,7 +410,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
     eyebrow: "Industries",
     title: "Our Industries",
     description:
-      "We partner with organizations across seven industries to deliver technology that drives measurable transformation, combining specialized domain knowledge with Velocity AI, Agentic Orchestration, and Foundational Data Layer.",
+      "eForte collaborates with industry leaders to deliver innovative technology and AI-driven solutions that accelerate transformation and produce measurable results.",
     columns: [
       {
         title: "Our Industries",
@@ -426,7 +418,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "Health & Wellbeing",
             description:
-              "Build patient first digital health experiences, from virtual care to connected wearables.",
+              "AI-driven healthcare solutions improving patient outcomes, operational efficiency, and personalized care.",
             iconName: "heart",
             iconColorClass: "bg-[#7C4CFF]",
             href: "/industries/healthcare",
@@ -434,7 +426,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "Finance",
             description:
-              "Modernize lending, payments, and banking with secure, AI driven financial infrastructure.",
+              "Intelligent AI and data platforms enabling smarter decisions, risk mitigation, and digital financial transformation.",
             iconName: "currency-dollar",
             iconColorClass: "bg-[#7C4CFF]",
             href: "/industries/financial-services",
@@ -442,7 +434,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "Insurance",
             description:
-              "Transform underwriting and claims with connected data and intelligent automation.",
+              "AI-powered automation and analytics streamlining underwriting, claims processing, and customer engagement.",
             iconName: "shield-check",
             iconColorClass: "bg-[#7C4CFF]",
             href: "/industries/insurance",
@@ -450,7 +442,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "Automobile",
             description:
-              "Power connected vehicles and smarter fleets with real time telemetry and AI diagnostics.",
+              "Advanced AI enabling connected vehicles, predictive maintenance, and intelligent manufacturing ecosystems.",
             iconName: "device-mobile",
             iconColorClass: "bg-[#7C4CFF]",
             href: "/industries/automobile",
@@ -458,7 +450,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "Heavy Industries",
             description:
-              "Keep plants running and workers safe with predictive maintenance and connected operations.",
+              "Industrial AI solutions driving predictive maintenance, operational excellence, and smart factory transformation.",
             iconName: "office-building",
             iconColorClass: "bg-[#7C4CFF]",
             href: "/industries/heavy-industries",
@@ -466,7 +458,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "BPO & Shared Services",
             description:
-              "Scale service delivery with intelligent automation and unified workforce data.",
+              "Agentic AI and automation enhancing service delivery, productivity, and scalable customer operations.",
             iconName: "user-group",
             iconColorClass: "bg-[#7C4CFF]",
             href: "/industries/bpo-shared-services",
@@ -474,7 +466,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
           {
             title: "Hospitality",
             description:
-              "Deliver guest experiences that convert and retain, powered by personalization at scale.",
+              "AI-powered personalization and operational intelligence elevating guest experiences and optimizing hospitality operations.",
             iconName: "badge-check",
             iconColorClass: "bg-[#7C4CFF]",
             href: "/industries/hospitality",
@@ -541,15 +533,6 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
       {
         title: "Case Studies",
         items: impactStudiesMenuItems,
-        // Manual replacement list preserved for future reuse:
-        // items: [
-        //   { title: "M&A Process Automation for Iberian Ventures", href: "/impact-studies" },
-        //   { title: "Trade Process Automation for GlobalTrade Solutions", href: "/impact-studies" },
-        //   { title: "Insurance Claims Processing Automation for Allied Insurance", href: "/impact-studies" },
-        //   { title: "Clinical Trial Data Management for BioResearch Labs", href: "/impact-studies" },
-        //   { title: "Accounts Payable Automation for Global Manufacturing Corp", href: "/impact-studies" },
-        //   { title: "Tach Ignite (Day Zero startup accelerator partnership)", href: "/impact-studies" },
-        // ],
       },
     ],
   },

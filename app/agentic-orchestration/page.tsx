@@ -5,6 +5,8 @@ import {
   AgenticOrchestrationPlatformFlowSection,
   AgenticOrchestrationPlatformSection,
   AgenticOrchestrationUseCasesSection,
+  AgenticOrchestrationMethodologySection,
+  AgenticOrchestrationCoreServicesSection,
 } from "@/components/sections/agentic-orchestration";
 import { VelocityAIInsightsSection } from "@/components/sections/velocity-ai";
 
@@ -17,6 +19,8 @@ export default function AgenticOrchestrationPage() {
       <AgenticOrchestrationPlatformFlowSection />
       <AgenticOrchestrationPlatformSection />
       <AgenticOrchestrationUseCasesSection />
+      <AgenticOrchestrationMethodologySection />
+      <AgenticOrchestrationCoreServicesSection />
       <VelocityAIInsightsSection />
       
     </main>

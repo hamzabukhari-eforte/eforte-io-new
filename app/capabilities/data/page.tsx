@@ -9,6 +9,7 @@ import {
   DataHeroSection,
   DataInsightsSection,
   DataPartnersSection,
+  DataProcessMinerSection,
   DataServicesSection,
 } from "@/components/sections/data";
 
@@ -23,6 +24,7 @@ export default function DataCapabilityPage() {
     <main className="min-h-screen bg-default text-white">
       <DataHeroSection />
       <DataGovernanceSection />
+      <DataProcessMinerSection />
       <DataPartnersSection />
       {/* Databricks Gold Partner section not in current document — preserved for future reuse */}
       {/* <DataDatabricksPartnerSection /> */}

@@ -40,6 +40,9 @@ export const financialOperationsDomain: AiWorkflowDomain = {
     "Expense automation",
     "Financial reporting",
   ],
+  diagramSrc:
+    "/assets/images/package/business-domains/financial-operations-workflows.svg",
+  diagramAlt: "Autonomous financial operations workflow diagram",
   pillars: {
     agenticOrchestration: "Execution → Intelligence → Governance → Optimization",
     velocityAi: "Pre-configured financial automation frameworks.",

@@ -22,6 +22,9 @@ export type AiWorkflowDomain = {
   workflows: AiWorkflowItem[];
   workflowChips: string[];
   pillars: AiWorkflowPillars;
+  /** Workflow diagram from the AI-Driven Business Domains package */
+  diagramSrc?: string;
+  diagramAlt?: string;
 };
 
 export type AiWorkflowOverviewCard = {

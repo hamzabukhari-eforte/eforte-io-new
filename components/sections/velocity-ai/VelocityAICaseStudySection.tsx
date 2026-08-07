@@ -10,9 +10,9 @@ import { section, typography } from "./layout";
 const CASE_STUDY_IMG = "/assets/images/velocity-ai/case-study-myrow.png";
 
 const stats = [
-  { value: "+50%", label: "Improvement in key DORA metrics", color: "text-[#2563EB]", delay: 0 },
-  { value: "100%", label: "Copy line of code released before merging", color: "text-purple-400", delay: 0.1 },
-  { value: "30%", label: "Faster new innovation cycles", color: "text-emerald-400", delay: 0.2 },
+  { value: "+55%", label: "Boost in DORA metrics, accelerating feature delivery", color: "text-[#2563EB]", delay: 0 },
+  { value: "100%", label: "Code review coverage, eliminating unreviewed merges", color: "text-purple-400", delay: 0.1 },
+  { value: "-35%", label: "Shorter incident resolution cycles", color: "text-emerald-400", delay: 0.2 },
 ];
 
 const statPositions = [
@@ -35,10 +35,10 @@ export default function VelocityAICaseStudySection() {
       >
         <span className="text-xs font-bold tracking-widest text-[#2563EB] uppercase">Case Study</span>
         <h2 className="text-3xl md:text-4xl font-bold mt-4 text-white">
-          Myrow transforms its development processes
+          Velocity AI in action: AquaFit accelerates software delivery and performance insights
         </h2>
         <p className="text-gray-400 text-sm md:text-base mt-3 md:mt-4 max-w-2xl mx-auto leading-relaxed">
-          Myrow&apos;s mission is to transform traditional rowing workouts with expert-led classes and real-time performance analytics.
+          AquaFit aims to revolutionize smart fitness devices by providing real-time workout analytics, personalized coaching, and seamless app experiences for its users.
         </p>
       </motion.div>
 

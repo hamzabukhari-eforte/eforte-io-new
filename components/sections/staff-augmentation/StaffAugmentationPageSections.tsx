@@ -6,6 +6,7 @@ import {
 } from "@/components/sections/studio-shared";
 import { staffAugmentationContent } from "@/data/capabilities/staffAugmentation";
 import StaffAugmentationHeroSection from "./StaffAugmentationHeroSection";
+import StaffAugmentationFaqSection from "./StaffAugmentationFaqSection";
 
 export default function StaffAugmentationPageSections() {
   const { valuesIntro, values, process } = staffAugmentationContent;
@@ -19,6 +20,7 @@ export default function StaffAugmentationPageSections() {
         values={values}
       />
       <StudioProcessSection items={process} />
+      <StaffAugmentationFaqSection />
       {/* Closing CTA banner removed — layout already covers get-in-touch */}
       {/* <StudioContactBanner content={closingCta} /> */}
     </>

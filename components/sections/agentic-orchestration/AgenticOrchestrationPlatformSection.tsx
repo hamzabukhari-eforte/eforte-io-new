@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -223,6 +224,21 @@ export default function AgenticOrchestrationPlatformSection() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          className="relative mt-14 aspect-[1200/500] w-full max-w-4xl md:mt-20"
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+        >
+          <Image
+            src="/assets/images/package/ai-pillars/security-extensibility-portability.svg"
+            alt="Three pillars of the eForte Agentic Platform: Security, Extensibility, Portability"
+            fill
+            sizes="(max-width: 1024px) 100vw, 900px"
+            className="object-contain"
+          />
+        </motion.div>
       </div>
     </section>
   );

@@ -6,17 +6,31 @@ export const platformEngineeringContent: StudioPageContent = {
   accent: "blue",
   hero: {
     label: "Platform Engineering",
-    titleBefore: "Maximize performance, security, and scalability with our ",
-    titleHighlight: "Platform Engineering Studio",
+    titleBefore: "eForte's Platform Engineering Studio builds the internal ",
+    titleHighlight: "platforms your teams build on top of",
     description:
-      "From building robust software foundations to optimizing existing systems we'll deliver tailored solutions for your business.",
+      "As your product and engineering teams grow, everyone building on shared infrastructure ad hoc starts to slow everyone down. Our Platform Engineering Studio designs internal developer platforms, APIs, and shared services that let your teams move fast without reinventing the same infrastructure decisions project after project. We build platforms that make the rest of eForte's work, and your own team's future work, faster to ship and easier to maintain.",
     brandsLabel: "Brands that trust us",
     brands: studioTrustedBrands,
     graphicSrc:
-      "/assets/images/capabilities/platform-engineering/studio-mark.svg",
+      "/assets/images/package/studios/platform-engineering-studio-hero-diagram.svg",
     ctaLabel: "Contact Us",
   },
   features: [
+    {
+      id: "case-study",
+      number: "In action",
+      title: "Building an internal developer platform for Halloway Financial Technologies",
+      description:
+        "Halloway Financial Technologies had a dozen product teams each independently provisioning infrastructure, leading to inconsistent security configurations and duplicated effort. We built a self-service internal platform with standardized, secure infrastructure templates and a unified API gateway. Outcomes so far: new service provisioning time cut from 2 weeks to under 1 day, 100% of new services meeting baseline security configuration, 3 previously duplicated internal tools consolidated into one, and developer satisfaction up 41% in internal survey.",
+      image: "/assets/images/package/studios/halloway-fintech-case.svg",
+      imageAlt: "Halloway Financial Technologies internal platform case study",
+      theme: "dark",
+      layout: "row",
+      imageSide: "right",
+      mediaInset: true,
+      cardKind: "text",
+    },
     {
       id: "frontend-web",
       number: "01",
@@ -153,11 +167,49 @@ export const platformEngineeringContent: StudioPageContent = {
       cardKind: "text",
     },
   ],
+  proprietaryTech: [
+    {
+      id: "connect",
+      name: "eForte Connect™",
+      tagline: "Middleware for legacy integration",
+      description:
+        "Internal platforms often need to expose functionality from older internal systems that were never designed with modern APIs in mind. eForte Connect™, our middleware solution, enables seamless integration with these legacy systems without API dependencies: letting your new platform surface capabilities from systems that predate it by years.",
+      benefits: [
+        "No API dependency: surfaces functionality from systems that never exposed one",
+        "Consistent developer experience: legacy and modern systems look the same to platform users",
+        "Faster platform rollout: avoids waiting on legacy system rebuilds",
+        "Governed access: controlled, auditable connections into sensitive legacy systems",
+      ],
+    },
+  ],
+  faqs: [
+    {
+      question: "What's the difference between platform engineering and DevOps?",
+      answer:
+        "DevOps focuses on deployment pipelines and operations for a given system. Platform engineering goes further, building reusable internal products (platforms, APIs, tooling) that many teams build on top of, reducing duplicated effort across the organization.",
+    },
+    {
+      question: "Do you build this on top of our existing infrastructure?",
+      answer:
+        "Yes: we design the platform layer to sit on top of your existing cloud and infrastructure investment rather than requiring a separate parallel environment.",
+    },
+    {
+      question: "Can the platform expose functionality from our legacy systems?",
+      answer:
+        "Yes, this is exactly what eForte Connect™ is built for: surfacing legacy system capabilities through a modern platform interface without needing those legacy systems to change first.",
+    },
+    {
+      question: "How long does a typical platform engagement take?",
+      answer:
+        "Initial platform builds typically range from 8-16 weeks depending on scope, followed by ongoing enhancement as your teams' needs evolve.",
+    },
+  ],
+  faqsSubtitle: "Frequently asked questions about our Platform Engineering services",
   midCta: {
-    titleBefore: "Start your journey with our ",
-    titleHighlight: "Platform Engineering Studio.",
+    titleBefore: "Let's build the ",
+    titleHighlight: "platform your teams deserve.",
     description:
-      "Build scalable foundations with our Platform Engineering Studio — from architecture and APIs to delivery excellence.",
+      "Internal platforms, API gateways, and shared services that make the rest of your team's work faster to ship and easier to maintain.",
     ctaLabel: "Contact Us",
   },
 };

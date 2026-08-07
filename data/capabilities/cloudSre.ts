@@ -178,3 +178,26 @@ export const cloudSreInsights = [
     image: "/assets/images/velocity-ai/insight-3.png",
   },
 ];
+
+export const cloudSreFaqs = [
+  {
+    question: "Which cloud providers do you work with?",
+    answer:
+      "We work across AWS, Azure, and Google Cloud, and help you choose the right one (or right combination) based on your existing stack and requirements.",
+  },
+  {
+    question: "Can you migrate us to the cloud without downtime?",
+    answer:
+      "Yes: we design migrations in phases, validating each step in parallel with existing production systems before cutting over.",
+  },
+  {
+    question: "Do you provide ongoing infrastructure support, or just the migration?",
+    answer:
+      "Both. Many clients start with a migration engagement and move into an ongoing SRE/DevOps support arrangement afterward.",
+  },
+  {
+    question: "How do you help control cloud costs?",
+    answer:
+      "Through infrastructure right-sizing, automated scaling policies, and ongoing cost monitoring built into the observability stack we set up.",
+  },
+];

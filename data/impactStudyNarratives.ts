@@ -13,7 +13,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Heavy machinery has traditionally been bought and sold through agents and brokers, a sl",
       paragraphs: ["Heavy machinery has traditionally been bought and sold through agents and brokers, a slow process built on phone calls, static listings, and manual negotiation. Sellers had little visibility into genuine buyer interest, and buyers had no easy way to compare live listings, auctions, or rental options across multiple sellers in one place.", "Krank needed a platform that preserved the privacy and integrity of each company's own sales network while still allowing rich interaction, real time bidding, and direct communication between parties. Handling live auction bidding reliably, at scale, without agent intermediaries, was the most technically demanding part of the brief."],
-      image: "/assets/images/case-study/krankDetail1.png",
+      image: "/assets/images/case-study/new-images/krank/krank-main.png",
     },
     solution: {
       title: "Built for measurable impact",
@@ -37,7 +37,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Licensing processes in heavily regulated industries, particularly cannabis licensing at",
       paragraphs: ["Licensing processes in heavily regulated industries, particularly cannabis licensing at the state level, require applicants to produce dense, precise, and jurisdiction specific documentation. Getting this wrong, or simply getting it done too slowly, can cost applicants their window to enter a market. Oddysee's clients needed a way to produce accurate documentation, business plans, and financial forecasts without starting from a blank page every time.", "Beyond documentation, applicants also needed to manage the licensing process itself, since these projects involve multiple contributors, deadlines, and reviewers who all need visibility into progress."],
-      image: "/assets/images/case-study/oddysee1.png",
+      image: "/assets/images/case-study/new-images/oddysee/oddysee-main.png",
     },
     solution: {
       title: "Built for measurable impact",
@@ -61,7 +61,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "High net worth investors and companies seeking capital have traditionally relied on per",
       paragraphs: ["High net worth investors and companies seeking capital have traditionally relied on personal networks, brokers, or fragmented platforms to find each other. InvestmentMarkets wanted to remove that friction entirely, giving investors direct access to a wide range of vetted opportunities in one place, personalized and free to use.", "The technical challenge was building something platform agnostic enough to reach investors wherever they were, on desktop or mobile, without the overhead and app store friction of separate native builds, while still delivering the performance and feel of a true mobile app."],
-      image: "/assets/images/case-study/investment-Markets1.png",
+      image: "/assets/images/case-study/new-images/investment-market/investment-Markets-Main.png",
     },
     solution: {
       title: "Built for measurable impact",
@@ -85,7 +85,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Retail demand doesn't move in a straight line",
       paragraphs: ["Retail demand doesn't move in a straight line. It shifts with the seasons, spikes around holidays, and gets thrown off by one off outlier events that can badly skew a naive forecast. PRISM's client needed a forecasting engine that could account for all of this at once: yearly, weekly, and daily seasonality, holiday effects, and enough historical data to generate genuinely reliable predictions.", "The single hardest problem was smoothing outliers without dulling the model's sensitivity. Smooth too aggressively and the forecast stops reacting to real shifts in demand; smooth too little and one bad data point throws off the whole projection."],
-      image: "/assets/images/case-study/prism1.png",
+      image: "/assets/images/case-study/new-images/prism/prism-main.png",
     },
     solution: {
       title: "Built for measurable impact",
@@ -109,7 +109,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "StrateX's clients in the call center and retail chain industries were scheduling staff",
       paragraphs: ["StrateX's clients in the call center and retail chain industries were scheduling staff manually, a process that was slow, error prone, and difficult to scale. This led directly to high labor costs, inconsistent staffing levels, low employee satisfaction, and real compliance exposure under labor laws and regulations.", "StrateX needed a solution flexible enough to apply across different industry verticals, not a one off tool built for a single client, while still handling the specific complexities of shift work: availability, skill levels, job requirements, time off requests, and attendance."],
-      image: "/assets/images/case-study/scheduling1.png",
+      image: "/assets/images/case-study/new-images/scheduling-engine/scheduling-main.png",
     },
     solution: {
       title: "Built for measurable impact",
@@ -133,7 +133,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Sellsmart's sales reps were responsible for manually routing new leads, scheduling foll",
       paragraphs: ["Sellsmart's sales reps were responsible for manually routing new leads, scheduling follow ups, and updating pipeline stages, a workload that grew unevenly as lead volume spiked. Leads that weren't followed up on quickly often went cold, and pipeline data frequently fell out of date as reps focused on active deals instead of administrative updates.", "This meant that even well qualified leads were sometimes lost simply because no one followed up in time, and sales leadership lacked an accurate, current view of the pipeline."],
-      image: "/assets/images/case-study/sellsMart1.png",
+      image: "/assets/images/case-study/new-images/sellsmart/sellsMart-main.png",
     },
     solution: {
       title: "Built for measurable impact",
@@ -157,7 +157,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Market validation and market research are typically slow, expensive, and require specia",
       paragraphs: ["Market validation and market research are typically slow, expensive, and require specialized expertise most early stage founders don't have. Startups often skip this step entirely, or pay significant sums for consulting reports, simply because there was no accessible, self serve way to do rigorous validation on their own.", "Validatr needed a platform that could turn a structured set of questions into genuinely useful output: not generic advice, but detailed, presentation ready reports specific enough to support a business plan or an investor pitch."],
-      image: "/assets/images/case-study/validatr1.png",
+      image: "/assets/images/case-study/new-images/validatr/validatr-main.png",
     },
     solution: {
       title: "Built for measurable impact",
@@ -181,7 +181,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "As a Day Zero accelerator, TachIgnite needed to support early stage founders who requir",
       paragraphs: ["As a Day Zero accelerator, TachIgnite needed to support early stage founders who required rapid prototyping and validation of their ideas, while also running a flagship startup contest that could scale to serve a growing founder community. Doing both well required technical expertise and infrastructure that TachIgnite's internal team alone could not easily provide."],
-      image: "/assets/images/industry/accelerators-1.jpg",
+      image: "/assets/images/case-study/webp/tachignite/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -205,7 +205,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Dostpay's integration with core banking systems meant transaction data flowed in from m",
       paragraphs: ["Dostpay's integration with core banking systems meant transaction data flowed in from multiple sources, but compliance checks were performed as periodic batch reviews rather than continuously. This created a lag between when a risky transaction occurred and when it was actually flagged for review.", "As the platform onboarded more banking partners, this lag became a growing liability, since the elegant, simple user experience Dostpay was built around depended on transactions clearing quickly and safely."],
-      image: "/assets/images/case-study/Dostpay1.png",
+      image: "/assets/images/case-study/new-images/dostpay/Dostpay1.png",
     },
     solution: {
       title: "Built for measurable impact",
@@ -229,7 +229,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Soft skills, communication, collaboration, adaptability, are hard to teach and even har",
       paragraphs: ["Soft skills, communication, collaboration, adaptability, are hard to teach and even harder to measure. Emerge needed a platform that could deliver structured lessons in both online and in person formats, actually test whether participants absorbed the material, and then help those participants translate what they learned into something tangible for their professional futures.", "As eForte's first project in the education technology space, the team had to design a learning and assessment flow from scratch, one that would feel credible to educators while staying engaging for youth participants."],
-      image: "/assets/images/case-study/emerge1.png",
+      image: "/assets/images/case-study/new-images/emerge-forward/emerge1.png",
     },
     solution: {
       title: "Built for measurable impact",
@@ -253,7 +253,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Salon owners were managing appointments, client records, staff schedules, and inventory",
       paragraphs: ["Salon owners were managing appointments, client records, staff schedules, and inventory through a patchwork of manual processes and disconnected tools. Clients, meanwhile, had no easy way to book, reschedule, or discover offers across the salons they used. Komb needed a single, user friendly system that worked for two very different audiences at once: busy salon staff who needed simplicity, and clients who wanted a modern booking experience.", "Building a platform robust enough to manage day to day salon operations, while still being simple enough for non technical salon staff to run without training, was the central challenge."],
-      image: "/assets/images/case-study/komb1.png",
+      image: "/assets/images/case-study/new-images/komb/komb1.png",
     },
     solution: {
       title: "Built for measurable impact",
@@ -277,7 +277,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Early in the pandemic, households faced real uncertainty about food supply, leading to",
       paragraphs: ["Early in the pandemic, households faced real uncertainty about food supply, leading to panic buying, hoarding, and wasted trips to increasingly crowded stores. StrateX.nl wanted to do their part to bring down that chaos, but needed a technology partner who could turn the idea into a working app quickly, without compromising on accuracy or usability.", "The core technical challenge was building a forecasting model that could reliably project food needs across breakfast, lunch, and dinner, for varying household sizes, over a period of days, using patterns of past consumption."],
-      image: "/assets/images/case-study/foodCast1.png",
+      image: "/assets/images/case-study/new-images/food-cast/foodCast1.png",
     },
     solution: {
       title: "Built for measurable impact",
@@ -301,7 +301,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Public health guidance during the pandemic emphasized avoiding crowded spaces, but ther",
       paragraphs: ["Public health guidance during the pandemic emphasized avoiding crowded spaces, but there was no simple, at a glance way for someone to know how busy a specific location actually was before heading out. Existing map apps showed directions and reviews, not real time crowd conditions.", "Crowdcheck needed a way to responsibly aggregate existing public data on foot traffic and present it in a way that was genuinely useful for quick, in the moment decisions, without requiring users to manually check multiple sources."],
-      image: "/assets/images/case-study/crowd_check2.png",
+      image: "/assets/images/case-study/new-images/crowdcheck/crowd_check1.png",
     },
     solution: {
       title: "Built for measurable impact",
@@ -325,7 +325,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "InstApp Deal's original notification system pushed new deals to all users in a category",
       paragraphs: ["InstApp Deal's original notification system pushed new deals to all users in a category or location rather than tailoring offers to individual shopping habits. As the volume of available deals grew, users increasingly received notifications for offers irrelevant to them, leading many to ignore push notifications altogether.", "This meant retailers' offers often reached users unlikely to redeem them, while users who would have been genuinely interested in a specific deal sometimes never saw it prominently surfaced."],
-      image: "/assets/images/case-study/InstApp-Dealbanner.png",
+      image: "/assets/images/case-study/new-images/instapp-deal/InstApp-Deal.png",
     },
     solution: {
       title: "Built for measurable impact",
@@ -349,7 +349,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Before working with eForte, Meridian Pay relied on a patchwork of legacy fraud rules an",
       paragraphs: ["Before working with eForte, Meridian Pay relied on a patchwork of legacy fraud rules and manual review queues that couldn't keep pace with transaction growth. Suspicious transactions were often flagged hours after the fact, by which point the damage to customers and merchants was already done.", "The company also lacked a single, reliable view of transaction data across its payment rails, making it difficult to reconcile settlements or spot emerging fraud patterns before they spread. Meridian Pay needed a platform that could analyze transactions as they happened and act on that analysis automatically."],
-      image: "/assets/images/industry/banking-bg-hero.jpg",
+      image: "/assets/images/case-study/webp/meridian-pay/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -373,7 +373,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Iberian Ventures' analysts spent 70 percent of their time on administrative tasks, revi",
       paragraphs: ["Iberian Ventures' analysts spent 70 percent of their time on administrative tasks, reviewing buy side requirements, searching databases for matching sell side opportunities, scoring compatibility, creating presentations, coordinating communications, and drafting agreements. This inefficiency limited how many deals the firm could pursue at once and created bottlenecks between initial match and first meeting."],
-      image: "/assets/images/industry/our-work-2.webp",
+      image: "/assets/images/case-study/webp/iberian-ventures/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -397,7 +397,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "GlobalTrade Solutions faced significant operational inefficiencies in its trading workflow",
       paragraphs: ["GlobalTrade Solutions faced significant operational inefficiencies in its trading workflow. The team was overwhelmed by manually reviewing client requirements from emails, matching appropriate suppliers, creating quotations, and coordinating agreements and logistics and payment processes. This resulted in slow response times, missed opportunities, and frequent errors in documentation."],
-      image: "/assets/images/industry/cloud.jpg",
+      image: "/assets/images/case-study/webp/globaltrade-solutions/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -421,7 +421,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Allied Insurance was struggling with a legacy claims processing system requiring extens",
       paragraphs: ["Allied Insurance was struggling with a legacy claims processing system requiring extensive manual intervention. Claims adjusters spent 65 percent of their time inputting data, cross referencing policy information, and managing documentation rather than making substantive decisions on claims. This created a backlog of cases, extended settlement times, and reduced customer satisfaction."],
-      image: "/assets/images/industry/insurance-banner.jpg",
+      image: "/assets/images/case-study/webp/allied-insurance/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -445,7 +445,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "BioResearch Labs was drowning in clinical trial data management challenges",
       paragraphs: ["BioResearch Labs was drowning in clinical trial data management challenges. The research team spent more than 30 hours per week manually collecting, standardizing, validating, and reporting data from various sources. This process was not only time consuming but prone to errors, potentially compromising research integrity and regulatory compliance."],
-      image: "/assets/images/industry/bg-portfolio.jpg",
+      image: "/assets/images/case-study/webp/bioresearch-labs/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -469,7 +469,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Global Manufacturing Corp's accounts payable department was struggling with fragmented",
       paragraphs: ["Global Manufacturing Corp's accounts payable department was struggling with fragmented processes, duplicate payments, missed discounts, and compliance issues. Their team of 45 AP specialists was overwhelmed by manual invoice processing across disparate systems, leading to payment delays, strained supplier relationships, and limited financial visibility."],
-      image: "/assets/images/industry/app-modernization.jpg",
+      image: "/assets/images/case-study/webp/global-manufacturing-corp/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -493,7 +493,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Altura Motors' design process required engineers to manually hand off simulation result",
       paragraphs: ["Altura Motors' design process required engineers to manually hand off simulation results between aerodynamics, structural, and safety teams, with each handoff introducing delay while the receiving team waited for the right data in the right format. Design data also lived in separate tools per discipline, making it hard to see how a change in one area affected others.", "As vehicle designs grew more complex, these manual handoffs multiplied, and it wasn't uncommon for a single design iteration to take weeks longer than the engineering work itself required."],
-      image: "/assets/images/industry/driving-1.jpg",
+      image: "/assets/images/case-study/webp/altura-motors/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -517,7 +517,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Anchor Point Insurance's fraud detection relied on static, rules based checks that flag",
       paragraphs: ["Anchor Point Insurance's fraud detection relied on static, rules based checks that flagged only known fraud patterns, leaving newer and more sophisticated schemes undetected until after claims were paid. Investigators also lacked a consolidated view of claims history, making it difficult to spot connections between related fraudulent submissions.", "As claims volume grew, the fraud team found itself reviewing an increasing number of false positives, spending valuable time on legitimate claims while genuine fraud sometimes slipped through."],
-      image: "/assets/images/industry/cybersecurity.jpg",
+      image: "/assets/images/case-study/webp/anchor-point-insurance/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -541,7 +541,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Apex Shared Services fielded requests from finance, HR, and IT across dozens of interna",
       paragraphs: ["Apex Shared Services fielded requests from finance, HR, and IT across dozens of internal business units, each with its own approval chains and priority levels. Requests were manually triaged and routed by service desk staff, a process that grew harder to manage as the number of supported business units increased.", "Service request data also lived in separate systems per function, making it difficult for leadership to measure service level performance consistently across finance, HR, and IT."],
-      image: "/assets/images/industry/wrappers.jpg",
+      image: "/assets/images/case-study/webp/apex-shared-services/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -565,7 +565,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Birchwood Hospitality Group's properties each tracked staffing, procurement, and operat",
       paragraphs: ["Birchwood Hospitality Group's properties each tracked staffing, procurement, and operating costs in their own systems, making it nearly impossible for leadership to compare cost performance across the portfolio or spot inefficiencies. Procurement decisions were made property by property, missing opportunities for group wide purchasing efficiencies.", "Without a consolidated view, leadership often only discovered cost overruns well after the fact, when the budget impact had already occurred."],
-      image: "/assets/images/industry/our-work-3.webp",
+      image: "/assets/images/case-study/webp/birchwood-hospitality-group/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -589,7 +589,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Before partnering with eForte, Brightwell Mutual's claims adjusters manually reviewed e",
       paragraphs: ["Before partnering with eForte, Brightwell Mutual's claims adjusters manually reviewed every incoming claim regardless of complexity, creating a backlog that pushed simple claims to take days to resolve. Policyholder data was also scattered across separate systems for policy details, prior claims history, and communication logs.", "This fragmentation made it difficult for adjusters to quickly assess a claim's legitimacy or spot patterns that might indicate fraud, and it left honest policyholders waiting far longer than necessary for straightforward payouts."],
-      image: "/assets/images/industry/bg-expertise.jpg",
+      image: "/assets/images/case-study/webp/brightwell-mutual/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -613,7 +613,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "ClearPath Diabetes Care's patients used connected glucose monitors that generated a ste",
       paragraphs: ["ClearPath Diabetes Care's patients used connected glucose monitors that generated a steady stream of data, but that data wasn't consistently reaching the right care team members in time to act on it. Endocrinologists, dietitians, and care coordinators often worked from different systems, making coordinated care difficult.", "When a patient's glucose readings indicated a developing problem, the lag between data collection and care team awareness sometimes meant the opportunity for early intervention was missed."],
-      image: "/assets/images/industry/cardiex-machine.jpg",
+      image: "/assets/images/case-study/webp/clearpath-diabetes-care/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -637,7 +637,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Coastal Assurance Group's underwriters manually assessed each commercial property appli",
       paragraphs: ["Coastal Assurance Group's underwriters manually assessed each commercial property application by pulling data from multiple external sources, including weather risk databases, property records, and prior claims history. This process routinely took several days per application, delaying quotes and frustrating brokers.", "The lack of a unified data view also made it hard for underwriters to consistently weigh risk factors across similar properties, leading to inconsistent pricing on comparable policies."],
-      image: "/assets/images/industry/insurance-banner.jpg",
+      image: "/assets/images/case-study/webp/coastal-assurance-group/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -661,7 +661,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Coastline Resorts' guest requests, whether for housekeeping, dining reservations, or sp",
       paragraphs: ["Coastline Resorts' guest requests, whether for housekeeping, dining reservations, or spa bookings, were phoned or logged manually and then routed by front desk staff to the relevant department. This manual routing process introduced delay, and requests occasionally got lost between departments during busy periods.", "As occupancy grew during peak seasons, the volume of requests routinely overwhelmed front desk staff's ability to route them promptly, leading to guest frustration over slow response times."],
-      image: "/assets/images/industry/events.jpg",
+      image: "/assets/images/case-study/webp/coastline-resorts/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -685,7 +685,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Cobalt Digital Bank's customer data was spread across separate systems for onboarding,",
       paragraphs: ["Cobalt Digital Bank's customer data was spread across separate systems for onboarding, transactions, and lending, making it difficult to build a complete picture of any single customer. This fragmentation slowed down loan approvals and made regulatory reporting a slow, manual exercise.", "As new account volume accelerated, the bank's compliance team also struggled to monitor transactions for suspicious activity in a timely way, relying on batch reports that were often a day or more behind actual account activity."],
-      image: "/assets/images/industry/financial-service-hero.webp",
+      image: "/assets/images/case-study/webp/cobalt-digital-bank/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -709,7 +709,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Crestline BPO Group's processing teams handled high volumes of client transactions manu",
       paragraphs: ["Crestline BPO Group's processing teams handled high volumes of client transactions manually, from claims administration to order processing, under strict service level agreements. As transaction volume grew, teams increasingly struggled to keep processing times within agreed SLA windows, particularly during seasonal demand spikes.", "Transaction data was also tracked separately per client, making it hard for management to identify systemic bottlenecks that affected SLA performance across multiple accounts at once."],
-      image: "/assets/images/industry/qa.jpg",
+      image: "/assets/images/case-study/webp/crestline-bpo-group/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -733,7 +733,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Fenwick Capital Markets' trading desks relied on data feeds that updated on a delay, me",
       paragraphs: ["Fenwick Capital Markets' trading desks relied on data feeds that updated on a delay, meaning by the time analysts saw a signal, the opportunity had often already shifted. Portfolio rebalancing was still largely a manual process, requiring analysts to recalculate exposure by hand across dozens of accounts.", "The firm needed a way to process market data as it arrived, generate actionable trade signals immediately, and rebalance portfolios without waiting on manual review for routine adjustments."],
-      image: "/assets/images/industry/banking-bg-hero.jpg",
+      image: "/assets/images/case-study/webp/fenwick-capital-markets/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -757,7 +757,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Frontier Energy Partners' assets were spread across a wide geographic area, each report",
       paragraphs: ["Frontier Energy Partners' assets were spread across a wide geographic area, each reporting data to separate regional systems. This made it difficult for the central operations team to get a real time view of asset health across the entire network, and maintenance scheduling was largely reactive to reported issues rather than based on predictive signals.", "As the network grew, the operations team found it increasingly hard to prioritize which assets needed attention first, sometimes leading to preventable outages in the field."],
-      image: "/assets/images/industry/solutions-1.jpg",
+      image: "/assets/images/case-study/webp/frontier-energy-partners/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -781,7 +781,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Harborlight Recovery's patient records were split across separate systems for intake, c",
       paragraphs: ["Harborlight Recovery's patient records were split across separate systems for intake, clinical notes, and medication management, making it hard for clinicians to see a patient's full treatment history at a glance. Care plans were largely standardized by program type rather than tailored to each patient's specific history and progress.", "As the network expanded to new locations, this fragmentation made it harder to maintain consistent quality of care, and clinicians often spent valuable session time piecing together a patient's background instead of focusing on treatment."],
-      image: "/assets/images/case-study/health.webp",
+      image: "/assets/images/case-study/webp/harborlight-recovery/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -805,7 +805,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Ironclad Manufacturing's equipment generated sensor data across dozens of machines per",
       paragraphs: ["Ironclad Manufacturing's equipment generated sensor data across dozens of machines per facility, but that data lived in isolated systems tied to each machine's manufacturer, making plant wide visibility nearly impossible. Maintenance teams typically only learned about a developing problem when a machine had already failed or was showing obvious signs of distress.", "This reactive approach meant production lines regularly stopped unexpectedly, and maintenance teams scrambled to diagnose and repair issues that could have been caught days or weeks earlier."],
-      image: "/assets/images/industry/monitoring.jpg",
+      image: "/assets/images/case-study/webp/ironclad-manufacturing/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -829,7 +829,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Lantern Hotel Collective's guest data, including preferences, past stays, and special r",
       paragraphs: ["Lantern Hotel Collective's guest data, including preferences, past stays, and special requests, was stored separately at each property, so guests who visited multiple locations had to reintroduce themselves every time. Front desk and concierge staff had no easy way to anticipate guest preferences ahead of arrival.", "As the portfolio expanded to new properties, maintaining a personal touch became harder without a system that could carry guest knowledge across the entire collective."],
-      image: "/assets/images/industry/media-entertainment-bg.jpg",
+      image: "/assets/images/case-study/webp/lantern-hotel-collective/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -853,7 +853,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Meridian Outsourcing Solutions' processing teams manually reviewed and entered data fro",
       paragraphs: ["Meridian Outsourcing Solutions' processing teams manually reviewed and entered data from client documents, a labor intensive process that scaled linearly with client volume. As new clients came on board, the company found itself needing to hire proportionally just to keep pace with processing demand.", "Client task data was also managed inconsistently across different account teams, making it difficult for leadership to track throughput and quality across the business as a whole."],
-      image: "/assets/images/industry/baas.jpg",
+      image: "/assets/images/case-study/webp/meridian-outsourcing-solutions/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -877,7 +877,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "PulseWell Fitness's coaches relied on generic program templates that were only lightly",
       paragraphs: ["PulseWell Fitness's coaches relied on generic program templates that were only lightly adjusted per member, since building a truly individualized plan for every member manually wasn't feasible at scale. Member activity data from wearables, class check ins, and nutrition logs also lived in separate systems, making it hard for coaches to see the full picture of a member's progress.", "As membership grew, coaches had less time available per member, and wellness plans increasingly felt generic rather than tailored to each person's goals and progress."],
-      image: "/assets/images/case-study/health.webp",
+      image: "/assets/images/case-study/webp/pulsewell-fitness/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -901,7 +901,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Ridgeline Auto Group's dealerships each ran their own dealership management system, mea",
       paragraphs: ["Ridgeline Auto Group's dealerships each ran their own dealership management system, meaning inventory levels, sales performance, and service bookings couldn't be compared or coordinated across locations. This made it hard for group leadership to know where to shift inventory or staff to meet demand.", "Individual dealerships also managed service scheduling manually, leading to inconsistent booking experiences for customers depending on which location they visited."],
-      image: "/assets/images/industry/driving-3.jpg",
+      image: "/assets/images/case-study/webp/ridgeline-auto-group/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -925,7 +925,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Summit Steel Works' production process involved dozens of variables, from raw material",
       paragraphs: ["Summit Steel Works' production process involved dozens of variables, from raw material composition to furnace temperature and timing, but data on these variables was captured separately at each production stage. This made it difficult to understand which combinations of factors led to higher or lower yield on any given run.", "Without this visibility, production planners had to rely on historical averages rather than real conditions, and yield varied more than the company wanted from one run to the next."],
-      image: "/assets/images/industry/working.jpg",
+      image: "/assets/images/case-study/webp/summit-steel-works/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",
@@ -949,7 +949,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     challenge: {
       title: "Vantage Mobility's dispatchers manually assigned vehicles and drivers to routes each da",
       paragraphs: ["Vantage Mobility's dispatchers manually assigned vehicles and drivers to routes each day, juggling maintenance windows, driver availability, and delivery deadlines by hand. As the fleet grew, this manual coordination increasingly resulted in scheduling conflicts, underutilized vehicles, and last minute scrambles when a vehicle needed unplanned maintenance.", "Vehicle and driver data was also split across separate systems, making it hard for dispatchers to get a real time view of what was available and when."],
-      image: "/assets/images/industry/driving-2.jpg",
+      image: "/assets/images/case-study/webp/vantage-mobility/image-1.webp",
     },
     solution: {
       title: "Built for measurable impact",

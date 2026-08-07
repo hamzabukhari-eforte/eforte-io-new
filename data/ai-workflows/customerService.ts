@@ -40,6 +40,9 @@ export const customerServiceDomain: AiWorkflowDomain = {
     "Knowledge base auto-responses",
     "Sentiment analysis",
   ],
+  diagramSrc:
+    "/assets/images/package/business-domains/customer-service-support-workflows.svg",
+  diagramAlt: "Customer service and support agentic workflow diagram",
   pillars: {
     agenticOrchestration: "Planner → Execution → Intelligence → Optimization",
     velocityAi:

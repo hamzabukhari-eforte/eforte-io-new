@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
@@ -60,6 +61,20 @@ export default function AgenticOrchestrationUseCasesSection() {
         >
           eForte delivers the full spectrum of GenAI solutions, helping organizations automate, augment, and transform business processes.
         </motion.p>
+        <motion.div
+          className="relative mx-auto mt-10 aspect-[1200/360] w-full max-w-4xl md:mt-14"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+        >
+          <Image
+            src="/assets/images/package/ai-pillars/ai-solutions-4cards.svg"
+            alt="eForte AI Solutions: LLM Apps, Chat Bots, Automations, Agentic Workflows"
+            fill
+            sizes="(max-width: 1024px) 100vw, 900px"
+            className="object-contain"
+          />
+        </motion.div>
       </div>
       <div className={`${section.container}`}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">

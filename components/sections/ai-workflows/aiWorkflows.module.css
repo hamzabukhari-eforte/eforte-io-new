@@ -518,6 +518,19 @@
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
 }
 
+.workflowDiagram {
+  margin-bottom: 40px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #0a0a1a;
+}
+
+.workflowDiagramImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .workflowNumber {
   color: var(--aw-pink);
   font-size: 14px;

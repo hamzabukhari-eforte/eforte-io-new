@@ -29,17 +29,17 @@ export const footerColumns: FooterColumn[] = [
       { label: "Data", href: "/capabilities/data" },
       { label: "App Solutions", href: "/capabilities/app-solutions" },
       { label: "Cloud, SRE, & DevOps", href: "/capabilities/cloud-sre" },
+      { label: "Cybersecurity", href: "/capabilities/cybersecurity" },
+      { label: "Platform Engineering", href: "/capabilities/platform-engineering" },
+      { label: "Quality Assurance", href: "/capabilities/quality-assurance" },
+      { label: "Product Management", href: "/capabilities/product-management" },
+      { label: "Blockchain", href: "/capabilities/blockchain" },
       {
-        label: "Staff Augmentation - Dedicated Resource Hiring",
+        label: "Staff Augmentation: Dedicated Resource Hiring",
         href: "/capabilities/staff-augmentation",
       },
-      // Legacy studios preserved for future reuse (also commented in navbar):
-      // { label: "Cybersecurity", href: "/capabilities/cybersecurity" },
-      // { label: "Platform Engineering", href: "/capabilities/platform-engineering" },
-      // { label: "Quality Assurance", href: "/capabilities/quality-assurance" },
+      // Embedded Engineering preserved for future reuse (not in mega menu DOC 4August2026):
       // { label: "Embedded Engineering", href: "/capabilities/embedded-engineering" },
-      // { label: "Product Management", href: "/capabilities/product-management" },
-      // { label: "Blockchain", href: "/capabilities/blockchain" },
     ],
   },
   {

@@ -14,7 +14,7 @@ export const insuranceIndustry: IndustryPageContent = {
       "From automating first notice of loss to building fairer, usage based pricing models, we help insurers turn slow, manual processes into fast, trustworthy digital experiences."
     ],
     ctaLabel: "Contact Us",
-    imageSrc: "/assets/images/industry/insurance-banner.jpg",
+    imageSrc: "/assets/images/package/industries/insurance-industry-hero.svg",
   },
   expertise: {
     title: "Our insurance expertise",

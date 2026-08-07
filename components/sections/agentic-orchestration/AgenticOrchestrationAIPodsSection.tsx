@@ -1,16 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { section, typography } from "./layout";
-
-const roles = [
-  { label: ["AI Product", "Manager"], x: 400, y: 230, dotX: 370, dotY: 230 },
-  { label: ["Data", "Scientist"], x: 400, y: 390, dotX: 370, dotY: 390 },
-  { label: ["AI", "Engineer"], x: 200, y: 390, dotX: 230, dotY: 390 },
-  { label: ["ML Ops", "Engineer"], x: 200, y: 230, dotX: 230, dotY: 230 },
-];
 
 export default function AgenticOrchestrationAIPodsSection() {
   const ref = useRef(null);
@@ -67,49 +61,15 @@ export default function AgenticOrchestrationAIPodsSection() {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
           >
-            <div className="relative w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[500px] aspect-square">
-              <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-                <defs>
-                  <radialGradient id="pods-centerGlowBlue" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-                    <stop offset="0%" stopColor="#3B82F6" stopOpacity={0.8} />
-                    <stop offset="100%" stopColor="#1D4ED8" stopOpacity={0} />
-                  </radialGradient>
-                  <linearGradient id="pods-crosshairGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="rgba(59, 130, 246, 0)" />
-                    <stop offset="50%" stopColor="rgba(59, 130, 246, 0.5)" />
-                    <stop offset="100%" stopColor="rgba(59, 130, 246, 0)" />
-                  </linearGradient>
-                  <linearGradient id="pods-crosshairGradientV" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="rgba(59, 130, 246, 0)" />
-                    <stop offset="50%" stopColor="rgba(59, 130, 246, 0.5)" />
-                    <stop offset="100%" stopColor="rgba(59, 130, 246, 0)" />
-                  </linearGradient>
-                </defs>
-                <g stroke="#3B82F6" strokeWidth="1" fill="none" className="opacity-20">
-                  <circle cx="300" cy="300" r="100" />
-                  <circle cx="300" cy="300" r="180" />
-                  <circle cx="300" cy="300" r="260" />
-                </g>
-                <line x1="50" y1="300" x2="550" y2="300" stroke="url(#pods-crosshairGradient)" strokeWidth="1.5" />
-                <line x1="300" y1="50" x2="300" y2="550" stroke="url(#pods-crosshairGradientV)" strokeWidth="1.5" />
-                <circle cx="300" cy="300" r="60" fill="url(#pods-centerGlowBlue)" opacity={0.4} className="animate-pulse" style={{ animationDuration: "4s" }} />
-                <circle cx="300" cy="300" r="40" fill="#1e3a8a" stroke="#60A5FA" strokeWidth="2" />
-                <path d="M300 280 L305 295 L320 300 L305 305 L300 320 L295 305 L280 300 L295 295 Z" fill="white" className="animate-pulse" />
-                <path d="M315 275 L318 282 L325 285 L318 288 L315 295 L312 288 L305 285 L312 282 Z" fill="white" opacity={0.8} />
-                {roles.map((r, i) => (
-                  <g key={i} className="transition-all duration-300 hover:scale-105 cursor-default">
-                    <text x={r.x} y={r.y - 10} textAnchor="middle" fill="white" fontFamily="Inter, sans-serif" fontSize="14" fontWeight="600">
-                      {r.label[0]}
-                    </text>
-                    <text x={r.x} y={r.y + 10} textAnchor="middle" fill="white" fontFamily="Inter, sans-serif" fontSize="14" fontWeight="600">
-                      {r.label[1]}
-                    </text>
-                    <circle cx={r.dotX} cy={r.dotY} r="2" fill="#60A5FA" />
-                  </g>
-                ))}
-                <path d="M300 300 L450 150 A212 212 0 0 1 512 300 Z" fill="url(#pods-centerGlowBlue)" opacity={0.1} className="animate-pulse" style={{ animationDuration: "4s" }} />
-                <path d="M300 300 L150 450 A212 212 0 0 1 88 300 Z" fill="url(#pods-centerGlowBlue)" opacity={0.1} className="animate-pulse" style={{ animationDuration: "4s", animationDelay: "1s" }} />
-              </svg>
+            <div className="relative w-full max-w-[300px] sm:max-w-[420px] lg:max-w-[520px] aspect-square">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
+              <Image
+                src="/assets/images/package/ai-pillars/ai-pod-roles-diagram.svg"
+                alt="Agentic Orchestration AI Pod roles: AI Product Manager, Data Scientist, AI Engineer, MLOps Engineer"
+                fill
+                sizes="(max-width: 1024px) 90vw, 520px"
+                className="object-contain"
+              />
             </div>
           </motion.div>
         </div>

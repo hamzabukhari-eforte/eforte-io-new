@@ -7,6 +7,7 @@ import CareersBenefitsSection from "@/components/sections/careers/CareersBenefit
 import CareersTestimonialsSection from "@/components/sections/careers/CareersTestimonialsSection";
 import CareersJobOpeningsSection from "@/components/sections/careers/CareersJobOpeningsSection";
 import CareersPhotoGallerySection from "@/components/sections/careers/CareersPhotoGallerySection";
+import CareersJoinTeamSection from "@/components/sections/careers/CareersJoinTeamSection";
 
 export default function CareersPageContent() {
   return (
@@ -18,6 +19,7 @@ export default function CareersPageContent() {
       <CareersTestimonialsSection />
       <CareersJobOpeningsSection />
       <CareersPhotoGallerySection />
+      <CareersJoinTeamSection />
     </main>
   );
 }

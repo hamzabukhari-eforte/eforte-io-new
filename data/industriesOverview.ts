@@ -1,6 +1,6 @@
 /** Local media under public/assets/images/ */
 export const industriesMedia = {
-  heroBg: "/assets/images/hero.jpg",
+  heroBg: "/assets/images/package/industries/industries-landing-hero.svg",
   /** Same asset as home “From Legacy to Intelligence” evolving section */
   whyGrad: "/assets/images/landing/legacy-intelligence.png",
   hexaLeft: "/assets/images/industry/hexa-left.png",

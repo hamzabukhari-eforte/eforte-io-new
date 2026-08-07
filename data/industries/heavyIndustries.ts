@@ -13,7 +13,7 @@ export const heavyIndustriesIndustry: IndustryPageContent = {
       "eForte partners with manufacturers, energy operators, and industrial equipment companies to modernize how heavy industry monitors assets, protects workers, and keeps production running. We bring Velocity AI, Agentic Orchestration, and a secure Foundational Data Layer to environments where downtime is measured in real cost, not inconvenience."
     ],
     ctaLabel: "Contact Us",
-    imageSrc: "/assets/images/industry/driving-1.jpg",
+    imageSrc: "/assets/images/package/industries/heavy-industry-hero.svg",
   },
   expertise: {
     title: "Our heavy industry expertise",

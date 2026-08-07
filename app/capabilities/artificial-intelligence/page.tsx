@@ -1,4 +1,5 @@
 import {
+  AiCognitiveGatewaySection,
   AiCompoundSystemsSection,
   AiConstellationSection,
   AiCustomerSatisfactionSection,
@@ -32,6 +33,7 @@ export default function ArtificialIntelligencePage() {
       {/* <AiQbricksSection /> */}
       {/* <AiQbricksBenefitsSection /> */}
       {/* <AiQbricksVideoSection /> */}
+      <AiCognitiveGatewaySection />
       <AiDataCtaSection />
       <AiPartnersSection />
       <AiSolutionsSection />

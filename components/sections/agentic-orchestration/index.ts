@@ -4,4 +4,6 @@ export { default as AgenticOrchestrationAIPodsSection } from "./AgenticOrchestra
 export { default as AgenticOrchestrationPlatformFlowSection } from "./AgenticOrchestrationPlatformFlowSection";
 export { default as AgenticOrchestrationPlatformSection } from "./AgenticOrchestrationPlatformSection";
 export { default as AgenticOrchestrationUseCasesSection } from "./AgenticOrchestrationUseCasesSection";
+export { default as AgenticOrchestrationMethodologySection } from "./AgenticOrchestrationMethodologySection";
+export { default as AgenticOrchestrationCoreServicesSection } from "./AgenticOrchestrationCoreServicesSection";
 export { default as AgenticOrchestrationFooterCTASection } from "./AgenticOrchestrationFooterCTASection";
