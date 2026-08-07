@@ -36,6 +36,7 @@ import {
 import { FiLink } from "react-icons/fi";
 import type { IconType } from "react-icons";
 import type { InsightsMenuData } from "@/lib/strapi/insights";
+import { impactStudyImages } from "@/data/impactStudyImages";
 
 const menuIconMap: Record<string, IconType> = {
   "lightning-bolt": HiLightningBolt,
@@ -120,36 +121,42 @@ const impactStudiesMenuItems: MegaMenuItem[] = [
     description:
       "A mid-sized M&A advisory firm in Lisbon, Portugal managing 30+ active buy-side mandates and tracking 500+ potential acquisition targets.",
     href: "/case-studies/iberian-ventures",
+    imageSrc: impactStudyImages["iberian-ventures"]?.hero,
   },
   {
     title: "Trade Process Automation for GlobalTrade Solutions",
     description:
       "An international trading house managing 1,200+ annual transactions across multiple commodity categories with a network of 350+ suppliers.",
     href: "/case-studies/globaltrade-solutions",
+    imageSrc: impactStudyImages["globaltrade-solutions"]?.hero,
   },
   {
     title: "Insurance Claims Processing Automation for Allied Insurance",
     description:
       "A regional insurance provider processing 50,000+ claims annually across auto, home, and commercial lines.",
     href: "/case-studies/allied-insurance",
+    imageSrc: impactStudyImages["allied-insurance"]?.hero,
   },
   {
     title: "Clinical Trial Data Management for BioResearch Labs",
     description:
       "A pharmaceutical research organization conducting multiple Phase II and III clinical trials across 40+ global research sites.",
     href: "/case-studies/bioresearch-labs",
+    imageSrc: impactStudyImages["bioresearch-labs"]?.hero,
   },
   {
     title: "Accounts Payable Automation for Global Manufacturing Corp",
     description:
       "Automating accounts payable across regions with agentic invoice intelligence and ERP integration.",
     href: "/case-studies/global-manufacturing-corp",
+    imageSrc: impactStudyImages["global-manufacturing-corp"]?.hero,
   },
   {
     title: "Tach Ignite",
     description:
       "TachIgnite is a Day Zero startup accelerator focused on transforming raw ideas into market-ready innovations.",
     href: "/case-studies/tachignite",
+    imageSrc: impactStudyImages["tachignite"]?.hero,
   },
 ];
 
@@ -1084,22 +1091,35 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
                 data-lenis-prevent-wheel
                 className="min-h-0 max-h-full flex-1 overflow-y-auto overscroll-contain pr-2 [scrollbar-gutter:stable]"
               >
-                <div className="grid grid-cols-2 gap-x-10 gap-y-0">
+                <div className="grid grid-cols-2 gap-3">
                   {caseStudies.map((item) => {
                     const href = item.href;
                     const cardClass =
-                      "border-b border-white/10 pb-4 mb-4 cursor-pointer hover:opacity-90";
+                      "flex gap-3 rounded-xl border border-white/5 bg-white/5 p-3 transition-colors hover:bg-white/10";
 
                     const content = (
                       <>
-                        <p className="text-sm font-semibold text-white">
-                          {item.title}
-                        </p>
-                        {item.description && (
-                          <p className="mt-1 text-xs text-desc line-clamp-2">
-                            {item.description}
+                        <div className="relative h-16 w-20 shrink-0 overflow-hidden rounded-lg bg-black/40">
+                          {item.imageSrc && (
+                            <Image
+                              src={item.imageSrc}
+                              alt={item.title}
+                              fill
+                              sizes="80px"
+                              className="object-cover"
+                            />
+                          )}
+                        </div>
+                        <div className="min-w-0">
+                          <p className="text-sm font-medium text-white line-clamp-2">
+                            {item.title}
                           </p>
-                        )}
+                          {item.description && (
+                            <p className="mt-0.5 text-xs text-desc line-clamp-2">
+                              {item.description}
+                            </p>
+                          )}
+                        </div>
                       </>
                     );
 
