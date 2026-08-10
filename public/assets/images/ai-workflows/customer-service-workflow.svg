@@ -1,0 +1,226 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" width="1000" height="240" fill="none">
+  <defs>
+    <style>
+      .svg-container {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+
+      /* Base Path &amp; Vector Styles */
+      .stroke-main {
+        fill: none;
+        stroke: #5C6BCF;
+        stroke-width: 2.2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .stroke-thick {
+        fill: none;
+        stroke: #5C6BCF;
+        stroke-width: 2.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .stroke-thin {
+        fill: none;
+        stroke: #5C6BCF;
+        stroke-width: 1.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .fill-main {
+        fill: #5C6BCF;
+      }
+
+      .text-title {
+        fill: #5C6BCF;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        text-anchor: middle;
+      }
+
+      /* Visible by default when SVG is used as an image (CSS animations do not run). */
+      .draw-path,
+      .draw-arrow,
+      .fade-in {
+        opacity: 1;
+        stroke-dasharray: none;
+        stroke-dashoffset: 0;
+      }
+
+      .node-group {
+        cursor: pointer;
+      }
+
+      .node-box {
+        transition: stroke-width 0.3s ease, transform 0.3s ease;
+        transform-origin: center;
+      }
+
+      .icon-inner {
+        transition: transform 0.3s ease;
+        transform-origin: center;
+      }
+
+      .node-group:hover .node-box {
+        stroke-width: 3.5;
+      }
+
+      .node-group:hover .icon-inner {
+        transform: scale(1.08);
+      }
+    </style>
+
+    <!-- Scaled Arrowhead Definition -->
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 1 2 L 8 5 L 1 8 Z" fill="#5C6BCF" />
+    </marker>
+  </defs>
+
+  <g class="svg-container">
+
+    <!-- ================= STEP 1: Inquiry Received ================= -->
+    <g class="node-group">
+      <rect class="stroke-thick node-box draw-path step-1" x="30" y="20" width="130" height="130" rx="22" />
+      
+      <g class="icon-inner">
+        <!-- Main Chat Envelope/Bubble -->
+        <path class="stroke-main draw-path step-1" d="M 68 62 H 122 C 126.4 62, 130 65.6, 130 70 V 100 C 130 104.4, 126.4 108, 122 108 H 86 L 68 122 V 108 C 63.6 108, 60 104.4, 60 100 V 70 C 60 65.6, 63.6 62, 68 62 Z" />
+        <!-- Incoming Line Streams -->
+        <path class="stroke-thin draw-path step-1" d="M 75 76 H 115 M 75 86 H 105" />
+        <!-- Question Badge Container -->
+        <circle cx="114" cy="62" r="12" fill="#FFFFFF" class="fade-in step-1" />
+        <circle cx="114" cy="62" r="12" class="stroke-main draw-path step-1" />
+        <!-- Question Mark Vector -->
+        <path class="stroke-thin draw-path step-1" d="M 110 58 C 110 55.5, 112 54, 114 54 C 116 54, 118 55.5, 118 57.5 C 118 60, 114 61, 114 64" />
+        <circle cx="114" cy="68" r="1" class="fill-main fade-in step-1" />
+      </g>
+      
+      <text x="95" y="180" class="text-title fade-in step-1">Inquiry</text>
+      <text x="95" y="200" class="text-title fade-in step-1">Received</text>
+    </g>
+
+    <!-- Arrow 1 -->
+    <path class="stroke-thin draw-arrow arrow-1" d="M 172 85 L 208 85" marker-end="url(#arrowhead)" />
+
+
+    <!-- ================= STEP 2: AI Triage (Professional Neural Routing Core) ================= -->
+    <g class="node-group">
+      <rect class="stroke-thick node-box draw-path step-2" x="220" y="20" width="130" height="130" rx="22" />
+      
+      <g class="icon-inner">
+        <!-- Central AI Decision Diamond -->
+        <polygon points="285,63 307,85 285,107 263,85" fill="#FFFFFF" class="fade-in step-2" />
+        <polygon points="285,63 307,85 285,107 263,85" class="stroke-thick draw-path step-2" />
+        <circle cx="285" cy="85" r="5" class="stroke-thin draw-path step-2" />
+        <circle cx="285" cy="85" r="2" class="fill-main fade-in step-2" />
+
+        <!-- Incoming Single Data Stream (Raw Input) -->
+        <path class="stroke-thick draw-path step-2" d="M 248 85 H 263" />
+
+        <!-- Outgoing Categorized Triage Channels (Sorted Routing) -->
+        <!-- Top Priority Channel -->
+        <path class="stroke-thin draw-path step-2" d="M 307 85 L 316 70 H 322" />
+        <circle cx="322" cy="70" r="2.5" class="fill-main fade-in step-2" />
+
+        <!-- Mid Direct Channel -->
+        <path class="stroke-thin draw-path step-2" d="M 307 85 H 322" />
+        <circle cx="322" cy="85" r="2.5" class="fill-main fade-in step-2" />
+
+        <!-- Bottom Automated Channel -->
+        <path class="stroke-thin draw-path step-2" d="M 307 85 L 316 100 H 322" />
+        <circle cx="322" cy="100" r="2.5" class="fill-main fade-in step-2" />
+
+        <!-- Neural Circuit Sparkles -->
+        <path class="stroke-thin draw-path step-2" d="M 285 55 V 63 M 285 107 V 115" />
+        <circle cx="285" cy="53" r="1.5" class="fill-main fade-in step-2" />
+        <circle cx="285" cy="117" r="1.5" class="fill-main fade-in step-2" />
+      </g>
+      
+      <text x="285" y="190" class="text-title fade-in step-2">AI Triage</text>
+    </g>
+
+    <!-- Arrow 2 -->
+    <path class="stroke-thin draw-arrow arrow-2" d="M 362 85 L 398 85" marker-end="url(#arrowhead)" />
+
+
+    <!-- ================= STEP 3: Automated Resolution ================= -->
+    <g class="node-group">
+      <rect class="stroke-thick node-box draw-path step-3" x="410" y="20" width="130" height="130" rx="22" />
+      
+      <g class="icon-inner">
+        <!-- Mechanical Gear Contour -->
+        <path class="stroke-main draw-path step-3" d="M 470 56 H 480 L 482 63 C 485 64, 488 66, 490 68 L 497 65 L 504 72 L 501 79 C 503 81, 505 84, 506 87 L 513 89 V 99 L 506 101 C 505 104, 503 107, 501 109 L 504 116 L 497 123 L 490 120 C 488 122, 485 124, 482 125 L 480 132 H 470 L 468 125 C 465 124, 462 122, 460 120 L 453 123 L 446 116 L 449 109 C 447 107, 445 104, 444 101 L 437 99 V 89 L 444 87 C 445 84, 447 81, 449 79 L 446 72 L 453 65 L 460 68 C 462 66, 465 64, 468 63 Z" />
+        
+        <!-- Inner Ring -->
+        <circle cx="475" cy="94" r="22" class="stroke-thin draw-path step-3" />
+        
+        <!-- Center Checkmark -->
+        <path class="stroke-thick draw-path step-3" d="M 464 94 L 471 101 L 486 86" />
+      </g>
+      
+      <text x="475" y="180" class="text-title fade-in step-3">Automated</text>
+      <text x="475" y="200" class="text-title fade-in step-3">Resolution</text>
+    </g>
+
+    <!-- Arrow 3 -->
+    <path class="stroke-thin draw-arrow arrow-3" d="M 552 85 L 588 85" marker-end="url(#arrowhead)" />
+
+
+    <!-- ================= STEP 4: Escalation to Agent ================= -->
+    <g class="node-group">
+      <rect class="stroke-thick node-box draw-path step-4" x="600" y="20" width="130" height="130" rx="22" />
+      
+      <g class="icon-inner">
+        <!-- Agent Head &amp; Neck -->
+        <circle cx="665" cy="70" r="15" class="stroke-main draw-path step-4" />
+        <!-- Ergonomic Bust/Shoulders -->
+        <path class="stroke-main draw-path step-4" d="M 640 118 C 640 102, 651 96, 665 96 C 679 96, 690 102, 690 118" />
+        
+        <!-- Headset Assembly -->
+        <path class="stroke-thin draw-path step-4" d="M 648 70 C 648 58, 682 58, 682 70" />
+        <rect x="645" y="65" width="5" height="11" rx="2.5" class="fill-main fade-in step-4" />
+        <rect x="685" y="65" width="5" height="11" rx="2.5" class="fill-main fade-in step-4" />
+        <path class="stroke-thin draw-path step-4" d="M 687 73 L 672 85 H 668" />
+        <circle cx="666" cy="85" r="2" class="fill-main fade-in step-4" />
+      </g>
+      
+      <text x="665" y="180" class="text-title fade-in step-4">Escalation</text>
+      <text x="665" y="200" class="text-title fade-in step-4">to Agent</text>
+    </g>
+
+    <!-- Arrow 4 -->
+    <path class="stroke-thin draw-arrow arrow-4" d="M 742 85 L 778 85" marker-end="url(#arrowhead)" />
+
+
+    <!-- ================= STEP 5: Feedback Loop ================= -->
+    <g class="node-group">
+      <rect class="stroke-thick node-box draw-path step-5" x="790" y="20" width="130" height="130" rx="22" />
+      
+      <g class="icon-inner">
+        <!-- Dual Sync Arrows Ring -->
+        <path class="stroke-main draw-path step-5" d="M 855 58 C 872 58, 886 70, 888 87" />
+        <path class="stroke-main fill-main fade-in step-5" d="M 888 92 L 883 83 L 893 83 Z" />
+        
+        <path class="stroke-main draw-path step-5" d="M 855 118 C 838 118, 824 106, 822 89" />
+        <path class="stroke-main fill-main fade-in step-5" d="M 822 84 L 827 93 L 817 93 Z" />
+
+        <!-- Analytical Bar Chart -->
+        <path class="stroke-thin draw-path step-5" d="M 843 100 V 90 M 851 100 V 82 M 859 100 V 86 M 867 100 V 76" />
+        <path class="stroke-thin draw-path step-5" d="M 839 100 H 871" />
+
+        <!-- Rating Stars (Vector Pathing) -->
+        <path class="fill-main fade-in step-5" d="M 845 70 L 846.5 73.5 L 850 74 L 847.5 76.5 L 848 80 L 845 78 L 842 80 L 842.5 76.5 L 840 74 L 843.5 73.5 Z" />
+        <path class="fill-main fade-in step-5" d="M 855 64 L 856.5 67.5 L 860 68 L 857.5 70.5 L 858 74 L 855 72 L 852 74 L 852.5 70.5 L 850 68 L 853.5 67.5 Z" />
+        <path class="fill-main fade-in step-5" d="M 865 70 L 866.5 73.5 L 870 74 L 867.5 76.5 L 868 80 L 865 78 L 862 80 L 862.5 76.5 L 860 74 L 863.5 73.5 Z" />
+      </g>
+      
+      <text x="855" y="180" class="text-title fade-in step-5">Feedback</text>
+      <text x="855" y="200" class="text-title fade-in step-5">Loop</text>
+    </g>
+
+  </g>
+</svg>

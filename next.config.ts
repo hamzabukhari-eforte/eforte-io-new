@@ -1,3 +1,4 @@
+import path from "node:path";
 import type { NextConfig } from "next";
 
 function getStrapiRemotePatterns(): NonNullable<NextConfig["images"]>["remotePatterns"] {
@@ -33,6 +34,10 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "static.eforte.io", pathname: "/**" },
       ...(getStrapiRemotePatterns() ?? []),
     ],
+  },
+  // Absolute app root — prevents Turbopack from using ~/pnpm-lock.yaml as monorepo root.
+  turbopack: {
+    root: path.join(__dirname),
   },
   // HTML page lives at app/site-map (avoids conflict with app/sitemap.ts → /sitemap.xml).
   // Public URL is /sitemap.

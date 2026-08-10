@@ -523,12 +523,14 @@
   border-radius: 24px;
   overflow: hidden;
   background: #0a0a1a;
+  padding: 28px 20px;
 }
 
 .workflowDiagramImage {
   display: block;
   width: 100%;
   height: auto;
+  max-height: none;
 }
 
 .workflowNumber {

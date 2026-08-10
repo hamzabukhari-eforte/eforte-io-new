@@ -35,9 +35,10 @@ export default function AiWorkflowsSection({
             <Image
               src={domain.diagramSrc}
               alt={domain.diagramAlt ?? `${domain.label} workflow diagram`}
-              width={1200}
-              height={900}
+              width={1000}
+              height={240}
               className={styles.workflowDiagramImage}
+              unoptimized
             />
           </AiWorkflowsReveal>
         ) : null}
