@@ -35,9 +35,10 @@ const nextConfig: NextConfig = {
       ...(getStrapiRemotePatterns() ?? []),
     ],
   },
-  // Absolute app root — prevents Turbopack from using ~/pnpm-lock.yaml as monorepo root.
+  // Monorepo root so Turbopack can resolve hoisted `next` from the workspace.
+  // Keep this at the repo root (not ~/), which owns pnpm-lock.yaml.
   turbopack: {
-    root: path.join(__dirname),
+    root: path.join(__dirname, "../.."),
   },
   // HTML page lives at app/site-map (avoids conflict with app/sitemap.ts → /sitemap.xml).
   // Public URL is /sitemap.
