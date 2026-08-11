@@ -12,6 +12,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { HiX } from "react-icons/hi";
 import ProjectTypeSelect from "@/components/atoms/ProjectTypeSelect";
+import FormSuccessState from "@/components/atoms/FormSuccessState";
 import { useLenisControl } from "@/components/providers/SmoothScrollProvider";
 import { cn } from "@/lib/utils";
 
@@ -67,6 +68,8 @@ function ContactModal({
 }) {
   const [submitted, setSubmitted] = useState(false);
   const [projectType, setProjectType] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const lenisControl = useLenisControl();
 
   useEffect(() => {
@@ -92,12 +95,50 @@ function ContactModal({
     if (!isOpen) {
       setSubmitted(false);
       setProjectType("");
+      setIsSubmitting(false);
+      setSubmitError(null);
     }
   }, [isOpen]);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    setSubmitError(null);
+    setIsSubmitting(true);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      name: String(formData.get("name") ?? "").trim(),
+      email: String(formData.get("email") ?? "").trim(),
+      phone: String(formData.get("phone") ?? "").trim() || undefined,
+      projectType: projectType || undefined,
+      description: String(formData.get("description") ?? "").trim() || undefined,
+    };
+
+    const apiBase = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "");
+    if (!apiBase) {
+      setSubmitError("API URL is not configured. Please try again later.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(`${apiBase}/contact`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -140,28 +181,26 @@ function ContactModal({
               className="max-h-[90vh] overflow-y-auto overscroll-contain px-6 py-8 sm:px-10 sm:py-10"
               onWheel={(event) => event.stopPropagation()}
             >
-              <h2
-                id="contact-modal-title"
-                className="text-center text-2xl font-semibold text-gray-900 sm:text-3xl"
-              >
-                Contact Us
-              </h2>
-              <p className="mx-auto mt-3 max-w-xl text-center text-sm leading-relaxed text-gray-500 sm:text-base">
-                Our project consultant will call you in the next 24 hours to discuss
-                your project scope in detail.
-              </p>
-
               {submitted ? (
-                <div className="mt-10 rounded-2xl border border-primary-pink/20 bg-primary-pink/5 px-6 py-10 text-center">
-                  <p className="text-lg font-medium text-gray-900">
-                    Thank you for reaching out!
-                  </p>
-                  <p className="mt-2 text-sm text-gray-600">
-                    We&apos;ve received your message and will be in touch shortly.
-                  </p>
-                </div>
+                <FormSuccessState
+                  title="Thank you for reaching out!"
+                  description="We've received your message and will be in touch shortly."
+                  onDone={onClose}
+                />
               ) : (
-                <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+                <>
+                  <h2
+                    id="contact-modal-title"
+                    className="text-center text-2xl font-semibold text-gray-900 sm:text-3xl"
+                  >
+                    Contact Us
+                  </h2>
+                  <p className="mx-auto mt-3 max-w-xl text-center text-sm leading-relaxed text-gray-500 sm:text-base">
+                    Our project consultant will call you in the next 24 hours to discuss
+                    your project scope in detail.
+                  </p>
+
+                  <form onSubmit={handleSubmit} className="mt-8 space-y-5">
                   <div className="grid gap-5 sm:grid-cols-2">
                     <ContactField label="Name" id="contact-name">
                       <input
@@ -214,15 +253,23 @@ function ContactModal({
                     />
                   </ContactField>
 
+                  {submitError ? (
+                    <p className="text-sm text-red-600" role="alert">
+                      {submitError}
+                    </p>
+                  ) : null}
+
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full cursor-pointer rounded-full border-2 border-primary-pink bg-white px-8 py-3.5 text-sm font-semibold text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white"
+                      disabled={isSubmitting}
+                      className="w-full cursor-pointer rounded-full border-2 border-primary-pink bg-white px-8 py-3.5 text-sm font-semibold text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
                     >
-                      Send Message
+                      {isSubmitting ? "Sending…" : "Send Message"}
                     </button>
                   </div>
                 </form>
+                </>
               )}
             </div>
           </motion.div>

@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "dotenv -o -e ../../.env -e .env -- sh -c 'next dev --port \"${WEB_PORT:-6001}\"'",
+    "dev": "dotenv -o -e ../../.env -e .env -- sh -c 'next dev --port \"${WEB_PORT:-6200}\"'",
     "build": "next build --webpack",
-    "start": "dotenv -o -e ../../.env -e .env -- sh -c 'next start --port \"${WEB_PORT:-6001}\"'",
+    "start": "dotenv -o -e ../../.env -e .env -- sh -c 'next start --port \"${WEB_PORT:-6200}\"'",
     "lint": "eslint"
   },
   "dependencies": {

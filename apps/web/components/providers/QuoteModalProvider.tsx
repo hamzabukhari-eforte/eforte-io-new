@@ -12,6 +12,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { HiX } from "react-icons/hi";
 import { useLenisControl } from "@/components/providers/SmoothScrollProvider";
+import FormSuccessState from "@/components/atoms/FormSuccessState";
 import {
   quoteBudgetOptions,
   quoteLookingForOptions,
@@ -127,6 +128,8 @@ function QuoteModal({
   const [lookingFor, setLookingFor] = useState("");
   const [projectType, setProjectType] = useState("");
   const [budget, setBudget] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const lenisControl = useLenisControl();
 
   useEffect(() => {
@@ -155,13 +158,57 @@ function QuoteModal({
       setLookingFor("");
       setProjectType("");
       setBudget("");
+      setIsSubmitting(false);
+      setSubmitError(null);
     }
   }, [isOpen]);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Backend wiring comes later — UI-only submit for now.
-    setSubmitted(true);
+    setSubmitError(null);
+    setIsSubmitting(true);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      businessName: String(formData.get("businessName") ?? "").trim(),
+      firstName: String(formData.get("firstName") ?? "").trim(),
+      lastName: String(formData.get("lastName") ?? "").trim(),
+      email: String(formData.get("email") ?? "").trim(),
+      countryCode,
+      phone: String(formData.get("phone") ?? "").trim(),
+      referralSource:
+        String(formData.get("referralSource") ?? "").trim() || undefined,
+      lookingFor,
+      projectType,
+      budget,
+      requirements: String(formData.get("requirements") ?? "").trim(),
+    };
+
+    const apiBase = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "");
+    if (!apiBase) {
+      setSubmitError("API URL is not configured. Please try again later.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(`${apiBase}/quotes`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -204,28 +251,25 @@ function QuoteModal({
               className="max-h-[90vh] overflow-y-auto overscroll-contain px-6 py-8 sm:px-10 sm:py-10 xl:max-h-[94vh] xl:py-7"
               onWheel={(event) => event.stopPropagation()}
             >
-              <h2
-                id="quote-modal-title"
-                className="text-center text-2xl font-semibold text-gray-900 sm:text-3xl"
-              >
-                How much our services cost?
-              </h2>
-              <p className="mx-auto mt-3 max-w-xl text-center text-sm leading-relaxed text-gray-500 sm:text-base">
-                Get a quote in 24 Hours
-              </p>
-
               {submitted ? (
-                <div className="mt-10 rounded-2xl border border-primary-pink/20 bg-primary-pink/5 px-6 py-10 text-center">
-                  <p className="text-lg font-medium text-gray-900">
-                    Thank you for your quote request!
-                  </p>
-                  <p className="mt-2 text-sm text-gray-600">
-                    We&apos;ve received your details and will get back to you within 24
-                    hours.
-                  </p>
-                </div>
+                <FormSuccessState
+                  title="Thank you for your quote request!"
+                  description="We've received your details and will get back to you within 24 hours."
+                  onDone={onClose}
+                />
               ) : (
-                <form onSubmit={handleSubmit} className="mt-8 space-y-5 xl:space-y-4">
+                <>
+                  <h2
+                    id="quote-modal-title"
+                    className="text-center text-2xl font-semibold text-gray-900 sm:text-3xl"
+                  >
+                    How much our services cost?
+                  </h2>
+                  <p className="mx-auto mt-3 max-w-xl text-center text-sm leading-relaxed text-gray-500 sm:text-base">
+                    Get a quote in 24 Hours
+                  </p>
+
+                  <form onSubmit={handleSubmit} className="mt-8 space-y-5 xl:space-y-4">
                   <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:gap-4">
                     <QuoteField label="Business name" id="quote-business-name">
                       <input
@@ -349,15 +393,23 @@ function QuoteModal({
                     />
                   </QuoteField>
 
+                  {submitError ? (
+                    <p className="text-sm text-red-600" role="alert">
+                      {submitError}
+                    </p>
+                  ) : null}
+
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full cursor-pointer rounded-full border-2 border-primary-pink bg-white px-8 py-3.5 text-sm font-semibold text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white"
+                      disabled={isSubmitting}
+                      className="w-full cursor-pointer rounded-full border-2 border-primary-pink bg-white px-8 py-3.5 text-sm font-semibold text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
                     >
-                      Send Message
+                      {isSubmitting ? "Sending…" : "Send Message"}
                     </button>
                   </div>
                 </form>
+                </>
               )}
             </div>
           </motion.div>

@@ -1,5 +1,5 @@
 function getStrapiUrl(): string {
-  const fallback = `http://localhost:${process.env.STRAPI_PORT ?? "6003"}`;
+  const fallback = `http://localhost:${process.env.STRAPI_PORT ?? "6400"}`;
   return (process.env.NEXT_PUBLIC_STRAPI_URL ?? fallback).replace(/\/$/, "");
 }
 

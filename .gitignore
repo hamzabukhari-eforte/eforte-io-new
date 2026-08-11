@@ -48,3 +48,6 @@ next-env.d.ts
 
 # local pnpm store (if ever created in-repo)
 .pnpm-store
+
+# Local Supabase CLI project (not deployed; server uses a hosted DB + Prisma)
+supabase/

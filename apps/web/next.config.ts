@@ -2,7 +2,7 @@ import path from "node:path";
 import type { NextConfig } from "next";
 
 function getStrapiRemotePatterns(): NonNullable<NextConfig["images"]>["remotePatterns"] {
-  const strapiPort = process.env.STRAPI_PORT ?? "6003";
+  const strapiPort = process.env.STRAPI_PORT ?? "6400";
   const strapiUrl =
     process.env.NEXT_PUBLIC_STRAPI_URL ?? `http://localhost:${strapiPort}`;
 

@@ -9,8 +9,13 @@
     "dev:api": "dotenv -o -e .env -- turbo run dev --filter=api",
     "dev:strapi": "dotenv -o -e .env -- turbo run dev --filter=strapi",
     "build": "dotenv -o -e .env -- turbo run build --filter=web",
+    "build:web": "dotenv -o -e .env -- turbo run build --filter=web",
+    "build:api": "dotenv -o -e .env -- turbo run build --filter=api",
     "lint": "turbo run lint --filter=web",
-    "start": "dotenv -o -e .env -- pnpm --filter web start"
+    "start": "dotenv -o -e .env -- pnpm --filter web start",
+    "db:generate": "pnpm --filter api prisma:generate",
+    "db:migrate": "pnpm --filter api prisma:migrate",
+    "db:deploy": "pnpm --filter api prisma:deploy"
   },
   "devDependencies": {
     "dotenv-cli": "^11.0.0",

@@ -1,0 +1,14 @@
+services:
+  api:
+    build:
+      context: ./apps/api
+      dockerfile: Dockerfile
+    ports:
+      - "${API_PORT:-6100}:6100"
+    environment:
+      API_PORT: "6100"
+      DATABASE_URL: postgresql://postgres:postgres@host.docker.internal:54332/postgres?schema=api
+      CORS_ORIGIN: http://localhost:6200
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped

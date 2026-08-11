@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model ContactSubmission {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  phone       String?
+  projectType String?
+  description String?
+  createdAt   DateTime @default(now())
+
+  @@map("contact_submissions")
+}
+
+model QuoteSubmission {
+  id             String   @id @default(cuid())
+  businessName   String
+  firstName      String
+  lastName       String
+  email          String
+  countryCode    String
+  phone          String
+  referralSource String?
+  lookingFor     String
+  projectType    String
+  budget         String
+  requirements   String
+  createdAt      DateTime @default(now())
+
+  @@map("quote_submissions")
+}

@@ -5,6 +5,8 @@
     "ADMIN_PORT",
     "API_PORT",
     "STRAPI_PORT",
+    "DATABASE_URL",
+    "CORS_ORIGIN",
     "NEXT_PUBLIC_SITE_URL",
     "NEXT_PUBLIC_API_URL",
     "NEXT_PUBLIC_STRAPI_URL"
@@ -16,7 +18,7 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "lint": {
       "dependsOn": ["^lint"]
