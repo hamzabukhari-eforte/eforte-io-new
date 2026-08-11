@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "dotenv -o -e ../../.env -e .env -- sh -c 'next dev --port \"${WEB_PORT:-6001}\"'",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "dotenv -o -e ../../.env -e .env -- sh -c 'next start --port \"${WEB_PORT:-6001}\"'",
     "lint": "eslint"
   },
