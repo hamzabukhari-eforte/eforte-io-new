@@ -5,7 +5,7 @@ import AppProviders from "@/components/providers/AppProviders";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
 import { VelocityAIFooterCTASection } from "@/components/sections/velocity-ai";
-import { getInsightsMenuData } from "@/lib/strapi/insights";
+import { getAiPillarsInsights, getInsightsMenuData } from "@/lib/strapi/insights";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -26,13 +26,19 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const insightsMenuData = await getInsightsMenuData();
+  const [insightsMenuData, aiPillarsInsights] = await Promise.all([
+    getInsightsMenuData(),
+    getAiPillarsInsights(3),
+  ]);
 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistMono.variable} antialiased`} suppressHydrationWarning>
         <AppProviders>
-          <Navbar insightsMenuData={insightsMenuData} />
+          <Navbar
+            insightsMenuData={insightsMenuData}
+            aiPillarsInsights={aiPillarsInsights}
+          />
           {children}
           <VelocityAIFooterCTASection />
           <Footer />

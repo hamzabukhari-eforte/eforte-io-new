@@ -35,7 +35,7 @@ import {
 } from "react-icons/hi";
 import { FiLink } from "react-icons/fi";
 import type { IconType } from "react-icons";
-import type { InsightsMenuData } from "@/lib/strapi/insights";
+import type { InsightsMenuData, InsightsMenuItem } from "@/lib/strapi/insights";
 import { impactStudyImages } from "@/data/impactStudyImages";
 
 const menuIconMap: Record<string, IconType> = {
@@ -740,6 +740,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
 
 export interface NavbarProps {
   insightsMenuData?: InsightsMenuData;
+  aiPillarsInsights?: InsightsMenuItem[];
 }
 
 /** Light-hero capability pages need a solid nav at top (white content under transparent bar). */
@@ -753,7 +754,39 @@ const LIGHT_HERO_NAV_ROUTES = [
   "/sitemap",
 ] as const;
 
-export default function Navbar({ insightsMenuData }: NavbarProps) {
+function resolveMegaMenuConfig(
+  menuId: string,
+  aiPillarsInsights?: InsightsMenuItem[]
+): MegaMenuConfig | undefined {
+  const config = megaMenuConfig[menuId];
+  if (!config) return undefined;
+
+  if (menuId !== "ai-pillars" || !aiPillarsInsights?.length) {
+    return config;
+  }
+
+  return {
+    ...config,
+    columns: config.columns.map((column) => {
+      if (column.title !== "AI Insights") return column;
+      return {
+        ...column,
+        items: aiPillarsInsights.map((item) => ({
+          title: item.title,
+          description: item.description,
+          imageSrc: item.imageSrc,
+          href: item.href,
+          tag: item.tag,
+        })),
+      };
+    }),
+  };
+}
+
+export default function Navbar({
+  insightsMenuData,
+  aiPillarsInsights,
+}: NavbarProps) {
   const pathname = usePathname();
   const isScrolled = useScroll(10);
   const lenisControl = useLenisControl();
@@ -857,7 +890,7 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
   const renderMegaMenu = () => {
     if (!activeMenu || isMobileMenuOpen) return null;
 
-    const config = megaMenuConfig[activeMenu];
+    const config = resolveMegaMenuConfig(activeMenu, aiPillarsInsights);
     if (!config) return null;
 
     // Special layout for About Us to more closely match reference structure
@@ -1784,7 +1817,7 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
             >
               <div className="flex flex-col">
                 {navLinks.map((link) => {
-                  const config = megaMenuConfig[link.id];
+                  const config = resolveMegaMenuConfig(link.id, aiPillarsInsights);
                   const columns = getMobileMenuColumns(link.id, config);
                   const hasChildren = columns.length > 0;
                   const isExpanded = expandedMobileIds.includes(link.id);

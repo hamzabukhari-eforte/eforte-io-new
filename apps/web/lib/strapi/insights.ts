@@ -22,6 +22,7 @@ export type InsightsMenuItem = {
   description?: string;
   imageSrc?: string;
   href?: string;
+  tag?: string;
 };
 
 export type InsightsMenuData = {
@@ -167,13 +168,38 @@ function mapBlogToInsightPost(blog: StrapiBlog): InsightPost {
   };
 }
 
-function mapPostToMenuItem(post: InsightPost): InsightsMenuItem {
+function mapPostToMenuItem(post: InsightPost, tag?: string): InsightsMenuItem {
   return {
     title: post.title,
     description: truncate(post.description, 80),
     imageSrc: post.imageSrc,
     href: `/blog/${post.id}`,
+    tag,
   };
+}
+
+async function fetchStrapiBlogsByCategoryTitle(
+  categoryTitle: string,
+  limit: number
+): Promise<StrapiBlog[]> {
+  try {
+    const params = new URLSearchParams({
+      "filters[categories][title][$containsi]": categoryTitle,
+      sort: "date:desc",
+      "pagination[pageSize]": String(limit),
+    });
+    // populate query params
+    const response = await fetch(
+      `${getStrapiUrl()}/api/blogs?${params.toString()}&${BLOG_POPULATE}`,
+      { next: { revalidate: REVALIDATE_SECONDS } }
+    );
+
+    if (!response.ok) return [];
+    const payload: unknown = await response.json();
+    return unwrapStrapiList<StrapiBlog>(payload).filter((blog) => Boolean(blog?.slug));
+  } catch {
+    return [];
+  }
 }
 
 async function fetchStrapiBlogs(): Promise<StrapiBlog[]> {
@@ -199,12 +225,32 @@ export async function getInsightPosts(): Promise<InsightPost[]> {
 
 export async function getInsightsMenuData(): Promise<InsightsMenuData> {
   const posts = await getInsightPosts();
-  const menuItems = posts.map(mapPostToMenuItem);
+  const menuItems = posts.map((post) => mapPostToMenuItem(post));
 
   return {
     highlighted: menuItems.slice(0, 2),
     latest: menuItems.slice(2, 8),
   };
+}
+
+/** Top posts for the AI Pillars mega menu "AI Insights" column. */
+export async function getAiPillarsInsights(limit = 3): Promise<InsightsMenuItem[]> {
+  const categoryTitle = "Data and AI";
+
+  const blogs = await fetchStrapiBlogsByCategoryTitle(categoryTitle, limit);
+  if (blogs.length > 0) {
+    return blogs.slice(0, limit).map((blog) => {
+      const post = mapBlogToInsightPost(blog);
+      const tag =
+        parseTags(blog.tag)[0] ||
+        blog.categories?.find((c) => c.title)?.title ||
+        "Insight";
+      return mapPostToMenuItem(post, tag);
+    });
+  }
+
+  const posts = filterPostsByCategory(await getInsightPosts(), categoryTitle);
+  return posts.slice(0, limit).map((post) => mapPostToMenuItem(post, "Insight"));
 }
 
 export async function getInsightCategories(): Promise<InsightCategory[]> {
