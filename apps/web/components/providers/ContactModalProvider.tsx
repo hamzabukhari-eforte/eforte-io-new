@@ -104,7 +104,7 @@ function ContactModal({
     <AnimatePresence>
       {isOpen ? (
         <motion.div
-          className="fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-6"
+          className="fixed inset-0 z-[120] flex items-center justify-center p-4 sm:p-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -112,7 +112,7 @@ function ContactModal({
         >
           <button
             type="button"
-            className="absolute inset-0 bg-black/60"
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             aria-label="Close contact form"
             onClick={onClose}
           />

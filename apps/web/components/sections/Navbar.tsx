@@ -8,7 +8,7 @@ import { useScroll } from "@/hooks/useScroll";
 import { useLenisControl } from "@/components/providers/SmoothScrollProvider";
 import { cn } from "@/lib/utils";
 import Container from "@/components/atoms/Container";
-import ContactCTA from "@/components/atoms/ContactCTA";
+import QuoteCTA from "@/components/atoms/QuoteCTA";
 import {
   HiMenu,
   HiX,
@@ -1724,7 +1724,7 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
 
           {/* Desktop CTA Button */}
           <div className="hidden xl:block">
-            <ContactCTA
+            <QuoteCTA
               className={cn(
                 "px-4 md:px-6 h-12 rounded-full flex items-center justify-center",
                 "text-sm md:text-base font-semibold",
@@ -1734,7 +1734,7 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
               )}
             >
               Let&apos;s build intelligence together
-            </ContactCTA>
+            </QuoteCTA>
           </div>
 
           {/* Mobile/Tablet Hamburger Menu Button */}
@@ -1892,12 +1892,12 @@ export default function Navbar({ insightsMenuData }: NavbarProps) {
 
             {/* Mobile CTA Button */}
             <div className="p-6 border-t border-white/10">
-              <ContactCTA
+              <QuoteCTA
                 onOpen={closeMobileMenu}
                 className="w-full h-12 rounded-full flex items-center justify-center text-sm font-semibold bg-primary-pink text-white border border-primary-pink hover:bg-primary-pink/90 transition-all duration-200"
               >
                 Let&apos;s build intelligence together
-              </ContactCTA>
+              </QuoteCTA>
             </div>
           </div>
         </div>
