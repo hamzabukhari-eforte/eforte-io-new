@@ -1,5 +1,6 @@
 function getStrapiUrl(): string {
-  return (process.env.NEXT_PUBLIC_STRAPI_URL ?? "http://localhost:5000").replace(/\/$/, "");
+  const fallback = `http://localhost:${process.env.STRAPI_PORT ?? "6003"}`;
+  return (process.env.NEXT_PUBLIC_STRAPI_URL ?? fallback).replace(/\/$/, "");
 }
 
 function looksLikeHtml(content: string): boolean {

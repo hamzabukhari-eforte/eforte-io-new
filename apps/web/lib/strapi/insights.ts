@@ -6,7 +6,7 @@ import {
 import { formatStrapiContent } from "@/lib/strapi/content";
 
 const REVALIDATE_SECONDS = 60;
-const DEFAULT_STRAPI_URL = "http://localhost:5000";
+const DEFAULT_STRAPI_URL = `http://localhost:${process.env.STRAPI_PORT ?? "6003"}`;
 const FALLBACK_IMAGE = "/assets/images/velocity-ai/insight-1.png";
 
 export type InsightCategory = {

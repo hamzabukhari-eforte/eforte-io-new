@@ -2,7 +2,9 @@ import path from "node:path";
 import type { NextConfig } from "next";
 
 function getStrapiRemotePatterns(): NonNullable<NextConfig["images"]>["remotePatterns"] {
-  const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_URL ?? "http://localhost:5000";
+  const strapiPort = process.env.STRAPI_PORT ?? "6003";
+  const strapiUrl =
+    process.env.NEXT_PUBLIC_STRAPI_URL ?? `http://localhost:${strapiPort}`;
 
   try {
     const url = new URL(strapiUrl);
@@ -18,8 +20,8 @@ function getStrapiRemotePatterns(): NonNullable<NextConfig["images"]>["remotePat
     ];
   } catch {
     return [
-      { protocol: "http", hostname: "localhost", port: "5000", pathname: "/uploads/**" },
-      { protocol: "http", hostname: "127.0.0.1", port: "5000", pathname: "/uploads/**" },
+      { protocol: "http", hostname: "localhost", port: strapiPort, pathname: "/uploads/**" },
+      { protocol: "http", hostname: "127.0.0.1", port: strapiPort, pathname: "/uploads/**" },
     ];
   }
 }

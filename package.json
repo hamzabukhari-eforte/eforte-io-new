@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "turbo run dev --filter=@eforte/web",
-    "dev:web": "turbo run dev --filter=@eforte/web",
-    "build": "turbo run build --filter=@eforte/web",
-    "lint": "turbo run lint --filter=@eforte/web",
-    "start": "pnpm --filter @eforte/web start"
+    "dev": "dotenv -o -e .env -- turbo run dev --filter=web",
+    "dev:web": "dotenv -o -e .env -- turbo run dev --filter=web",
+    "dev:admin": "dotenv -o -e .env -- turbo run dev --filter=admin",
+    "dev:api": "dotenv -o -e .env -- turbo run dev --filter=api",
+    "dev:strapi": "dotenv -o -e .env -- turbo run dev --filter=strapi",
+    "build": "dotenv -o -e .env -- turbo run build --filter=web",
+    "lint": "turbo run lint --filter=web",
+    "start": "dotenv -o -e .env -- pnpm --filter web start"
   },
   "devDependencies": {
+    "dotenv-cli": "^11.0.0",
     "turbo": "^2.5.4"
   },
   "packageManager": "pnpm@11.21.0",
