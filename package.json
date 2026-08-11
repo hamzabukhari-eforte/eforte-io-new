@@ -11,6 +11,7 @@
     "build": "dotenv -o -e .env -- turbo run build --filter=web",
     "build:web": "dotenv -o -e .env -- turbo run build --filter=web",
     "build:api": "dotenv -o -e .env -- turbo run build --filter=api",
+    "build:strapi": "dotenv -o -e .env -- turbo run build --filter=strapi",
     "lint": "turbo run lint --filter=web",
     "start": "dotenv -o -e .env -- pnpm --filter web start",
     "db:generate": "pnpm --filter api prisma:generate",

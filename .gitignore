@@ -51,3 +51,10 @@ next-env.d.ts
 
 # Local Supabase CLI project (not deployed; server uses a hosted DB + Prisma)
 supabase/
+
+# Strapi local artifacts
+.strapi/
+.strapi-updater.json
+apps/strapi/public/uploads/*
+!apps/strapi/public/uploads/.gitkeep
+

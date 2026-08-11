@@ -9,6 +9,8 @@ const REVALIDATE_SECONDS = 60;
 const DEFAULT_STRAPI_URL = `http://localhost:${process.env.STRAPI_PORT ?? "6400"}`;
 const FALLBACK_IMAGE = "/assets/images/velocity-ai/insight-1.png";
 
+const BLOG_POPULATE = "populate[images]=true&populate[categories]=true";
+
 export type InsightCategory = {
   id?: string;
   title: string;
@@ -28,7 +30,8 @@ export type InsightsMenuData = {
 };
 
 export type StrapiCategory = {
-  id?: number;
+  id?: number | string;
+  documentId?: string;
   title: string;
 };
 
@@ -37,6 +40,8 @@ type StrapiMedia = {
 };
 
 export type StrapiBlog = {
+  id?: number | string;
+  documentId?: string;
   slug: string;
   title: string;
   writtenBy: string;
@@ -44,8 +49,8 @@ export type StrapiBlog = {
   description: string;
   tag?: string;
   metaData?: string;
-  images?: StrapiMedia[] | StrapiMedia | number | number[];
-  categories?: StrapiCategory[] | number[];
+  images?: StrapiMedia[] | StrapiMedia | null;
+  categories?: StrapiCategory[] | null;
 };
 
 export type InsightDetail = InsightPost & {
@@ -65,6 +70,30 @@ function stripHtml(html: string): string {
 function truncate(text: string, maxLength: number): string {
   if (text.length <= maxLength) return text;
   return `${text.slice(0, maxLength).trimEnd()}...`;
+}
+
+function unwrapStrapiList<T>(payload: unknown): T[] {
+  if (Array.isArray(payload)) return payload as T[];
+  if (
+    payload &&
+    typeof payload === "object" &&
+    "data" in payload &&
+    Array.isArray((payload as { data: unknown }).data)
+  ) {
+    return (payload as { data: T[] }).data;
+  }
+  return [];
+}
+
+function unwrapStrapiEntity<T>(payload: unknown): T | null {
+  if (!payload || typeof payload !== "object") return null;
+  if ("data" in payload) {
+    const data = (payload as { data: unknown }).data;
+    if (Array.isArray(data)) return (data[0] as T) ?? null;
+    if (data && typeof data === "object") return data as T;
+    return null;
+  }
+  return payload as T;
 }
 
 export function formatInsightListDate(dateStr: string): string {
@@ -149,13 +178,14 @@ function mapPostToMenuItem(post: InsightPost): InsightsMenuItem {
 
 async function fetchStrapiBlogs(): Promise<StrapiBlog[]> {
   try {
-    const response = await fetch(`${getStrapiUrl()}/blogs?_sort=date:DESC`, {
-      next: { revalidate: REVALIDATE_SECONDS },
-    });
+    const response = await fetch(
+      `${getStrapiUrl()}/api/blogs?sort=date:desc&${BLOG_POPULATE}`,
+      { next: { revalidate: REVALIDATE_SECONDS } }
+    );
 
     if (!response.ok) return [];
-    const data: unknown = await response.json();
-    return Array.isArray(data) ? (data as StrapiBlog[]) : [];
+    const payload: unknown = await response.json();
+    return unwrapStrapiList<StrapiBlog>(payload).filter((blog) => Boolean(blog?.slug));
   } catch {
     return [];
   }
@@ -180,7 +210,7 @@ export async function getInsightsMenuData(): Promise<InsightsMenuData> {
 export async function getInsightCategories(): Promise<InsightCategory[]> {
   const categories = await getStrapiCategories();
   return categories.map((category) => ({
-    id: category.id?.toString(),
+    id: category.id?.toString() ?? category.documentId,
     title: category.title,
     slug: categoryToSlug(category.title),
   }));
@@ -203,17 +233,19 @@ export function filterPostsByCategory(
 
 export async function getStrapiCategories(): Promise<StrapiCategory[]> {
   try {
-    const response = await fetch(`${getStrapiUrl()}/categories`, {
+    const response = await fetch(`${getStrapiUrl()}/api/categories`, {
       next: { revalidate: REVALIDATE_SECONDS },
     });
 
     if (!response.ok) return [];
-    const data: unknown = await response.json();
-    if (!Array.isArray(data)) return [];
-
-    return data
-      .filter((item): item is StrapiCategory => typeof item === "object" && item !== null && "title" in item)
-      .map((item) => ({ id: item.id, title: String(item.title) }));
+    const payload: unknown = await response.json();
+    return unwrapStrapiList<StrapiCategory>(payload)
+      .filter((item) => typeof item === "object" && item !== null && "title" in item)
+      .map((item) => ({
+        id: item.id,
+        documentId: item.documentId,
+        title: String(item.title),
+      }));
   } catch {
     return [];
   }
@@ -229,9 +261,10 @@ export function getCategoryHref(title: string, categories: InsightCategory[] = [
 
 export async function getInsightBySlug(slug: string): Promise<InsightDetail | null> {
   try {
-    const response = await fetch(`${getStrapiUrl()}/blogs/${encodeURIComponent(slug)}`, {
-      next: { revalidate: REVALIDATE_SECONDS },
-    });
+    const response = await fetch(
+      `${getStrapiUrl()}/api/blogs?filters[slug][$eq]=${encodeURIComponent(slug)}&${BLOG_POPULATE}`,
+      { next: { revalidate: REVALIDATE_SECONDS } }
+    );
 
     if (!response.ok) {
       const fallback = ALL_INSIGHT_POSTS.find((post) => post.id === slug);
@@ -244,7 +277,19 @@ export async function getInsightBySlug(slug: string): Promise<InsightDetail | nu
       };
     }
 
-    const blog = (await response.json()) as StrapiBlog;
+    const payload: unknown = await response.json();
+    const blog = unwrapStrapiEntity<StrapiBlog>(payload);
+    if (!blog?.slug) {
+      const fallback = ALL_INSIGHT_POSTS.find((post) => post.id === slug);
+      if (!fallback) return null;
+      return {
+        ...fallback,
+        body: formatStrapiContent(fallback.description),
+        tags: [],
+        publishedAt: fallback.date ?? "",
+      };
+    }
+
     const post = mapBlogToInsightPost(blog);
 
     return {
@@ -267,20 +312,17 @@ export async function getInsightBySlug(slug: string): Promise<InsightDetail | nu
 
 export async function getAllInsightSlugs(): Promise<string[]> {
   try {
-    const response = await fetch(`${getStrapiUrl()}/blogs/allSlugs`, {
-      next: { revalidate: REVALIDATE_SECONDS },
-    });
+    const response = await fetch(
+      `${getStrapiUrl()}/api/blogs?fields[0]=slug&pagination[pageSize]=100`,
+      { next: { revalidate: REVALIDATE_SECONDS } }
+    );
 
     if (!response.ok) return ALL_INSIGHT_POSTS.map((post) => post.id);
 
-    const data: unknown = await response.json();
-    if (!Array.isArray(data)) return ALL_INSIGHT_POSTS.map((post) => post.id);
-
-    return data
-      .map((item) =>
-        typeof item === "object" && item !== null && "slug" in item ? String(item.slug) : ""
-      )
-      .filter(Boolean);
+    const payload: unknown = await response.json();
+    const blogs = unwrapStrapiList<{ slug?: string }>(payload);
+    const slugs = blogs.map((item) => item.slug ?? "").filter(Boolean);
+    return slugs.length > 0 ? slugs : ALL_INSIGHT_POSTS.map((post) => post.id);
   } catch {
     return ALL_INSIGHT_POSTS.map((post) => post.id);
   }
