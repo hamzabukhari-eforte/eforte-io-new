@@ -1,16 +1,10 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { databricksConferences } from "@/data/databricks";
+import ReactPlayer from "@/components/atoms/ReactPlayerClient";
 
-const ReactPlayer = dynamic(() => import("react-player"), {
-  ssr: false,
-  loading: () => (
-    <div className="absolute inset-0 animate-pulse rounded-[24px] bg-white/5" />
-  ),
-});
 
 export default function DatabricksConferencesSection() {
   return (

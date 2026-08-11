@@ -1,15 +1,9 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import Container from "@/components/atoms/Container";
 import Image from "next/image";
+import ReactPlayer from "@/components/atoms/ReactPlayerClient";
 
-const ReactPlayer = dynamic(() => import("react-player"), {
-  ssr: false,
-  loading: () => (
-    <div className="absolute inset-0 bg-black/80 animate-pulse rounded-xl" />
-  ),
-});
 
 const ABOUT_TEXT =
   "With over a decade of experience and a growing team of dedicated engineers, designers, and consultants, eForte delivers high quality, AI native software solutions built around Velocity AI, Agentic Orchestration, and the Foundational Data Layer.";

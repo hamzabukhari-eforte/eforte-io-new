@@ -1,15 +1,9 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
+import ReactPlayer from "@/components/atoms/ReactPlayerClient";
 
-const ReactPlayer = dynamic(() => import("react-player"), {
-  ssr: false,
-  loading: () => (
-    <div className="absolute inset-0 animate-pulse rounded-2xl bg-black/80" />
-  ),
-});
 
 const YOUTUBE_URL = "https://www.youtube.com/watch?v=AxnIFqEakag";
 
