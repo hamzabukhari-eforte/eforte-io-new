@@ -110,7 +110,7 @@ export default function EmbeddedEngineeringSuccessStoriesSection() {
           type="button"
           onClick={goPrev}
           aria-label="Previous success story"
-          className="absolute left-0 top-[160px] z-20 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default md:top-[180px]"
+          className="absolute left-0 top-[160px] z-20 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default md:top-[180px]"
         >
           <HiArrowLeft className="h-5 w-5" />
         </button>
@@ -118,7 +118,7 @@ export default function EmbeddedEngineeringSuccessStoriesSection() {
           type="button"
           onClick={goNext}
           aria-label="Next success story"
-          className="absolute right-0 top-[160px] z-20 flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default md:top-[180px]"
+          className="absolute right-0 top-[160px] z-20 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default md:top-[180px]"
         >
           <HiArrowRight className="h-5 w-5" />
         </button>
@@ -154,7 +154,7 @@ export default function EmbeddedEngineeringSuccessStoriesSection() {
                 <p className="mt-5 max-w-md text-[14px] leading-relaxed text-white/60 md:text-[15px]">
                   {story.description}
                 </p>
-                <span className="mt-7 inline-flex items-center rounded-full border border-white/30 px-5 py-2 text-sm font-medium text-white">
+                <span className="mt-7 inline-flex h-10 items-center justify-center rounded-full border border-white/30 px-5 py-2 text-sm font-medium text-white">
                   Our work includes
                 </span>
               </div>
@@ -166,7 +166,7 @@ export default function EmbeddedEngineeringSuccessStoriesSection() {
                 return (
                   <div
                     key={index}
-                    className="rounded-2xl bg-white p-8 text-default shadow-[0_10px_40px_rgba(0,0,0,0.25)]"
+                    className="rounded-[12px] bg-white p-8 text-default shadow-[0_10px_40px_rgba(0,0,0,0.25)]"
                   >
                     <Icon className="h-8 w-8 text-default" />
                     <p className="mt-10 text-[14px] leading-relaxed text-[#555]">

@@ -53,7 +53,7 @@ export default function ServicesSection() {
                     {services.map((service, index) => (
                         <motion.div
                             key={service.id}
-                            className="relative max-w-sm rounded-lg py-6 md:py-8 px-20 border border-white/10 hover:border-white/30 transition-all duration-300 flex flex-col"
+                            className="relative max-w-sm rounded-[12px] py-6 md:py-8 px-20 border border-white/10 hover:border-white/30 transition-all duration-300 flex flex-col"
                             style={{
                                 background: `linear-gradient(to bottom, #0A0A1A, #10082C, #2A0079)`,
                             }}
@@ -96,7 +96,7 @@ export default function ServicesSection() {
                             {/* Button */}
                             <Link
                                 href={service.id === "velocity-ai" ? "/velocity-ai" : service.id === "agentic-orchestration" ? "/agentic-orchestration" : "/foundational-data-layer"}
-                                className="inline-flex items-center justify-center px-9 py-3.5 rounded-full text-[15px] font-medium text-primary-pink border border-primary-pink bg-transparent hover:bg-primary-pink hover:text-white hover:border-transparent transition-all duration-200"
+                                className="inline-flex h-10 items-center justify-center px-9 py-0.5 rounded-full text-[15px] font-medium text-primary-pink border border-primary-pink bg-transparent hover:bg-primary-pink hover:text-white hover:border-transparent transition-all duration-200"
                             >
                                 Learn more
                             </Link>

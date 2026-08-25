@@ -34,7 +34,7 @@ export default function DataCaseStudySection() {
   return (
     <section className="bg-white">
       <div
-        className="relative overflow-hidden rounded-[36px] bg-primary-pink py-16 text-white md:rounded-[42px] md:py-24"
+        className="relative overflow-hidden rounded-[12px] bg-primary-pink py-16 text-white md:rounded-[12px] md:py-24"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onFocus={() => setIsPaused(true)}
@@ -75,7 +75,7 @@ export default function DataCaseStudySection() {
                   {story.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-white px-3 py-1.5 text-xs font-medium text-primary-pink"
+                      className="h-10 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-primary-pink"
                     >
                       {tag}
                     </span>
@@ -83,7 +83,7 @@ export default function DataCaseStudySection() {
                 </div>
                 <Link
                   href="/impact-studies"
-                  className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-semibold text-primary-pink transition-opacity hover:opacity-90"
+                  className="mt-8 inline-flex h-10 items-center justify-center rounded-full bg-white px-7 py-0 text-sm font-semibold text-primary-pink transition-opacity hover:opacity-90"
                 >
                   Learn more
                 </Link>
@@ -93,7 +93,7 @@ export default function DataCaseStudySection() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.45, delay: 0.08 }}
-                className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-3xl"
+                className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-[12px]"
               >
                 <Image
                   src={story.imageSrc}
@@ -111,7 +111,7 @@ export default function DataCaseStudySection() {
               type="button"
               onClick={goPrev}
               aria-label="Previous success story"
-              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/50 text-white transition-colors hover:bg-white/10"
+              className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/50 text-white transition-colors hover:bg-white/10"
             >
               <HiArrowLeft className="h-5 w-5" />
             </button>
@@ -119,7 +119,7 @@ export default function DataCaseStudySection() {
               type="button"
               onClick={goNext}
               aria-label="Next success story"
-              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/50 text-white transition-colors hover:bg-white/10"
+              className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/50 text-white transition-colors hover:bg-white/10"
             >
               <HiArrowRight className="h-5 w-5" />
             </button>

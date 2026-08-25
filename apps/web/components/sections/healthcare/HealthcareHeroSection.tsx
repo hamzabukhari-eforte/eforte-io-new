@@ -120,12 +120,12 @@ export default function HealthcareHeroSection() {
             >
               <Link
                 href="/impact-studies"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-8 text-sm font-medium text-default transition-all duration-200 hover:bg-white/90"
+                className="inline-flex h-10 items-center justify-center gap-2 rounded-full bg-white px-8 text-sm font-medium text-default transition-all duration-200 hover:bg-white/90"
               >
                 View portfolio
                 <HiArrowRight className="h-4 w-4" />
               </Link>
-              <ContactCTA className="inline-flex h-12 items-center justify-center rounded-full border border-white/50 px-8 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default">
+              <ContactCTA className="inline-flex h-10 items-center justify-center rounded-full border border-white/50 px-8 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default">
                 Contact Us
               </ContactCTA>
             </motion.div>

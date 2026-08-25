@@ -13,7 +13,7 @@ export default function QualityAssuranceNumbersSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="relative overflow-hidden rounded-[28px] bg-black px-6 pb-10 pt-10 text-white md:rounded-[36px] md:px-10 md:pb-12 md:pt-12 lg:px-12"
+          className="relative overflow-hidden rounded-[12px] bg-black px-6 pb-10 pt-10 text-white md:rounded-[12px] md:px-10 md:pb-12 md:pt-12 lg:px-12"
         >
           <div className="relative grid gap-6 lg:grid-cols-[0.55fr_1.45fr] lg:items-start lg:gap-14">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/80">
@@ -37,7 +37,7 @@ export default function QualityAssuranceNumbersSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, margin: "-60px", amount: 0.2 }}
                 transition={{ duration: 0.4, delay: index * 0.06 }}
-                className="group relative flex h-[230px] w-full flex-col justify-between self-end overflow-hidden rounded-2xl bg-[#1A1A1A] p-5 transition-all duration-300 ease-out hover:h-full hover:bg-linear-to-b hover:from-[#4ADE80] hover:to-[#16A34A] hover:shadow-[0_20px_40px_rgba(34,197,94,0.25)] md:h-[240px] md:p-6"
+                className="group relative flex h-[230px] w-full flex-col justify-between self-end overflow-hidden rounded-[12px] bg-[#1A1A1A] p-5 transition-all duration-300 ease-out hover:h-full hover:bg-linear-to-b hover:from-[#4ADE80] hover:to-[#16A34A] hover:shadow-[0_20px_40px_rgba(34,197,94,0.25)] md:h-[240px] md:p-6"
               >
                 <p className="text-[14px] leading-snug text-white/85 md:text-[15px]">
                   {stat.label}

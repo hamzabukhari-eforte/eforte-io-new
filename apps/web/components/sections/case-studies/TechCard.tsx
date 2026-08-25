@@ -13,7 +13,7 @@ export default function TechCard({ image, title, info }: CardProps) {
       className={`
         w-full max-w-md
         p-12 lg:p-8
-        rounded-2xl
+        rounded-[12px]
         bg-white/5
         backdrop-blur-xl
         border border-white/10
@@ -22,7 +22,7 @@ export default function TechCard({ image, title, info }: CardProps) {
       `}
     >
       <div className="flex items-center gap-4 mb-4">
-        <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-white/10">
+        <div className="flex items-center justify-center w-14 h-14 rounded-[12px] bg-white/10">
           <Image src={image} alt={title} width={32} height={32} />
         </div>
         <h3 className="text-xl font-semibold tracking-wide">{title}</h3>

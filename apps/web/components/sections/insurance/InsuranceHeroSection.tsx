@@ -28,7 +28,7 @@ export default function InsuranceHeroSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center rounded-full border border-white/40 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white"
+            className="inline-flex h-10 items-center justify-center rounded-full border border-white/40 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white"
           >
             Insurance
           </motion.span>
@@ -70,7 +70,7 @@ export default function InsuranceHeroSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mt-9"
           >
-            <ContactCTA className="inline-flex h-12 items-center justify-center rounded-full border border-white/50 px-8 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default">
+            <ContactCTA className="inline-flex h-10 items-center justify-center rounded-full border border-white/50 px-8 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default">
               Contact Us
             </ContactCTA>
           </motion.div>

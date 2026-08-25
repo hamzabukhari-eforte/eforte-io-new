@@ -46,7 +46,7 @@ export default function AboutUsSection() {
 
           {/* Video - react-player, minimal YouTube UI */}
           <div className="mt-10 md:mt-14 w-full mx-auto">
-            <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+            <div className="relative w-full aspect-video rounded-[12px] overflow-hidden border border-white/10 shadow-2xl">
               <ReactPlayer
                 src={YOUTUBE_URL}
                 width="100%"

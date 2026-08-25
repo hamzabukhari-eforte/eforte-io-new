@@ -26,7 +26,7 @@ export default function VelocityAIMetricsCoreSection() {
     <section ref={ref} className={`bg-black relative overflow-hidden ${section.padding} ${section.paddingX}`}>
       <div className="max-w-7xl mx-auto w-full text-center relative z-10">
         <motion.div
-          className="inline-block px-4 py-1.5 md:px-6 md:py-2 rounded-full border border-[#D3287A] bg-blue-900/10 backdrop-blur-sm mb-6 md:mb-10"
+          className="inline-flex h-10 items-center justify-center px-4 py-1.5 md:px-6 md:py-2 rounded-full border border-[#D3287A] bg-blue-900/10 backdrop-blur-sm mb-6 md:mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -58,7 +58,7 @@ export default function VelocityAIMetricsCoreSection() {
           {metricsCards.map((card, index) => (
             <motion.div
               key={card.title}
-              className="bg-[#050511] rounded-2xl md:rounded-3xl p-6 md:p-10 flex flex-col items-center justify-between min-h-[320px] md:min-h-[440px] border border-white/5 hover:border-blue-500/30 transition-all duration-300 group relative overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)]"
+              className="bg-[#050511] rounded-[12px] md:rounded-[12px] p-6 md:p-10 flex flex-col items-center justify-between min-h-[320px] md:min-h-[440px] border border-white/5 hover:border-blue-500/30 transition-all duration-300 group relative overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.5)]"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1, ease: "easeOut" }}

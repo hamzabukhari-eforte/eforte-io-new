@@ -65,7 +65,7 @@ export default function FoundationalDataLayerInsightsSection() {
               <button
                 key={cat}
                 type="button"
-                className="px-4 py-1.5 rounded-full border border-white/20 text-xs text-white hover:bg-white/10 transition"
+                className="h-10 px-4 py-1.5 rounded-full border border-white/20 text-xs text-white hover:bg-white/10 transition"
               >
                 {cat}
               </button>
@@ -80,7 +80,7 @@ export default function FoundationalDataLayerInsightsSection() {
               href="#"
               className="group block cursor-pointer"
             >
-              <div className="h-48 overflow-hidden rounded-t-xl relative">
+              <div className="h-48 overflow-hidden rounded-t-[12px] relative">
                 <Image
                   src={article.imageSrc}
                   alt={article.imageAlt}
@@ -92,7 +92,7 @@ export default function FoundationalDataLayerInsightsSection() {
                   {article.tag}
                 </div>
               </div>
-              <div className="bg-white p-6 rounded-b-xl text-black h-[220px] flex flex-col justify-between">
+              <div className="bg-white p-6 rounded-b-[12px] text-black h-[220px] flex flex-col justify-between">
                 <div>
                   <h3 className="text-lg font-bold mb-3 leading-snug group-hover:text-[#2D4EFF] transition-colors">
                     {article.title}

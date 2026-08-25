@@ -31,7 +31,7 @@ function BentoImageTile({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, delay: index * 0.05, ease }}
       style={{ flex: `${flexRatio} 1 0%` }}
-      className="relative min-h-[180px] w-full overflow-hidden rounded-xl sm:min-h-[220px] md:min-h-0"
+      className="relative min-h-[180px] w-full overflow-hidden rounded-[12px] sm:min-h-[220px] md:min-h-0"
     >
       <Image
         src={image.src}
@@ -80,7 +80,7 @@ export default function CareersPhotoGallerySection() {
   const layout = bentoLayouts[activeCategory];
 
   return (
-    <section className="relative z-10 -mt-6 rounded-t-[40px] bg-white pb-20 pt-14 md:pb-28 md:pt-20">
+    <section className="relative z-10 -mt-6 rounded-t-[12px] bg-white pb-20 pt-14 md:pb-28 md:pt-20">
       <Container>
         <motion.div
           ref={introRef}
@@ -106,7 +106,7 @@ export default function CareersPhotoGallerySection() {
                 type="button"
                 onClick={() => setActiveCategory(category.id)}
                 className={cn(
-                  "rounded-full border px-4 py-2 text-sm font-medium transition-all md:px-5",
+                  "h-10 rounded-full border px-4 py-2 text-sm font-medium transition-all md:px-5",
                   isActive
                     ? "border-[#3b82f6] bg-[#3b82f6] text-white"
                     : "border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:text-gray-900"

@@ -53,7 +53,7 @@ export default function HealthcareHighlightsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, margin: "-80px", amount: 0.15 }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="rounded-2xl border border-black/5 bg-white p-7 shadow-[0_10px_30px_rgba(0, 0, 0, 0.08)]"
+                className="rounded-[12px] border border-black/5 bg-white p-7 shadow-[0_10px_30px_rgba(0, 0, 0, 0.08)]"
               >
                 <Icon className="h-9 w-9 text-[#002EC1]" strokeWidth={2} />
                 <p className="mt-6 text-[15px] leading-relaxed text-[#888888]">

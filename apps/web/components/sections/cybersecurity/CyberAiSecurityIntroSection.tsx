@@ -17,7 +17,7 @@ export default function CyberAiSecurityIntroSection() {
           className="mx-auto max-w-3xl text-center"
         >
           <span
-            className="inline-flex rounded-full border px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em]"
+            className="inline-flex h-10 items-center justify-center rounded-full border px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em]"
             style={{ borderColor: CYBER_ACCENT, color: CYBER_ACCENT }}
           >
             {cyberAiSecurityIntro.badge}
@@ -38,7 +38,7 @@ export default function CyberAiSecurityIntroSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-80px", amount: 0.15 }}
               transition={{ duration: 0.45, delay: index * 0.08 }}
-              className="flex  w-full flex-col items-center justify-center rounded-[2rem] bg-[#0B0D12] px-8 py-10 text-center text-white md:px-12 md:py-12"
+              className="flex  w-full flex-col items-center justify-center rounded-[12px] bg-[#0B0D12] px-8 py-10 text-center text-white md:px-12 md:py-12"
             >
               <div className="relative mx-auto h-28 w-28 shrink-0 md:h-36 md:w-36 lg:h-40 lg:w-40">
                 <Image

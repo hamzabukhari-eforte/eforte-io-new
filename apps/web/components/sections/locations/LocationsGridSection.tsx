@@ -25,7 +25,7 @@ function LocationCard({ location }: { location: Location }) {
       transition={{ duration: 0.5, ease }}
       className="group relative w-full max-w-[300px] pb-2 sm:max-w-[320px] md:max-w-[460px]"
     >
-      <div className="relative aspect-square w-full overflow-hidden rounded-2xl">
+      <div className="relative aspect-square w-full overflow-hidden rounded-[12px]">
         <Image
           src={location.imageSrc}
           alt={`${location.city} office`}
@@ -35,7 +35,7 @@ function LocationCard({ location }: { location: Location }) {
         />
       </div>
 
-      <div className="relative z-10 -mt-10 ml-3 mr-5 flex max-w-[94%] items-end justify-between gap-3 rounded-xl bg-default px-5 py-4 transition-transform duration-300 group-hover:-translate-y-0.5 md:-mt-11 md:ml-4 md:px-6 md:py-5">
+      <div className="relative z-10 -mt-10 ml-3 mr-5 flex max-w-[94%] items-end justify-between gap-3 rounded-[12px] bg-default px-5 py-4 transition-transform duration-300 group-hover:-translate-y-0.5 md:-mt-11 md:ml-4 md:px-6 md:py-5">
         <div className="min-w-0">
           <h3 className="text-lg font-bold text-white md:text-xl">
             {location.city}
@@ -51,7 +51,7 @@ function LocationCard({ location }: { location: Location }) {
           href={location.mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mb-0.5 shrink-0 rounded-full bg-[#3b82f6] px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-[#2563eb] md:px-5 md:text-sm"
+          className="h-10 mb-0.5 shrink-0 rounded-full bg-[#3b82f6] px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-[#2563eb] md:px-5 md:text-sm"
         >
           Learn more
         </Link>
@@ -65,7 +65,7 @@ export default function LocationsGridSection() {
   const introInView = useInViewReplay(introRef, { margin: "-60px", amount: 0.15 });
 
   return (
-    <section className="relative z-10 -mt-16 rounded-t-[40px] bg-white pb-20 pt-14 shadow-[0_-12px_40px_rgba(0,0,0,0.12)] md:-mt-20 md:pb-28 md:pt-20">
+    <section className="relative z-10 -mt-16 rounded-t-[12px] bg-white pb-20 pt-14 shadow-[0_-12px_40px_rgba(0,0,0,0.12)] md:-mt-20 md:pb-28 md:pt-20">
       <Container>
         <motion.div
           ref={introRef}

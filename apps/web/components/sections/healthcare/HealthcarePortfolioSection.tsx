@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 
 const inputClass =
-  "h-11 w-full rounded-lg bg-white/15 px-4 text-[16px] font-extralight leading-normal text-white placeholder:text-white/70 outline-none transition-colors duration-200 focus:bg-white/25";
+  "h-11 w-full rounded-[12px] bg-white/15 px-4 text-[16px] font-extralight leading-normal text-white placeholder:text-white/70 outline-none transition-colors duration-200 focus:bg-white/25";
 
 export default function HealthcarePortfolioSection() {
   return (
@@ -26,7 +26,7 @@ export default function HealthcarePortfolioSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="relative rounded-[32px] bg-[#3E8CEF] md:rounded-[40px]"
+          className="relative rounded-[12px] bg-[#3E8CEF] md:rounded-[12px]"
         >
           <div className="grid items-center gap-10 p-10 md:p-14 lg:grid-cols-2 lg:gap-8 lg:p-16">
             <motion.div
@@ -69,7 +69,7 @@ export default function HealthcarePortfolioSection() {
 
                 <button
                   type="submit"
-                  className="mt-3 inline-flex h-12 w-fit items-center justify-center rounded-full border border-white bg-white px-8 text-sm font-medium text-default transition-all duration-300 hover:bg-transparent hover:text-white"
+                  className="mt-3 inline-flex h-10 w-fit items-center justify-center rounded-full border border-white bg-white px-8 text-sm font-medium text-default transition-all duration-300 hover:bg-transparent hover:text-white"
                 >
                   Schedule a consultation
                 </button>

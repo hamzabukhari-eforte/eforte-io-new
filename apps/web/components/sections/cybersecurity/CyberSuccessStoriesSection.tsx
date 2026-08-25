@@ -70,7 +70,7 @@ export default function CyberSuccessStoriesSection() {
                     <span
                       key={tag}
                       className={cn(
-                        "inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium",
+                        "inline-flex h-10 items-center justify-center rounded-full px-4 py-1.5 text-sm font-medium",
                         story.tagClass
                       )}
                     >
@@ -81,13 +81,13 @@ export default function CyberSuccessStoriesSection() {
 
                 <Link
                   href="/impact-studies"
-                  className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-default px-8 text-sm font-medium text-white transition-all duration-200 hover:bg-default/85"
+                  className="mt-8 inline-flex h-10 items-center justify-center rounded-full bg-default px-8 text-sm font-medium text-white transition-all duration-200 hover:bg-default/85"
                 >
                   Learn more
                 </Link>
               </div>
 
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl md:aspect-square">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[12px] md:aspect-square">
                 <Image
                   src={story.imageSrc}
                   alt={story.imageAlt}
@@ -104,7 +104,7 @@ export default function CyberSuccessStoriesSection() {
               type="button"
               onClick={goPrev}
               aria-label="Previous success story"
-              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-default/20 text-default transition-all duration-200 hover:border-default hover:bg-default hover:text-white"
+              className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-default/20 text-default transition-all duration-200 hover:border-default hover:bg-default hover:text-white"
             >
               <HiArrowLeft className="h-5 w-5" />
             </button>
@@ -112,7 +112,7 @@ export default function CyberSuccessStoriesSection() {
               type="button"
               onClick={goNext}
               aria-label="Next success story"
-              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-default/20 text-default transition-all duration-200 hover:border-default hover:bg-default hover:text-white"
+              className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-default/20 text-default transition-all duration-200 hover:border-default hover:bg-default hover:text-white"
             >
               <HiArrowRight className="h-5 w-5" />
             </button>

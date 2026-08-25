@@ -71,7 +71,7 @@ export default function DataInsightsSection() {
 
                 <Link
                   href="/blog"
-                  className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl md:aspect-[4/3]"
+                  className="relative aspect-[16/10] w-full overflow-hidden rounded-[12px] md:aspect-[4/3]"
                 >
                   <Image
                     src={article.image}

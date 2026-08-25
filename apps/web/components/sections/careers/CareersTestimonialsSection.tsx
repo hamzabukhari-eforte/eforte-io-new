@@ -24,7 +24,7 @@ function TestimonialCard({ testimonial }: { testimonial: EmployeeTestimonial }) 
   return (
     <div
       style={{ width: CARD_WIDTH }}
-      className={`flex min-h-[220px] shrink-0 flex-col rounded-2xl p-6 md:min-h-[240px] md:p-7 ${testimonial.bgClass}`}
+      className={`flex min-h-[220px] shrink-0 flex-col rounded-[12px] p-6 md:min-h-[240px] md:p-7 ${testimonial.bgClass}`}
     >
       <p className="flex-1 text-sm leading-relaxed text-gray-700 md:text-[15px]">
         &ldquo;{testimonial.quote}&rdquo;

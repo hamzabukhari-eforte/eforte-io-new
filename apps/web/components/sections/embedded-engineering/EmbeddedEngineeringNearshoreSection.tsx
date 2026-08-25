@@ -100,10 +100,10 @@ export default function EmbeddedEngineeringNearshoreSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, margin: "-80px", amount: 0.15 }}
                   transition={{ duration: 0.5, delay: index * 0.08 }}
-                  className="rounded-2xl bg-white p-6 text-default shadow-[0_10px_40px_rgba(0,0,0,0.25)]"
+                  className="rounded-[12px] bg-white p-6 text-default shadow-[0_10px_40px_rgba(0,0,0,0.25)]"
                 >
                   <span
-                    className={`flex h-10 w-10 items-center justify-center rounded-lg ${item.iconBg}`}
+                    className={`flex h-10 w-10 items-center justify-center rounded-[12px] ${item.iconBg}`}
                   >
                     <Icon className={`h-5 w-5 ${item.iconColor}`} />
                   </span>

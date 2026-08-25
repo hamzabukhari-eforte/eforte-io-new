@@ -73,7 +73,7 @@ export default function AgenticOrchestrationCoreServicesSection() {
             alt="Core AI Agent Development Services: Strategic Assessment, AI Agent Design & Implementation, AI Talent Augmentation, Model Optimization & Benchmarking"
             fill
             sizes="(max-width: 1024px) 100vw, 900px"
-            className="object-contain rounded-2xl"
+            className="object-contain rounded-[12px]"
           />
         </motion.div>
 
@@ -81,14 +81,14 @@ export default function AgenticOrchestrationCoreServicesSection() {
           {coreServices.map((service, index) => (
             <motion.div
               key={service.title}
-              className="group relative p-6 rounded-2xl transition-all duration-300 hover:bg-white/[0.02]"
+              className="group relative p-6 rounded-[12px] transition-all duration-300 hover:bg-white/[0.02]"
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
             >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute inset-0 rounded-[12px] bg-gradient-to-b from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               <div className="relative z-10">
-                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 group-hover:bg-blue-500/10 transition-all duration-300 mb-4">
+                <div className="w-10 h-10 rounded-[12px] bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 group-hover:bg-blue-500/10 transition-all duration-300 mb-4">
                   <service.icon className="text-white group-hover:text-blue-400 transition-colors duration-300 text-lg" />
                 </div>
                 <h4 className={`${typography.cardTitle} text-white mb-2`}>{service.title}</h4>

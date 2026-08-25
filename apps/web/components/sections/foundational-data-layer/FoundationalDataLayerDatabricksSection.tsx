@@ -38,7 +38,7 @@ export default function FoundationalDataLayerDatabricksSection() {
           </div>
         </div>
 
-        <div className="relative rounded-2xl overflow-hidden mt-12 max-w-5xl mx-auto group">
+        <div className="relative rounded-[12px] overflow-hidden mt-12 max-w-5xl mx-auto group">
           <div className="h-[500px] w-full relative">
             <Image
               src={DATABRICKS_IMAGE}
@@ -56,8 +56,8 @@ export default function FoundationalDataLayerDatabricksSection() {
 
           {/* Overlay content - match HTML p-10, gap-4, items-end justify-between */}
           <div className="absolute bottom-0 left-0 w-full p-10 flex flex-wrap gap-4 items-end justify-between">
-            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-6 flex items-center gap-4 min-w-[240px] group/card hover:bg-white/15 hover:border-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 cursor-pointer">
-              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center group-hover/card:scale-105 transition-transform duration-300 shrink-0">
+            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-[12px] p-6 flex items-center gap-4 min-w-[240px] group/card hover:bg-white/15 hover:border-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 cursor-pointer">
+              <div className="w-12 h-10 bg-white rounded-full flex items-center justify-center group-hover/card:scale-105 transition-transform duration-300 shrink-0">
                 <FaAward className="text-black text-xl" />
               </div>
               <div className="text-left">
@@ -69,7 +69,7 @@ export default function FoundationalDataLayerDatabricksSection() {
                 </div>
               </div>
             </div>
-            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-6 min-w-[200px] max-w-[280px] text-left group/card hover:bg-white/15 hover:border-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 cursor-pointer">
+            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-[12px] p-6 min-w-[200px] max-w-[280px] text-left group/card hover:bg-white/15 hover:border-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 cursor-pointer">
               <div className="text-4xl font-bold text-white mb-1 group-hover/card:text-white transition-colors duration-300">
                 200+
               </div>
@@ -77,7 +77,7 @@ export default function FoundationalDataLayerDatabricksSection() {
                 certified Databricks data analysts, engineers, scientists &amp; machine learning engineers
               </div>
             </div>
-            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-6 min-w-[200px] max-w-[240px] text-left group/card hover:bg-white/15 hover:border-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 cursor-pointer">
+            <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-[12px] p-6 min-w-[200px] max-w-[240px] text-left group/card hover:bg-white/15 hover:border-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 cursor-pointer">
               <div className="text-4xl font-bold text-white mb-1 group-hover/card:text-white transition-colors duration-300">
                 20+
               </div>
@@ -89,10 +89,10 @@ export default function FoundationalDataLayerDatabricksSection() {
 
           {/* Partner badge: bottom edge aligned with top of image, sitting above as a cap */}
           <div
-            className="absolute top-12 left-1/2 -translate-x-1/2 -translate-y-full bg-white rounded-b-lg px-4 py-2 shadow-lg z-20"
+            className="absolute top-12 left-1/2 -translate-x-1/2 -translate-y-full bg-white rounded-b-[12px] px-4 py-2 shadow-lg z-20"
             aria-hidden
           >
-            <div className="min-w-20 min-h-10 py-2 px-3 bg-green-700 rounded-b flex items-end justify-center text-white text-xs font-bold whitespace-nowrap">
+            <div className="min-w-20 min-h-10 py-2 px-3 bg-green-700 rounded-b-[12px] flex items-end justify-center text-white text-xs font-bold whitespace-nowrap">
               PARTNER
             </div>
           </div>

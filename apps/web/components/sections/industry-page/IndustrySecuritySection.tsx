@@ -48,7 +48,7 @@ export default function IndustrySecuritySection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="rounded-[32px] bg-[#101219] p-8 md:rounded-[40px] md:p-12 lg:p-14"
+          className="rounded-[12px] bg-[#101219] p-8 md:rounded-[12px] md:p-12 lg:p-14"
         >
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
             <h2 className="text-3xl font-semibold leading-tight text-white md:text-4xl">
@@ -59,7 +59,7 @@ export default function IndustrySecuritySection({
             </p>
           </div>
 
-          <div className="relative mt-10 aspect-2400/900 w-full overflow-hidden rounded-2xl md:mt-12">
+          <div className="relative mt-10 aspect-2400/900 w-full overflow-hidden rounded-[12px] md:mt-12">
             <Image
               src="/assets/images/industry/bg-security.jpg"
               alt="eForte team collaborating on data security"

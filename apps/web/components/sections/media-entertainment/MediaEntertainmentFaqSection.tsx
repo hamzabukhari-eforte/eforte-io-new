@@ -52,7 +52,7 @@ export default function MediaEntertainmentFaqSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="relative mb-8 overflow-hidden rounded-2xl bg-[#0F1118] px-6 py-7 md:px-8 md:py-8"
+          className="relative mb-8 overflow-hidden rounded-[12px] bg-[#0F1118] px-6 py-7 md:px-8 md:py-8"
         >
           <Image
             src="/assets/images/industry/faq-banner-bg.svg"
@@ -77,7 +77,7 @@ export default function MediaEntertainmentFaqSection() {
               <div
                 key={faq.question}
                 className={cn(
-                  "rounded-lg transition-colors duration-200",
+                  "rounded-[12px] transition-colors duration-200",
                   isOpen && "bg-white/5"
                 )}
               >

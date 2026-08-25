@@ -18,7 +18,7 @@ export default function HealthcareStoryVideoSection() {
           transition={{ duration: 0.6 }}
           className="mx-auto max-w-5xl"
         >
-          <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
+          <div className="relative aspect-video w-full overflow-hidden rounded-[12px] border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
             <ReactPlayer
               src={YOUTUBE_URL}
               width="100%"

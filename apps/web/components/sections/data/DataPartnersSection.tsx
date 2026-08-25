@@ -28,7 +28,7 @@ const cloudPartners: {
 export default function DataPartnersSection() {
   return (
     <section className="bg-default">
-      <div className="rounded-[36px] bg-black py-16 text-white md:rounded-[42px] md:py-24">
+      <div className="rounded-[12px] bg-black py-16 text-white md:rounded-[12px] md:py-24">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

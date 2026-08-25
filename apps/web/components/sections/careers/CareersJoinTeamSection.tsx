@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 const fieldClassName =
-  "h-12 w-full rounded-xl border border-white/15 bg-white/5 px-4 text-sm text-white outline-none transition-colors placeholder:text-white/40 focus:border-primary-pink/60 focus:ring-1 focus:ring-primary-pink/60";
+  "h-12 w-full rounded-[12px] border border-white/15 bg-white/5 px-4 text-sm text-white outline-none transition-colors placeholder:text-white/40 focus:border-primary-pink/60 focus:ring-1 focus:ring-primary-pink/60";
 
 export default function CareersJoinTeamSection() {
   const introRef = useRef<HTMLDivElement>(null);
@@ -25,7 +25,7 @@ export default function CareersJoinTeamSection() {
   return (
     <section
       id="join-our-team"
-      className="relative z-10 -mt-6 scroll-mt-24 rounded-t-[40px] bg-default pb-20 pt-14 md:pb-28 md:pt-20"
+      className="relative z-10 -mt-6 scroll-mt-24 rounded-t-[12px] bg-default pb-20 pt-14 md:pb-28 md:pt-20"
     >
       <Container>
         <motion.div
@@ -48,10 +48,10 @@ export default function CareersJoinTeamSection() {
           initial={{ opacity: 0, y: 28 }}
           animate={introInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
           transition={{ duration: 0.55, delay: 0.1, ease }}
-          className="mx-auto max-w-3xl rounded-3xl border border-white/10 bg-white/3 p-6 md:p-10"
+          className="mx-auto max-w-3xl rounded-[12px] border border-white/10 bg-white/3 p-6 md:p-10"
         >
           {submitted ? (
-            <div className="rounded-2xl border border-primary-pink/20 bg-primary-pink/5 px-6 py-12 text-center">
+            <div className="rounded-[12px] border border-primary-pink/20 bg-primary-pink/5 px-6 py-12 text-center">
               <p className="text-lg font-medium text-white">
                 Thanks for reaching out!
               </p>
@@ -128,7 +128,7 @@ export default function CareersJoinTeamSection() {
                   type="file"
                   name="resume"
                   accept=".pdf,.doc,.docx"
-                  className="w-full cursor-pointer rounded-xl border border-dashed border-white/20 bg-white/5 px-3 py-2.5 text-sm text-white/60 outline-none transition-colors file:mr-4 file:cursor-pointer file:rounded-full file:border-0 file:bg-white/10 file:px-4 file:py-2 file:text-xs file:font-medium file:text-white hover:border-white/30 hover:file:bg-white/20"
+                  className="h-10 w-full cursor-pointer rounded-[12px] border border-dashed border-white/20 bg-white/5 px-3 py-0 text-sm text-white/60 outline-none transition-colors file:mr-4 file:cursor-pointer file:rounded-full file:border-0 file:bg-white/10 file:px-4 file:py-2 file:text-xs file:font-medium file:text-white hover:border-white/30 hover:file:bg-white/20"
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm text-white/80 sm:col-span-2">
@@ -144,7 +144,7 @@ export default function CareersJoinTeamSection() {
               <div className="sm:col-span-2">
                 <button
                   type="submit"
-                  className="w-full cursor-pointer rounded-full bg-linear-to-r from-[#be185d] to-[#db2777] px-8 py-3.5 text-sm font-semibold text-white shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] transition-all hover:-translate-y-0.5 hover:from-[#db2777] hover:to-[#be185d] sm:w-auto"
+                  className="w-full cursor-pointer h-10 rounded-full bg-linear-to-r from-[#be185d] to-[#db2777] px-8 py-0.5 text-sm font-semibold text-white shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] transition-all hover:-translate-y-0.5 hover:from-[#db2777] hover:to-[#be185d] sm:w-auto"
                 >
                   Submit
                 </button>

@@ -14,7 +14,7 @@ export default function DataCtaBannerSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="relative overflow-hidden rounded-[28px] bg-black md:rounded-[36px]"
+          className="relative overflow-hidden rounded-[12px] bg-black md:rounded-[12px]"
         >
           <div className="absolute inset-y-0 right-0 hidden w-[48%] md:block">
             <Image
@@ -45,7 +45,7 @@ export default function DataCtaBannerSection() {
 
             <Link
               href="/velocity-ai"
-              className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-white px-8 text-sm font-semibold text-default transition-opacity hover:opacity-90"
+              className="inline-flex h-10 shrink-0 items-center justify-center rounded-full bg-white px-8 text-sm font-semibold text-default transition-opacity hover:opacity-90"
             >
               Learn more
             </Link>

@@ -47,7 +47,7 @@ export default function ProductDesignFaqSection() {
             return (
               <div
                 key={faq.question}
-                className={`rounded-xl transition-colors ${
+                className={`rounded-[12px] transition-colors ${
                   isOpen ? "bg-black/3" : ""
                 }`}
               >

@@ -64,7 +64,7 @@ export default function BankingCapabilitiesSection() {
             services that enable banks to scale efficiently and launch new products faster.
           </p>
           <div className="mt-14 flex justify-center">
-            <span className="rounded-full border border-primary-pink px-8 py-2 text-[11px] font-bold uppercase tracking-[0.15em] text-primary-pink">
+            <span className="h-10 rounded-full border border-primary-pink px-8 py-2 text-[11px] font-bold uppercase tracking-[0.15em] text-primary-pink">
               What We Deliver
             </span>
           </div>
@@ -153,7 +153,7 @@ export default function BankingCapabilitiesSection() {
         </Container>
       </section>
 
-      <section className="-mt-8 rounded-t-[36px] bg-slate-50 py-24 text-slate-900 md:-mt-10 md:rounded-t-[42px]">
+      <section className="-mt-8 rounded-t-[12px] bg-slate-50 py-24 text-slate-900 md:-mt-10 md:rounded-t-[12px]">
         <Container>
           <h2 className="text-center text-4xl font-medium md:text-5xl lg:text-[56px] max-w-2xl mx-auto">
             Bank compliance and risk management
@@ -186,7 +186,7 @@ export default function BankingCapabilitiesSection() {
         </Container>
       </section>
 
-      <section className="rounded-b-[36px] bg-slate-50 pb-24 text-slate-900 md:rounded-b-[42px]">
+      <section className="rounded-b-[12px] bg-slate-50 pb-24 text-slate-900 md:rounded-b-[12px]">
         <Container className="grid items-center gap-12 md:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, y: 24 }}

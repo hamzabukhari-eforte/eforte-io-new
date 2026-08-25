@@ -45,7 +45,7 @@ function ValueCard({
       viewport={{ once: false, amount: 0.2 }}
       transition={{ duration: 0.45, delay: index * 0.08 }}
       className={cn(
-        "flex min-h-[380px] flex-col justify-between rounded-[28px] p-8 md:min-h-[430px] md:p-10",
+        "flex min-h-[380px] flex-col justify-between rounded-[12px] p-8 md:min-h-[430px] md:p-10",
         styles.card
       )}
     >
@@ -95,7 +95,7 @@ export default function StudioValuesSection({
   className,
 }: StudioValuesSectionProps) {
   return (
-    <section className="relative z-10 -mt-10 rounded-t-[40px] bg-[#f3f2f6] py-16 md:py-24">
+    <section className="relative z-10 -mt-10 rounded-t-[12px] bg-[#f3f2f6] py-16 md:py-24">
       <Container className={className}>
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-default">

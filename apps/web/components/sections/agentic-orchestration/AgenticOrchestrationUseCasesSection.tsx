@@ -81,15 +81,15 @@ export default function AgenticOrchestrationUseCasesSection() {
           {useCases.map((uc, index) => (
             <motion.div
               key={uc.title}
-              className="group relative p-6 rounded-2xl transition-all duration-300 hover:bg-white/[0.02] -m-6 md:m-0"
+              className="group relative p-6 rounded-[12px] transition-all duration-300 hover:bg-white/[0.02] -m-6 md:m-0"
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
             >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute inset-0 rounded-[12px] bg-gradient-to-b from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-4 md:mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 group-hover:bg-blue-500/10 transition-all duration-300">
+                  <div className="w-10 h-10 rounded-[12px] bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 group-hover:bg-blue-500/10 transition-all duration-300">
                     <uc.icon className="text-white group-hover:text-blue-400 transition-colors duration-300 text-lg" />
                   </div>
                   <h4 className="font-bold text-white group-hover:text-blue-400 transition-colors duration-300 text-base md:text-lg">

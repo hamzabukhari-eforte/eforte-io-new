@@ -46,7 +46,7 @@ export default function CloudSreAcceleratorsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="mt-12 rounded-[20px] bg-black px-5 py-10 text-white md:mt-16 md:rounded-[24px] md:px-12 md:py-14"
+          className="mt-12 rounded-[12px] bg-black px-5 py-10 text-white md:mt-16 md:rounded-[12px] md:px-12 md:py-14"
         >
           <div
             role="tablist"
@@ -65,7 +65,7 @@ export default function CloudSreAcceleratorsSection() {
                   id={`accelerator-tab-${item.id}`}
                   onClick={() => setActiveId(item.id)}
                   className={cn(
-                    "cursor-pointer rounded-full px-5 py-3 text-sm font-medium transition-all duration-200 md:px-7 md:py-4 md:text-[15px]",
+                    "h-10 cursor-pointer rounded-full px-5 py-0 text-sm font-medium transition-all duration-200 md:px-7 md:py-0 md:text-[15px]",
                     isActive
                       ? "text-white"
                       : "bg-[#5A5A5A] text-[#A7A7A7] hover:text-white"

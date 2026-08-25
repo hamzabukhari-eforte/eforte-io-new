@@ -8,7 +8,7 @@ import { AI_ACCENT, aiWhitePaper } from "@/data/capabilities/ai";
 export default function AiWhitePaperSection() {
   return (
     <section className="bg-black">
-      <div className="overflow-hidden rounded-[36px] bg-white text-default md:rounded-[48px]">
+      <div className="overflow-hidden rounded-[12px] bg-white text-default md:rounded-[12px]">
         <div className="mx-auto grid w-full max-w-[1400px] items-end gap-10 px-4 pt-16 sm:px-6 md:gap-12 md:px-8 md:pt-20 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-16 lg:px-12 lg:pt-24 xl:px-16">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
@@ -45,7 +45,7 @@ export default function AiWhitePaperSection() {
             </p>
             <Link
               href={aiWhitePaper.ctaHref}
-              className="mt-8 inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+              className="mt-8 inline-flex h-10 items-center justify-center rounded-full px-8 py-0.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
               style={{ backgroundColor: AI_ACCENT }}
             >
               {aiWhitePaper.ctaLabel}

@@ -91,7 +91,7 @@ export default function FinancialServicesDataFoundationsSection() {
           transition={{ duration: 0.6, delay: 0.16 }}
           className="mt-12 md:mt-16"
         >
-          <div className="relative aspect-2403/510 w-full overflow-hidden rounded-3xl">
+          <div className="relative aspect-2403/510 w-full overflow-hidden rounded-[12px]">
             <Image
               src="/assets/images/industry/working.jpg"
               alt="eForte finance studio team at work"

@@ -32,7 +32,7 @@ export default function CapabilityStudioFaqSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="relative overflow-hidden rounded-[24px] bg-[#0F1118] px-8 py-9 md:rounded-[28px] md:px-10 md:py-10"
+          className="relative overflow-hidden rounded-[12px] bg-[#0F1118] px-8 py-9 md:rounded-[12px] md:px-10 md:py-10"
         >
           <Image
             src="/assets/images/industry/faq-banner-bg.svg"
@@ -53,7 +53,7 @@ export default function CapabilityStudioFaqSection({
             return (
               <div
                 key={faq.question}
-                className={`rounded-2xl transition-colors ${
+                className={`rounded-[12px] transition-colors ${
                   isOpen ? "bg-[#F5F5F5]" : "hover:bg-[#F8F8F8]"
                 }`}
               >

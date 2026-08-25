@@ -46,7 +46,7 @@ export default function AgenticOrchestrationMethodologySection() {
     >
       <div className={`${section.container} flex flex-col items-center relative z-10`}>
         <motion.div
-          className="inline-flex items-center px-4 py-1.5 md:px-5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-6 md:mb-10"
+          className="inline-flex h-10 items-center justify-center px-4 py-1.5 md:px-5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-6 md:mb-10"
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -82,7 +82,7 @@ export default function AgenticOrchestrationMethodologySection() {
             alt="The eForte Agentic Methodology: Security First, Model-Centric Sprints, AI-First Backlog, Human-in-the-Loop"
             fill
             sizes="(max-width: 1024px) 100vw, 720px"
-            className="object-contain rounded-2xl"
+            className="object-contain rounded-[12px]"
           />
         </motion.div>
 
@@ -90,14 +90,14 @@ export default function AgenticOrchestrationMethodologySection() {
           {methodologyPillars.map((pillar, index) => (
             <motion.div
               key={pillar.title}
-              className="group relative p-6 rounded-2xl bg-[#05050A] border border-white/10 transition-all duration-300 hover:border-blue-500/30 hover:-translate-y-1"
+              className="group relative p-6 rounded-[12px] bg-[#05050A] border border-white/10 transition-all duration-300 hover:border-blue-500/30 hover:-translate-y-1"
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
             >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <div className="absolute inset-0 rounded-[12px] bg-gradient-to-b from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               <div className="relative z-10">
-                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 group-hover:bg-blue-500/10 transition-all duration-300 mb-4">
+                <div className="w-10 h-10 rounded-[12px] bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 group-hover:bg-blue-500/10 transition-all duration-300 mb-4">
                   <pillar.icon className="text-white group-hover:text-blue-400 transition-colors duration-300 text-lg" />
                 </div>
                 <h4 className={`${typography.cardTitle} text-white mb-2`}>{pillar.title}</h4>

@@ -27,7 +27,7 @@ const icons: Record<(typeof cloudSreSolutions)[number]["iconId"], IconType> = {
 export default function CloudSreSolutionsSection() {
   return (
     <section id="solutions" className="bg-white">
-      <div className="rounded-t-[36px] rounded-b-[36px] bg-[#F4F6FA] py-20 text-default md:rounded-t-[42px] md:rounded-b-[42px] md:py-28">
+      <div className="rounded-t-[12px] rounded-b-[12px] bg-[#F4F6FA] py-20 text-default md:rounded-t-[12px] md:rounded-b-[12px] md:py-28">
         <Container>
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
@@ -49,7 +49,7 @@ export default function CloudSreSolutionsSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, margin: "-80px", amount: 0.15 }}
                   transition={{ duration: 0.45, delay: (index % 2) * 0.06 }}
-                  className="flex h-full flex-col rounded-2xl bg-white p-7 md:p-8"
+                  className="flex h-full flex-col rounded-[12px] bg-white p-7 md:p-8"
                 >
                   <Icon className="h-7 w-7 text-default" />
                   <h3 className="mt-5 text-xl font-semibold text-default">

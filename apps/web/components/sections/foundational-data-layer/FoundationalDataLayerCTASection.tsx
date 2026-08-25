@@ -38,7 +38,7 @@ export default function FoundationalDataLayerCTASection() {
           <br />
           and discuss options for the best approach.
         </p>
-        <ContactCTA className="inline-flex items-center justify-center px-8 py-3 text-sm font-bold text-white bg-[#2D4EFF] rounded-full hover:bg-[#4D1DFF] transition-all duration-300 shadow-lg shadow-blue-900/40">
+        <ContactCTA className="inline-flex h-10 items-center justify-center px-8 py-0 text-sm font-bold text-white bg-[#2D4EFF] rounded-full hover:bg-[#4D1DFF] transition-all duration-300 shadow-lg shadow-blue-900/40">
           Get in touch
         </ContactCTA>
       </Container>

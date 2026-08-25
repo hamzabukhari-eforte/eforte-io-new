@@ -41,7 +41,7 @@ export default function AiConstellationSection() {
             </p>
             <Link
               href={aiConstellation.ctaHref}
-              className="mt-8 inline-flex items-center justify-center rounded-full px-8 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+              className="mt-8 inline-flex h-10 items-center justify-center rounded-full px-8 py-0 text-sm font-semibold text-white transition-opacity hover:opacity-90"
               style={{
                 background: `linear-gradient(90deg, ${AI_ACCENT} 0%, #BE185D 100%)`,
               }}

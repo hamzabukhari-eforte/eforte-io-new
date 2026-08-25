@@ -14,21 +14,21 @@ export default function FormSection() {
         <label className="flex flex-col gap-2 text-sm text-white/80">
           Name
           <input
-            className="h-11 rounded-xl bg-white/5 border border-white/10 px-4 outline-none focus:border-primary-pink/60"
+            className="h-11 rounded-[12px] bg-white/5 border border-white/10 px-4 outline-none focus:border-primary-pink/60"
             placeholder="Your name"
           />
         </label>
         <label className="flex flex-col gap-2 text-sm text-white/80">
           Work Email
           <input
-            className="h-11 rounded-xl bg-white/5 border border-white/10 px-4 outline-none focus:border-primary-pink/60"
+            className="h-11 rounded-[12px] bg-white/5 border border-white/10 px-4 outline-none focus:border-primary-pink/60"
             placeholder="you@company.com"
           />
         </label>
         <label className="flex flex-col gap-2 text-sm text-white/80 md:col-span-2">
           Message
           <textarea
-            className="min-h-[120px] rounded-xl bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-primary-pink/60"
+            className="min-h-[120px] rounded-[12px] bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-primary-pink/60"
             placeholder="Tell us about your project"
           />
         </label>
@@ -36,7 +36,7 @@ export default function FormSection() {
         <div className="md:col-span-2 flex justify-center md:justify-end">
           <button
             type="button"
-            className="h-11 px-6 rounded-xl bg-primary-pink text-white font-semibold border border-primary-pink hover:bg-primary-pink/90 transition-colors"
+            className="h-10 px-6 rounded-[12px] bg-primary-pink text-white font-semibold border border-primary-pink hover:bg-primary-pink/90 transition-colors"
           >
             Submit
           </button>

@@ -80,7 +80,7 @@ export default function InsightDetailSection({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
             {/* Article column */}
             <div className="lg:col-span-8">
-              <div className="rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden shadow-xl shadow-black/30">
+              <div className="rounded-[12px] border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden shadow-xl shadow-black/30">
                 <div className="px-6 md:px-10 pt-8 pb-4 border-b border-white/10">
                   <div className="flex flex-col gap-3">
                     <MetaItem label="Date">
@@ -142,7 +142,7 @@ export default function InsightDetailSection({
 
             {/* Sidebar */}
             <aside className="lg:col-span-4 space-y-8">
-              <div className="rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm p-6">
+              <div className="rounded-[12px] border border-white/10 bg-white/5 backdrop-blur-sm p-6">
                 <h3 className="text-sm font-bold uppercase tracking-[0.15em] text-white mb-5 pb-3 border-b border-white/10">
                   Recent Posts
                 </h3>
@@ -153,7 +153,7 @@ export default function InsightDetailSection({
                         href={`/blog/${item.id}`}
                         className="group flex gap-3 items-start"
                       >
-                        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-md bg-black/40">
+                        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-[12px] bg-black/40">
                           <InsightImage
                             src={item.imageSrc}
                             alt={item.title}
@@ -172,7 +172,7 @@ export default function InsightDetailSection({
               </div>
 
               {categories.length > 0 && (
-                <div className="rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm p-6">
+                <div className="rounded-[12px] border border-white/10 bg-white/5 backdrop-blur-sm p-6">
                   <h3 className="text-sm font-bold uppercase tracking-[0.15em] text-white mb-5 pb-3 border-b border-white/10">
                     Categories
                   </h3>
@@ -193,7 +193,7 @@ export default function InsightDetailSection({
               )}
 
               {post.tags.length > 0 && (
-                <div className="rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm p-6">
+                <div className="rounded-[12px] border border-white/10 bg-white/5 backdrop-blur-sm p-6">
                   <h3 className="text-sm font-bold uppercase tracking-[0.15em] text-white mb-5 pb-3 border-b border-white/10">
                     Tags
                   </h3>

@@ -54,7 +54,7 @@ export default function InsightsHeroSection({
           <Link
             href="/blog"
             className={cn(
-              "px-4 py-1.5 rounded-full border text-[11px] md:text-sm transition-colors",
+              "h-10 px-4 py-1.5 rounded-full border text-[11px] md:text-sm transition-colors",
               activeSlug === null
                 ? "bg-gradient-to-r from-[#2946CF] to-[#233cb9] text-white border-none"
                 : "border-white/15 text-white/90 hover:bg-gradient-to-r from-[#2946CF] to-[#233cb9] hover:text-white"
@@ -69,7 +69,7 @@ export default function InsightsHeroSection({
                 key={category.slug}
                 href={`/blog/category/${category.slug}`}
                 className={cn(
-                  "px-4 py-1.5 rounded-full border text-[11px] md:text-sm transition-colors",
+                  "h-10 px-4 py-1.5 rounded-full border text-[11px] md:text-sm transition-colors",
                   isActive
                     ? "bg-gradient-to-r from-[#2946CF] to-[#233cb9] text-white border-none"
                     : "border-white/15 text-white/90 hover:bg-gradient-to-r from-[#2946CF] to-[#233cb9] hover:text-white"
@@ -92,7 +92,7 @@ export default function InsightsHeroSection({
             <div className="max-w-4xl mx-auto">
               <Link
                 href={`/blog/${featured.id}`}
-                className="group grid md:grid-cols-[3fr,2fr] bg-white rounded-lg overflow-hidden shadow-2xl shadow-black/40 border border-white/20"
+                className="group grid md:grid-cols-[3fr,2fr] bg-white rounded-[12px] overflow-hidden shadow-2xl shadow-black/40 border border-white/20"
               >
                 <div className="relative min-h-[220px] md:min-h-[450px] bg-black">
                   <InsightImage
@@ -104,7 +104,7 @@ export default function InsightsHeroSection({
                     className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-linear-to-r from-black/50 via-black/20 to-transparent" />
-                  <div className="absolute bottom-5 left-5 px-3 py-1.5 rounded-full bg-black/70 text-[11px] font-semibold uppercase tracking-[0.18em] text-white">
+                  <div className="h-10 absolute bottom-5 left-5 px-3 py-1.5 rounded-full bg-black/70 text-[11px] font-semibold uppercase tracking-[0.18em] text-white">
                     Latest insight
                   </div>
                 </div>

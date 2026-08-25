@@ -99,7 +99,7 @@ function FeatureMedia({
   if (isInset) {
     return (
       <div className="flex h-full min-h-[300px] items-stretch p-5 md:min-h-[380px] md:p-8 lg:min-h-full">
-        <div className="relative w-full min-h-[260px] overflow-hidden rounded-2xl md:min-h-0">
+        <div className="relative w-full min-h-[260px] overflow-hidden rounded-[12px] md:min-h-0">
           <Image
             src={feature.image}
             alt={feature.imageAlt}
@@ -206,7 +206,7 @@ export default function CapabilityStudioFeatureBlock({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.15 }}
         transition={{ duration: 0.45, delay: index * 0.04 }}
-        className={cn("h-full overflow-hidden rounded-2xl", styles.card)}
+        className={cn("h-full overflow-hidden rounded-[12px]", styles.card)}
       >
         {cardKind === "visual" ? (
           <VisualCard feature={feature} styles={styles} />
@@ -228,10 +228,10 @@ export default function CapabilityStudioFeatureBlock({
         transition={{ duration: 0.45, delay: index * 0.04 }}
         className="grid gap-4 md:grid-cols-2 md:gap-5"
       >
-        <article className={cn("overflow-hidden rounded-2xl", styles.card)}>
+        <article className={cn("overflow-hidden rounded-[12px]", styles.card)}>
           <FeatureCopy feature={feature} styles={styles} />
         </article>
-        <article className="overflow-hidden rounded-2xl md:min-h-[380px]">
+        <article className="overflow-hidden rounded-[12px] md:min-h-[380px]">
           <FeatureMedia
             feature={feature}
             accentColor={tokens.color}
@@ -248,7 +248,7 @@ export default function CapabilityStudioFeatureBlock({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: false, amount: 0.15 }}
       transition={{ duration: 0.45, delay: index * 0.04 }}
-      className={cn("overflow-hidden rounded-2xl", styles.card)}
+      className={cn("overflow-hidden rounded-[12px]", styles.card)}
     >
       <div className="grid md:grid-cols-2 md:items-stretch md:min-h-[420px]">
         <div className={cn("min-h-[300px] md:min-h-0", imageFirst ? "md:order-1" : "md:order-2")}>

@@ -23,7 +23,7 @@ export default function StudioContactBanner({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="relative overflow-hidden rounded-[28px] bg-black md:rounded-[36px]"
+          className="relative overflow-hidden rounded-[12px] bg-black md:rounded-[12px]"
         >
           <div className="absolute inset-y-0 right-0 hidden w-[48%] md:block">
             <Image
@@ -46,7 +46,7 @@ export default function StudioContactBanner({
               </p>
             </div>
 
-            <ContactCTA className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-primary-pink px-8 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(211,40,122,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-pink/90">
+            <ContactCTA className="inline-flex h-10 shrink-0 items-center justify-center rounded-full bg-primary-pink px-8 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(211,40,122,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-pink/90">
               {content.ctaLabel}
             </ContactCTA>
           </div>

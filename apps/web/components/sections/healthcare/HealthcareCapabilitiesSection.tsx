@@ -156,7 +156,7 @@ function CapabilityNav({ activeId }: { activeId: string }) {
           >
             <span
               className={cn(
-                "flex h-14 w-14 items-center justify-center rounded-2xl transition-all duration-300",
+                "flex h-14 w-14 items-center justify-center rounded-[12px] transition-all duration-300",
                 isActive
                   ? "bg-[#2D68F0] text-white shadow-md"
                   : "bg-[#E6EEFF] text-[#2D68F0]"
@@ -181,7 +181,7 @@ function CapabilityNav({ activeId }: { activeId: string }) {
 
 export default function HealthcareCapabilitiesSection() {
   return (
-    <section className="overflow-hidden rounded-b-[36px] bg-white py-8 pb-16 md:rounded-b-[42px] md:py-12 md:pb-24">
+    <section className="overflow-hidden rounded-b-[12px] bg-white py-8 pb-16 md:rounded-b-[12px] md:py-12 md:pb-24">
       {capabilities.map((capability) => {
         const isImageRight = capability.imageSide === "right";
 

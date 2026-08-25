@@ -64,7 +64,7 @@ export default function FinancialServicesHeroSection() {
               transition={{ duration: 0.5, delay: 0.24 }}
               className="mt-8"
             >
-              <ContactCTA className="inline-flex h-12 items-center justify-center rounded-full border border-white/40 px-8 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default">
+              <ContactCTA className="inline-flex h-10 items-center justify-center rounded-full border border-white/40 px-8 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default">
                 Contact Us
               </ContactCTA>
             </motion.div>

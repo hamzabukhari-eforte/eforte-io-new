@@ -57,7 +57,7 @@ export default function FoundationalDataLayerPillarsSection() {
             return (
               <div
                 key={pillar.title}
-                className="bg-[#0a0a1a] border border-blue-900/30 rounded-2xl p-8 flex flex-col items-center text-center group hover:border-blue-500/50 transition-all relative overflow-hidden"
+                className="bg-[#0a0a1a] border border-blue-900/30 rounded-[12px] p-8 flex flex-col items-center text-center group hover:border-blue-500/50 transition-all relative overflow-hidden"
               >
                 {isMiddle && (
                   <div className="absolute inset-0 bg-linear-to-t from-blue-900/10 to-transparent pointer-events-none" />
@@ -73,7 +73,7 @@ export default function FoundationalDataLayerPillarsSection() {
                 </p>
                 <Link
                   href={pillar.href}
-                  className="px-6 py-2 bg-white text-black text-xs font-bold rounded-full hover:bg-gray-200 transition relative z-10"
+                  className="h-10 px-6 py-2 bg-white text-black text-xs font-bold rounded-full hover:bg-gray-200 transition relative z-10"
                 >
                   Learn more
                 </Link>

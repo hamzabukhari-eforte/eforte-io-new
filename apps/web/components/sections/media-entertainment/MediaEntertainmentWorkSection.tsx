@@ -45,7 +45,7 @@ export default function MediaEntertainmentWorkSection() {
           transition={{ duration: 0.6, delay: 0.16 }}
           className="mt-12 md:mt-16"
         >
-          <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
+          <div className="relative aspect-video w-full overflow-hidden rounded-[12px] border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
             <ReactPlayer
               src={YOUTUBE_URL}
               width="100%"

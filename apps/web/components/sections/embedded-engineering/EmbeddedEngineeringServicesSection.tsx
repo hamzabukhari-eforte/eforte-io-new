@@ -85,7 +85,7 @@ const services: Service[] = [
 export default function EmbeddedEngineeringServicesSection() {
   return (
     <section className="bg-default">
-      <div className="rounded-[36px] bg-white py-16 text-default md:rounded-[42px] md:py-24">
+      <div className="rounded-[12px] bg-white py-16 text-default md:rounded-[12px] md:py-24">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -115,7 +115,7 @@ export default function EmbeddedEngineeringServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-80px", amount: 0.15 }}
             transition={{ duration: 0.5, delay: 0.08 }}
-            className="relative mt-10 aspect-1230/300 w-full overflow-hidden rounded-2xl md:mt-12"
+            className="relative mt-10 aspect-1230/300 w-full overflow-hidden rounded-[12px] md:mt-12"
           >
             <Image
               src="/assets/images/industry/working.jpg"

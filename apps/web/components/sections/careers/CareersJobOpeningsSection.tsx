@@ -19,21 +19,21 @@ function JobCard({ job }: { job: (typeof jobOpenings)[number] }) {
       initial={{ opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
       transition={{ duration: 0.5, ease }}
-      className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-white/20 hover:bg-white/8 sm:flex-row sm:items-center sm:justify-between"
+      className="flex flex-col gap-4 rounded-[12px] border border-white/10 bg-white/5 p-6 transition-colors hover:border-white/20 hover:bg-white/8 sm:flex-row sm:items-center sm:justify-between"
     >
       <div>
         <h3 className="text-lg font-semibold text-white md:text-xl">{job.title}</h3>
         <p className="mt-1 text-sm text-desc">{job.location}</p>
         <div className="mt-3 flex flex-wrap gap-2">
-          <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-white/90">
+          <span className="h-10 rounded-full bg-white/10 px-3 py-1 text-xs text-white/90">
             {job.type}
           </span>
-          <span className="rounded-full bg-primary-pink/20 px-3 py-1 text-xs text-primary-pink">
+          <span className="h-10 rounded-full bg-primary-pink/20 px-3 py-1 text-xs text-primary-pink">
             {job.department}
           </span>
         </div>
       </div>
-      <ContactCTA className="shrink-0 rounded-full bg-gradient-to-r from-[#be185d] to-[#db2777] px-6 py-2.5 text-sm font-medium text-white transition-all hover:from-[#db2777] hover:to-[#be185d]">
+      <ContactCTA className="h-10 shrink-0 rounded-full bg-gradient-to-r from-[#be185d] to-[#db2777] px-6 py-0 text-sm font-medium text-white transition-all hover:from-[#db2777] hover:to-[#be185d]">
         Apply now
       </ContactCTA>
     </motion.div>
@@ -47,7 +47,7 @@ export default function CareersJobOpeningsSection() {
   return (
     <section
       id="open-roles"
-      className="relative z-10 -mt-10 scroll-mt-24 rounded-t-[40px] bg-default pb-20 pt-14 md:-mt-14 md:pb-28 md:pt-20"
+      className="relative z-10 -mt-10 scroll-mt-24 rounded-t-[12px] bg-default pb-20 pt-14 md:-mt-14 md:pb-28 md:pt-20"
     >
       <Container>
         <motion.div

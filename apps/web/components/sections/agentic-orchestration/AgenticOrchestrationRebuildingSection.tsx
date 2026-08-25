@@ -49,7 +49,7 @@ export default function AgenticOrchestrationRebuildingSection() {
                 <Link
                   key={label}
                   href={href}
-                  className="px-3 py-2 md:px-5 md:py-2.5 rounded-full bg-[#1A1A1A] border border-white/5 text-sm md:text-[15px] font-medium text-gray-300 hover:bg-[#252525] hover:text-white transition-colors"
+                  className="h-10 px-3 py-2 md:px-5 md:py-0 rounded-full bg-[#1A1A1A] border border-white/5 text-sm md:text-[15px] font-medium text-gray-300 hover:bg-[#252525] hover:text-white transition-colors"
                 >
                   {label}
                 </Link>

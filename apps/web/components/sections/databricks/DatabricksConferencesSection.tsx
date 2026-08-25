@@ -30,7 +30,7 @@ export default function DatabricksConferencesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="relative mt-10 overflow-hidden rounded-[24px] md:mt-12 md:rounded-[28px]"
+          className="relative mt-10 overflow-hidden rounded-[12px] md:mt-12 md:rounded-[12px]"
         >
           <div className="relative aspect-[16/9] w-full bg-[#12141B]">
             <ReactPlayer

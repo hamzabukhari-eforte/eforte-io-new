@@ -23,7 +23,7 @@ function BenefitCard({
       initial={{ opacity: 0, y: 28 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
       transition={{ duration: 0.5, ease }}
-      className={`mx-auto flex aspect-square w-full max-w-[160px] flex-col items-center justify-center rounded-2xl px-4 py-5 text-center sm:max-w-[180px] md:max-w-[200px] ${benefit.bgClass}`}
+      className={`mx-auto flex aspect-square w-full max-w-[160px] flex-col items-center justify-center rounded-[12px] px-4 py-5 text-center sm:max-w-[180px] md:max-w-[200px] ${benefit.bgClass}`}
     >
       <Icon className={`mb-3 h-8 w-8 md:h-9 md:w-9 ${benefit.iconClass}`} />
       <p className={`text-xs font-medium leading-snug md:text-sm ${benefit.textClass}`}>
@@ -38,7 +38,7 @@ export default function CareersBenefitsSection() {
   const introInView = useInViewReplay(introRef, { margin: "-60px", amount: 0.15 });
 
   return (
-    <section className="relative z-10 -mt-10 rounded-t-[40px] bg-white pb-16 pt-14 shadow-[0_-12px_40px_rgba(0,0,0,0.12)] md:-mt-14 md:pb-24 md:pt-20">
+    <section className="relative z-10 -mt-10 rounded-t-[12px] bg-white pb-16 pt-14 shadow-[0_-12px_40px_rgba(0,0,0,0.12)] md:-mt-14 md:pb-24 md:pt-20">
       <Container>
         <motion.div
           ref={introRef}

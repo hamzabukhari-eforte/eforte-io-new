@@ -13,7 +13,7 @@ export default function TechnologyPartnersPageSections() {
   return (
     <>
       <TechnologyPartnersHeroSection />
-      <div className="relative z-10 -mt-10 overflow-hidden rounded-t-[40px] bg-white pt-12 md:pt-16">
+      <div className="relative z-10 -mt-10 overflow-hidden rounded-t-[12px] bg-white pt-12 md:pt-16">
         <StudioProcessSection items={partners} />
       </div>
       <StudioValuesSection

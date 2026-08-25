@@ -45,7 +45,7 @@ export default function CapabilityStudioProprietaryTechSection({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-80px", amount: 0.15 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="rounded-2xl border border-[#E8E8E8] bg-white p-8 shadow-sm md:p-10"
+              className="rounded-[12px] border border-[#E8E8E8] bg-white p-8 shadow-sm md:p-10"
             >
               <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-12">
                 <div>
@@ -67,7 +67,7 @@ export default function CapabilityStudioProprietaryTechSection({
                   {item.benefits.map((benefit) => (
                     <li
                       key={benefit}
-                      className="flex items-start gap-2.5 rounded-xl bg-[#F7F7F7] px-4 py-3 text-[14px] leading-relaxed text-[#374151]"
+                      className="flex items-start gap-2.5 rounded-[12px] bg-[#F7F7F7] px-4 py-3 text-[14px] leading-relaxed text-[#374151]"
                     >
                       <HiCheck className={`mt-0.5 h-4 w-4 shrink-0 ${tokens.textClass}`} />
                       {benefit}

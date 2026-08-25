@@ -31,7 +31,7 @@ export default function AboutLocationsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-40px", amount: 0.15 }}
               transition={{ duration: 0.45, delay: index * 0.06 }}
-              className="rounded-2xl border border-white/10 bg-white/5 px-6 py-5 text-center"
+              className="rounded-[12px] border border-white/10 bg-white/5 px-6 py-5 text-center"
             >
               <p className="text-base font-semibold text-white md:text-lg">
                 {location.name}

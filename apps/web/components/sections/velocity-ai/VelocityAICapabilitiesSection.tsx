@@ -92,13 +92,13 @@ export default function VelocityAICapabilitiesSection() {
           return (
             <motion.div
               key={cap.id}
-              className="group flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 md:gap-8 p-4 md:p-6 lg:p-8 rounded-xl md:rounded-2xl border border-transparent hover:border-white/10 hover:bg-white/5 transition-all cursor-pointer"
+              className="group flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 md:gap-8 p-4 md:p-6 lg:p-8 rounded-[12px] md:rounded-[12px] border border-transparent hover:border-white/10 hover:bg-white/5 transition-all cursor-pointer"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.08, ease: "easeOut" }}
             >
               <div
-                className={`w-12 h-12 md:w-20 md:h-20 rounded-lg md:rounded-xl ${cap.iconBg} flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform shrink-0`}
+                className={`w-12 h-12 md:w-20 md:h-20 rounded-[12px] md:rounded-[12px] ${cap.iconBg} flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform shrink-0`}
               >
                 <Icon className={`text-3xl ${cap.iconColor}`} />
               </div>

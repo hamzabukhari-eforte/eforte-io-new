@@ -123,7 +123,7 @@ export default function FinancialServicesRelatedArticlesSection() {
               </div>
 
               <div className="md:pt-1">
-                <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-default/5 md:aspect-4/3">
+                <div className="relative aspect-video w-full overflow-hidden rounded-[12px] bg-default/5 md:aspect-4/3">
                   <Image
                     src={article.imageSrc}
                     alt={article.imageAlt}

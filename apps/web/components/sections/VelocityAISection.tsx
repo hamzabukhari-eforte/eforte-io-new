@@ -103,7 +103,7 @@ export default function VelocityAISection() {
             >
               <Link
                 href="#"
-                className="inline-flex items-center justify-center px-9 py-3.5 rounded-full text-[15px] font-medium text-primary-pink border border-primary-pink bg-transparent hover:bg-primary-pink hover:border-primary-pink hover:text-white transition-all duration-200"
+                className="inline-flex h-10 items-center justify-center px-9 py-0.5 rounded-full text-[15px] font-medium text-primary-pink border border-primary-pink bg-transparent hover:bg-primary-pink hover:border-primary-pink hover:text-white transition-all duration-200"
               >
                 Learn more
               </Link>
@@ -208,7 +208,7 @@ export default function VelocityAISection() {
                   animate={isInView ? { opacity: 1, y: 0, x: 0 } : { opacity: 0, y: feature.position === "top" ? -30 : 30, x: feature.position === "bottom-left" ? -30 : feature.position === "bottom-right" ? 30 : 0 }}
                   transition={{ duration: 0.5, delay: 0.6 + index * 0.2, ease: "easeOut" }}
                 >
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6 hover:border-white/30 transition-all duration-300">
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[12px] p-6 hover:border-white/30 transition-all duration-300">
                     {/* Icon */}
                     <div className="flex items-center justify-center w-14 h-14 rounded-full bg-primary-pink/20 border border-primary-pink mb-4">
                       <div className="text-primary-pink">{feature.icon}</div>

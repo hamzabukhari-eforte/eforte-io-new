@@ -28,11 +28,11 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 /** Capabilities-aligned type + badge tokens */
 const badgeLight =
-  "inline-flex rounded-full border border-default/20 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-default";
+  "inline-flex h-10 items-center justify-center rounded-full border border-default/20 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-default";
 const badgeDark =
-  "inline-flex rounded-full border border-white/25 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white";
+  "inline-flex h-10 items-center justify-center rounded-full border border-white/25 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white";
 const badgeOnColor =
-  "inline-flex rounded-full border border-white/30 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white";
+  "inline-flex h-10 items-center justify-center rounded-full border border-white/30 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white";
 const sectionTitle =
   "text-3xl font-semibold leading-tight tracking-tight md:text-4xl lg:text-[42px]";
 const bodyMuted = "text-[15px] leading-relaxed text-[#555] md:text-base";
@@ -84,7 +84,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
   return (
     <div className="relative z-10 -mt-6 text-default md:-mt-10">
       {/* ── Overview: white overlapping panel ── */}
-      <section className="relative overflow-hidden rounded-t-[36px] bg-white pb-16 pt-14 shadow-[0_-16px_48px_rgba(0,0,0,0.18)] md:rounded-t-[48px] md:pb-24 md:pt-20">
+      <section className="relative overflow-hidden rounded-t-[12px] bg-white pb-16 pt-14 shadow-[0_-16px_48px_rgba(0,0,0,0.18)] md:rounded-t-[12px] md:pb-24 md:pt-20">
         <div
           className="pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full opacity-50 blur-[100px]"
           style={{ backgroundColor: accentSoft }}
@@ -128,7 +128,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
           {/* Pillars strip */}
           <Reveal className="mt-12 md:mt-16" delay={0.08}>
             <div
-              className="relative overflow-hidden rounded-[28px] px-6 py-9 text-white shadow-[0_24px_60px_rgba(14,119,244,0.22)] md:rounded-[36px] md:px-10 md:py-11"
+              className="relative overflow-hidden rounded-[12px] px-6 py-9 text-white shadow-[0_24px_60px_rgba(14,119,244,0.22)] md:rounded-[12px] md:px-10 md:py-11"
               style={{
                 background: `linear-gradient(125deg, ${accent} 0%, #0b1a3a 42%, #0a0a1a 72%, #1a0820 100%)`,
               }}
@@ -169,7 +169,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                       viewport={{ once: false, amount: 0.4 }}
                       transition={{ duration: 0.45, delay: 0.1 + i * 0.08, ease }}
                       whileHover={{ y: -3, scale: 1.03 }}
-                      className="inline-flex items-center gap-3 rounded-full border border-white/25 bg-white/12 px-4 py-2.5 text-sm font-medium shadow-[0_8px_24px_rgba(0,0,0,0.2)] backdrop-blur-md md:px-5 md:py-3 md:text-[15px]"
+                      className="inline-flex h-10 items-center gap-3 rounded-full border border-white/25 bg-white/12 px-4 py-0 text-sm font-medium shadow-[0_8px_24px_rgba(0,0,0,0.2)] backdrop-blur-md md:px-5 md:py-0 md:text-[15px]"
                     >
                       <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary-pink/20 ring-1 ring-primary-pink/40">
                         <Icon className="h-4 w-4 text-primary-pink" />
@@ -242,13 +242,13 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
             <Reveal className="relative lg:col-span-7" delay={0.1} x={24}>
               <div className="relative">
                 <div
-                  className="absolute -inset-4 rounded-[36px] opacity-60 blur-2xl md:-inset-6"
+                  className="absolute -inset-4 rounded-[12px] opacity-60 blur-2xl md:-inset-6"
                   style={{
                     background: `linear-gradient(135deg, ${accentSoft}, transparent 70%)`,
                   }}
                   aria-hidden
                 />
-                <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#0b0c14] shadow-[0_30px_80px_rgba(0,0,0,0.45)] md:rounded-[36px]">
+                <div className="relative overflow-hidden rounded-[12px] border border-white/10 bg-[#0b0c14] shadow-[0_30px_80px_rgba(0,0,0,0.45)] md:rounded-[12px]">
                   <div className="relative aspect-4/3">
                     <Image
                       src={content.challenge.image}
@@ -264,7 +264,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.4 }}
                   transition={{ duration: 0.5, delay: 0.25 }}
-                  className="absolute -bottom-5 left-6 max-w-[240px] rounded-2xl border border-white/15 bg-black/80 px-4 py-3 backdrop-blur-md md:left-10"
+                  className="absolute -bottom-5 left-6 max-w-[240px] rounded-[12px] border border-white/15 bg-black/80 px-4 py-3 backdrop-blur-md md:left-10"
                 >
                   <p className="text-[14px] leading-relaxed text-white/90">
                     {content.challenge.paragraphs[0]?.slice(0, 110)}
@@ -300,7 +300,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                 <Reveal key={item.title} delay={index * 0.06}>
                   <article
                     className={cn(
-                      "grid overflow-hidden rounded-[28px] border border-black/5 bg-[#f7f7fb] shadow-[0_16px_48px_rgba(0,0,0,0.06)] md:rounded-[36px]",
+                      "grid overflow-hidden rounded-[12px] border border-black/5 bg-[#f7f7fb] shadow-[0_16px_48px_rgba(0,0,0,0.06)] md:rounded-[12px]",
                       reverse
                         ? "lg:grid-cols-[minmax(0,1.45fr)_minmax(0,1fr)] lg:[&>*:first-child]:order-2"
                         : "lg:grid-cols-[minmax(0,1fr)_minmax(0,1.45fr)]"
@@ -308,7 +308,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                   >
                     <div className="flex flex-col justify-center p-8 md:p-10 lg:p-12">
                       <span
-                        className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl text-white"
+                        className="mb-5 inline-flex h-10 w-12 items-center justify-center rounded-[12px] text-white"
                         style={{ backgroundColor: accent }}
                       >
                         <Icon className="h-6 w-6" />
@@ -368,7 +368,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
 
       {/* ── Results: pink band ── */}
       <section className="bg-white pb-4">
-        <div className="relative overflow-hidden rounded-[36px] bg-primary-pink py-16 text-white md:rounded-[48px] md:py-24">
+        <div className="relative overflow-hidden rounded-[12px] bg-primary-pink py-16 text-white md:rounded-[12px] md:py-24">
           <div
             className="pointer-events-none absolute inset-0 opacity-20"
             style={{
@@ -398,9 +398,9 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                     <motion.article
                       whileHover={{ y: -6 }}
                       transition={{ duration: 0.25 }}
-                      className="flex h-full flex-col rounded-[28px] bg-white p-7 text-default shadow-[0_20px_50px_rgba(0,0,0,0.18)] md:p-8"
+                      className="flex h-full flex-col rounded-[12px] bg-white p-7 text-default shadow-[0_20px_50px_rgba(0,0,0,0.18)] md:p-8"
                     >
-                      <span className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-pink/10 text-primary-pink">
+                      <span className="mb-5 inline-flex h-10 w-12 items-center justify-center rounded-[12px] bg-primary-pink/10 text-primary-pink">
                         <Icon className="h-6 w-6" />
                       </span>
                       <h4 className={cn("text-default", cardTitle)}>
@@ -420,7 +420,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
       <section className="relative overflow-hidden bg-white py-16 md:py-24">
         <Container>
           <Reveal>
-            <div className="grid overflow-hidden rounded-[32px] border border-black/5 shadow-[0_24px_60px_rgba(0,0,0,0.08)] md:rounded-[40px] lg:grid-cols-[1.15fr_0.85fr]">
+            <div className="grid overflow-hidden rounded-[12px] border border-black/5 shadow-[0_24px_60px_rgba(0,0,0,0.08)] md:rounded-[12px] lg:grid-cols-[1.15fr_0.85fr]">
               <div className="relative bg-[#0a0a1a] px-8 py-12 text-white md:px-12 md:py-16 lg:px-14 lg:py-20">
                 <div
                   className="pointer-events-none absolute -right-16 bottom-0 h-56 w-56 rounded-full blur-[90px]"
@@ -457,12 +457,12 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                 <div className="space-y-3">
                   <a
                     href="/impact-studies"
-                    className="group inline-flex w-full items-center justify-between rounded-2xl border border-black/8 bg-white px-5 py-4 text-sm font-semibold text-default transition-colors hover:border-primary-pink/40 hover:text-primary-pink"
+                    className="group inline-flex w-full items-center justify-between rounded-[12px] border border-black/8 bg-white px-5 py-4 text-sm font-semibold text-default transition-colors hover:border-primary-pink/40 hover:text-primary-pink"
                   >
                     Browse all impact studies
                     <HiArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </a>
-                  <ContactCTA className="group inline-flex w-full items-center justify-between rounded-2xl bg-default px-5 py-4 text-sm font-semibold text-white transition-opacity hover:opacity-90">
+                  <ContactCTA className="group inline-flex w-full items-center justify-between rounded-[12px] bg-default px-5 py-4 text-sm font-semibold text-white transition-opacity hover:opacity-90">
                     Talk to our team
                     <HiArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </ContactCTA>
@@ -495,7 +495,7 @@ function DeliverableCard({
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
       transition={{ duration: 0.55, delay: index * 0.07, ease }}
       whileHover={{ y: -6 }}
-      className="group relative flex min-h-[168px] flex-col overflow-hidden rounded-[22px] border border-black/5 bg-white p-5 shadow-[0_10px_32px_rgba(0,0,0,0.06)] transition-shadow duration-300 hover:shadow-[0_18px_44px_rgba(14,119,244,0.14)] md:min-h-[180px] md:p-6"
+      className="group relative flex min-h-[168px] flex-col overflow-hidden rounded-[12px] border border-black/5 bg-white p-5 shadow-[0_10px_32px_rgba(0,0,0,0.06)] transition-shadow duration-300 hover:shadow-[0_18px_44px_rgba(14,119,244,0.14)] md:min-h-[180px] md:p-6"
     >
       <span
         className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"

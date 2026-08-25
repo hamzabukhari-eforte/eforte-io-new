@@ -24,13 +24,13 @@ export default function NotFound() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/"
-              className="inline-flex items-center justify-center rounded-full bg-primary-pink px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+              className="inline-flex h-10 items-center justify-center rounded-full bg-primary-pink px-6 py-0 text-sm font-semibold text-white transition-opacity hover:opacity-90"
             >
               Back to home
             </Link>
             <Link
               href="/sitemap"
-              className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-primary-pink hover:text-primary-pink"
+              className="inline-flex h-10 items-center justify-center rounded-full border border-white/20 px-6 py-0 text-sm font-semibold text-white transition-colors hover:border-primary-pink hover:text-primary-pink"
             >
               View sitemap
             </Link>

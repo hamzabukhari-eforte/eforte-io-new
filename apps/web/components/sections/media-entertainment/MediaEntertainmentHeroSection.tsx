@@ -27,7 +27,7 @@ export default function MediaEntertainmentHeroSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/40 px-4 py-1.5 text-[13px] font-normal uppercase leading-[16px] tracking-[0.18em] text-white"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-white/40 px-4 py-1.5 text-[13px] font-normal uppercase leading-[16px] tracking-[0.18em] text-white"
           >
             <HiSparkles className="h-3.5 w-3.5" />
             Media &amp; Entertainment
@@ -72,7 +72,7 @@ export default function MediaEntertainmentHeroSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mt-9"
           >
-            <ContactCTA className="inline-flex h-12 items-center justify-center rounded-full border border-white bg-white px-8 text-sm font-medium text-default transition-all duration-300 hover:bg-transparent hover:text-white">
+            <ContactCTA className="inline-flex h-10 items-center justify-center rounded-full border border-white bg-white px-8 text-sm font-medium text-default transition-all duration-300 hover:bg-transparent hover:text-white">
               Contact Us
             </ContactCTA>
           </motion.div>

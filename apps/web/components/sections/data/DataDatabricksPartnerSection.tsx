@@ -13,7 +13,7 @@ export default function DataDatabricksPartnerSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.25 }}
           transition={{ duration: 0.5 }}
-          className="relative overflow-hidden rounded-[28px] bg-[#12141B] p-8 md:min-h-[430px] md:rounded-[32px] md:p-12"
+          className="relative overflow-hidden rounded-[12px] bg-[#12141B] p-8 md:min-h-[430px] md:rounded-[12px] md:p-12"
         >
           <div className="relative grid items-center gap-12 md:grid-cols-[340px_1fr]">
             <div className="relative mx-auto h-64 w-64 md:h-80 md:w-80">

@@ -75,9 +75,9 @@ const positionClasses: Record<string, string> = {
 };
 
 const cardBase =
-  "w-24 h-24 rounded-3xl bg-[#0F0F1A] border-2 border-[#2946CF] flex items-center justify-center text-blue-100 shadow-[0_0_20px_rgba(59,130,246,0.1),0_0_10px_rgba(233,30,99,0.03)] transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(59,130,246,0.3),0_0_15px_rgba(233,30,99,0.1)] group-hover:scale-110  group-hover:bg-[#1a1a2e] ";
+  "w-24 h-24 rounded-[12px] bg-[#0F0F1A] border-2 border-[#2946CF] flex items-center justify-center text-blue-100 shadow-[0_0_20px_rgba(59,130,246,0.1),0_0_10px_rgba(233,30,99,0.03)] transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(59,130,246,0.3),0_0_15px_rgba(233,30,99,0.1)] group-hover:scale-110  group-hover:bg-[#1a1a2e] ";
 const cardCenter =
-  "w-24 h-24 rounded-3xl bg-[#1a1a2e] border-2 border-[#2946CF] flex items-center justify-center text-white shadow-[0_0_30px_rgba(59,130,246,0.15),0_0_15px_rgba(233,30,99,0.05)] transition-all duration-300 group-hover:shadow-[0_0_50px_rgba(59,130,246,0.4),0_0_20px_rgba(233,30,99,0.15)] group-hover:scale-110 group-hover:border-[#2946CF] group-hover:bg-[#232342] z-20 hover:border-[#E91E63]/20";
+  "w-24 h-24 rounded-[12px] bg-[#1a1a2e] border-2 border-[#2946CF] flex items-center justify-center text-white shadow-[0_0_30px_rgba(59,130,246,0.15),0_0_15px_rgba(233,30,99,0.05)] transition-all duration-300 group-hover:shadow-[0_0_50px_rgba(59,130,246,0.4),0_0_20px_rgba(233,30,99,0.15)] group-hover:scale-110 group-hover:border-[#2946CF] group-hover:bg-[#232342] z-20 hover:border-[#E91E63]/20";
 
 function ServiceCard({
   item,
@@ -113,7 +113,7 @@ export default function FoundationalDataLayerDatabricksServicesSection() {
     >
       <Container className="relative z-10">
         <div className="text-center mb-24">
-          <div className="inline-block px-6 py-2 rounded-full border border-white/20 mb-8 backdrop-blur-sm bg-black/30">
+          <div className="inline-flex h-10 items-center justify-center px-6 py-2 rounded-full border border-white/20 mb-8 backdrop-blur-sm bg-black/30">
             <span className="text-[11px] font-bold tracking-widest text-white uppercase">
               DATABRICKS
             </span>
@@ -153,7 +153,7 @@ export default function FoundationalDataLayerDatabricksServicesSection() {
                 key={item.title}
                 className="flex flex-col items-center text-center group"
               >
-                <div className="w-20 h-20 rounded-2xl bg-[#0F0F1A] border-2 border-[#2946CF] flex items-center justify-center text-blue-100 mb-3 transition-all group-hover:shadow-[0_0_20px_rgba(59,130,246,0.3),0_0_10px_rgba(233,30,99,0.1)] hover:border-[#E91E63]/15">
+                <div className="w-20 h-20 rounded-[12px] bg-[#0F0F1A] border-2 border-[#2946CF] flex items-center justify-center text-blue-100 mb-3 transition-all group-hover:shadow-[0_0_20px_rgba(59,130,246,0.3),0_0_10px_rgba(233,30,99,0.1)] hover:border-[#E91E63]/15">
                   <Icon className="text-3xl" />
                 </div>
                 <span className="text-sm font-medium text-white mb-2">

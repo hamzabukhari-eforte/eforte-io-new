@@ -8,7 +8,7 @@ import { dataServices } from "@/data/capabilities/data";
 export default function DataServicesSection() {
   return (
     <section className="relative z-10">
-      <div className="rounded-[36px] bg-[#F5F5F5] py-20 text-default md:rounded-[42px] md:py-28">
+      <div className="rounded-[12px] bg-[#F5F5F5] py-20 text-default md:rounded-[12px] md:py-28">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -34,7 +34,7 @@ export default function DataServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-80px", amount: 0.15 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="flex flex-col rounded-2xl border border-[#E8E8E8] bg-white p-8 shadow-sm"
+              className="flex flex-col rounded-[12px] border border-[#E8E8E8] bg-white p-8 shadow-sm"
             >
               <h3 className="text-xl font-semibold text-default">
                 {service.title}
@@ -54,7 +54,7 @@ export default function DataServicesSection() {
                 {service.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-full bg-default px-3 py-1 text-xs font-medium text-white"
+                    className="h-10 rounded-full bg-default px-3 py-1 text-xs font-medium text-white"
                   >
                     {tag}
                   </span>

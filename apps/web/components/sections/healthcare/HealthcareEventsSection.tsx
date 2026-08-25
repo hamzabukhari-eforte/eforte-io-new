@@ -14,7 +14,7 @@ export default function HealthcareEventsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.6 }}
-          className="grid overflow-hidden rounded-[32px] md:rounded-[40px] lg:grid-cols-2"
+          className="grid overflow-hidden rounded-[12px] md:rounded-[12px] lg:grid-cols-2"
         >
           <div className="flex flex-col justify-center bg-[#2D68F0] p-10 text-white md:p-14 lg:p-16">
             <div className="flex items-center gap-6">
@@ -45,7 +45,7 @@ export default function HealthcareEventsSection() {
               personalized, preventive care.
             </p>
 
-            <ContactCTA className="mt-9 inline-flex h-12 w-fit items-center justify-center rounded-full border border-white bg-white px-8 text-sm font-medium text-default transition-all duration-300 hover:bg-transparent hover:text-white">
+            <ContactCTA className="mt-9 inline-flex h-10 w-fit items-center justify-center rounded-full border border-white bg-white px-8 text-sm font-medium text-default transition-all duration-300 hover:bg-transparent hover:text-white">
               Contact Us
             </ContactCTA>
           </div>

@@ -15,7 +15,7 @@ export default function DatabricksWhitepaperSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="overflow-hidden rounded-[28px] bg-[#1A1A1A] p-6 text-white md:rounded-[32px] md:p-10 lg:p-12"
+          className="overflow-hidden rounded-[12px] bg-[#1A1A1A] p-6 text-white md:rounded-[12px] md:p-10 lg:p-12"
         >
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <div className="flex justify-center lg:justify-start">
@@ -42,7 +42,7 @@ export default function DatabricksWhitepaperSection() {
               </div>
               <Link
                 href={databricksWhitepaper.ctaHref}
-                className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-[#E5484D] px-8 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                className="mt-8 inline-flex h-10 items-center justify-center rounded-full bg-[#E5484D] px-8 text-sm font-semibold text-white transition-opacity hover:opacity-90"
               >
                 {databricksWhitepaper.ctaLabel}
               </Link>

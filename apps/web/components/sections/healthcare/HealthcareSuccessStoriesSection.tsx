@@ -100,7 +100,7 @@ export default function HealthcareSuccessStoriesSection() {
   return (
     <section className="relative -mt-8 bg-default md:-mt-10">
       <div
-        className="rounded-t-[36px] bg-white py-20 text-default md:rounded-t-[42px] md:py-28"
+        className="rounded-t-[12px] bg-white py-20 text-default md:rounded-t-[12px] md:py-28"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onFocus={() => setIsPaused(true)}
@@ -136,7 +136,7 @@ export default function HealthcareSuccessStoriesSection() {
                     <span
                       key={tag}
                       className={cn(
-                        "inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium",
+                        "inline-flex h-10 items-center justify-center rounded-full px-4 py-1.5 text-sm font-medium",
                         story.tagClass
                       )}
                     >
@@ -148,14 +148,14 @@ export default function HealthcareSuccessStoriesSection() {
 
               <div
                 className={cn(
-                  "relative flex flex-col overflow-hidden rounded-3xl px-8 pt-10 text-white md:px-10 md:pt-12",
+                  "relative flex flex-col overflow-hidden rounded-[12px] px-8 pt-10 text-white md:px-10 md:pt-12",
                   story.accentClass
                 )}
               >
                 <p className="text-center text-2xl font-semibold leading-snug md:text-[26px]">
                   {story.cardHeading}
                 </p>
-                <div className="relative mx-auto mt-8 aspect-square w-full max-w-md overflow-hidden rounded-t-2xl">
+                <div className="relative mx-auto mt-8 aspect-square w-full max-w-md overflow-hidden rounded-t-[12px]">
                   <Image
                     src={story.imageSrc}
                     alt={story.imageAlt}
@@ -173,7 +173,7 @@ export default function HealthcareSuccessStoriesSection() {
               type="button"
               onClick={goPrev}
               aria-label="Previous success story"
-              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-default/20 text-default transition-all duration-200 hover:border-default hover:bg-default hover:text-white"
+              className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-default/20 text-default transition-all duration-200 hover:border-default hover:bg-default hover:text-white"
             >
               <HiArrowLeft className="h-5 w-5" />
             </button>
@@ -181,7 +181,7 @@ export default function HealthcareSuccessStoriesSection() {
               type="button"
               onClick={goNext}
               aria-label="Next success story"
-              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-default/20 text-default transition-all duration-200 hover:border-default hover:bg-default hover:text-white"
+              className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-default/20 text-default transition-all duration-200 hover:border-default hover:bg-default hover:text-white"
             >
               <HiArrowRight className="h-5 w-5" />
             </button>

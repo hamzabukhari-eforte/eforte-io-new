@@ -38,7 +38,7 @@ export function useQuoteModal() {
 }
 
 const inputClassName =
-  "w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition-colors placeholder:text-gray-400 focus:border-primary-pink focus:ring-1 focus:ring-primary-pink";
+  "w-full rounded-[12px] border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition-colors placeholder:text-gray-400 focus:border-primary-pink focus:ring-1 focus:ring-primary-pink";
 
 
 function QuoteField({
@@ -232,7 +232,7 @@ function QuoteModal({
             role="dialog"
             aria-modal="true"
             aria-labelledby="quote-modal-title"
-            className="relative z-10 w-full max-w-5xl overflow-hidden rounded-3xl bg-white shadow-2xl"
+            className="relative z-10 w-full max-w-5xl overflow-hidden rounded-[12px] bg-white shadow-2xl"
             initial={{ opacity: 0, y: 24, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.98 }}
@@ -314,7 +314,7 @@ function QuoteModal({
                           name="countryCode"
                           value={countryCode}
                           onChange={(event) => setCountryCode(event.target.value)}
-                          className="w-30 shrink-0 rounded-lg border border-gray-300 bg-white px-2 py-3 text-sm text-gray-900 outline-none focus:border-primary-pink focus:ring-1 focus:ring-primary-pink"
+                          className="w-30 shrink-0 rounded-[12px] border border-gray-300 bg-white px-2 py-3 text-sm text-gray-900 outline-none focus:border-primary-pink focus:ring-1 focus:ring-primary-pink"
                         >
                           {quotePhoneCountryOptions.map((option) => (
                             <option key={option.code} value={option.code}>
@@ -403,7 +403,7 @@ function QuoteModal({
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full cursor-pointer rounded-full border-2 border-primary-pink bg-white px-8 py-3.5 text-sm font-semibold text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+                      className="w-full cursor-pointer h-10 rounded-full border-2 border-primary-pink bg-white px-8 py-0 text-sm font-semibold text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
                     >
                       {isSubmitting ? "Sending…" : "Send Message"}
                     </button>

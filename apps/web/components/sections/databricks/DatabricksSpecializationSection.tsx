@@ -14,7 +14,7 @@ export default function DatabricksSpecializationSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.2 }}
           transition={{ duration: 0.5 }}
-          className="relative overflow-hidden rounded-[28px] bg-[#12141B] p-8 md:min-h-[400px] md:rounded-[32px] md:p-12"
+          className="relative overflow-hidden rounded-[12px] bg-[#12141B] p-8 md:min-h-[400px] md:rounded-[12px] md:p-12"
         >
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.12]"

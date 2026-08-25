@@ -45,7 +45,7 @@ export default function CloudSreInsightsSection() {
                   </h3>
                   <p className="mt-3 text-sm text-[#888]">{article.date}</p>
                 </div>
-                <div className="relative aspect-[16/10] overflow-hidden rounded-xl md:aspect-[4/3]">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-[12px] md:aspect-[4/3]">
                   <Image
                     src={article.image}
                     alt=""

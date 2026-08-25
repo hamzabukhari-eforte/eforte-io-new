@@ -11,7 +11,7 @@ export default function QualityAssuranceAcceleratorsSection() {
   return (
     <section className="bg-white py-10 md:py-14">
       <Container>
-        <div className="rounded-[28px] bg-black px-6 py-12 text-white md:rounded-[36px] md:px-10 md:py-16 lg:px-12 lg:py-20">
+        <div className="rounded-[12px] bg-black px-6 py-12 text-white md:rounded-[12px] md:px-10 md:py-16 lg:px-12 lg:py-20">
           {/* Heading */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -45,7 +45,7 @@ export default function QualityAssuranceAcceleratorsSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, margin: "-80px", amount: 0.15 }}
                   transition={{ duration: 0.45, delay: index * 0.08 }}
-                  className="relative flex min-h-[380px] flex-col justify-end overflow-hidden rounded-3xl bg-[#161616] p-7 md:min-h-[440px] md:p-8 lg:min-h-[480px] lg:p-9"
+                  className="relative flex min-h-[380px] flex-col justify-end overflow-hidden rounded-[12px] bg-[#161616] p-7 md:min-h-[440px] md:p-8 lg:min-h-[480px] lg:p-9"
                 >
                   {item.glow === "diagonal" ? (
                     <div

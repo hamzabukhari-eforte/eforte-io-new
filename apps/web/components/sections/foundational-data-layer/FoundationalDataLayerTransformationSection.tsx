@@ -54,7 +54,7 @@ export default function FoundationalDataLayerTransformationSection() {
             {items.map((item) => (
               <div
                 key={item.label}
-                className="group relative rounded-2xl transition-all duration-300 hover:bg-white/5 hover:shadow-[0_0_30px_-5px_rgba(233,30,99,0.15)] border border-transparent hover:border-[#E91E63]/20 p-8 -ml-8"
+                className="group relative rounded-[12px] transition-all duration-300 hover:bg-white/5 hover:shadow-[0_0_30px_-5px_rgba(233,30,99,0.15)] border border-transparent hover:border-[#E91E63]/20 p-8 -ml-8"
               >
                 <div className="absolute left-0 top-8 bottom-8 w-px bg-gray-800 group-hover:bg-[#E91E63] transition-colors duration-300" />
                 <div className="flex flex-col md:flex-row gap-8 pl-4">

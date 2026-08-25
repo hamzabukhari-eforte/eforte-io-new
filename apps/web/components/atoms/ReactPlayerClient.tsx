@@ -34,7 +34,7 @@ const Inner = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="absolute inset-0 animate-pulse rounded-2xl bg-black/80" />
+      <div className="absolute inset-0 animate-pulse rounded-[12px] bg-black/80" />
     ),
   }
 ) as unknown as React.ComponentType<ReactPlayerClientProps>;

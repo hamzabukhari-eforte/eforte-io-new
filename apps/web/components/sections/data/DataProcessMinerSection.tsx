@@ -8,7 +8,7 @@ import { dataProcessMiner } from "@/data/capabilities/data";
 export default function DataProcessMinerSection() {
   return (
     <section className="relative z-10 mt-10 md:mt-14">
-      <div className="rounded-[36px] bg-[#F5F5F5] py-20 text-default md:rounded-[42px] md:py-28">
+      <div className="rounded-[12px] bg-[#F5F5F5] py-20 text-default md:rounded-[12px] md:py-28">
         <Container>
           <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-14 lg:items-center">
             <motion.div
@@ -41,7 +41,7 @@ export default function DataProcessMinerSection() {
               {dataProcessMiner.benefits.map((benefit) => (
                 <li
                   key={benefit}
-                  className="flex h-full flex-col gap-3 rounded-2xl bg-white p-6 shadow-sm"
+                  className="flex h-full flex-col gap-3 rounded-[12px] bg-white p-6 shadow-sm"
                 >
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-pink/10 text-primary-pink">
                     <HiCheck className="h-4 w-4" />

@@ -7,7 +7,7 @@ import { projectTypeOptions } from "@/data/contactFormOptions";
 import { cn } from "@/lib/utils";
 
 const triggerClassName =
-  "w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition-colors focus:border-primary-pink focus:ring-1 focus:ring-primary-pink";
+  "w-full rounded-[12px] border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition-colors focus:border-primary-pink focus:ring-1 focus:ring-primary-pink";
 
 interface ProjectTypeSelectProps {
   id: string;
@@ -103,7 +103,7 @@ export default function ProjectTypeSelect({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
-            className="absolute left-0 right-0 top-[calc(100%+6px)] z-50 max-h-56 overflow-y-auto overscroll-contain rounded-xl border border-gray-200 bg-white py-1.5 shadow-[0_12px_40px_rgba(0,0,0,0.12)]"
+            className="absolute left-0 right-0 top-[calc(100%+6px)] z-50 max-h-56 overflow-y-auto overscroll-contain rounded-[12px] border border-gray-200 bg-white py-1.5 shadow-[0_12px_40px_rgba(0,0,0,0.12)]"
           >
             {projectTypeOptions.map((option) => {
               const isSelected = value === option;

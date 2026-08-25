@@ -103,7 +103,7 @@ export default function FinancialServicesSolutionsSection() {
     accelerators.find((a) => a.id === activeId) ?? accelerators[0];
 
   return (
-    <section className="rounded-t-[36px] bg-default py-20 text-white md:rounded-t-[42px] md:py-28">
+    <section className="rounded-t-[12px] bg-default py-20 text-white md:rounded-t-[12px] md:py-28">
       <Container>
         <motion.p
           initial={{ opacity: 0, y: 12 }}
@@ -220,7 +220,7 @@ export default function FinancialServicesSolutionsSection() {
                     id={`accelerator-tab-${accelerator.id}`}
                     onClick={() => setActiveId(accelerator.id)}
                     className={cn(
-                      "cursor-pointer rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 md:px-6",
+                      "h-10 cursor-pointer rounded-full px-5 py-0 text-sm font-medium transition-all duration-200 md:px-6",
                       isActive
                         ? "bg-primary-pink text-white shadow-[0_4px_18px_rgba(211, 40, 122, 0.4)]"
                         : "bg-white/15 text-white/80 hover:bg-primary-pink hover:text-white"
@@ -247,7 +247,7 @@ export default function FinancialServicesSolutionsSection() {
                 className="grid items-center gap-6 lg:grid-cols-[440px_1fr] lg:gap-8"
               >
                 <div className="flex justify-center lg:justify-start">
-                  <div className="relative aspect-4/3 w-full max-w-[440px] overflow-hidden rounded-2xl">
+                  <div className="relative aspect-4/3 w-full max-w-[440px] overflow-hidden rounded-[12px]">
                     <Image
                       src={activeAccelerator.imageSrc}
                       alt={activeAccelerator.imageAlt}

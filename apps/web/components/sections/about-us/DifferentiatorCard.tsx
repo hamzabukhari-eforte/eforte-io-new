@@ -161,7 +161,7 @@ export default function DifferentiatorCard({ card }: DifferentiatorCardProps) {
 
   return (
     <div
-      className="group relative rounded-2xl border bg-default/95 p-6 md:p-8 md:h-80 transition-all duration-300 ease-out overflow-hidden"
+      className="group relative rounded-[12px] border bg-default/95 p-6 md:p-8 md:h-80 transition-all duration-300 ease-out overflow-hidden"
       style={
         {
           borderColor: "rgba(255,255,255,0.08)",

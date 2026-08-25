@@ -69,7 +69,7 @@ export default function DataGovernanceSection() {
                     key={item.id}
                     type="button"
                     onClick={() => setActiveTab(item.id)}
-                    className={`w-full cursor-pointer rounded-2xl px-5 py-4 text-left transition-all ${
+                    className={`w-full cursor-pointer rounded-[12px] px-5 py-4 text-left transition-all ${
                       isActive
                         ? "bg-[#EAF4FC] shadow-sm"
                         : "bg-transparent hover:bg-[#F8F8F8]"
@@ -77,7 +77,7 @@ export default function DataGovernanceSection() {
                   >
                     <div className="flex items-start gap-3">
                       <span
-                        className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md ${
+                        className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-[12px] ${
                           isActive
                             ? "bg-[#2563EB] text-white"
                             : "bg-transparent text-[#2563EB]"

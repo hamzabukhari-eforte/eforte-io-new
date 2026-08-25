@@ -70,7 +70,7 @@ export default function DatabricksInsightsSection() {
                   </div>
                 </div>
 
-                <div className="relative aspect-16/11 w-full overflow-hidden rounded-2xl">
+                <div className="relative aspect-16/11 w-full overflow-hidden rounded-[12px]">
                   <Image
                     src={article.image}
                     alt=""

@@ -57,7 +57,7 @@ export default function FinancialServicesFaqSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="relative overflow-hidden rounded-2xl bg-[#0F1118] px-8 py-9 md:px-10 md:py-10"
+          className="relative overflow-hidden rounded-[12px] bg-[#0F1118] px-8 py-9 md:px-10 md:py-10"
         >
           <Image
             src="/assets/images/industry/faq-banner-bg.svg"

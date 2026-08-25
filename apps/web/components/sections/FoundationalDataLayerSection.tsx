@@ -67,19 +67,19 @@ export default function FoundationalDataLayerSection() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           >
-            <div className="bg-[#0f0a1a] border border-gray-500/30 rounded-xl p-5 md:p-6 lg:p-8 w-full max-w-md lg:max-w-lg">
+            <div className="bg-[#0f0a1a] border border-gray-500/30 rounded-[12px] p-5 md:p-6 lg:p-8 w-full max-w-md lg:max-w-lg">
               <div className="flex flex-col gap-3 md:gap-4">
                 {features.map((feature, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-center gap-4 md:gap-5 bg-[#1A1A2E] rounded-lg p-4 md:p-5"
+                    className="flex items-center gap-4 md:gap-5 bg-[#1A1A2E] rounded-[12px] p-4 md:p-5"
                     initial={{ opacity: 0, x: 20 }}
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
                     transition={{ duration: 0.6, delay: 0.5 + index * 0.1, ease: "easeOut" }}
                   >
                     {/* Tick Icon with Gradient Background */}
                     <div 
-                      className="shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
+                      className="shrink-0 w-10 h-10 rounded-[12px] flex items-center justify-center"
                       style={{
                         background: `linear-gradient(to bottom, #2A0079, #10082C, #0A0A1A)`,
                       }}

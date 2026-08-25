@@ -71,7 +71,7 @@ const services: Service[] = [
 export default function MediaEntertainmentServicesSection() {
   return (
     <section className="bg-default">
-      <div className="rounded-[36px] bg-white py-20 text-default md:rounded-[42px] md:py-28">
+      <div className="rounded-[12px] bg-white py-20 text-default md:rounded-[12px] md:py-28">
         <Container>
           <motion.h2
             initial={{ opacity: 0, y: 16 }}

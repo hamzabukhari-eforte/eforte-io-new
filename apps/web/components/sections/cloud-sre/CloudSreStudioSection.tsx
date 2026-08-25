@@ -8,7 +8,7 @@ import { CLOUD_SRE_ACCENT } from "@/data/capabilities/cloudSre";
 export default function CloudSreStudioSection() {
   return (
     <section id="studio" className="bg-[#F4F6FA] text-default">
-      <div className="rounded-b-[36px] bg-white pb-20 pt-10 md:rounded-b-[42px] md:pb-28 md:pt-12">
+      <div className="rounded-b-[12px] bg-white pb-20 pt-10 md:rounded-b-[12px] md:pb-28 md:pt-12">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export default function CloudSreStudioSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false, margin: "-80px", amount: 0.15 }}
               transition={{ duration: 0.55, delay: 0.08 }}
-              className="relative aspect-[4/3] w-full overflow-hidden rounded-[28px] md:rounded-[32px]"
+              className="relative aspect-[4/3] w-full overflow-hidden rounded-[12px] md:rounded-[12px]"
             >
               <Image
                 src="/assets/images/industry/working.jpg"

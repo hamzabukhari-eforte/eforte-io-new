@@ -10,7 +10,7 @@ const YOUTUBE_URL = "https://www.youtube.com/watch?v=AxnIFqEakag";
 export default function AiQbricksVideoSection() {
   return (
     <section className="bg-white">
-      <div className="rounded-b-[36px] bg-black pb-20 pt-4 text-white md:rounded-b-[42px] md:pb-28">
+      <div className="rounded-b-[12px] bg-black pb-20 pt-4 text-white md:rounded-b-[12px] md:pb-28">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -19,7 +19,7 @@ export default function AiQbricksVideoSection() {
             transition={{ duration: 0.5 }}
             className="mx-auto max-w-5xl"
           >
-            <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
+            <div className="relative aspect-video w-full overflow-hidden rounded-[12px] border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
               <ReactPlayer
                 src={YOUTUBE_URL}
                 width="100%"

@@ -37,7 +37,7 @@ export default function StudioProcessSection({
               >
                 <div className={imageFirst ? "md:order-1" : "md:order-2"}>
                   {sizedFrame ? (
-                    <div className="h-[380px] w-[608px] max-w-full overflow-hidden rounded-[24px] shadow-[0_24px_70px_rgba(10,10,26,0.12)]">
+                    <div className="h-[380px] w-[608px] max-w-full overflow-hidden rounded-[12px] shadow-[0_24px_70px_rgba(10,10,26,0.12)]">
                       <Image
                         src={item.image}
                         alt={item.imageAlt}
@@ -49,7 +49,7 @@ export default function StudioProcessSection({
                       />
                     </div>
                   ) : (
-                    <div className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-gray-100 shadow-[0_24px_70px_rgba(10,10,26,0.12)]">
+                    <div className="relative aspect-[16/10] overflow-hidden rounded-[12px] bg-gray-100 shadow-[0_24px_70px_rgba(10,10,26,0.12)]">
                       <Image
                         src={item.image}
                         alt={item.imageAlt}
@@ -75,7 +75,7 @@ export default function StudioProcessSection({
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-gray-200 px-3 py-1 text-xs font-medium text-gray-600"
+                        className="h-10 rounded-full border border-gray-200 px-3 py-1 text-xs font-medium text-gray-600"
                       >
                         {tag}
                       </span>

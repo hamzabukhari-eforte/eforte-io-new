@@ -16,12 +16,12 @@ const stackTiers = [
 /** Rounded block with optional Data cylinder icon (for Modern App / Legacy App) */
 function AppBlock({ label }: { label: string }) {
   return (
-    <div className="relative flex-1 min-h-[72px] md:min-h-[80px] rounded-2xl bg-gradient-to-r from-[#2e1065] to-[#1e1b4b] border border-[#6d28d9]/30 flex items-center pl-6 pr-12 shadow-lg overflow-visible">
+    <div className="relative flex-1 min-h-[72px] md:min-h-[80px] rounded-[12px] bg-gradient-to-r from-[#2e1065] to-[#1e1b4b] border border-[#6d28d9]/30 flex items-center pl-6 pr-12 shadow-lg overflow-visible">
       <span className="text-white font-medium text-sm md:text-base">{label}</span>
       <div className="absolute -right-4 top-1/2 -translate-y-1/2 flex flex-col items-center z-10">
         <div className="relative w-10 h-12">
           <div className="absolute top-0 w-10 h-3 bg-[#7c3aed] rounded-[50%] border border-[#a78bfa] z-20" />
-          <div className="absolute top-1.5 w-10 h-9 bg-[#5b21b6] border-l border-r border-b border-[#7c3aed] rounded-b-xl flex items-center justify-center z-10">
+          <div className="absolute top-1.5 w-10 h-9 bg-[#5b21b6] border-l border-r border-b border-[#7c3aed] rounded-b-[12px] flex items-center justify-center z-10">
             <FaDatabase className="text-[8px] text-white/90" />
           </div>
         </div>
@@ -42,7 +42,7 @@ function Block({
   size?: "sm" | "md";
   teal?: boolean;
 }) {
-  const base = "rounded-2xl flex items-center justify-center px-2 md:px-3 text-center font-medium text-white shadow-md";
+  const base = "rounded-[12px] flex items-center justify-center px-2 md:px-3 text-center font-medium text-white shadow-md";
   const blue = "bg-[#0f172a] border border-[#1e3a8a] bg-gradient-to-b from-[#172554] to-[#0f172a] py-2 md:py-0";
   const tealClass = "bg-gradient-to-b from-[#0e7490] to-[#0f172a] border border-[#0891b2]/40 hover:brightness-110 transition-all";
   const h = size === "sm" ? "h-[72px] md:h-[80px]" : "h-[72px]";
@@ -83,7 +83,7 @@ export default function AgenticOrchestrationPlatformSection() {
     >
       <div className={`${section.container} flex flex-col items-center relative z-10 py-8 md:py-12`}>
         <motion.div
-          className="inline-flex items-center px-4 py-1.5 md:px-5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-6 md:mb-10"
+          className="inline-flex h-10 items-center justify-center px-4 py-1.5 md:px-5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-6 md:mb-10"
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -179,7 +179,7 @@ export default function AgenticOrchestrationPlatformSection() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] h-[400px] bg-blue-500/5 rounded-[100%] blur-[120px] pointer-events-none" />
       <div className={`${section.container} relative z-10 flex flex-col items-center pt-8 md:pt-16`}>
         <motion.div
-          className="inline-flex items-center px-5 py-1.5 md:px-6 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-8 md:mb-12"
+          className="inline-flex h-10 items-center justify-center px-5 py-1.5 md:px-6 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-8 md:mb-12"
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -198,12 +198,12 @@ export default function AgenticOrchestrationPlatformSection() {
           {coreCards.map((card, index) => (
             <motion.div
               key={card.title}
-              className="group relative p-8 md:p-10 rounded-3xl bg-[#05050A] border border-white/10 flex flex-col items-center text-center overflow-hidden cursor-pointer transition-all duration-300 hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] hover:-translate-y-1"
+              className="group relative p-8 md:p-10 rounded-[12px] bg-[#05050A] border border-white/10 flex flex-col items-center text-center overflow-hidden cursor-pointer transition-all duration-300 hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] hover:-translate-y-1"
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.08, ease: "easeOut" }}
             >
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-blue-500/10 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-300" />
+              <div className="absolute inset-0 rounded-[12px] bg-gradient-to-b from-blue-500/10 to-transparent opacity-50 group-hover:opacity-70 transition-opacity duration-300" />
               <div className="relative z-10 flex flex-col items-center h-full w-full">
                 <div className="mb-6 relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
                   <div className="absolute inset-0 border border-blue-500/30 rounded-full group-hover:border-blue-500/50 transition-colors duration-300" />

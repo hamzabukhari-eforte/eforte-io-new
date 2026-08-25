@@ -80,7 +80,7 @@ export default function ProductDesignProcessSection() {
                     onClick={() => scrollToCard(id)}
                     aria-current={isActive ? "true" : undefined}
                     className={cn(
-                      "shrink-0 cursor-pointer rounded-full px-5 py-3 text-base font-medium whitespace-nowrap transition-colors duration-200 md:px-6 md:py-3.5 md:text-lg",
+                      "h-10 shrink-0 cursor-pointer rounded-full px-5 py-0 text-base font-medium whitespace-nowrap transition-colors duration-200 md:px-6 md:text-lg",
                       isActive
                         ? "bg-black text-white"
                         : "bg-transparent text-gray-500 hover:text-gray-800"
@@ -112,7 +112,7 @@ export default function ProductDesignProcessSection() {
                 className="scroll-mt-36 grid items-center gap-8 md:scroll-mt-40 md:grid-cols-2 md:gap-14"
               >
                 <div className={imageFirst ? "md:order-1" : "md:order-2"}>
-                  <div className="h-[380px] w-[608px] max-w-full overflow-hidden rounded-[24px] shadow-[0_24px_70px_rgba(10,10,26,0.12)]">
+                  <div className="h-[380px] w-[608px] max-w-full overflow-hidden rounded-[12px] shadow-[0_24px_70px_rgba(10,10,26,0.12)]">
                     <Image
                       src={item.image}
                       alt={item.imageAlt}
@@ -139,7 +139,7 @@ export default function ProductDesignProcessSection() {
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-gray-200 px-3 py-1 text-xs font-medium text-gray-600"
+                        className="h-10 rounded-full border border-gray-200 px-3 py-1 text-xs font-medium text-gray-600"
                       >
                         {tag}
                       </span>

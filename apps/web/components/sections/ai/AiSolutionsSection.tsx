@@ -54,12 +54,12 @@ export default function AiSolutionsSection() {
                     key={item.id}
                     type="button"
                     onClick={() => setActiveId(item.id)}
-                    className="w-full cursor-pointer rounded-lg bg-[#1A1A1A] px-4 py-4 text-left md:px-5 md:py-5"
+                    className="w-full cursor-pointer rounded-[12px] bg-[#1A1A1A] px-4 py-4 text-left md:px-5 md:py-5"
                     style={{ borderBottom: `2px solid ${AI_ACCENT}` }}
                   >
                     <div className="flex items-start gap-3">
                       <span
-                        className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-[5px] text-white"
+                        className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-[12px] text-white"
                         style={{ backgroundColor: AI_ACCENT }}
                       >
                         <Icon className="h-3.5 w-3.5" />

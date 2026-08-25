@@ -78,7 +78,7 @@ export default function FinancialServicesTestimonialsSection() {
   return (
     <section className="bg-primary-pink">
       <div
-        className="rounded-t-[36px] bg-default py-20 text-white md:rounded-t-[42px] md:py-52"
+        className="rounded-t-[12px] bg-default py-20 text-white md:rounded-t-[12px] md:py-52"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onFocus={() => setIsPaused(true)}
@@ -104,7 +104,7 @@ export default function FinancialServicesTestimonialsSection() {
                   type="button"
                   onClick={goPrev}
                   aria-label="Previous testimonial"
-                  className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default"
+                  className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default"
                 >
                   <HiArrowLeft className="h-5 w-5" />
                 </button>
@@ -112,7 +112,7 @@ export default function FinancialServicesTestimonialsSection() {
                   type="button"
                   onClick={goNext}
                   aria-label="Next testimonial"
-                  className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default"
+                  className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/30 text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default"
                 >
                   <HiArrowRight className="h-5 w-5" />
                 </button>
@@ -142,7 +142,7 @@ export default function FinancialServicesTestimonialsSection() {
                   transition={{ duration: 0.35, ease: "easeOut" }}
                 >
                   <div className="flex items-center gap-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-md bg-white/10 text-white">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-[12px] bg-white/10 text-white">
                       <HiChatBubbleOvalLeft className="h-5 w-5" />
                     </span>
                     <span className="text-base text-white/90">

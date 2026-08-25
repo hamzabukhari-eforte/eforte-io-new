@@ -29,7 +29,7 @@ export default function CloudSreAwsPartnerSection() {
               </p>
               <Link
                 href="/contact-us"
-                className="mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                className="mt-8 inline-flex h-10 items-center gap-2 rounded-full px-6 py-0 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                 style={{ backgroundColor: CLOUD_SRE_ACCENT }}
               >
                 Learn more

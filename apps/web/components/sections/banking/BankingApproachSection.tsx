@@ -47,7 +47,7 @@ const stages: StageItem[] = [
 export default function BankingApproachSection() {
   return (
     <>
-      <section className="-mt-8 rounded-t-[36px] bg-[#efefef] py-24 text-slate-900 md:-mt-10 md:rounded-t-[42px]">
+      <section className="-mt-8 rounded-t-[12px] bg-[#efefef] py-24 text-slate-900 md:-mt-10 md:rounded-t-[12px]">
         <Container>
           <p className="text-center text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
             eForte Approach To Banking
@@ -70,7 +70,7 @@ export default function BankingApproachSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, margin: "-60px", amount: 0.25 }}
                   transition={{ duration: 0.45, delay: index * 0.08 }}
-                  className="grid min-h-[360px] overflow-hidden rounded-3xl border border-[#202738] bg-[#0b0d13] text-white shadow-[0_12px_40px_rgba(0,0,0,0.25)] lg:grid-cols-[1fr_560px]"
+                  className="grid min-h-[360px] overflow-hidden rounded-[12px] border border-[#202738] bg-[#0b0d13] text-white shadow-[0_12px_40px_rgba(0,0,0,0.25)] lg:grid-cols-[1fr_560px]"
                 >
                   <div className="p-7 md:p-9">
                     <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/70">
@@ -86,7 +86,7 @@ export default function BankingApproachSection() {
                       ))}
                     </ul>
                   </div>
-                  <div className="relative m-4 min-h-[260px] overflow-hidden rounded-2xl border border-[#25365a] bg-[#0f1630] lg:m-5 lg:min-h-[320px]">
+                  <div className="relative m-4 min-h-[260px] overflow-hidden rounded-[12px] border border-[#25365a] bg-[#0f1630] lg:m-5 lg:min-h-[320px]">
                     <Image
                       src={stage.imageSrc}
                       alt="AI-driven banking illustration"
@@ -96,7 +96,7 @@ export default function BankingApproachSection() {
                     <div className="absolute inset-0 bg-linear-to-br from-[#3f62ff]/35 via-[#1a2f91]/30 to-[#050b1b]/60" />
                     <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_40%,rgba(107,147,255,0.45),transparent_55%)]" />
                     <div className="relative flex h-full min-h-[220px] items-end justify-start p-4">
-                      <span className="rounded-md border border-white/20 bg-black/40 px-3 py-1 text-xs font-medium text-white/90">
+                      <span className="rounded-[12px] border border-white/20 bg-black/40 px-3 py-1 text-xs font-medium text-white/90">
                         Banking AI
                       </span>
                     </div>

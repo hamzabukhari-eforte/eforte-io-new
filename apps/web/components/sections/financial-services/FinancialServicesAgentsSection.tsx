@@ -117,7 +117,7 @@ export default function FinancialServicesAgentsSection() {
                   id={`tab-${tab.id}`}
                   onClick={() => setActiveId(tab.id)}
                   className={cn(
-                    "cursor-pointer rounded-full px-4 py-2.5 text-sm font-medium transition-all duration-200 md:px-6",
+                    "h-10 cursor-pointer rounded-full px-4 py-0 text-sm font-medium transition-all duration-200 md:px-6",
                     isActive
                       ? "bg-default text-white shadow-[0_2px_8px_rgba(0, 0, 0, 0.15)]"
                       : "text-default/70 hover:bg-default hover:text-white"
@@ -162,7 +162,7 @@ export default function FinancialServicesAgentsSection() {
               </div>
 
               <div className="flex justify-center lg:justify-end">
-                <div className="relative aspect-900/734 w-full max-w-[560px] overflow-hidden rounded-3xl border border-default/10 bg-default">
+                <div className="relative aspect-900/734 w-full max-w-[560px] overflow-hidden rounded-[12px] border border-default/10 bg-default">
                   <Image
                     src={activeTab.imageSrc}
                     alt={activeTab.title}

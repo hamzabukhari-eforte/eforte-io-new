@@ -8,14 +8,14 @@ import { cyberCertifications } from "@/data/capabilities/cybersecurity";
 export default function CyberCertificationsSection() {
   return (
     <section className="bg-white">
-      <div className="mx-[14px] rounded-[36px] bg-black py-10 md:rounded-[48px] md:py-14">
+      <div className="mx-[14px] rounded-[12px] bg-black py-10 md:rounded-[12px] md:py-14">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-80px", amount: 0.15 }}
             transition={{ duration: 0.5 }}
-            className="rounded-[24px] bg-white px-6 py-10 text-default md:rounded-[32px] md:px-12 md:py-12 lg:px-16"
+            className="rounded-[12px] bg-white px-6 py-10 text-default md:rounded-[12px] md:px-12 md:py-12 lg:px-16"
           >
             <h2 className="text-[28px] font-semibold md:text-[32px]">
               {cyberCertifications.title}

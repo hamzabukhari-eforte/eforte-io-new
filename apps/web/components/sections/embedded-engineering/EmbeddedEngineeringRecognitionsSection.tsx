@@ -19,7 +19,7 @@ const beVietnamPro = Be_Vietnam_Pro({
 export default function EmbeddedEngineeringRecognitionsSection() {
   return (
     <section className="bg-default">
-      <div className="relative overflow-hidden rounded-[36px] bg-white py-16 text-default md:rounded-[42px] md:py-24">
+      <div className="relative overflow-hidden rounded-[12px] bg-white py-16 text-default md:rounded-[12px] md:py-24">
         <div className="pointer-events-none absolute -top-10 right-24 w-72 rounded-full bg-[#FF7A1A]/20 blur-3xl" />
 
         <Container className="relative">
@@ -45,7 +45,7 @@ export default function EmbeddedEngineeringRecognitionsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-80px", amount: 0.15 }}
               transition={{ duration: 0.5 }}
-              className="relative z-0 mb-6 aspect-3/4 w-full overflow-hidden rounded-3xl lg:absolute lg:left-0 lg:top-1/2 lg:mb-0 lg:aspect-auto lg:h-[142%] lg:w-[36%] lg:-translate-y-1/2"
+              className="relative z-0 mb-6 aspect-3/4 w-full overflow-hidden rounded-[12px] lg:absolute lg:left-0 lg:top-1/2 lg:mb-0 lg:aspect-auto lg:h-[142%] lg:w-[36%] lg:-translate-y-1/2"
             >
               <Image
                 src="/assets/images/industry/recognitions.jpg"
@@ -62,7 +62,7 @@ export default function EmbeddedEngineeringRecognitionsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-80px", amount: 0.15 }}
               transition={{ duration: 0.5, delay: 0.08 }}
-              className="relative rounded-3xl border border-black/5 bg-white p-7 shadow-[0_15px_45px_rgba(0,0,0,0.1)]"
+              className="relative rounded-[12px] border border-black/5 bg-white p-7 shadow-[0_15px_45px_rgba(0,0,0,0.1)]"
             >
               <div className="absolute -top-10 right-6 h-24 w-20">
                 <Image
@@ -95,7 +95,7 @@ export default function EmbeddedEngineeringRecognitionsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-80px", amount: 0.15 }}
               transition={{ duration: 0.5, delay: 0.16 }}
-              className="relative rounded-3xl border border-black/5 bg-white p-7 shadow-[0_15px_45px_rgba(0,0,0,0.1)]"
+              className="relative rounded-[12px] border border-black/5 bg-white p-7 shadow-[0_15px_45px_rgba(0,0,0,0.1)]"
             >
               <div className="absolute -top-12 right-6 h-24 w-20">
                 <Image
@@ -133,7 +133,7 @@ export default function EmbeddedEngineeringRecognitionsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-80px", amount: 0.15 }}
               transition={{ duration: 0.5, delay: 0.24 }}
-              className="relative rounded-3xl border border-black/5 bg-white p-7 shadow-[0_15px_45px_rgba(0,0,0,0.1)]"
+              className="relative rounded-[12px] border border-black/5 bg-white p-7 shadow-[0_15px_45px_rgba(0,0,0,0.1)]"
             >
               <div className="absolute -top-8 right-6 h-[72px] w-[72px]">
                 <Image

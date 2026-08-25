@@ -28,7 +28,7 @@ export default function AiHeroSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[13px] font-medium uppercase tracking-[0.18em] text-white backdrop-blur"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-[13px] font-medium uppercase tracking-[0.18em] text-white backdrop-blur"
           >
             <HiSparkles className="h-3.5 w-3.5 text-primary-pink" />
             Artificial Intelligence
@@ -71,7 +71,7 @@ export default function AiHeroSection() {
             transition={{ duration: 0.55, delay: 0.24 }}
             className="mt-9"
           >
-            <ContactCTA className="inline-flex h-12 items-center justify-center rounded-full bg-primary-pink px-8 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(211,40,122,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-pink/90">
+            <ContactCTA className="inline-flex h-10 items-center justify-center rounded-full bg-primary-pink px-8 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(211,40,122,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-pink/90">
               Contact Us
             </ContactCTA>
           </motion.div>

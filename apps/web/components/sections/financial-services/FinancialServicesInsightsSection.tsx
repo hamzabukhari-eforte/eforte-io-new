@@ -70,7 +70,7 @@ export default function FinancialServicesInsightsSection() {
               className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
             >
               <div className="flex justify-center lg:justify-start">
-                <div className="relative aspect-4/3 w-full max-w-xl overflow-hidden rounded-3xl">
+                <div className="relative aspect-4/3 w-full max-w-xl overflow-hidden rounded-[12px]">
                   <Image
                     src={paper.imageSrc}
                     alt={paper.imageAlt}
@@ -96,7 +96,7 @@ export default function FinancialServicesInsightsSection() {
                 </p>
                 <Link
                   href="#"
-                  className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-default transition-all duration-200 hover:bg-white/85"
+                  className="mt-8 inline-flex h-10 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-default transition-all duration-200 hover:bg-white/85"
                 >
                   Learn more
                 </Link>

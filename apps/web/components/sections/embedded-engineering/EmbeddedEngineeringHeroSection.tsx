@@ -57,7 +57,7 @@ export default function EmbeddedEngineeringHeroSection() {
               transition={{ duration: 0.5, delay: 0.24 }}
               className="mt-9"
             >
-              <ContactCTA className="inline-flex h-12 items-center justify-center rounded-full bg-primary-pink px-8 text-sm font-medium text-white shadow-[0_18px_40px_rgba(211,40,122,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-pink/90">
+              <ContactCTA className="inline-flex h-10 items-center justify-center rounded-full bg-primary-pink px-8 text-sm font-medium text-white shadow-[0_18px_40px_rgba(211,40,122,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-pink/90">
                 Let&apos;s Talk
               </ContactCTA>
             </motion.div>
@@ -69,8 +69,8 @@ export default function EmbeddedEngineeringHeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative mx-auto aspect-square w-full max-w-md lg:max-w-none lg:aspect-[5/4]"
           >
-            <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary-pink/30 via-transparent to-[#E5484D]/20 blur-2xl" />
-            <div className="relative h-full w-full overflow-hidden rounded-3xl border border-white/10">
+            <div className="absolute inset-0 rounded-[12px] bg-linear-to-br from-primary-pink/30 via-transparent to-[#E5484D]/20 blur-2xl" />
+            <div className="relative h-full w-full overflow-hidden rounded-[12px] border border-white/10">
               <Image
                 src="/assets/images/industry/cpu-large.jpg"
                 alt="Semiconductor chip and embedded systems hardware"

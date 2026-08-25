@@ -27,7 +27,7 @@ export default function DatabricksExpertiseVideoSection() {
           transition={{ duration: 0.5, delay: 0.08 }}
           className="mx-auto mt-10 max-w-5xl md:mt-12"
         >
-          <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
+          <div className="relative aspect-video w-full overflow-hidden rounded-[12px] border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
             <ReactPlayer
               src={databricksExpertiseVideo.youtubeUrl}
               width="100%"

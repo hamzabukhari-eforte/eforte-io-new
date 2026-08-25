@@ -31,7 +31,7 @@ function OrbitalIcon({ Icon }: { Icon: IconType }) {
 export default function CloudSreSplitSection() {
   return (
     <section className="relative z-10 -mt-10 bg-default md:-mt-14">
-      <div className="rounded-t-[36px] bg-white pb-6 pt-20 text-default md:rounded-t-[42px] md:pb-8 md:pt-28">
+      <div className="rounded-t-[12px] bg-white pb-6 pt-20 text-default md:rounded-t-[12px] md:pb-8 md:pt-28">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -71,7 +71,7 @@ export default function CloudSreSplitSection() {
                   </p>
                   <Link
                     href={card.href}
-                    className="mt-8 inline-flex h-11 items-center justify-center rounded-full bg-default px-7 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                    className="mt-8 inline-flex h-10 items-center justify-center rounded-full bg-default px-7 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                   >
                     {card.cta}
                   </Link>

@@ -69,7 +69,7 @@ export default function VelocityAIInsightsSection() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className="inline-block px-4 py-1 md:px-5 md:py-1.5 rounded-full border border-[#D3287A] bg-pink-900/5 backdrop-blur-sm mb-4 md:mb-6">
+        <div className="inline-flex h-10 items-center justify-center px-4 py-1 md:px-5 md:py-1.5 rounded-full border border-[#D3287A] bg-pink-900/5 backdrop-blur-sm mb-4 md:mb-6">
           <span className={typography.badge + " text-[#D3287A] tracking-[0.2em] block"}>
             Expert Insights
           </span>
@@ -104,7 +104,7 @@ export default function VelocityAIInsightsSection() {
           >
             <Link
               href="#"
-              className="group block bg-white rounded-2xl overflow-hidden hover:-translate-y-2 transition-transform duration-300 h-full flex flex-col shadow-lg cursor-pointer"
+              className="group block bg-white rounded-[12px] overflow-hidden hover:-translate-y-2 transition-transform duration-300 h-full flex flex-col shadow-lg cursor-pointer"
             >
               <div className="relative min-h-[240px] overflow-hidden">
                 <Image
@@ -118,13 +118,13 @@ export default function VelocityAIInsightsSection() {
                 {article.avatars ? (
                   <div className="absolute bottom-1 left-8 flex -space-x-3 z-10">
                     {article.avatars.map((a, i) => (
-                      <div key={i} className="w-12 h-12 rounded-full border-[3px] border-white overflow-hidden bg-gray-200">
+                      <div key={i} className="w-12 h-10 rounded-full border-[3px] border-white overflow-hidden bg-gray-200">
                         <Image src={a} alt="" width={48} height={48} className="object-cover" />
                       </div>
                     ))}
                   </div>
                 ) : article.avatar ? (
-                  <div className="absolute bottom-1 left-8 w-12 h-12 rounded-full border-[3px] border-white overflow-hidden z-10 bg-gray-200">
+                  <div className="absolute bottom-1 left-8 w-12 h-10 rounded-full border-[3px] border-white overflow-hidden z-10 bg-gray-200">
                     <Image src={article.avatar} alt="" width={48} height={48} className="object-cover" />
                   </div>
                 ) : null}
@@ -152,7 +152,7 @@ export default function VelocityAIInsightsSection() {
       >
         <Link
           href="#"
-          className="inline-block bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-9 py-3.5 rounded-full text-[15px] font-medium transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
+          className="inline-flex h-10 items-center justify-center bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-9 py-0.5 rounded-full text-[15px] font-medium transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
         >
           Discover more
         </Link>

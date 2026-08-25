@@ -111,7 +111,7 @@ export default function TechnologiesSection({
                       onClick={() => setShowCard(item.name)}
                       className="
                           group relative flex h-14 w-14 items-center justify-center
-                          rounded-xl border border-white/10 bg-white/5
+                          rounded-[12px] border border-white/10 bg-white/5
                           backdrop-blur-md transition-all duration-300
                           hover:border-white/30
                         "

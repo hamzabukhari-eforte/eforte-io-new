@@ -19,7 +19,7 @@ function SuccessStoryCard({
 }) {
   return (
     <article
-      className="grid h-full overflow-hidden rounded-[28px] text-white lg:grid-cols-[1.05fr_0.95fr]"
+      className="grid h-full overflow-hidden rounded-[12px] text-white lg:grid-cols-[1.05fr_0.95fr]"
       style={{ background: story.background }}
     >
       <div className="flex flex-col justify-between gap-6 p-6 md:gap-7 md:p-8 lg:p-10">
@@ -39,7 +39,7 @@ function SuccessStoryCard({
 
         <Link
           href={story.href}
-          className="inline-flex w-fit rounded-full bg-white px-6 py-3 text-sm font-medium text-default transition-colors hover:bg-white/90"
+          className="inline-flex items-center h-10 w-fit rounded-full bg-white px-6 py-0 text-sm font-medium text-default transition-colors hover:bg-white/90"
         >
           Learn more
         </Link>

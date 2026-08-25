@@ -10,7 +10,7 @@ import { renderBoldText } from "./renderBoldText";
 export default function DatabricksServicesSection() {
   return (
     <section className="bg-black">
-      <div className="rounded-t-[36px] bg-white pb-20 pt-16 text-default md:rounded-t-[48px] md:pb-28 md:pt-24">
+      <div className="rounded-t-[12px] bg-white pb-20 pt-16 text-default md:rounded-t-[12px] md:pb-28 md:pt-24">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 18 }}
@@ -37,7 +37,7 @@ export default function DatabricksServicesSection() {
 
             <h2 className="max-w-3xl text-2xl font-semibold leading-snug md:text-3xl lg:text-[34px] lg:leading-snug">
               {databricksServices.titleBefore}
-              <span className="mx-1 inline rounded-sm bg-[#E5484D] px-1.5 py-0.5 text-white">
+              <span className="mx-1 inline rounded-[12px] bg-[#E5484D] px-1.5 py-0.5 text-white">
                 {databricksServices.titleHighlight}
               </span>
               {databricksServices.titleAfter}

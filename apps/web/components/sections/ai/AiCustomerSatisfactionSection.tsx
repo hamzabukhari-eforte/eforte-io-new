@@ -43,7 +43,7 @@ export default function AiCustomerSatisfactionSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-80px", amount: 0.15 }}
             transition={{ duration: 0.5 }}
-            className="relative z-0 mb-6 aspect-3/4 w-full overflow-hidden rounded-3xl lg:absolute lg:left-0 lg:top-1/2 lg:mb-0 lg:aspect-auto lg:h-[142%] lg:w-[36%] lg:-translate-y-1/2"
+            className="relative z-0 mb-6 aspect-3/4 w-full overflow-hidden rounded-[12px] lg:absolute lg:left-0 lg:top-1/2 lg:mb-0 lg:aspect-auto lg:h-[142%] lg:w-[36%] lg:-translate-y-1/2"
           >
             <Image
               src={aiCustomerSatisfaction.image}
@@ -60,7 +60,7 @@ export default function AiCustomerSatisfactionSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-80px", amount: 0.15 }}
               transition={{ duration: 0.5, delay: 0.08 }}
-              className="relative rounded-3xl border border-black/5 bg-white p-7 text-default shadow-[0_15px_45px_rgba(0,0,0,0.25)]"
+              className="relative rounded-[12px] border border-black/5 bg-white p-7 text-default shadow-[0_15px_45px_rgba(0,0,0,0.25)]"
             >
               <div className="absolute -top-10 right-6 h-24 w-20">
                 <Image
@@ -93,7 +93,7 @@ export default function AiCustomerSatisfactionSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-80px", amount: 0.15 }}
               transition={{ duration: 0.5, delay: 0.16 }}
-              className="relative rounded-3xl border border-black/5 bg-white p-7 text-default shadow-[0_15px_45px_rgba(0,0,0,0.25)]"
+              className="relative rounded-[12px] border border-black/5 bg-white p-7 text-default shadow-[0_15px_45px_rgba(0,0,0,0.25)]"
             >
               <div className="absolute -top-12 right-6 h-24 w-20">
                 <Image
@@ -134,7 +134,7 @@ export default function AiCustomerSatisfactionSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-80px", amount: 0.15 }}
               transition={{ duration: 0.5, delay: 0.24 }}
-              className="relative rounded-3xl border border-black/5 bg-white p-7 text-default shadow-[0_15px_45px_rgba(0,0,0,0.25)]"
+              className="relative rounded-[12px] border border-black/5 bg-white p-7 text-default shadow-[0_15px_45px_rgba(0,0,0,0.25)]"
             >
               <div className="absolute -top-8 right-6 h-[72px] w-[72px]">
                 <Image

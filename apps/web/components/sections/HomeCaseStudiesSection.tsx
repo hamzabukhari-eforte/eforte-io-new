@@ -83,7 +83,7 @@ export default function HomeCaseStudiesSection() {
                   {study.stats.map((stat) => (
                     <div
                       key={`${stat.value}-${stat.label}`}
-                      className="flex items-center gap-4 rounded-2xl bg-white px-4 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.25)]"
+                      className="flex items-center gap-4 rounded-[12px] bg-white px-4 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.25)]"
                     >
                       <span className="shrink-0 text-3xl font-semibold leading-none text-primary-pink md:text-[34px]">
                         {stat.value}
@@ -98,7 +98,7 @@ export default function HomeCaseStudiesSection() {
 
               <Link
                 href={study.ctaHref}
-                className="mt-8 inline-flex items-center justify-center rounded-full bg-primary-pink px-8 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-primary-pink/90"
+                className="mt-8 inline-flex h-10 items-center justify-center rounded-full bg-primary-pink px-8 py-0 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-primary-pink/90"
               >
                 {study.ctaLabel}
               </Link>
@@ -107,7 +107,7 @@ export default function HomeCaseStudiesSection() {
             {/* Right: visual */}
             <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
               <div className="pointer-events-none absolute -inset-8 rounded-full bg-primary-pink/10 blur-3xl" />
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] border border-white/10 bg-[#111] shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:aspect-[5/6] lg:aspect-[4/5]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[12px] border border-white/10 bg-[#111] shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:aspect-[5/6] lg:aspect-[4/5]">
                 <Image
                   src={study.imageSrc}
                   alt={study.imageAlt}
@@ -127,7 +127,7 @@ export default function HomeCaseStudiesSection() {
             type="button"
             onClick={goPrev}
             aria-label="Previous case study"
-            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/40 text-white transition-colors hover:bg-white/10"
+            className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/40 text-white transition-colors hover:bg-white/10"
           >
             <HiArrowLeft className="h-5 w-5" />
           </button>
@@ -135,7 +135,7 @@ export default function HomeCaseStudiesSection() {
             type="button"
             onClick={goNext}
             aria-label="Next case study"
-            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-white/40 text-white transition-colors hover:bg-white/10"
+            className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/40 text-white transition-colors hover:bg-white/10"
           >
             <HiArrowRight className="h-5 w-5" />
           </button>

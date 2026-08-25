@@ -75,7 +75,7 @@ export default function FinancialServicesExpertiseSection() {
 
   return (
     <section className="bg-default">
-      <div className="rounded-t-[36px] bg-primary-pink py-20 text-white md:rounded-t-[42px] md:py-28">
+      <div className="rounded-t-[12px] bg-primary-pink py-20 text-white md:rounded-t-[12px] md:py-28">
         <Container>
         <motion.p
           initial={{ opacity: 0, y: 12 }}
@@ -112,7 +112,7 @@ export default function FinancialServicesExpertiseSection() {
                   id={`expertise-tab-${service.id}`}
                   onClick={() => setActiveId(service.id)}
                   className={cn(
-                    "flex w-full cursor-pointer items-center justify-between gap-4 rounded-2xl px-5 py-4 text-left transition-all duration-200",
+                    "flex w-full cursor-pointer items-center justify-between gap-4 rounded-[12px] px-5 py-4 text-left transition-all duration-200",
                     isActive
                       ? "bg-white/95 text-primary-pink shadow-[0_8px_28px_rgba(0, 0, 0, 0.18)]"
                       : "bg-transparent text-white hover:bg-white/10"
@@ -121,7 +121,7 @@ export default function FinancialServicesExpertiseSection() {
                   <span className="text-base font-medium">{service.label}</span>
                   <span
                     className={cn(
-                      "flex h-9 w-9 shrink-0 items-center justify-center rounded-md transition-colors duration-200",
+                      "flex h-9 w-9 shrink-0 items-center justify-center rounded-[12px] transition-colors duration-200",
                       isActive
                         ? "bg-primary-pink text-white"
                         : "border border-white/40 text-white"
@@ -147,7 +147,7 @@ export default function FinancialServicesExpertiseSection() {
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
               >
-                <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
+                <div className="relative aspect-video w-full overflow-hidden rounded-[12px]">
                   <Image
                     src={activeService.imageSrc}
                     alt={activeService.imageAlt}

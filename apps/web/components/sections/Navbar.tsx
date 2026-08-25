@@ -944,7 +944,7 @@ export default function Navbar({
               <div className="flex-1 grid grid-cols-3 gap-6">
                 {companyCards.map((item) => {
                   const cardClass =
-                    "group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/6 shadow-lg shadow-black/20 hover:bg-white/8 hover:border-white/15 transition-all duration-200 cursor-pointer";
+                    "group flex flex-col overflow-hidden rounded-[12px] border border-white/10 bg-white/6 shadow-lg shadow-black/20 hover:bg-white/8 hover:border-white/15 transition-all duration-200 cursor-pointer";
 
                   const cardContent = (
                     <>
@@ -1044,12 +1044,12 @@ export default function Navbar({
                   {studios.map((item) => {
                     const IconComponent = item.iconName ? menuIconMap[item.iconName] : null;
                     const cardClass =
-                      "flex gap-3 items-start rounded-lg border border-white/5 bg-white/5 px-4 py-3 hover:bg-white/10 transition-colors cursor-pointer";
+                      "flex gap-3 items-start rounded-[12px] border border-white/5 bg-white/5 px-4 py-3 hover:bg-white/10 transition-colors cursor-pointer";
                     const content = (
                       <>
                         <div
                           className={cn(
-                            "shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-xl text-white",
+                            "shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-[12px] text-white",
                             item.iconColorClass ?? "bg-primary-pink"
                           )}
                         >
@@ -1128,11 +1128,11 @@ export default function Navbar({
                   {caseStudies.map((item) => {
                     const href = item.href;
                     const cardClass =
-                      "flex gap-3 rounded-xl border border-white/5 bg-white/5 p-3 transition-colors hover:bg-white/10";
+                      "flex gap-3 rounded-[12px] border border-white/5 bg-white/5 p-3 transition-colors hover:bg-white/10";
 
                     const content = (
                       <>
-                        <div className="relative h-16 w-20 shrink-0 overflow-hidden rounded-lg bg-black/40">
+                        <div className="relative h-16 w-20 shrink-0 overflow-hidden rounded-[12px] bg-black/40">
                           {item.imageSrc && (
                             <Image
                               src={item.imageSrc}
@@ -1246,9 +1246,9 @@ export default function Navbar({
                     {highlighted.map((item) => (
                       <div
                         key={item.title}
-                        className="flex gap-3 rounded-xl border border-white/5 bg-white/5 p-3 hover:bg-white/10 cursor-pointer"
+                        className="flex gap-3 rounded-[12px] border border-white/5 bg-white/5 p-3 hover:bg-white/10 cursor-pointer"
                       >
-                        <div className="relative h-16 w-20 shrink-0 overflow-hidden rounded-lg bg-black/40">
+                        <div className="relative h-16 w-20 shrink-0 overflow-hidden rounded-[12px] bg-black/40">
                           {item.imageSrc && (
                             <Image src={item.imageSrc} alt={item.title} fill className="object-cover" />
                           )}
@@ -1271,9 +1271,9 @@ export default function Navbar({
                     {latest.map((item) => (
                       <div
                         key={item.title}
-                        className="flex gap-3 rounded-xl border border-white/5 bg-white/5 p-3 hover:bg-white/10 cursor-pointer"
+                        className="flex gap-3 rounded-[12px] border border-white/5 bg-white/5 p-3 hover:bg-white/10 cursor-pointer"
                       >
-                        <div className="relative h-14 w-16 shrink-0 overflow-hidden rounded-lg bg-black/40">
+                        <div className="relative h-14 w-16 shrink-0 overflow-hidden rounded-[12px] bg-black/40">
                           {item.imageSrc && (
                             <Image src={item.imageSrc} alt={item.title} fill className="object-cover" />
                           )}
@@ -1327,12 +1327,12 @@ export default function Navbar({
                   {highlights.map((item) => {
                     const IconComponent = item.iconName ? menuIconMap[item.iconName] : null;
                     const cardClass =
-                      "flex gap-3 items-start rounded-xl px-3.5 py-3 transition-colors hover:bg-white/5";
+                      "flex gap-3 items-start rounded-[12px] px-3.5 py-3 transition-colors hover:bg-white/5";
                     const content = (
                       <>
                       <div
                         className={cn(
-                          "shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-xl text-white",
+                          "shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-[12px] text-white",
                           item.iconColorClass ?? "bg-primary-pink"
                         )}
                       >
@@ -1371,9 +1371,9 @@ export default function Navbar({
                   {insightCards.map((item) => (
                     <div
                       key={item.title}
-                      className="flex gap-3 rounded-xl border border-white/5 bg-white/5 p-3 hover:bg-white/10 cursor-pointer"
+                      className="flex gap-3 rounded-[12px] border border-white/5 bg-white/5 p-3 hover:bg-white/10 cursor-pointer"
                     >
-                      <div className="relative h-14 w-20 shrink-0 overflow-hidden rounded-lg bg-black/40">
+                      <div className="relative h-14 w-20 shrink-0 overflow-hidden rounded-[12px] bg-black/40">
                         {item.imageSrc && (
                           <Image src={item.imageSrc} alt={item.title} fill className="object-cover" />
                         )}
@@ -1445,12 +1445,12 @@ export default function Navbar({
                         ? menuIconMap[item.iconName]
                         : null;
                       const cardClass =
-                        "group flex gap-3 items-start rounded-2xl border border-white/5 bg-white/5 px-3 py-2.5 transition-colors duration-200 hover:bg-white/10 cursor-pointer";
+                        "group flex gap-3 items-start rounded-[12px] border border-white/5 bg-white/5 px-3 py-2.5 transition-colors duration-200 hover:bg-white/10 cursor-pointer";
                       const content = (
                         <>
                           <div
                             className={cn(
-                              "mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white",
+                              "mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] text-white",
                               item.iconColorClass ?? "bg-primary-pink"
                             )}
                           >
@@ -1497,9 +1497,9 @@ export default function Navbar({
                     {insightItems.map((item) => (
                       <div
                         key={item.title}
-                        className="flex cursor-pointer gap-3 rounded-2xl border border-white/5 bg-white/5 p-2 transition-colors duration-200 hover:bg-white/10"
+                        className="flex cursor-pointer gap-3 rounded-[12px] border border-white/5 bg-white/5 p-2 transition-colors duration-200 hover:bg-white/10"
                       >
-                        <div className="relative h-14 w-16 shrink-0 overflow-hidden rounded-xl bg-black/40">
+                        <div className="relative h-14 w-16 shrink-0 overflow-hidden rounded-[12px] bg-black/40">
                           {item.imageSrc ? (
                             <Image
                               src={item.imageSrc}
@@ -1588,14 +1588,14 @@ export default function Navbar({
                     {column.items.map((item) => {
                       const hasImage = !!item.imageSrc;
                       const cardClass = cn(
-                        "group rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 transition-colors duration-200 cursor-pointer block",
+                        "group rounded-[12px] border border-white/5 bg-white/5 hover:bg-white/10 transition-colors duration-200 cursor-pointer block",
                         hasImage ? "p-2" : "px-3 py-2.5"
                       );
                       const cardContent = (
                         <>
                           {hasImage ? (
                             <div className="flex gap-3">
-                              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-black/40">
+                              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-[12px] bg-black/40">
                                 {item.imageSrc && (
                                   <Image
                                     src={item.imageSrc}
@@ -1615,7 +1615,7 @@ export default function Navbar({
                                   </p>
                                 )}
                                 {item.tag && (
-                                  <p className="mt-1 inline-flex items-center rounded-full bg-white/5 px-2 py-0.5 text-[11px] font-medium text-desc">
+                                  <p className="mt-1 inline-flex h-10 items-center justify-center rounded-full bg-white/5 px-2 py-0.5 text-[11px] font-medium text-desc">
                                     {item.tag}
                                   </p>
                                 )}
@@ -1630,7 +1630,7 @@ export default function Navbar({
                                       "mt-0.5 shrink-0 inline-flex h-10 w-10 items-center justify-center text-white",
                                       activeMenu === "ai-pillars"
                                         ? "rounded-full"
-                                        : "rounded-xl",
+                                        : "rounded-[12px]",
                                       item.iconColorClass ?? "bg-primary-pink"
                                     )}
                                   >
@@ -1649,7 +1649,7 @@ export default function Navbar({
                                       </p>
                                     )}
                                     {item.tag && (
-                                      <p className="mt-1 inline-flex items-center rounded-full bg-white/5 px-2 py-0.5 text-[11px] font-medium text-desc">
+                                      <p className="mt-1 inline-flex h-10 items-center justify-center rounded-full bg-white/5 px-2 py-0.5 text-[11px] font-medium text-desc">
                                         {item.tag}
                                       </p>
                                     )}
@@ -1666,7 +1666,7 @@ export default function Navbar({
                                     </p>
                                   )}
                                   {item.tag && (
-                                    <p className="mt-1 inline-flex items-center rounded-full bg-white/5 px-2 py-0.5 text-[11px] font-medium text-desc">
+                                    <p className="mt-1 inline-flex h-10 items-center justify-center rounded-full bg-white/5 px-2 py-0.5 text-[11px] font-medium text-desc">
                                       {item.tag}
                                     </p>
                                   )}
@@ -1759,7 +1759,7 @@ export default function Navbar({
           <div className="hidden xl:block">
             <QuoteCTA
               className={cn(
-                "px-4 md:px-6 h-12 rounded-full flex items-center justify-center",
+                "px-4 md:px-6 h-10 rounded-full flex items-center justify-center",
                 "text-sm md:text-base font-semibold",
                 "bg-primary-pink text-white border border-primary-pink",
                 "hover:bg-transparent transition-all duration-200",
@@ -1773,7 +1773,7 @@ export default function Navbar({
           {/* Mobile/Tablet Hamburger Menu Button */}
           <button
             onClick={toggleMobileMenu}
-            className="xl:hidden p-2 rounded-md transition-colors duration-200 flex items-center justify-center text-white"
+            className="xl:hidden p-2 rounded-[12px] transition-colors duration-200 flex items-center justify-center text-white"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
@@ -1881,7 +1881,7 @@ export default function Navbar({
                                       {ItemIcon && (
                                         <span
                                           className={cn(
-                                            "mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-white",
+                                            "mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-[12px] text-white",
                                             item.iconColorClass ?? "bg-primary-pink"
                                           )}
                                         >
@@ -1899,14 +1899,14 @@ export default function Navbar({
                                       key={item.title}
                                       href={item.href}
                                       onClick={closeMobileMenu}
-                                      className="flex items-start gap-3 rounded-lg px-2 py-2 transition-colors duration-200 hover:bg-white/10"
+                                      className="flex items-start gap-3 rounded-[12px] px-2 py-2 transition-colors duration-200 hover:bg-white/10"
                                     >
                                       {itemContent}
                                     </Link>
                                   ) : (
                                     <div
                                       key={item.title}
-                                      className="flex items-start gap-3 rounded-lg px-2 py-2"
+                                      className="flex items-start gap-3 rounded-[12px] px-2 py-2"
                                     >
                                       {itemContent}
                                     </div>
@@ -1927,7 +1927,7 @@ export default function Navbar({
             <div className="p-6 border-t border-white/10">
               <QuoteCTA
                 onOpen={closeMobileMenu}
-                className="w-full h-12 rounded-full flex items-center justify-center text-sm font-semibold bg-primary-pink text-white border border-primary-pink hover:bg-primary-pink/90 transition-all duration-200"
+                className="w-full h-10 rounded-full flex items-center justify-center text-sm font-semibold bg-primary-pink text-white border border-primary-pink hover:bg-primary-pink/90 transition-all duration-200"
               >
                 Let&apos;s build intelligence together
               </QuoteCTA>

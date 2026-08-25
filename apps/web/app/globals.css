@@ -29,6 +29,15 @@
   /* Velocity AI / shared */
   --color-deep: #03050C;
   --color-brand-blue: #2563EB;
+
+  /* Global corner radius: 12px (rounded-full stays pill) */
+  --radius-sm: 12px;
+  --radius-md: 12px;
+  --radius-lg: 12px;
+  --radius-xl: 12px;
+  --radius-2xl: 12px;
+  --radius-3xl: 12px;
+  --radius-4xl: 12px;
 }
 
 html,

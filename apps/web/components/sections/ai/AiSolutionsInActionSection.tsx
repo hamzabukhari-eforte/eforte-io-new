@@ -8,7 +8,7 @@ import { aiCaseStudy } from "@/data/capabilities/ai";
 export default function AiSolutionsInActionSection() {
   return (
     <section className="bg-default">
-      <div className="rounded-t-[36px] bg-white py-20 text-default md:rounded-t-[42px] md:py-28">
+      <div className="rounded-t-[12px] bg-white py-20 text-default md:rounded-t-[12px] md:py-28">
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <motion.div
@@ -25,7 +25,7 @@ export default function AiSolutionsInActionSection() {
               </h3>
 
               <div className="mt-8">
-                <span className="inline-flex rounded-full bg-default px-5 py-2.5 text-sm font-medium text-white">
+                <span className="inline-flex h-10 items-center justify-center rounded-full bg-default px-5 py-0 text-sm font-medium text-white">
                   {aiCaseStudy.outcomesLabel}
                 </span>
                 <ul className="mt-5 space-y-3">

@@ -39,7 +39,7 @@ export default function EmbeddedEngineeringStudioVideoSection() {
           transition={{ duration: 0.6, delay: 0.16 }}
           className="mx-auto mt-12 max-w-5xl md:mt-16"
         >
-          <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-black/5 shadow-[0_20px_60px_rgba(0,0,0,0.15)]">
+          <div className="relative aspect-video w-full overflow-hidden rounded-[12px] border border-black/5 shadow-[0_20px_60px_rgba(0,0,0,0.15)]">
             <ReactPlayer
               src={YOUTUBE_URL}
               width="100%"

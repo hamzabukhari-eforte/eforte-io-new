@@ -23,7 +23,7 @@ export default function VelocityAIFrameworkSection() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className="inline-block px-3 py-1 md:px-4 md:py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-4 md:mb-6">
+        <div className="inline-flex h-10 items-center justify-center px-3 py-1 md:px-4 md:py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-4 md:mb-6">
           <span className={typography.badge + " text-white tracking-widest"}>
             5 Key Components
           </span>
@@ -36,7 +36,7 @@ export default function VelocityAIFrameworkSection() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6">
         {/* Card 1: AI-enabled Pods */}
         <motion.div
-          className="lg:col-span-4 bg-[#0A0B14] border border-white/5 rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:border-white/10 transition-all duration-300 min-h-[320px] md:min-h-[480px] flex flex-col"
+          className="lg:col-span-4 bg-[#0A0B14] border border-white/5 rounded-[12px] p-6 md:p-8 relative overflow-hidden group hover:border-white/10 transition-all duration-300 min-h-[320px] md:min-h-[480px] flex flex-col"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
@@ -64,12 +64,12 @@ export default function VelocityAIFrameworkSection() {
 
         {/* Card 2: AI-Augmented Framework */}
         <motion.div
-          className="lg:col-span-4 bg-[#0A0B14] border border-white/5 rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:border-white/10 transition-all duration-300 min-h-[320px] md:min-h-[480px] flex flex-col"
+          className="lg:col-span-4 bg-[#0A0B14] border border-white/5 rounded-[12px] p-6 md:p-8 relative overflow-hidden group hover:border-white/10 transition-all duration-300 min-h-[320px] md:min-h-[480px] flex flex-col"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
         >
-          <div className="flex-1 flex items-center justify-center relative bg-[#05060D] rounded-xl border border-white/5 overflow-hidden">
+          <div className="flex-1 flex items-center justify-center relative bg-[#05060D] rounded-[12px] border border-white/5 overflow-hidden">
             <div className="w-full p-4 font-mono text-xs text-blue-300/80 leading-loose">
               <div className="flex items-center gap-2 mb-4 border-b border-white/5 pb-2">
                 <span className="w-2 h-2 rounded-full bg-red-500" />
@@ -98,7 +98,7 @@ export default function VelocityAIFrameworkSection() {
 
         {/* Card 3: Metrics */}
         <motion.div
-          className="lg:col-span-4 bg-[#0A0B14] border border-white/5 rounded-2xl p-6 md:p-8 relative overflow-hidden group hover:border-white/10 transition-all duration-300 min-h-[320px] md:min-h-[480px] flex flex-col"
+          className="lg:col-span-4 bg-[#0A0B14] border border-white/5 rounded-[12px] p-6 md:p-8 relative overflow-hidden group hover:border-white/10 transition-all duration-300 min-h-[320px] md:min-h-[480px] flex flex-col"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
@@ -128,7 +128,7 @@ export default function VelocityAIFrameworkSection() {
 
         {/* Card 4: Certified Tools (wide) */}
         <motion.div
-          className="lg:col-span-7 bg-[#0A0B14] border border-white/5 rounded-2xl p-8 relative overflow-hidden group hover:border-white/10 transition-all duration-300 min-h-[240px] flex flex-col md:flex-row items-center justify-between gap-6"
+          className="lg:col-span-7 bg-[#0A0B14] border border-white/5 rounded-[12px] p-8 relative overflow-hidden group hover:border-white/10 transition-all duration-300 min-h-[240px] flex flex-col md:flex-row items-center justify-between gap-6"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -140,16 +140,16 @@ export default function VelocityAIFrameworkSection() {
             </p>
           </div>
           <div className="flex-1 relative h-32 flex items-center justify-end gap-4 flex-wrap">
-            <div className="w-14 h-14 bg-[#1C1D26] rounded-xl flex items-center justify-center border border-white/10 shadow-lg transform rotate-3 hover:rotate-0 transition-all duration-300 hover:scale-110 z-20">
+            <div className="w-14 h-14 bg-[#1C1D26] rounded-[12px] flex items-center justify-center border border-white/10 shadow-lg transform rotate-3 hover:rotate-0 transition-all duration-300 hover:scale-110 z-20">
               <SiJira className="text-white text-3xl opacity-90" />
             </div>
-            <div className="w-12 h-12 bg-[#1C1D26] rounded-xl flex items-center justify-center border border-white/10 shadow-lg transform -rotate-6 hover:rotate-0 transition-all duration-300 hover:scale-110 z-10">
+            <div className="w-12 h-12 bg-[#1C1D26] rounded-[12px] flex items-center justify-center border border-white/10 shadow-lg transform -rotate-6 hover:rotate-0 transition-all duration-300 hover:scale-110 z-10">
               <SiGitlab className="text-white text-2xl opacity-90" />
             </div>
-            <div className="w-12 h-12 bg-[#1C1D26] rounded-xl flex items-center justify-center border border-white/10 shadow-lg transform rotate-12 hover:rotate-0 transition-all duration-300 hover:scale-110 z-30">
+            <div className="w-12 h-12 bg-[#1C1D26] rounded-[12px] flex items-center justify-center border border-white/10 shadow-lg transform rotate-12 hover:rotate-0 transition-all duration-300 hover:scale-110 z-30">
               <FaGithub className="text-white text-2xl" />
             </div>
-            <div className="w-14 h-14 bg-[#1C1D26] rounded-xl flex items-center justify-center border border-white/10 shadow-lg transform -rotate-3 hover:rotate-0 transition-all duration-300 hover:scale-110 z-20">
+            <div className="w-14 h-14 bg-[#1C1D26] rounded-[12px] flex items-center justify-center border border-white/10 shadow-lg transform -rotate-3 hover:rotate-0 transition-all duration-300 hover:scale-110 z-20">
               <SiVscodium className="text-white text-3xl opacity-90" />
             </div>
           </div>
@@ -157,7 +157,7 @@ export default function VelocityAIFrameworkSection() {
 
         {/* Card 5: Custom AI Agents */}
         <motion.div
-          className="lg:col-span-5 bg-[#0A0B14] border border-white/5 rounded-2xl p-8 relative overflow-hidden group hover:border-white/10 transition-all duration-300 min-h-[240px] flex flex-col md:flex-row items-center justify-between gap-6"
+          className="lg:col-span-5 bg-[#0A0B14] border border-white/5 rounded-[12px] p-8 relative overflow-hidden group hover:border-white/10 transition-all duration-300 min-h-[240px] flex flex-col md:flex-row items-center justify-between gap-6"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
@@ -175,7 +175,7 @@ export default function VelocityAIFrameworkSection() {
                 <span className="text-white text-2xl">🤖</span>
               </div>
             </div>
-            <div className="absolute -bottom-4 right-0 bg-[#3B82F6] text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg z-30">
+            <div className="h-10 absolute -bottom-4 right-0 bg-[#3B82F6] text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg z-30">
               AI Steve
             </div>
           </div>

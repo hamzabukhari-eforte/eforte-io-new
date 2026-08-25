@@ -91,7 +91,7 @@ function ToolsCard({ tools }: { tools: readonly string[] }) {
   const isTwoRows = tools.length >= 5;
 
   return (
-    <div className="flex h-28 items-center justify-center rounded-2xl bg-white px-5 md:h-32 md:px-8">
+    <div className="flex h-28 items-center justify-center rounded-[12px] bg-white px-5 md:h-32 md:px-8">
       {isSingle ? (
         <ToolMark name={tools[0]} size="lg" />
       ) : isTwoRows ? (
@@ -129,7 +129,7 @@ export default function CloudSreApproachSection() {
 
   return (
     <section className="bg-default">
-      <div className="rounded-[36px] bg-black py-20 text-white md:rounded-[42px] md:py-28">
+      <div className="rounded-[12px] bg-black py-20 text-white md:rounded-[12px] md:py-28">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -160,12 +160,12 @@ export default function CloudSreApproachSection() {
                       key={item.id}
                       type="button"
                       onClick={() => setActiveId(item.id)}
-                      className="w-full cursor-pointer rounded-lg bg-[#1A1A1A] px-4 py-4 text-left md:px-5 md:py-5"
+                      className="w-full cursor-pointer rounded-[12px] bg-[#1A1A1A] px-4 py-4 text-left md:px-5 md:py-5"
                       style={{ borderBottom: `2px solid ${CLOUD_SRE_ACCENT}` }}
                     >
                       <div className="flex items-start gap-3">
                         <span
-                          className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-[5px] text-white"
+                          className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-[12px] text-white"
                           style={{ backgroundColor: CLOUD_SRE_ACCENT }}
                         >
                           <Icon className="h-3.5 w-3.5" />
@@ -209,7 +209,7 @@ export default function CloudSreApproachSection() {
                   transition={{ duration: 0.28 }}
                   className="flex flex-col gap-4"
                 >
-                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[12px]">
                     <Image
                       src={active.image}
                       alt={active.title}

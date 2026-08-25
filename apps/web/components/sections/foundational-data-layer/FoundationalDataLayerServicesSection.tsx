@@ -95,7 +95,7 @@ export default function FoundationalDataLayerServicesSection() {
         {/* Header: left block + right paragraph - match HTML flex justify-between */}
         <div className="flex flex-col md:flex-row justify-between items-start mb-20">
           <div>
-            <div className="inline-block px-4 py-2 rounded-full border border-gray-700 mb-8">
+            <div className="inline-flex h-10 items-center justify-center px-4 py-2 rounded-full border border-gray-700 mb-8">
               <span className="text-[11px] font-bold tracking-widest text-white uppercase block">
                 OUR SERVICES
               </span>
@@ -120,14 +120,14 @@ export default function FoundationalDataLayerServicesSection() {
             return (
               <div
                 key={item.title}
-                className="group relative bg-[#0B0B15] border border-white/5 rounded-3xl p-10 h-[420px] flex flex-col justify-center overflow-hidden transition-all duration-500 hover:border-blue-500/50 hover:shadow-[0_0_50px_-10px_rgba(59,130,246,0.25)] hover:bg-[#0F0F1F] hover:scale-[1.02]"
+                className="group relative bg-[#0B0B15] border border-white/5 rounded-[12px] p-10 h-[420px] flex flex-col justify-center overflow-hidden transition-all duration-500 hover:border-blue-500/50 hover:shadow-[0_0_50px_-10px_rgba(59,130,246,0.25)] hover:bg-[#0F0F1F] hover:scale-[1.02]"
               >
                 <div
                   className="absolute top-0 right-0 w-[350px] h-[350px] bg-blue-900/30 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
                   aria-hidden
                 />
                 <div
-                  className={`w-20 h-20 relative mb-8 flex items-center justify-center ${item.iconBg} rounded-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_10px_20px_-5px_rgba(59,130,246,0.3)]`}
+                  className={`w-20 h-20 relative mb-8 flex items-center justify-center ${item.iconBg} rounded-[12px] transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_10px_20px_-5px_rgba(59,130,246,0.3)]`}
                 >
                   <Icon className={`text-3xl ${item.iconColor} transition-transform duration-500 group-hover:scale-110`} />
                 </div>

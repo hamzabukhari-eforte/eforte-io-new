@@ -30,7 +30,7 @@ export default function AgenticOrchestrationHeroSection() {
 
       <div className="relative z-10 flex flex-col items-center justify-center text-center max-w-5xl mx-auto">
         <motion.div
-          className="inline-flex items-center px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-[#33334d]/80 backdrop-blur-sm border border-white/10 mb-6 md:mb-8"
+          className="inline-flex h-10 items-center justify-center px-3 py-1 md:px-4 md:py-1.5 rounded-full bg-[#33334d]/80 backdrop-blur-sm border border-white/10 mb-6 md:mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -86,7 +86,7 @@ export default function AgenticOrchestrationHeroSection() {
           transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
         >
           <ContactCTA
-            className="inline-block bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-8 py-3 md:px-9 md:py-3.5 rounded-full text-sm md:text-[15px] font-semibold transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
+            className="inline-flex h-10 items-center justify-center bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-8 py-0 md:px-9 md:py-0.5 rounded-full text-sm md:text-[15px] font-semibold transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
           >
             Let&apos;s build intelligence together
           </ContactCTA>

@@ -44,7 +44,7 @@ export default function VelocityAIMetricsOrbitSection() {
 
       <div className="max-w-7xl mx-auto text-center relative z-10 w-full">
         <motion.div
-          className="inline-block px-4 py-1 md:px-6 md:py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-4 md:mb-8"
+          className="inline-flex h-10 items-center justify-center px-4 py-1 md:px-6 md:py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-4 md:mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -84,12 +84,12 @@ export default function VelocityAIMetricsOrbitSection() {
             return (
               <motion.div
                 key={item.id}
-                className="flex flex-col items-center text-center bg-gradient-to-b from-[#1e1b4b] to-[#0f0a2a] border border-indigo-500/30 rounded-2xl p-6"
+                className="flex flex-col items-center text-center bg-gradient-to-b from-[#1e1b4b] to-[#0f0a2a] border border-indigo-500/30 rounded-[12px] p-6"
                 initial={{ opacity: 0, y: 16 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.05 }}
               >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-b from-[#1e1b4b] to-[#0f0a2a] border border-indigo-500/30 flex items-center justify-center mb-3 mx-auto">
+                <div className="w-16 h-16 rounded-[12px] bg-gradient-to-b from-[#1e1b4b] to-[#0f0a2a] border border-indigo-500/30 flex items-center justify-center mb-3 mx-auto">
                   <Icon className="text-2xl text-white" />
                 </div>
                 <h3 className="text-sm font-medium text-white mb-1 whitespace-pre-line">{item.title.replace(/\n/g, " ")}</h3>
@@ -125,7 +125,7 @@ export default function VelocityAIMetricsOrbitSection() {
                 transition={{ duration: 0.5, delay: 0.4 + index * 0.05 }}
               >
                 <div
-                  className={`${boxSize} rounded-3xl bg-gradient-to-b from-[#1e1b4b] to-[#0f0a2a] border border-indigo-500/30 flex items-center justify-center mb-3 shadow-[0_0_30px_rgba(79,70,229,0.2)] hover:scale-110 transition-transform duration-300 relative overflow-hidden group cursor-default ${isCenter ? "mb-4 shadow-[0_0_40px_rgba(79,70,229,0.4)]" : ""}`}
+                  className={`${boxSize} rounded-[12px] bg-gradient-to-b from-[#1e1b4b] to-[#0f0a2a] border border-indigo-500/30 flex items-center justify-center mb-3 shadow-[0_0_30px_rgba(79,70,229,0.2)] hover:scale-110 transition-transform duration-300 relative overflow-hidden group cursor-default ${isCenter ? "mb-4 shadow-[0_0_40px_rgba(79,70,229,0.4)]" : ""}`}
                 >
                   <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent opacity-30" />
                   <Icon className={`${iconSize} text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] relative z-10`} />

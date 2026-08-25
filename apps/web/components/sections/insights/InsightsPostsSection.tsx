@@ -54,7 +54,7 @@ export default function InsightsPostsSection({
             </p>
             <Link
               href="/blog"
-              className="inline-flex mt-6 px-5 py-2.5 rounded-full border-2 border-primary-pink bg-white/5 text-sm font-medium text-white hover:bg-gradient-to-r from-[#be185d] to-[#db2777] hover:text-white transition-colors"
+              className="inline-flex h-10 items-center justify-center mt-6 px-5 py-0 rounded-full border-2 border-primary-pink bg-white/5 text-sm font-medium text-white hover:bg-gradient-to-r from-[#be185d] to-[#db2777] hover:text-white transition-colors"
             >
               Browse all insights
             </Link>
@@ -91,7 +91,7 @@ export default function InsightsPostsSection({
             >
               <Link
                 href={`/blog/${post.id}`}
-                className="group flex flex-col bg-white rounded-lg overflow-hidden shadow-lg shadow-black/30 hover:-translate-y-2 transition-transform duration-300 h-full"
+                className="group flex flex-col bg-white rounded-[12px] overflow-hidden shadow-lg shadow-black/30 hover:-translate-y-2 transition-transform duration-300 h-full"
               >
                 <div className="relative min-h-[220px] overflow-hidden">
                   <InsightImage
@@ -131,7 +131,7 @@ export default function InsightsPostsSection({
               type="button"
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
-              className="px-4 h-9 rounded-full border border-white/20 text-desc hover:text-white hover:border-white/40 disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 hover:bg-white/10"
+              className="h-10 px-4 h-9 rounded-full border border-white/20 text-desc hover:text-white hover:border-white/40 disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 hover:bg-white/10"
             >
               Previous
             </button>
@@ -158,7 +158,7 @@ export default function InsightsPostsSection({
               type="button"
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className="px-4 h-9 rounded-full border border-white/20 text-desc hover:text-white hover:border-white/40 disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 hover:bg-white/10"
+              className="h-10 px-4 h-9 rounded-full border border-white/20 text-desc hover:text-white hover:border-white/40 disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 hover:bg-white/10"
             >
               Next
             </button>

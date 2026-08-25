@@ -21,7 +21,7 @@ export default function DetailsCard({
       <div
         className={`
         grid grid-cols-1 lg:grid-cols-2 gap-12 items-center
-        rounded-3xl overflow-hidden
+        rounded-[12px] overflow-hidden
         bg-linear-to-br from-[#0b0c14] to-[#05060f]
         border border-white/10
         shadow-[0_0_80px_rgba(255,255,255,0.05)]

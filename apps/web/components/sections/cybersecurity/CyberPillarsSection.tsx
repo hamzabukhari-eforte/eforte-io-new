@@ -8,7 +8,7 @@ import { CYBER_ACCENT, cyberPillars } from "@/data/capabilities/cybersecurity";
 export default function CyberPillarsSection() {
   return (
     <section className="bg-white">
-      <div className="mx-[14px] rounded-b-[36px] bg-black py-16 text-white md:rounded-b-[48px] md:py-24">
+      <div className="mx-[14px] rounded-b-[12px] bg-black py-16 text-white md:rounded-b-[12px] md:py-24">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -18,7 +18,7 @@ export default function CyberPillarsSection() {
           className="mx-auto max-w-3xl text-center"
         >
           <span
-            className="inline-flex rounded-full border px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white"
+            className="inline-flex h-10 items-center justify-center rounded-full border px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white"
             style={{ borderColor: CYBER_ACCENT }}
           >
             {cyberPillars.badge}
@@ -42,7 +42,7 @@ export default function CyberPillarsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, margin: "-80px", amount: 0.15 }}
                 transition={{ duration: 0.45, delay: index * 0.08 }}
-                className="flex flex-col items-center rounded-[2rem] border bg-[#0B0D12] px-6 py-10 text-center md:px-8 md:py-12"
+                className="flex flex-col items-center rounded-[12px] border bg-[#0B0D12] px-6 py-10 text-center md:px-8 md:py-12"
                 style={{
                   borderColor: featured
                     ? "rgba(211, 40, 122, 0.7)"

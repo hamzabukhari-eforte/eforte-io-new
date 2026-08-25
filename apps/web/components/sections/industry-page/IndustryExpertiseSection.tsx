@@ -21,7 +21,7 @@ export default function IndustryExpertiseSection({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="rounded-[32px] bg-white p-8 text-default md:rounded-[40px] md:p-12 lg:p-14"
+          className="rounded-[12px] bg-white p-8 text-default md:rounded-[12px] md:p-12 lg:p-14"
         >
           <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:gap-12">
             <div className="max-w-md">
@@ -37,7 +37,7 @@ export default function IndustryExpertiseSection({
               {content.stats.map((stat) => (
                 <div
                   key={stat.value}
-                  className="rounded-2xl border border-default/10 bg-[#F6F8FC] p-6"
+                  className="rounded-[12px] border border-default/10 bg-[#F6F8FC] p-6"
                 >
                   <p className="w-fit bg-linear-to-br from-[#5AA0F0] to-[#0A2EC1] bg-clip-text text-[62px] font-normal leading-[74px] text-transparent">
                     {stat.value}
@@ -92,7 +92,7 @@ export default function IndustryExpertiseSection({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-80px", amount: 0.15 }}
             transition={{ duration: 0.5 }}
-            className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#0A0C16] p-8 md:p-12 lg:p-14"
+            className="relative overflow-hidden rounded-[12px] border border-white/10 bg-[#0A0C16] p-8 md:p-12 lg:p-14"
           >
             <div className="pointer-events-none absolute left-0 top-0 h-[90%] w-[55%]">
               <Image
@@ -109,7 +109,7 @@ export default function IndustryExpertiseSection({
                 <h3 className="max-w-md text-3xl font-medium leading-tight text-white md:text-4xl">
                   {card.title}
                 </h3>
-                <ContactCTA className="mt-auto inline-flex h-11 w-fit items-center justify-center rounded-full border border-white/50 px-7 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default">
+                <ContactCTA className="mt-auto inline-flex h-10 w-fit items-center justify-center rounded-full border border-white/50 px-7 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default">
                   Learn more
                 </ContactCTA>
               </div>

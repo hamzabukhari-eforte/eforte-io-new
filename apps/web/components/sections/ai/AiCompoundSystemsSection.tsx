@@ -9,7 +9,7 @@ import { AI_ACCENT } from "@/data/capabilities/ai";
 export default function AiCompoundSystemsSection() {
   return (
     <section className="bg-white">
-      <div className="rounded-t-[36px] bg-black py-20 text-white md:rounded-t-[42px] md:py-28">
+      <div className="rounded-t-[12px] bg-black py-20 text-white md:rounded-t-[12px] md:py-28">
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
             <motion.div
@@ -39,7 +39,7 @@ export default function AiCompoundSystemsSection() {
               </div>
               <div className="mt-9">
                 <ContactCTA
-                  className="inline-flex h-12 items-center justify-center rounded-full px-8 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                  className="inline-flex h-10 items-center justify-center rounded-full px-8 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                   style={{ backgroundColor: AI_ACCENT }}
                 >
                   Get in touch

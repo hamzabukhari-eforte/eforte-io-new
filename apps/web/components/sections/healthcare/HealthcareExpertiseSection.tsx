@@ -28,7 +28,7 @@ const stats = [
 
 export default function HealthcareExpertiseSection() {
   return (
-    <section className="relative z-10 -mt-10 rounded-t-[40px] bg-white pt-16 pb-20 text-default md:pt-20 md:pb-28">
+    <section className="relative z-10 -mt-10 rounded-t-[12px] bg-white pt-16 pb-20 text-default md:pt-20 md:pb-28">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -55,7 +55,7 @@ export default function HealthcareExpertiseSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-80px", amount: 0.15 }}
               transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="rounded-2xl border border-black/5 bg-white p-7 shadow-sm"
+              className="rounded-[12px] border border-black/5 bg-white p-7 shadow-sm"
             >
               <p className="w-fit bg-linear-to-b from-[#5AA0F0] to-[#0A2EC1] bg-clip-text text-[72px] font-normal leading-[80px] text-transparent lg:text-[102px] lg:leading-[110px]">
                 {stat.value}

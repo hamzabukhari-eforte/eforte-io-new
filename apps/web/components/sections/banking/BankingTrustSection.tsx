@@ -68,7 +68,7 @@ export default function BankingTrustSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-80px", amount: 0.25 }}
             transition={{ duration: 0.5 }}
-            className="relative overflow-hidden rounded-2xl bg-[#12141B] p-8 md:min-h-[430px] md:p-12"
+            className="relative overflow-hidden rounded-[12px] bg-[#12141B] p-8 md:min-h-[430px] md:p-12"
           >
         
             <div className="relative grid items-center gap-12 md:grid-cols-[340px_1fr]">
@@ -169,7 +169,7 @@ export default function BankingTrustSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, margin: "-80px", amount: 0.25 }}
                 transition={{ duration: 0.45, delay: index * 0.06 }}
-                className="rounded-2xl border border-white/10 bg-white/5 p-7 backdrop-blur-lg"
+                className="rounded-[12px] border border-white/10 bg-white/5 p-7 backdrop-blur-lg"
               >
                 <div className="relative h-14 w-14">
                   <Image src={card.iconSrc} alt="" fill className="object-contain" aria-hidden />
@@ -184,7 +184,7 @@ export default function BankingTrustSection() {
 
       <section className="border-t border-white/10 bg-default py-20">
         <Container className="max-w-4xl">
-          <div className="relative mb-8 overflow-hidden rounded-2xl bg-[#0F1118] px-6 py-7 md:px-8 md:py-8">
+          <div className="relative mb-8 overflow-hidden rounded-[12px] bg-[#0F1118] px-6 py-7 md:px-8 md:py-8">
             <Image
               src="/assets/images/industry/faq-banner-bg.svg"
               alt=""

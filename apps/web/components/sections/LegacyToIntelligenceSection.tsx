@@ -41,7 +41,7 @@ export default function LegacyToIntelligenceSection() {
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <span className="text-primary-pink text-[11px] font-bold uppercase tracking-[0.15em] px-8 py-2 border border-primary-pink rounded-full">
+              <span className="h-10 text-primary-pink text-[11px] font-bold uppercase tracking-[0.15em] px-8 py-2 border border-primary-pink rounded-full">
                 Evolving
               </span>
             </motion.div>

@@ -38,7 +38,7 @@ export default function CyberServicesSection() {
           className="grid gap-10 border-t border-[#E8E8E8] pt-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 md:pt-12"
         >
           <div>
-            <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-pink">
+            <div className="relative flex h-16 w-16 items-center justify-center rounded-[12px] bg-primary-pink">
               <HiShieldCheck className="h-8 w-8 text-white" />
               <span className="absolute bottom-2 right-2 text-[10px] text-white">
                 ✦
@@ -57,7 +57,7 @@ export default function CyberServicesSection() {
               {cyberTransformation.tenets.map((tenet) => (
                 <span
                   key={tenet.id}
-                  className="inline-flex items-center gap-2 rounded-full border border-default/20 px-4 py-2 text-sm font-medium text-default"
+                  className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-default/20 px-4 py-2 text-sm font-medium text-default"
                 >
                   {tenet.icon === "star" ? (
                     <FaStar className="h-3.5 w-3.5" />
@@ -88,7 +88,7 @@ export default function CyberServicesSection() {
                 transition={{ duration: 0.4, delay: (index % 3) * 0.06 }}
               >
                 <div
-                  className="flex h-11 w-11 items-center justify-center rounded-xl text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-[12px] text-white"
                   style={{ backgroundColor: service.iconBg }}
                 >
                   <Icon className="h-5 w-5" />

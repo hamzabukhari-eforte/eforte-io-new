@@ -44,7 +44,7 @@ export default function VelocityAICaseStudySection() {
 
       <div className="max-w-6xl mx-auto">
         <motion.div
-          className="relative h-[256px] sm:h-[360px] md:h-[500px] lg:h-[600px] rounded-2xl md:rounded-3xl overflow-hidden group"
+          className="relative h-[256px] sm:h-[360px] md:h-[500px] lg:h-[600px] rounded-[12px] md:rounded-[12px] overflow-hidden group"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
@@ -61,7 +61,7 @@ export default function VelocityAICaseStudySection() {
           {stats.map((stat, index) => (
             <motion.div
               key={stat.value}
-              className={`absolute hidden md:block ${statPositions[index]} bg-[#03050C]/80 backdrop-blur-md border border-white/10 p-6 rounded-xl animate-float`}
+              className={`absolute hidden md:block ${statPositions[index]} bg-[#03050C]/80 backdrop-blur-md border border-white/10 p-6 rounded-[12px] animate-float`}
               style={{ animationDelay: `${index}s` }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -78,7 +78,7 @@ export default function VelocityAICaseStudySection() {
           {stats.map((stat, index) => (
             <motion.div
               key={stat.value}
-              className="bg-[#03050C]/90 backdrop-blur-md border border-white/10 p-4 rounded-xl"
+              className="bg-[#03050C]/90 backdrop-blur-md border border-white/10 p-4 rounded-[12px]"
               initial={{ opacity: 0, y: 12 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.4 + index * 0.08 }}
@@ -98,7 +98,7 @@ export default function VelocityAICaseStudySection() {
       >
         <Link
           href="#"
-          className="inline-block bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-9 py-3.5 rounded-full text-[15px] font-medium transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
+          className="inline-flex h-10 items-center justify-center bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-9 py-0.5 rounded-full text-[15px] font-medium transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
         >
           Read Case Study
         </Link>

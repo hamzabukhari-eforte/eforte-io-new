@@ -58,7 +58,7 @@ export default function DatabricksTestimonialsSection() {
                 type="button"
                 onClick={goPrev}
                 aria-label="Previous testimonial"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/35 text-white transition-colors hover:bg-white/10"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/35 text-white transition-colors hover:bg-white/10"
               >
                 <HiArrowLeft className="h-4 w-4" />
               </button>
@@ -66,7 +66,7 @@ export default function DatabricksTestimonialsSection() {
                 type="button"
                 onClick={goNext}
                 aria-label="Next testimonial"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/35 text-white transition-colors hover:bg-white/10"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/35 text-white transition-colors hover:bg-white/10"
               >
                 <HiArrowRight className="h-4 w-4" />
               </button>

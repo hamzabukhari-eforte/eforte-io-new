@@ -22,7 +22,7 @@ export default function GlobalLeadersSection() {
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <span className="inline-block px-6 md:px-8 py-2 text-primary-pink text-[11px] font-bold uppercase tracking-[0.15em] border border-primary-pink rounded-full">
+            <span className="inline-flex h-10 items-center justify-center px-6 md:px-8 py-2 text-primary-pink text-[11px] font-bold uppercase tracking-[0.15em] border border-primary-pink rounded-full">
               WE ARE A SEASONED PROFESSIONAL TEAM
             </span>
           </motion.div>
@@ -62,7 +62,7 @@ export default function GlobalLeadersSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
           {/* Card 1: IBM GLOBAL ENTREPRENEUR */}
           <motion.div
-            className="rounded-lg p-6 md:p-8 flex flex-col border border-white/10 hover:border-white/30 transition-all duration-300"
+            className="rounded-[12px] p-6 md:p-8 flex flex-col border border-white/10 hover:border-white/30 transition-all duration-300"
             style={{
               background: `linear-gradient(to bottom, #0A0A1A, #10082C, #2A0079)`,
             }}
@@ -72,7 +72,7 @@ export default function GlobalLeadersSection() {
           >
             {/* Top Badge */}
             <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-primary-pink text-white text-[11px] font-bold uppercase tracking-[0.15em] rounded-lg">
+              <span className="inline-block px-4 py-2 bg-primary-pink text-white text-[11px] font-bold uppercase tracking-[0.15em] rounded-[12px]">
                 IBM GLOBAL ENTREPRENEUR
               </span>
             </div>
@@ -120,7 +120,7 @@ export default function GlobalLeadersSection() {
 
           {/* Card 2: ISO 27001 Certified */}
           <motion.div
-            className="rounded-lg p-6 md:p-8 flex flex-col border border-white/10 hover:border-white/30 transition-all duration-300"
+            className="rounded-[12px] p-6 md:p-8 flex flex-col border border-white/10 hover:border-white/30 transition-all duration-300"
             style={{
               background: `linear-gradient(to bottom, #0A0A1A, #10082C, #2A0079)`,
             }}
@@ -172,7 +172,7 @@ export default function GlobalLeadersSection() {
 
           {/* Card 3: Ethical & Compliant */}
           <motion.div
-            className="rounded-lg p-6 md:p-8 flex flex-col border border-white/10 hover:border-white/30 transition-all duration-300"
+            className="rounded-[12px] p-6 md:p-8 flex flex-col border border-white/10 hover:border-white/30 transition-all duration-300"
             style={{
               background: `linear-gradient(to bottom, #0A0A1A, #10082C, #2A0079)`,
             }}

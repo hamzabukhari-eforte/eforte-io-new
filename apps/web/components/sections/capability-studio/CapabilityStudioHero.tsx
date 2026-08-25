@@ -36,7 +36,7 @@ export default function CapabilityStudioHero({
   return (
     <section className="bg-white pb-4 pt-28 text-default md:pb-6 md:pt-32">
       <Container>
-        <div className="overflow-hidden rounded-none border border-[#E8E8E8] md:rounded-sm">
+        <div className="overflow-hidden rounded-none border border-[#E8E8E8] md:rounded-[12px]">
           <div className="grid lg:grid-cols-[1.35fr_0.9fr]">
             {/* Left copy */}
             <div className="flex flex-col border-[#E8E8E8] lg:border-r">

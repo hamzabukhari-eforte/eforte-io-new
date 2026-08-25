@@ -145,7 +145,7 @@ export default function FinancialServicesOurWorkSection() {
                     {slide.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex items-center rounded-full bg-default/5 px-4 py-2 text-sm text-default/80"
+                        className="inline-flex h-10 items-center justify-center rounded-full bg-default/5 px-4 py-2 text-sm text-default/80"
                       >
                         {tag}
                       </span>

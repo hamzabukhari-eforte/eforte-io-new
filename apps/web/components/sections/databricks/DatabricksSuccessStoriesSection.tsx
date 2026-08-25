@@ -53,7 +53,7 @@ export default function DatabricksSuccessStoriesSection() {
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
               <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[24px] md:rounded-[28px]">
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[12px] md:rounded-[12px]">
                   <Image
                     src={story.imageSrc}
                     alt={story.imageAlt}
@@ -103,7 +103,7 @@ export default function DatabricksSuccessStoriesSection() {
                     return (
                       <article
                         key={outcome.id}
-                        className="flex min-h-[260px] flex-col rounded-[24px] bg-[#1A1A1A] px-7 py-8 md:min-h-[300px] md:px-8 md:py-9 lg:min-h-[320px]"
+                        className="flex min-h-[260px] flex-col rounded-[12px] bg-[#1A1A1A] px-7 py-8 md:min-h-[300px] md:px-8 md:py-9 lg:min-h-[320px]"
                       >
                         <div
                           className={`relative shrink-0 ${

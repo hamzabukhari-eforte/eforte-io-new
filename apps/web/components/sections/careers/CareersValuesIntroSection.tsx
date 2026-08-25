@@ -36,7 +36,7 @@ export default function CareersValuesIntroSection() {
           initial={{ opacity: 0, y: 32 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
           transition={{ duration: 0.6, delay: 0.15, ease }}
-          className="relative mt-10 aspect-[21/9] w-full overflow-hidden rounded-2xl md:mt-14 md:rounded-3xl"
+          className="relative mt-10 aspect-[21/9] w-full overflow-hidden rounded-[12px] md:mt-14 md:rounded-[12px]"
         >
           <Image
             src={TEAM_IMAGE}
