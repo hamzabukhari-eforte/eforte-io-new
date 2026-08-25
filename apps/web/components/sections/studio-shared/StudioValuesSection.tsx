@@ -27,7 +27,15 @@ const cardStyles: Record<
   },
 };
 
-function ValueCard({ item, index }: { item: StudioValueItem; index: number }) {
+function ValueCard({
+  item,
+  index,
+  iconPosition,
+}: {
+  item: StudioValueItem;
+  index: number;
+  iconPosition: "center" | "top-right";
+}) {
   const styles = cardStyles[item.variant];
 
   return (
@@ -41,7 +49,14 @@ function ValueCard({ item, index }: { item: StudioValueItem; index: number }) {
         styles.card
       )}
     >
-      <div className="flex flex-1 items-center justify-center px-2 pt-4 md:pt-8">
+      <div
+        className={cn(
+          "flex flex-1",
+          iconPosition === "top-right"
+            ? "items-start justify-end"
+            : "items-center justify-center px-2 pt-4 md:pt-8"
+        )}
+      >
         <Image
           src={item.icon}
           alt=""
@@ -68,16 +83,20 @@ type StudioValuesSectionProps = {
   eyebrow: string;
   title: string;
   values: StudioValueItem[];
+  iconPosition?: "center" | "top-right";
+  className?: string;
 };
 
 export default function StudioValuesSection({
   eyebrow,
   title,
   values,
+  iconPosition = "center",
+  className,
 }: StudioValuesSectionProps) {
   return (
     <section className="relative z-10 -mt-10 rounded-t-[40px] bg-[#f3f2f6] py-16 md:py-24">
-      <Container>
+      <Container className={className}>
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-default">
             {eyebrow}
@@ -89,7 +108,12 @@ export default function StudioValuesSection({
 
         <div className="mt-12 grid gap-5 md:mt-16 md:grid-cols-3 md:gap-6">
           {values.map((item, index) => (
-            <ValueCard key={item.id} item={item} index={index} />
+            <ValueCard
+              key={item.id}
+              item={item}
+              index={index}
+              iconPosition={iconPosition}
+            />
           ))}
         </div>
       </Container>

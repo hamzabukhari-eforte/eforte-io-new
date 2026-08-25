@@ -60,7 +60,8 @@ export const productDesignProcess: ProductDesignProcessItem[] = [
     title: "Design seamless journeys that match user goals and business outcomes",
     description:
       "UX design to define flows, journeys, and interactions that reduce friction and increase conversion.",
-    image: "/assets/images/case-study/InstApp-Dealbanner.png",
+    image:
+      "/assets/final-images/capabilities/product-design/1-UX_Design_-_Design_seamless_journeys_that_match_user_goals_and_business_outcomes-1.png?v=3",
     imageAlt: "UX design wireframes and user flows",
     imageSide: "right",
     tags: ["Wireframing", "Prototyping", "User Flows", "Journey Maps"],
@@ -70,7 +71,8 @@ export const productDesignProcess: ProductDesignProcessItem[] = [
     title: "Create interfaces that are intuitive, accessible, and easy to build",
     description:
       "UI design that is clean, intuitive, and implementation-ready for your development teams.",
-    image: "/assets/images/case-study/komb-banner.png",
+    image:
+      "/assets/final-images/capabilities/product-design/2-UI_Design-Create_interfaces_that_are_intuitive_accessible_and_easy_to_build.png?v=3",
     imageAlt: "Clean UI design mockups",
     imageSide: "left",
     tags: ["Usability", "Accessibility", "Visual Hierarchy", "Design Systems"],
@@ -80,7 +82,8 @@ export const productDesignProcess: ProductDesignProcessItem[] = [
     title: "Shape holistic experiences across digital and non-digital touchpoints",
     description:
       "Service design that looks across channels and processes to deliver a consistent, connected experience.",
-    image: "/assets/images/case-study/oddysee-banner.png",
+    image:
+      "/assets/final-images/capabilities/product-design/3-Service_Design_-Holistic_user_experiences_designed_across_digital_and_non-digital_touchpointsok.png?v=3",
     imageAlt: "Service design blueprint diagram",
     imageSide: "right",
     tags: ["Customer Journeys", "Service Blueprint", "Stakeholder Mapping", "Empathy Maps"],
@@ -90,7 +93,8 @@ export const productDesignProcess: ProductDesignProcessItem[] = [
     title: "Make product decisions grounded in evidence, not assumptions",
     description:
       "UX research that brings real user evidence into every key decision.",
-    image: "/assets/images/case-study/CulturalFit.jpg",
+    image:
+      "/assets/final-images/capabilities/product-design/4-UX_Research-Make_product_decisions_grounded_in_evidence_not_assumptions..png?v=3",
     imageAlt: "UX research session with participants",
     imageSide: "left",
     tags: ["Interviews", "A/B Testing", "Surveys", "Personas"],
@@ -100,7 +104,8 @@ export const productDesignProcess: ProductDesignProcessItem[] = [
     title: "Give your product a distinctive visual language that reinforces your brand",
     description:
       "Visual design that shapes a distinctive, on-brand look and feel with scalable assets.",
-    image: "/assets/images/case-study/krank-banner.png",
+    image:
+      "/assets/final-images/capabilities/product-design/5-Visual_Design_-_Give_your_product_a_distinctive_visual_language_that_reinforces_your_brand.png?v=3",
     imageAlt: "Visual design system components",
     imageSide: "right",
     tags: ["Aesthetics", "Illustrations", "Iconography", "Animations"],

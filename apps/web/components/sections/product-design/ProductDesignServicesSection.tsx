@@ -9,6 +9,8 @@ export default function ProductDesignServicesSection() {
       eyebrow="Product Design"
       title="A user-centric approach to help your business grow"
       values={productDesignValues}
+      iconPosition="top-right"
+      className="pt-26 md:pt-34"
     />
   );
 }

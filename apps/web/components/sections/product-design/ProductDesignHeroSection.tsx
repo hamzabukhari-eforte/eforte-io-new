@@ -11,10 +11,11 @@ export default function ProductDesignHeroSection() {
     <section className="relative flex min-h-[760px] flex-col justify-center overflow-hidden bg-default pt-28 pb-20 md:min-h-screen md:pt-36">
       <div className="absolute inset-0">
         <Image
-          src="/assets/images/package/studios/product-design-studio-hero-diagram.svg"
+          src="/assets/final-images/capabilities/product-design/Capabilities_Product_Design_Studio_Hero_Section_Image.jpg"
           alt=""
           fill
           priority
+          sizes="100vw"
           className="object-cover object-center"
           aria-hidden
         />

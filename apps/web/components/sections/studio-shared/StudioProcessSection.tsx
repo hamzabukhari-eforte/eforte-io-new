@@ -3,15 +3,24 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
+import { cn } from "@/lib/utils";
 import type { StudioProcessItem } from "./types";
 
 type StudioProcessSectionProps = {
   items: StudioProcessItem[];
+  className?: string;
+  imageFit?: "cover" | "contain";
 };
 
-export default function StudioProcessSection({ items }: StudioProcessSectionProps) {
+export default function StudioProcessSection({
+  items,
+  className,
+  imageFit = "cover",
+}: StudioProcessSectionProps) {
+  const sizedFrame = imageFit === "contain";
+
   return (
-    <section className="bg-white pb-12 md:pb-20">
+    <section className={cn("bg-white pb-12 md:pb-20", className)}>
       <Container>
         <div className="space-y-16 md:space-y-20">
           {items.map((item, index) => {
@@ -27,15 +36,29 @@ export default function StudioProcessSection({ items }: StudioProcessSectionProp
                 className="grid items-center gap-8 md:grid-cols-2 md:gap-14"
               >
                 <div className={imageFirst ? "md:order-1" : "md:order-2"}>
-                  <div className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-gray-100 shadow-[0_24px_70px_rgba(10,10,26,0.12)]">
-                    <Image
-                      src={item.image}
-                      alt={item.imageAlt}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover"
-                    />
-                  </div>
+                  {sizedFrame ? (
+                    <div className="h-[380px] w-[608px] max-w-full overflow-hidden rounded-[24px] shadow-[0_24px_70px_rgba(10,10,26,0.12)]">
+                      <Image
+                        src={item.image}
+                        alt={item.imageAlt}
+                        width={608}
+                        height={380}
+                        sizes="608px"
+                        unoptimized
+                        className="size-full object-fill"
+                      />
+                    </div>
+                  ) : (
+                    <div className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-gray-100 shadow-[0_24px_70px_rgba(10,10,26,0.12)]">
+                      <Image
+                        src={item.image}
+                        alt={item.imageAlt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
                 </div>
 
                 <div className={imageFirst ? "md:order-2" : "md:order-1"}>
