@@ -141,10 +141,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Certain industries, cannabis licensing chief among them, require extensive documentation and state level compliance before a business can even open its doors. Oddysee approached eForte to build a platform that could take on that documentation burden directly, offering pre written templates, guided editing, and the surrounding business tools needed to get a license application across the finish line.",
       image: "/assets/images/case-study/new-images/oddysee/oddysee-main.png",
       link: "/case-studies/oddysee",
-      theme: [15, 90, 70],
+      theme: [3, 40, 65],
     },
     technologySection: {
-      theme: [15, 90, 70],
+      theme: [3, 40, 65],
       frontEnd: [
       {
         name: "React",
@@ -216,7 +216,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Oddysee",
-      theme: [15, 90, 70],
+      theme: [3, 40, 65],
       sections: [
         {
           heading: "Licensing processes in heavily regulated industries, particularly cannabis licensing at",
@@ -240,10 +240,10 @@ export const caseStudies: CaseStudy[] = [
       description: "InvestmentMarkets came to eForte with a clear but ambitious goal: bridge the gap between investment seeking companies and high net worth individuals, without the noise or gatekeeping typical of traditional investment networking. The founders arrived with a scope document running hundreds of pages, and needed a technical partner who could turn that level of detail into a working, scalable platform.",
       image: "/assets/images/case-study/new-images/investment-market/investment-Markets-Main.png",
       link: "/case-studies/investment-markets",
-      theme: [40, 89, 246],
+      theme: [156, 3, 0],
     },
     technologySection: {
-      theme: [40, 89, 246],
+      theme: [156, 3, 0],
       frontEnd: [
       {
         name: "React",
@@ -315,7 +315,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Investment Markets",
-      theme: [40, 89, 246],
+      theme: [156, 3, 0],
       sections: [
         {
           heading: "High net worth investors and companies seeking capital have traditionally relied on per",
@@ -641,10 +641,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Every founder believes in their idea, but belief isn't the same as validation. Validatr.io approached eForte to build a platform that could guide startups and businesses through structured market validation and market research, producing polished report style documents founders could use directly in business plans and investor conversations.",
       image: "/assets/images/case-study/new-images/validatr/validatr-main.png",
       link: "/case-studies/validatr",
-      theme: [35, 95, 75],
+      theme: [55, 55, 206],
     },
     technologySection: {
-      theme: [35, 95, 75],
+      theme: [55, 55, 206],
       frontEnd: [
       {
         name: "React",
@@ -716,7 +716,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Validatr",
-      theme: [35, 95, 75],
+      theme: [55, 55, 206],
       sections: [
         {
           heading: "Market validation and market research are typically slow, expensive, and require specia",
@@ -839,10 +839,10 @@ export const caseStudies: CaseStudy[] = [
       description: "Dostpay is a mobile based digital banking payments platform designed to integrate with a bank's core banking systems, giving end users the power of digital banking in a flexible, branded experience. As transaction volume grew, keeping the platform compliant and secure without slowing down user experience became a growing challenge.",
       image: "/assets/images/case-study/new-images/dostpay/Dostpay1.png",
       link: "/case-studies/dostpay",
-      theme: [72, 40, 150],
+      theme: [1, 44, 127],
     },
     technologySection: {
-      theme: [72, 40, 150],
+      theme: [1, 44, 127],
       frontEnd: [
       {
         name: "React Native",
@@ -919,7 +919,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Dostpay",
-      theme: [72, 40, 150],
+      theme: [1, 44, 127],
       sections: [
         {
           heading: "Dostpay's integration with core banking systems meant transaction data flowed in from m",
@@ -1864,10 +1864,10 @@ export const caseStudies: CaseStudy[] = [
       description: "BioResearch Labs is a pharmaceutical research organization conducting multiple Phase II and III clinical trials across more than 40 global research sites. Managing data consistency and compliance across that many sites had become an increasingly heavy burden on the research team.",
       image: "/assets/images/case-study/webp/bioresearch-labs/image-1.webp",
       link: "/case-studies/bioresearch-labs",
-      theme: [30, 90, 100],
+      theme: [0, 0, 0],
     },
     technologySection: {
-      theme: [30, 90, 100],
+      theme: [0, 0, 0],
       frontEnd: [
       {
         name: "React",
@@ -1944,7 +1944,7 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "BioResearch Labs",
-      theme: [30, 90, 100],
+      theme: [0, 0, 0],
       sections: [
         {
           heading: "BioResearch Labs was drowning in clinical trial data management challenges",

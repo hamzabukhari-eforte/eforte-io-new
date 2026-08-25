@@ -42,9 +42,9 @@
     "intro": "BioResearch Labs is a pharmaceutical research organization conducting multiple Phase II and III clinical trials across more than 40 global research sites. Managing data consistency and compliance across that many sites had become an increasingly heavy burden on the research team.",
     "bannerImage": "/assets/images/industry/bg-portfolio.jpg",
     "theme": [
-      13,
-      48,
-      69
+      0,
+      0,
+      0
     ]
   },
   {
@@ -78,9 +78,9 @@
     "intro": "Certain industries, cannabis licensing chief among them, require extensive documentation and state level compliance before a business can even open its doors. Oddysee approached eForte to build a platform that could take on that documentation burden directly, offering pre written templates, guided editing, and the surrounding business tools needed to get a license application across the finish line.",
     "bannerImage": "/assets/images/case-study/oddysee-banner.png",
     "theme": [
-      211,
-      72,
-      84
+      3,
+      40,
+      65
     ]
   },
   {
@@ -90,9 +90,9 @@
     "intro": "InvestmentMarkets came to eForte with a clear but ambitious goal: bridge the gap between investment seeking companies and high net worth individuals, without the noise or gatekeeping typical of traditional investment networking. The founders arrived with a scope document running hundreds of pages, and needed a technical partner who could turn that level of detail into a working, scalable platform.",
     "bannerImage": "/assets/images/case-study/invesment-banner.png",
     "theme": [
-      14,
-      119,
-      244
+      156,
+      3,
+      0
     ]
   },
   {
@@ -138,9 +138,9 @@
     "intro": "Every founder believes in their idea, but belief isn't the same as validation. Validatr.io approached eForte to build a platform that could guide startups and businesses through structured market validation and market research, producing polished report style documents founders could use directly in business plans and investor conversations.",
     "bannerImage": "/assets/images/case-study/Validatr.png",
     "theme": [
-      90,
-      189,
-      85
+      55,
+      55,
+      206
     ]
   },
   {
@@ -162,9 +162,9 @@
     "intro": "Dostpay is a mobile based digital banking payments platform designed to integrate with a bank's core banking systems, giving end users the power of digital banking in a flexible, branded experience. As transaction volume grew, keeping the platform compliant and secure without slowing down user experience became a growing challenge.",
     "bannerImage": "/assets/images/case-study/Dostpay-banner.png",
     "theme": [
-      211,
-      72,
-      84
+      1,
+      44,
+      127
     ]
   },
   {

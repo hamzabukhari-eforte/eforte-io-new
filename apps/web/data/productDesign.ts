@@ -19,8 +19,9 @@ export type ProductDesignProcessItem = {
 export type ProductDesignShowcaseItem = {
   id: string;
   brand: string;
-  title: string;
+  category: string;
   paragraphs: string[];
+  /** Final creative assets TBD — placeholders until product-design images are delivered */
   image: string;
   imageAlt: string;
   background: string;
@@ -61,7 +62,7 @@ export const productDesignProcess: ProductDesignProcessItem[] = [
     description:
       "UX design to define flows, journeys, and interactions that reduce friction and increase conversion.",
     image:
-      "/assets/final-images/capabilities/product-design/1-UX_Design_-_Design_seamless_journeys_that_match_user_goals_and_business_outcomes-1.png?v=3",
+      "/assets/final-images/capabilities/product-design/1-UX_Design_-_Design_seamless_journeys_that_match_user_goals_and_business_outcomes-1.png",
     imageAlt: "UX design wireframes and user flows",
     imageSide: "right",
     tags: ["Wireframing", "Prototyping", "User Flows", "Journey Maps"],
@@ -72,7 +73,7 @@ export const productDesignProcess: ProductDesignProcessItem[] = [
     description:
       "UI design that is clean, intuitive, and implementation-ready for your development teams.",
     image:
-      "/assets/final-images/capabilities/product-design/2-UI_Design-Create_interfaces_that_are_intuitive_accessible_and_easy_to_build.png?v=3",
+      "/assets/final-images/capabilities/product-design/2-UI_Design-Create_interfaces_that_are_intuitive_accessible_and_easy_to_build.png",
     imageAlt: "Clean UI design mockups",
     imageSide: "left",
     tags: ["Usability", "Accessibility", "Visual Hierarchy", "Design Systems"],
@@ -83,7 +84,7 @@ export const productDesignProcess: ProductDesignProcessItem[] = [
     description:
       "Service design that looks across channels and processes to deliver a consistent, connected experience.",
     image:
-      "/assets/final-images/capabilities/product-design/3-Service_Design_-Holistic_user_experiences_designed_across_digital_and_non-digital_touchpointsok.png?v=3",
+      "/assets/final-images/capabilities/product-design/3-Service_Design_-Holistic_user_experiences_designed_across_digital_and_non-digital_touchpointsok.png",
     imageAlt: "Service design blueprint diagram",
     imageSide: "right",
     tags: ["Customer Journeys", "Service Blueprint", "Stakeholder Mapping", "Empathy Maps"],
@@ -94,7 +95,7 @@ export const productDesignProcess: ProductDesignProcessItem[] = [
     description:
       "UX research that brings real user evidence into every key decision.",
     image:
-      "/assets/final-images/capabilities/product-design/4-UX_Research-Make_product_decisions_grounded_in_evidence_not_assumptions..png?v=3",
+      "/assets/final-images/capabilities/product-design/4-bioresearch_labs_on_reference_laptop.png",
     imageAlt: "UX research session with participants",
     imageSide: "left",
     tags: ["Interviews", "A/B Testing", "Surveys", "Personas"],
@@ -105,7 +106,7 @@ export const productDesignProcess: ProductDesignProcessItem[] = [
     description:
       "Visual design that shapes a distinctive, on-brand look and feel with scalable assets.",
     image:
-      "/assets/final-images/capabilities/product-design/5-Visual_Design_-_Give_your_product_a_distinctive_visual_language_that_reinforces_your_brand.png?v=3",
+      "/assets/final-images/capabilities/product-design/5-Visual_Design_-_Give_your_product_a_distinctive_visual_language_that_reinforces_your_brand.png",
     imageAlt: "Visual design system components",
     imageSide: "right",
     tags: ["Aesthetics", "Illustrations", "Iconography", "Animations"],
@@ -114,69 +115,69 @@ export const productDesignProcess: ProductDesignProcessItem[] = [
 
 export const productDesignShowcase: ProductDesignShowcaseItem[] = [
   {
-    id: "cascade-utilities",
-    brand: "Cascade Utilities Group",
-    title: "Redesigning the field technician app",
+    id: "investment-markets",
+    brand: "Investment Markets",
+    category: "Investments | Finance",
     paragraphs: [
-      "Cascade Utilities Group partnered with eForte to replace a legacy field app that forced constant office callbacks. Technician research shaped a rebuilt workflow and guided job logging.",
-      "Results: 38% faster task completion, 52% fewer support tickets, and 96% adoption in month one—with no retraining required.",
+      "InvestmentMarkets is a platform for the potential investors that brings them high net worth investment opportunities, primarily aiming for growth, income or both. The...",
     ],
-    image: "/assets/images/package/studios/cascade-utilities-case.svg",
-    imageAlt: "Cascade Utilities Group field technician app redesign",
-    background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
-    href: "/contact-us",
+    image:
+      "/assets/final-images/capabilities/product-design/IM-success-story.png",
+    imageAlt: "Investment Markets platform",
+    background: "#9c0300",
+    href: "/case-studies/investment-markets",
   },
   {
-    id: "health",
-    brand: "Health Experience",
-    title: "Empowering better health experiences",
+    id: "dostpay",
+    brand: "Dostpay",
+    category: "Fintech",
     paragraphs: [
-      "A health-focused product team partnered with eForte to redesign their patient journey and app interface.",
-      "eForte delivered a calm, empathetic UI and streamlined flows, making it easier for users to understand results and stay engaged with their care.",
+      "Dostpay is a 21st century mobile based 'Digital Banking Payments platform' which gets easily integrated with the core banking platform and gives the end user power of ...",
     ],
-    image: "/assets/images/case-study/oddysee-banner.png",
-    imageAlt: "Health app redesign",
-    background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)",
-    href: "/contact-us",
+    image:
+      "/assets/final-images/capabilities/product-design/dostpay-success-story.png",
+    imageAlt: "Dostpay digital banking payments platform",
+    background: "#012c7f",
+    href: "/case-studies/dostpay",
   },
   {
-    id: "learning",
-    brand: "Education Platform",
-    title: "Personalizing learning and careers",
+    id: "validatr",
+    brand: "Validatr",
+    category: "Startup/ Business Management",
     paragraphs: [
-      "An education platform engaged eForte to refine its experience for students, teachers, and counselors.",
-      "eForte combined product design and data-driven insights to build interfaces that make personalized recommendations transparent, actionable, and easy to navigate.",
+      "Validatr.io is a tool for the startups and businesses to do the market validation of the new business ideas and further do Market Research for the same. Both the market ...",
     ],
-    image: "/assets/images/case-study/InstApp-Dealbanner.png",
-    imageAlt: "Education platform design",
-    background: "linear-gradient(135deg, #0f2027 0%, #203a43 100%)",
-    href: "/contact-us",
+    image:
+      "/assets/final-images/capabilities/product-design/validatr-success-story-v2.png",
+    imageAlt: "Validatr market validation platform",
+    background: "#3737ce",
+    href: "/case-studies/validatr",
   },
   {
-    id: "fintech",
-    brand: "Fintech Product",
-    title: "Enabling data-driven fintech products",
+    id: "bioresearch-labs",
+    brand: "BioResearch Labs",
+    category: "Pharmaceutical research",
     paragraphs: [
-      "A growing fintech brand collaborated with eForte to improve onboarding, account management, and in-app communication.",
-      "eForte used UX research and design systems to drive clarity, trust, and measurable improvements in activation and retention.",
+      "BioResearch Labs is a pharmaceutical research organization conducting multiple Phase II and III clinical trials across more than 40 global research sites. Managing data consistency and compliance across...",
     ],
-    image: "/assets/images/case-study/komb-banner.png",
-    imageAlt: "Fintech product design",
-    background: "linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 100%)",
-    href: "/contact-us",
+    image:
+      "/assets/final-images/capabilities/product-design/bioresearch_labs_success-story.png",
+    imageAlt: "BioResearch Labs clinical research platform",
+    background: "#000000",
+    href: "/case-studies/bioresearch-labs",
   },
   {
-    id: "edtech",
-    brand: "EdTech Company",
-    title: "Designing for families and educators",
+    id: "oddysee",
+    brand: "Oddysee",
+    category: "Licensing | Marketplace",
     paragraphs: [
-      "An edtech company worked with eForte to create a friendly, inclusive product for kids, parents, and teachers.",
-      "eForte built a scalable design system with typography, color, and reusable components that support accessibility and future product growth.",
+      "Oddysee is a documentation and licensing platform that helps applicants produce accurate, jurisdiction-specific paperwork with pre-written templates, guided editing, and the business tools needed to get a license application across the finish line...",
     ],
-    image: "/assets/images/case-study/krank-banner.png",
-    imageAlt: "EdTech product design system",
-    background: "linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%)",
-    href: "/contact-us",
+    image:
+      "/assets/final-images/capabilities/product-design/oddysee-success-story.png",
+    imageAlt: "Oddysee licensing marketplace across desktop, tablet, and watch",
+    background: "#032841",
+    href: "/case-studies/oddysee",
   },
 ];
 

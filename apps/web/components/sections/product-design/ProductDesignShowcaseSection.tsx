@@ -19,18 +19,18 @@ function SuccessStoryCard({
 }) {
   return (
     <article
-      className="grid min-h-[520px] overflow-hidden rounded-[28px] text-white md:min-h-[560px] lg:grid-cols-[1.05fr_0.95fr]"
+      className="grid h-full overflow-hidden rounded-[28px] text-white lg:grid-cols-[1.05fr_0.95fr]"
       style={{ background: story.background }}
     >
-      <div className="flex flex-col justify-between p-8 md:p-12 lg:p-14">
+      <div className="flex flex-col justify-between gap-6 p-6 md:gap-7 md:p-8 lg:p-10">
         <div>
           <p className="text-2xl font-semibold tracking-tight md:text-[28px]">
             {story.brand}
           </p>
-          <h3 className="mt-8 text-2xl font-semibold leading-tight md:text-3xl lg:text-[34px] lg:leading-[1.15]">
-            {story.title}
+          <h3 className="mt-3 text-2xl font-semibold leading-tight md:mt-4 md:text-3xl lg:text-[34px] lg:leading-[1.15]">
+            {story.category}
           </h3>
-          <div className="mt-6 space-y-4 text-sm leading-7 text-white/85 md:text-base">
+          <div className="mt-4 space-y-3 text-sm leading-7 text-white/85 md:mt-5 md:text-base">
             {story.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -39,20 +39,20 @@ function SuccessStoryCard({
 
         <Link
           href={story.href}
-          className="mt-10 inline-flex w-fit rounded-full bg-white px-6 py-3 text-sm font-medium text-default transition-colors hover:bg-white/90"
+          className="inline-flex w-fit rounded-full bg-white px-6 py-3 text-sm font-medium text-default transition-colors hover:bg-white/90"
         >
           Learn more
         </Link>
       </div>
 
-      <div className="relative flex min-h-[280px] items-end justify-center px-6 pb-6 pt-4 md:px-8 md:pb-8 lg:min-h-0">
-        <div className="relative h-[300px] w-full max-w-[420px] md:h-[360px] lg:h-[420px]">
+      <div className="flex min-h-[220px] w-full pr-[20px] lg:min-h-0">
+        <div className="relative min-h-[220px] w-full overflow-hidden lg:min-h-full">
           <Image
             src={story.image}
             alt={story.imageAlt}
             fill
-            sizes="(max-width: 1024px) 90vw, 420px"
-            className="object-contain object-bottom"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover object-center"
           />
         </div>
       </div>
@@ -96,10 +96,10 @@ export default function ProductDesignShowcaseSection() {
               1024: { slidesPerView: 1.12, spaceBetween: 28 },
               1280: { slidesPerView: 1.15, spaceBetween: 32 },
             }}
-            className="overflow-visible!"
+            className="overflow-visible! [&_.swiper-wrapper]:items-stretch"
           >
             {productDesignShowcase.map((story) => (
-              <SwiperSlide key={story.id}>
+              <SwiperSlide key={story.id} className="h-auto!">
                 <SuccessStoryCard story={story} />
               </SwiperSlide>
             ))}

@@ -71,7 +71,7 @@ export default function DataGovernanceSection() {
                     onClick={() => setActiveTab(item.id)}
                     className={`w-full cursor-pointer rounded-2xl px-5 py-4 text-left transition-all ${
                       isActive
-                        ? "bg-primary-pink/10 shadow-sm"
+                        ? "bg-[#EAF4FC] shadow-sm"
                         : "bg-transparent hover:bg-[#F8F8F8]"
                     }`}
                   >
@@ -79,18 +79,14 @@ export default function DataGovernanceSection() {
                       <span
                         className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md ${
                           isActive
-                            ? "bg-primary-pink text-white"
-                            : "bg-transparent text-primary-pink"
+                            ? "bg-[#2563EB] text-white"
+                            : "bg-transparent text-[#2563EB]"
                         }`}
                       >
                         <Icon className="h-4 w-4" />
                       </span>
                       <div>
-                        <p
-                          className={`text-lg font-medium ${
-                            isActive ? "text-default" : "text-primary-pink"
-                          }`}
-                        >
+                        <p className="text-lg font-medium text-default">
                           {item.label}
                         </p>
                         {isActive ? (
