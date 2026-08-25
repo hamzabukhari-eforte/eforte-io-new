@@ -169,9 +169,9 @@ export const productDesignShowcase: ProductDesignShowcaseItem[] = [
   {
     id: "oddysee",
     brand: "Oddysee",
-    category: "Licensing | Marketplace",
+    category: "Financial Forecasting | Civic-Municipal",
     paragraphs: [
-      "Oddysee is a documentation and licensing platform that helps applicants produce accurate, jurisdiction-specific paperwork with pre-written templates, guided editing, and the business tools needed to get a license application across the finish line...",
+      "Oddysee is the platform to automate the licensing process for domains that require a lot of documentation/plans. It has a documentation module with pre written ...",
     ],
     image:
       "/assets/final-images/capabilities/product-design/oddysee-success-story.png",
