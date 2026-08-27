@@ -43,13 +43,13 @@ export default function CloudSreProvidersSection() {
           className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16"
         >
           <div>
-            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#888]">
+            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
               Top Providers
             </p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl">
+            <h2 className="mt-4 text-[36px] font-semibold leading-tight">
               We work with the top 3 cloud providers
             </h2>
-            <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-[#555] md:text-base">
+            <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-black md:text-base">
               Our team boasts deep experience managing, optimizing, and
               automating infrastructure on the world&apos;s leading cloud
               platforms.

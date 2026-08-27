@@ -1,3 +1,5 @@
+import { insightProfileImages } from "./insightProfileImages";
+
 export const CLOUD_SRE_ACCENT = "#D3287A";
 
 export const cloudSreSplitCards = [
@@ -27,7 +29,8 @@ export const cloudSrePrinciples = [
     title: "Infrastructure as code",
     description:
       "Treating infrastructure like code with version control, so changes and fixes are traceable and builds are consistent and repeatable.",
-    image: "/assets/images/industry/cloud.jpg",
+    image:
+      "/assets/final-images/capabilities/cloud-sre/1-infrastructure_as_code.png",
     tools: [
       "Azure Resource Manager",
       "Pulumi",
@@ -40,7 +43,7 @@ export const cloudSrePrinciples = [
     title: "Automation",
     description:
       "Automating repetitive and error-prone tasks to improve speed, reliability, and consistency across environments.",
-    image: "/assets/images/industry/qa.jpg",
+    image: "/assets/final-images/capabilities/cloud-sre/2-Automation.png",
     tools: ["Ansible", "Terraform", "Jenkins", "GitHub Actions"],
   },
   {
@@ -48,7 +51,8 @@ export const cloudSrePrinciples = [
     title: "Monitoring & Error tracking",
     description:
       "Implementing observability, alerting, and error tracking to detect issues early and maintain high system reliability.",
-    image: "/assets/images/industry/monitoring.jpg",
+    image:
+      "/assets/final-images/capabilities/cloud-sre/3-monitoring_error_tracking.png",
     tools: ["Elastic", "Dynatrace", "Splunk", "Datadog", "New Relic"],
   },
   {
@@ -56,7 +60,7 @@ export const cloudSrePrinciples = [
     title: "Scalability",
     description:
       "Designing architectures that scale up or down smoothly based on demand, while maintaining performance and cost efficiency.",
-    image: "/assets/images/industry/accelerators-3.jpg",
+    image: "/assets/final-images/capabilities/cloud-sre/4-scalability.png",
     tools: ["Kubernetes"],
   },
   {
@@ -64,7 +68,7 @@ export const cloudSrePrinciples = [
     title: "Security",
     description:
       "Embedding security at every layer, from infrastructure and networks to applications and data.",
-    image: "/assets/images/industry/bg-security.jpg",
+    image: "/assets/final-images/capabilities/cloud-sre/5-security.png",
     tools: ["Datadog", "Istio", "checkov", "tfsec"],
   },
 ] as const;
@@ -135,7 +139,8 @@ export const cloudSreAccelerators = [
   {
     id: "engine",
     label: "AI Cloud Engine",
-    imageSrc: "/assets/images/capabilities/cloud-engine.svg",
+    imageSrc:
+      "/assets/final-images/capabilities/cloud-sre/ai_cloud_engine_visual_final.png",
     imageAlt: "AI Cloud Engine accelerator",
     paragraphs: [
       "Streamline AI/ML infrastructure deployment and management using industry-leading platforms like Databricks, Snowflake, Airflow, dbt, and MLflow.",
@@ -145,7 +150,8 @@ export const cloudSreAccelerators = [
   {
     id: "terraform",
     label: "Terraform Blueprints",
-    imageSrc: "/assets/images/capabilities/terraform.webp",
+    imageSrc:
+      "/assets/final-images/capabilities/cloud-sre/Terraform_Blueprints.png",
     imageAlt: "Terraform Blueprints accelerator",
     paragraphs: [
       "There are common components in all infrastructures, such as basic network configurations, provisioning of auto-scalable clusters, or even the setup of email and push notification services. Doing the same work over and over again is not only inefficient but also unchallenging for our engineers.",
@@ -155,26 +161,76 @@ export const cloudSreAccelerators = [
   },
 ] as const;
 
+export const cloudSreSuccessStories = [
+  {
+    id: "prism",
+    brand: "Prism",
+    category: "Retail forecasting",
+    paragraphs: [
+      "PRISM is a trends forecasting engine built for retail demand — handling seasonality, holidays, and messy real-world data without losing accuracy.",
+    ],
+    tags: [
+      "Demand forecasting",
+      "Seasonality modeling",
+      "Prophet API",
+    ],
+    image: "/assets/images/case-study/new-images/prism/prism-main.png",
+    imageAlt: "Prism retail trends forecasting platform",
+    background: "#48306E",
+    href: "/case-studies/prism",
+  },
+  {
+    id: "scheduling-engine",
+    brand: "Scheduling Engine",
+    category: "Workforce management",
+    paragraphs: [
+      "eForte built a multi-vertical scheduling engine for StrateX that automates workforce planning for call center and retail clients.",
+    ],
+    tags: [
+      "Automated scheduling",
+      "Compliance monitoring",
+      "Multi-vertical platform",
+    ],
+    image:
+      "/assets/final-images/capabilities/cloud-sre/Scheduling-Engine.png",
+    imageAlt: "Scheduling Engine workforce management platform",
+    background: "#0A2A42",
+    href: "/case-studies/scheduling-engine",
+  },
+];
+
 export const cloudSreInsights = [
   {
     id: "1",
-    category: "Cloud",
+    author: "eForte Cloud Studio",
+    authorImage: insightProfileImages.benjamin,
     title: "How SRE practices reduce downtime in multi-cloud environments",
+    summary:
+      "A practical look at SLOs, error budgets, and observability patterns that keep multi-cloud systems reliable as traffic and complexity grow.",
     date: "July 8, 2026",
+    tags: ["Cloud", "SRE"],
     image: "/assets/images/velocity-ai/insight-1.png",
   },
   {
     id: "2",
-    category: "DevOps",
+    author: "Gabriel Fagundez",
+    authorImage: insightProfileImages.edward,
     title: "A practical guide to Infrastructure as Code at enterprise scale",
+    summary:
+      "How to standardize Terraform modules, environments, and review workflows so IaC stays secure, reusable, and maintainable across teams.",
     date: "June 22, 2026",
+    tags: ["DevOps", "Cloud"],
     image: "/assets/images/velocity-ai/insight-2.png",
   },
   {
     id: "3",
-    category: "Security",
+    author: "eForte Cloud Studio",
+    authorImage: insightProfileImages.profile,
     title: "Building secure CI/CD pipelines without slowing delivery",
+    summary:
+      "Security controls that fit into the delivery path — scanning, policy gates, and secrets management that protect releases without blocking velocity.",
     date: "June 4, 2026",
+    tags: ["Security", "DevOps"],
     image: "/assets/images/velocity-ai/insight-3.png",
   },
 ];

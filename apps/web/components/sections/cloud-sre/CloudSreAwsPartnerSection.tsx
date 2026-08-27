@@ -10,7 +10,7 @@ import { CLOUD_SRE_ACCENT } from "@/data/capabilities/cloudSre";
 export default function CloudSreAwsPartnerSection() {
   return (
     <section className="bg-[#F4F6FA] text-default">
-      <div className="bg-[#F4F6FA] py-20 md:py-24">
+      <div className="bg-[#F4F6FA] py-16">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 18 }}
@@ -20,10 +20,10 @@ export default function CloudSreAwsPartnerSection() {
             className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16"
           >
             <div>
-              <h2 className="text-3xl font-semibold leading-tight md:text-4xl">
+              <h2 className="text-[36px] font-semibold leading-tight">
                 An AWS Advanced Tier Partner
               </h2>
-              <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-[#555] md:text-base">
+              <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-black md:text-base">
                 We are an Advanced Tier Partner providing comprehensive AWS
                 services.
               </p>
@@ -51,6 +51,8 @@ export default function CloudSreAwsPartnerSection() {
                   src="/assets/images/industry/aws-partner.png"
                   alt="AWS Partner Advanced Tier Services"
                   fill
+                  sizes="144px"
+                  quality={100}
                   className="object-contain"
                 />
               </div>

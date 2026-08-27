@@ -28,13 +28,13 @@ export default function CloudSreAcceleratorsSection() {
           transition={{ duration: 0.5 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-[#888]">
+          <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
             Increase Productivity
           </p>
-          <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl lg:text-[42px]">
+          <h2 className="mt-4 text-[36px] font-semibold leading-tight">
             Solution Accelerators
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-relaxed text-[#555] md:text-base">
+          <p className="mx-auto mt-5 max-w-2xl text-[15px] leading-relaxed text-black md:text-base">
             eForte Solution Accelerators are assets that are integral parts of
             our solutions and drive 50%+ increase in productivity, efficiency,
             and time to market.
@@ -46,7 +46,7 @@ export default function CloudSreAcceleratorsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="mt-12 rounded-[12px] bg-black px-5 py-10 text-white md:mt-16 md:rounded-[12px] md:px-12 md:py-14"
+          className="mt-12 rounded-[12px] bg-black px-5 py-8 text-white md:mt-16 md:rounded-[12px] md:px-12 md:py-10"
         >
           <div
             role="tablist"
@@ -68,7 +68,7 @@ export default function CloudSreAcceleratorsSection() {
                     "inline-flex items-center justify-center h-10 cursor-pointer rounded-full leading-none px-5 py-0 text-sm font-medium transition-all duration-200 md:px-7 md:py-0 md:text-[15px]",
                     isActive
                       ? "text-white"
-                      : "bg-[#5A5A5A] text-[#A7A7A7] hover:text-white"
+                      : "bg-[#5A5A5A] text-white hover:text-white"
                   )}
                   style={
                     isActive ? { backgroundColor: ACTIVE_TAB } : undefined
@@ -80,7 +80,7 @@ export default function CloudSreAcceleratorsSection() {
             })}
           </div>
 
-          <div className="relative mt-10 h-[520px] md:mt-14 md:h-[360px]">
+          <div className="relative mt-8 md:mt-10">
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={active.id}
@@ -91,22 +91,39 @@ export default function CloudSreAcceleratorsSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="absolute inset-0 mx-auto grid max-w-[900px] content-center items-center gap-8 lg:grid-cols-2 lg:gap-14"
+                className="mx-auto grid max-w-[900px] items-center gap-8 lg:grid-cols-2 lg:gap-14"
               >
-                <div className="flex h-[180px] items-center justify-center sm:h-[220px] md:h-[280px]">
-                  <div className="relative h-full w-full max-w-[340px]">
+                <div
+                  className={
+                    active.id === "engine" || active.id === "terraform"
+                      ? "flex h-[220px] items-center justify-center sm:h-[260px] md:h-[300px]"
+                      : "flex h-[180px] items-center justify-center sm:h-[220px] md:h-[260px]"
+                  }
+                >
+                  <div
+                    className={
+                      active.id === "engine" || active.id === "terraform"
+                        ? "relative h-full w-full max-w-[400px]"
+                        : "relative h-full w-full max-w-[340px]"
+                    }
+                  >
                     <Image
                       src={active.imageSrc}
                       alt={active.imageAlt}
                       fill
-                      sizes="340px"
+                      sizes={
+                        active.id === "engine" || active.id === "terraform"
+                          ? "(max-width: 640px) 90vw, 800px"
+                          : "(max-width: 640px) 90vw, 680px"
+                      }
+                      quality={90}
                       className="object-contain"
                       priority={active.id === "bootstrapper"}
                     />
                   </div>
                 </div>
 
-                <div className="space-y-4 text-[14px] leading-relaxed text-white/85 md:text-[15px]">
+                <div className="space-y-4 text-[14px] leading-relaxed text-white md:text-[15px]">
                   {active.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}

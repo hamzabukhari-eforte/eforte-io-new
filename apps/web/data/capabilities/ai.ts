@@ -1,3 +1,5 @@
+import { insightProfileImages } from "./insightProfileImages";
+
 export const AI_ACCENT = "#D3287A";
 
 export const aiCaseStudy = {
@@ -150,7 +152,7 @@ export const aiInsights = [
   {
     id: "1",
     author: "Maria Eugenia Millan",
-    authorImage: "/assets/images/capabilities/ai/avatar-maria-millan.jpg",
+    authorImage: insightProfileImages.benjamin,
     title:
       "Data Engineering Services in 2026: Execution, AI Readiness, and the Industrialization of Delivery",
     summary:
@@ -162,7 +164,7 @@ export const aiInsights = [
   {
     id: "2",
     author: "Gabriel Fagundez",
-    authorImage: "/assets/images/capabilities/ai/avatar-gabriel-fagundez.jpg",
+    authorImage: insightProfileImages.edward,
     title: "What I Learned Watching Four Women Lead Data at the Data+AI Summit",
     summary:
       "Leadership lessons from the Data+AI Summit — culture, community, and what it takes to build high-performing data and AI teams in 2026.",
@@ -173,7 +175,7 @@ export const aiInsights = [
   {
     id: "3",
     author: "eForte AI Studio",
-    authorImage: "/assets/images/velocity-ai/avatar-4.jpg",
+    authorImage: insightProfileImages.profile,
     title:
       "Introducing QBricks: An enterprise accelerator for AI agent development",
     summary:

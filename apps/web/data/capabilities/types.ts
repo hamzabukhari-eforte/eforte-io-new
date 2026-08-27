@@ -10,7 +10,9 @@ export type StudioBrand = {
   name: string;
   /** Key resolved to a react-icons mark in the client Hero */
   iconId?: StudioBrandIconId;
-  /** Optional logo path; when omitted, prefer icon then text label */
+  /** Small brand mark shown next to the name */
+  iconSrc?: string;
+  /** Optional full wordmark image (replaces icon + name) */
   logoSrc?: string;
 };
 
@@ -26,8 +28,13 @@ export type StudioHeroContent = {
   description: string;
   brandsLabel: string;
   brands: StudioBrand[];
+  /** Large right-panel graphic */
   graphicSrc: string;
+  /** Optional small mark next to the studio label; falls back to graphicSrc */
+  labelIconSrc?: string;
   ctaLabel: string;
+  /** Optional CTA background class; falls back to accent bg */
+  ctaBgClass?: string;
 };
 
 export type StudioFeatureTheme = "light" | "muted" | "dark" | "black";
@@ -62,6 +69,8 @@ export type StudioMidCtaContent = {
   titleHighlight: string;
   description: string;
   ctaLabel: string;
+  /** Optional icon above the mid-CTA title; falls back to hero graphic */
+  graphicSrc?: string;
 };
 
 /** Proprietary eForte technology callout (e.g. eForte Connect™, Legacy Bridge™) */
@@ -89,5 +98,6 @@ export type StudioPageContent = {
   /** Optional FAQs, rendered before the mid-page CTA */
   faqs?: StudioFaq[];
   faqsSubtitle?: string;
-  midCta: StudioMidCtaContent;
+  /** Optional mid-page CTA; omit to hide the section */
+  midCta?: StudioMidCtaContent;
 };

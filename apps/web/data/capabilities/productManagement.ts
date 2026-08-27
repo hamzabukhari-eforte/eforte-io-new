@@ -13,8 +13,9 @@ export const productManagementContent: StudioPageContent = {
     brandsLabel: "Brands that trust us",
     brands: studioTrustedBrands,
     graphicSrc:
-      "/assets/images/package/studios/product-management-studio-hero-diagram.svg",
+      "/assets/final-images/capabilities/porduct-management/crescents-blue.svg",
     ctaLabel: "Contact Us",
+    ctaBgClass: "bg-black",
   },
   features: [
     {
@@ -23,7 +24,8 @@ export const productManagementContent: StudioPageContent = {
       title: "Re-scoping and re-launching a stalled product initiative for Ferncliff Logistics",
       description:
         "Ferncliff Logistics had spent 8 months building a driver scheduling tool that was losing internal support because nobody could agree on what \"done\" meant. We ran a rapid discovery process, re-scoped the roadmap around a validated core use case, and re-launched the initiative with clear milestones and success metrics. Outcomes so far: time to next release cut to 6 weeks, stakeholder alignment up from 42% to 91%, core feature adoption reached 78% of target drivers within 60 days, and roadmap re-prioritization avoided an estimated $400K in low-value feature spend.",
-      image: "/assets/images/package/studios/ferncliff-logistics-case.svg",
+      image:
+        "/assets/final-images/capabilities/porduct-management/in-action.png",
       imageAlt: "Ferncliff Logistics product re-launch case study",
       theme: "dark",
       layout: "row",
@@ -37,7 +39,8 @@ export const productManagementContent: StudioPageContent = {
       title: "Product management",
       description:
         "We'll define a clear vision, and set strategic goals from creation to market success. Through market research and a deep understanding of your target audience, we provide the basis for informed decisions.",
-      image: "/assets/images/case-study/CulturalFit.jpg",
+      image:
+        "/assets/final-images/capabilities/porduct-management/product_management_1.png",
       imageAlt: "Product management team meeting",
       theme: "light",
       layout: "row",
@@ -52,12 +55,12 @@ export const productManagementContent: StudioPageContent = {
       description:
         "We provide comprehensive insights and data-driven analysis to assess product performance and viability. By using different analysis frameworks, we'll enable you to make informed decisions about your product's future.",
       image:
-        "/assets/images/capabilities/product-management/data-driven-analysis.svg",
+        "/assets/final-images/capabilities/porduct-management/product-consulting-and-evaluation-services-1.svg",
       imageAlt: "Data-driven analysis graphic",
       theme: "black",
       layout: "row",
       imageSide: "left",
-      mediaInset: true,
+      mediaInset: false,
       cardKind: "text",
     },
     {
@@ -66,7 +69,8 @@ export const productManagementContent: StudioPageContent = {
       title: "Product pricing and monetization strategy",
       description:
         "We optimize pricing and monetization strategies through market research, pricing frameworks, and customer behavior analysis. Achieve maximum profitability with our effective pricing strategies.",
-      image: "/assets/images/industry/working.jpg",
+      image:
+        "/assets/final-images/capabilities/porduct-management/product_pricing_3.png",
       imageAlt: "",
       theme: "light",
       layout: "half",
@@ -76,7 +80,8 @@ export const productManagementContent: StudioPageContent = {
     {
       id: "pricing-photo",
       title: "Product pricing collaboration",
-      image: "/assets/images/case-study/CulturalFit.jpg",
+      image:
+        "/assets/final-images/capabilities/porduct-management/product_pricing_3.png",
       imageAlt: "Team collaborating on product pricing strategy",
       theme: "light",
       layout: "half",
@@ -107,11 +112,14 @@ export const productManagementContent: StudioPageContent = {
     },
   ],
   faqsSubtitle: "Frequently asked questions about our Product Management services",
-  midCta: {
-    titleBefore: "Let's build the right thing, ",
-    titleHighlight: "in the right order.",
-    description:
-      "Our team is here to empower you with a tailored approach, identifying and solving the specific challenges your business faces.",
-    ctaLabel: "Contact Us",
-  },
+  // Mid CTA intentionally preserved for possible future reuse
+  // midCta: {
+  //   titleBefore: "Let's build the right thing, ",
+  //   titleHighlight: "in the right order.",
+  //   description:
+  //     "Our team is here to empower you with a tailored approach, identifying and solving the specific challenges your business faces.",
+  //   ctaLabel: "Contact Us",
+  //   graphicSrc:
+  //     "/assets/final-images/capabilities/porduct-management/crescents.svg",
+  // },
 };

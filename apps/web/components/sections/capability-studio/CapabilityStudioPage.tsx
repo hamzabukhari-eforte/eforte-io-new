@@ -31,11 +31,13 @@ export default function CapabilityStudioPage({
           subtitle={content.faqsSubtitle}
         />
       ) : null}
-      <CapabilityStudioMidCta
-        accent={content.accent}
-        midCta={content.midCta}
-        graphicSrc={content.hero.graphicSrc}
-      />
+      {content.midCta ? (
+        <CapabilityStudioMidCta
+          accent={content.accent}
+          midCta={content.midCta}
+          graphicSrc={content.midCta.graphicSrc ?? content.hero.graphicSrc}
+        />
+      ) : null}
     </main>
   );
 }

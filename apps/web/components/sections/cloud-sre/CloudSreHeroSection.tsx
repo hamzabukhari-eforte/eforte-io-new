@@ -9,18 +9,19 @@ import Container from "@/components/atoms/Container";
 export default function CloudSreHeroSection() {
   return (
     <section className="relative flex min-h-[760px] flex-col justify-center overflow-hidden bg-default pt-28 pb-20 md:min-h-screen md:pt-36">
-      <div className="absolute inset-0">
+      <div className="pointer-events-none absolute inset-y-[18%] right-14 w-[34%] max-w-[430px] md:right-20 md:w-[32%] lg:right-28 lg:max-w-[460px]">
         <Image
-          src="/assets/images/package/studios/cloud-devops-studio-hero-diagram.svg"
+          src="/assets/final-images/capabilities/cloud-sre/cloud_sre_hero.png"
           alt=""
           fill
           priority
-          className="object-cover object-center"
+          sizes="(max-width: 768px) 50vw, min(34vw, 460px)"
+          quality={90}
+          className="object-contain object-right"
           aria-hidden
         />
-        <div className="absolute inset-0 bg-linear-to-r from-black/95 via-black/75 to-black/35" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_35%,rgba(211,40,122,0.35),transparent_34%)]" />
       </div>
+      <div className="absolute inset-0 bg-linear-to-r from-default via-default/90 to-transparent" />
 
       <Container className="relative z-10">
         <div className="max-w-3xl">
@@ -48,7 +49,7 @@ export default function CloudSreHeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.16 }}
-            className="mt-6 max-w-2xl text-base leading-7 text-white/82 md:text-lg"
+            className="mt-6 max-w-2xl text-base leading-7 text-white md:text-lg"
           >
             Every AI system, application, and data pipeline we build needs
             somewhere reliable to run. Our Cloud, SRE & DevOps Studio designs

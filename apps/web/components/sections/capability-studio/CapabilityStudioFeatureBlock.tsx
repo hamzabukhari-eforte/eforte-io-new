@@ -98,7 +98,7 @@ function FeatureMedia({
 
   if (isInset) {
     return (
-      <div className="flex h-full min-h-[300px] items-stretch p-5 md:min-h-[380px] md:p-8 lg:min-h-full">
+      <div className="flex h-full min-h-[300px] items-stretch p-3 md:min-h-[380px] lg:min-h-full">
         <div className="relative w-full min-h-[260px] overflow-hidden rounded-[12px] md:min-h-0">
           <Image
             src={feature.image}
@@ -139,6 +139,7 @@ function FeatureMedia({
           fill
           sizes="(max-width: 1024px) 100vw, 50vw"
           className="object-cover object-center"
+          unoptimized={isSvg}
         />
       )}
     </div>

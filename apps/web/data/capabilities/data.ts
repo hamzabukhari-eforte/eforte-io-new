@@ -1,3 +1,5 @@
+import { insightProfileImages } from "./insightProfileImages";
+
 export const DATA_ACCENT = "#D3287A";
 
 export const dataPartnerCertifications = [
@@ -308,7 +310,7 @@ export const dataInsights = [
     excerpt:
       "With 250+ certified engineers and deep Databricks experience, we continue expanding industry specialization across media and entertainment workloads.",
     author: "Gabriel Fagundez",
-    authorImage: "/assets/images/velocity-ai/avatar-5.jpg",
+    authorImage: insightProfileImages.benjamin,
     date: "July 17, 2026",
     image: "/assets/images/velocity-ai/insight-1.png",
   },
@@ -320,7 +322,7 @@ export const dataInsights = [
     excerpt:
       "Four women leading data and AI shared practical lessons on platform strategy, culture, and delivery at the Data+AI Summit.",
     author: "Aldis Stareczek",
-    authorImage: "/assets/images/case-study/Chris_Morton.jpg",
+    authorImage: insightProfileImages.edward,
     date: "July 10, 2026",
     image: "/assets/images/velocity-ai/insight-2.png",
   },
@@ -332,7 +334,7 @@ export const dataInsights = [
     excerpt:
       "AI tools only perform as well as the documentation and knowledge systems behind them — quality information is the foundation.",
     author: "eForte Data Team",
-    authorImage: "/assets/images/velocity-ai/avatar-4.jpg",
+    authorImage: insightProfileImages.profile,
     date: "July 1, 2026",
     image: "/assets/images/velocity-ai/insight-3.png",
   },

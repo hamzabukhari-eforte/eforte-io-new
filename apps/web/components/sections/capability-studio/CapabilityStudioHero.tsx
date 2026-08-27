@@ -43,7 +43,7 @@ export default function CapabilityStudioHero({
               <div className="flex flex-1 flex-col justify-center px-6 py-10 sm:px-10 md:px-12 md:py-14">
                 <div className="flex items-center gap-3">
                   <Image
-                    src={hero.graphicSrc}
+                    src={hero.labelIconSrc ?? hero.graphicSrc}
                     alt=""
                     width={28}
                     height={28}
@@ -98,7 +98,16 @@ export default function CapabilityStudioHero({
                         key={brand.name}
                         className="inline-flex items-center gap-1.5 text-[#B0B0B0] transition-colors hover:text-[#8A8A8A]"
                       >
-                        {BrandIcon ? (
+                        {brand.iconSrc ? (
+                          <Image
+                            src={brand.iconSrc}
+                            alt=""
+                            width={20}
+                            height={20}
+                            className="h-4 w-4 shrink-0 object-contain md:h-5 md:w-5"
+                            aria-hidden
+                          />
+                        ) : BrandIcon ? (
                           <BrandIcon
                             className="h-4 w-4 shrink-0 md:h-5 md:w-5"
                             aria-hidden
@@ -131,7 +140,7 @@ export default function CapabilityStudioHero({
               <ContactCTA
                 className={cn(
                   "flex h-14 w-full items-center justify-center gap-3 text-base font-medium text-white transition-opacity hover:opacity-90 md:h-16",
-                  tokens.bgClass
+                  hero.ctaBgClass ?? tokens.bgClass
                 )}
               >
                 {hero.ctaLabel}

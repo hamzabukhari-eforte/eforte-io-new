@@ -11,18 +11,22 @@ import {
   HiShieldCheck,
 } from "react-icons/hi";
 import {
+  SiAmazonwebservices,
   SiAnsible,
   SiDatadog,
+  SiDynatrace,
   SiElastic,
   SiGithubactions,
+  SiIstio,
   SiJenkins,
   SiKubernetes,
   SiNewrelic,
+  SiOwasp,
   SiPulumi,
   SiSplunk,
   SiTerraform,
+  SiTrivy,
 } from "react-icons/si";
-import { VscAzure } from "react-icons/vsc";
 import type { IconType } from "react-icons";
 import Container from "@/components/atoms/Container";
 import {
@@ -38,23 +42,31 @@ const tabIcons: Record<(typeof cloudSrePrinciples)[number]["id"], IconType> = {
   security: HiShieldCheck,
 };
 
-const toolIcons: Record<string, IconType> = {
-  "Azure Resource Manager": VscAzure,
-  Pulumi: SiPulumi,
-  Terraform: SiTerraform,
-  "AWS CloudFormation": SiTerraform,
-  Ansible: SiAnsible,
-  Jenkins: SiJenkins,
-  "GitHub Actions": SiGithubactions,
-  Elastic: SiElastic,
-  Dynatrace: HiChartBar,
-  Splunk: SiSplunk,
-  Datadog: SiDatadog,
-  "New Relic": SiNewrelic,
-  Kubernetes: SiKubernetes,
-  Istio: HiShieldCheck,
-  checkov: HiShieldCheck,
-  tfsec: HiShieldCheck,
+type ToolVisual =
+  | { kind: "icon"; Icon: IconType }
+  | { kind: "image"; src: string; alt: string };
+
+const toolVisuals: Record<string, ToolVisual> = {
+  "Azure Resource Manager": {
+    kind: "image",
+    src: "/assets/images/capabilities/providers/azure.svg",
+    alt: "Microsoft Azure",
+  },
+  Pulumi: { kind: "icon", Icon: SiPulumi },
+  Terraform: { kind: "icon", Icon: SiTerraform },
+  "AWS CloudFormation": { kind: "icon", Icon: SiAmazonwebservices },
+  Ansible: { kind: "icon", Icon: SiAnsible },
+  Jenkins: { kind: "icon", Icon: SiJenkins },
+  "GitHub Actions": { kind: "icon", Icon: SiGithubactions },
+  Elastic: { kind: "icon", Icon: SiElastic },
+  Dynatrace: { kind: "icon", Icon: SiDynatrace },
+  Splunk: { kind: "icon", Icon: SiSplunk },
+  Datadog: { kind: "icon", Icon: SiDatadog },
+  "New Relic": { kind: "icon", Icon: SiNewrelic },
+  Kubernetes: { kind: "icon", Icon: SiKubernetes },
+  Istio: { kind: "icon", Icon: SiIstio },
+  checkov: { kind: "icon", Icon: SiOwasp },
+  tfsec: { kind: "icon", Icon: SiTrivy },
 };
 
 function ToolMark({
@@ -64,13 +76,19 @@ function ToolMark({
   name: string;
   size?: "sm" | "md" | "lg";
 }) {
-  const Icon = toolIcons[name];
+  const visual = toolVisuals[name];
   const iconClass =
     size === "lg"
       ? "h-10 w-10 shrink-0 md:h-12 md:w-12"
       : size === "sm"
         ? "h-5 w-5 shrink-0"
         : "h-6 w-6 shrink-0";
+  const imageClass =
+    size === "lg"
+      ? "h-10 w-auto shrink-0 md:h-12"
+      : size === "sm"
+        ? "h-5 w-auto shrink-0"
+        : "h-6 w-auto shrink-0";
   const textClass =
     size === "lg"
       ? "text-lg font-semibold tracking-tight md:text-xl"
@@ -80,7 +98,17 @@ function ToolMark({
 
   return (
     <span className="inline-flex items-center gap-2 text-default md:gap-2.5">
-      {Icon ? <Icon className={iconClass} /> : null}
+      {visual?.kind === "icon" ? (
+        <visual.Icon className={iconClass} aria-hidden />
+      ) : visual?.kind === "image" ? (
+        <Image
+          src={visual.src}
+          alt={visual.alt}
+          width={48}
+          height={48}
+          className={imageClass}
+        />
+      ) : null}
       <span className={`${textClass} whitespace-nowrap`}>{name}</span>
     </span>
   );
@@ -129,7 +157,7 @@ export default function CloudSreApproachSection() {
 
   return (
     <section className="bg-default">
-      <div className="rounded-[12px] bg-black py-20 text-white md:rounded-[12px] md:py-28">
+      <div className="rounded-[12px] bg-black py-16 text-white md:rounded-[12px]">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -138,10 +166,10 @@ export default function CloudSreApproachSection() {
             transition={{ duration: 0.5 }}
             className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-start lg:gap-20"
           >
-            <h2 className="max-w-md text-3xl font-semibold leading-tight md:text-4xl lg:text-[48px]">
+            <h2 className="max-w-md text-[36px] font-semibold leading-tight">
               Our approach to cloud engineering
             </h2>
-            <p className="max-w-xl text-base leading-relaxed text-white/75 lg:pt-2">
+            <p className="max-w-xl text-base leading-relaxed text-white lg:pt-2">
               We embrace 5 key principles as part of our cloud engineering
               philosophy, centered around agility, resilience, automation,
               scalability, and best-in-class security.
@@ -171,10 +199,10 @@ export default function CloudSreApproachSection() {
                           <Icon className="h-3.5 w-3.5" />
                         </span>
                         <div className="min-w-0">
-                          <p className="text-base font-semibold leading-snug text-white md:text-lg">
+                          <p className="text-[20px] font-semibold leading-snug text-white">
                             {item.title}
                           </p>
-                          <p className="mt-2 text-sm leading-relaxed text-white/70 md:text-[15px]">
+                          <p className="mt-2 text-[16px] leading-relaxed text-white">
                             {item.description}
                           </p>
                         </div>
@@ -188,10 +216,10 @@ export default function CloudSreApproachSection() {
                     key={item.id}
                     type="button"
                     onClick={() => setActiveId(item.id)}
-                    className="flex w-full cursor-pointer items-center gap-3 px-4 py-2.5 text-left text-[#8A8A8A] transition-colors hover:text-[#B0B0B0] md:px-5 md:py-3"
+                    className="flex w-full cursor-pointer items-center gap-3 px-4 py-2.5 text-left text-white transition-colors hover:text-white md:px-5 md:py-3"
                   >
                     <Icon className="h-4 w-4 shrink-0" />
-                    <span className="text-[15px] font-medium leading-snug md:text-base">
+                    <span className="text-[20px] font-medium leading-snug">
                       {item.title}
                     </span>
                   </button>
@@ -214,7 +242,8 @@ export default function CloudSreApproachSection() {
                       src={active.image}
                       alt={active.title}
                       fill
-                      sizes="(max-width: 1024px) 90vw, 620px"
+                      sizes="(max-width: 1024px) 100vw, (max-width: 1400px) 55vw, 800px"
+                      quality={90}
                       className="object-cover"
                     />
                   </div>

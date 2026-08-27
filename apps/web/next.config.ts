@@ -28,6 +28,8 @@ function getStrapiRemotePatterns(): NonNullable<NextConfig["images"]>["remotePat
 
 const nextConfig: NextConfig = {
   images: {
+    // Next 16 defaults to [75] only; allow higher qualities for UI/screenshot assets.
+    qualities: [75, 90, 100],
     remotePatterns: [
       { protocol: "https", hostname: "storage.googleapis.com", pathname: "/**" },
       { protocol: "https", hostname: "cdn.jsdelivr.net", pathname: "/**" },

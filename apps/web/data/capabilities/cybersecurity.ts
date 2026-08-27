@@ -1,3 +1,5 @@
+import { insightProfileImages } from "./insightProfileImages";
+
 export const CYBER_ACCENT = "#D3287A";
 
 export const cyberHero = {
@@ -288,7 +290,7 @@ export const cyberInsights = [
   {
     id: "1",
     author: "Michell Mamrut",
-    authorImage: "/assets/images/velocity-ai/avatar-2.jpg",
+    authorImage: insightProfileImages.benjamin,
     title:
       "HIPAA Security Rule: what's changing, what's coming, and how to prepare now",
     summary:
@@ -300,7 +302,7 @@ export const cyberInsights = [
   {
     id: "2",
     author: "João Claudino Silva",
-    authorImage: "/assets/images/velocity-ai/avatar-3.jpg",
+    authorImage: insightProfileImages.edward,
     title: "Why SIEM Is Not Enough, and Where AI Fills the Gap",
     summary:
       "SIEM captures alerts, but AI is needed to effectively catch threats — how modern SOC teams close the gap between noise and action.",
@@ -311,7 +313,7 @@ export const cyberInsights = [
   {
     id: "3",
     author: "Michell Mamrut",
-    authorImage: "/assets/images/velocity-ai/avatar-4.jpg",
+    authorImage: insightProfileImages.profile,
     title:
       "The healthcare cybersecurity crisis: Lessons from Blackout-26 and how to protect patient data under HIPAA",
     summary:

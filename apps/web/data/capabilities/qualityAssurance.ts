@@ -1,3 +1,5 @@
+import { insightProfileImages } from "./insightProfileImages";
+
 export const QA_ACCENT = "#D3287A";
 
 export const qualityAssuranceHero = {
@@ -172,7 +174,7 @@ export const qualityAssuranceInsights = [
   {
     id: "1",
     author: "Belen Luna",
-    authorImage: "/assets/images/velocity-ai/avatar-2.jpg",
+    authorImage: insightProfileImages.benjamin,
     title: "Testing the Testers: QA in the AI Era",
     summary:
       "How AI is reshaping quality assurance — and why human judgment still sits at the center of trustworthy testing programs.",
@@ -183,7 +185,7 @@ export const qualityAssuranceInsights = [
   {
     id: "2",
     author: "Jose Robin",
-    authorImage: "/assets/images/velocity-ai/avatar-3.jpg",
+    authorImage: insightProfileImages.edward,
     title:
       "New role, same soul: A QA mindset in the world of Process Automation",
     summary:
@@ -195,7 +197,7 @@ export const qualityAssuranceInsights = [
   {
     id: "3",
     author: "Belen Luna",
-    authorImage: "/assets/images/velocity-ai/avatar-4.jpg",
+    authorImage: insightProfileImages.profile,
     title: "The fundamental importance of AI in software testing",
     summary:
       "AI is transforming quality assurance with smarter coverage, faster feedback, and risk-based prioritization across the delivery lifecycle.",
