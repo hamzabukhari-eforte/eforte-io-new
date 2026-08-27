@@ -161,7 +161,7 @@ export default function OurTimelineSection() {
           <button
             type="button"
             onClick={goToPrev}
-            className="flex h-10 w-12 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/20"
+            className="flex h-10 w-12 cursor-pointer items-center justify-center rounded-full leading-none border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/20"
             aria-label="Go to newer year"
           >
             <HiChevronLeft className="w-6 h-6" />
@@ -169,7 +169,7 @@ export default function OurTimelineSection() {
           <button
             type="button"
             onClick={goToNext}
-            className="flex h-10 w-12 cursor-pointer items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/20"
+            className="flex h-10 w-12 cursor-pointer items-center justify-center rounded-full leading-none border border-white/20 bg-white/10 text-white transition-colors hover:bg-white/20"
             aria-label="Go to older year"
           >
             <HiChevronRight className="w-6 h-6" />

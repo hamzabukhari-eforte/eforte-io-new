@@ -39,7 +39,7 @@ function SuccessStoryCard({
 
         <Link
           href={story.href}
-          className="inline-flex items-center h-10 w-fit rounded-full bg-white px-6 py-0 text-sm font-medium text-default transition-colors hover:bg-white/90"
+          className="inline-flex items-center justify-center h-10 w-fit rounded-full leading-none bg-white px-6 py-0 text-sm font-medium text-default transition-colors hover:bg-white/90"
         >
           Learn more
         </Link>

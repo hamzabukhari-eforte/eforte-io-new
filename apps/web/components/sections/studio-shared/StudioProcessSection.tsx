@@ -75,7 +75,7 @@ export default function StudioProcessSection({
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="h-10 rounded-full border border-gray-200 px-3 py-1 text-xs font-medium text-gray-600"
+                        className="inline-flex items-center justify-center h-10 rounded-full leading-none border border-gray-200 px-3 py-0 text-xs font-medium text-gray-600"
                       >
                         {tag}
                       </span>

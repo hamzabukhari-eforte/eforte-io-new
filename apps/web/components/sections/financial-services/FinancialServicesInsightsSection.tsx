@@ -96,7 +96,7 @@ export default function FinancialServicesInsightsSection() {
                 </p>
                 <Link
                   href="#"
-                  className="mt-8 inline-flex h-10 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-default transition-all duration-200 hover:bg-white/85"
+                  className="mt-8 inline-flex h-10 items-center justify-center rounded-full leading-none bg-white px-8 text-sm font-medium text-default transition-all duration-200 hover:bg-white/85"
                 >
                   Learn more
                 </Link>

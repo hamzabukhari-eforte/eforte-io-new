@@ -61,13 +61,13 @@ export default function CareersHeroSection() {
           >
             <Link
               href="#open-roles"
-              className="inline-flex h-10 items-center justify-center rounded-full bg-gradient-to-r from-[#be185d] to-[#db2777] px-8 text-sm font-medium text-white shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] transition-all hover:-translate-y-0.5 hover:from-[#db2777] hover:to-[#be185d]"
+              className="inline-flex h-10 items-center justify-center rounded-full leading-none bg-gradient-to-r from-[#be185d] to-[#db2777] px-8 text-sm font-medium text-white shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] transition-all hover:-translate-y-0.5 hover:from-[#db2777] hover:to-[#be185d]"
             >
               Explore Open Roles
             </Link>
             <Link
               href="#our-values"
-              className="inline-flex h-10 items-center justify-center rounded-full border border-white/50 px-8 text-sm font-medium text-white transition-all hover:border-white hover:bg-white hover:text-default"
+              className="inline-flex h-10 items-center justify-center rounded-full leading-none border border-white/50 px-8 text-sm font-medium text-white transition-all hover:border-white hover:bg-white hover:text-default"
             >
               Learn About Our Culture
             </Link>

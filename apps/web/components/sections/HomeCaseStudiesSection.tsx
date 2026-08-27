@@ -98,7 +98,7 @@ export default function HomeCaseStudiesSection() {
 
               <Link
                 href={study.ctaHref}
-                className="mt-8 inline-flex h-10 items-center justify-center rounded-full bg-primary-pink px-8 py-0 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-primary-pink/90"
+                className="mt-8 inline-flex h-10 items-center justify-center rounded-full leading-none bg-primary-pink px-8 py-0 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:bg-primary-pink/90"
               >
                 {study.ctaLabel}
               </Link>

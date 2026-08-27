@@ -36,7 +36,7 @@ export default function VelocityAIEngineeringSection() {
             Velocity AI empowers engineering teams to become AI-first, turning traditional agile pods into data-centric, AI-driven squads for faster, smarter software delivery.
           </p>
           <ContactCTA
-            className="inline-flex h-10 items-center justify-center bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-8 py-0 md:px-10 md:py-0 rounded-full font-medium text-sm md:text-[15px] transition-all shadow-[0_4px_20px_rgba(219,39,119,0.4)] hover:shadow-[0_6px_25px_rgba(219,39,119,0.6)] hover:-translate-y-0.5"
+            className="inline-flex h-10 items-center justify-center bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-8 py-0 md:px-10 md:py-0 rounded-full leading-none font-medium text-sm md:text-[15px] transition-all shadow-[0_4px_20px_rgba(219,39,119,0.4)] hover:shadow-[0_6px_25px_rgba(219,39,119,0.6)] hover:-translate-y-0.5"
           >
             Contact Us
           </ContactCTA>

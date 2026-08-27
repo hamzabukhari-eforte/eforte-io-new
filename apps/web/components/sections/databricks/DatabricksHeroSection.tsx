@@ -16,7 +16,7 @@ export default function DatabricksHeroSection() {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45 }}
-              className="inline-flex h-10 items-center justify-center gap-2.5 rounded-full bg-black px-4 py-2"
+              className="inline-flex h-10 items-center justify-center gap-2.5 rounded-full leading-none bg-black px-4 py-0"
             >
               <Image
                 src={databricksHero.badgeIconSrc}
@@ -60,7 +60,7 @@ export default function DatabricksHeroSection() {
               transition={{ duration: 0.5, delay: 0.28 }}
               className="mt-9"
             >
-              <ContactCTA className="inline-flex h-10 items-center justify-center rounded-full bg-black px-8 text-sm font-semibold text-white transition-opacity hover:opacity-85">
+              <ContactCTA className="inline-flex h-10 items-center justify-center rounded-full leading-none bg-black px-8 text-sm font-semibold text-white transition-opacity hover:opacity-85">
                 {databricksHero.ctaLabel}
               </ContactCTA>
             </motion.div>

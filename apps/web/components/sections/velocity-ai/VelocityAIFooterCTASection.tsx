@@ -37,12 +37,12 @@ export default function VelocityAIFooterCTASection() {
         </p>
         <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
           <ContactCTA
-            className="inline-flex h-10 items-center justify-center bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-9 py-0.5 rounded-full text-[15px] font-medium transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
+            className="inline-flex h-10 items-center justify-center bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-9 py-0 rounded-full leading-none text-[15px] font-medium transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
           >
             Get in touch
           </ContactCTA>
           <QuoteCTA
-            className="inline-flex h-10 items-center justify-center border border-white/70 bg-transparent px-9 py-0.5 rounded-full text-[15px] font-medium text-white transition-all hover:bg-white hover:text-default hover:-translate-y-0.5"
+            className="inline-flex h-10 items-center justify-center border border-white/70 bg-transparent px-9 py-0 rounded-full leading-none text-[15px] font-medium text-white transition-all hover:bg-white hover:text-default hover:-translate-y-0.5"
           >
             Get a Quote
           </QuoteCTA>

@@ -71,7 +71,7 @@ export default function CloudSreSplitSection() {
                   </p>
                   <Link
                     href={card.href}
-                    className="mt-8 inline-flex h-10 items-center justify-center rounded-full bg-default px-7 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                    className="mt-8 inline-flex h-10 items-center justify-center rounded-full leading-none bg-default px-7 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                   >
                     {card.cta}
                   </Link>

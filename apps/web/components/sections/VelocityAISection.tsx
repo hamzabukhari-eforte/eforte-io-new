@@ -103,7 +103,7 @@ export default function VelocityAISection() {
             >
               <Link
                 href="#"
-                className="inline-flex h-10 items-center justify-center px-9 py-0.5 rounded-full text-[15px] font-medium text-primary-pink border border-primary-pink bg-transparent hover:bg-primary-pink hover:border-primary-pink hover:text-white transition-all duration-200"
+                className="inline-flex h-10 items-center justify-center px-9 py-0 rounded-full leading-none text-[15px] font-medium text-primary-pink border border-primary-pink bg-transparent hover:bg-primary-pink hover:border-primary-pink hover:text-white transition-all duration-200"
               >
                 Learn more
               </Link>

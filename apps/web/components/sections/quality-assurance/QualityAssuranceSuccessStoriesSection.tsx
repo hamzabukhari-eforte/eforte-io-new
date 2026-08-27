@@ -75,7 +75,7 @@ export default function QualityAssuranceSuccessStoriesSection() {
                     <span
                       key={tag}
                       className={cn(
-                        "inline-flex h-10 items-center justify-center rounded-full px-4 py-1.5 text-sm font-medium",
+                        "inline-flex h-10 items-center justify-center rounded-full leading-none px-4 py-0.5 text-sm font-medium",
                         story.tagClass
                       )}
                     >
@@ -86,7 +86,7 @@ export default function QualityAssuranceSuccessStoriesSection() {
 
                 <Link
                   href="/impact-studies"
-                  className="mt-8 inline-flex h-10 items-center justify-center rounded-full bg-default px-8 text-sm font-medium text-white transition-all duration-200 hover:bg-default/85"
+                  className="mt-8 inline-flex h-10 items-center justify-center rounded-full leading-none bg-default px-8 text-sm font-medium text-white transition-all duration-200 hover:bg-default/85"
                 >
                   Learn more
                 </Link>

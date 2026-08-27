@@ -42,7 +42,7 @@ export default function AiDataCtaSection() {
 
             <Link
               href="/capabilities/data"
-              className="inline-flex h-10 shrink-0 items-center justify-center rounded-full bg-white px-8 text-sm font-semibold text-default transition-opacity hover:opacity-90"
+              className="inline-flex h-10 shrink-0 items-center justify-center rounded-full leading-none bg-white px-8 text-sm font-semibold text-default transition-opacity hover:opacity-90"
             >
               Learn more
             </Link>

@@ -42,7 +42,7 @@ export default function DatabricksWhitepaperSection() {
               </div>
               <Link
                 href={databricksWhitepaper.ctaHref}
-                className="mt-8 inline-flex h-10 items-center justify-center rounded-full bg-[#E5484D] px-8 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                className="mt-8 inline-flex h-10 items-center justify-center rounded-full leading-none bg-[#E5484D] px-8 text-sm font-semibold text-white transition-opacity hover:opacity-90"
               >
                 {databricksWhitepaper.ctaLabel}
               </Link>

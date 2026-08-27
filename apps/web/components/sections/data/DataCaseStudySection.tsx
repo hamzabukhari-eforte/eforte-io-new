@@ -75,7 +75,7 @@ export default function DataCaseStudySection() {
                   {story.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="h-10 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-primary-pink"
+                      className="inline-flex items-center justify-center h-10 rounded-full leading-none bg-white px-3 py-0 text-xs font-medium text-primary-pink"
                     >
                       {tag}
                     </span>
@@ -83,7 +83,7 @@ export default function DataCaseStudySection() {
                 </div>
                 <Link
                   href="/impact-studies"
-                  className="mt-8 inline-flex h-10 items-center justify-center rounded-full bg-white px-7 py-0 text-sm font-semibold text-primary-pink transition-opacity hover:opacity-90"
+                  className="mt-8 inline-flex h-10 items-center justify-center rounded-full leading-none bg-white px-7 py-0 text-sm font-semibold text-primary-pink transition-opacity hover:opacity-90"
                 >
                   Learn more
                 </Link>

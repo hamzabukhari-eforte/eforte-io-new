@@ -69,7 +69,7 @@ export default function HealthcarePortfolioSection() {
 
                 <button
                   type="submit"
-                  className="mt-3 inline-flex h-10 w-fit items-center justify-center rounded-full border border-white bg-white px-8 text-sm font-medium text-default transition-all duration-300 hover:bg-transparent hover:text-white"
+                  className="mt-3 inline-flex h-10 w-fit items-center justify-center rounded-full leading-none border border-white bg-white px-8 text-sm font-medium text-default transition-all duration-300 hover:bg-transparent hover:text-white"
                 >
                   Schedule a consultation
                 </button>

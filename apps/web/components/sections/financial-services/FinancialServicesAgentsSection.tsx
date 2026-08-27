@@ -117,7 +117,7 @@ export default function FinancialServicesAgentsSection() {
                   id={`tab-${tab.id}`}
                   onClick={() => setActiveId(tab.id)}
                   className={cn(
-                    "h-10 cursor-pointer rounded-full px-4 py-0 text-sm font-medium transition-all duration-200 md:px-6",
+                    "inline-flex items-center justify-center h-10 cursor-pointer rounded-full leading-none px-4 py-0 text-sm font-medium transition-all duration-200 md:px-6",
                     isActive
                       ? "bg-default text-white shadow-[0_2px_8px_rgba(0, 0, 0, 0.15)]"
                       : "text-default/70 hover:bg-default hover:text-white"

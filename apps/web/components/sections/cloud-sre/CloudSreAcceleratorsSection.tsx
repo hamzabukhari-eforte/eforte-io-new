@@ -65,7 +65,7 @@ export default function CloudSreAcceleratorsSection() {
                   id={`accelerator-tab-${item.id}`}
                   onClick={() => setActiveId(item.id)}
                   className={cn(
-                    "h-10 cursor-pointer rounded-full px-5 py-0 text-sm font-medium transition-all duration-200 md:px-7 md:py-0 md:text-[15px]",
+                    "inline-flex items-center justify-center h-10 cursor-pointer rounded-full leading-none px-5 py-0 text-sm font-medium transition-all duration-200 md:px-7 md:py-0 md:text-[15px]",
                     isActive
                       ? "text-white"
                       : "bg-[#5A5A5A] text-[#A7A7A7] hover:text-white"

@@ -69,7 +69,7 @@ export default function VelocityAIInsightsSection() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className="inline-flex h-10 items-center justify-center px-4 py-1 md:px-5 md:py-1.5 rounded-full border border-[#D3287A] bg-pink-900/5 backdrop-blur-sm mb-4 md:mb-6">
+        <div className="inline-flex h-10 items-center justify-center px-4 py-0 md:px-5 rounded-full leading-none border border-[#D3287A] bg-pink-900/5 backdrop-blur-sm mb-4 md:mb-6">
           <span className={typography.badge + " text-[#D3287A] tracking-[0.2em] block"}>
             Expert Insights
           </span>
@@ -152,7 +152,7 @@ export default function VelocityAIInsightsSection() {
       >
         <Link
           href="#"
-          className="inline-flex h-10 items-center justify-center bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-9 py-0.5 rounded-full text-[15px] font-medium transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
+          className="inline-flex h-10 items-center justify-center bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-9 py-0 rounded-full leading-none text-[15px] font-medium transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
         >
           Discover more
         </Link>

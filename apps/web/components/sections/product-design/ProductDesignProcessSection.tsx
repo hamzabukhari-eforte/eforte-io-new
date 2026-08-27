@@ -80,7 +80,7 @@ export default function ProductDesignProcessSection() {
                     onClick={() => scrollToCard(id)}
                     aria-current={isActive ? "true" : undefined}
                     className={cn(
-                      "h-10 shrink-0 cursor-pointer rounded-full px-5 py-0 text-base font-medium whitespace-nowrap transition-colors duration-200 md:px-6 md:text-lg",
+                      "inline-flex items-center justify-center h-10 shrink-0 cursor-pointer rounded-full leading-none px-5 py-0 text-base font-medium whitespace-nowrap transition-colors duration-200 md:px-6 md:text-lg",
                       isActive
                         ? "bg-black text-white"
                         : "bg-transparent text-gray-500 hover:text-gray-800"
@@ -139,7 +139,7 @@ export default function ProductDesignProcessSection() {
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="h-10 rounded-full border border-gray-200 px-3 py-1 text-xs font-medium text-gray-600"
+                        className="inline-flex items-center justify-center h-10 rounded-full leading-none border border-gray-200 px-3 py-0 text-xs font-medium text-gray-600"
                       >
                         {tag}
                       </span>

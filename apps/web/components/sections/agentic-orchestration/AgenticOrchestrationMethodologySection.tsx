@@ -46,7 +46,7 @@ export default function AgenticOrchestrationMethodologySection() {
     >
       <div className={`${section.container} flex flex-col items-center relative z-10`}>
         <motion.div
-          className="inline-flex h-10 items-center justify-center px-4 py-1.5 md:px-5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-6 md:mb-10"
+          className="inline-flex h-10 items-center justify-center px-4 py-0 md:px-5 rounded-full leading-none border border-white/20 bg-white/5 backdrop-blur-sm mb-6 md:mb-10"
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}

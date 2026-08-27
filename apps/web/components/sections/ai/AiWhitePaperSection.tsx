@@ -45,7 +45,7 @@ export default function AiWhitePaperSection() {
             </p>
             <Link
               href={aiWhitePaper.ctaHref}
-              className="mt-8 inline-flex h-10 items-center justify-center rounded-full px-8 py-0.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+              className="mt-8 inline-flex h-10 items-center justify-center rounded-full leading-none px-8 py-0 text-sm font-semibold text-white transition-opacity hover:opacity-90"
               style={{ backgroundColor: AI_ACCENT }}
             >
               {aiWhitePaper.ctaLabel}

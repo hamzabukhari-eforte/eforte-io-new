@@ -54,7 +54,7 @@ export default function DataServicesSection() {
                 {service.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="h-10 rounded-full bg-default px-3 py-1 text-xs font-medium text-white"
+                    className="inline-flex items-center justify-center h-10 rounded-full leading-none bg-default px-3 py-0 text-xs font-medium text-white"
                   >
                     {tag}
                   </span>

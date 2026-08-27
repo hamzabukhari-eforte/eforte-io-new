@@ -220,7 +220,7 @@ export default function FinancialServicesSolutionsSection() {
                     id={`accelerator-tab-${accelerator.id}`}
                     onClick={() => setActiveId(accelerator.id)}
                     className={cn(
-                      "h-10 cursor-pointer rounded-full px-5 py-0 text-sm font-medium transition-all duration-200 md:px-6",
+                      "inline-flex items-center justify-center h-10 cursor-pointer rounded-full leading-none px-5 py-0 text-sm font-medium transition-all duration-200 md:px-6",
                       isActive
                         ? "bg-primary-pink text-white shadow-[0_4px_18px_rgba(211, 40, 122, 0.4)]"
                         : "bg-white/15 text-white/80 hover:bg-primary-pink hover:text-white"

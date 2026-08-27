@@ -54,7 +54,7 @@ export default function InsightsHeroSection({
           <Link
             href="/blog"
             className={cn(
-              "h-10 px-4 py-1.5 rounded-full border text-[11px] md:text-sm transition-colors",
+              "inline-flex items-center justify-center h-10 px-4 py-0.5 rounded-full leading-none border text-[11px] md:text-sm transition-colors",
               activeSlug === null
                 ? "bg-gradient-to-r from-[#2946CF] to-[#233cb9] text-white border-none"
                 : "border-white/15 text-white/90 hover:bg-gradient-to-r from-[#2946CF] to-[#233cb9] hover:text-white"
@@ -69,7 +69,7 @@ export default function InsightsHeroSection({
                 key={category.slug}
                 href={`/blog/category/${category.slug}`}
                 className={cn(
-                  "h-10 px-4 py-1.5 rounded-full border text-[11px] md:text-sm transition-colors",
+                  "inline-flex items-center justify-center h-10 px-4 py-0.5 rounded-full leading-none border text-[11px] md:text-sm transition-colors",
                   isActive
                     ? "bg-gradient-to-r from-[#2946CF] to-[#233cb9] text-white border-none"
                     : "border-white/15 text-white/90 hover:bg-gradient-to-r from-[#2946CF] to-[#233cb9] hover:text-white"
@@ -104,7 +104,7 @@ export default function InsightsHeroSection({
                     className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-linear-to-r from-black/50 via-black/20 to-transparent" />
-                  <div className="h-10 absolute bottom-5 left-5 px-3 py-1.5 rounded-full bg-black/70 text-[11px] font-semibold uppercase tracking-[0.18em] text-white">
+                  <div className="inline-flex items-center justify-center h-10 absolute bottom-5 left-5 px-3 py-0 rounded-full leading-none bg-black/70 text-[11px] font-semibold uppercase tracking-[0.18em] text-white">
                     Latest insight
                   </div>
                 </div>

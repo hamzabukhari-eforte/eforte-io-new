@@ -263,7 +263,7 @@ function ContactModal({
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full cursor-pointer h-10 rounded-full border-2 border-primary-pink bg-white px-8 py-0 text-sm font-semibold text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
+                      className="w-full cursor-pointer inline-flex items-center justify-center h-10 rounded-full leading-none border-2 border-primary-pink bg-white px-8 py-0 text-sm font-semibold text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
                     >
                       {isSubmitting ? "Sending…" : "Send Message"}
                     </button>

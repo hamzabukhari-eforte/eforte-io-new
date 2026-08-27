@@ -40,7 +40,7 @@ export default function VelocityAIHeroSection() {
 
       <div className="relative z-10 text-center max-w-5xl mx-auto px-6 mt-[-50px]">
         <motion.div
-          className="inline-flex h-10 items-center justify-center px-5 py-1.5 mb-8 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
+          className="inline-flex h-10 items-center justify-center px-5 py-0 mb-8 rounded-full leading-none border border-white/10 bg-white/5 backdrop-blur-md"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -74,7 +74,7 @@ export default function VelocityAIHeroSection() {
           transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
         >
           <ContactCTA
-            className="group relative inline-flex h-10 items-center justify-center px-10 py-0 rounded-full border-2 border-[#db2777] text-[#db2777] font-medium text-lg transition-all duration-300 hover:bg-[#db2777] hover:text-white hover:shadow-[0_0_30px_rgba(219,39,119,0.4)]"
+            className="group relative inline-flex h-10 items-center justify-center px-10 py-0 rounded-full leading-none border-2 border-[#db2777] text-[#db2777] font-medium text-lg transition-all duration-300 hover:bg-[#db2777] hover:text-white hover:shadow-[0_0_30px_rgba(219,39,119,0.4)]"
           >
             <span className="relative z-10">Contact Us</span>
           </ContactCTA>

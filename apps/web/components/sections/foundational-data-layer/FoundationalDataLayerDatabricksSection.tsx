@@ -57,7 +57,7 @@ export default function FoundationalDataLayerDatabricksSection() {
           {/* Overlay content - match HTML p-10, gap-4, items-end justify-between */}
           <div className="absolute bottom-0 left-0 w-full p-10 flex flex-wrap gap-4 items-end justify-between">
             <div className="bg-white/10 backdrop-blur-md border border-white/10 rounded-[12px] p-6 flex items-center gap-4 min-w-[240px] group/card hover:bg-white/15 hover:border-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 cursor-pointer">
-              <div className="w-12 h-10 bg-white rounded-full flex items-center justify-center group-hover/card:scale-105 transition-transform duration-300 shrink-0">
+              <div className="w-12 h-10 bg-white rounded-full leading-none flex items-center justify-center group-hover/card:scale-105 transition-transform duration-300 shrink-0">
                 <FaAward className="text-black text-xl" />
               </div>
               <div className="text-left">

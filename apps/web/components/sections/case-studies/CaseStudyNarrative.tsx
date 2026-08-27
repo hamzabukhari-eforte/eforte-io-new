@@ -28,11 +28,11 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 /** Capabilities-aligned type + badge tokens */
 const badgeLight =
-  "inline-flex h-10 items-center justify-center rounded-full border border-default/20 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-default";
+  "inline-flex h-10 items-center justify-center rounded-full leading-none border border-default/20 px-4 py-0.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-default";
 const badgeDark =
-  "inline-flex h-10 items-center justify-center rounded-full border border-white/25 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white";
+  "inline-flex h-10 items-center justify-center rounded-full leading-none border border-white/25 px-4 py-0.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white";
 const badgeOnColor =
-  "inline-flex h-10 items-center justify-center rounded-full border border-white/30 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white";
+  "inline-flex h-10 items-center justify-center rounded-full leading-none border border-white/30 px-4 py-0.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white";
 const sectionTitle =
   "text-3xl font-semibold leading-tight tracking-tight md:text-4xl lg:text-[42px]";
 const bodyMuted = "text-[15px] leading-relaxed text-[#555] md:text-base";
@@ -169,7 +169,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                       viewport={{ once: false, amount: 0.4 }}
                       transition={{ duration: 0.45, delay: 0.1 + i * 0.08, ease }}
                       whileHover={{ y: -3, scale: 1.03 }}
-                      className="inline-flex h-10 items-center gap-3 rounded-full border border-white/25 bg-white/12 px-4 py-0 text-sm font-medium shadow-[0_8px_24px_rgba(0,0,0,0.2)] backdrop-blur-md md:px-5 md:py-0 md:text-[15px]"
+                      className="inline-flex h-10 items-center justify-center gap-3 rounded-full leading-none border border-white/25 bg-white/12 px-4 py-0 text-sm font-medium shadow-[0_8px_24px_rgba(0,0,0,0.2)] backdrop-blur-md md:px-5 md:py-0 md:text-[15px]"
                     >
                       <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary-pink/20 ring-1 ring-primary-pink/40">
                         <Icon className="h-4 w-4 text-primary-pink" />

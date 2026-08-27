@@ -23,7 +23,7 @@ export default function VelocityAIFrameworkSection() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className="inline-flex h-10 items-center justify-center px-3 py-1 md:px-4 md:py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-4 md:mb-6">
+        <div className="inline-flex h-10 items-center justify-center px-3 py-0 md:px-4 rounded-full leading-none border border-white/20 bg-white/5 backdrop-blur-sm mb-4 md:mb-6">
           <span className={typography.badge + " text-white tracking-widest"}>
             5 Key Components
           </span>
@@ -175,7 +175,7 @@ export default function VelocityAIFrameworkSection() {
                 <span className="text-white text-2xl">🤖</span>
               </div>
             </div>
-            <div className="h-10 absolute -bottom-4 right-0 bg-[#3B82F6] text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg z-30">
+            <div className="inline-flex items-center justify-center h-10 absolute -bottom-4 right-0 bg-[#3B82F6] text-white text-[10px] font-bold px-3 py-0 rounded-full leading-none shadow-lg z-30">
               AI Steve
             </div>
           </div>

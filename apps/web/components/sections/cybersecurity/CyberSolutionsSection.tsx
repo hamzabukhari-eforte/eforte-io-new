@@ -17,7 +17,7 @@ export default function CyberSolutionsSection() {
           className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-16"
         >
           <div>
-            <span className="inline-flex h-10 items-center justify-center rounded-full border border-default/20 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-default">
+            <span className="inline-flex h-10 items-center justify-center rounded-full leading-none border border-default/20 px-4 py-0 text-[11px] font-semibold uppercase tracking-[0.16em] text-default">
               {cyberSolutions.badge}
             </span>
             <h2 className="mt-4 text-3xl font-semibold md:text-4xl lg:text-[42px]">

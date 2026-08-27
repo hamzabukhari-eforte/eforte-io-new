@@ -43,7 +43,7 @@ export default function FinancialServicesWebinarSection() {
         >
           <Link
             href="#"
-            className="group inline-flex h-10 items-center gap-2 rounded-full border border-white/30 px-6 py-0 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default"
+            className="group inline-flex h-10 items-center justify-center gap-2 rounded-full leading-none border border-white/30 px-6 py-0 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default"
           >
             Learn more about our approach to building AI agents
             <HiArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />

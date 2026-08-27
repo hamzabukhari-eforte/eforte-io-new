@@ -39,7 +39,7 @@ export default function AiCompoundSystemsSection() {
               </div>
               <div className="mt-9">
                 <ContactCTA
-                  className="inline-flex h-10 items-center justify-center rounded-full px-8 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                  className="inline-flex h-10 items-center justify-center rounded-full leading-none px-8 text-sm font-semibold text-white transition-opacity hover:opacity-90"
                   style={{ backgroundColor: AI_ACCENT }}
                 >
                   Get in touch

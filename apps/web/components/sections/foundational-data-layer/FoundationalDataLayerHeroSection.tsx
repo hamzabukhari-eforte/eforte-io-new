@@ -31,7 +31,7 @@ export default function FoundationalDataLayerHeroSection() {
           management—from ingestion to governance.
         </p>
         <div className="flex items-center justify-center mb-10 md:mb-14">
-          <ContactCTA className="h-10 px-10 py-0.5 rounded-full border border-white text-base font-medium text-white hover:bg-white hover:text-black transition-all duration-300">
+          <ContactCTA className="inline-flex items-center justify-center h-10 px-10 py-0 rounded-full leading-none border border-white text-base font-medium text-white hover:bg-white hover:text-black transition-all duration-300">
             Contact Us
           </ContactCTA>
         </div>

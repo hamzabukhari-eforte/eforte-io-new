@@ -113,7 +113,7 @@ export default function FoundationalDataLayerDatabricksServicesSection() {
     >
       <Container className="relative z-10">
         <div className="text-center mb-24">
-          <div className="inline-flex h-10 items-center justify-center px-6 py-2 rounded-full border border-white/20 mb-8 backdrop-blur-sm bg-black/30">
+          <div className="inline-flex h-10 items-center justify-center px-6 py-0 rounded-full leading-none border border-white/20 mb-8 backdrop-blur-sm bg-black/30">
             <span className="text-[11px] font-bold tracking-widest text-white uppercase">
               DATABRICKS
             </span>

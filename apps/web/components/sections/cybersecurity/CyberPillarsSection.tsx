@@ -18,7 +18,7 @@ export default function CyberPillarsSection() {
           className="mx-auto max-w-3xl text-center"
         >
           <span
-            className="inline-flex h-10 items-center justify-center rounded-full border px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white"
+            className="inline-flex h-10 items-center justify-center rounded-full leading-none border px-4 py-0 text-[11px] font-semibold uppercase tracking-[0.16em] text-white"
             style={{ borderColor: CYBER_ACCENT }}
           >
             {cyberPillars.badge}

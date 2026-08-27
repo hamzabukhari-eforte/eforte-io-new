@@ -25,15 +25,15 @@ function JobCard({ job }: { job: (typeof jobOpenings)[number] }) {
         <h3 className="text-lg font-semibold text-white md:text-xl">{job.title}</h3>
         <p className="mt-1 text-sm text-desc">{job.location}</p>
         <div className="mt-3 flex flex-wrap gap-2">
-          <span className="h-10 rounded-full bg-white/10 px-3 py-1 text-xs text-white/90">
+          <span className="inline-flex items-center justify-center h-10 rounded-full leading-none bg-white/10 px-3 py-0 text-xs text-white/90">
             {job.type}
           </span>
-          <span className="h-10 rounded-full bg-primary-pink/20 px-3 py-1 text-xs text-primary-pink">
+          <span className="inline-flex items-center justify-center h-10 rounded-full leading-none bg-primary-pink/20 px-3 py-0 text-xs text-primary-pink">
             {job.department}
           </span>
         </div>
       </div>
-      <ContactCTA className="h-10 shrink-0 rounded-full bg-gradient-to-r from-[#be185d] to-[#db2777] px-6 py-0 text-sm font-medium text-white transition-all hover:from-[#db2777] hover:to-[#be185d]">
+      <ContactCTA className="inline-flex items-center justify-center h-10 shrink-0 rounded-full leading-none bg-gradient-to-r from-[#be185d] to-[#db2777] px-6 py-0 text-sm font-medium text-white transition-all hover:from-[#db2777] hover:to-[#be185d]">
         Apply now
       </ContactCTA>
     </motion.div>

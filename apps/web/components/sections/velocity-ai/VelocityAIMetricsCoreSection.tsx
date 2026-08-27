@@ -26,7 +26,7 @@ export default function VelocityAIMetricsCoreSection() {
     <section ref={ref} className={`bg-black relative overflow-hidden ${section.padding} ${section.paddingX}`}>
       <div className="max-w-7xl mx-auto w-full text-center relative z-10">
         <motion.div
-          className="inline-flex h-10 items-center justify-center px-4 py-1.5 md:px-6 md:py-2 rounded-full border border-[#D3287A] bg-blue-900/10 backdrop-blur-sm mb-6 md:mb-10"
+          className="inline-flex h-10 items-center justify-center px-4 py-0 md:px-6 md:py-0 rounded-full leading-none border border-[#D3287A] bg-blue-900/10 backdrop-blur-sm mb-6 md:mb-10"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}

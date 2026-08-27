@@ -25,7 +25,7 @@ export default function AiSolutionsInActionSection() {
               </h3>
 
               <div className="mt-8">
-                <span className="inline-flex h-10 items-center justify-center rounded-full bg-default px-5 py-0 text-sm font-medium text-white">
+                <span className="inline-flex h-10 items-center justify-center rounded-full leading-none bg-default px-5 py-0 text-sm font-medium text-white">
                   {aiCaseStudy.outcomesLabel}
                 </span>
                 <ul className="mt-5 space-y-3">

@@ -57,7 +57,7 @@ export default function EmbeddedEngineeringHeroSection() {
               transition={{ duration: 0.5, delay: 0.24 }}
               className="mt-9"
             >
-              <ContactCTA className="inline-flex h-10 items-center justify-center rounded-full bg-primary-pink px-8 text-sm font-medium text-white shadow-[0_18px_40px_rgba(211,40,122,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-pink/90">
+              <ContactCTA className="inline-flex h-10 items-center justify-center rounded-full leading-none bg-primary-pink px-8 text-sm font-medium text-white shadow-[0_18px_40px_rgba(211,40,122,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-pink/90">
                 Let&apos;s Talk
               </ContactCTA>
             </motion.div>

@@ -51,7 +51,7 @@ function LocationCard({ location }: { location: Location }) {
           href={location.mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="h-10 mb-0.5 shrink-0 rounded-full bg-[#3b82f6] px-4 py-2 text-xs font-medium text-white transition-colors hover:bg-[#2563eb] md:px-5 md:text-sm"
+          className="inline-flex items-center justify-center h-10 mb-0.5 shrink-0 rounded-full leading-none bg-[#3b82f6] px-4 py-0 text-xs font-medium text-white transition-colors hover:bg-[#2563eb] md:px-5 md:text-sm"
         >
           Learn more
         </Link>

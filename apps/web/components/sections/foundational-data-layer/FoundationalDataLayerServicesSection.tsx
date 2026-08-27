@@ -95,7 +95,7 @@ export default function FoundationalDataLayerServicesSection() {
         {/* Header: left block + right paragraph - match HTML flex justify-between */}
         <div className="flex flex-col md:flex-row justify-between items-start mb-20">
           <div>
-            <div className="inline-flex h-10 items-center justify-center px-4 py-2 rounded-full border border-gray-700 mb-8">
+            <div className="inline-flex h-10 items-center justify-center px-4 py-0 rounded-full leading-none border border-gray-700 mb-8">
               <span className="text-[11px] font-bold tracking-widest text-white uppercase block">
                 OUR SERVICES
               </span>

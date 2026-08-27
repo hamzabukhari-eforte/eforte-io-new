@@ -201,7 +201,7 @@ export default function InsuranceExpertiseSection() {
                 <h3 className="max-w-md text-3xl font-medium leading-tight text-white md:text-4xl">
                   {card.title}
                 </h3>
-                <ContactCTA className="mt-auto inline-flex h-10 w-fit items-center justify-center rounded-full border border-white/50 px-7 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default">
+                <ContactCTA className="mt-auto inline-flex h-10 w-fit items-center justify-center rounded-full leading-none border border-white/50 px-7 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default">
                   Learn more
                 </ContactCTA>
               </div>

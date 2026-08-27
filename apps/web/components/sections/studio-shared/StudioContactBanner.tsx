@@ -46,7 +46,7 @@ export default function StudioContactBanner({
               </p>
             </div>
 
-            <ContactCTA className="inline-flex h-10 shrink-0 items-center justify-center rounded-full bg-primary-pink px-8 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(211,40,122,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-pink/90">
+            <ContactCTA className="inline-flex h-10 shrink-0 items-center justify-center rounded-full leading-none bg-primary-pink px-8 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(211,40,122,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-pink/90">
               {content.ctaLabel}
             </ContactCTA>
           </div>

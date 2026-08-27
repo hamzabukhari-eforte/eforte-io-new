@@ -54,7 +54,7 @@ export default function InsightsPostsSection({
             </p>
             <Link
               href="/blog"
-              className="inline-flex h-10 items-center justify-center mt-6 px-5 py-0 rounded-full border-2 border-primary-pink bg-white/5 text-sm font-medium text-white hover:bg-gradient-to-r from-[#be185d] to-[#db2777] hover:text-white transition-colors"
+              className="inline-flex h-10 items-center justify-center mt-6 px-5 py-0 rounded-full leading-none border-2 border-primary-pink bg-white/5 text-sm font-medium text-white hover:bg-gradient-to-r from-[#be185d] to-[#db2777] hover:text-white transition-colors"
             >
               Browse all insights
             </Link>
@@ -131,7 +131,7 @@ export default function InsightsPostsSection({
               type="button"
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
-              className="h-10 px-4 h-9 rounded-full border border-white/20 text-desc hover:text-white hover:border-white/40 disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 hover:bg-white/10"
+              className="inline-flex items-center justify-center h-10 px-4 h-9 rounded-full leading-none border border-white/20 text-desc hover:text-white hover:border-white/40 disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 hover:bg-white/10"
             >
               Previous
             </button>
@@ -158,7 +158,7 @@ export default function InsightsPostsSection({
               type="button"
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className="h-10 px-4 h-9 rounded-full border border-white/20 text-desc hover:text-white hover:border-white/40 disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 hover:bg-white/10"
+              className="inline-flex items-center justify-center h-10 px-4 h-9 rounded-full leading-none border border-white/20 text-desc hover:text-white hover:border-white/40 disabled:opacity-40 disabled:cursor-not-allowed bg-white/5 hover:bg-white/10"
             >
               Next
             </button>

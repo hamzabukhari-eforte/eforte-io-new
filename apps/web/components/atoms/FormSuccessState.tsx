@@ -90,7 +90,7 @@ export default function FormSuccessState({
         <motion.button
           type="button"
           onClick={onDone}
-          className="mt-8 cursor-pointer h-10 rounded-full border-2 border-primary-pink bg-white px-8 py-0 text-sm font-semibold text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white"
+          className="mt-8 cursor-pointer inline-flex items-center justify-center h-10 rounded-full leading-none border-2 border-primary-pink bg-white px-8 py-0 text-sm font-semibold text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white"
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, delay: 0.75 }}

@@ -1615,7 +1615,7 @@ export default function Navbar({
                                   </p>
                                 )}
                                 {item.tag && (
-                                  <p className="mt-1 inline-flex h-10 items-center justify-center rounded-full bg-white/5 px-2 py-0.5 text-[11px] font-medium text-desc">
+                                  <p className="mt-1 inline-flex h-10 items-center justify-center rounded-full leading-none bg-white/5 px-2 py-0 text-[11px] font-medium text-desc">
                                     {item.tag}
                                   </p>
                                 )}
@@ -1649,7 +1649,7 @@ export default function Navbar({
                                       </p>
                                     )}
                                     {item.tag && (
-                                      <p className="mt-1 inline-flex h-10 items-center justify-center rounded-full bg-white/5 px-2 py-0.5 text-[11px] font-medium text-desc">
+                                      <p className="mt-1 inline-flex h-10 items-center justify-center rounded-full leading-none bg-white/5 px-2 py-0 text-[11px] font-medium text-desc">
                                         {item.tag}
                                       </p>
                                     )}
@@ -1666,7 +1666,7 @@ export default function Navbar({
                                     </p>
                                   )}
                                   {item.tag && (
-                                    <p className="mt-1 inline-flex h-10 items-center justify-center rounded-full bg-white/5 px-2 py-0.5 text-[11px] font-medium text-desc">
+                                    <p className="mt-1 inline-flex h-10 items-center justify-center rounded-full leading-none bg-white/5 px-2 py-0 text-[11px] font-medium text-desc">
                                       {item.tag}
                                     </p>
                                   )}
@@ -1759,7 +1759,7 @@ export default function Navbar({
           <div className="hidden xl:block">
             <QuoteCTA
               className={cn(
-                "px-4 md:px-6 h-10 rounded-full flex items-center justify-center",
+                "px-4 md:px-6 h-10 rounded-full leading-none flex items-center justify-center",
                 "text-sm md:text-base font-semibold",
                 "bg-primary-pink text-white border border-primary-pink",
                 "hover:bg-transparent transition-all duration-200",
@@ -1927,7 +1927,7 @@ export default function Navbar({
             <div className="p-6 border-t border-white/10">
               <QuoteCTA
                 onOpen={closeMobileMenu}
-                className="w-full h-10 rounded-full flex items-center justify-center text-sm font-semibold bg-primary-pink text-white border border-primary-pink hover:bg-primary-pink/90 transition-all duration-200"
+                className="w-full h-10 rounded-full leading-none flex items-center justify-center text-sm font-semibold bg-primary-pink text-white border border-primary-pink hover:bg-primary-pink/90 transition-all duration-200"
               >
                 Let&apos;s build intelligence together
               </QuoteCTA>

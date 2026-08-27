@@ -44,7 +44,7 @@ export default function VelocityAIDefinitionSection() {
         >
           <Link
             href="#"
-            className="inline-flex h-10 items-center justify-center mt-6 md:mt-8 px-7 py-0 md:px-9 md:py-0 rounded-full border-2 border-[#db2777] text-[#db2777] font-medium text-sm md:text-[15px] hover:bg-[#db2777] hover:text-white transition-all duration-300"
+            className="inline-flex h-10 items-center justify-center mt-6 md:mt-8 px-7 py-0 md:px-9 md:py-0 rounded-full leading-none border-2 border-[#db2777] text-[#db2777] font-medium text-sm md:text-[15px] hover:bg-[#db2777] hover:text-white transition-all duration-300"
           >
             Learn more
           </Link>

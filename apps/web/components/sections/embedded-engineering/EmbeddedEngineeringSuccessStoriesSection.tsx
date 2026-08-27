@@ -154,7 +154,7 @@ export default function EmbeddedEngineeringSuccessStoriesSection() {
                 <p className="mt-5 max-w-md text-[14px] leading-relaxed text-white/60 md:text-[15px]">
                   {story.description}
                 </p>
-                <span className="mt-7 inline-flex h-10 items-center justify-center rounded-full border border-white/30 px-5 py-2 text-sm font-medium text-white">
+                <span className="mt-7 inline-flex h-10 items-center justify-center rounded-full leading-none border border-white/30 px-5 py-0 text-sm font-medium text-white">
                   Our work includes
                 </span>
               </div>

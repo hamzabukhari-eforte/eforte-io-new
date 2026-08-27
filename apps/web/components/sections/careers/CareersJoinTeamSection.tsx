@@ -128,7 +128,7 @@ export default function CareersJoinTeamSection() {
                   type="file"
                   name="resume"
                   accept=".pdf,.doc,.docx"
-                  className="h-10 w-full cursor-pointer rounded-[12px] border border-dashed border-white/20 bg-white/5 px-3 py-0 text-sm text-white/60 outline-none transition-colors file:mr-4 file:cursor-pointer file:rounded-full file:border-0 file:bg-white/10 file:px-4 file:py-2 file:text-xs file:font-medium file:text-white hover:border-white/30 hover:file:bg-white/20"
+                  className="inline-flex items-center justify-center h-10 w-full cursor-pointer rounded-[12px] border border-dashed border-white/20 bg-white/5 px-3 py-0 text-sm text-white/60 outline-none transition-colors file:mr-4 file:cursor-pointer file:rounded-full leading-none file:border-0 file:bg-white/10 file:px-4 file:py-0 file:text-xs file:font-medium file:text-white hover:border-white/30 hover:file:bg-white/20"
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm text-white/80 sm:col-span-2">
@@ -144,7 +144,7 @@ export default function CareersJoinTeamSection() {
               <div className="sm:col-span-2">
                 <button
                   type="submit"
-                  className="w-full cursor-pointer h-10 rounded-full bg-linear-to-r from-[#be185d] to-[#db2777] px-8 py-0.5 text-sm font-semibold text-white shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] transition-all hover:-translate-y-0.5 hover:from-[#db2777] hover:to-[#be185d] sm:w-auto"
+                  className="w-full cursor-pointer inline-flex items-center justify-center h-10 rounded-full leading-none bg-linear-to-r from-[#be185d] to-[#db2777] px-8 py-0 text-sm font-semibold text-white shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] transition-all hover:-translate-y-0.5 hover:from-[#db2777] hover:to-[#be185d] sm:w-auto"
                 >
                   Submit
                 </button>

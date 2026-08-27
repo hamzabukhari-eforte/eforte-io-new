@@ -64,7 +64,7 @@ export default function BankingCapabilitiesSection() {
             services that enable banks to scale efficiently and launch new products faster.
           </p>
           <div className="mt-14 flex justify-center">
-            <span className="h-10 rounded-full border border-primary-pink px-8 py-2 text-[11px] font-bold uppercase tracking-[0.15em] text-primary-pink">
+            <span className="inline-flex items-center justify-center h-10 rounded-full leading-none border border-primary-pink px-8 py-0 text-[11px] font-bold uppercase tracking-[0.15em] text-primary-pink">
               What We Deliver
             </span>
           </div>

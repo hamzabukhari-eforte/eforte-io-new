@@ -83,7 +83,7 @@ export default function AgenticOrchestrationPlatformSection() {
     >
       <div className={`${section.container} flex flex-col items-center relative z-10 py-8 md:py-12`}>
         <motion.div
-          className="inline-flex h-10 items-center justify-center px-4 py-1.5 md:px-5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-6 md:mb-10"
+          className="inline-flex h-10 items-center justify-center px-4 py-0 md:px-5 rounded-full leading-none border border-white/20 bg-white/5 backdrop-blur-sm mb-6 md:mb-10"
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -179,7 +179,7 @@ export default function AgenticOrchestrationPlatformSection() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] h-[400px] bg-blue-500/5 rounded-[100%] blur-[120px] pointer-events-none" />
       <div className={`${section.container} relative z-10 flex flex-col items-center pt-8 md:pt-16`}>
         <motion.div
-          className="inline-flex h-10 items-center justify-center px-5 py-1.5 md:px-6 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-8 md:mb-12"
+          className="inline-flex h-10 items-center justify-center px-5 py-0 md:px-6 rounded-full leading-none border border-white/20 bg-white/5 backdrop-blur-sm mb-8 md:mb-12"
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}

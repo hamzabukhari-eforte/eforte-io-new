@@ -44,7 +44,7 @@ export default function VelocityAIMetricsOrbitSection() {
 
       <div className="max-w-7xl mx-auto text-center relative z-10 w-full">
         <motion.div
-          className="inline-flex h-10 items-center justify-center px-4 py-1 md:px-6 md:py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm mb-4 md:mb-8"
+          className="inline-flex h-10 items-center justify-center px-4 py-0 md:px-6 rounded-full leading-none border border-white/20 bg-white/5 backdrop-blur-sm mb-4 md:mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}

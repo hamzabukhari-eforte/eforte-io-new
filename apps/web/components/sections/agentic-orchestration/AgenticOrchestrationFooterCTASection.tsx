@@ -29,7 +29,7 @@ export default function AgenticOrchestrationFooterCTASection() {
           Partner with eForte&apos;s experts to explore your idea or product and discover how Velocity AI, Agentic Orchestration, and a robust Foundational Data Layer can accelerate innovation and business impact.
         </p>
         <ContactCTA
-          className="inline-flex h-10 items-center justify-center bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-8 py-0 md:px-9 md:py-0.5 rounded-full text-sm md:text-[15px] font-medium transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
+          className="inline-flex h-10 items-center justify-center bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-8 py-0 md:px-9 md:py-0 rounded-full leading-none text-sm md:text-[15px] font-medium transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
         >
           Get in touch
         </ContactCTA>
