@@ -30,7 +30,7 @@ export default function DataGovernanceSection() {
     dataStudioTabs.find((item) => item.id === activeTab) ?? dataStudioTabs[0];
 
   return (
-    <section className="bg-white py-20 text-default md:py-28">
+    <section className="bg-white py-16 text-default">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,7 @@ export default function DataGovernanceSection() {
             </div>
           </div>
 
-          <div className="mt-12 grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,460px)] lg:gap-16">
+          <div className="mt-12 grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,640px)] lg:gap-16">
             <div className="space-y-3">
               {dataStudioTabs.map((item) => {
                 const Icon = tabIcons[item.id];
@@ -71,7 +71,7 @@ export default function DataGovernanceSection() {
                     onClick={() => setActiveTab(item.id)}
                     className={`w-full cursor-pointer rounded-[12px] px-5 py-4 text-left transition-all ${
                       isActive
-                        ? "bg-[#EAF4FC] shadow-sm"
+                        ? "bg-[#EAF4FC]"
                         : "bg-transparent hover:bg-[#F8F8F8]"
                     }`}
                   >
@@ -80,17 +80,17 @@ export default function DataGovernanceSection() {
                         className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-[12px] ${
                           isActive
                             ? "bg-[#2563EB] text-white"
-                            : "bg-transparent text-[#2563EB]"
+                            : "bg-[#848884] text-white"
                         }`}
                       >
                         <Icon className="h-4 w-4" />
                       </span>
                       <div>
-                        <p className="text-lg font-medium text-default">
+                        <p className="text-xl font-medium text-default">
                           {item.label}
                         </p>
                         {isActive ? (
-                          <p className="mt-3 max-w-md text-[14px] leading-relaxed text-[#666]">
+                          <p className="mt-3 max-w-md text-base leading-relaxed">
                             {item.description}
                           </p>
                         ) : null}

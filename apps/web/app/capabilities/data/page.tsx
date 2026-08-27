@@ -1,6 +1,7 @@
 import {
   DataAcceleratorsSection,
-  DataCaseStudySection,
+  // Legacy pink Success Stories carousel — preserved for future reuse
+  // DataCaseStudySection,
   DataCtaBannerSection,
   // Databricks Gold Partner section not in current document — preserved for future reuse
   // DataDatabricksPartnerSection,
@@ -11,6 +12,7 @@ import {
   DataPartnersSection,
   DataProcessMinerSection,
   DataServicesSection,
+  DataShowcaseSection,
 } from "@/components/sections/data";
 
 export const metadata = {
@@ -30,7 +32,9 @@ export default function DataCapabilityPage() {
       {/* <DataDatabricksPartnerSection /> */}
       <DataServicesSection />
       <DataAcceleratorsSection />
-      <DataCaseStudySection />
+      <DataShowcaseSection />
+      {/* Legacy pink Success Stories carousel — preserved for future reuse */}
+      {/* <DataCaseStudySection /> */}
       <DataCtaBannerSection />
       <DataInsightsSection />
       <DataFaqSection />

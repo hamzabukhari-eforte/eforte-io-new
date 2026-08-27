@@ -21,7 +21,7 @@ export type ProductDesignShowcaseItem = {
   brand: string;
   category: string;
   paragraphs: string[];
-  /** Final creative assets TBD — placeholders until product-design images are delivered */
+  tags: string[];
   image: string;
   imageAlt: string;
   background: string;
@@ -119,7 +119,12 @@ export const productDesignShowcase: ProductDesignShowcaseItem[] = [
     brand: "Investment Markets",
     category: "Investments | Finance",
     paragraphs: [
-      "InvestmentMarkets is a platform for the potential investors that brings them high net worth investment opportunities, primarily aiming for growth, income or both. The...",
+      "InvestmentMarkets is a platform for the potential investors that brings them high net worth investment opportunities, primarily aiming for growth, income or both.",
+    ],
+    tags: [
+      "Investment platform",
+      "High-net-worth deals",
+      "Finance",
     ],
     image:
       "/assets/final-images/capabilities/product-design/IM-success-story.png",
@@ -132,7 +137,12 @@ export const productDesignShowcase: ProductDesignShowcaseItem[] = [
     brand: "Dostpay",
     category: "Fintech",
     paragraphs: [
-      "Dostpay is a 21st century mobile based 'Digital Banking Payments platform' which gets easily integrated with the core banking platform and gives the end user power of ...",
+      "Dostpay is a 21st century mobile based 'Digital Banking Payments platform' which gets easily integrated with the core banking platform and gives the end user power of Digital banking.",
+    ],
+    tags: [
+      "Digital banking",
+      "Core banking integration",
+      "Payments",
     ],
     image:
       "/assets/final-images/capabilities/product-design/dostpay-success-story.png",
@@ -145,7 +155,12 @@ export const productDesignShowcase: ProductDesignShowcaseItem[] = [
     brand: "Validatr",
     category: "Startup/ Business Management",
     paragraphs: [
-      "Validatr.io is a tool for the startups and businesses to do the market validation of the new business ideas and further do Market Research for the same. Both the market ...",
+      "Validatr.io is a tool for the startups and businesses to do the market validation of the new business ideas and further do Market Research for the same.",
+    ],
+    tags: [
+      "Market validation",
+      "Market research",
+      "Startup tools",
     ],
     image:
       "/assets/final-images/capabilities/product-design/validatr-success-story-v2.png",
@@ -158,10 +173,15 @@ export const productDesignShowcase: ProductDesignShowcaseItem[] = [
     brand: "BioResearch Labs",
     category: "Pharmaceutical research",
     paragraphs: [
-      "BioResearch Labs is a pharmaceutical research organization conducting multiple Phase II and III clinical trials across more than 40 global research sites. Managing data consistency and compliance across...",
+      "BioResearch Labs is a pharmaceutical research organization conducting multiple Phase II and III clinical trials across more than 40 global research sites.",
+    ],
+    tags: [
+      "Clinical trial data",
+      "Data governance",
+      "Pharma research",
     ],
     image:
-      "/assets/final-images/capabilities/product-design/bioresearch_labs_success-story.png",
+      "/assets/final-images/capabilities/product-design/bioresearch_labs_success-story-v2.png",
     imageAlt: "BioResearch Labs clinical research platform",
     background: "#000000",
     href: "/case-studies/bioresearch-labs",
@@ -171,7 +191,12 @@ export const productDesignShowcase: ProductDesignShowcaseItem[] = [
     brand: "Oddysee",
     category: "Financial Forecasting | Civic-Municipal",
     paragraphs: [
-      "Oddysee is the platform to automate the licensing process for domains that require a lot of documentation/plans. It has a documentation module with pre written ...",
+      "Oddysee is the platform to automate the licensing process for domains that require a lot of documentation/plans. It has a documentation module with pre written templates of documents to choose from.",
+    ],
+    tags: [
+      "Licensing automation",
+      "Documentation",
+      "Financial forecasting",
     ],
     image:
       "/assets/final-images/capabilities/product-design/oddysee-success-story.png",

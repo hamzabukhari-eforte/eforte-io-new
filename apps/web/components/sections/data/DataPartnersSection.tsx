@@ -18,7 +18,7 @@ const cloudPartners: {
   Icon: IconType;
   className?: string;
 }[] = [
-  { name: "aws", Icon: SiAmazonwebservices },
+  { name: "", Icon: SiAmazonwebservices },
   { name: "Google Cloud", Icon: SiGooglecloud },
   { name: "databricks", Icon: SiDatabricks },
   { name: "snowflake", Icon: SiSnowflake },
@@ -41,7 +41,7 @@ export default function DataPartnersSection() {
               <h2 className="text-3xl font-semibold md:text-4xl">
                 Our partners and certifications
               </h2>
-              <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white/70 md:text-base">
+              <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-white md:text-base">
                 We&apos;re SOC 2 and ISO 27001 certified, and an AWS Advanced Tier
                 partner. We&apos;re also partners with, and collaborate closely with
                 providers, including Databricks, Snowflake, GCP, Azure and others.
@@ -68,7 +68,7 @@ export default function DataPartnersSection() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-x-10 gap-y-10 md:gap-x-14 md:gap-y-12">
+            <div className="grid w-fit grid-cols-2 gap-x-6 gap-y-5 justify-self-start md:gap-x-8 md:gap-y-6 lg:justify-self-end">
               {cloudPartners.map((partner, index) => {
                 const PartnerIcon = partner.Icon;
 
@@ -79,9 +79,9 @@ export default function DataPartnersSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, margin: "-80px" }}
                     transition={{ duration: 0.45, delay: index * 0.06 }}
-                    className={`flex items-center gap-3 text-white ${partner.className ?? ""}`}
+                    className={`flex items-center justify-center gap-2.5 text-white ${partner.className ?? ""}`}
                   >
-                    <PartnerIcon className="h-9 w-9 shrink-0 md:h-10 md:w-10" />
+                    <PartnerIcon className="h-9 w-9 shrink-0 md:h-14 md:w-14" />
                     <span className="text-2xl font-medium tracking-tight md:text-[28px]">
                       {partner.name}
                     </span>

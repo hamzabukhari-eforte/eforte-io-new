@@ -183,6 +183,75 @@ export const dataAcceleratorGroups = [
   },
 ];
 
+export type DataShowcaseItem = {
+  id: string;
+  brand: string;
+  category: string;
+  paragraphs: string[];
+  tags: string[];
+  image: string;
+  imageAlt: string;
+  background: string;
+  href: string;
+};
+
+export const dataShowcase: DataShowcaseItem[] = [
+  {
+    id: "dostpay",
+    brand: "Dostpay",
+    category: "Fintech",
+    paragraphs: [
+      "Dostpay is a 21st century mobile based 'Digital Banking Payments platform' which gets easily integrated with the core banking platform and gives the end user power of Digital banking.",
+    ],
+    tags: [
+      "Digital banking",
+      "Core banking integration",
+      "Payments",
+    ],
+    image:
+      "/assets/final-images/capabilities/product-design/dostpay-success-story.png",
+    imageAlt: "Dostpay digital banking payments platform",
+    background: "#012c7f",
+    href: "/case-studies/dostpay",
+  },
+  {
+    id: "bioresearch-labs",
+    brand: "BioResearch Labs",
+    category: "Pharmaceutical research",
+    paragraphs: [
+      "BioResearch Labs is a pharmaceutical research organization conducting multiple Phase II and III clinical trials across more than 40 global research sites.",
+    ],
+    tags: [
+      "Clinical trial data",
+      "Data governance",
+      "Pharma research",
+    ],
+    image:
+      "/assets/final-images/capabilities/product-design/bioresearch_labs_success-story-v2.png",
+    imageAlt: "BioResearch Labs clinical research platform",
+    background: "#000000",
+    href: "/case-studies/bioresearch-labs",
+  },
+  {
+    id: "investment-markets",
+    brand: "Investment Markets",
+    category: "Investments | Finance",
+    paragraphs: [
+      "InvestmentMarkets is a platform for the potential investors that brings them high net worth investment opportunities, primarily aiming for growth, income or both.",
+    ],
+    tags: [
+      "Investment platform",
+      "High-net-worth deals",
+      "Finance",
+    ],
+    image:
+      "/assets/final-images/capabilities/product-design/IM-success-story.png",
+    imageAlt: "Investment Markets platform",
+    background: "#9c0300",
+    href: "/case-studies/investment-markets",
+  },
+];
+
 export const dataSuccessStories = [
   {
     id: "harrow-bay",
@@ -239,7 +308,7 @@ export const dataInsights = [
     excerpt:
       "With 250+ certified engineers and deep Databricks experience, we continue expanding industry specialization across media and entertainment workloads.",
     author: "Gabriel Fagundez",
-    authorImage: "/assets/images/velocity-ai/avatar-2.jpg",
+    authorImage: "/assets/images/velocity-ai/avatar-5.jpg",
     date: "July 17, 2026",
     image: "/assets/images/velocity-ai/insight-1.png",
   },
@@ -251,7 +320,7 @@ export const dataInsights = [
     excerpt:
       "Four women leading data and AI shared practical lessons on platform strategy, culture, and delivery at the Data+AI Summit.",
     author: "Aldis Stareczek",
-    authorImage: "/assets/images/velocity-ai/avatar-3.jpg",
+    authorImage: "/assets/images/case-study/Chris_Morton.jpg",
     date: "July 10, 2026",
     image: "/assets/images/velocity-ai/insight-2.png",
   },

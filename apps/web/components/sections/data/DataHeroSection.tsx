@@ -48,7 +48,7 @@ export default function DataHeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.16 }}
-            className="mt-6 max-w-2xl text-base leading-7 text-white/82 md:text-lg"
+            className="mt-6 max-w-2xl text-base leading-7 text-white md:text-lg"
           >
             AI is only as good as the data underneath it. Our Data Studio
             builds the Foundational Data Layer — clean, connected, governed

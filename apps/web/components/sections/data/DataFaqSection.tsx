@@ -35,7 +35,7 @@ export default function DataFaqSection() {
             />
             <div className="relative">
               <p className="text-4xl font-medium text-white md:text-5xl">FAQs</p>
-              <p className="mt-2 text-base text-white/80">
+              <p className="mt-2 text-base text-white">
                 Frequently asked questions about our data engineering services.
               </p>
             </div>

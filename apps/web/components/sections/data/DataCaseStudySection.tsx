@@ -60,13 +60,13 @@ export default function DataCaseStudySection() {
               className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
             >
               <div>
-                <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-white/80">
+                <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-white">
                   Success Stories
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold leading-tight md:text-4xl lg:text-[42px]">
                   {story.title}
                 </h2>
-                <div className="mt-5 max-w-lg space-y-4 text-[15px] leading-relaxed text-white/85">
+                <div className="mt-5 max-w-lg space-y-4 text-[15px] leading-relaxed text-white">
                   {story.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}

@@ -35,12 +35,12 @@ export default function DataDatabricksPartnerSection() {
               <h2 className="text-3xl font-medium text-white md:text-4xl">
                 A Databricks Gold Partner
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-white/80 md:text-[17px]">
+              <p className="mt-4 text-base leading-relaxed text-white md:text-[17px]">
                 As a Gold Databricks Partner, we&apos;ve demonstrated our deep
                 knowledge of the platform and a proven track record of successful
                 implementations.
               </p>
-              <p className="mt-4 text-base leading-relaxed text-white/80 md:text-[17px]">
+              <p className="mt-4 text-base leading-relaxed text-white md:text-[17px]">
                 We have 250+ professionals certified on the Databricks Intelligence
                 platform. Our people have Databricks certifications ranging from
                 Associate Data Analyst, Data Engineer, to Professional Machine

@@ -9,7 +9,7 @@ import ReactPlayer from "@/components/atoms/ReactPlayerClient";
 export default function CyberExpertsSpotlightSection() {
   return (
     <section className="bg-white">
-      <div className="rounded-[12px] bg-black py-16 text-white md:rounded-[12px] md:py-24">
+      <div className="rounded-[12px] bg-black py-16 text-white md:rounded-[12px]">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 16 }}

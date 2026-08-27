@@ -7,8 +7,8 @@ import { dataProcessMiner } from "@/data/capabilities/data";
 
 export default function DataProcessMinerSection() {
   return (
-    <section className="relative z-10 mt-10 md:mt-14">
-      <div className="rounded-[12px] bg-[#F5F5F5] py-20 text-default md:rounded-[12px] md:py-28">
+    <section className="relative z-10 mt-10 md:mt-4">
+      <div className="rounded-[12px] bg-default py-20 text-white md:rounded-[12px] md:py-28">
         <Container>
           <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-14 lg:items-center">
             <motion.div
@@ -20,13 +20,13 @@ export default function DataProcessMinerSection() {
               <span className="text-xs font-semibold uppercase tracking-[0.15em] text-primary-pink">
                 Proprietary Technology
               </span>
-              <h2 className="mt-3 text-3xl font-semibold leading-tight md:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold leading-tight text-white md:text-4xl">
                 {dataProcessMiner.name}
               </h2>
-              <p className="mt-2 text-[15px] font-medium text-primary-pink">
+              <p className="mt-2 text-base font-medium text-primary-pink">
                 {dataProcessMiner.tagline}
               </p>
-              <p className="mt-5 text-[15px] leading-relaxed text-[#666] md:text-base">
+              <p className="mt-5 text-base leading-relaxed text-white md:text-base">
                 {dataProcessMiner.description}
               </p>
             </motion.div>
@@ -38,19 +38,28 @@ export default function DataProcessMinerSection() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="grid gap-4 sm:grid-cols-2"
             >
-              {dataProcessMiner.benefits.map((benefit) => (
-                <li
-                  key={benefit}
-                  className="flex h-full flex-col gap-3 rounded-[12px] bg-white p-6 shadow-sm"
-                >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-pink/10 text-primary-pink">
-                    <HiCheck className="h-4 w-4" />
-                  </span>
-                  <p className="text-[14px] leading-relaxed text-[#374151]">
-                    {benefit}
-                  </p>
-                </li>
-              ))}
+              {dataProcessMiner.benefits.map((benefit) => {
+                const colonIndex = benefit.indexOf(":");
+                const title =
+                  colonIndex >= 0 ? benefit.slice(0, colonIndex + 1) : benefit;
+                const detail =
+                  colonIndex >= 0 ? benefit.slice(colonIndex + 1) : "";
+
+                return (
+                  <li
+                    key={benefit}
+                    className="flex h-full flex-col gap-3 rounded-[12px] border border-white/10 bg-white/5 p-6"
+                  >
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-pink/20 text-primary-pink">
+                      <HiCheck className="h-4 w-4" />
+                    </span>
+                    <p className="text-base leading-relaxed text-white">
+                      <span className="font-semibold text-white">{title}</span>
+                      {detail}
+                    </p>
+                  </li>
+                );
+              })}
             </motion.ul>
           </div>
         </Container>

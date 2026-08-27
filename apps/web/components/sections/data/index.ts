@@ -7,6 +7,7 @@ export { default as DataProcessMinerSection } from "./DataProcessMinerSection";
 export { default as DataServicesSection } from "./DataServicesSection";
 export { default as DataAcceleratorsSection } from "./DataAcceleratorsSection";
 export { default as DataCaseStudySection } from "./DataCaseStudySection";
+export { default as DataShowcaseSection } from "./DataShowcaseSection";
 export { default as DataCtaBannerSection } from "./DataCtaBannerSection";
 export { default as DataInsightsSection } from "./DataInsightsSection";
 export { default as DataFaqSection } from "./DataFaqSection";

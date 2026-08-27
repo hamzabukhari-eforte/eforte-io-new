@@ -60,7 +60,7 @@ const articles: Article[] = [
 
 export default function FinancialServicesRelatedArticlesSection() {
   return (
-    <section className="bg-white py-20 text-default md:py-28">
+    <section className="bg-white py-16 text-default">
       <Container>
         <motion.h2
           initial={{ opacity: 0, y: 12 }}

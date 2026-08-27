@@ -33,7 +33,7 @@ export default function CyberSuccessStoriesSection() {
   }, [isPaused, activeIndex]);
 
   return (
-    <section className="bg-white py-20 text-default md:py-28">
+    <section className="bg-white py-16 text-default">
       <div
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}

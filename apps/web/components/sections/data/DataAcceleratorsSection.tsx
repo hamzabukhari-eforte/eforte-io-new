@@ -15,7 +15,7 @@ const iconMap: Record<(typeof dataAcceleratorGroups)[number]["iconId"], IconType
 
 export default function DataAcceleratorsSection() {
   return (
-    <section className="relative z-0 -mt-9 bg-white pb-20 pt-28 text-default md:-mt-11 md:pb-28 md:pt-32">
+    <section className="relative z-0 -mt-9 bg-default pb-20 pt-28 text-white md:-mt-11 md:pb-28 md:pt-32">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -28,7 +28,7 @@ export default function DataAcceleratorsSection() {
             <h2 className="text-3xl font-semibold leading-tight md:text-4xl">
               eForte Solution Accelerators for Data Engineering
             </h2>
-            <p className="mt-3 text-[15px] text-default md:text-base">
+            <p className="mt-3 text-[15px] text-white md:text-base">
               A selection of some of our solution accelerators
             </p>
           </div>
@@ -36,13 +36,13 @@ export default function DataAcceleratorsSection() {
             <p className="text-6xl font-light leading-none text-[#8EC5FF] md:text-7xl">
               50%
             </p>
-            <p className="mt-2 max-w-[180px] text-sm leading-snug text-default md:mx-auto">
+            <p className="mt-2 max-w-[180px] text-sm leading-snug text-white md:mx-auto">
               Faster productivity, efficiency &amp; time to market
             </p>
           </div>
         </motion.div>
 
-        <div className="mt-14 divide-y divide-[#E6EAF0] border-y border-[#E6EAF0]">
+        <div className="mt-14 divide-y divide-white/10 border-y border-white/10">
           {dataAcceleratorGroups.map((group, groupIndex) => {
             const Icon = iconMap[group.iconId];
 
@@ -56,14 +56,14 @@ export default function DataAcceleratorsSection() {
                 className="grid items-start gap-8 py-10 lg:grid-cols-[220px_1fr] lg:gap-12"
               >
                 <div className="flex items-start gap-3.5">
-                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[12px] bg-primary-pink/10 text-primary-pink">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[12px] bg-primary-pink/20 text-primary-pink">
                     <Icon className="h-5 w-5" />
                   </span>
                   <div className="pt-0.5">
-                    <p className="text-lg font-semibold leading-tight text-default">
+                    <p className="text-lg font-semibold leading-tight text-white">
                       {group.title}
                     </p>
-                    <p className="mt-1 text-sm leading-snug text-[#6B7280]">
+                    <p className="mt-1 text-sm leading-snug text-white">
                       {group.subtitle}
                     </p>
                   </div>
@@ -73,12 +73,12 @@ export default function DataAcceleratorsSection() {
                   {group.items.map((item) => (
                     <article
                       key={item.title}
-                      className="flex h-full flex-col rounded-[12px] bg-[#F4F7FB] p-6"
+                      className="flex h-full flex-col rounded-[12px] border border-white/10 bg-white/5 p-6"
                     >
-                      <h3 className="text-[17px] font-semibold leading-snug text-default">
+                      <h3 className="text-xl font-semibold leading-snug text-white">
                         {item.title}
                       </h3>
-                      <p className="mt-3 text-[14px] leading-relaxed text-[#374151]">
+                      <p className="mt-3 text-base leading-relaxed text-white">
                         {item.description}
                       </p>
                     </article>

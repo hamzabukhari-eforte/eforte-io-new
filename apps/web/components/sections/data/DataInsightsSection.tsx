@@ -8,7 +8,7 @@ import { dataInsights } from "@/data/capabilities/data";
 
 export default function DataInsightsSection() {
   return (
-    <section className="bg-white py-20 text-default md:py-28">
+    <section className="bg-white py-16 text-default">
       <Container>
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
@@ -47,7 +47,7 @@ export default function DataInsightsSection() {
                   </div>
 
                   <Link href="/blog" className="group mt-4 block">
-                    <h3 className="text-2xl font-semibold leading-snug text-default transition-colors group-hover:text-primary-pink md:text-[28px]">
+                    <h3 className="text-2xl font-semibold leading-snug text-default transition-colors group-hover:text-brand-blue md:text-[28px]">
                       {article.title}
                     </h3>
                     <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-[#666]">

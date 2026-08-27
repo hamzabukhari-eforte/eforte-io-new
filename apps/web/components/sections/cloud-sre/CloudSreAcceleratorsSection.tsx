@@ -19,7 +19,7 @@ export default function CloudSreAcceleratorsSection() {
     cloudSreAccelerators[0];
 
   return (
-    <section className="bg-white py-20 text-default md:py-28">
+    <section className="bg-white py-16 text-default">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 16 }}

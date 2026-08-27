@@ -16,6 +16,18 @@ export type StudioProcessItem = {
   tags: string[];
 };
 
+export type StudioSuccessStoryItem = {
+  id: string;
+  brand: string;
+  category: string;
+  paragraphs: string[];
+  tags: string[];
+  image: string;
+  imageAlt: string;
+  background: string;
+  href: string;
+};
+
 export type StudioContactBannerContent = {
   title: string;
   description: string;

@@ -61,7 +61,7 @@ const capabilities: Capability[] = [
 
 export default function FinancialServicesDataFoundationsSection() {
   return (
-    <section className="bg-white py-20 text-default md:py-28">
+    <section className="bg-white py-16 text-default">
       <Container>
         <motion.p
           initial={{ opacity: 0, y: 12 }}
