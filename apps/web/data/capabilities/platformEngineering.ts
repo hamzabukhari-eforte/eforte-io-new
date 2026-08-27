@@ -13,7 +13,9 @@ export const platformEngineeringContent: StudioPageContent = {
     brandsLabel: "Brands that trust us",
     brands: studioTrustedBrands,
     graphicSrc:
-      "/assets/images/package/studios/platform-engineering-studio-hero-diagram.svg",
+      "/assets/final-images/capabilities/platform-engineering/Platform Engineering-01.svg",
+    labelIconSrc:
+      "/assets/final-images/capabilities/platform-engineering/Platform Engineering-01.svg",
     ctaLabel: "Contact Us",
   },
   features: [
@@ -23,7 +25,8 @@ export const platformEngineeringContent: StudioPageContent = {
       title: "Building an internal developer platform for Halloway Financial Technologies",
       description:
         "Halloway Financial Technologies had a dozen product teams each independently provisioning infrastructure, leading to inconsistent security configurations and duplicated effort. We built a self-service internal platform with standardized, secure infrastructure templates and a unified API gateway. Outcomes so far: new service provisioning time cut from 2 weeks to under 1 day, 100% of new services meeting baseline security configuration, 3 previously duplicated internal tools consolidated into one, and developer satisfaction up 41% in internal survey.",
-      image: "/assets/images/package/studios/halloway-fintech-case.svg",
+      image:
+        "/assets/final-images/capabilities/platform-engineering/halloway_internal_platform_case_study.png",
       imageAlt: "Halloway Financial Technologies internal platform case study",
       theme: "dark",
       layout: "row",
@@ -37,7 +40,8 @@ export const platformEngineeringContent: StudioPageContent = {
       title: "Frontend web software development",
       description:
         "Harnessing HTML, CSS, and JavaScript, our frontend wizards craft captivating web interfaces. Collaborating with UI/UX experts, we create visually stunning, user-friendly designs that adapt to any device or browser.",
-      image: "/assets/images/case-study/komb-banner.png",
+      image:
+        "/assets/final-images/capabilities/platform-engineering/1-frontend_hero_professional_copy_v2.png",
       imageAlt: "Frontend web software development mockup",
       theme: "black",
       layout: "row",
@@ -98,7 +102,8 @@ export const platformEngineeringContent: StudioPageContent = {
       title: "Architecture design and planning",
       description:
         "In collaboration with the development team, we'll design a robust and efficient code architecture according to your specific requirements. This involves defining architectural patterns and guidelines for implementation.",
-      image: "/assets/images/case-study/emerge-banner.png",
+      image:
+        "/assets/final-images/capabilities/platform-engineering/4-architecture_design_planning_without_circle.png",
       imageAlt: "Architecture design and planning visual",
       theme: "black",
       layout: "row",
@@ -111,7 +116,8 @@ export const platformEngineeringContent: StudioPageContent = {
       title: "Code review",
       description:
         "Our experts will analyze your existing code for design problems, efficiency, readability, and maintainability. We'll leave no stone unturned in identifying security vulnerabilities and risks.",
-      image: "/assets/images/industry/working.jpg",
+      image:
+        "/assets/final-images/capabilities/platform-engineering/5-code_review_human_interaction_visual.png",
       imageAlt: "",
       theme: "light",
       layout: "half",
@@ -121,7 +127,8 @@ export const platformEngineeringContent: StudioPageContent = {
     {
       id: "code-review-photo",
       title: "Code review",
-      image: "/assets/images/industry/working.jpg",
+      image:
+        "/assets/final-images/capabilities/platform-engineering/5-code_review_human_interaction_visual.png",
       imageAlt: "Engineers collaborating during a code review",
       theme: "light",
       layout: "half",
@@ -131,7 +138,8 @@ export const platformEngineeringContent: StudioPageContent = {
     {
       id: "discovery-photo",
       title: "Technical product discovery",
-      image: "/assets/images/case-study/CulturalFit.jpg",
+      image:
+        "/assets/final-images/capabilities/platform-engineering/6-technical_product_discovery_natural_realism_v2.png",
       imageAlt: "Team collaborating in a product discovery session",
       theme: "light",
       layout: "half",
@@ -144,7 +152,8 @@ export const platformEngineeringContent: StudioPageContent = {
       title: "Technical product discovery",
       description:
         "We'll help you uncover the technical aspects of your product and make decisions about its development and future roadmap.",
-      image: "/assets/images/case-study/CulturalFit.jpg",
+      image:
+        "/assets/final-images/capabilities/platform-engineering/6-technical_product_discovery_natural_realism_v2.png",
       imageAlt: "",
       theme: "light",
       layout: "half",
