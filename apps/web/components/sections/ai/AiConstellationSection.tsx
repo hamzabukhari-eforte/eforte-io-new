@@ -27,7 +27,7 @@ export default function AiConstellationSection() {
             transition={{ duration: 0.5 }}
             className="max-w-xl"
           >
-            <p className="text-sm tracking-wide text-white md:text-[15px]">
+            <p className="text-sm tracking-wide text-primary-pink md:text-[12px]">
               <span className="font-light italic">constellation</span>{" "}
               <span className="font-semibold uppercase tracking-[0.14em]">
                 RESEARCH

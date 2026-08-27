@@ -19,7 +19,7 @@ const beVietnamPro = Be_Vietnam_Pro({
 
 export default function AiCustomerSatisfactionSection() {
   return (
-    <section className="bg-black pt-16 pb-28 text-white md:pb-32">
+    <section className="bg-black pb-28 text-white md:pb-32">
       <Container className="relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
