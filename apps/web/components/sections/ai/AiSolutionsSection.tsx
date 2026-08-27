@@ -30,14 +30,14 @@ export default function AiSolutionsSection() {
     aiSolutions.find((item) => item.id === activeId) ?? aiSolutions[0];
 
   return (
-    <section className="bg-black py-16 text-white md:py-24">
+    <section className="bg-black py-16 text-white">
       <Container>
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="max-w-3xl text-3xl font-semibold tracking-tight md:text-4xl lg:text-[42px] lg:leading-tight"
+          className="max-w-3xl text-[36px] font-semibold leading-tight tracking-tight"
         >
           eForte AI and machine learning solutions
         </motion.h2>
@@ -68,7 +68,7 @@ export default function AiSolutionsSection() {
                         <p className="text-base font-semibold leading-snug text-white md:text-lg">
                           {item.title}
                         </p>
-                        <p className="mt-2 min-h-[4.75rem] text-sm leading-relaxed text-white/70 md:min-h-[5.25rem] md:text-[15px]">
+                        <p className="mt-2 min-h-[4.75rem] text-sm leading-relaxed text-white md:min-h-[5.25rem] md:text-[15px]">
                           {item.description}
                         </p>
                       </div>
@@ -108,11 +108,7 @@ export default function AiSolutionsSection() {
                   alt={active.title}
                   fill
                   sizes="(max-width: 1024px) 90vw, 620px"
-                  className={
-                    active.id === "agentic"
-                      ? "object-contain object-center"
-                      : "object-cover"
-                  }
+                  className="object-cover"
                   priority={active.id === "agentic"}
                 />
               </motion.div>

@@ -34,7 +34,7 @@ export default function AiQbricksSection() {
                 QBricks: An enterprise accelerator for AI agent development, a
                 Built on Databricks Solution
               </h2>
-              <p className="mt-6 text-[15px] leading-relaxed text-white/75 md:text-base">
+              <p className="mt-6 text-[15px] leading-relaxed text-white md:text-base">
                 QBricks is a low-code/no-code AI workflow builder. It provides
                 both pre-built agents as well as a workflow builder, evaluation
                 agent, and associated ecosystem.
@@ -83,7 +83,7 @@ export default function AiQbricksSection() {
               QBricks: An enterprise accelerator for AI agent development, a
               Built on Databricks Solution
             </h2>
-            <p className="mt-5 text-[15px] leading-relaxed text-white/75">
+            <p className="mt-5 text-[15px] leading-relaxed text-white">
               QBricks is a low-code/no-code AI workflow builder. It provides both
               pre-built agents as well as a workflow builder, evaluation agent,
               and associated ecosystem.

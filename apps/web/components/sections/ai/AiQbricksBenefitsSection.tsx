@@ -51,7 +51,7 @@ export default function AiQbricksBenefitsSection() {
               <h3 className="text-[17px] font-semibold leading-snug text-white md:text-lg">
                 {benefit.title}
               </h3>
-              <p className="mt-3 text-[14px] leading-relaxed text-white/80 md:text-[15px]">
+              <p className="mt-3 text-[14px] leading-relaxed text-white md:text-[15px]">
                 {benefit.description}
               </p>
             </motion.article>

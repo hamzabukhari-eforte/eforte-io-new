@@ -8,7 +8,7 @@ import { AI_ACCENT, aiConstellation } from "@/data/capabilities/ai";
 
 export default function AiConstellationSection() {
   return (
-    <section className="relative overflow-hidden bg-black py-20 text-white md:py-28">
+    <section className="relative overflow-hidden bg-black py-16 text-white">
       <Image
         src="/assets/images/industry/bg-constellation.jpg"
         alt=""
@@ -33,10 +33,10 @@ export default function AiConstellationSection() {
                 RESEARCH
               </span>
             </p>
-            <h2 className="mt-5 text-3xl font-semibold leading-[1.15] md:text-4xl lg:text-[42px]">
+            <h2 className="mt-5 text-[36px] font-semibold leading-[1.15]">
               {aiConstellation.title}
             </h2>
-            <p className="mt-5 text-[15px] leading-relaxed text-white/75 md:text-base">
+            <p className="mt-5 text-[15px] leading-relaxed text-white md:text-base">
               {aiConstellation.description}
             </p>
             <Link

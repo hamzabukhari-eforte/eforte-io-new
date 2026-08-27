@@ -17,7 +17,7 @@ export default function AiFaqSection() {
   };
 
   return (
-    <section className="bg-white py-20 text-default md:pb-28">
+    <section className="bg-white py-16 text-default">
       <Container className="max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -35,7 +35,7 @@ export default function AiFaqSection() {
           />
           <div className="relative">
             <p className="text-4xl font-medium text-white md:text-5xl">FAQs</p>
-            <p className="mt-2 text-base text-white/80">
+            <p className="mt-2 text-base text-white">
               FAQs about our AI and machine learning services
             </p>
           </div>
@@ -76,7 +76,7 @@ export default function AiFaqSection() {
                       className="overflow-hidden"
                     >
                       <div className="px-12 pb-5 pt-0 md:px-14">
-                        <p className="text-base leading-relaxed text-default/70 md:text-[17px]">
+                        <p className="text-base leading-relaxed text-default md:text-[17px]">
                           {faq.answer}
                         </p>
                       </div>

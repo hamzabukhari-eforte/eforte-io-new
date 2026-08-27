@@ -14,7 +14,8 @@ export const aiCaseStudy = {
     "Deployed across 12 facilities within 90 days.",
     "Clinician satisfaction scores up 33% post-rollout.",
   ],
-  diagramSrc: "/assets/images/package/studios/thornfield-health-case.svg",
+  diagramSrc:
+    "/assets/final-images/capabilities/AI/Outcomes_achieved_so_far_includel-01-01.png",
 };
 
 export const aiCognitiveGateway = {
@@ -75,35 +76,38 @@ export const aiSolutions = [
     title: "Generative AI",
     description:
       "Transform your business with GenAI, powered by leading LLMs and image generation tools. Create compelling visuals, personalized content, and automate complex tasks end-to-end.",
-    image: "/assets/images/capabilities/accelerators-1.jpg",
+    image: "/assets/final-images/capabilities/AI/1-Generative_Ai.png",
   },
   {
     id: "vision",
     title: "Computer vision",
     description:
       "Design and deploy computer vision solutions for detection, classification, measurement, and more across industries.",
-    image: "/assets/images/capabilities/computer-vision.jpg",
+    image:
+      "/assets/final-images/capabilities/AI/2-computer_vision_detection_visual.png",
   },
   {
     id: "discovery",
     title: "AI Discovery",
     description:
       "Run structured discovery to identify the most impactful AI opportunities, assess feasibility, and prioritize a clear roadmap.",
-    image: "/assets/images/capabilities/ai-discovery.jpg",
+    image:
+      "/assets/final-images/capabilities/AI/3-ai_discovery_opportunity_visual.png",
   },
   {
     id: "ml",
     title: "Machine learning product development and deployment",
     description:
       "Build, test, and productionize ML models as part of robust products and services.",
-    image: "/assets/images/capabilities/machine-learning.jpg",
+    image:
+      "/assets/final-images/capabilities/AI/4-Machine_learning_product_development_and_deployment.png",
   },
   {
     id: "team",
     title: "AI as part of your team",
     description:
       "Integrate AI into day-to-day workflows so it acts as an embedded partner for your teams, not just a separate tool.",
-    image: "/assets/images/capabilities/team.jpg",
+    image: "/assets/final-images/capabilities/AI/5-Ai_as_part_of_team.png",
   },
 ];
 
@@ -131,7 +135,7 @@ export const aiConstellation = {
 export const aiCustomerSatisfaction = {
   eyebrow: "CUSTOMER SATISFACTION",
   title: "Customer satisfaction – top-rated AI services",
-  image: "/assets/images/industry/recognitions.jpg",
+  image: "/assets/final-images/capabilities/AI/Customer-satisfaction.jpeg",
   clutch: {
     title: "Clutch",
     description:
@@ -146,19 +150,19 @@ export const aiInsights = [
   {
     id: "1",
     author: "Maria Eugenia Millan",
-    authorImage: "/assets/images/velocity-ai/avatar-2.jpg",
+    authorImage: "/assets/images/capabilities/ai/avatar-maria-millan.jpg",
     title:
       "Data Engineering Services in 2026: Execution, AI Readiness, and the Industrialization of Delivery",
     summary:
       "AIM Research's 2026 report highlights production reliability and AI readiness as the new bar for data engineering partners. Here's what that means for enterprise delivery — and why eForte was named a Leader.",
     date: "July 22, 2026",
     tags: ["Data and AI", "News"],
-    image: "/assets/images/capabilities/ai/insight-aim-leader.png",
+    image: "/assets/images/capabilities/ai/insight-aim-leader-eforte.png",
   },
   {
     id: "2",
     author: "Gabriel Fagundez",
-    authorImage: "/assets/images/velocity-ai/avatar-3.jpg",
+    authorImage: "/assets/images/capabilities/ai/avatar-gabriel-fagundez.jpg",
     title: "What I Learned Watching Four Women Lead Data at the Data+AI Summit",
     summary:
       "Leadership lessons from the Data+AI Summit — culture, community, and what it takes to build high-performing data and AI teams in 2026.",

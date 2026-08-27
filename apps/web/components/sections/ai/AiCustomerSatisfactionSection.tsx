@@ -19,7 +19,7 @@ const beVietnamPro = Be_Vietnam_Pro({
 
 export default function AiCustomerSatisfactionSection() {
   return (
-    <section className="bg-black py-16 text-white md:py-24">
+    <section className="bg-black pt-16 pb-28 text-white md:pb-32">
       <Container className="relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,11 +28,11 @@ export default function AiCustomerSatisfactionSection() {
           transition={{ duration: 0.5 }}
           className="ml-auto max-w-md lg:pr-0"
         >
-          <p className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-white/70">
-            <span className="inline-block h-2 w-2 rounded-full bg-white" />
+          <p className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
+            <span className="inline-block h-2 w-2 rounded-full bg-primary-pink" />
             {aiCustomerSatisfaction.eyebrow}
           </p>
-          <h2 className="mt-3 text-3xl font-semibold leading-tight text-white md:text-4xl">
+          <h2 className="mt-3 text-[36px] font-semibold leading-tight text-white">
             {aiCustomerSatisfaction.title}
           </h2>
         </motion.div>
@@ -49,8 +49,10 @@ export default function AiCustomerSatisfactionSection() {
               src={aiCustomerSatisfaction.image}
               alt="eForte team collaborating"
               fill
-              sizes="(max-width: 1024px) 100vw, 320px"
-              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 560px"
+              className="object-cover object-[38%_center]"
+              priority
+              unoptimized
             />
           </motion.div>
 
@@ -71,12 +73,12 @@ export default function AiCustomerSatisfactionSection() {
                 />
               </div>
               <h3
-                className={`${hankenGrotesk.className} text-[37px] font-medium leading-[44px] text-[#090D10]`}
+                className={`${hankenGrotesk.className} text-[37px] font-medium leading-[44px] text-black`}
               >
                 NPS 82
               </h3>
               <div
-                className={`${beVietnamPro.className} mt-5 space-y-3 text-[15px] font-light leading-[24px] text-[#6D6D6D]`}
+                className={`${beVietnamPro.className} mt-5 space-y-3 text-[15px] font-light leading-[24px] text-default`}
               >
                 <p>Our clients are at the heart of everything we do.</p>
                 <p>
@@ -104,14 +106,14 @@ export default function AiCustomerSatisfactionSection() {
                 />
               </div>
               <h3
-                className={`${hankenGrotesk.className} text-[37px] font-medium leading-[44px] text-[#090D10]`}
+                className={`${hankenGrotesk.className} text-[37px] font-medium leading-[44px] text-black`}
               >
                 Nr.1 Great
                 <br />
                 Place to Work
               </h3>
               <div
-                className={`${beVietnamPro.className} mt-5 space-y-3 text-[15px] font-light leading-[24px] text-[#6D6D6D]`}
+                className={`${beVietnamPro.className} mt-5 space-y-3 text-[15px] font-light leading-[24px] text-default`}
               >
                 <p>
                   We&apos;re proud of our collaborative, high-performance
@@ -145,19 +147,19 @@ export default function AiCustomerSatisfactionSection() {
                 />
               </div>
               <h3
-                className={`${hankenGrotesk.className} text-[37px] font-medium leading-[44px] text-[#090D10]`}
+                className={`${hankenGrotesk.className} text-[37px] font-medium leading-[44px] text-black`}
               >
                 Clutch
               </h3>
               <p
-                className={`${beVietnamPro.className} mt-5 text-[15px] font-light leading-[24px] text-[#6D6D6D]`}
+                className={`${beVietnamPro.className} mt-5 text-[15px] font-light leading-[24px] text-default`}
               >
                 {aiCustomerSatisfaction.clutch.description}
               </p>
 
               <div className="mt-6">
                 <p
-                  className={`${beVietnamPro.className} text-[15px] font-light leading-[24px] text-[#6D6D6D]`}
+                  className={`${beVietnamPro.className} text-[15px] font-light leading-[24px] text-default`}
                 >
                   Average Review Rating
                 </p>
@@ -173,7 +175,7 @@ export default function AiCustomerSatisfactionSection() {
                     ))}
                   </span>
                   <span
-                    className={`${beVietnamPro.className} text-[13px] font-light text-[#6D6D6D]`}
+                    className={`${beVietnamPro.className} text-[13px] font-light text-default`}
                   >
                     ({aiCustomerSatisfaction.clutch.reviewCount})
                   </span>
@@ -182,7 +184,7 @@ export default function AiCustomerSatisfactionSection() {
 
               <div className="mt-5">
                 <p
-                  className={`${beVietnamPro.className} text-[15px] font-light leading-[24px] text-[#6D6D6D]`}
+                  className={`${beVietnamPro.className} text-[15px] font-light leading-[24px] text-default`}
                 >
                   Average Referral Rating
                 </p>
@@ -190,7 +192,7 @@ export default function AiCustomerSatisfactionSection() {
                   className={`${beVietnamPro.className} mt-1 text-[26px] font-bold leading-[31px] text-black`}
                 >
                   {aiCustomerSatisfaction.clutch.referralRating}{" "}
-                  <span className="text-[13px] font-light text-[#6D6D6D]">
+                  <span className="text-[13px] font-light text-default">
                     / 5
                   </span>
                 </p>

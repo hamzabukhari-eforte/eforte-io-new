@@ -9,18 +9,17 @@ import Container from "@/components/atoms/Container";
 export default function AiHeroSection() {
   return (
     <section className="relative flex min-h-[760px] flex-col justify-center overflow-hidden bg-default pt-28 pb-20 md:min-h-screen md:pt-36">
-      <div className="absolute inset-0">
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-[58%] max-w-[720px] md:w-[52%] lg:max-w-[780px]">
         <Image
           src="/assets/final-images/capabilities/AI/AI_hero_section.png"
           alt=""
           fill
           priority
-          className="object-cover object-right"
+          className="object-contain object-right"
           aria-hidden
         />
-        <div className="absolute inset-0 bg-linear-to-r from-black/95 via-black/75 to-black/35" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_35%,rgba(211,40,122,0.35),transparent_34%)]" />
       </div>
+      <div className="absolute inset-0 bg-linear-to-r from-default via-default/90 to-transparent" />
 
       <Container className="relative z-10">
         <div className="max-w-3xl">
@@ -48,7 +47,7 @@ export default function AiHeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.16 }}
-            className="mt-6 max-w-2xl space-y-4 text-base leading-7 text-white/82 md:text-lg"
+            className="mt-6 max-w-2xl space-y-4 text-base leading-7 text-white md:text-lg"
           >
             <p>
               Most companies have experimented with AI. Few have put it to

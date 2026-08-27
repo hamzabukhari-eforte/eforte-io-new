@@ -14,36 +14,37 @@ export default function VelocityAIFooterCTASection() {
   const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
 
   return (
-    <section ref={ref} className="relative min-h-[320px] md:min-h-[400px] flex flex-col items-center justify-center text-center overflow-hidden py-16 md:py-24">
+    <section
+      ref={ref}
+      className="relative flex min-h-[320px] flex-col items-center justify-center overflow-hidden bg-[#03050C] py-16 text-center md:min-h-[400px]"
+    >
       <Image
         src={CTA_IMG}
         alt="Team"
         fill
-        className="object-cover opacity-30 grayscale"
+        className="object-cover object-center opacity-40 grayscale"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#03050C] via-[#03050C]/80 to-transparent" />
+      <div className="absolute inset-0 bg-[#03050C]/70" aria-hidden />
 
       <motion.div
-        className="relative z-10 px-4 sm:px-6 max-w-2xl mx-auto"
+        className="relative z-10 mx-auto max-w-2xl px-4 sm:px-6"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 text-white">
+        <h2 className="mb-3 text-2xl font-bold text-white md:mb-4 md:text-3xl lg:text-4xl">
           Let&apos;s Build the Future Together
         </h2>
-        <p className="text-gray-400 mb-6 md:mb-8 text-sm md:text-base leading-relaxed">
-          Partner with eForte&apos;s experts to explore your idea or product and discover how Velocity AI, Agentic Orchestration, and a robust Foundational Data Layer can accelerate innovation and business impact.
+        <p className="mb-6 text-sm leading-relaxed text-white md:mb-8 md:text-base">
+          Partner with eForte&apos;s experts to explore your idea or product and
+          discover how Velocity AI, Agentic Orchestration, and a robust
+          Foundational Data Layer can accelerate innovation and business impact.
         </p>
         <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-          <ContactCTA
-            className="inline-flex h-10 items-center justify-center bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-9 py-0 rounded-full leading-none text-[15px] font-medium transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
-          >
+          <ContactCTA className="inline-flex h-10 items-center justify-center rounded-full bg-primary-pink px-9 py-0 text-[15px] font-medium leading-none text-white transition-all hover:-translate-y-0.5 hover:bg-primary-pink/90">
             Get in touch
           </ContactCTA>
-          <QuoteCTA
-            className="inline-flex h-10 items-center justify-center border border-white/70 bg-transparent px-9 py-0 rounded-full leading-none text-[15px] font-medium text-white transition-all hover:bg-white hover:text-default hover:-translate-y-0.5"
-          >
+          <QuoteCTA className="inline-flex h-10 items-center justify-center rounded-full border border-transparent bg-white px-9 py-0 text-[15px] font-medium leading-none text-default transition-all hover:-translate-y-0.5 hover:border-white hover:bg-transparent hover:text-white">
             Get a Quote
           </QuoteCTA>
         </div>

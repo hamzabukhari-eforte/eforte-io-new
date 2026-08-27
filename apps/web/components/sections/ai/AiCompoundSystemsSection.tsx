@@ -1,15 +1,57 @@
 "use client";
 
-import Image from "next/image";
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import ContactCTA from "@/components/atoms/ContactCTA";
 import Container from "@/components/atoms/Container";
 import { AI_ACCENT } from "@/data/capabilities/ai";
 
+const DIAGRAM_SRC = "/assets/images/capabilities/ai/modern-ai-systems.svg";
+
 export default function AiCompoundSystemsSection() {
+  const diagramRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(diagramRef, {
+    once: true,
+    margin: "-80px",
+    amount: 0.25,
+  });
+  const [svgMarkup, setSvgMarkup] = useState<string | null>(null);
+  const [playKey, setPlayKey] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+
+    let cancelled = false;
+
+    fetch(DIAGRAM_SRC)
+      .then((res) => res.text())
+      .then((markup) => {
+        if (cancelled) return;
+        // Keep diagram transparent on the dark section background
+        const transparent = markup.replace(
+          /<svg\b([^>]*)>/,
+          (_match, attrs: string) => {
+            const cleaned = attrs
+              .replace(/\sstyle="[^"]*"/, "")
+              .replace(/\sclass="[^"]*"/, "");
+            return `<svg${cleaned} class="h-full w-full" style="background:transparent" role="img" aria-label="Compound AI Systems architecture diagram">`;
+          },
+        );
+        setSvgMarkup(transparent);
+        setPlayKey((key) => key + 1);
+      })
+      .catch(() => {
+        if (!cancelled) setSvgMarkup(null);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [inView]);
+
   return (
     <section className="bg-white">
-      <div className="rounded-t-[12px] bg-black py-20 text-white md:rounded-t-[12px] md:py-28">
+      <div className="rounded-t-[12px] bg-black py-16 text-white md:rounded-t-[12px]">
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
             <motion.div
@@ -19,13 +61,13 @@ export default function AiCompoundSystemsSection() {
               transition={{ duration: 0.5 }}
               className="max-w-xl"
             >
-              <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-white/60">
+              <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
                 Modern AI Systems
               </p>
-              <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-4xl lg:text-[48px]">
+              <h2 className="mt-4 text-[36px] font-semibold leading-tight">
                 Building Compound AI Systems
               </h2>
-              <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-white/75 md:text-base">
+              <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-white md:text-base">
                 <p>
                   eForte builds Compound AI Systems — these are systems that
                   combine multiple components, like AI models, data retrievers,
@@ -47,21 +89,18 @@ export default function AiCompoundSystemsSection() {
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: false, margin: "-80px", amount: 0.15 }}
-              transition={{ duration: 0.55, delay: 0.08 }}
-              className="relative mx-auto aspect-[502/449] w-full max-w-xl"
+            <div
+              ref={diagramRef}
+              className="relative mx-auto aspect-[502/449] w-full max-w-xl bg-transparent"
             >
-              <Image
-                src="/assets/images/capabilities/ai/modern-ai-systems.svg"
-                alt="Compound AI Systems architecture diagram"
-                fill
-                sizes="(max-width: 1024px) 90vw, 560px"
-                className="object-contain"
-              />
-            </motion.div>
+              {svgMarkup ? (
+                <div
+                  key={playKey}
+                  className="absolute inset-0 bg-transparent [&_svg]:h-full [&_svg]:w-full"
+                  dangerouslySetInnerHTML={{ __html: svgMarkup }}
+                />
+              ) : null}
+            </div>
           </div>
         </Container>
       </div>

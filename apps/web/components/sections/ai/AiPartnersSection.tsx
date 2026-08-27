@@ -41,7 +41,7 @@ const cloudPartners: {
 
 export default function AiPartnersSection() {
   return (
-    <section className="bg-[#F7F7F8] py-16 text-default md:py-24">
+    <section className="bg-[#F7F7F8] py-16 text-default">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -51,10 +51,10 @@ export default function AiPartnersSection() {
           className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20"
         >
           <div>
-            <h2 className="text-3xl font-semibold tracking-tight md:text-4xl lg:text-[42px] lg:leading-tight">
+            <h2 className="text-[36px] font-semibold leading-tight tracking-tight">
               Our partners and certifications
             </h2>
-            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-[#666] md:text-base">
+            <p className="mt-5 max-w-xl text-[15px] leading-relaxed text-default md:text-base">
               We&apos;re SOC 2 and ISO 27001 certified, and an AWS Advanced Tier
               partner. We&apos;re also partners with, and collaborate closely with
               providers, including Databricks, Snowflake, GCP, Azure and others.
