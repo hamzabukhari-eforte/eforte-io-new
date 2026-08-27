@@ -21,7 +21,7 @@ const serviceIcons: Record<(typeof dataServices)[number]["id"], IconType> = {
 export default function DataServicesSection() {
   return (
     <section className="relative z-10">
-      <div className="rounded-[12px] bg-[#F5F5F5] py-16 text-default md:rounded-[12px]">
+      <div className="rounded-[12px] bg-[#F5F5F5] py-20 text-default md:rounded-[12px] md:py-28">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -50,7 +50,7 @@ export default function DataServicesSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, margin: "-80px", amount: 0.15 }}
                   transition={{ duration: 0.5, delay: index * 0.08 }}
-                  className="group flex flex-col rounded-[12px] border border-[#E8E8E8] bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                  className="group flex flex-col rounded-[12px] border border-white/10 bg-white/5 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
                 >
                   <span className="flex h-11 w-11 items-center justify-center rounded-[12px] bg-primary-pink/10 text-primary-pink transition-colors duration-300 group-hover:bg-primary-pink group-hover:text-white">
                     <Icon className="h-5 w-5 transition-transform duration-300 group-hover:scale-105" aria-hidden />
