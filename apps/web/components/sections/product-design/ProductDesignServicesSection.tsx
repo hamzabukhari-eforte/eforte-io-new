@@ -10,7 +10,6 @@ export default function ProductDesignServicesSection() {
       title="A user-centric approach to help your business grow"
       values={productDesignValues}
       iconPosition="top-right"
-      className="pt-26 md:pt-34"
     />
   );
 }
