@@ -169,7 +169,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                       viewport={{ once: false, amount: 0.4 }}
                       transition={{ duration: 0.45, delay: 0.1 + i * 0.08, ease }}
                       whileHover={{ y: -3, scale: 1.03 }}
-                      className="inline-flex h-10 items-center justify-center gap-3 rounded-full leading-none border border-white/25 bg-white/12 px-4 py-0 text-sm font-medium shadow-[0_8px_24px_rgba(0,0,0,0.2)] backdrop-blur-md md:px-5 md:py-0 md:text-[15px]"
+                      className="inline-flex items-center justify-center gap-3 rounded-full leading-none border border-white/25 bg-white/12 px-4 py-1.5 text-sm font-medium shadow-[0_8px_24px_rgba(0,0,0,0.2)] backdrop-blur-md md:px-5 md:py-1.5 md:text-[15px]"
                     >
                       <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary-pink/20 ring-1 ring-primary-pink/40">
                         <Icon className="h-4 w-4 text-primary-pink" />

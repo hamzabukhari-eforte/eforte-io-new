@@ -65,7 +65,7 @@ export default function FoundationalDataLayerInsightsSection() {
               <button
                 key={cat}
                 type="button"
-                className="inline-flex items-center justify-center h-10 px-4 py-0 rounded-full leading-none border border-white/20 text-xs text-white hover:bg-white/10 transition"
+                className="inline-flex h-[25px] items-center justify-center px-4 py-0 rounded-full leading-none border border-white/20 text-xs text-white hover:bg-white/10 transition"
               >
                 {cat}
               </button>

@@ -73,7 +73,7 @@ export default function FoundationalDataLayerPillarsSection() {
                 </p>
                 <Link
                   href={pillar.href}
-                  className="inline-flex items-center justify-center h-10 px-6 py-0 bg-white text-black text-xs font-bold rounded-full leading-none hover:bg-gray-200 transition relative z-10"
+                  className="inline-flex items-center justify-center px-6 py-1 bg-white text-black text-xs font-bold rounded-full leading-none hover:bg-gray-200 transition relative z-10"
                 >
                   Learn more
                 </Link>

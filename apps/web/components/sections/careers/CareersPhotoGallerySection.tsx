@@ -106,7 +106,7 @@ export default function CareersPhotoGallerySection() {
                 type="button"
                 onClick={() => setActiveCategory(category.id)}
                 className={cn(
-                  "inline-flex items-center justify-center h-10 rounded-full leading-none border px-4 py-0 text-sm font-medium transition-all md:px-5",
+                  "inline-flex h-[25px] items-center justify-center rounded-full leading-none border px-4 py-0.5 text-sm font-medium transition-all md:px-5",
                   isActive
                     ? "border-[#3b82f6] bg-[#3b82f6] text-white"
                     : "border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:text-gray-900"

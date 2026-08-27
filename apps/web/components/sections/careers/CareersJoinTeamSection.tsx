@@ -128,7 +128,7 @@ export default function CareersJoinTeamSection() {
                   type="file"
                   name="resume"
                   accept=".pdf,.doc,.docx"
-                  className="inline-flex items-center justify-center h-10 w-full cursor-pointer rounded-[12px] border border-dashed border-white/20 bg-white/5 px-3 py-0 text-sm text-white/60 outline-none transition-colors file:mr-4 file:cursor-pointer file:rounded-full leading-none file:border-0 file:bg-white/10 file:px-4 file:py-0 file:text-xs file:font-medium file:text-white hover:border-white/30 hover:file:bg-white/20"
+                  className="inline-flex items-center justify-center w-full cursor-pointer rounded-[12px] border border-dashed border-white/20 bg-white/5 px-3 py-1 text-sm text-white/60 outline-none transition-colors file:mr-4 file:cursor-pointer file:rounded-full leading-none file:border-0 file:bg-white/10 file:px-4 file:py-1 file:text-xs file:font-medium file:text-white hover:border-white/30 hover:file:bg-white/20"
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm text-white/80 sm:col-span-2">

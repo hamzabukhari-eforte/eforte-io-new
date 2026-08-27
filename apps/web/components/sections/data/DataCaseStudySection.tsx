@@ -75,7 +75,7 @@ export default function DataCaseStudySection() {
                   {story.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="inline-flex items-center justify-center h-10 rounded-full leading-none bg-white px-3 py-0 text-xs font-medium text-primary-pink"
+                      className="inline-flex h-[25px] items-center justify-center rounded-full leading-none bg-white px-3 py-0 text-xs font-medium text-primary-pink"
                     >
                       {tag}
                     </span>

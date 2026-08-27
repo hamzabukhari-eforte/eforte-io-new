@@ -114,7 +114,7 @@ export default function InsuranceSuccessStoriesSection() {
                     <span
                       key={tag}
                       className={cn(
-                        "inline-flex h-10 items-center justify-center rounded-full leading-none px-4 py-0.5 text-sm font-medium",
+                        "inline-flex h-[25px] items-center justify-center rounded-full leading-none px-4 py-0.5 text-sm font-medium",
                         story.tagClass
                       )}
                     >

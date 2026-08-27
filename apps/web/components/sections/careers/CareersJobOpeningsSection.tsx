@@ -25,10 +25,10 @@ function JobCard({ job }: { job: (typeof jobOpenings)[number] }) {
         <h3 className="text-lg font-semibold text-white md:text-xl">{job.title}</h3>
         <p className="mt-1 text-sm text-desc">{job.location}</p>
         <div className="mt-3 flex flex-wrap gap-2">
-          <span className="inline-flex items-center justify-center h-10 rounded-full leading-none bg-white/10 px-3 py-0 text-xs text-white/90">
+          <span className="inline-flex h-[25px] items-center justify-center rounded-full leading-none bg-white/10 px-3 py-0 text-xs text-white/90">
             {job.type}
           </span>
-          <span className="inline-flex items-center justify-center h-10 rounded-full leading-none bg-primary-pink/20 px-3 py-0 text-xs text-primary-pink">
+          <span className="inline-flex h-[25px] items-center justify-center rounded-full leading-none bg-primary-pink/20 px-3 py-0 text-xs text-primary-pink">
             {job.department}
           </span>
         </div>

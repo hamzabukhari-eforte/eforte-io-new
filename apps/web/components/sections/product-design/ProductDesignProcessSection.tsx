@@ -139,7 +139,7 @@ export default function ProductDesignProcessSection() {
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex items-center justify-center h-10 rounded-full leading-none border border-gray-200 px-3 py-0 text-xs font-medium text-gray-600"
+                        className="inline-flex h-[25px] items-center justify-center rounded-full leading-none border border-gray-200 px-3 py-0 text-xs font-medium text-gray-600"
                       >
                         {tag}
                       </span>

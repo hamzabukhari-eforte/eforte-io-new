@@ -57,7 +57,7 @@ export default function CyberServicesSection() {
               {cyberTransformation.tenets.map((tenet) => (
                 <span
                   key={tenet.id}
-                  className="inline-flex h-10 items-center justify-center gap-2 rounded-full leading-none border border-default/20 px-4 py-0 text-sm font-medium text-default"
+                  className="inline-flex h-[25px] items-center justify-center gap-2 rounded-full leading-none border border-default/20 px-4 py-0.5 text-sm font-medium text-default"
                 >
                   {tenet.icon === "star" ? (
                     <FaStar className="h-3.5 w-3.5" />
