@@ -13,20 +13,20 @@ export default function DataInsightsSection() {
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "-80px", amount: 0.15 }}
+            viewport={{ once: false, margin: "-40px", amount: 0.15 }}
             transition={{ duration: 0.5 }}
             className="mx-auto max-w-3xl text-center text-3xl font-semibold md:text-4xl"
           >
             Insights from the latest developments in data engineering
           </motion.h2>
 
-          <div className="mt-14 space-y-12 md:mt-16 md:space-y-16">
+          <div className="mt-14 space-y-8 md:mt-16 md:space-y-10">
             {dataInsights.map((article, index) => (
               <motion.article
                 key={article.id}
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: false, margin: "-80px", amount: 0.15 }}
+                viewport={{ once: false, margin: "-40px", amount: 0.15 }}
                 transition={{ duration: 0.45, delay: index * 0.06 }}
                 className="grid items-start gap-6 md:grid-cols-[1fr_280px] md:gap-12 lg:grid-cols-[1fr_320px]"
               >
@@ -71,7 +71,7 @@ export default function DataInsightsSection() {
 
                 <Link
                   href="/blog"
-                  className="relative aspect-[16/10] w-full overflow-hidden rounded-[12px] md:aspect-[4/3]"
+                  className="relative aspect-[16/9] w-full overflow-hidden rounded-[12px] md:aspect-[3/2]"
                 >
                   <Image
                     src={article.image}
