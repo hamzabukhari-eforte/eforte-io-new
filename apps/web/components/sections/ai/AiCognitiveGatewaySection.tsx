@@ -7,8 +7,8 @@ import { aiCognitiveGateway } from "@/data/capabilities/ai";
 
 export default function AiCognitiveGatewaySection() {
   return (
-    <section className="relative z-10 py-16">
-      <div className="rounded-[12px] bg-[#F5F5F5] py-16 text-default md:rounded-[12px]">
+    <section className="relative z-10 pt-16">
+      <div className="rounded-t-[12px] bg-[#F5F5F5] py-16 text-default">
         <Container>
           <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-14 lg:items-center">
             <motion.div
