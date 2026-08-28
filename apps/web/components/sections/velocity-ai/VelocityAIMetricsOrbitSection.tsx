@@ -127,8 +127,8 @@ export default function VelocityAIMetricsOrbitSection() {
                 <div
                   className={`${boxSize} rounded-[12px] bg-gradient-to-b from-[#1e1b4b] to-[#0f0a2a] border border-indigo-500/30 flex items-center justify-center mb-3 shadow-[0_0_30px_rgba(79,70,229,0.2)] hover:scale-110 transition-transform duration-300 relative overflow-hidden group cursor-default ${isCenter ? "mb-4 shadow-[0_0_40px_rgba(79,70,229,0.4)]" : ""}`}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent opacity-30" />
-                  <Icon className={`${iconSize} text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] relative z-10`} />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/25 to-transparent opacity-40" />
+                  <Icon className={`${iconSize} text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.45)] relative z-10`} />
                 </div>
                 <h3 className="text-white font-medium text-[12px] md:text-[14px] text-center leading-tight mb-1 whitespace-pre-line">
                   {item.title}

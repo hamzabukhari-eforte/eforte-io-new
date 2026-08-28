@@ -22,9 +22,9 @@ export default function VelocityAIFooterCTASection() {
         src={CTA_IMG}
         alt="Team"
         fill
-        className="object-cover object-center opacity-40 grayscale"
+        className="object-cover object-center"
       />
-      <div className="absolute inset-0 bg-[#03050C]/70" aria-hidden />
+      <div className="absolute inset-0 bg-black/30" aria-hidden />
 
       <motion.div
         className="relative z-10 mx-auto max-w-2xl px-4 sm:px-6"

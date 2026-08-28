@@ -134,7 +134,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
               }}
             >
               <div
-                className="pointer-events-none absolute -left-10 top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-white/15 blur-[50px]"
+                className="pointer-events-none absolute -left-10 top-1/2 h-40 w-40 -translate-y-1/2 rounded-full bg-black/30 blur-[50px]"
                 aria-hidden
               />
               <div
@@ -142,10 +142,10 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                 aria-hidden
               />
               <div
-                className="pointer-events-none absolute inset-0 opacity-[0.12]"
+                className="pointer-events-none absolute inset-0 opacity-[0.08]"
                 style={{
                   backgroundImage:
-                    "repeating-linear-gradient(115deg, rgba(255,255,255,0.35) 0, rgba(255,255,255,0.35) 1px, transparent 1px, transparent 18px)",
+                    "repeating-linear-gradient(115deg, rgba(0,0,0,0.45) 0, rgba(0,0,0,0.45) 1px, transparent 1px, transparent 18px)",
                 }}
                 aria-hidden
               />
@@ -373,11 +373,11 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
             className="pointer-events-none absolute inset-0 opacity-20"
             style={{
               backgroundImage:
-                "repeating-linear-gradient(60deg, rgba(255,255,255,0.14) 0, rgba(255,255,255,0.14) 1px, transparent 1px, transparent 28px)",
+                "repeating-linear-gradient(60deg, rgba(0,0,0,0.2) 0, rgba(0,0,0,0.2) 1px, transparent 1px, transparent 28px)",
             }}
             aria-hidden
           />
-          <div className="pointer-events-none absolute -right-20 top-0 h-80 w-80 rounded-full bg-white/10 blur-[100px]" aria-hidden />
+          <div className="pointer-events-none absolute -right-20 top-0 h-80 w-80 rounded-full bg-black/20 blur-[100px]" aria-hidden />
 
           <Container className="relative">
             <Reveal className="mx-auto max-w-3xl text-center">

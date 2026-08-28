@@ -121,7 +121,7 @@ export default function AgenticOrchestrationPlatformSection() {
                 <div
                   className={`w-full max-w-[280px] sm:max-w-[340px] md:max-w-[380px] h-20 md:h-24 lg:h-28 rounded-[50%] bg-gradient-to-b ${tier.gradient} border-t ${tier.border} flex items-center justify-center shadow-[0_0_40px_rgba(124,58,237,0.15)] relative overflow-hidden`}
                 >
-                  <div className="absolute top-0 left-[15%] right-[15%] h-[40%] bg-white/10 rounded-[50%] blur-md" />
+                  <div className="absolute top-0 left-[15%] right-[15%] h-[40%] bg-black/20 rounded-[50%] blur-md" />
                   <span className={`text-white font-medium ${tier.small ? "text-xs md:text-sm" : "text-base md:text-lg"} relative z-20 text-center px-3`}>
                     {tier.label}
                   </span>

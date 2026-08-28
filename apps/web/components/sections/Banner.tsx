@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Banner() {
   return (
-    <section className="relative w-full h-screen">
+    <section className="relative w-full h-screen bg-default">
       <Image
         src="/assets/images/landing/banner.png"
         alt="Banner"
@@ -15,9 +15,14 @@ export default function Banner() {
         priority
         quality={90}
       />
-      
-      {/* Text Overlay */}
-      <div className="absolute inset-0 flex items-center justify-center">
+
+      {/* ~5% dark overlay — keeps banner art visible */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-black/5"
+        aria-hidden
+      />
+
+      <div className="absolute inset-0 z-10 flex items-center justify-center">
         <Container>
           <motion.div
             className="max-w-4xl mx-auto text-center"
@@ -34,7 +39,7 @@ export default function Banner() {
               The Integrated AI Transformation Partner.
             </motion.h1>
             <motion.p
-              className="text-lg md:text-xl text-desc font-light leading-relaxed"
+              className="text-lg md:text-xl text-white/85 font-light leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
