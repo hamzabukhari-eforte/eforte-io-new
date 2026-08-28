@@ -37,18 +37,18 @@ export default function CapabilityStudioMidCta({
               className="h-8 w-8 object-contain"
               aria-hidden
             />
-            <h2 className="mt-5 text-3xl font-semibold leading-tight text-default sm:text-4xl lg:text-[48px] lg:leading-[1.12]">
+            <h2 className="mt-5 text-3xl font-semibold leading-tight text-black sm:text-4xl lg:text-[48px] lg:leading-[1.12]">
               {midCta.titleBefore}
               <span className={tokens.textClass}>{midCta.titleHighlight}</span>
             </h2>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-[#8A8A8A] md:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-black md:text-lg">
               {midCta.description}
             </p>
           </div>
 
           <ContactCTA
             className={cn(
-              "inline-flex w-fit items-center gap-2 border-b pb-1 text-base font-medium text-default transition-opacity hover:opacity-70",
+              "inline-flex w-fit items-center gap-2 border-b pb-1 text-base font-medium text-black transition-opacity hover:opacity-70",
               tokens.underlineClass
             )}
           >

@@ -1,14 +1,14 @@
 import {
+  // CyberStudioVideoSection, // preserved — “eForte's approach…” section intentionally omitted
+  // CyberExpertsSpotlightSection, // preserved — experts spotlight intentionally omitted
   CyberAiSecurityIntroSection,
   CyberCertificationsSection,
-  CyberExpertsSpotlightSection,
   CyberFaqSection,
   CyberHeroSection,
   CyberInsightsSection,
   CyberPillarsSection,
   CyberServicesSection,
   CyberSolutionsSection,
-  CyberStudioVideoSection,
   CyberSuccessStoriesSection,
 } from "@/components/sections/cybersecurity";
 
@@ -23,13 +23,13 @@ export default function CybersecurityPage() {
     <main className="min-h-screen bg-default text-white">
       <CyberHeroSection />
       <CyberAiSecurityIntroSection />
-      <CyberStudioVideoSection />
+      {/* <CyberStudioVideoSection /> */}
       <CyberPillarsSection />
       <CyberSolutionsSection />
       <CyberServicesSection />
       <CyberCertificationsSection />
       <CyberSuccessStoriesSection />
-      <CyberExpertsSpotlightSection />
+      {/* <CyberExpertsSpotlightSection /> */}
       <CyberInsightsSection />
       <CyberFaqSection />
     </main>

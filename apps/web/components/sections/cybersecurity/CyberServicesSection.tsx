@@ -28,14 +28,14 @@ const serviceIcons: Record<(typeof cyberServices)[number]["icon"], IconType> = {
 
 export default function CyberServicesSection() {
   return (
-    <section className="bg-white pb-16 text-default md:pb-24">
+    <section className="bg-white pb-16 text-black">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="grid gap-10 border-t border-[#E8E8E8] pt-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 md:pt-12"
+          className="grid gap-10 border-t border-[#E8E8E8] pt-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16"
         >
           <div>
             <div className="relative flex h-16 w-16 items-center justify-center rounded-[12px] bg-primary-pink">
@@ -44,20 +44,20 @@ export default function CyberServicesSection() {
                 ✦
               </span>
             </div>
-            <h2 className="mt-6 text-3xl font-semibold leading-tight md:text-4xl">
+            <h2 className="mt-6 text-[36px] font-semibold leading-tight text-black">
               {cyberTransformation.title}
             </h2>
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold leading-snug md:text-2xl">
+            <h3 className="text-[36px] font-semibold leading-snug text-black">
               {cyberTransformation.heading}
             </h3>
             <div className="mt-5 flex flex-wrap gap-3">
               {cyberTransformation.tenets.map((tenet) => (
                 <span
                   key={tenet.id}
-                  className="inline-flex h-[25px] items-center justify-center gap-2 rounded-full leading-none border border-default/20 px-4 py-0.5 text-sm font-medium text-default"
+                  className="inline-flex h-[25px] items-center justify-center gap-2 rounded-full leading-none border border-black/20 px-4 py-0.5 text-sm font-medium text-black"
                 >
                   {tenet.icon === "star" ? (
                     <FaStar className="h-3.5 w-3.5" />
@@ -68,7 +68,7 @@ export default function CyberServicesSection() {
                 </span>
               ))}
             </div>
-            <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-[#555] md:text-base">
+            <div className="mt-6 space-y-4 text-[16px] leading-relaxed text-black">
               {cyberTransformation.paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -93,8 +93,10 @@ export default function CyberServicesSection() {
                 >
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="mt-5 text-xl font-semibold">{service.title}</h3>
-                <div className="mt-4 space-y-3 text-[14px] leading-relaxed text-[#555] md:text-[15px]">
+                <h3 className="mt-5 text-[24px] font-semibold leading-tight text-black">
+                  {service.title}
+                </h3>
+                <div className="mt-4 space-y-3 text-[16px] leading-relaxed text-black">
                   {service.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}

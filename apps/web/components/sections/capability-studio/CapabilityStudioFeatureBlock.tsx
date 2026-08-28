@@ -17,32 +17,32 @@ type CapabilityStudioFeatureBlockProps = {
 
 const themeStyles = {
   light: {
-    card: "bg-[#F2F2F2] text-default",
-    number: "text-default",
-    title: "text-default",
-    description: "text-[#6B6B6B]",
-    visualTitle: "text-default",
+    card: "bg-[#F2F2F2] text-black",
+    number: "text-black",
+    title: "text-black",
+    description: "text-black",
+    visualTitle: "text-black",
   },
   muted: {
-    card: "bg-[#E8E8E8] text-default",
-    number: "text-default",
-    title: "text-default",
-    description: "text-[#6B6B6B]",
-    visualTitle: "text-default",
+    card: "bg-[#E8E8E8] text-black",
+    number: "text-black",
+    title: "text-black",
+    description: "text-black",
+    visualTitle: "text-black",
   },
   dark: {
     card: "bg-[#1A1A1A] text-white",
     number: "text-white",
     title: "text-white",
-    description: "text-white/75",
-    visualTitle: "text-[#8EB4FF]",
+    description: "text-white",
+    visualTitle: "text-white",
   },
   black: {
     card: "bg-black text-white",
     number: "text-white",
     title: "text-white",
-    description: "text-white/75",
-    visualTitle: "text-[#8EB4FF]",
+    description: "text-white",
+    visualTitle: "text-white",
   },
 } as const;
 
@@ -62,7 +62,7 @@ function FeatureCopy({
       ) : null}
       <h3
         className={cn(
-          "text-2xl font-semibold leading-tight md:text-3xl lg:text-[34px] lg:leading-[1.15]",
+          "text-[36px] font-semibold leading-tight",
           feature.number ? "mt-4" : "mt-0",
           styles.title
         )}
@@ -72,7 +72,7 @@ function FeatureCopy({
       {feature.description ? (
         <p
           className={cn(
-            "mt-5 max-w-md text-sm leading-relaxed md:text-base md:leading-7",
+            "mt-5 max-w-md text-[16px] leading-relaxed",
             styles.description
           )}
         >
@@ -90,24 +90,32 @@ function FeatureMedia({
 }: {
   feature: StudioFeature;
   accentColor: string;
-  panel?: "image" | "accent";
+  panel?: "image" | "accent" | "black";
 }) {
-  const isAccentPanel = panel === "accent";
+  const isSolidPanel = panel === "accent" || panel === "black";
   const isInset = Boolean(feature.mediaInset);
-  const isSvg = feature.image.endsWith(".svg");
+  const isFullBleed = Boolean(feature.mediaFullBleed);
+  const imagePath = feature.image.split("?")[0] ?? feature.image;
+  const isSvg = imagePath.endsWith(".svg");
+  const solidBg =
+    panel === "black" ? "#000000" : panel === "accent" ? accentColor : undefined;
 
   if (isInset) {
     return (
       <div className="flex h-full min-h-[300px] items-stretch p-3 md:min-h-[380px] lg:min-h-full">
-        <div className="relative w-full min-h-[260px] overflow-hidden rounded-[12px] md:min-h-0">
+        <div
+          className="relative w-full min-h-[260px] overflow-hidden rounded-[12px] bg-black md:min-h-0"
+          style={solidBg ? { backgroundColor: solidBg } : undefined}
+        >
           <Image
+            key={feature.image}
             src={feature.image}
             alt={feature.imageAlt}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className={cn(
-              isSvg ? "object-contain object-center p-6" : "object-cover object-center"
-            )}
+            quality={100}
+            unoptimized
+            className="object-contain object-center"
           />
         </div>
       </div>
@@ -118,18 +126,19 @@ function FeatureMedia({
     <div
       className={cn(
         "relative h-full min-h-[300px] overflow-hidden md:min-h-[380px] lg:min-h-full",
-        isAccentPanel ? "flex items-end justify-center" : ""
+        isSolidPanel && !isFullBleed ? "flex items-center justify-center" : ""
       )}
-      style={isAccentPanel ? { backgroundColor: accentColor } : undefined}
+      style={solidBg ? { backgroundColor: solidBg } : undefined}
     >
-      {isAccentPanel ? (
+      {isSolidPanel && !isFullBleed ? (
         <div className="relative h-[85%] w-[88%] max-w-none md:h-[90%] md:w-[92%]">
           <Image
             src={feature.image}
             alt={feature.imageAlt}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-contain object-bottom"
+            className="object-contain object-center"
+            unoptimized={isSvg}
           />
         </div>
       ) : (
@@ -138,7 +147,12 @@ function FeatureMedia({
           alt={feature.imageAlt}
           fill
           sizes="(max-width: 1024px) 100vw, 50vw"
-          className="object-cover object-center"
+          className={cn(
+            isSvg || isFullBleed || isSolidPanel
+              ? "object-contain object-center"
+              : "object-cover object-center",
+            isSvg && !isFullBleed && !isSolidPanel ? "p-6 md:p-10" : ""
+          )}
           unoptimized={isSvg}
         />
       )}
@@ -166,7 +180,7 @@ function VisualCard({
       </div>
       <h3
         className={cn(
-          "max-w-xs text-center text-2xl font-semibold leading-tight md:text-3xl",
+          "max-w-xs text-center text-[36px] font-semibold leading-tight",
           styles.visualTitle
         )}
       >
@@ -177,14 +191,23 @@ function VisualCard({
 }
 
 function MediaOnlyCard({ feature }: { feature: StudioFeature }) {
+  const fit = feature.mediaObjectFit ?? "cover";
+
   return (
-    <div className="relative h-full min-h-[320px] overflow-hidden md:min-h-[380px]">
+    <div className="relative h-full min-h-[320px] overflow-hidden bg-black md:min-h-[380px]">
       <Image
+        key={feature.image}
         src={feature.image}
         alt={feature.imageAlt}
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
-        className="object-cover object-center"
+        quality={100}
+        unoptimized
+        className={
+          fit === "contain"
+            ? "object-contain object-center"
+            : "object-cover object-center"
+        }
       />
     </div>
   );
@@ -256,7 +279,7 @@ export default function CapabilityStudioFeatureBlock({
           <FeatureMedia
             feature={feature}
             accentColor={tokens.color}
-            panel={feature.mediaPanel === "accent" ? "accent" : "image"}
+            panel={feature.mediaPanel ?? "image"}
           />
         </div>
         <div className={imageFirst ? "md:order-2" : "md:order-1"}>

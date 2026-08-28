@@ -1,26 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { FaBell, FaMapMarkedAlt } from "react-icons/fa";
 import { HiArrowRight } from "react-icons/hi";
-import { SiRipple, SiShopify } from "react-icons/si";
-import type { IconType } from "react-icons";
 import ContactCTA from "@/components/atoms/ContactCTA";
 import Container from "@/components/atoms/Container";
 import { getStudioAccent } from "@/data/capabilities/accents";
 import type {
   StudioAccentId,
-  StudioBrandIconId,
   StudioHeroContent,
 } from "@/data/capabilities/types";
 import { cn } from "@/lib/utils";
-
-const brandIcons: Record<StudioBrandIconId, IconType> = {
-  shopify: SiShopify,
-  onesignal: FaBell,
-  ripple: SiRipple,
-  "land-id": FaMapMarkedAlt,
-};
 
 type CapabilityStudioHeroProps = {
   accent: StudioAccentId;
@@ -34,7 +23,7 @@ export default function CapabilityStudioHero({
   const tokens = getStudioAccent(accent);
 
   return (
-    <section className="bg-white pb-4 pt-28 text-default md:pb-6 md:pt-32">
+    <section className="bg-white pb-4 pt-28 text-black md:pb-6 md:pt-32">
       <Container>
         <div className="overflow-hidden rounded-none border border-[#E8E8E8] md:rounded-[12px]">
           <div className="grid lg:grid-cols-[1.35fr_0.9fr]">
@@ -50,12 +39,12 @@ export default function CapabilityStudioHero({
                     className="h-7 w-7 object-contain"
                     aria-hidden
                   />
-                  <p className="text-base font-medium text-default md:text-lg">
+                  <p className="text-base font-medium text-black md:text-lg">
                     {hero.label}
                   </p>
                 </div>
 
-                <h1 className="mt-6 max-w-2xl text-3xl font-semibold leading-[1.15] tracking-tight text-default sm:text-4xl lg:text-[48px]">
+                <h1 className="mt-6 max-w-2xl text-3xl font-semibold leading-[1.15] tracking-tight text-black sm:text-4xl lg:text-[48px]">
                   {hero.titleBefore}
                   <span className={tokens.textClass}>{hero.titleHighlight}</span>
                   {hero.titleMiddle}
@@ -65,58 +54,29 @@ export default function CapabilityStudioHero({
                   {hero.titleAfter}
                 </h1>
 
-                <p className="mt-5 max-w-xl text-base leading-relaxed text-[#8A8A8A] md:text-lg">
+                <p className="mt-5 max-w-xl text-base leading-relaxed text-black md:text-lg">
                   {hero.description}
                 </p>
               </div>
 
               <div className="flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-[#E8E8E8] px-6 py-5 sm:px-10 md:px-12">
-                <p className="text-sm font-semibold text-default md:text-base">
+                <p className="text-sm font-semibold text-black md:text-base">
                   {hero.brandsLabel}
                 </p>
                 <div className="flex flex-wrap items-center gap-x-5 gap-y-2 md:gap-x-6">
                   {hero.brands.map((brand) => {
-                    if (brand.logoSrc) {
-                      return (
-                        <Image
-                          key={brand.name}
-                          src={brand.logoSrc}
-                          alt={brand.name}
-                          width={88}
-                          height={24}
-                          className="h-5 w-auto opacity-45 grayscale"
-                        />
-                      );
-                    }
-
-                    const BrandIcon = brand.iconId
-                      ? brandIcons[brand.iconId]
-                      : undefined;
+                    const src = brand.logoSrc ?? brand.iconSrc;
+                    if (!src) return null;
 
                     return (
-                      <span
+                      <Image
                         key={brand.name}
-                        className="inline-flex items-center gap-1.5 text-[#B0B0B0] transition-colors hover:text-[#8A8A8A]"
-                      >
-                        {brand.iconSrc ? (
-                          <Image
-                            src={brand.iconSrc}
-                            alt=""
-                            width={20}
-                            height={20}
-                            className="h-4 w-4 shrink-0 object-contain md:h-5 md:w-5"
-                            aria-hidden
-                          />
-                        ) : BrandIcon ? (
-                          <BrandIcon
-                            className="h-4 w-4 shrink-0 md:h-5 md:w-5"
-                            aria-hidden
-                          />
-                        ) : null}
-                        <span className="text-sm font-medium tracking-tight md:text-base">
-                          {brand.name}
-                        </span>
-                      </span>
+                        src={src}
+                        alt={brand.name}
+                        width={96}
+                        height={28}
+                        className="h-5 w-auto object-contain md:h-6"
+                      />
                     );
                   })}
                 </div>

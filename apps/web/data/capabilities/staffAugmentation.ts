@@ -59,7 +59,8 @@ export const staffAugmentationContent = {
       title: "AI Engineering Capabilities",
       description:
         "Our AI engineering teams specialize in designing, building, and scaling intelligent systems across the full AI lifecycle. We provide dedicated experts in agentic AI, generative AI, machine learning, and MLOps who integrate seamlessly with your teams to deliver production-ready AI solutions.",
-      image: "/assets/images/capabilities/machine-learning.jpg",
+      image:
+        "/assets/final-images/capabilities/staff-augmentation/02-AI_Engineering_Capabilities.png",
       imageAlt: "AI engineering and machine learning workflows",
       imageSide: "left",
       tags: ["Agentic AI", "Generative AI", "Machine Learning", "MLOps"],
@@ -69,7 +70,8 @@ export const staffAugmentationContent = {
       title: "Risk-Free 2-Week Trial",
       description:
         "We offer a two-week risk-free trial for our outsourced teams (subject to terms and conditions), allowing you to validate technical capability, collaboration, and delivery quality across software and AI engineering engagements.",
-      image: "/assets/images/capabilities/tech.jpg",
+      image:
+        "/assets/final-images/capabilities/staff-augmentation/Risk-free-2-week-trial.jpeg",
       imageAlt: "Team collaboration during a trial engagement",
       imageSide: "right",
       tags: ["Risk-Free Trial", "Delivery Quality", "Collaboration", "Validation"],
@@ -79,7 +81,8 @@ export const staffAugmentationContent = {
       title: "Quality Assurance & Audit",
       description:
         "Our delivery is governed by a structured operational playbook and supported by robust quality assurance frameworks. This ensures consistent performance, code quality, model reliability, and adherence to engineering best practices.",
-      image: "/assets/images/capabilities/quality-assurance-hero.png",
+      image:
+        "/assets/final-images/capabilities/staff-augmentation/4-Quality_Assurance__Audit.png",
       imageAlt: "Quality assurance and audit frameworks",
       imageSide: "left",
       tags: ["Operational Playbook", "Code Quality", "Model Reliability", "Best Practices"],
@@ -99,7 +102,8 @@ export const staffAugmentationContent = {
       title: "SOC 2 Audit Readiness & AI Security",
       description:
         "eForte is fully equipped to meet SOC 2 audit requirements, following strict protocols to ensure data privacy, security, and availability. We also apply AI security best practices to protect models, data pipelines, and cloud infrastructure, maintaining compliance with industry standards.",
-      image: "/assets/images/industry/bg-security.jpg",
+      image:
+        "/assets/final-images/capabilities/staff-augmentation/security-audit.jpeg",
       imageAlt: "SOC 2 audit readiness and AI security",
       imageSide: "left",
       tags: ["SOC 2", "AI Security", "Data Privacy", "Cloud Infrastructure"],

@@ -93,30 +93,16 @@ export default function CloudSreAcceleratorsSection() {
                 transition={{ duration: 0.3, ease: "easeOut" }}
                 className="mx-auto grid max-w-[900px] items-center gap-8 lg:grid-cols-2 lg:gap-14"
               >
-                <div
-                  className={
-                    active.id === "engine" || active.id === "terraform"
-                      ? "flex h-[220px] items-center justify-center sm:h-[260px] md:h-[300px]"
-                      : "flex h-[180px] items-center justify-center sm:h-[220px] md:h-[260px]"
-                  }
-                >
-                  <div
-                    className={
-                      active.id === "engine" || active.id === "terraform"
-                        ? "relative h-full w-full max-w-[400px]"
-                        : "relative h-full w-full max-w-[340px]"
-                    }
-                  >
+                <div className="flex h-[220px] items-center justify-center sm:h-[260px] md:h-[300px]">
+                  <div className="relative h-full w-full max-w-[400px]">
                     <Image
+                      key={active.imageSrc}
                       src={active.imageSrc}
                       alt={active.imageAlt}
                       fill
-                      sizes={
-                        active.id === "engine" || active.id === "terraform"
-                          ? "(max-width: 640px) 90vw, 800px"
-                          : "(max-width: 640px) 90vw, 680px"
-                      }
-                      quality={90}
+                      sizes="(max-width: 640px) 90vw, 400px"
+                      quality={100}
+                      unoptimized
                       className="object-contain"
                       priority={active.id === "bootstrapper"}
                     />

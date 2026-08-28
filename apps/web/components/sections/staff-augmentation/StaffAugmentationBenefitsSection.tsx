@@ -17,7 +17,7 @@ const { benefits } = staffAugmentationContent;
 
 export default function StaffAugmentationBenefitsSection() {
   return (
-    <section className="bg-default py-20 md:py-28">
+    <section className="bg-default py-16">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 24 }}

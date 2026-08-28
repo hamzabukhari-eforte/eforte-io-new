@@ -31,12 +31,8 @@ export const cloudSrePrinciples = [
       "Treating infrastructure like code with version control, so changes and fixes are traceable and builds are consistent and repeatable.",
     image:
       "/assets/final-images/capabilities/cloud-sre/1-infrastructure_as_code.png",
-    tools: [
-      "Azure Resource Manager",
-      "Pulumi",
-      "Terraform",
-      "AWS CloudFormation",
-    ],
+    toolsImage:
+      "/assets/final-images/capabilities/cloud-sre/Ias-tab-stack.png",
   },
   {
     id: "automation",
@@ -44,7 +40,8 @@ export const cloudSrePrinciples = [
     description:
       "Automating repetitive and error-prone tasks to improve speed, reliability, and consistency across environments.",
     image: "/assets/final-images/capabilities/cloud-sre/2-Automation.png",
-    tools: ["Ansible", "Terraform", "Jenkins", "GitHub Actions"],
+    toolsImage:
+      "/assets/final-images/capabilities/cloud-sre/automation-tab-stack.png",
   },
   {
     id: "monitoring",
@@ -53,7 +50,8 @@ export const cloudSrePrinciples = [
       "Implementing observability, alerting, and error tracking to detect issues early and maintain high system reliability.",
     image:
       "/assets/final-images/capabilities/cloud-sre/3-monitoring_error_tracking.png",
-    tools: ["Elastic", "Dynatrace", "Splunk", "Datadog", "New Relic"],
+    toolsImage:
+      "/assets/final-images/capabilities/cloud-sre/monitoring-tab-stack.png",
   },
   {
     id: "scalability",
@@ -61,7 +59,8 @@ export const cloudSrePrinciples = [
     description:
       "Designing architectures that scale up or down smoothly based on demand, while maintaining performance and cost efficiency.",
     image: "/assets/final-images/capabilities/cloud-sre/4-scalability.png",
-    tools: ["Kubernetes"],
+    toolsImage:
+      "/assets/final-images/capabilities/cloud-sre/Kubernet-tab-stack.png",
   },
   {
     id: "security",
@@ -69,7 +68,8 @@ export const cloudSrePrinciples = [
     description:
       "Embedding security at every layer, from infrastructure and networks to applications and data.",
     image: "/assets/final-images/capabilities/cloud-sre/5-security.png",
-    tools: ["Datadog", "Istio", "checkov", "tfsec"],
+    toolsImage:
+      "/assets/final-images/capabilities/cloud-sre/cloud-security-tab-stack.png",
   },
 ] as const;
 
@@ -140,7 +140,7 @@ export const cloudSreAccelerators = [
     id: "engine",
     label: "AI Cloud Engine",
     imageSrc:
-      "/assets/final-images/capabilities/cloud-sre/ai_cloud_engine_visual_final.png",
+      "/assets/final-images/capabilities/cloud-sre/ai_cloud_engine_visual_final.png?v=2",
     imageAlt: "AI Cloud Engine accelerator",
     paragraphs: [
       "Streamline AI/ML infrastructure deployment and management using industry-leading platforms like Databricks, Snowflake, Airflow, dbt, and MLflow.",
@@ -151,7 +151,7 @@ export const cloudSreAccelerators = [
     id: "terraform",
     label: "Terraform Blueprints",
     imageSrc:
-      "/assets/final-images/capabilities/cloud-sre/Terraform_Blueprints.png",
+      "/assets/final-images/capabilities/cloud-sre/Terraform_Blueprints.png?v=2",
     imageAlt: "Terraform Blueprints accelerator",
     paragraphs: [
       "There are common components in all infrastructures, such as basic network configurations, provisioning of auto-scalable clusters, or even the setup of email and push notification services. Doing the same work over and over again is not only inefficient but also unchallenging for our engineers.",

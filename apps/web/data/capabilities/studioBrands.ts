@@ -2,27 +2,23 @@ import type { StudioBrand } from "./types";
 
 /**
  * Shared “Brands that trust us” row for all capability studio pages.
- * Prefer iconSrc (original brand marks); iconId is a react-icons fallback.
+ * Uses official wordmark SVGs from final-images/brands.
  */
 export const studioTrustedBrands: StudioBrand[] = [
   {
-    name: "shopify",
-    iconId: "shopify",
-    iconSrc: "/assets/images/brands/shopify.svg",
+    name: "Shopify",
+    logoSrc: "/assets/final-images/brands/shopify.svg",
   },
   {
     name: "OneSignal",
-    iconId: "onesignal",
-    iconSrc: "/assets/images/brands/onesignal.svg",
+    logoSrc: "/assets/final-images/brands/onesignal.svg",
   },
   {
-    name: "ripple",
-    iconId: "ripple",
-    iconSrc: "/assets/images/brands/ripple.svg",
+    name: "Ripple",
+    logoSrc: "/assets/final-images/brands/ripple.svg",
   },
   {
-    name: "land id.",
-    iconId: "land-id",
-    iconSrc: "/assets/images/brands/land-id.svg",
+    name: "Land id.",
+    logoSrc: "/assets/final-images/brands/landid.svg",
   },
 ];

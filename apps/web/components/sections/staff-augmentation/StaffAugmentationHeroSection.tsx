@@ -14,14 +14,16 @@ export default function StaffAugmentationHeroSection() {
     <section className="relative flex min-h-[760px] flex-col justify-center overflow-hidden bg-default pt-28 pb-20 md:min-h-screen md:pt-36">
       <div className="absolute inset-0">
         <Image
-          src="/assets/images/package/studios/staff-augmentation-studio-hero-diagram.svg"
+          src="/assets/final-images/capabilities/staff-augmentation/Hero_Section-Staff_augmentation_left_text_space.png"
           alt=""
           fill
           priority
+          sizes="100vw"
+          quality={90}
           className="object-cover object-center"
           aria-hidden
         />
-        <div className="absolute inset-0 bg-linear-to-r from-black/95 via-black/75 to-black/35" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/35 to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_35%,rgba(211,40,122,0.35),transparent_34%)]" />
       </div>
 
@@ -31,7 +33,7 @@ export default function StaffAugmentationHeroSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-full leading-none border border-white/25 bg-white/10 px-4 py-0 text-[13px] font-medium uppercase tracking-[0.18em] text-white backdrop-blur"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-full leading-none border border-primary-pink/40 bg-primary-pink/10 px-4 py-0 text-[13px] font-medium uppercase tracking-[0.18em] text-primary-pink backdrop-blur"
           >
             <HiSparkles className="h-3.5 w-3.5 text-primary-pink" />
             {hero.badge}
@@ -50,7 +52,7 @@ export default function StaffAugmentationHeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.16 }}
-            className="mt-6 max-w-2xl space-y-4 text-base leading-7 text-white/82 md:text-lg"
+            className="mt-6 max-w-2xl space-y-4 text-base leading-7 text-white md:text-lg"
           >
             <p>{hero.body}</p>
             <p>{hero.subBody}</p>

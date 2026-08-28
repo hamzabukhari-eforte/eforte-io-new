@@ -8,7 +8,7 @@ import { cyberCertifications } from "@/data/capabilities/cybersecurity";
 export default function CyberCertificationsSection() {
   return (
     <section className="bg-white">
-      <div className="mx-[14px] rounded-[12px] bg-black py-10 md:rounded-[12px] md:py-14">
+      <div className="mx-[14px] rounded-[12px] bg-black py-16 md:rounded-[12px]">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 16 }}

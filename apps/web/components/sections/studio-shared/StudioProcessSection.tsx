@@ -10,19 +10,22 @@ type StudioProcessSectionProps = {
   items: StudioProcessItem[];
   className?: string;
   imageFit?: "cover" | "contain";
+  /** Solid black body text + 36px titles / 16px descriptions */
+  solidTypography?: boolean;
 };
 
 export default function StudioProcessSection({
   items,
   className,
   imageFit = "cover",
+  solidTypography = false,
 }: StudioProcessSectionProps) {
   const sizedFrame = imageFit === "contain";
 
   return (
-    <section className={cn("bg-white pb-12 md:pb-20", className)}>
+    <section className={cn("bg-white py-16", className)}>
       <Container>
-        <div className="space-y-16 md:space-y-20">
+        <div className="space-y-16">
           {items.map((item, index) => {
             const imageFirst = item.imageSide === "left";
 
@@ -65,17 +68,36 @@ export default function StudioProcessSection({
                   <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-pink">
                     {item.eyebrow}
                   </p>
-                  <h3 className="mt-3 text-2xl font-semibold leading-tight text-default md:text-4xl">
+                  <h3
+                    className={cn(
+                      "mt-3 font-semibold leading-tight",
+                      solidTypography
+                        ? "text-[36px] text-black"
+                        : "text-2xl text-default md:text-4xl"
+                    )}
+                  >
                     {item.title}
                   </h3>
-                  <p className="mt-5 max-w-xl text-base leading-7 text-gray-600">
+                  <p
+                    className={cn(
+                      "mt-5 max-w-xl leading-relaxed",
+                      solidTypography
+                        ? "text-[16px] text-black"
+                        : "text-base leading-7 text-gray-600"
+                    )}
+                  >
                     {item.description}
                   </p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex h-[25px] items-center justify-center rounded-full leading-none border border-gray-200 px-3 py-0 text-xs font-medium text-gray-600"
+                        className={cn(
+                          "inline-flex h-[25px] items-center justify-center rounded-full leading-none border px-3 py-0 text-xs font-medium",
+                          solidTypography
+                            ? "border-black/15 text-black"
+                            : "border-gray-200 text-gray-600"
+                        )}
                       >
                         {tag}
                       </span>

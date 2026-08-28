@@ -1,4 +1,5 @@
-import { insightProfileImages } from "./insightProfileImages";
+// Preserved for future reuse — success stories & insights now reuse Data page content
+// import { insightProfileImages } from "./insightProfileImages";
 
 export const CYBER_ACCENT = "#D3287A";
 
@@ -7,9 +8,9 @@ export const cyberHero = {
   title: "eForte's Cybersecurity Studio protects the systems everything else depends on",
   description:
     "As AI systems gain the ability to act, not just recommend, security becomes even more critical: a compromised agent isn't just a data risk, it's an operational one. Our Cybersecurity Studio assesses, hardens, and monitors your systems, applications, and infrastructure so the technology you rely on stays trustworthy. We build security into the design of every engagement across eForte's Studios, rather than bolting it on at the end.",
-  ctaLabel: "Contact Us",
+  ctaLabel: "Contact us",
   image:
-    "/assets/images/package/studios/cybersecurity-studio-hero-diagram.svg",
+    "/assets/final-images/capabilities/cybersecurity/cybersecurity-hero.jpg",
 };
 
 export const cyberAiSecurityIntro = {
@@ -225,10 +226,11 @@ export const cyberCertifications = {
       src: "/assets/images/landing/iso.png",
       alt: "ISO 27001 Certified",
     },
-    {
-      src: "/assets/images/landing/soc.png",
-      alt: "SOC 2 Type 2",
-    },
+    // Preserved — SOC 2 Type 2 intentionally omitted from display
+    // {
+    //   src: "/assets/images/landing/soc.png",
+    //   alt: "SOC 2 Type 2",
+    // },
     {
       src: "/assets/images/landing/nist.png",
       alt: "NIST Compliant",
@@ -236,49 +238,52 @@ export const cyberCertifications = {
   ],
 };
 
-export const cyberSuccessStories = [
+// Preserved for future reuse — page now uses dataShowcase from data.ts
+/* export const cyberSuccessStories = [
   {
     id: "redcliff-pharma",
-    title:
-      "Hardening infrastructure and closing compliance gaps for Redcliff Pharmaceuticals",
+    brand: "Redcliff Pharmaceuticals",
+    category: "Security & compliance",
     paragraphs: [
-      "Redcliff Pharmaceuticals needed to close security gaps ahead of a major regulatory audit while continuing normal operations. We ran a full security assessment, remediated critical vulnerabilities, and implemented continuous monitoring aligned to their compliance requirements.",
-      "Outcomes so far: 100% of critical vulnerabilities remediated pre-audit, zero findings in the subsequent regulatory audit, 24/7 threat monitoring implemented across all production systems, and incident response time reduced from days to under 2 hours.",
+      "We ran a full security assessment, remediated critical vulnerabilities, and implemented continuous monitoring aligned to Redcliff's compliance requirements — achieving zero audit findings and cutting incident response from days to under 2 hours.",
     ],
     tags: ["Security assessment", "Compliance readiness", "24/7 monitoring"],
-    imageSrc: "/assets/images/package/studios/redcliff-pharma-case.svg",
+    image: "/assets/images/package/studios/redcliff-pharma-case.svg",
     imageAlt: "Redcliff Pharmaceuticals security hardening case study",
-    tagClass: "bg-primary-pink/12 text-primary-pink",
+    background: "#0A1A2E",
+    href: "/impact-studies",
   },
   {
     id: "stride",
-    title: "eForte's security consulting with Stride Funding",
+    brand: "Stride Funding",
+    category: "Cybersecurity consulting",
     paragraphs: [
-      "Stride Funding is a pioneering venture-based fintech company that transforms access to education with innovative, outcomes-based lending products.",
-      "We have provided cybersecurity consulting services to Stride for several years. Our work has involved identifying vulnerabilities in various systems and platforms within their IT and product environment.",
+      "Multi-year cybersecurity consulting for Stride Funding — identifying vulnerabilities across systems and platforms and strengthening security strategy for their outcomes-based lending products.",
     ],
     tags: [
       "Cybersecurity consulting",
       "Vulnerability identification",
       "Security strategy",
     ],
-    imageSrc: "/assets/images/capabilities/cybersecurity/stride-story.png",
+    image: "/assets/images/capabilities/cybersecurity/stride-story.png",
     imageAlt: "Stride Funding cybersecurity success story",
-    tagClass: "bg-primary-pink/12 text-primary-pink",
+    background: "#1A0A2E",
+    href: "/impact-studies",
   },
   {
     id: "enterprise-defense",
-    title: "Hardening a multi-cloud enterprise security program",
+    brand: "Enterprise Defense",
+    category: "Multi-cloud security",
     paragraphs: [
-      "A fast-growing enterprise needed stronger detection, clearer ownership, and continuous assurance across cloud and product environments.",
-      "eForte delivered advisory and engineering support — from vulnerability remediation to managed defense workflows that reduced MTTD and MTTR.",
+      "Advisory and engineering support for a fast-growing enterprise — from vulnerability remediation to managed defense workflows that reduced MTTD and MTTR across cloud and product environments.",
     ],
     tags: ["Managed defense", "Cloud security", "Continuous assurance"],
-    imageSrc: "/assets/images/industry/cybersecurity.jpg",
+    image: "/assets/images/industry/cybersecurity.jpg",
     imageAlt: "Enterprise cybersecurity program",
-    tagClass: "bg-primary-pink/12 text-primary-pink",
+    background: "#0A2A42",
+    href: "/impact-studies",
   },
-];
+]; */
 
 export const cyberExpertsSpotlight = {
   eyebrow: "CYBERSECURITY STUDIO",
@@ -286,7 +291,8 @@ export const cyberExpertsSpotlight = {
   youtubeUrl: "https://www.youtube.com/watch?v=AxnIFqEakag",
 };
 
-export const cyberInsights = [
+// Preserved for future reuse — page now uses dataInsights from data.ts
+/* export const cyberInsights = [
   {
     id: "1",
     author: "Michell Mamrut",
@@ -322,7 +328,7 @@ export const cyberInsights = [
     tags: ["Cybersecurity"],
     image: "/assets/images/industry/cybersecurity.jpg",
   },
-];
+]; */
 
 export const cyberFaqs = [
   {

@@ -14,7 +14,7 @@ export default function TechnologyPartnersPageSections() {
     <>
       <TechnologyPartnersHeroSection />
       <div className="relative z-10 -mt-10 overflow-hidden rounded-t-[12px] bg-white pt-12 md:pt-16">
-        <StudioProcessSection items={partners} />
+        <StudioProcessSection items={partners} className="pt-0 pb-16" />
       </div>
       <StudioValuesSection
         eyebrow={advantageIntro.eyebrow}

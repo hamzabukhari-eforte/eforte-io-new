@@ -17,7 +17,7 @@ export default function StaffAugmentationFaqSection() {
   };
 
   return (
-    <section className="bg-white py-20 text-default md:pb-28">
+    <section className="bg-white py-16 text-default">
       <Container className="max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -35,7 +35,7 @@ export default function StaffAugmentationFaqSection() {
           />
           <div className="relative">
             <p className="text-4xl font-medium text-white md:text-5xl">FAQs</p>
-            <p className="mt-2 text-base text-white/80">
+            <p className="mt-2 text-base text-white">
               FAQs about our Staff Augmentation services
             </p>
           </div>
@@ -57,11 +57,11 @@ export default function StaffAugmentationFaqSection() {
                   className="flex w-full cursor-pointer items-start gap-4 px-4 py-4 text-left md:px-5"
                 >
                   <HiChevronDown
-                    className={`mt-1 h-5 w-5 shrink-0 text-default transition-transform ${
+                    className={`mt-1 h-5 w-5 shrink-0 text-black transition-transform ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
-                  <span className="text-lg font-medium leading-tight text-default md:text-xl">
+                  <span className="text-lg font-medium leading-tight text-black md:text-xl">
                     {faq.question}
                   </span>
                 </button>
@@ -76,7 +76,7 @@ export default function StaffAugmentationFaqSection() {
                       className="overflow-hidden"
                     >
                       <div className="px-12 pb-5 pt-0 md:px-14">
-                        <p className="text-base leading-relaxed text-default/70 md:text-[17px]">
+                        <p className="text-base leading-relaxed text-black md:text-[17px]">
                           {faq.answer}
                         </p>
                       </div>

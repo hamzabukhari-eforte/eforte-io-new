@@ -58,8 +58,12 @@ export type StudioFeature = {
   layout: "row" | "split" | "half";
   cardKind?: StudioFeatureCardKind;
   imageSide: "left" | "right";
-  /** For split layout: solid accent panel behind media */
-  mediaPanel?: "image" | "accent";
+  /** Solid panel behind media: photo fill, accent color, or black */
+  mediaPanel?: "image" | "accent" | "black";
+  /** Fill the media panel edge-to-edge (no inset frame) */
+  mediaFullBleed?: boolean;
+  /** How media fills its panel; default cover */
+  mediaObjectFit?: "cover" | "contain";
   /** Inset rounded media card inside the parent band (Product Management style) */
   mediaInset?: boolean;
 };

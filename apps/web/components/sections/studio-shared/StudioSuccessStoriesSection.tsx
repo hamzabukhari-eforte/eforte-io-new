@@ -72,11 +72,13 @@ function SuccessStoryCard({ story }: { story: StudioSuccessStoryItem }) {
 export type StudioSuccessStoriesSectionProps = {
   stories: StudioSuccessStoryItem[];
   title?: string;
+  className?: string;
 };
 
 export default function StudioSuccessStoriesSection({
   stories,
   title = "Our success stories",
+  className,
 }: StudioSuccessStoriesSectionProps) {
   const swiperRef = useRef<SwiperType | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -96,7 +98,7 @@ export default function StudioSuccessStoriesSection({
   }, [activeIndex, stories.length]);
 
   return (
-    <section className="overflow-hidden bg-white py-16">
+    <section className={cn("overflow-hidden bg-white py-16", className)}>
       <Container>
         <h2 className="text-center text-3xl font-semibold text-default sm:text-4xl lg:text-[48px] lg:leading-[1.1]">
           {title}

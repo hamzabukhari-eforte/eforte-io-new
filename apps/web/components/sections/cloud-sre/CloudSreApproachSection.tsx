@@ -10,23 +10,6 @@ import {
   HiArrowsExpand,
   HiShieldCheck,
 } from "react-icons/hi";
-import {
-  SiAmazonwebservices,
-  SiAnsible,
-  SiDatadog,
-  SiDynatrace,
-  SiElastic,
-  SiGithubactions,
-  SiIstio,
-  SiJenkins,
-  SiKubernetes,
-  SiNewrelic,
-  SiOwasp,
-  SiPulumi,
-  SiSplunk,
-  SiTerraform,
-  SiTrivy,
-} from "react-icons/si";
 import type { IconType } from "react-icons";
 import Container from "@/components/atoms/Container";
 import {
@@ -41,110 +24,6 @@ const tabIcons: Record<(typeof cloudSrePrinciples)[number]["id"], IconType> = {
   scalability: HiArrowsExpand,
   security: HiShieldCheck,
 };
-
-type ToolVisual =
-  | { kind: "icon"; Icon: IconType }
-  | { kind: "image"; src: string; alt: string };
-
-const toolVisuals: Record<string, ToolVisual> = {
-  "Azure Resource Manager": {
-    kind: "image",
-    src: "/assets/images/capabilities/providers/azure.svg",
-    alt: "Microsoft Azure",
-  },
-  Pulumi: { kind: "icon", Icon: SiPulumi },
-  Terraform: { kind: "icon", Icon: SiTerraform },
-  "AWS CloudFormation": { kind: "icon", Icon: SiAmazonwebservices },
-  Ansible: { kind: "icon", Icon: SiAnsible },
-  Jenkins: { kind: "icon", Icon: SiJenkins },
-  "GitHub Actions": { kind: "icon", Icon: SiGithubactions },
-  Elastic: { kind: "icon", Icon: SiElastic },
-  Dynatrace: { kind: "icon", Icon: SiDynatrace },
-  Splunk: { kind: "icon", Icon: SiSplunk },
-  Datadog: { kind: "icon", Icon: SiDatadog },
-  "New Relic": { kind: "icon", Icon: SiNewrelic },
-  Kubernetes: { kind: "icon", Icon: SiKubernetes },
-  Istio: { kind: "icon", Icon: SiIstio },
-  checkov: { kind: "icon", Icon: SiOwasp },
-  tfsec: { kind: "icon", Icon: SiTrivy },
-};
-
-function ToolMark({
-  name,
-  size = "md",
-}: {
-  name: string;
-  size?: "sm" | "md" | "lg";
-}) {
-  const visual = toolVisuals[name];
-  const iconClass =
-    size === "lg"
-      ? "h-10 w-10 shrink-0 md:h-12 md:w-12"
-      : size === "sm"
-        ? "h-5 w-5 shrink-0"
-        : "h-6 w-6 shrink-0";
-  const imageClass =
-    size === "lg"
-      ? "h-10 w-auto shrink-0 md:h-12"
-      : size === "sm"
-        ? "h-5 w-auto shrink-0"
-        : "h-6 w-auto shrink-0";
-  const textClass =
-    size === "lg"
-      ? "text-lg font-semibold tracking-tight md:text-xl"
-      : size === "sm"
-        ? "text-xs font-semibold md:text-[13px]"
-        : "text-[13px] font-semibold md:text-sm";
-
-  return (
-    <span className="inline-flex items-center gap-2 text-default md:gap-2.5">
-      {visual?.kind === "icon" ? (
-        <visual.Icon className={iconClass} aria-hidden />
-      ) : visual?.kind === "image" ? (
-        <Image
-          src={visual.src}
-          alt={visual.alt}
-          width={48}
-          height={48}
-          className={imageClass}
-        />
-      ) : null}
-      <span className={`${textClass} whitespace-nowrap`}>{name}</span>
-    </span>
-  );
-}
-
-function ToolsCard({ tools }: { tools: readonly string[] }) {
-  const isSingle = tools.length === 1;
-  const isTwoRows = tools.length >= 5;
-
-  return (
-    <div className="flex h-28 items-center justify-center rounded-[12px] bg-white px-5 md:h-32 md:px-8">
-      {isSingle ? (
-        <ToolMark name={tools[0]} size="lg" />
-      ) : isTwoRows ? (
-        <div className="flex w-full flex-col items-center justify-center gap-3 md:gap-4">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 md:gap-x-10">
-            {tools.slice(0, 3).map((tool) => (
-              <ToolMark key={tool} name={tool} size="sm" />
-            ))}
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 md:gap-x-10">
-            {tools.slice(3).map((tool) => (
-              <ToolMark key={tool} name={tool} size="sm" />
-            ))}
-          </div>
-        </div>
-      ) : (
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 md:gap-x-10">
-          {tools.map((tool) => (
-            <ToolMark key={tool} name={tool} size="md" />
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
 
 export default function CloudSreApproachSection() {
   const [activeId, setActiveId] =
@@ -182,47 +61,79 @@ export default function CloudSreApproachSection() {
                 const Icon = tabIcons[item.id];
                 const isActive = item.id === active.id;
 
-                if (isActive) {
-                  return (
-                    <button
-                      key={item.id}
-                      type="button"
-                      onClick={() => setActiveId(item.id)}
-                      className="w-full cursor-pointer rounded-[12px] bg-[#1A1A1A] px-4 py-4 text-left md:px-5 md:py-5"
-                      style={{ borderBottom: `2px solid ${CLOUD_SRE_ACCENT}` }}
-                    >
-                      <div className="flex items-start gap-3">
-                        <span
-                          className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-[12px] text-white"
-                          style={{ backgroundColor: CLOUD_SRE_ACCENT }}
-                        >
-                          <Icon className="h-3.5 w-3.5" />
-                        </span>
-                        <div className="min-w-0">
-                          <p className="text-[20px] font-semibold leading-snug text-white">
-                            {item.title}
-                          </p>
-                          <p className="mt-2 text-[16px] leading-relaxed text-white">
-                            {item.description}
-                          </p>
-                        </div>
-                      </div>
-                    </button>
-                  );
-                }
-
                 return (
-                  <button
+                  <motion.button
                     key={item.id}
                     type="button"
+                    layout
                     onClick={() => setActiveId(item.id)}
-                    className="flex w-full cursor-pointer items-center gap-3 px-4 py-2.5 text-left text-white transition-colors hover:text-white md:px-5 md:py-3"
+                    transition={{ layout: { duration: 0.32, ease: [0.22, 1, 0.36, 1] } }}
+                    className={`w-full cursor-pointer overflow-hidden text-left transition-colors duration-300 ${
+                      isActive
+                        ? "rounded-[12px] bg-[#1A1A1A] px-4 py-4 md:px-5 md:py-5"
+                        : "rounded-[12px] bg-transparent px-4 py-2.5 hover:bg-white/5 md:px-5 md:py-3"
+                    }`}
+                    style={{
+                      borderBottom: isActive
+                        ? `2px solid ${CLOUD_SRE_ACCENT}`
+                        : "2px solid transparent",
+                    }}
+                    aria-expanded={isActive}
                   >
-                    <Icon className="h-4 w-4 shrink-0" />
-                    <span className="text-[20px] font-medium leading-snug">
-                      {item.title}
-                    </span>
-                  </button>
+                    <div className="flex items-start gap-3">
+                      <motion.span
+                        layout
+                        className={`mt-0.5 flex shrink-0 items-center justify-center rounded-[12px] text-white transition-colors duration-300 ${
+                          isActive ? "h-6 w-6" : "h-4 w-4 bg-transparent"
+                        }`}
+                        style={{
+                          backgroundColor: isActive
+                            ? CLOUD_SRE_ACCENT
+                            : "transparent",
+                        }}
+                      >
+                        <Icon
+                          className={
+                            isActive ? "h-3.5 w-3.5" : "h-4 w-4"
+                          }
+                        />
+                      </motion.span>
+
+                      <div className="min-w-0 flex-1">
+                        <motion.p
+                          layout="position"
+                          className={`text-[20px] leading-snug text-white transition-all duration-300 ${
+                            isActive ? "font-semibold" : "font-medium"
+                          }`}
+                        >
+                          {item.title}
+                        </motion.p>
+
+                        <AnimatePresence initial={false}>
+                          {isActive ? (
+                            <motion.div
+                              key={`${item.id}-desc`}
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{
+                                height: {
+                                  duration: 0.32,
+                                  ease: [0.22, 1, 0.36, 1],
+                                },
+                                opacity: { duration: 0.22, delay: 0.04 },
+                              }}
+                              className="overflow-hidden"
+                            >
+                              <p className="mt-2 text-[16px] leading-relaxed text-white">
+                                {item.description}
+                              </p>
+                            </motion.div>
+                          ) : null}
+                        </AnimatePresence>
+                      </div>
+                    </div>
+                  </motion.button>
                 );
               })}
             </div>
@@ -247,7 +158,16 @@ export default function CloudSreApproachSection() {
                       className="object-cover"
                     />
                   </div>
-                  <ToolsCard tools={active.tools} />
+                  <div className="relative aspect-[955/219] w-full overflow-hidden rounded-[12px]">
+                    <Image
+                      src={active.toolsImage}
+                      alt={`${active.title} tools`}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, (max-width: 1400px) 55vw, 800px"
+                      quality={90}
+                      className="object-contain object-center"
+                    />
+                  </div>
                 </motion.div>
               </AnimatePresence>
             </div>

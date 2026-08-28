@@ -18,7 +18,7 @@ const { closingCta } = staffAugmentationContent;
 
 export default function StaffAugmentationCtaSection() {
   return (
-    <section className="bg-white/[0.03] py-20 md:py-28">
+    <section className="bg-white/[0.03] py-16">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 24 }}

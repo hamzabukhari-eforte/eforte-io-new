@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { HiCheck } from "react-icons/hi";
 import Container from "@/components/atoms/Container";
-import { getStudioAccent } from "@/data/capabilities/accents";
 import type { StudioAccentId, StudioProprietaryTech } from "@/data/capabilities/types";
 
 type CapabilityStudioProprietaryTechSectionProps = {
@@ -12,73 +11,90 @@ type CapabilityStudioProprietaryTechSectionProps = {
 };
 
 export default function CapabilityStudioProprietaryTechSection({
-  accent,
+  accent: _accent,
   items,
 }: CapabilityStudioProprietaryTechSectionProps) {
-  const tokens = getStudioAccent(accent);
-
   return (
-    <section className="bg-[#F5F5F5] py-16 text-default md:py-24">
-      <Container>
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-80px", amount: 0.15 }}
-          transition={{ duration: 0.5 }}
-          className="mx-auto max-w-2xl text-center"
-        >
-          <span
-            className={`text-xs font-semibold uppercase tracking-[0.15em] ${tokens.textClass}`}
+    <section className="relative z-10 pt-16">
+      <div className="rounded-t-[12px] bg-[#F5F5F5] py-16 text-black">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, margin: "-80px", amount: 0.15 }}
+            transition={{ duration: 0.5 }}
+            className="mx-auto max-w-3xl text-center"
           >
-            Proprietary Technology
-          </span>
-          <h2 className="mt-3 text-3xl font-semibold leading-tight md:text-4xl">
-            eForte&apos;s proprietary accelerators
-          </h2>
-        </motion.div>
+            <h2 className="text-[36px] font-semibold leading-tight text-black">
+              eForte&apos;s proprietary accelerators
+            </h2>
+          </motion.div>
 
-        <div className="mt-12 flex flex-col gap-6 md:mt-16">
-          {items.map((item, index) => (
-            <motion.article
-              key={item.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, margin: "-80px", amount: 0.15 }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="rounded-[12px] border border-[#E8E8E8] bg-white p-8 shadow-sm md:p-10"
-            >
-              <div className="grid gap-8 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-12">
-                <div>
+          <div className="mt-12 flex flex-col gap-14 md:mt-16 md:gap-16">
+            {items.map((item, index) => (
+              <div
+                key={item.id}
+                className="grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-14 lg:items-center"
+              >
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, margin: "-80px", amount: 0.15 }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                >
+                  <span className="text-xs font-semibold uppercase tracking-[0.15em] text-primary-pink">
+                    Proprietary Technology
+                  </span>
+                  <h3 className="mt-3 text-[36px] font-semibold leading-tight text-black">
+                    {item.name}
+                  </h3>
                   {item.tagline ? (
-                    <p
-                      className={`text-xs font-semibold uppercase tracking-[0.12em] ${tokens.textClass}`}
-                    >
+                    <p className="mt-2 text-base font-medium text-primary-pink">
                       {item.tagline}
                     </p>
                   ) : null}
-                  <h3 className="mt-2 text-2xl font-semibold leading-tight text-default md:text-[28px]">
-                    {item.name}
-                  </h3>
-                  <p className="mt-4 text-[15px] leading-relaxed text-[#666] md:text-base">
+                  <p className="mt-5 text-[16px] leading-relaxed text-black">
                     {item.description}
                   </p>
-                </div>
-                <ul className="flex flex-col justify-center gap-3">
-                  {item.benefits.map((benefit) => (
-                    <li
-                      key={benefit}
-                      className="flex items-start gap-2.5 rounded-[12px] bg-[#F7F7F7] px-4 py-3 text-[14px] leading-relaxed text-[#374151]"
-                    >
-                      <HiCheck className={`mt-0.5 h-4 w-4 shrink-0 ${tokens.textClass}`} />
-                      {benefit}
-                    </li>
-                  ))}
-                </ul>
+                </motion.div>
+
+                <motion.ul
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false, margin: "-80px", amount: 0.15 }}
+                  transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
+                  className="grid gap-4 sm:grid-cols-2"
+                >
+                  {item.benefits.map((benefit) => {
+                    const colonIndex = benefit.indexOf(":");
+                    const title =
+                      colonIndex >= 0
+                        ? benefit.slice(0, colonIndex + 1)
+                        : benefit;
+                    const detail =
+                      colonIndex >= 0 ? benefit.slice(colonIndex + 1) : "";
+
+                    return (
+                      <li
+                        key={benefit}
+                        className="flex h-full flex-col gap-3 rounded-[12px] bg-white p-6 shadow-sm"
+                      >
+                        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-pink/10 text-primary-pink">
+                          <HiCheck className="h-4 w-4" />
+                        </span>
+                        <p className="text-[16px] leading-relaxed text-black">
+                          <span className="font-semibold text-black">{title}</span>
+                          {detail}
+                        </p>
+                      </li>
+                    );
+                  })}
+                </motion.ul>
               </div>
-            </motion.article>
-          ))}
-        </div>
-      </Container>
+            ))}
+          </div>
+        </Container>
+      </div>
     </section>
   );
 }
