@@ -2,18 +2,22 @@
 
 import {
   StudioProcessSection,
-  StudioValuesSection,
+  // StudioValuesSection, // preserved — swap back if alt benefits design is rejected
 } from "@/components/sections/studio-shared";
 import { staffAugmentationContent } from "@/data/capabilities/staffAugmentation";
 import StaffAugmentationHeroSection from "./StaffAugmentationHeroSection";
 import StaffAugmentationFaqSection from "./StaffAugmentationFaqSection";
+import StaffAugmentationBenefitsAltSection from "./StaffAugmentationBenefitsAltSection";
 
 export default function StaffAugmentationPageSections() {
-  const { valuesIntro, values, process } = staffAugmentationContent;
+  const { process } = staffAugmentationContent;
+  // const { valuesIntro, values, process } = staffAugmentationContent;
 
   return (
     <>
       <StaffAugmentationHeroSection />
+      <StaffAugmentationBenefitsAltSection />
+      {/* Previous benefits cards — restore if alt design is rejected
       <StudioValuesSection
         eyebrow={valuesIntro.eyebrow}
         title={valuesIntro.title}
@@ -24,6 +28,7 @@ export default function StaffAugmentationPageSections() {
         cardTitleClassName="text-[36px] md:text-[36px]"
         cardDescriptionClassName="text-[16px] md:text-[16px]"
       />
+      */}
       <StudioProcessSection items={process} solidTypography />
       <StaffAugmentationFaqSection />
       {/* Closing CTA banner removed — layout already covers get-in-touch */}
