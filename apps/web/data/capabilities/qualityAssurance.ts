@@ -9,8 +9,9 @@ export const qualityAssuranceHero = {
   description:
     "Speed only matters if what ships actually works. Our Quality Assurance Studio builds automated testing frameworks, manages manual and exploratory testing where it matters most, and helps teams catch issues before customers do: across web, mobile, API, and increasingly, AI-driven systems. We treat QA as a discipline that runs throughout a project, not a final gate before launch.",
   ctaLabel: "Contact Us",
+  // Bump ?v= after replacing the file so Next/browser caches refresh.
   backgroundSrc:
-    "/assets/images/package/studios/qa-studio-hero-diagram.svg",
+    "/assets/final-images/capabilities/quality-assurance/quality_assurance_hero.png?v=2",
 };
 
 export const qualityAssuranceNumbers = {

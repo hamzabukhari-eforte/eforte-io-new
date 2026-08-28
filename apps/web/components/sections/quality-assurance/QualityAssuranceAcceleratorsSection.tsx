@@ -9,9 +9,9 @@ import {
 
 export default function QualityAssuranceAcceleratorsSection() {
   return (
-    <section className="bg-white py-10 md:py-14">
+    <section className="bg-white">
       <Container>
-        <div className="rounded-[12px] bg-black px-6 py-12 text-white md:rounded-[12px] md:px-10 md:py-16 lg:px-12 lg:py-20">
+        <div className="rounded-[12px] bg-black px-6 py-16 text-white md:rounded-[12px] md:px-10 lg:px-12">
           {/* Heading */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -26,11 +26,11 @@ export default function QualityAssuranceAcceleratorsSection() {
                 style={{ backgroundColor: QA_ACCENT }}
                 aria-hidden
               />
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/80">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white">
                 {qualityAssuranceAccelerators.eyebrow}
               </p>
             </div>
-            <p className="max-w-xl text-lg font-semibold leading-snug md:text-xl lg:max-w-[520px] lg:text-[22px] lg:leading-snug">
+            <p className="max-w-xl text-[36px] font-semibold leading-snug lg:max-w-[520px]">
               {qualityAssuranceAccelerators.description}
             </p>
           </motion.div>
@@ -49,12 +49,12 @@ export default function QualityAssuranceAcceleratorsSection() {
                 >
                   {item.glow === "diagonal" ? (
                     <div
-                      className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(74,222,128,0.65)_0%,rgba(74,222,128,0.15)_28%,transparent_55%)]"
+                      className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(90,160,240,0.65)_0%,rgba(10,46,193,0.25)_28%,transparent_55%)]"
                       aria-hidden
                     />
                   ) : (
                     <div
-                      className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(74,222,128,0.55)_0%,rgba(74,222,128,0.12)_35%,transparent_60%)]"
+                      className="pointer-events-none absolute inset-0 bg-[linear-gradient(225deg,rgba(90,160,240,0.65)_0%,rgba(10,46,193,0.25)_28%,transparent_55%)]"
                       aria-hidden
                     />
                   )}
@@ -62,7 +62,7 @@ export default function QualityAssuranceAcceleratorsSection() {
                     <h3 className="text-xl font-semibold leading-snug md:text-2xl">
                       {item.title}
                     </h3>
-                    <p className="mt-4 text-[15px] leading-relaxed text-white/75 md:text-base">
+                    <p className="mt-4 text-[15px] leading-relaxed text-white md:text-base">
                       {item.description}
                     </p>
                   </div>

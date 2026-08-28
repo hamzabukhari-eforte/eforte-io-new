@@ -15,7 +15,7 @@ export default function CapabilityStudioProprietaryTechSection({
   items,
 }: CapabilityStudioProprietaryTechSectionProps) {
   return (
-    <section className="relative z-10 pt-16">
+    <section className="relative z-10">
       <div className="rounded-t-[12px] bg-[#F5F5F5] py-16 text-black">
         <Container>
           <motion.div

@@ -30,6 +30,8 @@ const nextConfig: NextConfig = {
   images: {
     // Next 16 defaults to [75] only; allow higher qualities for UI/screenshot assets.
     qualities: [75, 90, 100],
+    // Omit `search` so paths with or without ?v=mtime are allowed under /assets.
+    localPatterns: [{ pathname: "/assets/**" }],
     remotePatterns: [
       { protocol: "https", hostname: "storage.googleapis.com", pathname: "/**" },
       { protocol: "https", hostname: "cdn.jsdelivr.net", pathname: "/**" },

@@ -104,7 +104,7 @@ export default function StudioSuccessStoriesSection({
           {title}
         </h2>
 
-        <div className="mt-10 md:mt-14">
+        <div className="mt-16">
           <Swiper
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
@@ -127,7 +127,7 @@ export default function StudioSuccessStoriesSection({
           </Swiper>
         </div>
 
-        <div className="mt-8 flex items-center justify-center gap-2 md:mt-10">
+        <div className="mt-16 flex items-center justify-center gap-2">
           {stories.map((story, index) => (
             <button
               key={story.id}

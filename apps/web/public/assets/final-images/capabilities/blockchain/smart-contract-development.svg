@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 495 404.1" style="enable-background:new 0 0 495 404.1;" xml:space="preserve">
+<style type="text/css">
+	.st0{clip-path:url(#SVGID_2_);}
+	.st1{clip-path:url(#SVGID_4_);}
+	.st2{fill:#343434;}
+	.st3{fill:#FFFFFF;}
+	.st4{fill:none;stroke:#C0C0C0;stroke-width:4.2623;stroke-linecap:round;}
+	.st5{fill:#F472B6;}
+	.st6{fill:#D3287A;}
+</style>
+<g>
+	<defs>
+		<rect id="SVGID_1_" x="-84" y="-60.9" width="626" height="465"></rect>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_" style="overflow:visible;"></use>
+	</clipPath>
+	<g class="st0">
+		<g>
+			<defs>
+				<path id="SVGID_3_" d="M7.9,0h479.2c4.4,0,7.9,3.9,7.9,8.7v386.7c0,4.8-3.5,8.7-7.9,8.7H7.9c-4.4,0-7.9-3.9-7.9-8.7V8.7      C0,3.9,3.5,0,7.9,0z"></path>
+			</defs>
+			<clipPath id="SVGID_4_">
+				<use xlink:href="#SVGID_3_" style="overflow:visible;"></use>
+			</clipPath>
+			<g class="st1">
+				<path class="st2" d="M10.2,53.4c0-5.5,4.5-10,10-10h415v38.7h-425V53.4z"></path>
+				<rect x="10.2" y="82.1" class="st3" width="425" height="444.8"></rect>
+				<path class="st4" d="M264.8,122.5h75.8"></path>
+				<path class="st4" d="M264.8,146.4h114.5"></path>
+				<path class="st4" d="M264.8,171.1h114.5"></path>
+				<path class="st4" d="M66.3,261.7h293.2"></path>
+				<path class="st4" d="M66.3,311.8h293.2"></path>
+				<path class="st4" d="M66.3,335.8h313"></path>
+				<path class="st4" d="M66.3,360.4h293.2"></path>
+				<path class="st4" d="M66.3,384.9h312.2"></path>
+				<path class="st4" d="M66.3,286.5h312.2"></path>
+				<circle class="st5" cx="33.4" cy="62.8" r="6"></circle>
+				<circle class="st5" cx="55.4" cy="62.8" r="6"></circle>
+				<circle class="st5" cx="77.4" cy="62.8" r="6"></circle>
+				<circle class="st6" cx="428" cy="62.8" r="56.5"></circle>
+				<rect x="401.3" y="36.9" class="st3" width="53.5" height="53.5"></rect>
+				<path class="st6" d="M428,49.4l13.7,23.7h-27.4L428,49.4z"></path>
+				<path class="st6" d="M95.4,116.1l34.6,59.9H60.8L95.4,116.1z"></path>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>

@@ -25,7 +25,7 @@ export default function CapabilityStudioFaqSection({
   };
 
   return (
-    <section className="bg-white py-20 text-default md:pb-28">
+    <section className="bg-white py-16 text-default">
       <Container className="max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

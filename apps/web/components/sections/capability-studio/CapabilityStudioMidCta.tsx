@@ -25,7 +25,7 @@ export default function CapabilityStudioMidCta({
   const tokens = getStudioAccent(accent);
 
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section className="bg-white py-16">
       <Container>
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between md:gap-12">
           <div className="max-w-2xl">

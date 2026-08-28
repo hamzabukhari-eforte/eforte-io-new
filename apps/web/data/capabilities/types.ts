@@ -30,6 +30,11 @@ export type StudioHeroContent = {
   brands: StudioBrand[];
   /** Large right-panel graphic */
   graphicSrc: string;
+  /**
+   * Optional react-icons mark for the right panel (e.g. blockchain).
+   * When set, the hero renders the icon instead of graphicSrc.
+   */
+  graphicIcon?: "blockchain";
   /** Optional small mark next to the studio label; falls back to graphicSrc */
   labelIconSrc?: string;
   ctaLabel: string;
@@ -60,6 +65,8 @@ export type StudioFeature = {
   imageSide: "left" | "right";
   /** Solid panel behind media: photo fill, accent color, or black */
   mediaPanel?: "image" | "accent" | "black";
+  /** Optional custom solid background behind media (overrides mediaPanel color) */
+  mediaBgColor?: string;
   /** Fill the media panel edge-to-edge (no inset frame) */
   mediaFullBleed?: boolean;
   /** How media fills its panel; default cover */

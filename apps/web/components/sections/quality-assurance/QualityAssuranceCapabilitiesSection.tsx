@@ -2,13 +2,14 @@
 
 import { motion } from "framer-motion";
 import {
-  HiSparkles,
-  HiRefresh,
-  HiLightningBolt,
-  HiChartPie,
-  HiBeaker,
-} from "react-icons/hi";
-import { FaTachometerAlt, FaChessRook } from "react-icons/fa";
+  LuSparkles,
+  LuRefreshCcw,
+  LuZap,
+  LuGauge,
+  LuChartPie,
+  LuFlaskConical,
+} from "react-icons/lu";
+import { FaChessRook } from "react-icons/fa";
 import type { IconType } from "react-icons";
 import Container from "@/components/atoms/Container";
 import {
@@ -20,18 +21,18 @@ const icons: Record<
   (typeof qualityAssuranceCapabilities.items)[number]["icon"],
   IconType
 > = {
-  sparkles: HiSparkles,
-  refresh: HiRefresh,
-  bolt: HiLightningBolt,
-  gauge: FaTachometerAlt,
-  chart: HiChartPie,
-  beaker: HiBeaker,
+  sparkles: LuSparkles,
+  refresh: LuRefreshCcw,
+  bolt: LuZap,
+  gauge: LuGauge,
+  chart: LuChartPie,
+  beaker: LuFlaskConical,
   rook: FaChessRook,
 };
 
 export default function QualityAssuranceCapabilitiesSection() {
   return (
-    <section className="bg-white py-16 text-default md:py-24">
+    <section className="bg-white py-16 text-black">
       <Container>
         {/* Heading */}
         <motion.div
@@ -47,11 +48,11 @@ export default function QualityAssuranceCapabilitiesSection() {
               style={{ backgroundColor: QA_ACCENT }}
               aria-hidden
             />
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-default/70">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-black">
               {qualityAssuranceCapabilities.eyebrow}
             </p>
           </div>
-          <p className="max-w-xl text-lg font-semibold leading-snug text-default md:text-xl lg:max-w-[560px] lg:text-[22px] lg:leading-snug">
+          <p className="max-w-xl text-[36px] font-semibold leading-snug text-black lg:max-w-[560px]">
             {qualityAssuranceCapabilities.description}
           </p>
         </motion.div>
@@ -77,7 +78,7 @@ export default function QualityAssuranceCapabilitiesSection() {
                   <h3 className="mt-5 text-xl font-semibold md:text-[22px]">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-[15px] leading-relaxed text-[#555] md:text-base">
+                  <p className="mt-3 text-[15px] leading-relaxed text-black md:text-base">
                     {item.description}
                   </p>
                 </motion.article>

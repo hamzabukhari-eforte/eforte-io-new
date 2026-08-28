@@ -12,17 +12,17 @@ export default function QualityAssuranceHeroSection() {
     <section className="relative flex min-h-[760px] flex-col justify-center overflow-hidden bg-default pt-28 pb-20 md:min-h-screen md:pt-36">
       <div className="absolute inset-0">
         <Image
+          key={qualityAssuranceHero.backgroundSrc}
           src={qualityAssuranceHero.backgroundSrc}
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-right md:object-center"
+          className="object-cover object-center"
           aria-hidden
         />
-        {/* Keep diagram readable on the right; darken left for copy contrast */}
-        <div className="absolute inset-0 bg-linear-to-r from-black/95 via-black/80 to-black/35" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_40%,rgba(56,189,248,0.18),transparent_36%)]" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/95 via-black/75 to-black/35" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_35%,rgba(211,40,122,0.35),transparent_34%)]" />
       </div>
 
       <Container className="relative z-10">
@@ -50,7 +50,7 @@ export default function QualityAssuranceHeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.16 }}
-            className="mt-6 max-w-2xl text-base leading-7 text-white/82 md:text-lg"
+            className="mt-6 max-w-2xl text-base leading-7 text-white md:text-lg"
           >
             {qualityAssuranceHero.description}
           </motion.p>

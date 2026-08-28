@@ -1,5 +1,5 @@
 import { CapabilityStudioPage } from "@/components/sections/capability-studio";
-import { blockchainContent } from "@/data/capabilities/blockchain";
+import { getBlockchainContent } from "@/data/capabilities/blockchain";
 
 export const metadata = {
   title: "Blockchain | eForte",
@@ -8,5 +8,5 @@ export const metadata = {
 };
 
 export default function BlockchainPage() {
-  return <CapabilityStudioPage content={blockchainContent} />;
+  return <CapabilityStudioPage content={getBlockchainContent()} />;
 }

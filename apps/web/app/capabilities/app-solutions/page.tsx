@@ -1,5 +1,5 @@
 import { CapabilityStudioPage } from "@/components/sections/capability-studio";
-import { appSolutionsContent } from "@/data/capabilities/appSolutions";
+import { getAppSolutionsContent } from "@/data/capabilities/appSolutions";
 
 export const metadata = {
   title: "App Solutions | eForte",
@@ -8,5 +8,5 @@ export const metadata = {
 };
 
 export default function AppSolutionsPage() {
-  return <CapabilityStudioPage content={appSolutionsContent} />;
+  return <CapabilityStudioPage content={getAppSolutionsContent()} />;
 }

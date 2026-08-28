@@ -10,39 +10,44 @@ import type {
   StudioHeroContent,
 } from "@/data/capabilities/types";
 import { cn } from "@/lib/utils";
+import AppSolutionsHeroGraphic from "./AppSolutionsHeroGraphic";
+import PlatformEngineeringHeroGraphic from "./PlatformEngineeringHeroGraphic";
 
 type CapabilityStudioHeroProps = {
   accent: StudioAccentId;
   hero: StudioHeroContent;
 };
 
+const heroGraphicClassName =
+  "h-auto w-full max-h-[280px] object-contain sm:max-h-[340px] md:max-h-[400px] lg:max-h-[440px]";
+
 export default function CapabilityStudioHero({
   accent,
   hero,
 }: CapabilityStudioHeroProps) {
   const tokens = getStudioAccent(accent);
+  const graphicPath = (hero.graphicSrc.split("?")[0] ?? hero.graphicSrc).toLowerCase();
+  const isPlatformHero =
+    graphicPath.includes("platform-engineering") && graphicPath.endsWith(".svg");
+  const isAppSolutionsHero =
+    graphicPath.includes("/app-solution/") && graphicPath.endsWith(".svg");
+  const isBlockchainHero =
+    graphicPath.includes("blockchain") && graphicPath.includes("hero");
+  const graphicClassName = isBlockchainHero
+    ? "h-auto w-full max-h-[200px] object-contain sm:max-h-[240px] md:max-h-[280px] lg:max-h-[300px]"
+    : heroGraphicClassName;
 
   return (
-    <section className="bg-white pb-4 pt-28 text-black md:pb-6 md:pt-32">
+    <section className="bg-white pb-0 pt-28 text-black md:pt-32">
       <Container>
         <div className="overflow-hidden rounded-none border border-[#E8E8E8] md:rounded-[12px]">
           <div className="grid lg:grid-cols-[1.35fr_0.9fr]">
             {/* Left copy */}
             <div className="flex flex-col border-[#E8E8E8] lg:border-r">
               <div className="flex flex-1 flex-col justify-center px-6 py-10 sm:px-10 md:px-12 md:py-14">
-                <div className="flex items-center gap-3">
-                  <Image
-                    src={hero.labelIconSrc ?? hero.graphicSrc}
-                    alt=""
-                    width={28}
-                    height={28}
-                    className="h-7 w-7 object-contain"
-                    aria-hidden
-                  />
-                  <p className="text-base font-medium text-black md:text-lg">
-                    {hero.label}
-                  </p>
-                </div>
+                <p className="text-base font-medium text-black md:text-lg">
+                  {hero.label}
+                </p>
 
                 <h1 className="mt-6 max-w-2xl text-3xl font-semibold leading-[1.15] tracking-tight text-black sm:text-4xl lg:text-[48px]">
                   {hero.titleBefore}
@@ -86,15 +91,21 @@ export default function CapabilityStudioHero({
             {/* Right mark + CTA */}
             <div className="flex min-h-[320px] flex-col border-t border-[#E8E8E8] lg:min-h-[480px] lg:border-t-0">
               <div className="relative flex flex-1 items-center justify-center bg-[#F5F5F5] px-6 py-8 sm:px-8 md:py-10 lg:px-10">
-                <Image
-                  src={hero.graphicSrc}
-                  alt=""
-                  width={560}
-                  height={560}
-                  className="h-auto w-full max-h-[280px] object-contain sm:max-h-[340px] md:max-h-[400px] lg:max-h-[440px]"
-                  priority
-                  aria-hidden
-                />
+                {isPlatformHero ? (
+                  <PlatformEngineeringHeroGraphic className={graphicClassName} />
+                ) : isAppSolutionsHero ? (
+                  <AppSolutionsHeroGraphic className={graphicClassName} />
+                ) : (
+                  <Image
+                    src={hero.graphicSrc}
+                    alt=""
+                    width={560}
+                    height={560}
+                    className={graphicClassName}
+                    priority
+                    aria-hidden
+                  />
+                )}
               </div>
 
               <ContactCTA

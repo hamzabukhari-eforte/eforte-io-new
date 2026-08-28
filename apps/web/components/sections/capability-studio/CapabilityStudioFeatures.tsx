@@ -45,7 +45,7 @@ export default function CapabilityStudioFeatures({
   const groups = groupFeatures(features);
 
   return (
-    <section className="bg-white py-10 md:py-14">
+    <section className="bg-white py-16">
       <Container>
         <div className="flex flex-col gap-4 md:gap-5">
           {groups.map((group) => {

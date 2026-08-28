@@ -8,6 +8,8 @@ import type {
   StudioFeature,
 } from "@/data/capabilities/types";
 import { cn } from "@/lib/utils";
+import ConsultancyMentoringMedia from "./ConsultancyMentoringMedia";
+import BlockchainInfrastructureMedia from "./BlockchainInfrastructureMedia";
 
 type CapabilityStudioFeatureBlockProps = {
   accent: StudioAccentId;
@@ -92,13 +94,51 @@ function FeatureMedia({
   accentColor: string;
   panel?: "image" | "accent" | "black";
 }) {
-  const isSolidPanel = panel === "accent" || panel === "black";
+  const customBg = feature.mediaBgColor;
+  const isSolidPanel = Boolean(customBg) || panel === "accent" || panel === "black";
   const isInset = Boolean(feature.mediaInset);
   const isFullBleed = Boolean(feature.mediaFullBleed);
   const imagePath = feature.image.split("?")[0] ?? feature.image;
   const isSvg = imagePath.endsWith(".svg");
+  const isConsultancyMedia =
+    feature.id === "consultancy" ||
+    imagePath.includes("mobile-consultancy-and-mentoring");
+  const isInfrastructureMedia =
+    feature.id === "infrastructure" ||
+    imagePath.includes("blockchain-infrastructure-and-deployment");
   const solidBg =
-    panel === "black" ? "#000000" : panel === "accent" ? accentColor : undefined;
+    customBg ??
+    (panel === "black" ? "#000000" : panel === "accent" ? accentColor : undefined);
+
+  if (isConsultancyMedia) {
+    return (
+      <div
+        className={cn(
+          "relative flex h-full min-h-[300px] items-center justify-center overflow-hidden md:min-h-[380px] lg:min-h-full",
+          isFullBleed ? "" : "p-6 md:p-10"
+        )}
+        style={solidBg ? { backgroundColor: solidBg } : undefined}
+      >
+        <ConsultancyMentoringMedia className="h-full w-full max-h-full object-contain" />
+        <span className="sr-only">{feature.imageAlt}</span>
+      </div>
+    );
+  }
+
+  if (isInfrastructureMedia) {
+    return (
+      <div
+        className={cn(
+          "relative flex h-full min-h-[300px] items-center justify-center overflow-hidden md:min-h-[380px] lg:min-h-full",
+          isFullBleed ? "" : "p-6 md:p-10"
+        )}
+        style={solidBg ? { backgroundColor: solidBg } : undefined}
+      >
+        <BlockchainInfrastructureMedia className="h-full w-full max-h-full object-contain" />
+        <span className="sr-only">{feature.imageAlt}</span>
+      </div>
+    );
+  }
 
   if (isInset) {
     return (
@@ -121,6 +161,9 @@ function FeatureMedia({
       </div>
     );
   }
+
+  const useCover =
+    !isSvg && !customBg && (isFullBleed || !isSolidPanel);
 
   return (
     <div
@@ -148,12 +191,12 @@ function FeatureMedia({
           fill
           sizes="(max-width: 1024px) 100vw, 50vw"
           className={cn(
-            isSvg || isFullBleed || isSolidPanel
-              ? "object-contain object-center"
-              : "object-cover object-center",
+            useCover
+              ? "object-cover object-center"
+              : "object-contain object-center",
             isSvg && !isFullBleed && !isSolidPanel ? "p-6 md:p-10" : ""
           )}
-          unoptimized={isSvg}
+          unoptimized={isSvg || Boolean(customBg)}
         />
       )}
     </div>
