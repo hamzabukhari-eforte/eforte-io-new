@@ -202,7 +202,7 @@ export default function DifferentiatorCard({ card }: DifferentiatorCardProps) {
         <h3 className="text-xl md:text-2xl font-bold text-white mb-3 transition-colors duration-300">
           {card.title}
         </h3>
-        <p className="text-sm md:text-base text-white/70 leading-relaxed transition-colors duration-300">
+        <p className="text-sm md:text-base text-white leading-relaxed transition-colors duration-300">
           {card.description}
         </p>
       </div>

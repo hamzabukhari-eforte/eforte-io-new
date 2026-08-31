@@ -8,7 +8,8 @@ export const aboutLocations: AboutLocation[] = [
   {
     id: "wilmington",
     name: "Wilmington, Delaware",
-    detail: "Headquarters",
+    // Headquarters label preserved for possible future reuse:
+    // detail: "Headquarters",
   },
   {
     id: "san-jose",

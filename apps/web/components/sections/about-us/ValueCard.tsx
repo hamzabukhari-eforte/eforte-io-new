@@ -75,7 +75,7 @@ export default function ValueCard({
         <h3 className="bold mb-2 text-lg text-white md:text-xl lg:text-2xl xl:text-3xl">
           {item.title}
         </h3>
-        <p className="text-sm leading-relaxed text-desc md:text-base">
+        <p className="text-sm leading-relaxed text-white md:text-base">
           {item.description}
         </p>
       </div>

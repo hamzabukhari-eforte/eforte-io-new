@@ -6,7 +6,7 @@ import { aboutLocations } from "./locationsData";
 
 export default function AboutLocationsSection() {
   return (
-    <section className="w-full bg-default py-16 md:py-24">
+    <section className="w-full bg-default py-16">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export default function AboutLocationsSection() {
                 {location.name}
               </p>
               {location.detail ? (
-                <p className="mt-1 text-sm text-desc">{location.detail}</p>
+                <p className="mt-1 text-sm text-white">{location.detail}</p>
               ) : null}
             </motion.div>
           ))}

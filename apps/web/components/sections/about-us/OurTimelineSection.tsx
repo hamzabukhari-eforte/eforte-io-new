@@ -41,7 +41,7 @@ function TimelineCard({
         }`}
       >
         <span className="text-lg md:text-xl font-bold text-white">{year}</span>
-        <p className="mt-1 text-sm md:text-base leading-snug text-white/95">
+        <p className="mt-1 text-sm md:text-base leading-snug text-white">
           {description}
         </p>
       </div>
@@ -96,7 +96,7 @@ export default function OurTimelineSection() {
   };
 
   return (
-    <section className="w-full  bg-default py-16 md:py-24">
+    <section className="w-full bg-default pt-16 pb-0">
       {/* <Container> */}
         <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-10 md:mb-14">
           Our Timeline
