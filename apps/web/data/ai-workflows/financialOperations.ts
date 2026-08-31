@@ -40,6 +40,7 @@ export const financialOperationsDomain: AiWorkflowDomain = {
     "Expense automation",
     "Financial reporting",
   ],
+  // Superseded by the animated AiWorkflowDiagram; kept for possible future reuse.
   diagramSrc:
     "/assets/images/package/business-domains/financial-operations-workflows.svg",
   diagramAlt: "Autonomous financial operations workflow diagram",

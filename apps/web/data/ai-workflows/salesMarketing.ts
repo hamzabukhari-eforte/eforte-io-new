@@ -40,6 +40,7 @@ export const salesMarketingDomain: AiWorkflowDomain = {
     "Proposal & quote generation",
     "Pipeline forecasting",
   ],
+  // Superseded by the animated AiWorkflowDiagram; kept for possible future reuse.
   diagramSrc:
     "/assets/images/package/business-domains/sales-marketing-revenue-workflows.svg",
   diagramAlt: "Sales and marketing agentic revenue workflow diagram",

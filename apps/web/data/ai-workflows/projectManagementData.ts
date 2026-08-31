@@ -40,6 +40,7 @@ export const projectManagementDataDomain: AiWorkflowDomain = {
     "Resource allocation",
     "Data quality monitoring",
   ],
+  // Superseded by the animated AiWorkflowDiagram; kept for possible future reuse.
   diagramSrc:
     "/assets/images/package/business-domains/project-management-data-workflows.svg",
   diagramAlt: "Intelligent delivery and data workflow diagram",

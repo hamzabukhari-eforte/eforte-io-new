@@ -40,6 +40,7 @@ export const operationsComplianceDomain: AiWorkflowDomain = {
     "Compliance monitoring",
     "Inventory management",
   ],
+  // Superseded by the animated AiWorkflowDiagram; kept for possible future reuse.
   diagramSrc:
     "/assets/images/package/business-domains/operations-compliance-workflows.svg",
   diagramAlt: "AI-orchestrated operations and compliance workflow diagram",
