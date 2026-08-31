@@ -43,6 +43,8 @@ export type AiWorkflowOverviewContent = {
   eyebrow: string;
   headline: string;
   body: string;
+  /** Full-bleed overview page hero background */
+  heroImageSrc: string;
   domainsLabel: string;
   domainsTitle: string;
   domainsDescription: string;

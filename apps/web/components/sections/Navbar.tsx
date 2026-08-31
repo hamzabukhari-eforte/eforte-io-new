@@ -187,7 +187,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "eForte's comprehensive framework encompassing best practices, workflows, and advanced AI methodologies.",
             iconName: "lightning-bolt",
-            iconColorClass: "bg-[#2563eb]",
+            iconColorClass: "bg-[#050514]",
             href: "/velocity-ai",
           },
           {
@@ -195,7 +195,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Design and deploy AI agents customized to address industry-specific challenges.",
             iconName: "view-list",
-            iconColorClass: "bg-[#2563eb]",
+            iconColorClass: "bg-[#050514]",
             href: "/agentic-orchestration",
           },
           {
@@ -203,7 +203,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Build robust data foundations that power next-generation enterprises.",
             iconName: "database",
-            iconColorClass: "bg-[#2563eb]",
+            iconColorClass: "bg-[#050514]",
             href: "/foundational-data-layer",
           },
         ],
@@ -251,7 +251,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "User experience research, service design, design thinking, and intuitive UI design.",
             iconName: "pencil",
-            iconColorClass: "bg-[#7C4CFF]",
+            iconColorClass: "bg-[#050514]",
             href: "/capabilities/product-design",
           },
           {
@@ -259,7 +259,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Agentic AI, generative AI, machine learning, natural language processing, and computer vision.",
             iconName: "chip",
-            iconColorClass: "bg-[#ef4444]",
+            iconColorClass: "bg-[#050514]",
             href: "/capabilities/artificial-intelligence",
           },
           {
@@ -267,7 +267,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Data engineering, transformation, visualization, and predictive analytics.",
             iconName: "database",
-            iconColorClass: "bg-[#0ea5e9]",
+            iconColorClass: "bg-[#050514]",
             href: "/capabilities/data",
           },
           {
@@ -275,7 +275,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Native and hybrid app development, SDK creation, system integrations, and app store optimization.",
             iconName: "device-mobile",
-            iconColorClass: "bg-[#f97316]",
+            iconColorClass: "bg-[#050514]",
             href: "/capabilities/app-solutions",
           },
           {
@@ -283,7 +283,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Cloud migration, CI/CD pipeline implementation, site reliability engineering, and infrastructure as code.",
             iconName: "cloud",
-            iconColorClass: "bg-[#1e40af]",
+            iconColorClass: "bg-[#050514]",
             href: "/capabilities/cloud-sre",
           },
           {
@@ -291,7 +291,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Secure SDLC, AI-driven cybersecurity, penetration testing, and AI security assessments.",
             iconName: "shield-check",
-            iconColorClass: "bg-[#0f172a]",
+            iconColorClass: "bg-[#050514]",
             href: "/capabilities/cybersecurity",
           },
           {
@@ -299,7 +299,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Scalable platforms, resilient infrastructure, API development, and efficient deployment strategies.",
             iconName: "cog",
-            iconColorClass: "bg-[#1e3a8a]",
+            iconColorClass: "bg-[#050514]",
             href: "/capabilities/platform-engineering",
           },
           {
@@ -307,7 +307,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "AI-augmented testing, test automation, CI/CD integration, performance, load, and data testing.",
             iconName: "check-circle",
-            iconColorClass: "bg-[#22c55e]",
+            iconColorClass: "bg-[#050514]",
             href: "/capabilities/quality-assurance",
           },
           {
@@ -315,7 +315,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Product strategy, lifecycle management, process optimization, and monetization consulting.",
             iconName: "view-grid",
-            iconColorClass: "bg-[#2563eb]",
+            iconColorClass: "bg-[#050514]",
             href: "/capabilities/product-management",
           },
           {
@@ -323,7 +323,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Smart contract development, decentralized applications, and blockchain system integration.",
             iconName: "link",
-            iconColorClass: "bg-[#D348EA]",
+            iconColorClass: "bg-[#050514]",
             href: "/capabilities/blockchain",
           },
           {
@@ -331,7 +331,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Accelerate delivery with dedicated AI, data, cloud, and engineering talent seamlessly embedded into your teams, eliminating hiring complexity and ramp-up time.",
             iconName: "user-group",
-            iconColorClass: "bg-primary-pink",
+            iconColorClass: "bg-[#050514]",
             href: "/capabilities/staff-augmentation",
           },
           // Embedded Engineering preserved for future reuse (not in mega menu DOC 4August2026):
@@ -361,7 +361,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Autonomous Customer Service Workflows: AI agents route, respond, analyze sentiment, and continuously optimize customer interactions.",
             iconName: "user-group",
-            iconColorClass: "bg-[#7C4CFF]",
+            iconColorClass: "bg-[#050514]",
             href: "/ai-workflows/customer-service",
           },
           {
@@ -369,7 +369,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Agentic Revenue Workflows: AI agents qualify leads, generate proposals, and accelerate deal cycles.",
             iconName: "lightning-bolt",
-            iconColorClass: "bg-[#ef4444]",
+            iconColorClass: "bg-[#050514]",
             href: "/ai-workflows/sales-marketing",
           },
           {
@@ -377,7 +377,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Autonomous Financial Workflows: AI agents process invoices, detect fraud, and ensure continuous compliance.",
             iconName: "currency-dollar",
-            iconColorClass: "bg-[#0ea5e9]",
+            iconColorClass: "bg-[#050514]",
             href: "/ai-workflows/financial-operations",
           },
         ],
@@ -390,7 +390,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Agentic Talent Workflows: AI agents screen candidates, coordinate onboarding, and manage lifecycle tasks.",
             iconName: "badge-check",
-            iconColorClass: "bg-[#f97316]",
+            iconColorClass: "bg-[#050514]",
             href: "/ai-workflows/human-resources",
           },
           {
@@ -398,7 +398,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "AI-Orchestrated Risk & Compliance Workflows: Autonomous monitoring and regulatory reporting with built-in governance.",
             iconName: "shield-check",
-            iconColorClass: "bg-[#1e40af]",
+            iconColorClass: "bg-[#050514]",
             href: "/ai-workflows/operations-compliance",
           },
           {
@@ -406,7 +406,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Intelligent Delivery & Data Workflows: AI agents allocate resources, track progress, and generate predictive insights.",
             iconName: "database",
-            iconColorClass: "bg-[#0f172a]",
+            iconColorClass: "bg-[#050514]",
             href: "/ai-workflows/project-management-data",
           },
         ],
@@ -427,7 +427,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "AI-driven healthcare solutions improving patient outcomes, operational efficiency, and personalized care.",
             iconName: "heart",
-            iconColorClass: "bg-[#7C4CFF]",
+            iconColorClass: "bg-[#050514]",
             href: "/industries/healthcare",
           },
           {
@@ -435,7 +435,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Intelligent AI and data platforms enabling smarter decisions, risk mitigation, and digital financial transformation.",
             iconName: "currency-dollar",
-            iconColorClass: "bg-[#7C4CFF]",
+            iconColorClass: "bg-[#050514]",
             href: "/industries/financial-services",
           },
           {
@@ -443,7 +443,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "AI-powered automation and analytics streamlining underwriting, claims processing, and customer engagement.",
             iconName: "shield-check",
-            iconColorClass: "bg-[#7C4CFF]",
+            iconColorClass: "bg-[#050514]",
             href: "/industries/insurance",
           },
           {
@@ -451,7 +451,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Advanced AI enabling connected vehicles, predictive maintenance, and intelligent manufacturing ecosystems.",
             iconName: "device-mobile",
-            iconColorClass: "bg-[#7C4CFF]",
+            iconColorClass: "bg-[#050514]",
             href: "/industries/automobile",
           },
           {
@@ -459,7 +459,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Industrial AI solutions driving predictive maintenance, operational excellence, and smart factory transformation.",
             iconName: "office-building",
-            iconColorClass: "bg-[#7C4CFF]",
+            iconColorClass: "bg-[#050514]",
             href: "/industries/heavy-industries",
           },
           {
@@ -467,7 +467,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Agentic AI and automation enhancing service delivery, productivity, and scalable customer operations.",
             iconName: "user-group",
-            iconColorClass: "bg-[#7C4CFF]",
+            iconColorClass: "bg-[#050514]",
             href: "/industries/bpo-shared-services",
           },
           {
@@ -475,7 +475,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "AI-powered personalization and operational intelligence elevating guest experiences and optimizing hospitality operations.",
             iconName: "badge-check",
-            iconColorClass: "bg-[#7C4CFF]",
+            iconColorClass: "bg-[#050514]",
             href: "/industries/hospitality",
           },
           // Legacy industries preserved for future reuse:

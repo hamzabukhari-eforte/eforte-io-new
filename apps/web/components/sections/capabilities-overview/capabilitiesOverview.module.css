@@ -1059,17 +1059,16 @@
 }
 
 .journeyMainPill {
-  background: #2739DD;
+  background: transparent;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 20px;
   color: var(--cap-white);
-  border-radius: 30px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   white-space: nowrap;
-  padding: 10px 30px;
+  padding: 10px 0;
   width: auto;
   line-height: 1;
 }

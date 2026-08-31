@@ -8,12 +8,12 @@ import AiWorkflowsReveal from "./AiWorkflowsReveal";
 import styles from "./aiWorkflows.module.css";
 
 export default function AiWorkflowsOverviewHeroSection() {
-  const { eyebrow, headline, body } = aiWorkflowsOverview;
+  const { eyebrow, headline, body, heroImageSrc } = aiWorkflowsOverview;
 
   return (
     <section className={styles.hero}>
       <Image
-        src="/assets/images/package/business-domains/business-domains-hub-hero.svg"
+        src={heroImageSrc}
         alt=""
         fill
         priority

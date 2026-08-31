@@ -13,6 +13,10 @@ export const aiWorkflowsOverview: AiWorkflowOverviewContent = {
   headline:
     "AI-Driven Enterprise Domain Capabilities: Where AI Meets Execution.",
   body: "We don't just build software; we engineer business outcomes. By fusing deep industry expertise with our Agentic Orchestration, we deliver specialized AI powered enterprise domains capabilities that modernize every facet of your operation-from the back office to the customer frontline.",
+  // Previous hero, preserved for possible future reuse:
+  // "/assets/images/package/business-domains/business-domains-hub-hero.svg"
+  heroImageSrc:
+    "/assets/final-images/ai-workflows/ai_workflows_main_hero.png?v=5",
   domainsLabel: "Business Domains",
   domainsTitle: "The AI-Powered Business Domains",
   domainsDescription:
@@ -25,9 +29,9 @@ export const aiWorkflowsOverview: AiWorkflowOverviewContent = {
         "AI agents that route, resolve, analyze sentiment, and continuously optimize customer interactions.",
       href: "/ai-workflows/customer-service",
       icon: HiChatBubbleLeftRight,
-      iconColor: "#D3287A",
+      iconColor: "#AB77FF",
       hoverGradient:
-        "linear-gradient(135deg, #D3287A 0%, #be185d 45%, #9d174d 100%)",
+        "linear-gradient(270deg, #FFFFFF -61.24%, #AB77FF 94.42%)",
     },
     {
       title: "Sales & Marketing",
@@ -36,9 +40,9 @@ export const aiWorkflowsOverview: AiWorkflowOverviewContent = {
         "Autonomous AI agents qualifying leads, generating proposals, and driving pipeline velocity.",
       href: "/ai-workflows/sales-marketing",
       icon: HiChartBar,
-      iconColor: "#db2777",
+      iconColor: "#FFA29B",
       hoverGradient:
-        "linear-gradient(135deg, #db2777 0%, #D3287A 50%, #831843 100%)",
+        "linear-gradient(270deg, #FFFFFF -80.35%, #FFA29B 82.94%)",
     },
     {
       title: "Financial Operations",
@@ -47,9 +51,9 @@ export const aiWorkflowsOverview: AiWorkflowOverviewContent = {
         "AI agents ensuring accuracy, compliance, and fraud detection across financial workflows.",
       href: "/ai-workflows/financial-operations",
       icon: HiCurrencyDollar,
-      iconColor: "#e11d48",
+      iconColor: "#96C5FF",
       hoverGradient:
-        "linear-gradient(135deg, #e11d48 0%, #D3287A 50%, #9f1239 100%)",
+        "linear-gradient(267.87deg, #96C5FF 8%, #5FA7FF 98.69%)",
     },
     {
       title: "Human Resources",
@@ -58,9 +62,9 @@ export const aiWorkflowsOverview: AiWorkflowOverviewContent = {
         "AI-driven automation across hiring, onboarding, performance management, and workforce insights.",
       href: "/ai-workflows/human-resources",
       icon: HiUserGroup,
-      iconColor: "#be185d",
+      iconColor: "#F4594E",
       hoverGradient:
-        "linear-gradient(135deg, #f472b6 0%, #D3287A 40%, #9d174d 100%)",
+        "linear-gradient(270deg, #FFFFFF -37.81%, #F4594E 94.34%)",
     },
     {
       title: "Operations & Compliance",
@@ -69,9 +73,9 @@ export const aiWorkflowsOverview: AiWorkflowOverviewContent = {
         "Continuous monitoring, risk mitigation, and automated regulatory reporting through agentic systems.",
       href: "/ai-workflows/operations-compliance",
       icon: HiShieldCheck,
-      iconColor: "#c026d3",
+      iconColor: "#0D5BFF",
       hoverGradient:
-        "linear-gradient(135deg, #c026d3 0%, #D3287A 55%, #86198f 100%)",
+        "linear-gradient(270deg, #FFFFFF -39.31%, #0D5BFF 95.36%)",
     },
     {
       title: "Project Management & Data",
@@ -80,9 +84,9 @@ export const aiWorkflowsOverview: AiWorkflowOverviewContent = {
         "Predictive resource allocation, real-time insights, and autonomous project coordination.",
       href: "/ai-workflows/project-management-data",
       icon: HiClipboardDocumentList,
-      iconColor: "#D3287A",
+      iconColor: "#1E1E1E",
       hoverGradient:
-        "linear-gradient(135deg, #fb7185 0%, #D3287A 45%, #be185d 100%)",
+        "linear-gradient(270deg, #FFFFFF -94.42%, #1E1E1E 97.88%)",
     },
   ],
 };
