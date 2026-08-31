@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" width="1000" height="240" fill="none">
+  <defs>
+    <style>
+      .flow {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+
+      .node {
+        fill: #101334;
+        stroke: #2739DD;
+        stroke-width: 1.6;
+      }
+
+      .icon {
+        fill: none;
+        stroke: #FFFFFF;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .icon-thin {
+        fill: none;
+        stroke: #FFFFFF;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .accent {
+        fill: #2739DD;
+      }
+
+      .link {
+        fill: none;
+        stroke: #2739DD;
+        stroke-width: 1.6;
+        stroke-linecap: round;
+      }
+
+      .label {
+        fill: #FFFFFF;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        text-anchor: middle;
+      }
+    </style>
+
+    <marker id="flow-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 1 2 L 8 5 L 1 8 Z" fill="#2739DD" />
+    </marker>
+  </defs>
+
+  <g class="flow">
+    <!-- 1. Inquiry received -->
+    <g>
+      <rect class="node" x="30" y="44" width="88" height="88" rx="22" />
+      <path class="icon" d="M 63 74 H 85 A 5 5 0 0 1 90 79 V 91 A 5 5 0 0 1 85 96 H 72 L 64 103 V 96 H 63 A 5 5 0 0 1 58 91 V 79 A 5 5 0 0 1 63 74 Z" />
+      <path class="icon-thin" d="M 65 81 H 83" />
+      <path class="icon-thin" d="M 65 88 H 77" />
+      <text class="label" x="74" y="160">Inquiry</text>
+      <text class="label" x="74" y="180">Received</text>
+    </g>
+
+    <path class="link" d="M 130 88 H 231" marker-end="url(#flow-arrow)" />
+
+    <!-- 2. AI triage -->
+    <g>
+      <rect class="node" x="243" y="44" width="88" height="88" rx="22" />
+      <path class="icon-thin" d="M 263 88 H 273" />
+      <path class="icon" d="M 287 72 L 301 88 L 287 104 L 273 88 Z" />
+      <path class="icon-thin" d="M 301 88 H 307" />
+      <path class="icon-thin" d="M 307 88 V 77 H 311" />
+      <path class="icon-thin" d="M 307 88 H 311" />
+      <path class="icon-thin" d="M 307 88 V 99 H 311" />
+      <circle class="accent" cx="313.5" cy="77" r="1.8" />
+      <circle class="accent" cx="313.5" cy="88" r="1.8" />
+      <circle class="accent" cx="313.5" cy="99" r="1.8" />
+      <text class="label" x="287" y="170">AI Triage</text>
+    </g>
+
+    <path class="link" d="M 343 88 H 444" marker-end="url(#flow-arrow)" />
+
+    <!-- 3. Automated resolution -->
+    <g>
+      <rect class="node" x="456" y="44" width="88" height="88" rx="22" />
+      <circle class="icon" cx="500" cy="88" r="16" />
+      <path class="icon" d="M 492 88 L 498 94 L 509 82" />
+      <path class="icon-thin" d="M 500 66 V 71" />
+      <path class="icon-thin" d="M 500 105 V 110" />
+      <path class="icon-thin" d="M 478 88 H 483" />
+      <path class="icon-thin" d="M 517 88 H 522" />
+      <text class="label" x="500" y="160">Automated</text>
+      <text class="label" x="500" y="180">Resolution</text>
+    </g>
+
+    <path class="link" d="M 556 88 H 657" marker-end="url(#flow-arrow)" />
+
+    <!-- 4. Escalation to agent -->
+    <g>
+      <rect class="node" x="669" y="44" width="88" height="88" rx="22" />
+      <circle class="icon" cx="713" cy="81" r="9" />
+      <path class="icon" d="M 698 104 C 698 95, 705 92, 713 92 C 721 92, 728 95, 728 104" />
+      <path class="icon-thin" d="M 703 79 C 703 70, 723 70, 723 79" />
+      <rect class="accent" x="700.5" y="77" width="4.5" height="8" rx="2.2" />
+      <rect class="accent" x="721" y="77" width="4.5" height="8" rx="2.2" />
+      <text class="label" x="713" y="160">Escalation</text>
+      <text class="label" x="713" y="180">to Agent</text>
+    </g>
+
+    <path class="link" d="M 769 88 H 870" marker-end="url(#flow-arrow)" />
+
+    <!-- 5. Feedback loop -->
+    <g>
+      <rect class="node" x="882" y="44" width="88" height="88" rx="22" />
+      <path class="icon" d="M 911 82.5 A 16 16 0 0 1 941 82.5" />
+      <path class="accent" d="M 936 81 L 946 81 L 941 89 Z" />
+      <path class="icon" d="M 941 93.5 A 16 16 0 0 1 911 93.5" />
+      <path class="accent" d="M 906 95 L 916 95 L 911 87 Z" />
+      <path class="icon-thin" d="M 919 94 V 88" />
+      <path class="icon-thin" d="M 926 94 V 84" />
+      <path class="icon-thin" d="M 933 94 V 90" />
+      <text class="label" x="926" y="160">Feedback</text>
+      <text class="label" x="926" y="180">Loop</text>
+    </g>
+  </g>
+</svg>

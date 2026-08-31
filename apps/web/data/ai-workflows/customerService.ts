@@ -40,8 +40,11 @@ export const customerServiceDomain: AiWorkflowDomain = {
     "Knowledge base auto-responses",
     "Sentiment analysis",
   ],
+  // Rendered by the animated CustomerServiceWorkflowDiagram component; these
+  // static diagrams are preserved for possible future reuse.
+  // diagramSrc: "/assets/images/ai-workflows/customer-service-workflow.svg",
   diagramSrc:
-    "/assets/images/ai-workflows/customer-service-workflow.svg",
+    "/assets/images/ai-workflows/customer-service-workflow-minimal.svg",
   diagramAlt: "Customer service and support agentic workflow diagram",
   heroImageSrc:
     "/assets/final-images/ai-workflows/customer_service_agentic_ai_hero.png",

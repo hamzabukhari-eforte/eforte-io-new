@@ -3,6 +3,7 @@
 import Image from "next/image";
 import type { AiWorkflowDomain } from "@/data/ai-workflows";
 import AiWorkflowsReveal from "./AiWorkflowsReveal";
+import CustomerServiceWorkflowDiagram from "./CustomerServiceWorkflowDiagram";
 import styles from "./aiWorkflows.module.css";
 
 function padNumber(index: number) {
@@ -14,6 +15,21 @@ export default function AiWorkflowsSection({
 }: {
   domain: AiWorkflowDomain;
 }) {
+  const { diagramSrc } = domain;
+  const diagram =
+    domain.slug === "customer-service" ? (
+      <CustomerServiceWorkflowDiagram className={styles.workflowDiagramImage} />
+    ) : diagramSrc ? (
+      <Image
+        src={diagramSrc}
+        alt={domain.diagramAlt ?? `${domain.label} workflow diagram`}
+        width={1000}
+        height={240}
+        className={styles.workflowDiagramImage}
+        unoptimized
+      />
+    ) : null;
+
   return (
     <section className={styles.workflows}>
       <div className={styles.content}>
@@ -26,20 +42,13 @@ export default function AiWorkflowsSection({
           <h2>The Workflows</h2>
         </AiWorkflowsReveal>
 
-        {domain.diagramSrc ? (
+        {diagram ? (
           <AiWorkflowsReveal
             className={styles.workflowDiagram}
             direction="bottom"
             duration={400}
           >
-            <Image
-              src={domain.diagramSrc}
-              alt={domain.diagramAlt ?? `${domain.label} workflow diagram`}
-              width={1000}
-              height={240}
-              className={styles.workflowDiagramImage}
-              unoptimized
-            />
+            {diagram}
           </AiWorkflowsReveal>
         ) : null}
 
