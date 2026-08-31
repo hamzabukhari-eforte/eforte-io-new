@@ -64,27 +64,30 @@ export default function CapabilityStudioHero({
                 </p>
               </div>
 
-              <div className="flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-[#E8E8E8] px-6 py-5 sm:px-10 md:px-12">
-                <p className="text-sm font-semibold text-black md:text-base">
+              <div className="flex flex-wrap items-center gap-x-10 gap-y-3 border-t border-[#E8E8E8] px-6 py-5 sm:px-10 md:px-12">
+                <p className="shrink-0 text-sm font-semibold text-black md:text-base">
                   {hero.brandsLabel}
                 </p>
-                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 md:gap-x-6">
-                  {hero.brands.map((brand) => {
-                    const src = brand.logoSrc ?? brand.iconSrc;
-                    if (!src) return null;
+                {hero.brands.map((brand) => {
+                  const src = brand.logoSrc ?? brand.iconSrc;
+                  if (!src) return null;
 
-                    return (
+                  return (
+                    <span
+                      key={brand.name}
+                      className="inline-flex h-6 shrink-0 items-center justify-center md:h-7"
+                    >
                       <Image
-                        key={brand.name}
                         src={src}
                         alt={brand.name}
-                        width={96}
+                        width={140}
                         height={28}
-                        className="h-5 w-auto object-contain md:h-6"
+                        unoptimized
+                        className="h-full w-auto object-contain"
                       />
-                    );
-                  })}
-                </div>
+                    </span>
+                  );
+                })}
               </div>
             </div>
 

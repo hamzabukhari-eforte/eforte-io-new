@@ -10,7 +10,7 @@ const FALLBACK: Record<number, string> = {
   1: "/assets/images/case-study/InstApp-Dealbanner.png",
   2: "/assets/images/case-study/InstApp-Deal-Mobilebanner.png",
   4: "/assets/images/case-study/CulturalFit.jpg",
-  7: "/assets/images/case-study/komb-banner.png",
+  7: "/assets/final-images/capabilities/app-solution/7-App_Store_and_Google_Play_positioning.png",
 };
 
 function cardImage(
@@ -149,6 +149,9 @@ export function getAppSolutionsContent(): StudioPageContent {
         layout: "row",
         imageSide: "right",
         mediaFullBleed: true,
+        mediaBgColor: "#000000",
+        mediaObjectFit: "contain",
+        mediaObjectPosition: "bottom",
       },
     ],
     proprietaryTech: [

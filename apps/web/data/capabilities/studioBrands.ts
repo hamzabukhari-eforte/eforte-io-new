@@ -15,6 +15,9 @@ const BRAND_NAMES: Record<string, string> = {
   landid: "Land id.",
 };
 
+/** Match the studio hero reference order. Unknown files append after. */
+const BRAND_ORDER = ["shopify", "onesignal", "ripple", "landid"];
+
 function resolveBrandsDir(): string | null {
   const candidates = [
     path.join(process.cwd(), RELATIVE_DIR),
@@ -42,6 +45,21 @@ export function getStudioTrustedBrands(): StudioBrand[] {
       logoSrc: `${PUBLIC_BASE}/${file}?v=${Math.floor(stat.mtimeMs)}`,
     });
   }
+
+  brands.sort((a, b) => {
+    const idOf = (brand: StudioBrand) =>
+      (brand.logoSrc ?? "")
+        .split("?")[0]
+        .split("/")
+        .pop()
+        ?.replace(IMAGE_EXT, "")
+        .toLowerCase() ?? "";
+    const indexOf = (brand: StudioBrand) => {
+      const index = BRAND_ORDER.indexOf(idOf(brand));
+      return index === -1 ? BRAND_ORDER.length : index;
+    };
+    return indexOf(a) - indexOf(b);
+  });
 
   return brands.length > 0 ? brands : FALLBACK_BRANDS;
 }

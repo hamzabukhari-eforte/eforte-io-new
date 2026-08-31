@@ -71,6 +71,8 @@ export type StudioFeature = {
   mediaFullBleed?: boolean;
   /** How media fills its panel; default cover */
   mediaObjectFit?: "cover" | "contain";
+  /** Anchor contained media in the panel; default center */
+  mediaObjectPosition?: "center" | "bottom" | "top";
   /** Inset rounded media card inside the parent band (Product Management style) */
   mediaInset?: boolean;
 };

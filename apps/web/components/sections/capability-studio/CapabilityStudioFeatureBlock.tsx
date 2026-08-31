@@ -163,7 +163,16 @@ function FeatureMedia({
   }
 
   const useCover =
-    !isSvg && !customBg && (isFullBleed || !isSolidPanel);
+    feature.mediaObjectFit !== "contain" &&
+    !isSvg &&
+    !customBg &&
+    (isFullBleed || !isSolidPanel);
+  const objectPosition =
+    feature.mediaObjectPosition === "bottom"
+      ? "object-bottom"
+      : feature.mediaObjectPosition === "top"
+        ? "object-top"
+        : "object-center";
 
   return (
     <div
@@ -191,9 +200,8 @@ function FeatureMedia({
           fill
           sizes="(max-width: 1024px) 100vw, 50vw"
           className={cn(
-            useCover
-              ? "object-cover object-center"
-              : "object-contain object-center",
+            useCover ? "object-cover" : "object-contain",
+            objectPosition,
             isSvg && !isFullBleed && !isSolidPanel ? "p-6 md:p-10" : ""
           )}
           unoptimized={isSvg || Boolean(customBg)}
