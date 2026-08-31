@@ -12,7 +12,7 @@ import styles from "@/components/sections/capabilities-overview/capabilitiesOver
 export const metadata = {
   title: "Capabilities | eForte",
   description:
-    "Explore eForte's studio-based capabilities across AI, data, cloud, cybersecurity, product design, and engineering disciplines.",
+    "The eForte Studio model assembles specialist teams across Data & AI, Design, Cybersecurity, Engineering, Quality, and Product Management to deliver holistic solutions.",
 };
 
 export default function CapabilitiesPage() {

@@ -22,6 +22,8 @@ export type AiWorkflowDomain = {
   workflows: AiWorkflowItem[];
   workflowChips: string[];
   pillars: AiWorkflowPillars;
+  /** Full-bleed detail page hero background */
+  heroImageSrc?: string;
   /** Workflow diagram from the AI-Driven Business Domains package */
   diagramSrc?: string;
   diagramAlt?: string;

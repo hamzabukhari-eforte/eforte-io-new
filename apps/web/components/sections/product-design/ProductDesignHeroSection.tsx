@@ -41,8 +41,7 @@ export default function ProductDesignHeroSection() {
             transition={{ duration: 0.55, delay: 0.08 }}
             className="mt-6 text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-[48px]"
           >
-            eForte&apos;s Product Design Studio turns complex workflows into
-            products people actually want to use
+            Design digital products your users remember
           </motion.h1>
 
           <motion.p
@@ -51,12 +50,10 @@ export default function ProductDesignHeroSection() {
             transition={{ duration: 0.55, delay: 0.16 }}
             className="mt-6 max-w-2xl text-base leading-7 text-white/82 md:text-lg"
           >
-            The most capable backend in the world fails if the people using it
-            every day find it confusing or slow. Our Product Design Studio does
-            the human-centered work — research, UX, UI, and design systems —
-            that makes Velocity AI and Agentic Orchestration usable, trusted,
-            and adopted. We design for how your teams and customers actually
-            behave, not how a spec sheet assumes they will.
+            eForte&apos;s Product Design Studio helps you craft engaging,
+            intuitive experiences that feel effortless to use and easy to love.
+            Our team blends UX strategy, interface design, and research to turn
+            ideas into products that perform.
           </motion.p>
 
           <motion.div

@@ -43,6 +43,8 @@ export const customerServiceDomain: AiWorkflowDomain = {
   diagramSrc:
     "/assets/images/ai-workflows/customer-service-workflow.svg",
   diagramAlt: "Customer service and support agentic workflow diagram",
+  heroImageSrc:
+    "/assets/final-images/ai-workflows/customer_service_agentic_ai_hero.png",
   pillars: {
     agenticOrchestration: "Planner → Execution → Intelligence → Optimization",
     velocityAi:

@@ -10,7 +10,7 @@ import { VelocityAIInsightsSection } from "@/components/sections/velocity-ai";
 export const metadata = {
   title: "Product Design | eForte",
   description:
-    "Product design services for UX research, product strategy, UI design, prototyping, validation, and design systems.",
+    "eForte's Product Design Studio helps you craft engaging, intuitive experiences that feel effortless to use and easy to love.",
 };
 
 export default function ProductDesignPage() {

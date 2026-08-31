@@ -7,9 +7,10 @@ export default function ProductDesignServicesSection() {
   return (
     <StudioValuesSection
       eyebrow="Product Design"
-      title="A user-centric approach to help your business grow"
+      title="Our user-centric approach is designed to support business growth while keeping delivery practical for your teams."
       values={productDesignValues}
       iconPosition="top-right"
+      eyebrowClassName="text-primary-pink"
     />
   );
 }

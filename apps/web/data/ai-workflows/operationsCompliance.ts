@@ -43,6 +43,8 @@ export const operationsComplianceDomain: AiWorkflowDomain = {
   diagramSrc:
     "/assets/images/package/business-domains/operations-compliance-workflows.svg",
   diagramAlt: "AI-orchestrated operations and compliance workflow diagram",
+  heroImageSrc:
+    "/assets/final-images/ai-workflows/Operations__Compliance_hero.png?v=2",
   pillars: {
     agenticOrchestration: "Execution → Governance → Intelligence → Optimization",
     velocityAi: "Compliance-ready agent frameworks.",

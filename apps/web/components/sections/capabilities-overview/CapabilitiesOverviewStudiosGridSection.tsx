@@ -19,10 +19,8 @@ export default function CapabilitiesOverviewStudiosGridSection() {
             <p className={styles.collectionLabel}>Agile Solutions</p>
             <h2>eForte Studios</h2>
             <p className={styles.collectionDescription}>
-              Explore each eForte Studio in detail and learn how they deliver
-              real impact. Our specialized Studios cover a broad spectrum of
-              digital services, from building AI-driven products, leading cloud
-              solutions, to cybersecurity.
+              Each Studio provides focused expertise while working as part of a
+              cohesive whole.
             </p>
             <ContactCTA className={styles.buttonBlack}>Contact Us</ContactCTA>
           </CapabilitiesReveal>

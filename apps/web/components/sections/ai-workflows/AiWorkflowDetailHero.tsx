@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import ContactCTA from "@/components/atoms/ContactCTA";
 import type { AiWorkflowDomain } from "@/data/ai-workflows";
 import { HiSparkles } from "react-icons/hi2";
@@ -11,10 +12,31 @@ export default function AiWorkflowDetailHero({
 }: {
   domain: AiWorkflowDomain;
 }) {
+  const hasHeroImage = Boolean(domain.heroImageSrc);
+
   return (
     <section className={styles.detailHero}>
-      <div className={styles.detailHeroOrb} aria-hidden />
-      <div className={styles.detailHeroGrain} aria-hidden />
+      {hasHeroImage ? (
+        <>
+          <Image
+            key={domain.heroImageSrc}
+            src={domain.heroImageSrc!}
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className={styles.detailHeroBg}
+            aria-hidden
+          />
+          <div className={styles.detailHeroOverlay} aria-hidden />
+          <div className={styles.detailHeroPinkGlow} aria-hidden />
+        </>
+      ) : (
+        <>
+          <div className={styles.detailHeroOrb} aria-hidden />
+          <div className={styles.detailHeroGrain} aria-hidden />
+        </>
+      )}
       <div className={styles.content}>
         <AiWorkflowsReveal
           className={styles.detailHeroInner}

@@ -39,6 +39,25 @@
   z-index: 5;
 }
 
+.heroPinkGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 78% 35%,
+    rgba(211, 40, 122, 0.35),
+    transparent 34%
+  );
+  z-index: 6;
+  pointer-events: none;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+/* Preserved — previous video hero background
 .heroVideo {
   width: 100%;
   height: 100%;
@@ -48,6 +67,7 @@
   left: 0;
   z-index: 1;
 }
+*/
 
 .heroText {
   max-width: 620px;
@@ -156,7 +176,7 @@
   background: var(--cap-black);
   border-radius: 40px 40px 0 0;
   margin-top: -40px;
-  padding: 100px 0;
+  padding: 64px 0;
   color: var(--cap-white);
   overflow: hidden;
   position: relative;
@@ -656,8 +676,8 @@
 
 .stepDescription {
   text-align: center;
-  color: #c7c9d0;
-  font-size: 14px;
+  color: var(--cap-white);
+  font-size: 16px;
   line-height: 1.4;
 }
 
@@ -727,7 +747,7 @@
   background: #f7f9fc;
   border-radius: 40px 40px 0 0;
   margin-top: -40px;
-  padding: 100px 0;
+  padding: 64px 0;
   position: relative;
   z-index: 40;
   color: var(--cap-black);
@@ -749,6 +769,7 @@
   text-transform: uppercase;
   font-size: 15px;
   margin-bottom: 25px;
+  color: var(--cap-blue);
 }
 
 .collectionLeft h2 {
@@ -760,7 +781,7 @@
 }
 
 .collectionDescription {
-  color: #898989;
+  color: var(--cap-black);
   margin-bottom: 25px;
   font-size: 15px;
   line-height: 1.4;
@@ -821,10 +842,10 @@
 }
 
 .studioText p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.4;
   margin-bottom: 10px;
-  color: #606060;
+  color: var(--cap-black);
   transition: var(--cap-transition);
 }
 
@@ -833,7 +854,7 @@
 }
 
 .learnMore {
-  color: #010101;
+  color: var(--cap-black);
   font-size: 13px;
   transition: var(--cap-transition);
 }
@@ -870,7 +891,7 @@
 /* ─── Advantages ─── */
 .advantages {
   background: #f7f9fc;
-  padding: 100px 0;
+  padding: 64px 0;
   border-radius: 0 0 40px 40px;
   position: relative;
   z-index: 10;
@@ -889,9 +910,10 @@
 }
 
 .advantagesLabel {
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   margin-bottom: 10px;
+  color: var(--cap-blue);
 }
 
 .advantagesLeft h2 {
@@ -939,6 +961,13 @@
   background: var(--cap-white);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(10, 10, 26, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advantageCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(10, 10, 26, 0.08);
 }
 
 .advantageIcon {
@@ -958,13 +987,13 @@
   margin-bottom: 20px;
   position: relative;
   z-index: 10;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
 }
 
 .advantageCard p {
-  font-size: 15px;
-  color: #6e7180;
+  font-size: 16px;
+  color: var(--cap-black);
   font-weight: 400;
   line-height: 1.4;
   padding-right: 70px;
@@ -975,7 +1004,7 @@
 /* ─── Journey ─── */
 .journey {
   background: var(--cap-black);
-  padding: 200px 0 0;
+  padding: 64px 0;
   color: var(--cap-white);
   margin-top: -40px;
   position: relative;
@@ -991,6 +1020,7 @@
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 10px;
+  color: var(--cap-blue);
 }
 
 .journeyHead h2 {
@@ -1055,7 +1085,7 @@
 }
 
 .journeyDescription {
-  color: #9fa6c8;
+  color: var(--cap-white);
   text-align: center;
   font-size: 14px;
   margin-bottom: 35px;
@@ -1104,7 +1134,7 @@
 /* ─── Testimonials ─── */
 .testimonials {
   background: var(--cap-black);
-  padding: 200px 0;
+  padding: 64px 0;
   color: var(--cap-white);
   margin-top: -40px;
 }
@@ -1270,7 +1300,7 @@
   }
 
   .studioText p {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .studioText p span {
@@ -1300,7 +1330,7 @@
   }
 
   .specialist {
-    padding: 70px 0;
+    padding: 64px 0;
   }
 
   .specialistHead {
@@ -1403,7 +1433,7 @@
   }
 
   .collection {
-    padding: 70px 0 40px;
+    padding: 64px 0;
   }
 
   .collectionContent {
@@ -1437,7 +1467,7 @@
   }
 
   .studioText p {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .studioText p span {
@@ -1445,7 +1475,7 @@
   }
 
   .advantages {
-    padding: 40px 0;
+    padding: 64px 0;
   }
 
   .advantagesHead {
@@ -1485,11 +1515,11 @@
 
   .advantageCard p {
     padding-right: 0;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .journey {
-    padding: 120px 0 0;
+    padding: 64px 0;
   }
 
   .journeyHead {
@@ -1519,7 +1549,7 @@
   }
 
   .testimonials {
-    padding: 120px 0;
+    padding: 64px 0;
   }
 
   .testimonialsContent {

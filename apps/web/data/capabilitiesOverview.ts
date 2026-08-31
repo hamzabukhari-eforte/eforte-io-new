@@ -56,10 +56,12 @@ export type CapabilityTestimonial = {
   logoWidth: number;
 };
 
-/** Media under public/assets/images/capabilities/ */
+/** Media under public/assets — hero uses static banner (video kept for reuse) */
 export const capabilityMedia = {
-  heroVideo: "/assets/images/capabilities/hero-capabilities.webm",
-  heroPoster: "/assets/images/capabilities/hero-home-poster.jpg",
+  // heroVideo: "/assets/images/capabilities/hero-capabilities.webm",
+  // heroPoster: "/assets/images/capabilities/hero-home-poster.jpg",
+  heroBanner:
+    "/assets/final-images/capabilities/capabilities-banner.png",
   workTogetherBg: "/assets/images/capabilities/team.jpg",
   // clutchReviews removed — not needed on capabilities overview
   cube: {
@@ -74,15 +76,15 @@ export const capabilityMedia = {
 
 export const capabilityHero = {
   label: "Our Studios",
-  titleLines: ["Build what's next with", "eForte Studios"],
+  titleLines: ["Unleash the power of technology with eForte Studios"],
   description:
-    "Our Studios are the specialist services and technology teams behind every eForte engagement, from AI-driven product design to secure, scalable infrastructure. Bringing the right experts together for your challenge is how we deliver real, immediate business value.",
+    "The eForte Studio model assembles specialist teams across Data & AI, Design, Cybersecurity, Engineering, Quality, and Product Management to address challenges from multiple angles and deliver holistic solutions.",
 };
 
 export const capabilityStudioModel = {
-  titleLines: ["We'll build your specialist", "team from our Studios"],
+  titleLines: ["We'll create your specialist", "team from our Studios"],
   paragraphs: [
-    "No two businesses face the same challenge, so no two eForte engagements draw on the same mix of talent. Our Studio model lets us pull the right specialists together around one shared Foundational Data Layer, so design, data, AI, and engineering teams work as a single connected system instead of separate silos.",
+    "Drawing inspiration from the idea of multiple perspectives, eForte Studios approach each problem from several dimensions, ensuring no critical angle is missed and every solution is well-rounded.",
   ],
   facets: [
     { label: "Data & AI", className: "data" },
@@ -96,17 +98,17 @@ export const capabilityStudioModel = {
     {
       title: "Step 1",
       descriptionLines: [
-        "We'll assemble a multidisciplinary",
-        "team of specialists from across our",
-        "Studios to work on your challenge.",
+        "eForte assembles a multidisciplinary",
+        "team of specialists to work on your",
+        "digital products and challenges.",
       ],
     },
     {
       title: "Step 2",
       descriptionLines: [
-        "As your engagement evolves, the",
-        "team composition adapts with you,",
-        "rotating specialists as priorities shift.",
+        "As your product evolves or your",
+        "priorities shift, the team composition",
+        "is adapted to match new requirements.",
       ],
     },
   ],
@@ -116,10 +118,10 @@ export const capabilityStudios: CapabilityStudioItem[] = [
   {
     title: "Product Design",
     description:
-      "User research, service design, and interface design that turn complex workflows into intuitive products",
+      "UX research, service design, design thinking, and UI design",
     descriptionLines: [
-      "User research, service design, and",
-      "interface design for intuitive products",
+      "UX research, service design,",
+      "design thinking, and UI design",
     ],
     href: "/capabilities/product-design",
     icon: HiPencil,
@@ -128,12 +130,11 @@ export const capabilityStudios: CapabilityStudioItem[] = [
     hoverGradient: "linear-gradient(270deg, #FFFFFF -61.24%, #AB77FF 94.42%)",
   },
   {
-    title: "Artificial Intelligence",
-    description:
-      "Agentic AI, generative AI, machine learning, and computer vision built for enterprise-grade impact",
+    title: "AI & Machine Learning",
+    description: "Generative AI, ML, NLP, and computer vision",
     descriptionLines: [
-      "Agentic AI, generative AI, machine",
-      "learning, and computer vision",
+      "Generative AI, ML, NLP,",
+      "and computer vision",
     ],
     href: "/capabilities/artificial-intelligence",
     icon: HiChip,
@@ -144,10 +145,10 @@ export const capabilityStudios: CapabilityStudioItem[] = [
   {
     title: "Data",
     description:
-      "Data engineering, orchestration, visualization, and predictive modeling that power every agentic workflow",
+      "Data manipulation, engineering, visualization, and prediction",
     descriptionLines: [
-      "Data engineering, orchestration,",
-      "visualization, and predictive modeling",
+      "Data manipulation, engineering,",
+      "visualization, and prediction",
     ],
     href: "/capabilities/data",
     icon: HiLightningBolt,
@@ -158,10 +159,10 @@ export const capabilityStudios: CapabilityStudioItem[] = [
   {
     title: "App Solutions",
     description:
-      "Native and hybrid app development, SDK integrations, and app store-ready delivery",
+      "Native or hybrid apps, SDKs, integrations, and app store positioning",
     descriptionLines: [
-      "Native and hybrid app development,",
-      "SDK integrations, and app store delivery",
+      "Native or hybrid apps, SDKs,",
+      "integrations, and app store positioning",
     ],
     href: "/capabilities/app-solutions",
     icon: HiDeviceMobile,
@@ -172,8 +173,8 @@ export const capabilityStudios: CapabilityStudioItem[] = [
   {
     title: "Cloud, SRE, & DevOps",
     description:
-      "Cloud migration, CI/CD pipelines, and site reliability engineering built for scale",
-    descriptionLines: ["Cloud migration, CI/CD pipelines,", "and site reliability engineering"],
+      "Cloud migration, CI/CD, IaC, MLOps, and FinOps",
+    descriptionLines: ["Cloud migration, CI/CD, IaC,", "MLOps, and FinOps"],
     href: "/capabilities/cloud-sre",
     icon: HiCloud,
     slug: "cloud",
@@ -183,10 +184,10 @@ export const capabilityStudios: CapabilityStudioItem[] = [
   {
     title: "Cybersecurity",
     description:
-      "Secure development lifecycles, AI-powered threat detection, and penetration testing",
+      "AI security transformation, secure SDLC, vCISO, penetration testing, and DevSecOps",
     descriptionLines: [
-      "Secure development lifecycles, AI-powered",
-      "threat detection, and penetration testing",
+      "AI security transformation, secure SDLC, vCISO,",
+      "penetration testing, and DevSecOps",
     ],
     href: "/capabilities/cybersecurity",
     icon: HiShieldCheck,
@@ -197,8 +198,11 @@ export const capabilityStudios: CapabilityStudioItem[] = [
   {
     title: "Platform Engineering",
     description:
-      "Resilient infrastructure, scalable APIs, and streamlined deployment pipelines",
-    descriptionLines: ["Resilient infrastructure, scalable APIs,", "and streamlined deployment pipelines"],
+      "Robust infrastructures, scalable APIs, and efficient deployment",
+    descriptionLines: [
+      "Robust infrastructures, scalable APIs,",
+      "and efficient deployment",
+    ],
     href: "/capabilities/platform-engineering",
     icon: HiCog,
     slug: "engineering",
@@ -208,8 +212,11 @@ export const capabilityStudios: CapabilityStudioItem[] = [
   {
     title: "Quality Assurance",
     description:
-      "AI-augmented testing, automation, and performance validation across every release",
-    descriptionLines: ["AI-augmented testing, automation, and", "performance validation across every release"],
+      "Test automation, CI/CD, load and performance testing",
+    descriptionLines: [
+      "Test automation, CI/CD,",
+      "load and performance testing",
+    ],
     href: "/capabilities/quality-assurance",
     icon: HiCheckCircle,
     slug: "qa",
@@ -219,8 +226,11 @@ export const capabilityStudios: CapabilityStudioItem[] = [
   {
     title: "Product Management",
     description:
-      "Product strategy, roadmap consulting, and monetization planning",
-    descriptionLines: ["Product strategy, roadmap consulting,", "and monetization planning"],
+      "Product consulting, process management, and monetization",
+    descriptionLines: [
+      "Product consulting, process management,",
+      "and monetization",
+    ],
     href: "/capabilities/product-management",
     icon: HiViewGrid,
     slug: "product-management",
@@ -230,8 +240,11 @@ export const capabilityStudios: CapabilityStudioItem[] = [
   {
     title: "Blockchain",
     description:
-      "Smart contracts, decentralized applications, and secure blockchain integrations",
-    descriptionLines: ["Smart contracts, decentralized", "applications, and secure integrations"],
+      "Smart contracts, decentralized apps, and blockchain integration",
+    descriptionLines: [
+      "Smart contracts, decentralized apps,",
+      "and blockchain integration",
+    ],
     href: "/capabilities/blockchain",
     icon: HiLink,
     slug: "blockchain",
@@ -240,12 +253,8 @@ export const capabilityStudios: CapabilityStudioItem[] = [
   },
   {
     title: "Staff Augmentation",
-    description:
-      "Pre-vetted, fully managed engineering talent that integrates directly into your team, at a fraction of on-shore cost",
-    descriptionLines: [
-      "Pre-vetted, fully managed engineering talent",
-      "at a fraction of on-shore cost",
-    ],
+    description: "Dedicated Resource Hiring",
+    descriptionLines: ["Dedicated Resource Hiring"],
     href: "/capabilities/staff-augmentation",
     icon: HiUserGroup,
     slug: "staff",
@@ -274,7 +283,7 @@ export const capabilityBenefits: CapabilityBenefit[] = [
   {
     title: "Unified service",
     description:
-      "We help organizations build digital products through one holistic engagement. Specialists from across our Studios work as a single, cohesive team aligned to your goals, not a set of disconnected vendors.",
+      "eForte helps organizations build digital products through a holistic model that unites specialists from different disciplines into one coordinated team.",
     icon: HiCollection,
     iconBg: "#EDDCFF",
     iconColor: "#8844D2",
@@ -283,16 +292,16 @@ export const capabilityBenefits: CapabilityBenefit[] = [
   {
     title: "Flexibility",
     description:
-      "Our Studio model lets you scale a team up, down, or sideways as your product and market needs shift, without renegotiating a new contract every time.",
+      "Studio-based teams can be reconfigured quickly as products and markets change, giving businesses the agility they need to thrive.",
     icon: HiSwitchHorizontal,
     iconBg: "#BCF2C6",
     iconColor: "#309A45",
     slug: "flexibility",
   },
   {
-    title: "High-quality",
+    title: "High quality",
     description:
-      "Every Studio brings its own best practices and standards to the table, so whatever team we assemble for you arrives already aligned to a consistent bar of execution.",
+      "Each Studio brings proven practices and industry standards, so every multidisciplinary team arrives equipped to deliver at a consistently high level.",
     icon: HiBadgeCheck,
     iconBg: "#FFECA9",
     iconColor: "#938613",
@@ -301,7 +310,7 @@ export const capabilityBenefits: CapabilityBenefit[] = [
   {
     title: "Expertise & knowledge",
     description:
-      "Because our Studios focus deeply on specific technology and business domains, you get specialist-level insight, not generalist guesswork.",
+      "Studios focus on specific technology and business domains, giving clients direct access to deep, specialized expertise and practical insight.",
     icon: HiAcademicCap,
     iconBg: "#D6F4FF",
     iconColor: "#29B5E8",

@@ -57,8 +57,7 @@ export default function ProductDesignProcessSection() {
     <section className="relative bg-white pb-12 md:pb-20 pt-10">
       <Container>
         <h2 className="mx-auto max-w-3xl text-center text-3xl font-semibold leading-tight text-default md:text-5xl">
-          A user-centric approach
-          <br className="hidden sm:block" /> to help your business grow
+          Core design capabilities
         </h2>
       </Container>
 

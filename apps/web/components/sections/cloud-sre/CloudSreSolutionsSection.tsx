@@ -67,7 +67,7 @@ export default function CloudSreSolutionsSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, margin: "-80px", amount: 0.15 }}
                   transition={{ duration: 0.45, delay: (index % 2) * 0.06 }}
-                  className="flex h-full flex-col rounded-[12px] bg-white p-7 md:p-8"
+                  className="flex h-full flex-col rounded-[12px] bg-white p-7 shadow-[0_0_0_1px_rgba(10,10,26,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(10,10,26,0.08)] md:p-8"
                 >
                   <Icon className="size-8 shrink-0 text-default" />
                   <h3 className="mt-5 text-[20px] font-semibold text-default">

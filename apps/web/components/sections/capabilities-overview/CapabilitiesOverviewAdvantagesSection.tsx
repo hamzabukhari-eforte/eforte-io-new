@@ -19,7 +19,7 @@ export default function CapabilitiesOverviewAdvantagesSection() {
               Creating Competitive Advantage
             </p>
             <h2>
-              <span>The advantages</span> of our approach
+              <span>The benefits</span> of our approach
             </h2>
           </CapabilitiesReveal>
           <CapabilitiesReveal
@@ -29,9 +29,9 @@ export default function CapabilitiesOverviewAdvantagesSection() {
             mobileDuration={400}
           >
             <p>
-              A unified and flexible service enables you to not only develop
-              high-quality digital products but also to adapt more swiftly and
-              effectively to market challenges.
+              Our unified, flexible service approach empowers you to deliver
+              high-quality digital products and rapidly adapt to evolving market
+              demands.
             </p>
           </CapabilitiesReveal>
         </div>

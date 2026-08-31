@@ -79,17 +79,20 @@
 
 /* ─── Buttons ─── */
 .button {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 600;
   background: var(--aw-pink);
   border: 2px solid var(--aw-pink);
   color: var(--aw-white);
   transition: var(--aw-transition);
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
   line-height: 1 !important;
-  border-radius: 70px;
-  padding: 14px 23px;
+  border-radius: 999px;
+  padding: 0 32px;
 }
 
 .buttonBlack {
@@ -183,16 +186,19 @@
 .heroLabel {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   width: fit-content;
+  height: 40px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.1);
-  padding: 6px 16px;
+  padding: 0 16px;
   font-size: 13px;
   letter-spacing: 0.18em;
   margin-bottom: 24px;
   font-weight: 500;
+  line-height: 1;
   color: var(--aw-white);
   text-transform: uppercase;
   backdrop-filter: blur(8px);
@@ -207,7 +213,7 @@
 
 .heroTitle {
   font-weight: 600;
-  font-size: 30px;
+  font-size: 36px;
   margin-bottom: 20px;
   letter-spacing: -0.025em;
   line-height: 1.15;
@@ -218,7 +224,7 @@
   font-size: 16px;
   margin-bottom: 32px;
   line-height: 1.625;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--aw-white);
   max-width: 620px;
 }
 
@@ -227,7 +233,7 @@
   background: #f7f9fc;
   border-radius: 40px 40px 0 0;
   margin-top: -40px;
-  padding: 100px 0;
+  padding: 64px 0;
   position: relative;
   z-index: 40;
   color: var(--aw-black);
@@ -247,16 +253,16 @@
 }
 
 .collectionLabel {
-  font-size: 16px;
-  margin-bottom: 20px;
-  letter-spacing: -0.01em;
+  font-size: 11px;
+  margin-bottom: 16px;
+  letter-spacing: 0.18em;
   color: var(--aw-pink);
-  font-weight: 500;
-  text-transform: none;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .collectionLeft h2 {
-  font-size: 30px;
+  font-size: 36px;
   font-weight: 600;
   line-height: 1.15;
   margin-bottom: 20px;
@@ -264,7 +270,7 @@
 }
 
 .collectionDescription {
-  color: #8a8a8a;
+  color: var(--aw-black);
   margin-bottom: 25px;
   font-size: 16px;
   line-height: 1.625;
@@ -339,7 +345,7 @@
   font-size: 15px;
   line-height: 1.625;
   margin-bottom: 12px;
-  color: #6b6b6b;
+  color: var(--aw-black);
   transition: var(--aw-transition);
 }
 
@@ -392,6 +398,39 @@
   padding: 140px 0 100px;
 }
 
+.detailHeroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+.detailHeroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.75) 45%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  pointer-events: none;
+}
+
+.detailHeroPinkGlow {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: radial-gradient(
+    circle at 78% 35%,
+    rgba(211, 40, 122, 0.35),
+    transparent 34%
+  );
+  pointer-events: none;
+}
+
 .detailHeroOrb {
   position: absolute;
   width: 480px;
@@ -431,15 +470,18 @@
 .detailLabel {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   width: fit-content;
+  height: 40px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.1);
-  padding: 6px 16px;
+  padding: 0 16px;
   font-size: 13px;
   letter-spacing: 0.18em;
   font-weight: 500;
+  line-height: 1;
   color: var(--aw-white);
   margin-bottom: 24px;
   text-transform: uppercase;
@@ -456,13 +498,13 @@
 .detailTheme {
   font-size: 16px;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--aw-white);
   margin-bottom: 20px;
   line-height: 1.625;
 }
 
 .detailHeadline {
-  font-size: 30px;
+  font-size: 36px;
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.15;
@@ -473,7 +515,7 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 1.625;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--aw-white);
   margin-bottom: 32px;
   max-width: 640px;
 }
@@ -483,7 +525,7 @@
   background: #f7f9fc;
   border-radius: 40px 40px 0 0;
   margin-top: -40px;
-  padding: 100px 0 80px;
+  padding: 64px 0;
   position: relative;
   z-index: 30;
   color: var(--aw-black);
@@ -495,16 +537,16 @@
 }
 
 .workflowsHeadLabel {
-  font-size: 16px;
-  letter-spacing: -0.01em;
+  font-size: 11px;
+  letter-spacing: 0.18em;
   color: var(--aw-pink);
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 12px;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .workflowsHead h2 {
-  font-size: 30px;
+  font-size: 36px;
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.15;
@@ -542,7 +584,7 @@
 }
 
 .workflowTitle {
-  font-size: 24px;
+  font-size: 36px;
   font-weight: 600;
   margin-bottom: 28px;
   letter-spacing: -0.02em;
@@ -567,14 +609,14 @@
 .workflowBlock p {
   font-size: 14px;
   line-height: 1.625;
-  color: #6b6b6b;
+  color: var(--aw-black);
 }
 
 /* ─── Pillars ─── */
 .pillars {
   background: #0a0a1a;
   color: var(--aw-white);
-  padding: 90px 0;
+  padding: 64px 0;
   position: relative;
   z-index: 20;
 }
@@ -584,7 +626,7 @@
 }
 
 .pillarsHead h2 {
-  font-size: 30px;
+  font-size: 36px;
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.15;
@@ -594,18 +636,22 @@
 .chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 40px;
 }
 
 .chip {
   display: inline-flex;
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  justify-content: center;
+  height: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 999px;
-  padding: 8px 14px;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.85);
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--aw-white);
 }
 
 .pillarsGrid {
@@ -643,7 +689,7 @@
 .pillarCard p {
   font-size: 14px;
   line-height: 1.625;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--aw-white);
 }
 
 .pillarLink {
@@ -660,7 +706,7 @@
 .midCta {
   background: #f7f9fc;
   color: var(--aw-black);
-  padding: 80px 0 100px;
+  padding: 64px 0;
   border-radius: 0 0 40px 40px;
   position: relative;
   z-index: 10;
@@ -701,7 +747,7 @@
 }
 
 .midCtaCopy h2 {
-  font-size: 30px;
+  font-size: 36px;
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.15;
@@ -715,7 +761,7 @@
 .midCtaCopy p {
   font-size: 16px;
   line-height: 1.625;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--aw-white);
 }
 
 .midCtaActions {
@@ -726,27 +772,12 @@
 
 /* ─── Responsive ─── */
 @media screen and (min-width: 640px) {
-  .heroTitle,
-  .collectionLeft h2,
-  .detailHeadline,
-  .workflowsHead h2,
-  .pillarsHead h2,
-  .midCtaCopy h2 {
-    font-size: 36px;
-  }
-
   .heroDescription,
   .collectionDescription,
   .detailTheme,
   .detailBody,
-  .collectionLabel,
-  .workflowsHeadLabel,
   .midCtaCopy p {
     font-size: 18px;
-  }
-
-  .workflowTitle {
-    font-size: 30px;
   }
 
   .workflowNumber {
@@ -756,22 +787,6 @@
   .workflowBlock p {
     font-size: 16px;
     line-height: 1.75;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .heroTitle,
-  .collectionLeft h2,
-  .detailHeadline,
-  .workflowsHead h2,
-  .pillarsHead h2,
-  .midCtaCopy h2 {
-    font-size: 48px;
-  }
-
-  .workflowTitle {
-    font-size: 34px;
-    line-height: 1.15;
   }
 }
 
@@ -809,7 +824,7 @@
     padding: 110px 0 90px;
   }
   .collection {
-    padding: 70px 0;
+    padding: 64px 0;
     border-radius: 28px 28px 0 0;
   }
   .domainCard {
@@ -829,10 +844,16 @@
     padding: 120px 0 80px;
   }
   .workflows {
-    padding: 70px 0 60px;
+    padding: 64px 0;
     border-radius: 28px 28px 0 0;
   }
   .workflowCard {
     padding: 28px 22px;
+  }
+  .pillars {
+    padding: 64px 0;
+  }
+  .midCta {
+    padding: 64px 0;
   }
 }

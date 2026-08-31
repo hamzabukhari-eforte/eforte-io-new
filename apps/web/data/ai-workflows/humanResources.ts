@@ -43,6 +43,8 @@ export const humanResourcesDomain: AiWorkflowDomain = {
   diagramSrc:
     "/assets/images/package/business-domains/human-resources-talent-workflows.svg",
   diagramAlt: "Agentic talent lifecycle workflow diagram",
+  heroImageSrc:
+    "/assets/final-images/ai-workflows/human_resources_hero.png",
   pillars: {
     agenticOrchestration: "Planner → Execution → Intelligence → Governance",
     velocityAi: "AI-powered talent lifecycle accelerators.",
