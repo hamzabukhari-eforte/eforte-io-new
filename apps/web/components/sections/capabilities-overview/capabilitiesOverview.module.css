@@ -1059,15 +1059,19 @@
 }
 
 .journeyMainPill {
-  background: #d3287a;
+  background: #2739DD;
   text-transform: uppercase;
   font-size: 13px;
   color: var(--cap-white);
   border-radius: 30px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   white-space: nowrap;
   padding: 10px 30px;
   width: auto;
+  line-height: 1;
 }
 
 .journeyImage {
@@ -1108,15 +1112,20 @@
 }
 
 .journeyPill {
-  background: #d3287a;
+  background: transparent;
+  border: 1px solid #ffff;
   text-transform: uppercase;
   font-size: 11px;
   color: var(--cap-white);
   border-radius: 30px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   white-space: nowrap;
   padding: 5px 10px;
   width: auto;
+  line-height: 1;
 }
 
 .pillNoTransform {

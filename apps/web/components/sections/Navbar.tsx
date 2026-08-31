@@ -361,7 +361,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Autonomous Customer Service Workflows: AI agents route, respond, analyze sentiment, and continuously optimize customer interactions.",
             iconName: "user-group",
-            iconColorClass: "bg-primary-pink",
+            iconColorClass: "bg-[#7C4CFF]",
             href: "/ai-workflows/customer-service",
           },
           {
@@ -369,7 +369,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Agentic Revenue Workflows: AI agents qualify leads, generate proposals, and accelerate deal cycles.",
             iconName: "lightning-bolt",
-            iconColorClass: "bg-primary-pink",
+            iconColorClass: "bg-[#ef4444]",
             href: "/ai-workflows/sales-marketing",
           },
           {
@@ -377,7 +377,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Autonomous Financial Workflows: AI agents process invoices, detect fraud, and ensure continuous compliance.",
             iconName: "currency-dollar",
-            iconColorClass: "bg-primary-pink",
+            iconColorClass: "bg-[#0ea5e9]",
             href: "/ai-workflows/financial-operations",
           },
         ],
@@ -390,7 +390,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Agentic Talent Workflows: AI agents screen candidates, coordinate onboarding, and manage lifecycle tasks.",
             iconName: "badge-check",
-            iconColorClass: "bg-primary-pink",
+            iconColorClass: "bg-[#f97316]",
             href: "/ai-workflows/human-resources",
           },
           {
@@ -398,7 +398,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "AI-Orchestrated Risk & Compliance Workflows: Autonomous monitoring and regulatory reporting with built-in governance.",
             iconName: "shield-check",
-            iconColorClass: "bg-primary-pink",
+            iconColorClass: "bg-[#1e40af]",
             href: "/ai-workflows/operations-compliance",
           },
           {
@@ -406,7 +406,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Intelligent Delivery & Data Workflows: AI agents allocate resources, track progress, and generate predictive insights.",
             iconName: "database",
-            iconColorClass: "bg-primary-pink",
+            iconColorClass: "bg-[#0f172a]",
             href: "/ai-workflows/project-management-data",
           },
         ],
