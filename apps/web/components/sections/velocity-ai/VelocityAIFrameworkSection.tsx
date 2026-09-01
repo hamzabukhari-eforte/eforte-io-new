@@ -2,18 +2,18 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { FaGithub } from "react-icons/fa";
 import { SiJira, SiGitlab, SiVscodium } from "react-icons/si";
 import { section, typography } from "./layout";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 
 const BENTO_CARD_1_IMG = "/assets/images/velocity-ai/bento-ai-pods.png";
 const BENTO_CARD_3_IMG = "/assets/images/velocity-ai/bento-metrics-chart.png";
 
 export default function VelocityAIFrameworkSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <section ref={ref} className={`${section.padding} ${section.paddingX} max-w-7xl mx-auto`}>

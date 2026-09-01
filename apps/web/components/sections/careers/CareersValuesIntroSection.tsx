@@ -12,7 +12,7 @@ const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 export default function CareersValuesIntroSection() {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInViewReplay(ref, { margin: "-60px", amount: 0.15 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <section id="our-values" className="scroll-mt-24 bg-default pb-10 pt-16 md:pb-14 md:pt-20">

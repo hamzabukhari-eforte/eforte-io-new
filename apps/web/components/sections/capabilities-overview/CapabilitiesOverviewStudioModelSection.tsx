@@ -12,8 +12,8 @@ export default function CapabilitiesOverviewStudioModelSection() {
   const stepsRef = useRef<HTMLDivElement>(null);
   const [stepsActive, setStepsActive] = useState(false);
   const cubeInView = useInViewReplay(cubeRef, {
-    margin: "-80px",
-    amount: 0.2,
+    margin: "0px",
+    amount: 0.25,
   });
 
   useEffect(() => {

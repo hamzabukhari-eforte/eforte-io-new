@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
+import { motion } from "@/lib/replayMotion";
 
 const stats = [
   {

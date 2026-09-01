@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { aboutLocations } from "./locationsData";
+import { motion } from "@/lib/replayMotion";
 
 export default function AboutLocationsSection() {
   return (

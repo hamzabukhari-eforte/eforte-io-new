@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { HiChevronDown } from "react-icons/hi";
 import Container from "@/components/atoms/Container";
 import { qualityAssuranceFaqs } from "@/data/capabilities/qualityAssurance";
+import { motion } from "@/lib/replayMotion";
 
 export default function QualityAssuranceFaqSection() {
   const [openFaqs, setOpenFaqs] = useState<number[]>([]);

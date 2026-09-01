@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { cloudSreSplitCards } from "@/data/capabilities/cloudSre";
+import { motion } from "@/lib/replayMotion";
 
 function CloudSreIcon({ className }: { className?: string }) {
   return (

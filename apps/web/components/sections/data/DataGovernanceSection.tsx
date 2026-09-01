@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+import { motion } from "@/lib/replayMotion";
 import {
   HiChip,
   HiCloud,

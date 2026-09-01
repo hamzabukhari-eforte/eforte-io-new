@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { section, typography } from "./layout";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 
 const METRICS_IMGS = [
   "/assets/images/velocity-ai/metrics-code-quality.png",
@@ -20,7 +20,7 @@ const metricsCards = [
 
 export default function VelocityAIMetricsCoreSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <section ref={ref} className={`bg-black relative overflow-hidden ${section.padding} ${section.paddingX}`}>

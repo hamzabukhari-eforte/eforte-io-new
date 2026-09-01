@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { HiChevronDown } from "react-icons/hi";
 import Container from "@/components/atoms/Container";
 import { staffAugmentationFaqs } from "@/data/capabilities/staffAugmentation";
+import { motion } from "@/lib/replayMotion";
 
 export default function StaffAugmentationFaqSection() {
   const [openFaqs, setOpenFaqs] = useState<number[]>([]);

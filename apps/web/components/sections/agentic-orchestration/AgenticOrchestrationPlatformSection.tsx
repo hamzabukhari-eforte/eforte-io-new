@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { FaLock, FaRocket, FaCube, FaDatabase } from "react-icons/fa";
 import { section, typography } from "./layout";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 
 const stackTiers = [
   { label: "Client Applications", gradient: "from-[#5b21b6] via-[#4c1d95] to-[#2e1065]", border: "border-[#a78bfa]/40" },
@@ -73,7 +73,7 @@ const coreCards = [
 
 export default function AgenticOrchestrationPlatformSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-80px", amount: 0.15 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <section

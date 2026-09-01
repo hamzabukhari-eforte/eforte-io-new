@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { cn } from "@/lib/utils";
 import { cloudSreAccelerators } from "@/data/capabilities/cloudSre";
+import { motion } from "@/lib/replayMotion";
 
 const ACTIVE_TAB = "#D3287A";
 

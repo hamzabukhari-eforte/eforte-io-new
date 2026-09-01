@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import ContactCTA from "@/components/atoms/ContactCTA";
 import Container from "@/components/atoms/Container";
 import type { StudioContactBannerContent } from "./types";
+import { motion } from "@/lib/replayMotion";
 
 type StudioContactBannerProps = {
   content: StudioContactBannerContent;

@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Container from "@/components/atoms/Container";
 import DifferentiatorCard from "./DifferentiatorCard";
 import { differentiatorsCards } from "./differentiatorsData";
+import { motion } from "@/lib/replayMotion";
 // PartnerLogosRow (generic icon + label row) preserved for other pages.
 
 const clientLogos = [

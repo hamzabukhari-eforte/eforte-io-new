@@ -3,15 +3,15 @@
 import Image from "next/image";
 import ContactCTA from "@/components/atoms/ContactCTA";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { section, typography } from "./layout";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 
 const CUBE_IMG = "/assets/images/velocity-ai/cube-3d.png";
 
 export default function VelocityAIEngineeringSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <section ref={ref} className={`bg-black relative overflow-hidden flex items-center ${section.padding} ${section.paddingX} md:min-h-[900px]`}>

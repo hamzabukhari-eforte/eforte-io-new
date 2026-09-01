@@ -2,9 +2,9 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import TechCard from "./TechCard";
+import { motion } from "@/lib/replayMotion";
 
 type TechItem = {
   name: string;

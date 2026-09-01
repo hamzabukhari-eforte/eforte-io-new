@@ -14,7 +14,7 @@ const fieldClassName =
 
 export default function CareersJoinTeamSection() {
   const introRef = useRef<HTMLDivElement>(null);
-  const introInView = useInViewReplay(introRef, { margin: "-60px", amount: 0.15 });
+  const introInView = useInViewReplay(introRef, { margin: "0px", amount: 0.25 });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {

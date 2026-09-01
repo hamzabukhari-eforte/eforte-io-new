@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { HiCheck } from "react-icons/hi";
 import Container from "@/components/atoms/Container";
 import { aiCognitiveGateway } from "@/data/capabilities/ai";
+import { motion } from "@/lib/replayMotion";
 
 export default function AiCognitiveGatewaySection() {
   return (

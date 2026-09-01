@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { HiCheck } from "react-icons/hi";
 import Container from "@/components/atoms/Container";
 import { dataProcessMiner } from "@/data/capabilities/data";
+import { motion } from "@/lib/replayMotion";
 
 export default function DataProcessMinerSection() {
   return (

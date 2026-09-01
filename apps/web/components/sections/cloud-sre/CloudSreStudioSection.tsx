@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { CLOUD_SRE_ACCENT } from "@/data/capabilities/cloudSre";
+import { motion } from "@/lib/replayMotion";
 
 export default function CloudSreStudioSection() {
   return (

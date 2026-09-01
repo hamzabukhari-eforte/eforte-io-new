@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import type { ValueIconName, ValueItem } from "./valuesData";
+import { motion } from "@/lib/replayMotion";
 
 const valueImageMap: Record<ValueIconName, string> = {
   impact: "/assets/images/about/drive.svg",

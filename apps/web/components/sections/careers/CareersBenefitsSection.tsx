@@ -14,7 +14,7 @@ function BenefitCard({
   benefit: (typeof benefits)[number];
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInViewReplay(ref, { margin: "-40px", amount: 0.2 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
   const Icon = benefit.icon;
 
   return (
@@ -35,7 +35,7 @@ function BenefitCard({
 
 export default function CareersBenefitsSection() {
   const introRef = useRef<HTMLDivElement>(null);
-  const introInView = useInViewReplay(introRef, { margin: "-60px", amount: 0.15 });
+  const introInView = useInViewReplay(introRef, { margin: "0px", amount: 0.25 });
 
   return (
     <section className="relative z-10 -mt-10 rounded-t-[12px] bg-white pb-16 pt-14 shadow-[0_-12px_40px_rgba(0,0,0,0.12)] md:-mt-14 md:pb-24 md:pt-20">

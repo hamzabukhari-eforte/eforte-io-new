@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { cn } from "@/lib/utils";
 import type { StudioProcessItem } from "./types";
+import { motion } from "@/lib/replayMotion";
 
 type StudioProcessSectionProps = {
   items: StudioProcessItem[];

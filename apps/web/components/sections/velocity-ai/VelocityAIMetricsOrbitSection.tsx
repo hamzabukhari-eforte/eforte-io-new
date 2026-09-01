@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 import {
   FaTachometerAlt,
   FaMountain,
@@ -36,7 +36,7 @@ const posClasses: Record<string, string> = {
 
 export default function VelocityAIMetricsOrbitSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <section ref={ref} className={`bg-black relative overflow-hidden flex flex-col items-center ${section.padding} ${section.paddingX}`}>

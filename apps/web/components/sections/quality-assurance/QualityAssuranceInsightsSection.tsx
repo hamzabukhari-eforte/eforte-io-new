@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { dataInsights } from "@/data/capabilities/data";
+import { motion } from "@/lib/replayMotion";
 
 /**
  * Reuses Data capability insights with “Our latest ideas and expertise”.

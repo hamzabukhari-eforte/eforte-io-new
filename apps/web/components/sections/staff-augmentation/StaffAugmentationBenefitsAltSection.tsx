@@ -6,9 +6,9 @@
  */
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { staffAugmentationContent } from "@/data/capabilities/staffAugmentation";
+import { motion } from "@/lib/replayMotion";
 
 const { valuesIntro, values } = staffAugmentationContent;
 

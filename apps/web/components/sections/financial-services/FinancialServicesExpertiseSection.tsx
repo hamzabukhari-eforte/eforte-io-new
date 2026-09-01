@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { HiArrowRight } from "react-icons/hi";
 import Container from "@/components/atoms/Container";
 import { cn } from "@/lib/utils";
+import { motion } from "@/lib/replayMotion";
 
 type ExpertService = {
   id: string;

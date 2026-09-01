@@ -8,7 +8,7 @@ import styles from "./impact-studies.module.css";
 
 export default function ImpactStudiesIntroSection() {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInViewReplay(ref, { margin: "-80px", amount: 0.2 });
+  const inView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <div ref={ref} className={styles.introHeader}>

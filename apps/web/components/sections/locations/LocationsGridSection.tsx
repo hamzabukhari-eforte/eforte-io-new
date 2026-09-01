@@ -15,7 +15,7 @@ const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 function LocationCard({ location }: { location: Location }) {
   const ref = useRef<HTMLElement>(null);
-  const isInView = useInViewReplay(ref, { margin: "-40px", amount: 0.2 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <motion.article
@@ -62,7 +62,7 @@ function LocationCard({ location }: { location: Location }) {
 
 export default function LocationsGridSection() {
   const introRef = useRef<HTMLDivElement>(null);
-  const introInView = useInViewReplay(introRef, { margin: "-60px", amount: 0.15 });
+  const introInView = useInViewReplay(introRef, { margin: "0px", amount: 0.25 });
 
   return (
     <section className="relative z-10 -mt-16 rounded-t-[12px] bg-white pb-20 pt-14 shadow-[0_-12px_40px_rgba(0,0,0,0.12)] md:-mt-20 md:pb-28 md:pt-20">

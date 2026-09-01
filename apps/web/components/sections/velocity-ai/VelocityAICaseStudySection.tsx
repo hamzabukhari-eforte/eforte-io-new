@@ -3,9 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { section, typography } from "./layout";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 
 const CASE_STUDY_IMG = "/assets/images/velocity-ai/case-study-myrow.png";
 
@@ -23,7 +23,7 @@ const statPositions = [
 
 export default function VelocityAICaseStudySection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <section ref={ref} className="py-24 bg-[#02040a]">

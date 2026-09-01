@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Container from "@/components/atoms/Container";
 import TrustedBySection from "@/components/sections/TrustedBySection";
 import { defaultTrustedByLogos } from "@/data/trustedByLogos";
+import { motion } from "@/lib/replayMotion";
 
 const stats = [
   { value: "20+", label: "years of banking and financial services experience" },

@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { Hanken_Grotesk, Be_Vietnam_Pro } from "next/font/google";
-import { motion } from "framer-motion";
 import { HiStar } from "react-icons/hi";
 import Container from "@/components/atoms/Container";
+import { motion } from "@/lib/replayMotion";
 
 const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],

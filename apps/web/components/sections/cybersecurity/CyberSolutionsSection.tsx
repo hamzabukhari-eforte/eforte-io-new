@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { cyberSolutions } from "@/data/capabilities/cybersecurity";
+import { motion } from "@/lib/replayMotion";
 
 export default function CyberSolutionsSection() {
   return (

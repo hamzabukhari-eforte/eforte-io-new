@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { HiLockClosed, HiLightBulb, HiServer } from "react-icons/hi";
 import type { IconType } from "react-icons";
 import Container from "@/components/atoms/Container";
 import { dataAcceleratorGroups } from "@/data/capabilities/data";
+import { motion } from "@/lib/replayMotion";
 
 const iconMap: Record<(typeof dataAcceleratorGroups)[number]["iconId"], IconType> =
   {

@@ -16,7 +16,7 @@ export default function ImpactStudiesTestimonialsSection() {
   const [paginationEl, setPaginationEl] = useState<HTMLDivElement | null>(
     null
   );
-  const inView = useInViewReplay(ref, { margin: "-80px", amount: 0.25 });
+  const inView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <section

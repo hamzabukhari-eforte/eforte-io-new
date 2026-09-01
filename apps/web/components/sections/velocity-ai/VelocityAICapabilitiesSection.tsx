@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { section, typography } from "./layout";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 import {
   FaDatabase,
   FaBrain,
@@ -67,7 +67,7 @@ const capabilities = [
 
 export default function VelocityAICapabilitiesSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <section ref={ref} className={`${section.padding} ${section.paddingX} max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 md:gap-16 lg:gap-20`}>

@@ -2,9 +2,9 @@
 
 import ContactCTA from "@/components/atoms/ContactCTA";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { section, typography } from "./layout";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 import {
   FaLayerGroup,
   FaMicrosoft,
@@ -25,7 +25,7 @@ const techStack: { id: string; icon?: React.ReactNode; label: string | null; isT
 
 export default function VelocityAIHeroSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <section

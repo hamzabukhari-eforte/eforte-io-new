@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion } from "@/lib/replayMotion";
 import {
   HiOutlineLightningBolt,
   HiOutlineDatabase,
@@ -57,17 +57,17 @@ function Reveal({
   x?: number;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInViewReplay(ref, { margin: "-80px", amount: 0.15 });
+  const inView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <motion.div
       ref={ref}
       className={className}
-      initial={{ opacity: 0, y: 40, x }}
+      initial={{ opacity: 0, y: 32, x }}
       animate={
-        inView ? { opacity: 1, y: 0, x: 0 } : { opacity: 0, y: 40, x }
+        inView ? { opacity: 1, y: 0, x: 0 } : { opacity: 0, y: 32, x }
       }
-      transition={{ duration: 0.7, delay, ease }}
+      transition={{ duration: inView ? 0.7 : 0, delay: inView ? delay : 0, ease }}
     >
       {children}
     </motion.div>
@@ -486,14 +486,14 @@ function DeliverableCard({
   accent: string;
 }) {
   const ref = useRef<HTMLLIElement>(null);
-  const inView = useInViewReplay(ref, { margin: "-40px", amount: 0.25 });
+  const inView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <motion.li
       ref={ref}
       initial={{ opacity: 0, y: 28 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
-      transition={{ duration: 0.55, delay: index * 0.07, ease }}
+      transition={{ duration: inView ? 0.55 : 0, delay: inView ? index * 0.07 : 0, ease }}
       whileHover={{ y: -6 }}
       className="group relative flex min-h-[168px] flex-col overflow-hidden rounded-[12px] border border-black/5 bg-white p-5 shadow-[0_10px_32px_rgba(0,0,0,0.06)] transition-shadow duration-300 hover:shadow-[0_18px_44px_rgba(14,119,244,0.14)] md:min-h-[180px] md:p-6"
     >

@@ -2,12 +2,12 @@
 
 import ContactCTA from "@/components/atoms/ContactCTA";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 
 export default function AgenticOrchestrationFooterCTASection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <section

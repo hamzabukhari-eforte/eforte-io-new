@@ -11,7 +11,7 @@ const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 function JobCard({ job }: { job: (typeof jobOpenings)[number] }) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInViewReplay(ref, { margin: "-40px", amount: 0.2 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <motion.div
@@ -42,7 +42,7 @@ function JobCard({ job }: { job: (typeof jobOpenings)[number] }) {
 
 export default function CareersJobOpeningsSection() {
   const introRef = useRef<HTMLDivElement>(null);
-  const introInView = useInViewReplay(introRef, { margin: "-60px", amount: 0.15 });
+  const introInView = useInViewReplay(introRef, { margin: "0px", amount: 0.25 });
 
   return (
     <section

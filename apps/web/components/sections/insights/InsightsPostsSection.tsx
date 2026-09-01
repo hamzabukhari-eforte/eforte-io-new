@@ -2,12 +2,12 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import InsightImage from "@/components/atoms/InsightImage";
 import Container from "@/components/atoms/Container";
 import { ALL_INSIGHT_POSTS, OTHER_POSTS } from "./data";
 import type { InsightPost } from "./data";
 import { filterPostsByCategory } from "@/lib/strapi/insights";
+import { motion } from "@/lib/replayMotion";
 
 const POSTS_PER_PAGE = 10;
 

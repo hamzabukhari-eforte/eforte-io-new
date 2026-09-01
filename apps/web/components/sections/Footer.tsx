@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedinIn, FaInstagram, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 
 import { footerColumns } from "@/data/siteNavigation";
 import FooterImpactStudiesColumn from "@/components/sections/FooterImpactStudiesColumn";
@@ -19,7 +19,7 @@ const socialLinks = [
 
 export default function Footer() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <footer ref={ref} className="w-full bg-default text-white">

@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { HiArrowRight } from "react-icons/hi";
 import Container from "@/components/atoms/Container";
 import { CLOUD_SRE_ACCENT } from "@/data/capabilities/cloudSre";
+import { motion } from "@/lib/replayMotion";
 
 export default function CloudSreAwsPartnerSection() {
   return (

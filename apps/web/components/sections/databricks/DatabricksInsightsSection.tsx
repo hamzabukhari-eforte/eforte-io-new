@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { databricksInsights } from "@/data/databricks";
+import { motion } from "@/lib/replayMotion";
 
 export default function DatabricksInsightsSection() {
   return (

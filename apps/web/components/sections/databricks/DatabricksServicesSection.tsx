@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { HiSparkles } from "react-icons/hi2";
 import Container from "@/components/atoms/Container";
 import { databricksServices } from "@/data/databricks";
 import { renderBoldText } from "./renderBoldText";
+import { motion } from "@/lib/replayMotion";
 
 export default function DatabricksServicesSection() {
   return (

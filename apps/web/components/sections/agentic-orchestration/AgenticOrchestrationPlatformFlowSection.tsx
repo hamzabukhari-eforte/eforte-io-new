@@ -1,8 +1,9 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef, useLayoutEffect, useState, useCallback } from "react";
 import { section } from "./layout";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 
 const flowItems = [
   {
@@ -70,7 +71,7 @@ function RightColumnSection({
   registerRef: (index: number, el: HTMLDivElement | null) => void;
 }) {
   const localRef = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(localRef, { once: false, margin: "-80px", amount: 0.15 });
+  const isInView = useInViewReplay(localRef, { margin: "0px", amount: 0.25 });
   const setRef = useCallback(
     (el: HTMLDivElement | null) => {
       localRef.current = el;

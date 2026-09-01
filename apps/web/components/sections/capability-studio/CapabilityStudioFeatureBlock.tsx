@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { getStudioAccent } from "@/data/capabilities/accents";
+import { motion } from "@/lib/replayMotion";
 import type {
   StudioAccentId,
   StudioFeature,

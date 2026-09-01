@@ -9,7 +9,7 @@ import styles from "./impact-studies.module.css";
 
 export default function ImpactStudiesIndexSection() {
   const ref = useRef<HTMLElement>(null);
-  const inView = useInViewReplay(ref, { margin: "-60px", amount: 0.15 });
+  const inView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <section

@@ -3,9 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { section, typography } from "./layout";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 
 const INSIGHTS_IMG_1 = "/assets/images/velocity-ai/insight-1.png";
 const INSIGHTS_IMG_2 = "/assets/images/velocity-ai/insight-2.png";
@@ -58,7 +58,7 @@ const articles: {
 
 export default function VelocityAIInsightsSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   return (

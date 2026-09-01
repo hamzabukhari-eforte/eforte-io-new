@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { useInView } from "framer-motion";
 import ContactCTA from "@/components/atoms/ContactCTA";
 import Container from "@/components/atoms/Container";
 import { AI_ACCENT } from "@/data/capabilities/ai";
+import { motion } from "@/lib/replayMotion";
 
 const DIAGRAM_SRC = "/assets/images/capabilities/ai/modern-ai-systems.svg";
 

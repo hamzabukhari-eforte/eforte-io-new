@@ -40,8 +40,8 @@ export default function IndustriesReveal({
 }) {
   const ref = useRef<HTMLElement | null>(null);
   const inView = useInViewReplay(ref, {
-    margin: "-80px",
-    amount: 0.15,
+    margin: "0px",
+    amount: 0.25,
     once,
   });
 

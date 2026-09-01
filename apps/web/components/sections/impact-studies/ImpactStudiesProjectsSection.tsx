@@ -57,7 +57,7 @@ function ProjectCard({
   delay?: number;
 }) {
   const ref = useRef<HTMLLIElement>(null);
-  const inView = useInViewReplay(ref, { margin: "-100px", amount: 0.15 });
+  const inView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   const bgStyle = (() => {
     // Mid cards use solid/gradient only — media sits in the bottom slot

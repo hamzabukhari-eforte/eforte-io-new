@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { databricksExperience } from "@/data/databricks";
+import { motion } from "@/lib/replayMotion";
 
 export default function DatabricksExperienceSection() {
   return (

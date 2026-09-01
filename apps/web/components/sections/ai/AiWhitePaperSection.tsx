@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { AI_ACCENT, aiWhitePaper } from "@/data/capabilities/ai";
+import { motion } from "@/lib/replayMotion";
 
 export default function AiWhitePaperSection() {
   return (

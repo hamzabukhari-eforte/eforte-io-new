@@ -1,8 +1,8 @@
 "use client";
 
 import { Hanken_Grotesk } from "next/font/google";
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
+import { motion } from "@/lib/replayMotion";
 
 const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],

@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { aiQbricksBenefits } from "@/data/capabilities/ai";
+import { motion } from "@/lib/replayMotion";
 
 export default function AiQbricksBenefitsSection() {
   return (

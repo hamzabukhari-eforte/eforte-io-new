@@ -2,10 +2,10 @@
 
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { productDesignProcess } from "@/data/productDesign";
 import { cn } from "@/lib/utils";
+import { motion } from "@/lib/replayMotion";
 
 function toTabId(eyebrow: string) {
   return `process-${eyebrow.toLowerCase().replace(/\s+/g, "-")}`;

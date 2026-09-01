@@ -73,8 +73,8 @@ export default function CareersPhotoGallerySection() {
     useState<GalleryCategory>("great-place-to-work");
   const introRef = useRef<HTMLDivElement>(null);
   const introInView = useInViewReplay(introRef, {
-    margin: "-60px",
-    amount: 0.15,
+    margin: "0px",
+    amount: 0.25,
   });
 
   const layout = bentoLayouts[activeCategory];

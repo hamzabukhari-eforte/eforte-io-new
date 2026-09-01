@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
+import { motion } from "@/lib/replayMotion";
 
 const certifications = [
   { src: "/assets/images/landing/soc.png", alt: "SOC 2 Type 2 certified" },

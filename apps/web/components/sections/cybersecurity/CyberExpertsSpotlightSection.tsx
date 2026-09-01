@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { cyberExpertsSpotlight } from "@/data/capabilities/cybersecurity";
 import ReactPlayer from "@/components/atoms/ReactPlayerClient";
+import { motion } from "@/lib/replayMotion";
 
 
 export default function CyberExpertsSpotlightSection() {

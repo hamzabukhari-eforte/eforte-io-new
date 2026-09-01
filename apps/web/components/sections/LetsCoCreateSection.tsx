@@ -3,12 +3,12 @@
 import Container from "@/components/atoms/Container";
 import ContactCTA from "@/components/atoms/ContactCTA";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 
 export default function LetsCoCreateSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <section ref={ref} className="w-full py-16 md:py-24 lg:py-32" style={{ backgroundColor: "#131320" }}>

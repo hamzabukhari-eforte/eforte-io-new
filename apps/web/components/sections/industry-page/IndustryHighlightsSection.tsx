@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import type { IndustryPageContent } from "@/data/industries/types";
+import { motion } from "@/lib/replayMotion";
 
 type IndustryHighlightsSectionProps = {
   highlights: IndustryPageContent["highlights"];

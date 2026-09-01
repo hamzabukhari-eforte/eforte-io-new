@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
+import { motion } from "@/lib/replayMotion";
 
 const inputClass =
   "h-11 w-full rounded-[12px] bg-white/15 px-4 text-[16px] font-extralight leading-normal text-white placeholder:text-white/70 outline-none transition-colors duration-200 focus:bg-white/25";

@@ -2,16 +2,16 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
 import ContactCTA from "@/components/atoms/ContactCTA";
 import QuoteCTA from "@/components/atoms/QuoteCTA";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 
 const CTA_IMG = "/assets/images/velocity-ai/cta-team.png";
 
 export default function VelocityAIFooterCTASection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <section

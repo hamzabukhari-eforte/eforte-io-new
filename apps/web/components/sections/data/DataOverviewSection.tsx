@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { HiCheck } from "react-icons/hi";
 import Container from "@/components/atoms/Container";
 import { dataOverviewChecklist } from "@/data/capabilities/data";
+import { motion } from "@/lib/replayMotion";
 
 export default function DataOverviewSection() {
   return (

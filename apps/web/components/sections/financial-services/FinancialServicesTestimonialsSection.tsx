@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { HiArrowLeft, HiArrowRight, HiStar } from "react-icons/hi";
 import { HiChatBubbleOvalLeft } from "react-icons/hi2";
 import Container from "@/components/atoms/Container";
+import { motion } from "@/lib/replayMotion";
 
 interface Testimonial {
   id: string;

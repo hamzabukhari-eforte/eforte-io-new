@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { databricksExpertiseVideo } from "@/data/databricks";
 import ReactPlayer from "@/components/atoms/ReactPlayerClient";
+import { motion } from "@/lib/replayMotion";
 
 
 export default function DatabricksExpertiseVideoSection() {

@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import ContactCTA from "@/components/atoms/ContactCTA";
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
+import { motion } from "@/lib/replayMotion";
 
 export default function HealthcareEventsSection() {
   return (

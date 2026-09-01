@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { databricksSpecialization } from "@/data/databricks";
+import { motion } from "@/lib/replayMotion";
 
 export default function DatabricksSpecializationSection() {
   return (

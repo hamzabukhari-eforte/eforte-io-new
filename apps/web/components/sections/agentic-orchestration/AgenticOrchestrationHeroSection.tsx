@@ -2,10 +2,10 @@
 
 import ContactCTA from "@/components/atoms/ContactCTA";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { section, typography } from "./layout";
 import PartnerLogosRow from "@/components/atoms/PartnerLogosRow";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 
 const industryLinks = [
   "Health & Life-Science",
@@ -15,7 +15,7 @@ const industryLinks = [
 
 export default function AgenticOrchestrationHeroSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-100px", amount: 0.15 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <section

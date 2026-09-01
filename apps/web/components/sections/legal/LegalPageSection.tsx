@@ -1,8 +1,8 @@
 "use client";
 
 import Container from "@/components/atoms/Container";
-import { motion } from "framer-motion";
 import type { LegalBlock, LegalSection } from "@/data/legalContent";
+import { motion } from "@/lib/replayMotion";
 
 function LegalBlockContent({ block }: { block: LegalBlock }) {
   if (block.type === "list") {

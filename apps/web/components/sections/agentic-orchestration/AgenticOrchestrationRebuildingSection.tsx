@@ -3,9 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { section, typography } from "./layout";
+import { useInViewReplay } from "@/lib/useInViewReplay";
 
 const industries = [
   { label: "Fintech & Banking", href: "/industries/fintech" },
@@ -19,7 +19,7 @@ const industries = [
 
 export default function AgenticOrchestrationRebuildingSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "-80px", amount: 0.15 });
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
     <section

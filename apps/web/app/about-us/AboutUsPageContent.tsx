@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
 import AboutLocationsSection from "@/components/sections/about-us/AboutLocationsSection";
 import AboutUsSection from "@/components/sections/about-us/AboutUsSection";
 import OurTimelineSection from "@/components/sections/about-us/OurTimelineSection";
 import OurValuesSection from "@/components/sections/about-us/OurValuesSection";
 import WhatMakesUsDifferentSection from "@/components/sections/about-us/WhatMakesUsDifferentSection";
+import { motion } from "@/lib/replayMotion";
 
 const sectionVariants = {
   hidden: {

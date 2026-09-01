@@ -120,8 +120,8 @@ function TestimonialCarouselRow({
 export default function CareersTestimonialsSection() {
   const introRef = useRef<HTMLDivElement>(null);
   const introInView = useInViewReplay(introRef, {
-    margin: "-60px",
-    amount: 0.15,
+    margin: "0px",
+    amount: 0.25,
   });
 
   return (

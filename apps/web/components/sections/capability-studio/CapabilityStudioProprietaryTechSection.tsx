@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { HiCheck } from "react-icons/hi";
 import Container from "@/components/atoms/Container";
 import type { StudioAccentId, StudioProprietaryTech } from "@/data/capabilities/types";
+import { motion } from "@/lib/replayMotion";
 
 type CapabilityStudioProprietaryTechSectionProps = {
   accent: StudioAccentId;

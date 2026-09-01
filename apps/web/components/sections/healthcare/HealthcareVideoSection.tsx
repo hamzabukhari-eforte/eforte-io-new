@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import ReactPlayer from "@/components/atoms/ReactPlayerClient";
+import { motion } from "@/lib/replayMotion";
 
 
 const YOUTUBE_URL = "https://www.youtube.com/watch?v=AxnIFqEakag";

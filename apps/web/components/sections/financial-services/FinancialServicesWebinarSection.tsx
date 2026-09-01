@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { HiArrowUpRight } from "react-icons/hi2";
 import Container from "@/components/atoms/Container";
 import ReactPlayer from "@/components/atoms/ReactPlayerClient";
+import { motion } from "@/lib/replayMotion";
 
 
 const YOUTUBE_URL = "https://www.youtube.com/watch?v=AxnIFqEakag";

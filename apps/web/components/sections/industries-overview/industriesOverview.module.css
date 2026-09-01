@@ -22,24 +22,25 @@
 }
 
 /* Reveal (shared pattern) */
-.reveal { transition: 1s all; opacity: 0; }
+.reveal { opacity: 0; transition-property: opacity, transform; transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); transition-duration: 0.5s; }
+.reveal:not(.revealActive) { transition-duration: 0s; }
 .revealActive { opacity: 1; }
-.revealTop { transform: translateY(-100px); }
-.revealBottom { transform: translateY(100px); }
-.revealLeft { transform: translateX(-100px); }
-.revealRight { transform: translateX(100px); }
+.revealTop { transform: translateY(-32px); }
+.revealBottom { transform: translateY(32px); }
+.revealLeft { transform: translateX(-32px); }
+.revealRight { transform: translateX(32px); }
 .revealActive.revealTop,
 .revealActive.revealBottom,
 .revealActive.revealLeft,
 .revealActive.revealRight { transform: none; }
-.duration200 { transition: 0.5s all; }
-.duration300 { transition: 0.7s all; }
-.duration400 { transition: 0.9s all; }
-.duration500 { transition: 1.1s all; }
-.duration600 { transition: 1.3s all; }
+.duration200 { transition-duration: 0.4s; }
+.duration300 { transition-duration: 0.5s; }
+.duration400 { transition-duration: 0.55s; }
+.duration500 { transition-duration: 0.6s; }
+.duration600 { transition-duration: 0.7s; }
 .mobileDuration400 { }
 @media (max-width: 1023px) {
-  .mobileDuration400 { transition: 0.9s all; }
+  .mobileDuration400 { transition-duration: 0.55s; }
 }
 
 .button {
