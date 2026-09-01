@@ -4,6 +4,7 @@ import {
   StudioProcessSection,
   StudioValuesSection,
 } from "@/components/sections/studio-shared";
+import { VelocityAIFooterCTASection } from "@/components/sections/velocity-ai";
 import { technologyPartnersContent } from "@/data/technologyPartners";
 import TechnologyPartnersHeroSection from "./TechnologyPartnersHeroSection";
 
@@ -13,14 +14,30 @@ export default function TechnologyPartnersPageSections() {
   return (
     <>
       <TechnologyPartnersHeroSection />
-      <div className="relative z-10 -mt-10 overflow-hidden rounded-t-[12px] bg-white pt-12 md:pt-16">
-        <StudioProcessSection items={partners} className="pt-0 pb-16" />
+      <div className="relative z-10 -mt-10 overflow-hidden rounded-t-[12px] bg-white">
+        <StudioProcessSection
+          items={partners}
+          imageFit="contain"
+          solidTypography
+          className="pt-16 pb-16"
+          labelClassName="text-[12px]"
+          titleClassName="text-[20px] text-black"
+          descriptionClassName="text-[16px] text-black"
+        />
       </div>
       <StudioValuesSection
         eyebrow={advantageIntro.eyebrow}
         title={advantageIntro.title}
         values={advantage}
+        iconPosition="top-right"
+        solidPalette
+        className="mt-0 rounded-none bg-white pt-0 pb-16"
+        eyebrowClassName="text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink"
+        headingClassName="text-[36px] text-black sm:text-[36px] lg:text-[36px] lg:leading-tight"
+        cardTitleClassName="text-[20px] md:text-[20px] font-semibold"
+        cardDescriptionClassName="text-[16px] md:text-[16px]"
       />
+      <VelocityAIFooterCTASection />
     </>
   );
 }

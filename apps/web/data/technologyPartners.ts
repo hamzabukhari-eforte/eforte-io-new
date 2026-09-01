@@ -107,7 +107,7 @@ export const technologyPartnersContent = {
     {
       id: "flexibility",
       title: "Long term flexibility",
-      description: "Because we're multi cloud and multi model rather than tied to a single vendor, every client engagement is architected around the best fit combination of these five partners, never a forced, one size fits all stack. Across engagements, this consistently translates into three outcomes: faster time to market through pre built integrations and proven reference architectures, enterprise grade security and compliance (ISO 27001, SOC 2 Type 2, NIST AI RMF) built in from the first line of code, and long term flexibility so clients are never locked into any single provider's roadmap or pricing model.",
+      description: "Every engagement uses the best fit mix of these five partners, so clients are never locked into a single vendor's stack, roadmap, or pricing model.",
       icon: "/assets/images/capabilities/zag.svg",
       variant: "light",
     },

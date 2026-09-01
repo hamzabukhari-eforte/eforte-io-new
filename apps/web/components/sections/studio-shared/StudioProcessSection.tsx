@@ -12,6 +12,9 @@ type StudioProcessSectionProps = {
   imageFit?: "cover" | "contain";
   /** Solid black body text + 36px titles / 16px descriptions */
   solidTypography?: boolean;
+  labelClassName?: string;
+  titleClassName?: string;
+  descriptionClassName?: string;
 };
 
 export default function StudioProcessSection({
@@ -19,6 +22,9 @@ export default function StudioProcessSection({
   className,
   imageFit = "cover",
   solidTypography = false,
+  labelClassName,
+  titleClassName,
+  descriptionClassName,
 }: StudioProcessSectionProps) {
   const sizedFrame = imageFit === "contain";
 
@@ -65,7 +71,12 @@ export default function StudioProcessSection({
                 </div>
 
                 <div className={imageFirst ? "md:order-2" : "md:order-1"}>
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-pink">
+                  <p
+                    className={cn(
+                      "text-sm font-semibold uppercase tracking-[0.18em] text-primary-pink",
+                      labelClassName
+                    )}
+                  >
                     {item.eyebrow}
                   </p>
                   <h3
@@ -73,7 +84,8 @@ export default function StudioProcessSection({
                       "mt-3 font-semibold leading-tight",
                       solidTypography
                         ? "text-[36px] text-black"
-                        : "text-2xl text-default md:text-4xl"
+                        : "text-2xl text-default md:text-4xl",
+                      titleClassName
                     )}
                   >
                     {item.title}
@@ -83,7 +95,8 @@ export default function StudioProcessSection({
                       "mt-5 max-w-xl leading-relaxed",
                       solidTypography
                         ? "text-[16px] text-black"
-                        : "text-base leading-7 text-gray-600"
+                        : "text-base leading-7 text-gray-600",
+                      descriptionClassName
                     )}
                   >
                     {item.description}
@@ -95,7 +108,7 @@ export default function StudioProcessSection({
                         className={cn(
                           "inline-flex h-[25px] items-center justify-center rounded-full leading-none border px-3 py-0 text-xs font-medium",
                           solidTypography
-                            ? "border-black/15 text-black"
+                            ? "border-black text-black"
                             : "border-gray-200 text-gray-600"
                         )}
                       >

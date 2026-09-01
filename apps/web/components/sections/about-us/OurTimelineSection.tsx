@@ -96,9 +96,9 @@ export default function OurTimelineSection() {
   };
 
   return (
-    <section className="w-full bg-default pt-16 pb-0">
+    <section className="w-full bg-default pt-6.5">
       {/* <Container> */}
-        <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-10 md:mb-14">
+        <h2 className="text-2xl md:text-5xl font-bold text-white text-center mb-6 md:mb-8">
           Our Timeline
         </h2>
 
@@ -127,7 +127,7 @@ export default function OurTimelineSection() {
             {tripleItems.map((item, index) => (
               <SwiperSlide
                 key={`${item.id}-${index}`}
-                className="group w-[280px]! md:w-[320px]! lg:w-[360px]! py-20 transition-transform duration-300 [&.swiper-slide-active]:scale-110 [&.swiper-slide-active]:z-10"
+                className="group w-[280px]! md:w-[320px]! lg:w-[360px]! py-8 transition-transform duration-300 [&.swiper-slide-active]:scale-110 [&.swiper-slide-active]:z-10"
               >
                 <div
                   className="w-full h-full cursor-pointer"

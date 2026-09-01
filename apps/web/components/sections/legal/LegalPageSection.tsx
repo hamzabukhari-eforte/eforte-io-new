@@ -39,7 +39,7 @@ export default function LegalPageSection({
           aria-hidden
         />
         <Container className="relative text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-pink">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-pink">
             {eyebrow}
           </p>
           <h1 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl lg:text-6xl">

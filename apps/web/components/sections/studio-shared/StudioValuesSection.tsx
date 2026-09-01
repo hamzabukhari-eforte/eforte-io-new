@@ -27,20 +27,43 @@ const cardStyles: Record<
   },
 };
 
+const solidCardStyles: Record<
+  StudioValueItem["variant"],
+  { card: string; title: string; description: string }
+> = {
+  dark: {
+    card: "bg-black text-white",
+    title: "text-white",
+    description: "text-white",
+  },
+  muted: {
+    card: "bg-white text-black border border-black",
+    title: "text-black",
+    description: "text-black",
+  },
+  light: {
+    card: "bg-white text-black border border-black",
+    title: "text-black",
+    description: "text-black",
+  },
+};
+
 function ValueCard({
   item,
   index,
   iconPosition,
   titleClassName,
   descriptionClassName,
+  palette,
 }: {
   item: StudioValueItem;
   index: number;
   iconPosition: "center" | "top-right";
   titleClassName?: string;
   descriptionClassName?: string;
+  palette: typeof cardStyles;
 }) {
-  const styles = cardStyles[item.variant];
+  const styles = palette[item.variant];
 
   return (
     <motion.article
@@ -105,6 +128,8 @@ type StudioValuesSectionProps = {
   headingClassName?: string;
   cardTitleClassName?: string;
   cardDescriptionClassName?: string;
+  /** Use only #000 / #fff surfaces instead of gray card fills. */
+  solidPalette?: boolean;
 };
 
 export default function StudioValuesSection({
@@ -117,7 +142,10 @@ export default function StudioValuesSection({
   headingClassName,
   cardTitleClassName,
   cardDescriptionClassName,
+  solidPalette = false,
 }: StudioValuesSectionProps) {
+  const palette = solidPalette ? solidCardStyles : cardStyles;
+
   return (
     <section
       className={cn(
@@ -154,6 +182,7 @@ export default function StudioValuesSection({
               iconPosition={iconPosition}
               titleClassName={cardTitleClassName}
               descriptionClassName={cardDescriptionClassName}
+              palette={palette}
             />
           ))}
         </div>

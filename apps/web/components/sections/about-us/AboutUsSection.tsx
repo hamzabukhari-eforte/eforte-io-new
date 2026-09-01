@@ -37,10 +37,10 @@ export default function AboutUsSection() {
 
       <Container className="relative z-10">
         <div className="flex flex-col items-center text-center max-w-7xl mx-auto">
-          <h1 className="text-[11px] font-semibold tracking-[0.2em] uppercase text-primary-pink">
+          <h1 className="text-xs font-semibold tracking-[0.2em] uppercase text-primary-pink">
             About Us
           </h1>
-          <p className="mt-4 md:mt-6 text-lg lg:text-3xl text-white max-w-4xl leading-relaxed">
+          <p className="mt-4 md:mt-6 text-lg lg:text-4xl text-white max-w-5xl leading-relaxed">
             {ABOUT_TEXT}
           </p>
 

@@ -15,10 +15,10 @@ export default function AboutLocationsSection() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-pink">
+          <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-pink">
             Locations
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white md:text-xl lg:text-2xl">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-white md:text-xl lg:text-4xl">
             Where eForte builds and delivers
           </p>
         </motion.div>

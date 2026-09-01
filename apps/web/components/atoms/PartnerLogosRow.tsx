@@ -33,7 +33,7 @@ export default function PartnerLogosRow({ heading, className }: PartnerLogosRowP
   return (
     <div className={cn("w-full max-w-6xl mx-auto mt-12 md:mt-16", className)}>
       {heading && (
-        <h2 className="text-[11px] font-semibold tracking-[0.2em] uppercase text-primary-pink text-center mb-6">
+        <h2 className="text-xs font-semibold tracking-[0.2em] uppercase text-primary-pink text-center mb-6">
           {heading}
         </h2>
       )}

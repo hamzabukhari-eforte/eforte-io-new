@@ -4,7 +4,7 @@ import "./globals.css";
 import AppProviders from "@/components/providers/AppProviders";
 import Navbar from "@/components/sections/Navbar";
 import Footer from "@/components/sections/Footer";
-import { VelocityAIFooterCTASection } from "@/components/sections/velocity-ai";
+import LayoutFooterCta from "@/components/sections/LayoutFooterCta";
 import { getAiPillarsInsights, getInsightsMenuData } from "@/lib/strapi/insights";
 
 const geistMono = Geist_Mono({
@@ -40,7 +40,7 @@ export default async function RootLayout({
             aiPillarsInsights={aiPillarsInsights}
           />
           {children}
-          <VelocityAIFooterCTASection />
+          <LayoutFooterCta />
           <Footer />
         </AppProviders>
       </body>

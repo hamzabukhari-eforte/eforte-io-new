@@ -9,10 +9,10 @@ export default function OurValuesSection() {
   return (
     <section className="w-full bg-default py-16">
       <Container>
-        <p className="text-[11px] font-semibold tracking-[0.2em] uppercase text-primary-pink text-center">
+        <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary-pink text-center">
           CULTURE
         </p>
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white text-center mt-2">
+        <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold text-white text-center mt-2">
           Our values
         </h2>
         <p className="text-base md:text-lg text-white text-center mt-4 mb-14 max-w-2xl mx-auto leading-relaxed">
