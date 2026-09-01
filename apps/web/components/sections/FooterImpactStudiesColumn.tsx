@@ -1,10 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { HiMinus, HiPlus } from "react-icons/hi";
 import type { SiteNavLink } from "@/data/siteNavigation";
+import FooterItemLink from "@/components/sections/FooterItemLink";
 
 const PAGE_SIZE = 10;
 
@@ -40,23 +40,13 @@ export default function FooterImpactStudiesColumn({ title, links }: Props) {
       <ul className="space-y-3">
         {overview ? (
           <li>
-            <Link
-              href={overview.href}
-              className="text-sm text-desc transition-colors duration-200 hover:text-white"
-            >
-              {overview.label}
-            </Link>
+            <FooterItemLink href={overview.href} label={overview.label} />
           </li>
         ) : null}
 
         {visibleStudies.slice(0, PAGE_SIZE).map((link) => (
           <li key={link.href}>
-            <Link
-              href={link.href}
-              className="text-sm text-desc transition-colors duration-200 hover:text-white"
-            >
-              {link.label}
-            </Link>
+            <FooterItemLink href={link.href} label={link.label} />
           </li>
         ))}
       </ul>
@@ -84,12 +74,7 @@ export default function FooterImpactStudiesColumn({ title, links }: Props) {
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
-                <Link
-                  href={link.href}
-                  className="text-sm text-desc transition-colors duration-200 hover:text-white"
-                >
-                  {link.label}
-                </Link>
+                <FooterItemLink href={link.href} label={link.label} />
               </motion.li>
             ))}
           </AnimatePresence>

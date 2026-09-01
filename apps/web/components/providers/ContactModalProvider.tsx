@@ -5,6 +5,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useLayoutEffect,
   useState,
   type FormEvent,
   type ReactNode,
@@ -14,6 +15,7 @@ import { HiX } from "react-icons/hi";
 import ProjectTypeSelect from "@/components/atoms/ProjectTypeSelect";
 import FormSuccessState from "@/components/atoms/FormSuccessState";
 import { useLenisControl } from "@/components/providers/SmoothScrollProvider";
+import { lockBodyScroll } from "@/lib/lockBodyScroll";
 import { cn } from "@/lib/utils";
 
 type ContactModalContextValue = {
@@ -72,12 +74,11 @@ function ContactModal({
   const [submitError, setSubmitError] = useState<string | null>(null);
   const lenisControl = useLenisControl();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!isOpen) return;
 
     lenisControl?.stop();
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    const unlock = lockBodyScroll();
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") onClose();
@@ -85,8 +86,8 @@ function ContactModal({
     window.addEventListener("keydown", onKeyDown);
 
     return () => {
+      unlock();
       lenisControl?.start();
-      document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [isOpen, onClose, lenisControl]);

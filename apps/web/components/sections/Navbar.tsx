@@ -1,12 +1,16 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState, type MutableRefObject } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type MutableRefObject } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useScroll } from "@/hooks/useScroll";
 import { useLenisControl } from "@/components/providers/SmoothScrollProvider";
 import { cn } from "@/lib/utils";
+import {
+  lockBodyScroll,
+  SCROLLBAR_COMPENSATION_CLASS,
+} from "@/lib/lockBodyScroll";
 import Container from "@/components/atoms/Container";
 import QuoteCTA from "@/components/atoms/QuoteCTA";
 import {
@@ -846,20 +850,18 @@ export default function Navbar({
     (route) => pathname === route || pathname?.startsWith(`${route}/`)
   );
   const useSolidNav = isScrolled || isMobileMenuOpen || isLightHeroPage;
+  const isMegaMenuOpen = Boolean(activeMenu) && !isMobileMenuOpen;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const shouldLockScroll = isMobileMenuOpen || Boolean(activeMenu);
     if (!shouldLockScroll) return;
 
-    // Lenis animates window scroll itself, so body overflow alone can't hold it.
     lenisControl?.stop();
-    const { body } = document;
-    const previousOverflow = body.style.overflow;
-    body.style.overflow = "hidden";
+    const unlock = lockBodyScroll();
 
     return () => {
+      unlock();
       lenisControl?.start();
-      body.style.overflow = previousOverflow;
     };
   }, [isMobileMenuOpen, activeMenu, lenisControl]);
 
@@ -899,7 +901,7 @@ export default function Navbar({
 
       return (
         <div
-          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-[100]"
+          className="hidden xl:block fixed inset-x-0 top-0 bottom-0 z-[100]"
         >
           {/* Backdrop */}
           <div
@@ -909,7 +911,7 @@ export default function Navbar({
 
           {/* Mega menu panel */}
           <div
-            className="absolute inset-x-0 top-0 max-h-full overflow-hidden bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            className="absolute inset-x-0 top-0 max-h-full overflow-hidden border-b border-white/10 bg-[#050514]/95 pt-16 backdrop-blur-2xl md:pt-20"
             onMouseLeave={closeMegaMenu}
           >
             <Container className="py-6 2xl:py-8 flex gap-6 2xl:gap-8 text-white">
@@ -1010,11 +1012,11 @@ export default function Navbar({
       const studios = config.columns[0]?.items ?? [];
       return (
         <div
-          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-[100]"
+          className="hidden xl:block fixed inset-x-0 top-0 bottom-0 z-[100]"
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
-            className="absolute inset-x-0 top-0 max-h-full overflow-hidden bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            className="absolute inset-x-0 top-0 max-h-full overflow-hidden border-b border-white/10 bg-[#050514]/95 pt-16 backdrop-blur-2xl md:pt-20"
             onMouseLeave={closeMegaMenu}
           >
             <Container className="py-6 2xl:py-8 flex gap-6 2xl:gap-8 text-white">
@@ -1092,11 +1094,11 @@ export default function Navbar({
       const caseStudies = config.columns[0]?.items ?? [];
       return (
         <div
-          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-[100]"
+          className="hidden xl:block fixed inset-x-0 top-0 bottom-0 z-[100]"
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
-            className="absolute inset-x-0 top-0 flex max-h-[90%] flex-col overflow-hidden bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            className="absolute inset-x-0 top-0 flex max-h-[90%] flex-col overflow-hidden border-b border-white/10 bg-[#050514]/95 pt-16 backdrop-blur-2xl md:pt-20"
             onMouseLeave={closeMegaMenu}
           >
             <Container className="flex min-h-0 flex-1 gap-6 overflow-hidden py-6 text-white 2xl:gap-8 2xl:py-8">
@@ -1187,11 +1189,11 @@ export default function Navbar({
       const moreInsights = config.columns[3]?.items ?? [];
       return (
         <div
-          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-[100]"
+          className="hidden xl:block fixed inset-x-0 top-0 bottom-0 z-[100]"
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
-            className="absolute inset-x-0 top-0 max-h-full overflow-hidden bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            className="absolute inset-x-0 top-0 max-h-full overflow-hidden border-b border-white/10 bg-[#050514]/95 pt-16 backdrop-blur-2xl md:pt-20"
             onMouseLeave={closeMegaMenu}
           >
             <Container className="py-6 2xl:py-8 flex gap-6 2xl:gap-8 text-white">
@@ -1301,11 +1303,11 @@ export default function Navbar({
       const insightCards = config.columns[1]?.items ?? [];
       return (
         <div
-          className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-[100]"
+          className="hidden xl:block fixed inset-x-0 top-0 bottom-0 z-[100]"
         >
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
-            className="absolute inset-x-0 top-0 max-h-full overflow-hidden bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            className="absolute inset-x-0 top-0 max-h-full overflow-hidden border-b border-white/10 bg-[#050514]/95 pt-16 backdrop-blur-2xl md:pt-20"
             onMouseLeave={closeMegaMenu}
           >
             <Container className="py-6 2xl:py-8 flex gap-6 2xl:gap-8 text-white">
@@ -1400,10 +1402,10 @@ export default function Navbar({
       const insightItems = config.columns[1]?.items ?? [];
 
       return (
-        <div className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-[100]">
+        <div className="hidden xl:block fixed inset-x-0 top-0 bottom-0 z-[100]">
           <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
           <div
-            className="absolute inset-x-0 top-0 flex max-h-[90%] flex-col overflow-hidden bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+            className="absolute inset-x-0 top-0 flex max-h-[90%] flex-col overflow-hidden border-b border-white/10 bg-[#050514]/95 pt-16 backdrop-blur-2xl md:pt-20"
             onMouseLeave={closeMegaMenu}
           >
             <Container className="flex min-h-0 flex-1 gap-6 overflow-hidden py-6 text-white 2xl:gap-8 2xl:py-8">
@@ -1532,7 +1534,7 @@ export default function Navbar({
 
     return (
       <div
-        className="hidden xl:block fixed inset-x-0 top-16 md:top-20 bottom-0 z-[100]"
+        className="hidden xl:block fixed inset-x-0 top-0 bottom-0 z-[100]"
       >
         {/* Backdrop */}
         <div
@@ -1542,7 +1544,7 @@ export default function Navbar({
 
         {/* Mega menu panel */}
         <div
-          className="absolute inset-x-0 top-0 max-h-full overflow-hidden bg-[#050514]/95 backdrop-blur-2xl border-b border-white/10"
+          className="absolute inset-x-0 top-0 max-h-full overflow-hidden border-b border-white/10 bg-[#050514]/95 pt-16 backdrop-blur-2xl md:pt-20"
           onMouseLeave={closeMegaMenu}
         >
           <Container className="flex gap-6 py-5 text-white 2xl:gap-8 2xl:py-6">
@@ -1706,11 +1708,17 @@ export default function Navbar({
     <>
       <nav
         className={cn(
-          "fixed top-0 left-0 right-0 z-[110] transition-all duration-300",
+          "fixed top-0 left-0 right-0 z-[110]",
           "h-16 md:h-20",
-          useSolidNav
-            ? "bg-black/60 backdrop-blur-md shadow-sm"
-            : "bg-transparent"
+          SCROLLBAR_COMPENSATION_CLASS,
+          isMegaMenuOpen
+            ? "bg-transparent shadow-none transition-none"
+            : cn(
+                "transition-[background-color,box-shadow,backdrop-filter] duration-300",
+                useSolidNav
+                  ? "bg-black/60 backdrop-blur-md shadow-sm"
+                  : "bg-transparent"
+              )
         )}
       >
         <Container className="h-full flex items-center justify-between">

@@ -5,6 +5,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useLayoutEffect,
   useState,
   type FormEvent,
   type ReactNode,
@@ -12,6 +13,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import { HiX } from "react-icons/hi";
 import { useLenisControl } from "@/components/providers/SmoothScrollProvider";
+import { lockBodyScroll } from "@/lib/lockBodyScroll";
 import FormSuccessState from "@/components/atoms/FormSuccessState";
 import {
   quoteBudgetOptions,
@@ -132,12 +134,11 @@ function QuoteModal({
   const [submitError, setSubmitError] = useState<string | null>(null);
   const lenisControl = useLenisControl();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!isOpen) return;
 
     lenisControl?.stop();
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    const unlock = lockBodyScroll();
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") onClose();
@@ -145,8 +146,8 @@ function QuoteModal({
     window.addEventListener("keydown", onKeyDown);
 
     return () => {
+      unlock();
       lenisControl?.start();
-      document.body.style.overflow = previousOverflow;
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [isOpen, onClose, lenisControl]);

@@ -10,6 +10,7 @@ import { useInViewReplay } from "@/lib/useInViewReplay";
 
 import { footerColumns } from "@/data/siteNavigation";
 import FooterImpactStudiesColumn from "@/components/sections/FooterImpactStudiesColumn";
+import FooterItemLink from "@/components/sections/FooterItemLink";
 
 const socialLinks = [
   { icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
@@ -36,9 +37,9 @@ export default function Footer() {
               <Image
                 src="/assets/images/logo.svg"
                 alt="eForte Logo"
-                width={105}
-                height={32}
-                className="h-6 md:h-8 w-auto"
+                width={140}
+                height={42}
+                className="h-8 md:h-10 w-auto"
               />
             </Link>
           </motion.div>
@@ -65,12 +66,7 @@ export default function Footer() {
                   <ul className="space-y-3">
                     {column.links.map((link) => (
                       <li key={link.label}>
-                        <Link
-                          href={link.href}
-                          className="text-sm text-desc transition-colors duration-200 hover:text-white"
-                        >
-                          {link.label}
-                        </Link>
+                        <FooterItemLink href={link.href} label={link.label} />
                       </li>
                     ))}
                   </ul>
@@ -88,31 +84,19 @@ export default function Footer() {
           >
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-6">
-                <p className="text-sm text-desc">
+                <p className="text-sm text-white">
                   © {new Date().getFullYear()} eForte.io. All rights reserved.
                 </p>
                 <nav
                   aria-label="Legal"
-                  className="flex flex-wrap items-center justify-center gap-4 text-sm"
+                  className="flex flex-wrap items-center justify-center gap-4"
                 >
-                  <Link
-                    href="/privacy-policy"
-                    className="text-desc transition-colors duration-200 hover:text-white"
-                  >
-                    Privacy Policy
-                  </Link>
-                  <Link
+                  <FooterItemLink href="/privacy-policy" label="Privacy Policy" />
+                  <FooterItemLink
                     href="/terms-and-conditions"
-                    className="text-desc transition-colors duration-200 hover:text-white"
-                  >
-                    Terms &amp; Conditions
-                  </Link>
-                  <Link
-                    href="/sitemap"
-                    className="text-desc transition-colors duration-200 hover:text-white"
-                  >
-                    Sitemap
-                  </Link>
+                    label="Terms & Conditions"
+                  />
+                  <FooterItemLink href="/sitemap" label="Sitemap" />
                 </nav>
               </div>
 
@@ -125,7 +109,7 @@ export default function Footer() {
                       key={social.label}
                       href={social.href}
                       aria-label={social.label}
-                      className="text-desc hover:text-white transition-colors duration-200 p-2"
+                      className="p-2 text-white transition-colors duration-200 hover:text-primary-pink"
                     >
                       <Icon className="w-5 h-5" />
                     </Link>

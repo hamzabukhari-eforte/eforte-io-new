@@ -13,6 +13,7 @@
 :root {
   --background: #0000;
   --foreground: #ededed;
+  --scrollbar-compensation: 0px;
 }
 
 @theme inline {
@@ -45,10 +46,27 @@ body {
   font-family: "Be Vietnam Pro", Arial, Helvetica, sans-serif;
 }
 
+html {
+  background-color: #000;
+  color-scheme: dark;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   color-scheme: dark;
+}
+
+html.scroll-locked {
+  overflow: hidden;
+  scrollbar-width: none;
+}
+
+html.scroll-locked::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+  background: transparent;
 }
 /* Carousel Animation */
 @keyframes scroll {
