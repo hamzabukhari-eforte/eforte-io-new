@@ -6,7 +6,7 @@ import CareersValuesGridSection from "@/components/sections/careers/CareersValue
 import CareersBenefitsSection from "@/components/sections/careers/CareersBenefitsSection";
 import CareersTestimonialsSection from "@/components/sections/careers/CareersTestimonialsSection";
 import CareersJobOpeningsSection from "@/components/sections/careers/CareersJobOpeningsSection";
-import CareersPhotoGallerySection from "@/components/sections/careers/CareersPhotoGallerySection";
+// Preserved for possible future reuse: CareersPhotoGallerySection ("Life at eForte")
 import CareersJoinTeamSection from "@/components/sections/careers/CareersJoinTeamSection";
 import styles from "@/components/sections/ai-workflows/aiWorkflows.module.css";
 
@@ -23,7 +23,7 @@ export default function CareersPageContent() {
       <CareersBenefitsSection />
       <CareersTestimonialsSection />
       <CareersJobOpeningsSection />
-      <CareersPhotoGallerySection />
+      {/* <CareersPhotoGallerySection /> */}
       <CareersJoinTeamSection />
     </main>
   );

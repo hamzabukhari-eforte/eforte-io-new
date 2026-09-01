@@ -13,6 +13,10 @@ import Lenis from "lenis";
 type LenisControlContextValue = {
   stop: () => void;
   start: () => void;
+  scrollTo: (
+    target: string | HTMLElement | number,
+    options?: { offset?: number; duration?: number }
+  ) => void;
 };
 
 const LenisControlContext = createContext<LenisControlContextValue | null>(null);
@@ -62,8 +66,33 @@ export default function SmoothScrollProvider({
     lenisRef.current?.start();
   }, []);
 
+  const scrollTo = useCallback(
+    (
+      target: string | HTMLElement | number,
+      options?: { offset?: number; duration?: number }
+    ) => {
+      const lenis = lenisRef.current;
+      if (lenis) {
+        lenis.scrollTo(target, options);
+        return;
+      }
+
+      if (typeof target === "number") {
+        window.scrollTo({ top: target, behavior: "smooth" });
+        return;
+      }
+
+      const element =
+        typeof target === "string"
+          ? document.querySelector(target)
+          : target;
+      element?.scrollIntoView({ behavior: "smooth", block: "start" });
+    },
+    []
+  );
+
   return (
-    <LenisControlContext.Provider value={{ stop, start }}>
+    <LenisControlContext.Provider value={{ stop, start, scrollTo }}>
       {children}
     </LenisControlContext.Provider>
   );

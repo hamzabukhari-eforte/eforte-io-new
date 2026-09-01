@@ -1,17 +1,24 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, type MouseEvent } from "react";
 import Container from "@/components/atoms/Container";
-import ContactCTA from "@/components/atoms/ContactCTA";
 import { jobOpenings } from "@/data/careersJobs";
 import { useInViewReplay } from "@/lib/useInViewReplay";
+import { useLenisControl } from "@/components/providers/SmoothScrollProvider";
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 function JobCard({ job }: { job: (typeof jobOpenings)[number] }) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
+  const lenis = useLenisControl();
+
+  const handleApply = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    lenis?.scrollTo("#join-our-team", { offset: -96 });
+  };
 
   return (
     <motion.div
@@ -19,23 +26,27 @@ function JobCard({ job }: { job: (typeof jobOpenings)[number] }) {
       initial={{ opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
       transition={{ duration: 0.5, ease }}
-      className="flex flex-col gap-4 rounded-[12px] border border-white bg-black p-6 sm:flex-row sm:items-center sm:justify-between"
+      className="flex flex-col gap-4 rounded-[12px] border border-white/30 bg-black p-6 transition-colors duration-300 hover:border-primary-pink sm:flex-row sm:items-center sm:justify-between"
     >
       <div>
         <h3 className="text-lg font-semibold text-white md:text-xl">{job.title}</h3>
         <p className="mt-1 text-sm text-white">{job.location}</p>
         <div className="mt-3 flex flex-wrap gap-2">
-          <span className="inline-flex h-[25px] items-center justify-center rounded-full leading-none border border-white px-3 py-0 text-xs text-white">
+          <span className="inline-flex h-[25px] items-center justify-center rounded-full leading-none border border-white/30 px-3 py-0 text-xs text-white">
             {job.type}
           </span>
-          <span className="inline-flex h-[25px] items-center justify-center rounded-full leading-none border border-white px-3 py-0 text-xs text-white">
+          <span className="inline-flex h-[25px] items-center justify-center rounded-full leading-none border border-white/30 px-3 py-0 text-xs text-white">
             {job.department}
           </span>
         </div>
       </div>
-      <ContactCTA className="inline-flex items-center justify-center h-10 shrink-0 rounded-full leading-none bg-gradient-to-r from-[#be185d] to-[#db2777] px-6 py-0 text-sm font-medium text-white transition-all hover:from-[#db2777] hover:to-[#be185d]">
+      <Link
+        href="#join-our-team"
+        onClick={handleApply}
+        className="inline-flex items-center justify-center h-10 shrink-0 rounded-full leading-none bg-gradient-to-r from-[#be185d] to-[#db2777] px-6 py-0 text-sm font-medium text-white transition-all hover:from-[#db2777] hover:to-[#be185d]"
+      >
         Apply now
-      </ContactCTA>
+      </Link>
     </motion.div>
   );
 }

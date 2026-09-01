@@ -67,7 +67,7 @@ export default function CareersBenefitsSection() {
           transition={{ duration: 0.55, ease }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="text-3xl font-semibold text-black md:text-4xl lg:text-[42px]">
+          <h2 className="text-3xl font-semibold text-black md:text-4xl lg:text-[48px]">
             What&apos;s in it for you?
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-black md:mt-6 md:text-lg">

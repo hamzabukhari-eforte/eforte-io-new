@@ -7,7 +7,7 @@ import ContactCTA from "@/components/atoms/ContactCTA";
 import QuoteCTA from "@/components/atoms/QuoteCTA";
 import { useInViewReplay } from "@/lib/useInViewReplay";
 
-const CTA_IMG = "/assets/images/velocity-ai/cta-team.png";
+const CTA_IMG = "/assets/final-images/footer-cta/footer_cta.png";
 
 export default function VelocityAIFooterCTASection() {
   const ref = useRef(null);

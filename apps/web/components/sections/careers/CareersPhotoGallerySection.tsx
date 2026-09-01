@@ -89,7 +89,7 @@ export default function CareersPhotoGallerySection() {
           transition={{ duration: 0.55, ease }}
           className="mb-8 text-center md:mb-10"
         >
-          <h2 className="text-3xl font-semibold text-black md:text-4xl lg:text-[42px]">
+          <h2 className="text-3xl font-semibold text-black md:text-4xl lg:text-[48px]">
             Life at eForte
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-black md:text-lg">
