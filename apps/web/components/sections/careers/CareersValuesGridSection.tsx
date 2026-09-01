@@ -6,7 +6,7 @@ import { careersValues } from "@/data/careersValues";
 
 export default function CareersValuesGridSection() {
   return (
-    <section className="bg-default pb-20 pt-4 md:pb-28">
+    <section className="bg-black">
       <Container>
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-10 md:gap-y-14">
           {careersValues.map((item, index) => (

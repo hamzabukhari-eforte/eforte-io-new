@@ -1,69 +1,72 @@
-import type { IconType } from "react-icons";
-import {
-  HiHeart,
-  HiGlobeAlt,
-  HiUserGroup,
-  HiShieldCheck,
-  HiAcademicCap,
-  HiLightningBolt,
-} from "react-icons/hi";
-
 export type Benefit = {
   id: string;
   label: string;
-  icon: IconType;
-  bgClass: string;
-  iconClass: string;
-  textClass: string;
+  iconSrc: string;
+  iconWidth: number;
+  iconHeight: number;
+  background: string;
+  textColor: string;
 };
 
 export const benefits: Benefit[] = [
   {
     id: "health",
     label: "Health & Wellness Coverage",
-    icon: HiShieldCheck,
-    bgClass: "bg-emerald-50",
-    iconClass: "text-emerald-500",
-    textClass: "text-emerald-700",
+    iconSrc: "/assets/images/careers/private.svg",
+    iconWidth: 65,
+    iconHeight: 74,
+    background:
+      "radial-gradient(118.8% 118.8% at 7.68% -10.93%, rgba(255, 255, 255, 0.37) 0%, rgba(108, 239, 160, 0.15) 100%)",
+    textColor: "#138010",
   },
   {
     id: "remote",
     label: "Flexible, Remote First Work",
-    icon: HiGlobeAlt,
-    bgClass: "bg-cyan-50",
-    iconClass: "text-cyan-500",
-    textClass: "text-cyan-700",
+    iconSrc: "/assets/images/careers/world.svg",
+    iconWidth: 70,
+    iconHeight: 69,
+    background:
+      "radial-gradient(118.8% 118.8% at 7.68% -10.93%, rgba(255, 255, 255, 0.37) 0%, rgba(54, 147, 176, 0.2) 100%)",
+    textColor: "#0F579A",
   },
   {
     id: "learning",
     label: "Learning & Certification Stipend",
-    icon: HiAcademicCap,
-    bgClass: "bg-sky-50",
-    iconClass: "text-sky-500",
-    textClass: "text-sky-700",
+    iconSrc: "/assets/images/careers/english.svg",
+    iconWidth: 84,
+    iconHeight: 71,
+    background:
+      "radial-gradient(118.8% 118.8% at 7.68% -10.93%, rgba(255, 255, 255, 0.37) 0%, rgba(108, 184, 239, 0.15) 100%)",
+    textColor: "#0F579A",
   },
   {
     id: "mentorship",
     label: "Mentorship & Career Pathing",
-    icon: HiHeart,
-    bgClass: "bg-rose-50",
-    iconClass: "text-rose-500",
-    textClass: "text-rose-600",
+    iconSrc: "/assets/images/careers/hearth.svg",
+    iconWidth: 82,
+    iconHeight: 68,
+    background:
+      "radial-gradient(118.8% 118.8% at 7.68% -10.93%, rgba(255, 255, 255, 0.37) 0%, rgba(239, 115, 108, 0.15) 100%)",
+    textColor: "#AE2121",
   },
   {
     id: "offsites",
     label: "Team Offsites & Socials",
-    icon: HiUserGroup,
-    bgClass: "bg-violet-50",
-    iconClass: "text-violet-500",
-    textClass: "text-violet-700",
+    iconSrc: "/assets/images/careers/team-building.svg",
+    iconWidth: 78,
+    iconHeight: 62,
+    background:
+      "radial-gradient(118.8% 118.8% at 7.68% -10.93%, rgba(255, 255, 255, 0.37) 0%, rgba(165, 108, 239, 0.15) 100%)",
+    textColor: "#7E148F",
   },
   {
     id: "impact",
     label: "Work on Real Impact",
-    icon: HiLightningBolt,
-    bgClass: "bg-orange-50",
-    iconClass: "text-orange-500",
-    textClass: "text-orange-700",
+    iconSrc: "/assets/images/careers/travel.svg",
+    iconWidth: 69,
+    iconHeight: 69,
+    background:
+      "radial-gradient(118.8% 118.8% at 7.68% -10.93%, rgba(255, 255, 255, 0.37) 0%, rgba(235, 171, 75, 0.2) 100%)",
+    textColor: "#CD6022",
   },
 ];

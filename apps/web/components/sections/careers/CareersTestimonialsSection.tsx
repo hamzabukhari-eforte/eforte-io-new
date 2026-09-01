@@ -125,7 +125,7 @@ export default function CareersTestimonialsSection() {
   });
 
   return (
-    <section className="overflow-hidden bg-white pb-16 pt-16 md:pb-24 md:pt-24 lg:pt-28">
+    <section className="overflow-hidden bg-white pt-16 pb-16">
       <Container>
         <motion.div
           ref={introRef}
@@ -134,7 +134,7 @@ export default function CareersTestimonialsSection() {
           transition={{ duration: 0.55, ease }}
           className="mb-12 text-center md:mb-16"
         >
-          <h2 className="text-3xl font-semibold text-default md:text-4xl lg:text-[42px]">
+          <h2 className="text-3xl font-semibold text-black md:text-4xl lg:text-[42px]">
             What our team says
           </h2>
         </motion.div>

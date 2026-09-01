@@ -15,19 +15,19 @@ export default function CareersValuesIntroSection() {
   const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
-    <section id="our-values" className="scroll-mt-24 bg-default pb-10 pt-16 md:pb-14 md:pt-20">
+    <section id="our-values" className="scroll-mt-24 bg-black pt-16">
       <Container>
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
           transition={{ duration: 0.55, ease }}
-          className="grid gap-8 md:grid-cols-2 md:items-start md:gap-12 lg:gap-16"
+          className="grid gap-8 md:grid-cols-2 md:items-center md:gap-12 lg:gap-16"
         >
           <h2 className="text-3xl font-semibold text-white md:text-4xl lg:text-[42px] lg:leading-tight">
             Our Values
           </h2>
-          <p className="text-base leading-relaxed text-desc md:text-lg md:leading-relaxed">
+          <p className="text-base leading-relaxed text-white md:text-lg md:leading-relaxed">
             The principles that guide how we work, every single day.
           </p>
         </motion.div>

@@ -54,7 +54,7 @@ function BentoColumnStack({
   return (
     <div
       style={{ flex: `${column.width} 1 0%` }}
-      className="flex min-h-0 w-full min-w-0 flex-col gap-4 md:h-full md:gap-4"
+      className="flex min-h-0 w-full min-w-0 flex-col gap-8 md:h-full md:gap-8"
     >
       {column.images.map((image, imageIndex) => (
         <BentoImageTile
@@ -80,7 +80,7 @@ export default function CareersPhotoGallerySection() {
   const layout = bentoLayouts[activeCategory];
 
   return (
-    <section className="relative z-10 -mt-6 rounded-t-[12px] bg-white pb-20 pt-14 md:pb-28 md:pt-20">
+    <section className="bg-white pt-16 pb-16">
       <Container>
         <motion.div
           ref={introRef}
@@ -89,10 +89,10 @@ export default function CareersPhotoGallerySection() {
           transition={{ duration: 0.55, ease }}
           className="mb-8 text-center md:mb-10"
         >
-          <h2 className="text-3xl font-semibold text-default md:text-4xl lg:text-[42px]">
+          <h2 className="text-3xl font-semibold text-black md:text-4xl lg:text-[42px]">
             Life at eForte
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-gray-600 md:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-base text-black md:text-lg">
             A glimpse into how our team works, learns, and celebrates together.
           </p>
         </motion.div>
@@ -108,8 +108,8 @@ export default function CareersPhotoGallerySection() {
                 className={cn(
                   "inline-flex h-[25px] items-center justify-center rounded-full leading-none border px-4 py-0.5 text-sm font-medium transition-all md:px-5",
                   isActive
-                    ? "border-[#3b82f6] bg-[#3b82f6] text-white"
-                    : "border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:text-gray-900"
+                    ? "border-black bg-black text-white"
+                    : "border-black bg-white text-black hover:bg-black hover:text-white"
                 )}
               >
                 {category.label}

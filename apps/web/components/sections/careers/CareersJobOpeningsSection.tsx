@@ -19,16 +19,16 @@ function JobCard({ job }: { job: (typeof jobOpenings)[number] }) {
       initial={{ opacity: 0, y: 24 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
       transition={{ duration: 0.5, ease }}
-      className="flex flex-col gap-4 rounded-[12px] border border-white/10 bg-white/5 p-6 transition-colors hover:border-white/20 hover:bg-white/8 sm:flex-row sm:items-center sm:justify-between"
+      className="flex flex-col gap-4 rounded-[12px] border border-white bg-black p-6 sm:flex-row sm:items-center sm:justify-between"
     >
       <div>
         <h3 className="text-lg font-semibold text-white md:text-xl">{job.title}</h3>
-        <p className="mt-1 text-sm text-desc">{job.location}</p>
+        <p className="mt-1 text-sm text-white">{job.location}</p>
         <div className="mt-3 flex flex-wrap gap-2">
-          <span className="inline-flex h-[25px] items-center justify-center rounded-full leading-none bg-white/10 px-3 py-0 text-xs text-white/90">
+          <span className="inline-flex h-[25px] items-center justify-center rounded-full leading-none border border-white px-3 py-0 text-xs text-white">
             {job.type}
           </span>
-          <span className="inline-flex h-[25px] items-center justify-center rounded-full leading-none bg-primary-pink/20 px-3 py-0 text-xs text-primary-pink">
+          <span className="inline-flex h-[25px] items-center justify-center rounded-full leading-none border border-white px-3 py-0 text-xs text-white">
             {job.department}
           </span>
         </div>
@@ -47,7 +47,7 @@ export default function CareersJobOpeningsSection() {
   return (
     <section
       id="open-roles"
-      className="relative z-10 -mt-10 scroll-mt-24 rounded-t-[12px] bg-default pb-20 pt-14 md:-mt-14 md:pb-28 md:pt-20"
+      className="scroll-mt-24 bg-black pt-16 pb-16"
     >
       <Container>
         <motion.div
@@ -60,11 +60,11 @@ export default function CareersJobOpeningsSection() {
           <h2 className="text-3xl font-semibold text-white md:text-4xl lg:text-[42px]">
             Open Roles
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-desc md:text-lg">
+          <p className="mx-auto mt-4 max-w-2xl text-base text-white md:text-lg">
             New opportunities open up as our teams grow. Take a look at
             what&apos;s available now.
           </p>
-          <p className="mx-auto mt-3 max-w-2xl text-sm text-desc md:text-base">
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-white md:text-base">
             Browse current openings across Engineering, Data &amp; AI, Product
             Design, Quality Assurance, Cloud &amp; DevOps, and Project
             Management. Don&apos;t see the exact right fit today? Send us your

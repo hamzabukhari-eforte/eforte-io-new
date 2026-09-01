@@ -11,7 +11,7 @@ import CareersJoinTeamSection from "@/components/sections/careers/CareersJoinTea
 
 export default function CareersPageContent() {
   return (
-    <main className="min-h-screen bg-default">
+    <main className="min-h-screen bg-black">
       <CareersHeroSection />
       <CareersValuesIntroSection />
       <CareersValuesGridSection />

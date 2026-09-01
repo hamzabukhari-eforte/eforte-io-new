@@ -23,16 +23,15 @@ const heroItem = {
 
 export default function CareersHeroSection() {
   return (
-    <section className="relative z-0 flex min-h-[70vh] items-center justify-center overflow-hidden md:min-h-[80vh]">
+    <section className="relative z-0 flex min-h-[70vh] items-center justify-center overflow-hidden bg-black md:min-h-[80vh]">
       <Image
         src={HERO_IMAGE}
         alt="eForte team collaborating in the office"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center"
+        className="object-cover object-center opacity-40"
       />
-      <div className="absolute inset-0 bg-black/55" aria-hidden />
 
       <Container className="relative z-10 py-32 md:py-40">
         <motion.div
@@ -49,7 +48,7 @@ export default function CareersHeroSection() {
           </motion.h1>
           <motion.p
             variants={heroItem}
-            className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-white/90 md:mt-6 md:text-lg"
+            className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-white md:mt-6 md:text-lg"
           >
             At eForte, we believe great software is built by great people. Join a
             team of engineers, designers, and strategists who turn ambitious ideas
@@ -67,7 +66,7 @@ export default function CareersHeroSection() {
             </Link>
             <Link
               href="#our-values"
-              className="inline-flex h-10 items-center justify-center rounded-full leading-none border border-white/50 px-8 text-sm font-medium text-white transition-all hover:border-white hover:bg-white hover:text-default"
+              className="inline-flex h-10 items-center justify-center rounded-full leading-none border border-white px-8 text-sm font-medium text-white transition-all hover:border-white hover:bg-white hover:text-black"
             >
               Learn About Our Culture
             </Link>

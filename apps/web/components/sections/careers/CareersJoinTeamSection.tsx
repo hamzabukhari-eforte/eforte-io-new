@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 const fieldClassName =
-  "h-12 w-full rounded-[12px] border border-white/15 bg-white/5 px-4 text-sm text-white outline-none transition-colors placeholder:text-white/40 focus:border-primary-pink/60 focus:ring-1 focus:ring-primary-pink/60";
+  "h-12 w-full rounded-[12px] border border-white/15 bg-white/5 px-4 text-sm text-white outline-none transition-colors placeholder:text-white focus:border-primary-pink/60 focus:ring-1 focus:ring-primary-pink/60";
 
 export default function CareersJoinTeamSection() {
   const introRef = useRef<HTMLDivElement>(null);
@@ -25,7 +25,7 @@ export default function CareersJoinTeamSection() {
   return (
     <section
       id="join-our-team"
-      className="relative z-10 -mt-6 scroll-mt-24 rounded-t-[12px] bg-default pb-20 pt-14 md:pb-28 md:pt-20"
+      className="scroll-mt-24 bg-black pt-16 pb-16"
     >
       <Container>
         <motion.div
@@ -38,7 +38,7 @@ export default function CareersJoinTeamSection() {
           <h2 className="text-3xl font-semibold text-white md:text-4xl lg:text-[42px]">
             Join Our Team
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base text-desc md:text-lg">
+          <p className="mx-auto mt-4 max-w-xl text-base text-white md:text-lg">
             Tell us a bit about yourself, and we&apos;ll be in touch about
             opportunities that fit your skills and goals.
           </p>
@@ -55,7 +55,7 @@ export default function CareersJoinTeamSection() {
               <p className="text-lg font-medium text-white">
                 Thanks for reaching out!
               </p>
-              <p className="mt-2 text-sm text-desc">
+              <p className="mt-2 text-sm text-white">
                 We&apos;ve received your details and will be in touch about
                 roles that fit your skills and goals.
               </p>
@@ -65,7 +65,7 @@ export default function CareersJoinTeamSection() {
               onSubmit={handleSubmit}
               className="grid grid-cols-1 gap-5 sm:grid-cols-2"
             >
-              <label className="flex flex-col gap-2 text-sm text-white/80">
+              <label className="flex flex-col gap-2 text-sm text-white">
                 First Name
                 <input
                   name="firstName"
@@ -75,7 +75,7 @@ export default function CareersJoinTeamSection() {
                   className={fieldClassName}
                 />
               </label>
-              <label className="flex flex-col gap-2 text-sm text-white/80">
+              <label className="flex flex-col gap-2 text-sm text-white">
                 Last Name
                 <input
                   name="lastName"
@@ -85,7 +85,7 @@ export default function CareersJoinTeamSection() {
                   className={fieldClassName}
                 />
               </label>
-              <label className="flex flex-col gap-2 text-sm text-white/80">
+              <label className="flex flex-col gap-2 text-sm text-white">
                 Email
                 <input
                   name="email"
@@ -95,7 +95,7 @@ export default function CareersJoinTeamSection() {
                   className={fieldClassName}
                 />
               </label>
-              <label className="flex flex-col gap-2 text-sm text-white/80">
+              <label className="flex flex-col gap-2 text-sm text-white">
                 Phone
                 <input
                   name="phone"
@@ -104,7 +104,7 @@ export default function CareersJoinTeamSection() {
                   className={fieldClassName}
                 />
               </label>
-              <label className="flex flex-col gap-2 text-sm text-white/80 sm:col-span-2">
+              <label className="flex flex-col gap-2 text-sm text-white sm:col-span-2">
                 Position Interested In
                 <select
                   name="position"
@@ -122,16 +122,16 @@ export default function CareersJoinTeamSection() {
                   <option value="other">Other / Not listed</option>
                 </select>
               </label>
-              <label className="flex flex-col gap-2 text-sm text-white/80 sm:col-span-2">
+              <label className="flex flex-col gap-2 text-sm text-white sm:col-span-2">
                 Resume Upload
                 <input
                   type="file"
                   name="resume"
                   accept=".pdf,.doc,.docx"
-                  className="inline-flex items-center justify-center w-full cursor-pointer rounded-[12px] border border-dashed border-white/20 bg-white/5 px-3 py-1 text-sm text-white/60 outline-none transition-colors file:mr-4 file:cursor-pointer file:rounded-full leading-none file:border-0 file:bg-white/10 file:px-4 file:py-1 file:text-xs file:font-medium file:text-white hover:border-white/30 hover:file:bg-white/20"
+                  className="inline-flex w-full cursor-pointer items-center justify-center rounded-[12px] border border-dashed border-white/20 bg-white/5 px-3 py-1 text-sm text-white outline-none transition-colors file:mr-4 file:cursor-pointer file:rounded-full file:border-0 file:bg-white/10 file:px-4 file:py-1 file:text-xs file:font-medium file:text-white hover:border-white/30 hover:file:bg-white/20"
                 />
               </label>
-              <label className="flex flex-col gap-2 text-sm text-white/80 sm:col-span-2">
+              <label className="flex flex-col gap-2 text-sm text-white sm:col-span-2">
                 Message
                 <textarea
                   name="message"
