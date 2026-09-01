@@ -15,6 +15,7 @@ type StudioProcessSectionProps = {
   labelClassName?: string;
   titleClassName?: string;
   descriptionClassName?: string;
+  tagClassName?: string;
 };
 
 export default function StudioProcessSection({
@@ -25,6 +26,7 @@ export default function StudioProcessSection({
   labelClassName,
   titleClassName,
   descriptionClassName,
+  tagClassName,
 }: StudioProcessSectionProps) {
   const sizedFrame = imageFit === "contain";
 
@@ -109,7 +111,8 @@ export default function StudioProcessSection({
                           "inline-flex h-[25px] items-center justify-center rounded-full leading-none border px-3 py-0 text-xs font-medium",
                           solidTypography
                             ? "border-black text-black"
-                            : "border-gray-200 text-gray-600"
+                            : "border-gray-200 text-gray-600",
+                          tagClassName
                         )}
                       >
                         {tag}

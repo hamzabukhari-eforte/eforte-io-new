@@ -37,7 +37,7 @@ const solidCardStyles: Record<
     description: "text-white",
   },
   muted: {
-    card: "bg-white text-black border border-black",
+    card: "bg-[#d7d7d7] text-black",
     title: "text-black",
     description: "text-black",
   },
@@ -55,6 +55,7 @@ function ValueCard({
   titleClassName,
   descriptionClassName,
   palette,
+  invertDarkIcons,
 }: {
   item: StudioValueItem;
   index: number;
@@ -62,6 +63,7 @@ function ValueCard({
   titleClassName?: string;
   descriptionClassName?: string;
   palette: typeof cardStyles;
+  invertDarkIcons?: boolean;
 }) {
   const styles = palette[item.variant];
 
@@ -89,7 +91,10 @@ function ValueCard({
           alt=""
           width={245}
           height={186}
-          className="h-28 w-auto max-w-full object-contain md:h-36"
+          className={cn(
+            "h-28 w-auto max-w-full object-contain md:h-36",
+            invertDarkIcons && item.variant === "dark" && "invert"
+          )}
           aria-hidden
         />
       </div>
@@ -130,6 +135,8 @@ type StudioValuesSectionProps = {
   cardDescriptionClassName?: string;
   /** Use only #000 / #fff surfaces instead of gray card fills. */
   solidPalette?: boolean;
+  /** Invert near-black SVG icons so they remain visible on the dark card. */
+  invertDarkIcons?: boolean;
 };
 
 export default function StudioValuesSection({
@@ -143,6 +150,7 @@ export default function StudioValuesSection({
   cardTitleClassName,
   cardDescriptionClassName,
   solidPalette = false,
+  invertDarkIcons = false,
 }: StudioValuesSectionProps) {
   const palette = solidPalette ? solidCardStyles : cardStyles;
 
@@ -183,6 +191,7 @@ export default function StudioValuesSection({
               titleClassName={cardTitleClassName}
               descriptionClassName={cardDescriptionClassName}
               palette={palette}
+              invertDarkIcons={invertDarkIcons}
             />
           ))}
         </div>
