@@ -26,7 +26,7 @@ function BenefitCard({
       className="w-full p-3 text-center md:w-1/2 lg:w-1/3"
     >
       <div
-        className="h-full rounded-[20px] px-5 py-[50px]"
+        className="h-full rounded-[20px] px-5 py-6"
         style={{ background: benefit.background }}
       >
         <figure className="m-0 flex justify-center">
@@ -44,6 +44,9 @@ function BenefitCard({
           style={{ color: benefit.textColor }}
         >
           {benefit.label}
+        </p>
+        <p className="mt-3 text-sm leading-relaxed text-black/70">
+          {benefit.description}
         </p>
       </div>
     </motion.li>
@@ -72,7 +75,7 @@ export default function CareersBenefitsSection() {
           </p>
         </motion.div>
 
-        <ul className="mx-auto mt-12 flex max-w-[800px] flex-wrap items-stretch lg:mt-16">
+        <ul className="mx-auto mt-12 flex flex-wrap items-stretch lg:mt-16">
           {benefits.map((benefit) => (
             <BenefitCard key={benefit.id} benefit={benefit} />
           ))}

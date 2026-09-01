@@ -34,7 +34,7 @@ export default function FooterImpactStudiesColumn({ title, links }: Props) {
 
   return (
     <div>
-      <h3 className="mb-4 text-sm font-semibold text-white md:text-base">
+      <h3 className="mb-4 text-base font-semibold text-white md:text-lg">
         {title}
       </h3>
       <ul className="space-y-3">

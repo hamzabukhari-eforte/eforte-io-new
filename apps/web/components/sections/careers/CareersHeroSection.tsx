@@ -2,62 +2,35 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import Container from "@/components/atoms/Container";
-
-const HERO_IMAGE = "/assets/images/industry/working.jpg";
-
-const heroContainer = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } },
-};
-
-const heroItem = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] as const },
-  },
-};
+import { HiSparkles } from "react-icons/hi2";
+import styles from "@/components/sections/ai-workflows/aiWorkflows.module.css";
 
 export default function CareersHeroSection() {
   return (
-    <section className="relative z-0 flex min-h-[70vh] items-center justify-center overflow-hidden bg-black md:min-h-[80vh]">
+    <section className={`${styles.detailHero} ${styles.detailHeroMatch}`}>
       <Image
-        src={HERO_IMAGE}
+        src="/assets/final-images/careers/careers_hero.png"
         alt="eForte team collaborating in the office"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center opacity-40"
+        className={styles.detailHeroBg}
       />
-
-      <Container className="relative z-10 py-32 md:py-40">
-        <motion.div
-          className="mx-auto max-w-4xl text-center"
-          variants={heroContainer}
-          initial="hidden"
-          animate="visible"
-        >
-          <motion.h1
-            variants={heroItem}
-            className="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-[56px] lg:leading-[1.12]"
-          >
-            Grow, Build, and Belong.
-          </motion.h1>
-          <motion.p
-            variants={heroItem}
-            className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-white md:mt-6 md:text-lg"
-          >
+      <div className={styles.detailHeroOverlay} aria-hidden />
+      <div className={styles.detailHeroPinkGlow} aria-hidden />
+      <div className={styles.content}>
+        <div className={styles.detailHeroInner}>
+          <p className={styles.detailLabel}>
+            <HiSparkles className="text-primary-pink" aria-hidden />
+            Careers
+          </p>
+          <h1 className={styles.detailHeadline}>Grow, Build, and Belong.</h1>
+          <p className={styles.detailBody}>
             At eForte, we believe great software is built by great people. Join a
             team of engineers, designers, and strategists who turn ambitious ideas
             into working products and take your career further while you do it.
-          </motion.p>
-          <motion.div
-            variants={heroItem}
-            className="mt-8 flex flex-wrap items-center justify-center gap-4 md:mt-10"
-          >
+          </p>
+          <div className="flex flex-wrap items-center gap-4">
             <Link
               href="#open-roles"
               className="inline-flex h-10 items-center justify-center rounded-full leading-none bg-gradient-to-r from-[#be185d] to-[#db2777] px-8 text-sm font-medium text-white shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] transition-all hover:-translate-y-0.5 hover:from-[#db2777] hover:to-[#be185d]"
@@ -70,9 +43,9 @@ export default function CareersHeroSection() {
             >
               Learn About Our Culture
             </Link>
-          </motion.div>
-        </motion.div>
-      </Container>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

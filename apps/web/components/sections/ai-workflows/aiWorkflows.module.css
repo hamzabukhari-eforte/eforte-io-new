@@ -393,6 +393,10 @@
 
 /* ─── Detail Hero ─── */
 .detailHero {
+  --aw-white: #fff;
+  --aw-black: #000;
+  --aw-pink: #d3287a;
+  --aw-transition: all 0.3s;
   position: relative;
   background: #0a0a1a;
   color: var(--aw-white);
@@ -401,6 +405,12 @@
   align-items: center;
   overflow: hidden;
   padding: 140px 0 100px;
+}
+
+/* Careers / Technology Partners — same measured banner height as Customer Service */
+.detailHeroMatch {
+  height: 670px;
+  min-height: 670px;
 }
 
 .detailHeroBg {
@@ -497,7 +507,8 @@
   width: 14px;
   height: 14px;
   flex-shrink: 0;
-  color: var(--aw-pink);
+  color: #d3287a;
+  fill: #d3287a;
 }
 
 .detailTheme {
@@ -534,6 +545,17 @@
   position: relative;
   z-index: 30;
   color: var(--aw-black);
+}
+
+/* Shared overlap under full-bleed heroes (careers, technology partners) */
+/* Clip nested full-bleed backgrounds so the 40px hero overlap radius is visible */
+.bannerFollowSheet {
+  overflow: hidden;
+}
+
+.bannerFollowSheetDark {
+  background: #000;
+  color: #fff;
 }
 
 .workflowsHead {
@@ -851,6 +873,10 @@
   .detailHero {
     min-height: auto;
     padding: 120px 0 80px;
+  }
+  .detailHeroMatch {
+    height: auto;
+    min-height: auto;
   }
   .workflows {
     padding: 64px 0;

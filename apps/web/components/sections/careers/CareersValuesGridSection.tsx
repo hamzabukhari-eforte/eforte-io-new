@@ -6,9 +6,9 @@ import { careersValues } from "@/data/careersValues";
 
 export default function CareersValuesGridSection() {
   return (
-    <section className="bg-black">
+    <section className="bg-black pt-8">
       <Container>
-        <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-10 md:gap-y-14">
+        <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-10 md:gap-y-8">
           {careersValues.map((item, index) => (
             <ValueCard key={item.id} item={item} index={index} />
           ))}

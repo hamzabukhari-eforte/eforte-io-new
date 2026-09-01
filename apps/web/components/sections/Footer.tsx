@@ -60,7 +60,7 @@ export default function Footer() {
                 />
               ) : (
                 <div key={column.title}>
-                  <h3 className="mb-4 text-sm font-semibold text-white md:text-base">
+                  <h3 className="mb-4 text-base font-semibold text-white md:text-lg">
                     {column.title}
                   </h3>
                   <ul className="space-y-3">

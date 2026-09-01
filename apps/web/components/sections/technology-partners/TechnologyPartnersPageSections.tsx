@@ -7,6 +7,7 @@ import {
 import { VelocityAIFooterCTASection } from "@/components/sections/velocity-ai";
 import { technologyPartnersContent } from "@/data/technologyPartners";
 import TechnologyPartnersHeroSection from "./TechnologyPartnersHeroSection";
+import styles from "@/components/sections/ai-workflows/aiWorkflows.module.css";
 
 export default function TechnologyPartnersPageSections() {
   const { partners, advantageIntro, advantage } = technologyPartnersContent;
@@ -14,12 +15,12 @@ export default function TechnologyPartnersPageSections() {
   return (
     <>
       <TechnologyPartnersHeroSection />
-      <div className="relative z-10 -mt-10 overflow-hidden rounded-t-[12px] bg-white">
+      <div className={`${styles.workflows} ${styles.bannerFollowSheet}`}>
         <StudioProcessSection
           items={partners}
           imageFit="contain"
           solidTypography
-          className="pt-16 pb-16"
+          className="pt-0 pb-16 bg-transparent"
           labelClassName="text-[12px]"
           titleClassName="text-[36px] text-black"
           descriptionClassName="text-[16px] text-black"

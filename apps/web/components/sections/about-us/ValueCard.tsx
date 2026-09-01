@@ -16,7 +16,7 @@ const valueImageMap: Record<ValueIconName, string> = {
 };
 
 const imageSlotClass =
-  "w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-48 lg:h-48 shrink-0 flex items-center justify-center overflow-hidden";
+  "w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 shrink-0 flex items-center justify-center overflow-hidden";
 
 function ValueImage({ name }: { name: ValueIconName }) {
   const src = valueImageMap[name];
@@ -66,7 +66,7 @@ export default function ValueCard({
       <div className="shrink-0 -mt-4 pt-0.5 md:-mt-5">
         <ValueImage name={item.iconName} />
       </div>
-      <div className="min-w-0 flex-1 -ml-6 py-3 pl-8 pr-4 sm:-ml-8 md:-ml-28 md:py-20 md:pl-10 md:pr-5">
+      <div className="min-w-0 flex-1 -ml-6 py-3 pl-8 pr-4 sm:-ml-8 md:-ml-28 md:py-14 md:pl-10 md:pr-5">
         {item.titleLine1 != null && (
           <p className="bold text-lg text-white mb-0.5 md:text-xl lg:text-2xl xl:text-3xl">
             {item.titleLine1}

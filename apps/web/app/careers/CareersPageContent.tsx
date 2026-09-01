@@ -8,12 +8,17 @@ import CareersTestimonialsSection from "@/components/sections/careers/CareersTes
 import CareersJobOpeningsSection from "@/components/sections/careers/CareersJobOpeningsSection";
 import CareersPhotoGallerySection from "@/components/sections/careers/CareersPhotoGallerySection";
 import CareersJoinTeamSection from "@/components/sections/careers/CareersJoinTeamSection";
+import styles from "@/components/sections/ai-workflows/aiWorkflows.module.css";
 
 export default function CareersPageContent() {
   return (
     <main className="min-h-screen bg-black">
       <CareersHeroSection />
-      <CareersValuesIntroSection />
+      <div
+        className={`${styles.workflows} ${styles.bannerFollowSheet} ${styles.bannerFollowSheetDark}`}
+      >
+        <CareersValuesIntroSection />
+      </div>
       <CareersValuesGridSection />
       <CareersBenefitsSection />
       <CareersTestimonialsSection />
