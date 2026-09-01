@@ -21,7 +21,7 @@ export default function TechnologyPartnersPageSections() {
           solidTypography
           className="pt-16 pb-16"
           labelClassName="text-[12px]"
-          titleClassName="text-[20px] text-black"
+          titleClassName="text-[36px] text-black"
           descriptionClassName="text-[16px] text-black"
         />
       </div>

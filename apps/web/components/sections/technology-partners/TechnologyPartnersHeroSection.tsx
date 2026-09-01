@@ -14,10 +14,11 @@ export default function TechnologyPartnersHeroSection() {
     <section className="relative flex min-h-[760px] flex-col justify-center overflow-hidden bg-default pt-28 pb-20 md:min-h-screen md:pt-36">
       <div className="absolute inset-0">
         <Image
-          src="/assets/images/package/partners/tech-partners-hero.svg"
+          src="/assets/final-images/technology-partners/Technology_Partners_Hero.png?v3"
           alt=""
           fill
           priority
+          sizes="100vw"
           className="object-cover object-center"
           aria-hidden
         />
