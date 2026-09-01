@@ -74,7 +74,7 @@ export const technologyPartnersContent = {
       eyebrow: "AWS",
       title: "Elastic scale from pilot to enterprise",
       description: "AWS provides the elastic compute, storage, and managed AI/ML services (including Bedrock and SageMaker) that let us scale client solutions from pilot to enterprise wide deployment without re architecting along the way. We lean on AWS's maturity in security certifications and global infrastructure footprint to deliver Agentic Orchestration and automation workloads that stay highly available as usage and business value grows.\nClient impact: 20-30% infrastructure cost optimization after migrating agentic workloads to right sized AWS compute; near linear scalability validated under peak load testing; reduced deployment cycle time for new automation workflows moving from pilot to production.",
-      image: "/assets/final-images/technology-partners/AWS.png",
+      image: "/assets/final-images/technology-partners/AWS.png?v2",
       imageAlt: "AWS cloud infrastructure for scalable AI workloads",
       imageSide: "right" as const,
       tags: [
