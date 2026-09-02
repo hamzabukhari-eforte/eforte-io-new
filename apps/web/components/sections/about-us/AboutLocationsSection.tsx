@@ -6,7 +6,7 @@ import { motion } from "@/lib/replayMotion";
 
 export default function AboutLocationsSection() {
   return (
-    <section className="w-full bg-default py-16">
+    <section className="w-full bg-default pb-16 pt-0">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

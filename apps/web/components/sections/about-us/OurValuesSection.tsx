@@ -7,7 +7,7 @@ import { values } from "./valuesData";
 
 export default function OurValuesSection() {
   return (
-    <section className="w-full bg-default py-16">
+    <section className="w-full bg-default pb-16 pt-0">
       <Container>
         <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary-pink text-center">
           CULTURE

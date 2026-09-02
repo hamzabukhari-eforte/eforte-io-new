@@ -40,7 +40,7 @@ export default function AboutUsSection() {
           <h1 className="text-xs font-semibold tracking-[0.2em] uppercase text-primary-pink">
             About Us
           </h1>
-          <p className="mt-4 md:mt-6 text-lg lg:text-4xl text-white max-w-5xl leading-relaxed">
+          <p className="mt-4 md:mt-6 text-lg lg:text-4xl text-white max-w-5xl leading-relaxed lg:leading-[48px]">
             {ABOUT_TEXT}
           </p>
 
