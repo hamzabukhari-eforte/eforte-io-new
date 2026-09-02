@@ -42,7 +42,7 @@ export default function AgenticOrchestrationCoreServicesSection() {
     <section
       ref={ref}
       id="core-ai-agent-dev-services"
-      className={`py-16 md:py-24 border-t border-white/5 bg-[#030304] relative overflow-hidden ${section.paddingX}`}
+      className={`${section.padding} border-t border-white/5 bg-[#030304] relative overflow-hidden ${section.paddingX}`}
     >
       <div className={`${section.container} flex flex-col items-center relative z-10`}>
         <motion.h2
@@ -54,7 +54,7 @@ export default function AgenticOrchestrationCoreServicesSection() {
           Core AI Agent Development Services
         </motion.h2>
         <motion.p
-          className={`${typography.lead} text-gray-400 text-center max-w-3xl mx-auto mb-10 md:mb-16`}
+          className={`${typography.lead} text-white text-center max-w-3xl mx-auto mb-10 md:mb-16`}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}

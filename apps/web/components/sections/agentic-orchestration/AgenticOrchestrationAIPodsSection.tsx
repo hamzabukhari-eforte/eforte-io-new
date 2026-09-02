@@ -14,7 +14,7 @@ export default function AgenticOrchestrationAIPodsSection() {
     <section
       ref={ref}
       id="delivering-impact"
-      className="py-16 md:py-24 lg:py-32 bg-black relative overflow-hidden min-h-[700px] md:min-h-[800px] flex items-center"
+      className={`${section.padding} bg-black relative overflow-hidden`}
     >
       <div className="absolute top-0 right-0 w-[600px] md:w-[800px] h-[600px] md:h-[800px] bg-blue-500/5 rounded-full blur-[120px] md:blur-[150px] pointer-events-none z-0" />
       <div className={`${section.container} relative z-10 w-full`}>
@@ -46,10 +46,10 @@ export default function AgenticOrchestrationAIPodsSection() {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
             >
-              <p className={`${typography.lead} text-gray-400 max-w-xl`}>
+              <p className={`${typography.lead} text-white max-w-xl`}>
                 At the core of our AI delivery model are cross-functional AI Pods, designed to build, deploy, and scale industry-specific AI solutions.
               </p>
-              <p className={`${typography.lead} text-gray-400 max-w-xl`}>
+              <p className={`${typography.lead} text-white max-w-xl`}>
                 Each Pod brings together AI Product Managers, AI Engineers, MLOps Engineers and Data Scientists, depending on the needs of the solution. Additional AI-enabled roles—such as Data Analysts, Data Engineers, Product Designers, Cybersecurity specialists, and QA professionals—also play a critical role.
               </p>
             </motion.div>

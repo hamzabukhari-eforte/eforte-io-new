@@ -82,7 +82,7 @@ function RightColumnSection({
   return (
     <motion.div
       ref={setRef}
-      className="flex flex-col gap-4 md:gap-6 min-h-[200px] justify-center"
+      className="flex flex-col gap-4 md:gap-6 justify-center"
       initial={{ opacity: 0, y: 32 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -95,7 +95,7 @@ function RightColumnSection({
       >
         {item.title}
       </motion.h3>
-      <div className="space-y-4 text-gray-400 text-base md:text-lg leading-relaxed">
+      <div className="space-y-4 text-white text-base leading-relaxed">
         {item.paragraphs.map((p, i) => (
           <motion.p
             key={i}
@@ -168,7 +168,7 @@ export default function AgenticOrchestrationPlatformFlowSection() {
     <section
       ref={ref}
       id="platform-flow"
-      className={`py-16 md:py-24 bg-black relative ${section.paddingX}`}
+      className={`${section.padding} bg-black relative ${section.paddingX}`}
     >
       <div className={`${section.container} grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20`}>
         {/* Left: full-height column so sticky has room to stick while right content scrolls */}
@@ -263,7 +263,7 @@ export default function AgenticOrchestrationPlatformFlowSection() {
                         fontFamily="Inter, sans-serif"
                         fontSize="16"
                         fontWeight="600"
-                        opacity={isActive ? 1 : 0.78}
+                        opacity={1}
                       >
                         {r.label[0]}
                       </text>
@@ -275,7 +275,7 @@ export default function AgenticOrchestrationPlatformFlowSection() {
                         fontFamily="Inter, sans-serif"
                         fontSize="16"
                         fontWeight="600"
-                        opacity={isActive ? 1 : 0.78}
+                        opacity={1}
                       >
                         {r.label[1]}
                       </text>
@@ -297,7 +297,7 @@ export default function AgenticOrchestrationPlatformFlowSection() {
         </div>
 
         {/* Right: Content — each section has its own framer-motion; center section drives left glow */}
-        <div className="flex flex-col gap-16 md:gap-24 lg:gap-32 py-6 pb-16 lg:pb-32">
+        <div className="flex flex-col gap-16">
           {flowItems.map((item, index) => (
             <RightColumnSection
               key={item.title}

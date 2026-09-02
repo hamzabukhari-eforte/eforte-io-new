@@ -79,17 +79,17 @@ export default function AgenticOrchestrationPlatformSection() {
     <section
       ref={ref}
       id="characteristics"
-      className="py-16 md:py-24 lg:py-32 bg-black relative overflow-hidden"
+      className={`${section.padding} bg-black relative overflow-hidden`}
     >
-      <div className={`${section.container} flex flex-col items-center relative z-10 py-8 md:py-12`}>
-        <motion.div
-          className="inline-flex h-10 items-center justify-center px-4 py-0 md:px-5 rounded-full leading-none border border-white/20 bg-white/5 backdrop-blur-sm mb-6 md:mb-10"
+      <div className={`${section.container} flex flex-col items-center relative z-10`}>
+        <motion.p
+          className={`${typography.sectionLabel} mb-4`}
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span className={`${typography.badge} text-white tracking-widest`}>OUR SOLUTIONS</span>
-        </motion.div>
+          OUR SOLUTIONS
+        </motion.p>
         <motion.h2
           className={`${typography.sectionTitle} md:text-5xl lg:text-6xl font-bold text-center text-white mb-6`}
           initial={{ opacity: 0, y: 16 }}
@@ -99,7 +99,7 @@ export default function AgenticOrchestrationPlatformSection() {
           eForte Agentic Platform
         </motion.h2>
         <motion.p
-          className={`${typography.lead} text-gray-400 text-center max-w-3xl mx-auto mb-12 md:mb-20`}
+          className={`${typography.lead} text-white text-center max-w-3xl mx-auto mb-12 md:mb-20`}
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
@@ -109,7 +109,7 @@ export default function AgenticOrchestrationPlatformSection() {
 
         {/* Diagram: left = vertical ovals + arrows, right = component grid */}
         <motion.div
-          className="w-full flex flex-col lg:flex-row items-start justify-center gap-10 lg:gap-16 xl:gap-24 mb-16 md:mb-24"
+          className="w-full flex flex-col lg:flex-row items-start justify-center gap-10 lg:gap-16 xl:gap-24 mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
@@ -177,15 +177,15 @@ export default function AgenticOrchestrationPlatformSection() {
 
       {/* Core Characteristics */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[150%] h-[400px] bg-blue-500/5 rounded-[100%] blur-[120px] pointer-events-none" />
-      <div className={`${section.container} relative z-10 flex flex-col items-center pt-8 md:pt-16`}>
-        <motion.div
-          className="inline-flex h-10 items-center justify-center px-5 py-0 md:px-6 rounded-full leading-none border border-white/20 bg-white/5 backdrop-blur-sm mb-8 md:mb-12"
+      <div className={`${section.container} relative z-10 flex flex-col items-center`}>
+        <motion.p
+          className={`${typography.sectionLabel} mb-4`}
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
         >
-          <span className="text-[10px] md:text-[13px] font-semibold text-white tracking-wide uppercase">KEY ATTRIBUTES</span>
-        </motion.div>
+          KEY ATTRIBUTES
+        </motion.p>
         <motion.h2
           className={`${typography.sectionTitle} md:text-5xl lg:text-6xl font-bold text-center text-white mb-12 md:mb-20`}
           initial={{ opacity: 0, y: 16 }}

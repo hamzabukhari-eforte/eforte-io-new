@@ -20,7 +20,7 @@ export default function AgenticOrchestrationHeroSection() {
   return (
     <section
       ref={ref}
-      className={`relative overflow-hidden flex flex-col justify-center items-center bg-black pt-24 pb-16 md:pt-40 md:pb-20 md:min-h-[700px] lg:min-h-[900px] ${section.paddingX}`}
+      className={`relative overflow-hidden flex flex-col justify-center items-center bg-black pt-24 md:pt-40 md:min-h-[700px] lg:min-h-[900px] ${section.paddingX}`}
     >
       <div className="absolute inset-0 z-0">
         <div className="absolute top-[-20%] right-[-30%] md:right-[-10%] w-[120%] md:w-[80%] h-[140%] md:h-[120%] bg-[#581c87] rounded-full blur-[120px] md:blur-[180px] opacity-80 md:opacity-90" />
@@ -29,16 +29,14 @@ export default function AgenticOrchestrationHeroSection() {
       </div>
 
       <div className="relative z-10 flex flex-col items-center justify-center text-center max-w-5xl mx-auto">
-        <motion.div
-          className="inline-flex h-10 items-center justify-center px-3 py-0 md:px-4 rounded-full leading-none bg-[#33334d]/80 backdrop-blur-sm border border-white/10 mb-6 md:mb-8"
+        <motion.p
+          className={`${typography.sectionLabel} mb-6 md:mb-8`}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span className={`${typography.badge} text-white tracking-wide`}>
-            AI AGENT DEVELOPMENT SERVICES
-          </span>
-        </motion.div>
+          AI AGENT DEVELOPMENT SERVICES
+        </motion.p>
 
         <motion.h1
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[90px] font-medium tracking-tight mb-6 leading-[1.1] text-white drop-shadow-2xl"
@@ -50,7 +48,7 @@ export default function AgenticOrchestrationHeroSection() {
         </motion.h1>
 
         <motion.p
-        className="text-sm md:text-lg lg:text-xl text-white max-w-2xl mx-auto mb-8 md:mb-12 px-2 font-light leading-relaxed tracking-wide"
+        className="text-base font-light leading-relaxed tracking-wide text-white max-w-2xl mx-auto mb-8 md:mb-12 px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
@@ -59,7 +57,7 @@ export default function AgenticOrchestrationHeroSection() {
         </motion.p>
 
         <motion.p
-          className={`${typography.lead} text-gray-300 max-w-2xl mx-auto mb-8 md:mb-16 px-2`}
+          className="text-base font-light leading-relaxed text-white max-w-2xl mx-auto mb-8 md:mb-16 px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}

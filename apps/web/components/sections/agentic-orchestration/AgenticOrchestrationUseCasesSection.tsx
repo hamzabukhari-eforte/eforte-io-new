@@ -42,7 +42,7 @@ export default function AgenticOrchestrationUseCasesSection() {
     <section
       ref={ref}
       id="use-cases"
-      className={`py-16 md:py-24 border-t border-white/5 bg-[#030304] ${section.paddingX}`}
+      className={`${section.padding} border-t border-white/5 bg-[#030304] ${section.paddingX}`}
     >
       <div className={`${section.container} mb-12 md:mb-16`}>
         <motion.h2
@@ -54,7 +54,7 @@ export default function AgenticOrchestrationUseCasesSection() {
           eForte AI Solutions
         </motion.h2>
         <motion.p
-          className={`${typography.lead} text-gray-400 text-center max-w-3xl mx-auto`}
+          className={`${typography.lead} text-white text-center max-w-3xl mx-auto`}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
@@ -96,14 +96,14 @@ export default function AgenticOrchestrationUseCasesSection() {
                     {uc.title}
                   </h4>
                 </div>
-                <p className="text-xs text-gray-500 mb-4 md:mb-6 min-h-[40px]">
+                <p className="text-xs text-white mb-4 md:mb-6 min-h-[40px]">
                   {uc.description}
                 </p>
                 <ul className="space-y-2 md:space-y-3">
                   {uc.items.map((item) => (
                     <li
                       key={item}
-                      className="text-xs md:text-sm text-gray-300 bg-[#0A0A0A] px-3 py-2 md:px-4 md:py-3 rounded border border-white/5 hover:border-blue-500/30 transition-colors duration-300"
+                      className="text-xs md:text-sm text-white bg-[#0A0A0A] px-3 py-2 md:px-4 md:py-3 rounded border border-white/5 hover:border-blue-500/30 transition-colors duration-300"
                     >
                       {item}
                     </li>

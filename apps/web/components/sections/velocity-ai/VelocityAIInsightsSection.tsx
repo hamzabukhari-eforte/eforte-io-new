@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { section, typography } from "./layout";
 import { useInViewReplay } from "@/lib/useInViewReplay";
+import { cn } from "@/lib/utils";
 
 const INSIGHTS_IMG_1 = "/assets/images/velocity-ai/insight-1.png";
 const INSIGHTS_IMG_2 = "/assets/images/velocity-ai/insight-2.png";
@@ -56,24 +57,42 @@ const articles: {
   },
 ];
 
-export default function VelocityAIInsightsSection() {
+export default function VelocityAIInsightsSection({
+  className,
+  plainEyebrow = false,
+}: {
+  className?: string;
+  plainEyebrow?: boolean;
+} = {}) {
   const ref = useRef(null);
   const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   return (
-    <section ref={ref} className={`${section.padding} ${section.paddingX} max-w-[1300px] mx-auto`}>
+    <section
+      ref={ref}
+      className={cn(
+        `${section.padding} ${section.paddingX} max-w-[1300px] mx-auto`,
+        className
+      )}
+    >
       <motion.div
         className="text-center mb-8 md:mb-16"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className="inline-flex h-10 items-center justify-center px-4 py-0 md:px-5 rounded-full leading-none border border-[#D3287A] bg-pink-900/5 backdrop-blur-sm mb-4 md:mb-6">
-          <span className={typography.badge + " text-[#D3287A] tracking-[0.2em] block"}>
+        {plainEyebrow ? (
+          <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
             Expert Insights
-          </span>
-        </div>
+          </p>
+        ) : (
+          <div className="inline-flex h-10 items-center justify-center px-4 py-0 md:px-5 rounded-full leading-none border border-[#D3287A] bg-pink-900/5 backdrop-blur-sm mb-4 md:mb-6">
+            <span className={typography.badge + " text-[#D3287A] tracking-[0.2em] block"}>
+              Expert Insights
+            </span>
+          </div>
+        )}
         <h2 className="text-2xl md:text-3xl lg:text-[42px] font-bold text-white tracking-tight leading-tight">
           Imagine. Learn. Discuss.
         </h2>
