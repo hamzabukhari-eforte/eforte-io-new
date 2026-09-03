@@ -48,7 +48,7 @@ export default function AgenticOrchestrationHeroSection() {
         </motion.h1>
 
         <motion.p
-        className="text-base font-light leading-relaxed tracking-wide text-white max-w-2xl mx-auto mb-8 md:mb-12 px-2"
+        className="text-2xl font-light leading-relaxed tracking-wide text-white max-w-2xl mx-auto mb-8 md:mb-12 px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
@@ -57,7 +57,7 @@ export default function AgenticOrchestrationHeroSection() {
         </motion.p>
 
         <motion.p
-          className="text-base font-light leading-relaxed text-white max-w-2xl mx-auto mb-8 md:mb-16 px-2"
+          className="text-lg font-light leading-relaxed text-white max-w-2xl mx-auto mb-8 md:mb-16 px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
@@ -66,13 +66,13 @@ export default function AgenticOrchestrationHeroSection() {
         </motion.p>
 
         <motion.div
-          className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-sm text-white font-medium mb-8 md:mb-20"
+          className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-base text-white font-medium mb-8 md:mb-20"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
         >
           {industryLinks.map((label, i) => (
-            <span key={label} className="hover:text-[#7c3aed] cursor-pointer transition-colors">
+            <span key={label} className="cursor-pointer transition-colors">
               {label}
             </span>
           ))}

@@ -1,38 +1,123 @@
 "use client";
 
-import Image from "next/image";
+import type { CSSProperties, ReactNode } from "react";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import { FaSearchDollar, FaRobot, FaUsersCog, FaTachometerAlt } from "react-icons/fa";
 import { section, typography } from "./layout";
 import { useInViewReplay } from "@/lib/useInViewReplay";
+import CoreServicesDiagram from "./CoreServicesDiagram";
+import {
+  AgentIcon,
+  AiCoreIcon,
+  FunnelIcon,
+  GaugeIcon,
+} from "@/components/sections/ai-workflows/workflow-diagram/icons";
+import {
+  ICON_BOX,
+  type IconProps,
+} from "@/components/sections/ai-workflows/workflow-diagram/primitives";
+
+function ServiceCardIcon({
+  Icon,
+  inView,
+  className = "h-6 w-6",
+}: {
+  Icon: (props: IconProps) => ReactNode;
+  inView: boolean;
+  className?: string;
+}) {
+  return (
+    <svg viewBox={`0 0 ${ICON_BOX} ${ICON_BOX}`} className={className} aria-hidden>
+      <Icon delay={0} inView={inView} reduce />
+    </svg>
+  );
+}
 
 const coreServices = [
   {
-    icon: FaSearchDollar,
+    Icon: FunnelIcon,
     title: "Strategic Assessment of AI Opportunities",
     description:
       "Leverage the eForte AI Agent Framework to identify and prioritize high-impact AI use cases, ensuring initiatives deliver maximum ROI and strategic value.",
+    accentColor: "#22C55E",
+    accentGlow: "rgba(34, 197, 94, 0.4)",
   },
   {
-    icon: FaRobot,
+    Icon: AiCoreIcon,
     title: "AI Agent Design & Implementation",
     description:
       "Deliver custom AI agent solutions tailored to industry-specific challenges, alongside pre-built agents such as Financial Analyst Agents and Credit Scoring Agents.",
+    accentColor: "#F97316",
+    accentGlow: "rgba(249, 115, 22, 0.4)",
   },
   {
-    icon: FaUsersCog,
+    Icon: AgentIcon,
     title: "AI Talent Augmentation",
     description:
       "Deploy cross-functional AI Pods to strengthen in-house teams, accelerating AI projects while maintaining quality and alignment with internal processes.",
+    accentColor: "#EAB308",
+    accentGlow: "rgba(234, 179, 8, 0.4)",
   },
   {
-    icon: FaTachometerAlt,
+    Icon: GaugeIcon,
     title: "Model Optimization & Benchmarking",
     description:
       "Fine-tune and optimize models for performance, scalability, and accuracy, and benchmark multiple approaches against your specific use cases.",
+    accentColor: "#0EA5E9",
+    accentGlow: "rgba(14, 165, 233, 0.4)",
   },
 ];
+
+function ServiceCard({
+  Icon,
+  title,
+  description,
+  inView,
+  accentColor,
+  accentGlow,
+}: (typeof coreServices)[number] & { inView: boolean }) {
+  const icon = <ServiceCardIcon Icon={Icon} inView={inView} />;
+
+  return (
+    <div
+      className="group relative h-full overflow-hidden rounded-[12px] border bg-white/[0.02] p-6 transition-all duration-300 ease-out"
+      style={{ borderColor: "rgba(255, 255, 255, 0.08)" } as CSSProperties}
+      onMouseEnter={(event) => {
+        event.currentTarget.style.borderColor = accentColor;
+        event.currentTarget.style.boxShadow = `0 0 24px ${accentGlow}`;
+      }}
+      onMouseLeave={(event) => {
+        event.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.08)";
+        event.currentTarget.style.boxShadow = "none";
+      }}
+    >
+      <div
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        aria-hidden
+      >
+        <div
+          className="absolute right-0 bottom-0 h-full w-full min-h-[60vh] min-w-[50vw]"
+          style={{
+            background: `radial-gradient(ellipse 90% 90% at 100% 100%, ${accentGlow} 0%, transparent 50%)`,
+          }}
+        />
+        <div className="absolute -right-10 -bottom-5 flex items-end justify-end p-0">
+          <div className="origin-bottom-right -mr-2 -mb-2 scale-[4] opacity-20">
+            <ServiceCardIcon Icon={Icon} inView={inView} className="h-8 w-8" />
+          </div>
+        </div>
+      </div>
+
+      <div className="relative z-10">
+        <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-[12px] border border-white/10 bg-white/5 transition-transform duration-300 group-hover:scale-105">
+          {icon}
+        </div>
+        <h4 className={`${typography.cardTitle} text-white mb-2`}>{title}</h4>
+        <p className={`${typography.cardBody}`}>{description}</p>
+      </div>
+    </div>
+  );
+}
 
 export default function AgenticOrchestrationCoreServicesSection() {
   const ref = useRef(null);
@@ -42,11 +127,11 @@ export default function AgenticOrchestrationCoreServicesSection() {
     <section
       ref={ref}
       id="core-ai-agent-dev-services"
-      className={`${section.padding} border-t border-white/5 bg-[#030304] relative overflow-hidden ${section.paddingX}`}
+      className={`${section.padding} pb-16 relative overflow-hidden ${section.paddingX}`}
     >
       <div className={`${section.container} flex flex-col items-center relative z-10`}>
         <motion.h2
-          className={`${typography.sectionTitle} md:text-5xl lg:text-6xl font-bold text-center text-white mb-6`}
+          className={`${typography.sectionTitle} md:text-[48px] lg:text-[48px] font-bold text-center text-white mb-6`}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -63,37 +148,25 @@ export default function AgenticOrchestrationCoreServicesSection() {
         </motion.p>
 
         <motion.div
-          className="relative w-full max-w-4xl aspect-[1200/896] mb-12 md:mb-16"
+          className="relative mx-auto mb-12 w-full max-w-5xl md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
         >
-          <Image
-            src="/assets/images/package/ai-pillars/core-ai-agent-dev-services.svg"
-            alt="Core AI Agent Development Services: Strategic Assessment, AI Agent Design & Implementation, AI Talent Augmentation, Model Optimization & Benchmarking"
-            fill
-            sizes="(max-width: 1024px) 100vw, 900px"
-            className="object-contain rounded-[12px]"
-          />
+          <CoreServicesDiagram className="h-37.5 w-full" />
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 w-full">
           {coreServices.map((service, index) => (
             <motion.div
               key={service.title}
-              className="group relative p-6 rounded-[12px] transition-all duration-300 hover:bg-white/[0.02]"
+              className="h-full"
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
+              whileHover={{ scale: 1.03, transition: { duration: 0.25, delay: 0, ease: "easeOut" } }}
               transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
             >
-              <div className="absolute inset-0 rounded-[12px] bg-gradient-to-b from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-              <div className="relative z-10">
-                <div className="w-10 h-10 rounded-[12px] bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 group-hover:bg-blue-500/10 transition-all duration-300 mb-4">
-                  <service.icon className="text-white group-hover:text-blue-400 transition-colors duration-300 text-lg" />
-                </div>
-                <h4 className={`${typography.cardTitle} text-white mb-2`}>{service.title}</h4>
-                <p className={`${typography.cardBody}`}>{service.description}</p>
-              </div>
+              <ServiceCard {...service} inView={isInView} />
             </motion.div>
           ))}
         </div>

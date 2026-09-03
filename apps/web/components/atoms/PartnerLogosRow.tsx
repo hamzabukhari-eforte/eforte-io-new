@@ -1,27 +1,42 @@
 "use client";
 
+import Image from "next/image";
+import type { IconType } from "react-icons";
 import {
-  FaLayerGroup,
-  FaMicrosoft,
-  FaProjectDiagram,
-  FaSitemap,
-} from "react-icons/fa";
-import { SiAmazon, SiNvidia } from "react-icons/si";
+  SiAmazonwebservices,
+  SiAnthropic,
+  SiDatabricks,
+  SiFigma,
+  SiLangchain,
+  SiNvidia,
+} from "react-icons/si";
 import { cn } from "@/lib/utils";
+
+const iconClass = "h-7 w-auto text-white/80 transition-colors group-hover:text-white md:h-8";
 
 const partnerLogos: {
   id: string;
-  icon: React.ReactNode;
-  label: string | null;
-  isTextOnly?: boolean;
+  name: string;
+  Icon?: IconType;
+  src?: string;
+  iconClassName?: string;
 }[] = [
-  { id: "databricks", icon: <FaLayerGroup className="text-2xl text-white/80" />, label: "databricks" },
-  { id: "aws", icon: <SiAmazon className="text-3xl text-white/80" />, label: null },
-  { id: "azure", icon: <FaMicrosoft className="text-2xl text-white/80" />, label: "Azure" },
-  { id: "pilot", icon: <FaSitemap className="text-2xl text-white/80" />, label: null },
-  { id: "anthropic", icon: null, label: "ANTHROPIC", isTextOnly: true },
-  { id: "langgraph", icon: <FaProjectDiagram className="text-xl text-white/80" />, label: "LangGraph" },
-  { id: "nvidia", icon: <SiNvidia className="text-2xl text-white/80" />, label: "Nvidia" },
+  { id: "databricks", name: "Databricks", Icon: SiDatabricks },
+  {
+    id: "aws",
+    name: "AWS",
+    Icon: SiAmazonwebservices,
+    iconClassName: "h-8 w-auto text-[2.25rem] text-white/80 transition-colors group-hover:text-white md:h-9 md:text-[2.75rem]",
+  },
+  {
+    id: "azure",
+    name: "Azure",
+    src: "/assets/images/capabilities/providers/azure.svg",
+  },
+  { id: "figma", name: "Figma", Icon: SiFigma },
+  { id: "anthropic", name: "Anthropic", Icon: SiAnthropic },
+  { id: "langgraph", name: "LangGraph", Icon: SiLangchain },
+  { id: "nvidia", name: "NVIDIA", Icon: SiNvidia },
 ];
 
 interface PartnerLogosRowProps {
@@ -31,32 +46,37 @@ interface PartnerLogosRowProps {
 
 export default function PartnerLogosRow({ heading, className }: PartnerLogosRowProps) {
   return (
-    <div className={cn("w-full max-w-6xl mx-auto mt-12 md:mt-16", className)}>
+    <div className={cn("mx-auto mt-12 w-full max-w-6xl md:mt-16", className)}>
       {heading && (
-        <h2 className="text-xs font-semibold tracking-[0.2em] uppercase text-primary-pink text-center mb-6">
+        <h2 className="mb-6 text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary-pink">
           {heading}
         </h2>
       )}
-      <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+      <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-8 pb-6 md:gap-x-10">
         {partnerLogos.map((item) => (
           <div
             key={item.id}
-            className="flex items-center gap-2 group cursor-default transition-transform duration-300 hover:-translate-y-0.5"
+            className="group relative flex h-9 items-center justify-center transition-transform duration-300 hover:-translate-y-0.5"
           >
-            {item.isTextOnly ? (
-              <span className="text-xs md:text-base font-bold text-white/80 group-hover:text-white tracking-widest uppercase">
-                {item.label}
-              </span>
+            {item.src ? (
+              <Image
+                src={item.src}
+                alt={item.name}
+                width={120}
+                height={32}
+                className="h-7 w-auto object-contain opacity-80 brightness-0 invert transition-opacity group-hover:opacity-100 md:h-8"
+              />
             ) : (
-              <>
-                {item.icon}
-                {item.label && (
-                  <span className="text-xs md:text-base font-semibold text-white/80 group-hover:text-white tracking-tight">
-                    {item.label}
-                  </span>
-                )}
-              </>
+              item.Icon && (
+                <item.Icon
+                  aria-label={item.name}
+                  className={item.iconClassName ?? iconClass}
+                />
+              )
             )}
+            <span className="pointer-events-none absolute top-full left-1/2 z-10 mt-2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/10 bg-black/80 px-3 py-1 text-xs font-medium tracking-wide text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100">
+              {item.name}
+            </span>
           </div>
         ))}
       </div>

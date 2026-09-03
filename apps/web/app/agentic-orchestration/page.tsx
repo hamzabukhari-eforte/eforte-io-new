@@ -21,7 +21,7 @@ export default function AgenticOrchestrationPage() {
       <AgenticOrchestrationUseCasesSection />
       <AgenticOrchestrationMethodologySection />
       <AgenticOrchestrationCoreServicesSection />
-      <VelocityAIInsightsSection className="py-16!" plainEyebrow />
+      <VelocityAIInsightsSection plainEyebrow />
       
     </main>
   );

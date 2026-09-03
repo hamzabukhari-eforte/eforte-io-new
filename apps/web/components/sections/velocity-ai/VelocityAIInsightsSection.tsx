@@ -72,7 +72,7 @@ export default function VelocityAIInsightsSection({
     <section
       ref={ref}
       className={cn(
-        `${section.padding} ${section.paddingX} max-w-[1300px] mx-auto`,
+        `pb-16 ${section.paddingX} max-w-[1300px] mx-auto`,
         className
       )}
     >

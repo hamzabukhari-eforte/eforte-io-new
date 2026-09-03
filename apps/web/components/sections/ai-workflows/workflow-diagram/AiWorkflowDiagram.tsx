@@ -33,11 +33,15 @@ export default function AiWorkflowDiagram({
   steps,
   label,
   className,
+  labelFontSize = 16,
+  descriptionFontSize = 12,
 }: {
   steps: WorkflowStep[];
   /** Domain name, used to describe the diagram to screen readers. */
   label: string;
   className?: string;
+  labelFontSize?: number;
+  descriptionFontSize?: number;
 }) {
   const ref = useRef<SVGSVGElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.3 });
@@ -149,7 +153,7 @@ export default function AiWorkflowDiagram({
               y={LABEL_Y}
               textAnchor="middle"
               fill={WHITE}
-              fontSize={16}
+              fontSize={labelFontSize}
               fontWeight={500}
             >
               {step.label}
@@ -159,7 +163,7 @@ export default function AiWorkflowDiagram({
               y={DESCRIPTION_Y}
               textAnchor="middle"
               fill={WHITE}
-              fontSize={12}
+              fontSize={descriptionFontSize}
             >
               {step.description}
             </text>

@@ -60,12 +60,12 @@
 
 .infrastructure {
   background:
-    radial-gradient(circle at center, rgba(0, 215, 223, 0.28), rgba(0, 215, 223, 0.03) 70%),
-    rgba(5, 30, 48, 0.7);
-  border: 1px solid #00d7df;
+    radial-gradient(circle at center, rgba(100, 53, 149, 0.28), rgba(100, 53, 149, 0.03) 70%),
+    rgba(25, 12, 40, 0.7);
+  border: 1px solid #643595;
   box-shadow:
-    0 0 35px rgba(0, 215, 223, 0.22),
-    inset 0 0 35px rgba(0, 215, 223, 0.08);
+    0 0 35px rgba(100, 53, 149, 0.22),
+    inset 0 0 35px rgba(100, 53, 149, 0.08);
 }
 
 .pulse {
@@ -111,6 +111,108 @@
   border-bottom: 2px solid #d3287a;
 }
 
+.gutter {
+  display: none;
+  position: relative;
+  flex: 0 0 72px;
+  width: 72px;
+  align-self: stretch;
+  overflow: visible;
+  pointer-events: none;
+  /* 8px pt-2 + 3 ellipses + 2 arrows — keeps lines visible even if flex stretch fails */
+  min-height: calc(8px + 150px * 3 + 65px * 2);
+}
+
+.dotLine {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  transform: translateY(-50%);
+  background-image: repeating-linear-gradient(
+    to right,
+    currentColor 0 3px,
+    transparent 3px 8px
+  );
+}
+
+.dotLine::before,
+.dotLine::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+  transform: translate(-50%, -50%);
+}
+
+.dotLine::before {
+  left: 0;
+}
+
+.dotLine::after {
+  left: 100%;
+}
+
+.linePink {
+  top: 83px;
+  color: #d3287a;
+}
+
+.lineBlueIn {
+  top: 298px;
+  right: 50%;
+  color: #426cff;
+}
+
+.lineBlueSpine {
+  position: absolute;
+  top: 173px;
+  left: 50%;
+  width: 2px;
+  height: 230px;
+  transform: translateX(-50%);
+  color: #426cff;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    currentColor 0 3px,
+    transparent 3px 8px
+  );
+}
+
+.lineBlueA,
+.lineBlueB,
+.lineBlueC {
+  left: 50%;
+  color: #426cff;
+}
+
+.lineBlueA {
+  top: 173px;
+}
+
+.lineBlueB {
+  top: 298px;
+}
+
+.lineBlueC {
+  top: 403px;
+}
+
+.lineCyan {
+  top: 513px;
+  color: #643595;
+}
+
+@media (min-width: 1024px) {
+  .gutter {
+    display: block;
+  }
+}
+
 .card {
   min-height: 85px;
   border-radius: 14px;
@@ -134,10 +236,10 @@
 
 .card:hover {
   transform: translateY(-4px) scale(1.015);
-  border-color: rgba(211, 40, 122, 0.7);
+  border-color: rgba(66, 108, 255, 0.85);
   box-shadow:
     0 15px 40px rgba(0, 0, 0, 0.35),
-    0 0 25px rgba(211, 40, 122, 0.1);
+    0 0 25px rgba(66, 108, 255, 0.18);
 }
 
 .card::before {
@@ -164,9 +266,23 @@
   border-color: rgba(211, 40, 122, 0.45);
 }
 
+.topCard:hover {
+  border-color: rgba(211, 40, 122, 0.7);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(211, 40, 122, 0.1);
+}
+
 .bottomCard {
-  border-color: rgba(0, 215, 223, 0.55);
-  background: linear-gradient(135deg, rgba(7, 64, 82, 0.85), rgba(7, 25, 48, 0.9));
+  border-color: rgba(100, 53, 149, 0.55);
+  background: linear-gradient(135deg, rgba(40, 20, 58, 0.85), rgba(18, 10, 32, 0.9));
+}
+
+.bottomCard:hover {
+  border-color: rgba(100, 53, 149, 0.85);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(100, 53, 149, 0.18);
 }
 
 .compact {
@@ -202,11 +318,17 @@
   z-index: 1;
 }
 
+.icon svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
 .compact .icon {
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
-  font-size: 16px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  font-size: 20px;
 }
 
 .card:hover .icon {
@@ -221,9 +343,9 @@
 }
 
 .cyanIcon {
-  color: #1ce2e9;
-  background: radial-gradient(circle, rgba(0, 215, 223, 0.28), rgba(8, 39, 55, 0.55));
-  border-color: rgba(0, 215, 223, 0.45);
+  color: #b48ad4;
+  background: radial-gradient(circle, rgba(100, 53, 149, 0.32), rgba(28, 12, 42, 0.55));
+  border-color: rgba(100, 53, 149, 0.45);
 }
 
 .content {

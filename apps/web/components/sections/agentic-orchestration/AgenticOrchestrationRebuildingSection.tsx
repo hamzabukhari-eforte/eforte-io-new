@@ -49,7 +49,7 @@ export default function AgenticOrchestrationRebuildingSection() {
                 <Link
                   key={label}
                   href={href}
-                  className="inline-flex h-10 items-center justify-center rounded-full border border-primary-pink bg-transparent px-4 py-0 text-sm font-medium leading-none text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white md:px-5 md:text-[15px]"
+                  className="inline-flex h-[25px] items-center justify-center rounded-full border border-primary-pink bg-transparent px-4 py-0 text-xs font-medium leading-none text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white md:px-5 md:text-sm"
                 >
                   {label}
                 </Link>

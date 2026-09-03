@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { FaWindowMaximize, FaComments, FaCogs, FaNetworkWired } from "react-icons/fa";
@@ -46,7 +45,7 @@ export default function AgenticOrchestrationUseCasesSection() {
     >
       <div className={`${section.container} mb-12 md:mb-16`}>
         <motion.h2
-          className={`${typography.sectionTitle} md:text-5xl lg:text-6xl font-bold text-center text-white mb-6 md:mb-8`}
+          className={`${typography.sectionTitle} md:text-[48px] lg:text-[48px] font-bold text-center text-white mb-6 md:mb-8`}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -61,52 +60,45 @@ export default function AgenticOrchestrationUseCasesSection() {
         >
           eForte delivers the full spectrum of GenAI solutions, helping organizations automate, augment, and transform business processes.
         </motion.p>
-        <motion.div
-          className="relative mx-auto mt-10 aspect-[1079/457] w-full max-w-7xl md:mt-14"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-        >
-          <Image
-            src="/assets/images/package/ai-pillars/ai-solutions-4cards.svg"
-            alt="Diagram of eForte AI Solutions showing four offerings: LLM Apps, Chat Bots, Automations, and Agentic Workflows"
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1280px"
-            className="object-contain"
-          />
-        </motion.div>
       </div>
       <div className={`${section.container}`}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {useCases.map((uc, index) => (
             <motion.div
               key={uc.title}
-              className="group relative p-6 rounded-[12px] transition-all duration-300 hover:bg-white/[0.02] -m-6 md:m-0"
+              className="relative h-full rounded-[12px] p-6 -m-6 transition-colors duration-300 hover:bg-white/[0.03] md:m-0"
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
+              whileHover={{ scale: 1.02, transition: { duration: 0.25, delay: 0, ease: "easeOut" } }}
               transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
             >
-              <div className="absolute inset-0 rounded-[12px] bg-gradient-to-b from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-4 md:mb-6">
-                  <div className="w-10 h-10 rounded-[12px] bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-blue-500/50 group-hover:bg-blue-500/10 transition-all duration-300">
-                    <uc.icon className="text-white group-hover:text-blue-400 transition-colors duration-300 text-lg" />
+                  <div className="w-10 h-10 rounded-[12px] bg-white/5 flex items-center justify-center border border-white/10">
+                    <uc.icon className="text-lg text-primary-pink" />
                   </div>
-                  <h4 className="font-bold text-white group-hover:text-blue-400 transition-colors duration-300 text-base md:text-lg">
+                  <h4 className="font-bold text-white text-base md:text-xl">
                     {uc.title}
                   </h4>
                 </div>
-                <p className="text-xs text-white mb-4 md:mb-6 min-h-[40px]">
+                <p className="text-base text-white mb-4 md:mb-6 min-h-[40px]">
                   {uc.description}
                 </p>
                 <ul className="space-y-2 md:space-y-3">
-                  {uc.items.map((item) => (
-                    <li
+                  {uc.items.map((item, itemIndex) => (
+                    <motion.li
                       key={item}
-                      className="text-xs md:text-sm text-white bg-[#0A0A0A] px-3 py-2 md:px-4 md:py-3 rounded border border-white/5 hover:border-blue-500/30 transition-colors duration-300"
+                      className="text-xs md:text-sm text-white bg-[#0A0A0A] px-3 py-2 md:px-4 md:py-3 rounded border border-white/5"
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+                      transition={{
+                        duration: 0.4,
+                        delay: index * 0.08 + 0.35 + itemIndex * 0.12,
+                        ease: "easeOut",
+                      }}
                     >
                       {item}
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
               </div>
