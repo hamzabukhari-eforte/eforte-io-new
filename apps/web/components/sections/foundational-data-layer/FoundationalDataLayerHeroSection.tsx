@@ -1,42 +1,107 @@
 "use client";
 
-import Container from "@/components/atoms/Container";
 import ContactCTA from "@/components/atoms/ContactCTA";
 import PartnerLogosRow from "@/components/atoms/PartnerLogosRow";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import { useInViewReplay } from "@/lib/useInViewReplay";
+
+const industryLinks = [
+  "Fintech",
+  "Health & Life-Science",
+  "Heavy Industries",
+];
 
 export default function FoundationalDataLayerHeroSection() {
+  const ref = useRef(null);
+  const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
+
   return (
     <section
-      className="relative min-h-[80vh] md:min-h-[900px] flex flex-col items-center justify-center overflow-hidden bg-black pt-24 md:pt-28"
+      ref={ref}
+      className="relative overflow-hidden flex flex-col justify-center items-center pt-24 bg-black px-4 sm:px-6 md:px-8 lg:px-10 md:min-h-[500px] lg:min-h-[700px]"
       aria-label="Foundational Data Layer hero"
     >
-      {/* Same background as Velocity AI: purple/indigo blurs + gradient overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-[-20%] right-[-30%] md:right-[-10%] w-[120%] md:w-[80%] h-[140%] md:h-[120%] bg-[#581c87] rounded-full blur-[120px] md:blur-[180px] opacity-80 md:opacity-90" />
-        <div className="absolute top-[10%] right-[10%] w-[80%] md:w-[60%] h-full md:h-[80%] bg-[#4338ca] rounded-full blur-[100px] md:blur-[150px] opacity-70 md:opacity-80" />
-        <div className="absolute inset-0 bg-linear-to-r from-black via-black/90 to-transparent z-0" />
+        <div className="absolute top-[10%] right-[10%] w-[80%] md:w-[60%] h-[100%] md:h-[80%] bg-[#4338ca] rounded-full blur-[100px] md:blur-[150px] opacity-70 md:opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent z-0" />
       </div>
 
-      <Container className="relative z-10 text-center flex flex-col items-center pt-20">
-        <h1 className="text-5xl sm:text-6xl md:text-[86px] font-medium tracking-tight text-white mb-8 leading-none">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center max-w-5xl mx-auto">
+        <motion.p
+          className="mb-6 text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink md:mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          DATA INFRASTRUCTURE SERVICES
+        </motion.p>
+
+        <motion.h1
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[90px] font-medium tracking-tight mb-6 leading-[1.1] text-white drop-shadow-2xl"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+        >
           Foundational Data Layer
-        </h1>
-        <p className="text-xl md:text-2xl text-white mb-8 font-normal tracking-wide">
+        </motion.h1>
+
+        <motion.p
+          className="text-2xl font-light leading-relaxed tracking-wide text-white max-w-2xl mx-auto mb-8 md:mb-12 px-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+        >
           Establishing the Data Infrastructure for AI Transformation.
-        </p>
-        <p className="text-base text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed text-center">
+        </motion.p>
+
+        <motion.p
+          className="text-lg font-light leading-relaxed text-white max-w-3xl mx-auto mb-8 md:mb-16 px-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
+        >
           The eForte Foundational Data Layer pillar ensures robust, scalable,
           and secure data ecosystems. We establish the strong modern data
           infrastructure needed for AI-driven transformation by mastering data
           management—from ingestion to governance.
-        </p>
-        <div className="flex items-center justify-center mb-10 md:mb-14">
-          <ContactCTA className="inline-flex items-center justify-center h-10 px-10 py-0 rounded-full leading-none border border-white text-base font-medium text-white hover:bg-white hover:text-black transition-all duration-300">
-            Contact Us
+        </motion.p>
+
+        <motion.div
+          className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-base text-white font-medium mb-8 md:mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+        >
+          {industryLinks.map((label) => (
+            <span key={label} className="cursor-pointer transition-colors">
+              {label}
+            </span>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
+        >
+          <ContactCTA
+            className="inline-flex h-10 items-center justify-center bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-8 py-0 md:px-9 md:py-0 rounded-full leading-none text-sm md:text-[15px] font-semibold transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
+          >
+            Let&apos;s build intelligence together
           </ContactCTA>
-        </div>
-        <PartnerLogosRow />
-      </Container>
+        </motion.div>
+
+        <motion.div
+          className="w-full"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
+        >
+          <PartnerLogosRow />
+        </motion.div>
+      </div>
     </section>
   );
 }

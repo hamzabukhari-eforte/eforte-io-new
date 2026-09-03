@@ -46,7 +46,7 @@ export default function VelocityAIMetricsCoreSection() {
         </motion.h2>
 
         <motion.p
-          className={typography.lead + " text-gray-400 max-w-3xl mx-auto mb-12 md:mb-24"}
+          className={typography.lead + " text-white max-w-3xl mx-auto mb-12 md:mb-24"}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -76,7 +76,7 @@ export default function VelocityAIMetricsCoreSection() {
               </div>
               <div className="relative z-10 mt-4 md:mt-6">
                 <h3 className={typography.cardTitle + " text-white mb-2"}>{card.title}</h3>
-                <p className={typography.cardBody + " text-gray-500"}>{card.sub}</p>
+                <p className={typography.cardBody + " text-white"}>{card.sub}</p>
               </div>
             </motion.div>
           ))}

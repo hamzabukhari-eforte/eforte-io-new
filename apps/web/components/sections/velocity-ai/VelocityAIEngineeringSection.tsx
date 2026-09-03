@@ -32,7 +32,7 @@ export default function VelocityAIEngineeringSection() {
             <br />
             Software Development
           </h2>
-          <p className={typography.lead + " text-gray-400 mb-8 md:mb-12 max-w-xl"}>
+          <p className={typography.lead + " text-white mb-8 md:mb-12 max-w-xl"}>
             Velocity AI empowers engineering teams to become AI-first, turning traditional agile pods into data-centric, AI-driven squads for faster, smarter software delivery.
           </p>
           <ContactCTA

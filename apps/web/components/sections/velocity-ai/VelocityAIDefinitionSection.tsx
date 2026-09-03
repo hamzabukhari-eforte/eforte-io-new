@@ -14,7 +14,7 @@ export default function VelocityAIDefinitionSection() {
     <section ref={ref} className={`relative bg-[#03050C] ${section.padding} ${section.paddingX}`}>
       <div className="max-w-2xl md:max-w-4xl mx-auto text-center relative z-10">
         <motion.h2
-          className="text-xl md:text-2xl lg:text-4xl font-light leading-snug text-gray-200 mb-4"
+          className="text-xl md:text-2xl lg:text-4xl font-light leading-snug text-white mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: "easeOut" }}
@@ -27,7 +27,7 @@ export default function VelocityAIDefinitionSection() {
         </motion.h2>
 
         <motion.p
-          className="mt-4 md:mt-6 text-gray-400 text-sm md:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed"
+          className="mt-4 md:mt-6 text-white text-sm md:text-base lg:text-lg max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}

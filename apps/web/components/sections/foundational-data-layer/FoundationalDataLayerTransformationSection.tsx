@@ -24,7 +24,7 @@ export default function FoundationalDataLayerTransformationSection() {
   return (
     <section
       id="transformation"
-      className="py-32 relative overflow-hidden bg-black"
+      className="pt-16 relative overflow-hidden bg-black"
       aria-labelledby="transformation-heading"
     >
       <div className="absolute inset-0 z-0" aria-hidden>
@@ -44,7 +44,7 @@ export default function FoundationalDataLayerTransformationSection() {
             >
               From data governance to Agentic AI
             </h2>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-white text-sm leading-relaxed">
               eForte is an end-to-end data & AI transformation partner, helping
               organizations move from trusted data foundations to intelligent,
               autonomous systems.
@@ -59,7 +59,7 @@ export default function FoundationalDataLayerTransformationSection() {
                 <div className="absolute left-0 top-8 bottom-8 w-px bg-gray-800 group-hover:bg-[#E91E63] transition-colors duration-300" />
                 <div className="flex flex-col md:flex-row gap-8 pl-4">
                   <div className="flex-1">
-                    <div className="text-xs font-bold text-gray-500 mb-2 uppercase tracking-wider group-hover:text-[#E91E63] transition-colors">
+                    <div className="text-xs font-bold text-white mb-2 uppercase tracking-wider group-hover:text-[#E91E63] transition-colors">
                       {item.label}
                     </div>
                     <h3 className="text-xl font-semibold mb-4 text-white group-hover:text-white transition-colors">

@@ -104,7 +104,7 @@ export default function VelocityAICapabilitiesSection() {
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-bold mb-2 text-white">{cap.title}</h3>
-                <p className="text-sm text-gray-400 mb-2">{cap.description}</p>
+                <p className="text-sm text-white mb-2">{cap.description}</p>
                 <Link href="#" className="text-xs text-[#2563EB] font-semibold group-hover:underline">
                   Learn more &gt;
                 </Link>

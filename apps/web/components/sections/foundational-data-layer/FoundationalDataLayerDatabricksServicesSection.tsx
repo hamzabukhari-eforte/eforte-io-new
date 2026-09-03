@@ -97,7 +97,7 @@ function ServiceCard({
       <span className="mt-4 text-sm font-medium text-white text-center max-w-[140px]">
         {item.title}
       </span>
-      <p className="mt-2 text-xs text-gray-400 text-center max-w-[180px] leading-relaxed">
+      <p className="mt-2 text-xs text-white text-center max-w-[180px] leading-relaxed">
         {item.description}
       </p>
     </div>
@@ -108,23 +108,21 @@ export default function FoundationalDataLayerDatabricksServicesSection() {
   return (
     <section
       id="databricks-services"
-      className="py-32 bg-black relative overflow-hidden"
+      className="pt-16 bg-black relative overflow-hidden"
       aria-labelledby="databricks-services-heading"
     >
       <Container className="relative z-10">
-        <div className="text-center mb-24">
-          <div className="inline-flex h-10 items-center justify-center px-6 py-0 rounded-full leading-none border border-white/20 mb-8 backdrop-blur-sm bg-black/30">
-            <span className="text-[11px] font-bold tracking-widest text-white uppercase">
-              DATABRICKS
-            </span>
-          </div>
+        <div className="text-center mb-12">
+          <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
+            DATABRICKS
+          </p>
           <h2
             id="databricks-services-heading"
-            className="text-5xl md:text-6xl font-medium text-white mb-6 tracking-tight"
+            className="mb-6 text-[48px] font-medium tracking-tight text-white"
           >
             Our Databricks Expertise
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-base text-white max-w-2xl mx-auto font-light leading-relaxed">
             eForte&apos;s Data Studio and AI Studio have partnered with Databricks
             for over five years, working closely with organizations to unlock the
             full potential of the Lakehouse Platform. Our teams help industry
@@ -159,7 +157,7 @@ export default function FoundationalDataLayerDatabricksServicesSection() {
                 <span className="text-sm font-medium text-white mb-2">
                   {item.title}
                 </span>
-                <p className="text-xs text-gray-400 text-center max-w-[250px]">
+                <p className="text-xs text-white text-center max-w-[250px]">
                   {item.description}
                 </p>
               </div>

@@ -21,7 +21,7 @@ export default function FoundationalDataLayerPage() {
       <FoundationalDataLayerTransformationSection />
       <FoundationalDataLayerDatabricksSection />
       <FoundationalDataLayerDatabricksServicesSection />
-      <VelocityAIInsightsSection />
+      <VelocityAIInsightsSection plainEyebrow />
 
     </main>
   );

@@ -2,7 +2,7 @@
 
 import Container from "@/components/atoms/Container";
 import Image from "next/image";
-import { FaCube, FaAward } from "react-icons/fa";
+import { FaAward } from "react-icons/fa";
 
 const DATABRICKS_IMAGE =
   "/assets/images/foundational-data-layer/databricks-expertise.png";
@@ -11,22 +11,21 @@ export default function FoundationalDataLayerDatabricksSection() {
   return (
     <section
       id="databricks"
-      className="py-24 bg-black relative"
+      className="pt-16 bg-black relative"
       aria-labelledby="databricks-heading"
     >
       <Container className="text-center">
         <div className="mb-12">
-          <div className="flex items-center justify-center gap-2 mb-4 text-gray-400">
-            <FaCube className="text-[#2D4EFF]" />
-            <span className="font-bold tracking-tight">databricks</span>
-          </div>
+          <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
+            DATABRICKS
+          </p>
           <h2
             id="databricks-heading"
-            className="text-5xl font-medium mb-6 text-white max-w-2xl mx-auto"
+            className="mb-6 text-[48px] font-medium text-white max-w-2xl mx-auto"
           >
             Our Databricks expertise
           </h2>
-          <p className="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base text-white max-w-4xl mx-auto leading-relaxed">
             eForte&apos;s Data Studio and AI Studio have partnered with Databricks
             for over five years, working closely with organizations to unlock
             the full potential of the Lakehouse Platform. Our teams help industry
@@ -61,7 +60,7 @@ export default function FoundationalDataLayerDatabricksSection() {
                 <FaAward className="text-black text-xl" />
               </div>
               <div className="text-left">
-                <div className="text-xs text-gray-300 group-hover/card:text-gray-200 transition-colors duration-300">
+                <div className="text-xs text-white transition-colors duration-300">
                   Databricks
                 </div>
                 <div className="font-semibold text-white group-hover/card:text-white transition-colors duration-300">
@@ -73,7 +72,7 @@ export default function FoundationalDataLayerDatabricksSection() {
               <div className="text-4xl font-bold text-white mb-1 group-hover/card:text-white transition-colors duration-300">
                 200+
               </div>
-              <div className="text-[10px] text-gray-300 leading-tight group-hover/card:text-gray-200 transition-colors duration-300">
+              <div className="text-[10px] text-white leading-tight transition-colors duration-300">
                 certified Databricks data analysts, engineers, scientists &amp; machine learning engineers
               </div>
             </div>
@@ -81,7 +80,7 @@ export default function FoundationalDataLayerDatabricksSection() {
               <div className="text-4xl font-bold text-white mb-1 group-hover/card:text-white transition-colors duration-300">
                 20+
               </div>
-              <div className="text-[10px] text-gray-300 leading-tight group-hover/card:text-gray-200 transition-colors duration-300">
+              <div className="text-[10px] text-white leading-tight transition-colors duration-300">
                 years of experience working with data
               </div>
             </div>

@@ -37,7 +37,7 @@ export default function VelocityAICaseStudySection() {
         <h2 className="text-3xl md:text-4xl font-bold mt-4 text-white">
           Velocity AI in action: AquaFit accelerates software delivery and performance insights
         </h2>
-        <p className="text-gray-400 text-sm md:text-base mt-3 md:mt-4 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-white text-sm md:text-base mt-3 md:mt-4 max-w-2xl mx-auto leading-relaxed">
           AquaFit aims to revolutionize smart fitness devices by providing real-time workout analytics, personalized coaching, and seamless app experiences for its users.
         </p>
       </motion.div>
@@ -68,7 +68,7 @@ export default function VelocityAICaseStudySection() {
               transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
             >
               <div className={`text-2xl md:text-3xl lg:text-4xl font-bold mb-1 ${stat.color}`}>{stat.value}</div>
-              <div className="text-[10px] md:text-xs text-gray-300">{stat.label}</div>
+              <div className="text-[10px] md:text-xs text-white">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -84,7 +84,7 @@ export default function VelocityAICaseStudySection() {
               transition={{ duration: 0.5, delay: 0.4 + index * 0.08 }}
             >
               <div className={`text-xl font-bold mb-1 ${stat.color}`}>{stat.value}</div>
-              <div className="text-xs text-gray-300 leading-snug">{stat.label}</div>
+              <div className="text-xs text-white leading-snug">{stat.label}</div>
             </motion.div>
           ))}
         </div>

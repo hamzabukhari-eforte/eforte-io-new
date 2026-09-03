@@ -1,26 +1,16 @@
 "use client";
 
 import ContactCTA from "@/components/atoms/ContactCTA";
+import PartnerLogosRow from "@/components/atoms/PartnerLogosRow";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { section, typography } from "./layout";
 import { useInViewReplay } from "@/lib/useInViewReplay";
-import {
-  FaLayerGroup,
-  FaMicrosoft,
-  FaProjectDiagram,
-  FaSitemap,
-} from "react-icons/fa";
-import { SiNvidia, SiAmazon } from "react-icons/si";
 
-const techStack: { id: string; icon?: React.ReactNode; label: string | null; isText?: boolean }[] = [
-  { id: "databricks", icon: <FaLayerGroup className="text-2xl text-white/80" />, label: "databricks" },
-  { id: "aws", icon: <SiAmazon className="text-3xl text-white/80" />, label: "" },
-  { id: "azure", icon: <FaMicrosoft className="text-2xl text-white/80" />, label: "Azure" },
-  { id: "pilot", icon: <FaSitemap className="text-2xl text-white/80" />, label: "" },
-  { id: "adobe", label: "Adobe Cloude", isText: true },
-  { id: "langgraph", icon: <FaProjectDiagram className="text-xl text-white/80" />, label: "LangGraph" },
-  { id: "nvidia", icon: <SiNvidia className="text-2xl text-white/80" />, label: "Nvidia" },
+const industryLinks = [
+  "High-Tech",
+  "Fintech",
+  "Health & Life-Science",
 ];
 
 export default function VelocityAIHeroSection() {
@@ -30,7 +20,7 @@ export default function VelocityAIHeroSection() {
   return (
     <section
       ref={ref}
-      className={`relative overflow-hidden flex flex-col justify-center items-center bg-black pt-24 pb-16 md:pt-40 md:pb-20 md:min-h-[900px] ${section.paddingX}`}
+      className={`relative overflow-hidden flex flex-col justify-center items-center pt-24 bg-black md:min-h-[500px] lg:min-h-[700px] ${section.paddingX}`}
     >
       <div className="absolute inset-0 z-0">
         <div className="absolute top-[-20%] right-[-30%] md:right-[-10%] w-[120%] md:w-[80%] h-[140%] md:h-[120%] bg-[#581c87] rounded-full blur-[120px] md:blur-[180px] opacity-80 md:opacity-90" />
@@ -38,17 +28,15 @@ export default function VelocityAIHeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent z-0" />
       </div>
 
-      <div className="relative z-10 text-center max-w-5xl mx-auto px-6 mt-[-50px]">
-        <motion.div
-          className="inline-flex h-10 items-center justify-center px-5 py-0 mb-8 rounded-full leading-none border border-white/10 bg-white/5 backdrop-blur-md"
+      <div className="relative z-10 flex flex-col items-center justify-center text-center max-w-5xl mx-auto">
+        <motion.p
+          className={`${typography.sectionLabel} mb-6 md:mb-8`}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span className="text-[11px] uppercase tracking-[0.2em] text-gray-300 font-bold">
-            AI Development Services
-          </span>
-        </motion.div>
+          AI DEVELOPMENT SERVICES
+        </motion.p>
 
         <motion.h1
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[90px] font-medium tracking-tight mb-6 leading-[1.1] text-white drop-shadow-2xl"
@@ -60,7 +48,7 @@ export default function VelocityAIHeroSection() {
         </motion.h1>
 
         <motion.p
-          className="text-sm md:text-lg lg:text-xl text-gray-300/90 max-w-2xl mx-auto mb-8 md:mb-12 px-2 font-light leading-relaxed tracking-wide"
+          className="text-2xl font-light leading-relaxed tracking-wide text-white max-w-2xl mx-auto mb-8 md:mb-12 px-2"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
@@ -69,52 +57,39 @@ export default function VelocityAIHeroSection() {
         </motion.p>
 
         <motion.div
+          className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-base text-white font-medium mb-8 md:mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
         >
+          {industryLinks.map((label) => (
+            <span key={label} className="cursor-pointer transition-colors">
+              {label}
+            </span>
+          ))}
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
+        >
           <ContactCTA
-            className="group relative inline-flex h-10 items-center justify-center px-10 py-0 rounded-full leading-none border-2 border-[#db2777] text-[#db2777] font-medium text-lg transition-all duration-300 hover:bg-[#db2777] hover:text-white hover:shadow-[0_0_30px_rgba(219,39,119,0.4)]"
+            className="inline-flex h-10 items-center justify-center bg-gradient-to-r from-[#be185d] to-[#db2777] hover:from-[#db2777] hover:to-[#be185d] text-white px-8 py-0 md:px-9 md:py-0 rounded-full leading-none text-sm md:text-[15px] font-semibold transition-all shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] hover:shadow-[0_6px_20px_rgba(219,39,119,0.23)] hover:-translate-y-0.5"
           >
-            <span className="relative z-10">Contact Us</span>
+            Let&apos;s build intelligence together
           </ContactCTA>
         </motion.div>
 
-        {/* Tech stack logos */}
         <motion.div
-          className="mt-12 md:mt-32 w-full max-w-4xl mx-auto px-2"
-          initial={{ opacity: 0, y: 30 }}
+          className="w-full"
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
         >
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
-            {techStack.map((item, index) => (
-              <motion.div
-                key={item.id}
-                className="flex items-center gap-2 group cursor-default transition-transform duration-500 hover:-translate-y-1"
-                initial={{ opacity: 0, y: 15 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.6 + index * 0.05 }}
-              >
-                {item.icon}
-                {item.isText ? (
-                  <span className="text-xs md:text-lg font-bold text-white/80 group-hover:text-white tracking-widest uppercase">
-                    {item.label}
-                  </span>
-                ) : (
-                  item.label && (
-                    <span className="text-xs md:text-lg lg:text-xl font-semibold text-white/80 group-hover:text-white tracking-tight">
-                      {item.label}
-                    </span>
-                  )
-                )}
-              </motion.div>
-            ))}
-          </div>
+          <PartnerLogosRow />
         </motion.div>
       </div>
-
-      <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-black to-transparent pointer-events-none z-20" />
     </section>
   );
 }

@@ -64,7 +64,7 @@ export default function VelocityAIMetricsOrbitSection() {
         </motion.h2>
 
         <motion.p
-          className={typography.lead + " text-gray-300 max-w-xl mx-auto mb-8 md:mb-12"}
+          className={typography.lead + " text-white max-w-xl mx-auto mb-8 md:mb-12"}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -93,7 +93,7 @@ export default function VelocityAIMetricsOrbitSection() {
                   <Icon className="text-2xl text-white" />
                 </div>
                 <h3 className="text-sm font-medium text-white mb-1 whitespace-pre-line">{item.title.replace(/\n/g, " ")}</h3>
-                <p className="text-xs text-gray-400 leading-tight whitespace-pre-line">{item.desc.replace(/\n/g, " ")}</p>
+                <p className="text-xs text-white leading-tight whitespace-pre-line">{item.desc.replace(/\n/g, " ")}</p>
               </motion.div>
             );
           })}
@@ -133,7 +133,7 @@ export default function VelocityAIMetricsOrbitSection() {
                 <h3 className="text-white font-medium text-[12px] md:text-[14px] text-center leading-tight mb-1 whitespace-pre-line">
                   {item.title}
                 </h3>
-                <p className="text-gray-400 text-[10px] md:text-[11px] text-center leading-tight whitespace-pre-line">
+                <p className="text-white text-[10px] md:text-[11px] text-center leading-tight whitespace-pre-line">
                   {item.desc}
                 </p>
               </motion.div>

@@ -14,6 +14,8 @@ export const section = {
 export const typography = {
   /** Small badge/label (e.g. "Core Metrics", "5 Key Components") */
   badge: "text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em]",
+  sectionLabel:
+    "text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink",
   /** Section title - mobile to desktop */
   sectionTitle: "text-2xl md:text-4xl lg:text-5xl font-medium tracking-tight",
   /** Section title - larger variant (hero, engineering) */
@@ -23,5 +25,5 @@ export const typography = {
   /** Card title */
   cardTitle: "text-lg md:text-xl font-semibold",
   /** Card body */
-  cardBody: "text-sm md:text-[15px] text-gray-400 leading-relaxed",
+  cardBody: "text-sm md:text-[15px] text-white leading-relaxed",
 } as const;

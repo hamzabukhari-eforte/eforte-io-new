@@ -1,6 +1,8 @@
 "use client";
 
 import Container from "@/components/atoms/Container";
+import type { CSSProperties } from "react";
+import type { IconType } from "react-icons";
 import {
   FaLayerGroup,
   FaCodeBranch,
@@ -13,133 +15,163 @@ import {
   FaBrain,
 } from "react-icons/fa";
 
-const services = [
+const accents = [
+  { color: "#22C55E", glow: "rgba(34, 197, 94, 0.4)" },
+  { color: "#F97316", glow: "rgba(249, 115, 22, 0.4)" },
+  { color: "#EAB308", glow: "rgba(234, 179, 8, 0.4)" },
+  { color: "#0EA5E9", glow: "rgba(14, 165, 233, 0.4)" },
+] as const;
+
+const services: { title: string; description: string; icon: IconType }[] = [
   {
     title: "Data Platform Development",
     description:
       "Design and implement modern data platforms (e.g., Databricks) that enable large-scale data processing and advanced analytics.",
     icon: FaLayerGroup,
-    iconBg: "bg-[#1E2336]",
-    iconColor: "text-[#8BA1F8]",
   },
   {
     title: "Data Engineering and ETL Services",
     description:
       "Build and maintain resilient ETL/ELT pipelines to ensure efficient, scalable data ingestion and transformation.",
     icon: FaCodeBranch,
-    iconBg: "bg-[#251E33]",
-    iconColor: "text-[#A78BFA]",
   },
   {
     title: "Data Quality and Governance",
     description:
       "Establish frameworks, processes, and tooling to ensure data accuracy, consistency, and reliability across the enterprise.",
     icon: FaShieldAlt,
-    iconBg: "bg-[#162D23]",
-    iconColor: "text-[#4ADE80]",
   },
   {
     title: "Data Security and Compliance",
     description:
       "Implement security controls, encryption strategies, and compliance programs aligned with GDPR, HIPAA, CCPA, and other regulatory standards.",
     icon: FaLock,
-    iconBg: "bg-[#331E1E]",
-    iconColor: "text-[#F87171]",
   },
   {
     title: "Data Analytics and Visualization",
     description:
       "Deliver intuitive dashboards and reporting solutions that convert raw data into clear, actionable insights for decision-makers.",
     icon: FaChartLine,
-    iconBg: "bg-[#332516]",
-    iconColor: "text-[#FB923C]",
   },
   {
     title: "Data Migration Services",
     description:
       "Plan and execute seamless migrations from legacy systems to modern, cloud-based data platforms with minimal disruption.",
     icon: FaCloudUploadAlt,
-    iconBg: "bg-[#132E2E]",
-    iconColor: "text-[#2DD4BF]",
   },
   {
     title: "Generative AI Solutions",
     description:
       "Leverage GPT and leading generative models to create personalized content, high-quality visuals, and automated workflows for complex business tasks.",
     icon: FaMagic,
-    iconBg: "bg-[#331E29]",
-    iconColor: "text-[#F472B6]",
   },
   {
     title: "Computer Vision",
     description:
       "Unlock insights from images and video using advanced computer vision techniques for detection, recognition, and tracking.",
     icon: FaEye,
-    iconBg: "bg-[#1E2336]",
-    iconColor: "text-[#8BA1F8]",
   },
   {
     title: "Machine Learning product development and deployment",
     description:
       "Deliver end-to-end ML solutions—from model design and training to validation, deployment, and ongoing optimization in production.",
     icon: FaBrain,
-    iconBg: "bg-[#332D16]",
-    iconColor: "text-[#FACC15]",
   },
 ];
 
+function ServiceCard({
+  title,
+  description,
+  icon: Icon,
+  accentColor,
+  accentGlow,
+}: {
+  title: string;
+  description: string;
+  icon: IconType;
+  accentColor: string;
+  accentGlow: string;
+}) {
+  return (
+    <div
+      className="group relative h-full overflow-hidden rounded-[12px] border bg-default/95 p-6 transition-all duration-300 ease-out md:p-8"
+      style={{ borderColor: "rgba(255,255,255,0.08)" } as CSSProperties}
+      onMouseEnter={(event) => {
+        event.currentTarget.style.borderColor = accentColor;
+        event.currentTarget.style.boxShadow = `0 0 24px ${accentGlow}`;
+      }}
+      onMouseLeave={(event) => {
+        event.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
+        event.currentTarget.style.boxShadow = "none";
+      }}
+    >
+      <div
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        aria-hidden
+      >
+        <div
+          className="absolute right-0 bottom-0 h-full w-full min-h-[60vh] min-w-[50vw]"
+          style={{
+            background: `radial-gradient(ellipse 90% 90% at 100% 100%, ${accentGlow} 0%, transparent 50%)`,
+          }}
+        />
+        <div className="absolute -right-10 -bottom-5 flex items-end justify-end p-0">
+          <div className="origin-bottom-right -mr-2 -mb-2 scale-[4] opacity-20">
+            <Icon size={32} color={accentColor} />
+          </div>
+        </div>
+      </div>
+
+      <div className="relative z-10">
+        <div className="mb-4 transition-transform duration-300 group-hover:scale-105">
+          <Icon size={32} color={accentColor} />
+        </div>
+        <h3 className="mb-3 text-xl font-bold text-white transition-colors duration-300 md:text-2xl">
+          {title}
+        </h3>
+        <p className="text-base leading-relaxed text-white transition-colors duration-300">
+          {description}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function FoundationalDataLayerServicesSection() {
   return (
-    <section id="services" className="py-24 relative bg-black" aria-labelledby="services-heading">
+    <section id="services" className="relative bg-black pt-16" aria-labelledby="services-heading">
       <Container>
-        {/* Header: left block + right paragraph - match HTML flex justify-between */}
-        <div className="flex flex-col md:flex-row justify-between items-start mb-20">
+        <div className="mb-12 flex flex-col items-start justify-between md:flex-row">
           <div>
-            <div className="inline-flex h-10 items-center justify-center px-4 py-0 rounded-full leading-none border border-gray-700 mb-8">
-              <span className="text-[11px] font-bold tracking-widest text-white uppercase block">
-                OUR SERVICES
-              </span>
-            </div>
+            <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
+              OUR SERVICES
+            </p>
             <h2
               id="services-heading"
-              className="text-5xl md:text-[56px] font-medium text-white leading-[1.1]"
+              className="text-[48px] font-medium leading-[1.1] text-white"
             >
               End-to-End Data &<br /> AI Services
             </h2>
           </div>
-          <p className="text-gray-400 max-w-sm mt-8 md:mt-24 text-lg font-light leading-relaxed">
+          <p className="mt-8 max-w-2xl text-[18px] font-light leading-relaxed text-white md:mt-12">
             With over 20 years of experience, eForte delivers comprehensive data
             and AI services that help organizations build trusted data foundations
             and turn intelligence into action.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((item) => {
-            const Icon = item.icon;
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((item, index) => {
+            const accent = accents[index % accents.length];
             return (
-              <div
+              <ServiceCard
                 key={item.title}
-                className="group relative bg-[#0B0B15] border border-white/5 rounded-[12px] p-10 h-[420px] flex flex-col justify-center overflow-hidden transition-all duration-500 hover:border-blue-500/50 hover:shadow-[0_0_50px_-10px_rgba(59,130,246,0.25)] hover:bg-[#0F0F1F] hover:scale-[1.02]"
-              >
-                <div
-                  className="absolute top-0 right-0 w-[350px] h-[350px] bg-blue-900/30 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-                  aria-hidden
-                />
-                <div
-                  className={`w-20 h-20 relative mb-8 flex items-center justify-center ${item.iconBg} rounded-[12px] transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-[0_10px_20px_-5px_rgba(59,130,246,0.3)]`}
-                >
-                  <Icon className={`text-3xl ${item.iconColor} transition-transform duration-500 group-hover:scale-110`} />
-                </div>
-                <div className="relative z-10">
-                  <h3 className="text-xl font-medium text-white mb-3 group-hover:text-blue-50 transition-colors duration-300">
-                    {item.title}
-                  </h3>
-                  <p className="text-[15px] text-gray-400 leading-relaxed font-light group-hover:text-gray-300 transition-colors duration-300">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
+                title={item.title}
+                description={item.description}
+                icon={item.icon}
+                accentColor={accent.color}
+                accentGlow={accent.glow}
+              />
             );
           })}
         </div>

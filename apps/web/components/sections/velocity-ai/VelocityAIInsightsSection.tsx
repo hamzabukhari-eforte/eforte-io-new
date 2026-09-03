@@ -4,17 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import { section, typography } from "./layout";
+import { section } from "./layout";
 import { useInViewReplay } from "@/lib/useInViewReplay";
 import { cn } from "@/lib/utils";
 
 const INSIGHTS_IMG_1 = "/assets/images/velocity-ai/insight-1.png";
 const INSIGHTS_IMG_2 = "/assets/images/velocity-ai/insight-2.png";
 const INSIGHTS_IMG_3 = "/assets/images/velocity-ai/insight-3.png";
-const AVATAR_2 = "/assets/images/velocity-ai/avatar-2.jpg";
-const AVATAR_3 = "/assets/images/velocity-ai/avatar-3.jpg";
-const AVATAR_4 = "/assets/images/velocity-ai/avatar-4.jpg";
-const AVATAR_5 = "/assets/images/velocity-ai/avatar-5.jpg";
+// Profile avatars intentionally unused on cards — kept for possible reuse
+// const AVATAR_2 = "/assets/images/velocity-ai/avatar-2.jpg";
+// const AVATAR_3 = "/assets/images/velocity-ai/avatar-3.jpg";
+// const AVATAR_4 = "/assets/images/velocity-ai/avatar-4.jpg";
+// const AVATAR_5 = "/assets/images/velocity-ai/avatar-5.jpg";
 
 const categories = ["News", "Cloud", "Culture & Events", "Data and AI", "Design", "Case Studies", "Software Engineering"];
 
@@ -25,8 +26,6 @@ const articles: {
   title: string;
   author: string;
   date: string;
-  avatar?: string;
-  avatars?: string[];
 }[] = [
   {
     id: "1",
@@ -35,7 +34,6 @@ const articles: {
     title: "The strategic edge: How eForte's Prompt System brings structure to AI-powered development",
     author: "by Nicolas Gerolami",
     date: "September 1, 2025",
-    avatar: AVATAR_2,
   },
   {
     id: "2",
@@ -44,7 +42,6 @@ const articles: {
     title: "eForte is compliant with NIST AI Risk Management Framework (AI RMF)",
     author: "by Michell Mamrut and Nicolas Gerolami",
     date: "July 29, 2025",
-    avatars: [AVATAR_3, AVATAR_4],
   },
   {
     id: "3",
@@ -53,13 +50,12 @@ const articles: {
     title: "Roo Code review: A perspective on AI-powered coding",
     author: "by Lesly Acuña",
     date: "March 17, 2025",
-    avatar: AVATAR_5,
   },
 ];
 
 export default function VelocityAIInsightsSection({
   className,
-  plainEyebrow = false,
+  plainEyebrow: _plainEyebrow = false,
 }: {
   className?: string;
   plainEyebrow?: boolean;
@@ -72,7 +68,7 @@ export default function VelocityAIInsightsSection({
     <section
       ref={ref}
       className={cn(
-        `pb-16 ${section.paddingX} max-w-[1300px] mx-auto`,
+        `pt-16 pb-16 ${section.paddingX} max-w-[1300px] mx-auto`,
         className
       )}
     >
@@ -82,17 +78,18 @@ export default function VelocityAIInsightsSection({
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        {plainEyebrow ? (
-          <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
-            Expert Insights
-          </p>
-        ) : (
+        <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
+          Expert Insights
+        </p>
+        {/* Capsule eyebrow preserved for possible reuse
+        {plainEyebrow ? null : (
           <div className="inline-flex h-10 items-center justify-center px-4 py-0 md:px-5 rounded-full leading-none border border-[#D3287A] bg-pink-900/5 backdrop-blur-sm mb-4 md:mb-6">
             <span className={typography.badge + " text-[#D3287A] tracking-[0.2em] block"}>
               Expert Insights
             </span>
           </div>
         )}
+        */}
         <h2 className="text-2xl md:text-3xl lg:text-[42px] font-bold text-white tracking-tight leading-tight">
           Imagine. Learn. Discuss.
         </h2>
@@ -134,19 +131,6 @@ export default function VelocityAIInsightsSection({
                   unoptimized
                   className="object-cover w-full h-[240px] transition-transform duration-700 group-hover:scale-105"
                 />
-                {article.avatars ? (
-                  <div className="absolute bottom-1 left-8 flex -space-x-3 z-10">
-                    {article.avatars.map((a, i) => (
-                      <div key={i} className="w-12 h-10 rounded-full border-[3px] border-white overflow-hidden bg-gray-200">
-                        <Image src={a} alt="" width={48} height={48} className="object-cover" />
-                      </div>
-                    ))}
-                  </div>
-                ) : article.avatar ? (
-                  <div className="absolute bottom-1 left-8 w-12 h-10 rounded-full border-[3px] border-white overflow-hidden z-10 bg-gray-200">
-                    <Image src={article.avatar} alt="" width={48} height={48} className="object-cover" />
-                  </div>
-                ) : null}
               </div>
               <div className="p-8 pt-10 flex-1 flex flex-col">
                 <span className="text-[#2563EB] text-[13px] font-semibold mb-3 block">{article.category}</span>
@@ -154,8 +138,8 @@ export default function VelocityAIInsightsSection({
                   {article.title}
                 </h3>
                 <div className="mt-auto">
-                  <p className="text-[13px] text-gray-500 mb-6">{article.author}</p>
-                  <p className="text-[13px] text-gray-400">{article.date}</p>
+                  <p className="text-[13px] text-black mb-6">{article.author}</p>
+                  <p className="text-[13px] text-black">{article.date}</p>
                 </div>
               </div>
             </Link>
