@@ -20,7 +20,7 @@ export default function AgenticOrchestrationHeroSection() {
   return (
     <section
       ref={ref}
-      className={`relative overflow-hidden flex flex-col justify-center items-center bg-black pt-24 md:pt-40 md:min-h-[700px] lg:min-h-[900px] ${section.paddingX}`}
+      className={`relative overflow-hidden flex flex-col justify-center items-center pt-24 bg-black md:min-h-[500px] lg:min-h-[700px] ${section.paddingX}`}
     >
       <div className="absolute inset-0 z-0">
         <div className="absolute top-[-20%] right-[-30%] md:right-[-10%] w-[120%] md:w-[80%] h-[140%] md:h-[120%] bg-[#581c87] rounded-full blur-[120px] md:blur-[180px] opacity-80 md:opacity-90" />
@@ -66,7 +66,7 @@ export default function AgenticOrchestrationHeroSection() {
         </motion.p>
 
         <motion.div
-          className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-base text-white font-medium mb-8 md:mb-20"
+          className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-base text-white font-medium mb-8 md:mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
