@@ -5,7 +5,7 @@ import Image from "next/image";
 import { FaAward } from "react-icons/fa";
 
 const DATABRICKS_IMAGE =
-  "/assets/images/foundational-data-layer/databricks-expertise.png";
+  "/assets/final-images/ai-pillars/foundational-data/databricks-bg.png?v2";
 
 export default function FoundationalDataLayerDatabricksSection() {
   return (
@@ -43,7 +43,7 @@ export default function FoundationalDataLayerDatabricksSection() {
               src={DATABRICKS_IMAGE}
               alt="Professional team working on data and AI in a modern office"
               fill
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              className="w-full h-full object-cover group-hover:grayscale transition-all duration-700"
               sizes="(max-width: 1024px) 100vw, 1024px"
               priority
             />
@@ -86,14 +86,15 @@ export default function FoundationalDataLayerDatabricksSection() {
             </div>
           </div>
 
-          {/* Partner badge: bottom edge aligned with top of image, sitting above as a cap */}
-          <div
-            className="absolute top-12 left-1/2 -translate-x-1/2 -translate-y-full bg-white rounded-b-[12px] px-4 py-2 shadow-lg z-20"
-            aria-hidden
-          >
-            <div className="min-w-20 min-h-10 py-2 px-3 bg-green-700 rounded-b-[12px] flex items-end justify-center text-white text-xs font-bold whitespace-nowrap">
-              PARTNER
-            </div>
+          {/* Databricks Gold badge */}
+          <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20">
+            <Image
+              src="/assets/images/industry/databricks-badge.png"
+              alt="Databricks Brickbuilder Partner Network Gold"
+              width={120}
+              height={120}
+              className="object-contain drop-shadow-lg"
+            />
           </div>
         </div>
       </Container>
