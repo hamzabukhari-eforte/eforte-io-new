@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import { section, typography } from "./layout";
+import { section } from "./layout";
 import { useInViewReplay } from "@/lib/useInViewReplay";
 
 const industries = [
@@ -25,7 +25,7 @@ export default function AgenticOrchestrationRebuildingSection() {
     <section
       ref={ref}
       id="rebuilding-industries"
-      className={`bg-black overflow-hidden relative ${section.padding} ${section.paddingX}`}
+      className={`bg-black overflow-hidden relative py-16 ${section.paddingX}`}
     >
       <div className={`${section.container} grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center`}>
         <motion.div
@@ -34,22 +34,22 @@ export default function AgenticOrchestrationRebuildingSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <h2 className={`${typography.sectionTitleLg} text-white leading-[1.1] mb-6 md:mb-8`}>
+          <h2 className="text-[48px] font-medium tracking-tight text-white leading-[1.1] mb-6 md:mb-8">
             Rebuilding industries with AI
           </h2>
-          <p className={`${typography.lead} text-white max-w-xl mb-8 md:mb-12`}>
+          <p className="text-[18px] font-light leading-relaxed text-white max-w-xl mb-8 md:mb-12">
             eForte empowers organizations to create AI agents and solutions that streamline operations, enhance efficiency, and unlock new revenue streams. By combining specialized AI teams with your deep domain expertise, we operate as a single, integrated unit focused on delivering measurable business impact from day one.
           </p>
           <div className="space-y-4 md:space-y-6">
             <p className="text-lg md:text-xl font-medium text-white">
               Industries We&apos;re Transforming
             </p>
-            <div className="flex flex-wrap gap-x-5 gap-y-2 md:gap-x-6">
+            <div className="flex flex-wrap gap-2 md:gap-3">
               {industries.map(({ label, href }) => (
                 <Link
                   key={label}
                   href={href}
-                  className="text-sm md:text-[15px] font-medium text-primary-pink hover:text-white transition-colors"
+                  className="inline-flex h-10 items-center justify-center rounded-full border border-primary-pink bg-transparent px-4 py-0 text-sm font-medium leading-none text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white md:px-5 md:text-[15px]"
                 >
                   {label}
                 </Link>

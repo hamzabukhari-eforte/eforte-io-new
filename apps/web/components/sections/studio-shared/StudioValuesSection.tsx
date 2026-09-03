@@ -162,7 +162,7 @@ export default function StudioValuesSection({
       )}
     >
       <Container>
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="mx-auto max-w-4xl text-center pt-16">
           <p
             className={cn(
               "text-xs font-semibold uppercase tracking-[0.22em] text-black",
