@@ -22,6 +22,7 @@ const capabilities = [
     iconColor: "text-blue-400",
     title: "Data",
     description: "Data manipulation, engineering, visualization, and prediction analytics.",
+    href: "/capabilities/data",
   },
   {
     id: "ai-ml",
@@ -30,6 +31,7 @@ const capabilities = [
     iconColor: "text-purple-400",
     title: "AI & Machine Learning",
     description: "Generative AI, machine learning, NLP, computer vision.",
+    href: "/capabilities/artificial-intelligence",
   },
   {
     id: "cloud",
@@ -38,6 +40,7 @@ const capabilities = [
     iconColor: "text-indigo-400",
     title: "Cloud SRE & DevOps",
     description: "Cloud migration, CI/CD pipelines, Infrastructure as Code (IaC), MLOps, FinOps.",
+    href: "/capabilities/cloud-sre",
   },
   {
     id: "design",
@@ -46,6 +49,7 @@ const capabilities = [
     iconColor: "text-red-400",
     title: "Product Design",
     description: "UX research, service design, design thinking, and UI design.",
+    href: "/capabilities/product-design",
   },
   {
     id: "app",
@@ -54,6 +58,7 @@ const capabilities = [
     iconColor: "text-green-400",
     title: "App Solutions",
     description: "Native & hybrid apps, SDK development, system integrations, and app store positioning.",
+    href: "/capabilities/app-solutions",
   },
   {
     id: "staff",
@@ -62,6 +67,7 @@ const capabilities = [
     iconColor: "text-orange-400",
     title: "Staff Augmentation – Dedicated Resource Hiring",
     description: "Accelerate delivery with dedicated AI, data, cloud, and engineering talent",
+    href: "/capabilities/staff-augmentation",
   },
 ];
 
@@ -77,8 +83,8 @@ export default function VelocityAICapabilitiesSection() {
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <span className={typography.badge + " text-[#2563EB] tracking-widest"}>AGILE Solutions</span>
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mt-3 md:mt-4 mb-4 md:mb-6 text-white leading-tight">
+        <p className={typography.sectionLabel}>AGILE SOLUTIONS</p>
+        <h2 className="text-2xl md:text-[48px] lg:text-[48px] font-bold mt-3 md:mt-4 mb-4 md:mb-6 text-white leading-tight">
           Capabilities amplified by AI
         </h2>
         <p className={typography.cardBody}>
@@ -104,8 +110,11 @@ export default function VelocityAICapabilitiesSection() {
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-bold mb-2 text-white">{cap.title}</h3>
-                <p className="text-sm text-white mb-2">{cap.description}</p>
-                <Link href="#" className="text-xs text-[#2563EB] font-semibold group-hover:underline">
+                <p className="text-base text-white mb-2">{cap.description}</p>
+                <Link
+                  href={cap.href}
+                  className="text-xs font-semibold text-[#426CFF] transition-colors hover:underline"
+                >
                   Learn more &gt;
                 </Link>
               </div>

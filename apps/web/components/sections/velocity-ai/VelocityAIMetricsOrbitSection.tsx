@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, type CSSProperties } from "react";
 import { useInViewReplay } from "@/lib/useInViewReplay";
 import {
   FaTachometerAlt,
@@ -12,50 +12,88 @@ import {
   FaCheck,
   FaBoxOpen,
 } from "react-icons/fa";
+import type { IconType } from "react-icons";
 import { section, typography } from "./layout";
 
-const orbitItems = [
-  { id: "efficiency", title: "Efficiency Metrics", desc: "Optimize resource\nusage and process flow.", icon: FaTachometerAlt, pos: "center", size: "lg" },
-  { id: "dx", title: "Developer Experience\nMetrics", desc: "Monitor satisfaction,\nengagement, and\nworkflow efficiency.", icon: FaMountain, pos: "top-left" },
-  { id: "security", title: "Security Metrics", desc: "Track vulnerabilities,\ncompliance,\nand risk mitigation.", icon: FaShieldAlt, pos: "top-right" },
-  { id: "maintainability", title: "Code\nMaintainability\nMetrics", desc: "Ensure long-term\nreliability and\nreadability.", icon: FaTerminal, pos: "far-left" },
-  { id: "productivity", title: "Team Productivity\nMetrics", desc: "Measure output, velocity,\nand collaboration\neffectiveness.", icon: FaUsers, pos: "far-right" },
-  { id: "quality", title: "Code\nQuality Metrics", desc: "Assess bugs, coverage,\nand technical debt.", icon: FaCheck, pos: "bottom-left" },
-  { id: "delivery", title: "Delivery\nMetrics", desc: "Evaluate deployment\nfrequency, lead times,\nand release success.", icon: FaBoxOpen, pos: "bottom-right" },
+const ACCENT = "#d32871";
+const ACCENT_GLOW = "rgba(211, 40, 113, 0.4)";
+const ICON_PINK = "#D3287A";
+const ICON_BG = "rgba(211, 40, 113, 0.22)";
+
+const metricViews: {
+  id: string;
+  title: string;
+  desc: string;
+  icon: IconType;
+}[] = [
+  {
+    id: "efficiency",
+    title: "Efficiency Metrics",
+    desc: "Optimize resource usage and process flow.",
+    icon: FaTachometerAlt,
+  },
+  {
+    id: "dx",
+    title: "Developer Experience Metrics",
+    desc: "Monitor satisfaction, engagement, and workflow efficiency.",
+    icon: FaMountain,
+  },
+  {
+    id: "security",
+    title: "Security Metrics",
+    desc: "Track vulnerabilities, compliance, and risk mitigation.",
+    icon: FaShieldAlt,
+  },
+  {
+    id: "maintainability",
+    title: "Code Maintainability Metrics",
+    desc: "Ensure long-term reliability and readability.",
+    icon: FaTerminal,
+  },
+  {
+    id: "productivity",
+    title: "Team Productivity Metrics",
+    desc: "Measure output, velocity, and collaboration effectiveness.",
+    icon: FaUsers,
+  },
+  {
+    id: "quality",
+    title: "Code Quality Metrics",
+    desc: "Assess bugs, coverage, and technical debt.",
+    icon: FaCheck,
+  },
+  {
+    id: "delivery",
+    title: "Delivery Metrics",
+    desc: "Evaluate deployment frequency, lead times, and release success.",
+    icon: FaBoxOpen,
+  },
 ];
 
-const posClasses: Record<string, string> = {
-  center: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30",
-  "top-left": "top-[20%] left-[25%] z-20",
-  "top-right": "top-[20%] right-[25%] z-20",
-  "far-left": "top-[50%] left-[8%] -translate-y-1/2 z-20",
-  "far-right": "top-[50%] right-[8%] -translate-y-1/2 z-20",
-  "bottom-left": "bottom-[15%] left-[25%] z-20",
-  "bottom-right": "bottom-[15%] right-[25%] z-20",
-};
+const rowOne = metricViews.slice(0, 4);
+const rowTwo = metricViews.slice(4);
 
 export default function VelocityAIMetricsOrbitSection() {
   const ref = useRef(null);
   const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
-    <section ref={ref} className={`bg-black relative overflow-hidden flex flex-col items-center ${section.padding} ${section.paddingX}`}>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1400px] h-[800px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-fuchsia-900/10 via-black to-black pointer-events-none z-0 max-w-full max-h-full hidden lg:block" />
-
-      <div className="max-w-7xl mx-auto text-center relative z-10 w-full">
-        <motion.div
-          className="inline-flex h-10 items-center justify-center px-4 py-0 md:px-6 rounded-full leading-none border border-white/20 bg-white/5 backdrop-blur-sm mb-4 md:mb-8"
+    <section
+      ref={ref}
+      className={`bg-black relative overflow-hidden ${section.padding} ${section.paddingX}`}
+    >
+      <div className="max-w-7xl mx-auto w-full text-center relative z-10">
+        <motion.p
+          className={`${typography.sectionLabel} mb-4`}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <span className={typography.badge + " text-white"}>
-            Core Metrics
-          </span>
-        </motion.div>
+          CORE METRICS
+        </motion.p>
 
         <motion.h2
-          className={`${typography.sectionTitle} font-medium text-white mb-4 md:mb-6 tracking-tight`}
+          className={`${typography.sectionTitle} font-bold text-white mb-4 md:mb-6 tracking-tight`}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
@@ -64,83 +102,107 @@ export default function VelocityAIMetricsOrbitSection() {
         </motion.h2>
 
         <motion.p
-          className={typography.lead + " text-white max-w-xl mx-auto mb-8 md:mb-12"}
+          className={`${typography.lead} text-white max-w-xl mx-auto mb-10 md:mb-14`}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
         >
-          Our team tracks a comprehensive set of metrics to evaluate performance, identify opportunities, and drive continuous improvement.
+          Our team tracks a comprehensive set of metrics to evaluate performance,
+          identify opportunities, and drive continuous improvement.
         </motion.p>
 
-        {/* Mobile/tablet: stacked cards (like velocityAI-mobile.html) */}
-        <motion.div
-          className="lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mt-8"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          {orbitItems.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <motion.div
+        <div className="mx-auto flex max-w-6xl flex-col gap-5 md:gap-6">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 md:gap-6">
+            {rowOne.map((item, index) => (
+              <MetricCard
                 key={item.id}
-                className="flex flex-col items-center text-center bg-gradient-to-b from-[#1e1b4b] to-[#0f0a2a] border border-indigo-500/30 rounded-[12px] p-6"
-                initial={{ opacity: 0, y: 16 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.05 }}
-              >
-                <div className="w-16 h-16 rounded-[12px] bg-gradient-to-b from-[#1e1b4b] to-[#0f0a2a] border border-indigo-500/30 flex items-center justify-center mb-3 mx-auto">
-                  <Icon className="text-2xl text-white" />
-                </div>
-                <h3 className="text-sm font-medium text-white mb-1 whitespace-pre-line">{item.title.replace(/\n/g, " ")}</h3>
-                <p className="text-xs text-white leading-tight whitespace-pre-line">{item.desc.replace(/\n/g, " ")}</p>
-              </motion.div>
-            );
-          })}
-        </motion.div>
-
-        {/* Desktop: orbit layout */}
-        <motion.div
-          className="hidden lg:block relative w-full max-w-[1000px] mx-auto h-[550px] mt-16 perspective-[2000px] min-h-[500px]"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="absolute w-[700px] max-w-[90%] h-[300px] rounded-full border border-white/5 bg-gradient-to-b from-fuchsia-900/10 to-transparent shadow-[0_0_80px_rgba(134,25,143,0.15)] [transform:rotateX(75deg)]" />
-            <div className="absolute w-[500px] max-w-[70%] h-[200px] rounded-full border border-white/5 bg-gradient-to-b from-fuchsia-900/15 to-transparent shadow-[0_0_60px_rgba(134,25,143,0.2)] [transform:rotateX(75deg)]" />
-            <div className="absolute w-[300px] max-w-[50%] h-[120px] rounded-full border border-white/5 bg-gradient-to-b from-fuchsia-900/20 to-transparent shadow-[0_0_40px_rgba(134,25,143,0.25)] [transform:rotateX(75deg)]" />
+                item={item}
+                isInView={isInView}
+                delay={0.3 + index * 0.06}
+              />
+            ))}
           </div>
-          {orbitItems.map((item, index) => {
-            const Icon = item.icon;
-            const isCenter = item.pos === "center";
-            const boxSize = isCenter ? "w-24 h-24" : "w-20 h-20";
-            const iconSize = isCenter ? "text-4xl" : "text-3xl";
-            return (
-              <motion.div
+
+          <div className="flex flex-col items-stretch justify-center gap-5 sm:flex-row sm:flex-wrap md:gap-6">
+            {rowTwo.map((item, index) => (
+              <MetricCard
                 key={item.id}
-                className={`absolute flex flex-col items-center ${posClasses[item.pos]}`}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.05 }}
-              >
-                <div
-                  className={`${boxSize} rounded-[12px] bg-gradient-to-b from-[#1e1b4b] to-[#0f0a2a] border border-indigo-500/30 flex items-center justify-center mb-3 shadow-[0_0_30px_rgba(79,70,229,0.2)] hover:scale-110 transition-transform duration-300 relative overflow-hidden group cursor-default ${isCenter ? "mb-4 shadow-[0_0_40px_rgba(79,70,229,0.4)]" : ""}`}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/25 to-transparent opacity-40" />
-                  <Icon className={`${iconSize} text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.45)] relative z-10`} />
-                </div>
-                <h3 className="text-white font-medium text-[12px] md:text-[14px] text-center leading-tight mb-1 whitespace-pre-line">
-                  {item.title}
-                </h3>
-                <p className="text-white text-[10px] md:text-[11px] text-center leading-tight whitespace-pre-line">
-                  {item.desc}
-                </p>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+                item={item}
+                isInView={isInView}
+                delay={0.55 + index * 0.06}
+                className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc((100%-4.5rem)/4)]"
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
+  );
+}
+
+function MetricCard({
+  item,
+  isInView,
+  delay,
+  className = "",
+}: {
+  item: (typeof metricViews)[number];
+  isInView: boolean;
+  delay: number;
+  className?: string;
+}) {
+  const Icon = item.icon;
+
+  return (
+    <motion.div
+      className={`group relative overflow-hidden rounded-[12px] border bg-[#1a1a1a] px-4 py-5 text-left transition-all duration-300 ease-out md:px-5 md:py-6 ${className}`}
+      style={{ borderColor: "rgba(255,255,255,0.08)" } as CSSProperties}
+      initial={{ opacity: 0, y: 24 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay, ease: "easeOut" }}
+      onMouseEnter={(event) => {
+        event.currentTarget.style.borderColor = ACCENT;
+        event.currentTarget.style.boxShadow = `0 0 24px ${ACCENT_GLOW}`;
+      }}
+      onMouseLeave={(event) => {
+        event.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
+        event.currentTarget.style.boxShadow = "none";
+      }}
+    >
+      {/* Methodology-style hover: corner glow + watermark icon */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        aria-hidden
+      >
+        <div
+          className="absolute right-0 bottom-0 h-full w-full min-h-[60vh] min-w-[50vw]"
+          style={{
+            background: `radial-gradient(ellipse 90% 90% at 100% 100%, ${ACCENT_GLOW} 0%, transparent 50%)`,
+          }}
+        />
+        <div className="absolute -right-10 -bottom-5 flex items-end justify-end p-0">
+          <div className="origin-bottom-right -mr-2 -mb-2 scale-[4] opacity-20">
+            <Icon size={32} color={ACCENT} />
+          </div>
+        </div>
+      </div>
+
+      <div className="relative z-10">
+        <div className="mb-4 transition-transform duration-300 group-hover:scale-105">
+          <div
+            className="flex h-10 w-10 items-center justify-center rounded-full md:h-11 md:w-11"
+            style={{ backgroundColor: ICON_BG }}
+          >
+            <Icon size={18} color={ICON_PINK} className="shrink-0" />
+          </div>
+        </div>
+        <h3 className="mb-3 text-xl font-bold text-white transition-colors duration-300 md:text-xl">
+          {item.title}
+        </h3>
+        <p className="text-sm leading-relaxed text-white transition-colors duration-300 md:text-base">
+          {item.desc}
+        </p>
+      </div>
+    </motion.div>
   );
 }

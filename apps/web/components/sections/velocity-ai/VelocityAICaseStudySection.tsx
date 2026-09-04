@@ -1,18 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link"; // preserved with Read Case Study CTA
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { section, typography } from "./layout";
 import { useInViewReplay } from "@/lib/useInViewReplay";
 
-const CASE_STUDY_IMG = "/assets/images/velocity-ai/case-study-myrow.png";
+const CASE_STUDY_IMG = "/assets/final-images/ai-pillars/velocity-ai/dart.png?v3";
 
 const stats = [
-  { value: "+55%", label: "Boost in DORA metrics, accelerating feature delivery", color: "text-[#2563EB]", delay: 0 },
-  { value: "100%", label: "Code review coverage, eliminating unreviewed merges", color: "text-purple-400", delay: 0.1 },
-  { value: "-35%", label: "Shorter incident resolution cycles", color: "text-emerald-400", delay: 0.2 },
+  { value: "10x", label: "Faster resume screening with AI-powered parsing", color: "text-white", delay: 0 },
+  { value: "Auto", label: "Skill and experience extraction from every upload", color: "text-white", delay: 0.1 },
+  { value: "Smart", label: "Personalized growth insights for every candidate", color: "text-white", delay: 0.2 },
 ];
 
 const statPositions = [
@@ -26,19 +26,19 @@ export default function VelocityAICaseStudySection() {
   const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
-    <section ref={ref} className="py-24 bg-[#02040a]">
+    <section ref={ref} className="pt-16 bg-[#02040a]">
       <motion.div
         className="max-w-5xl mx-auto text-center mb-16 px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <span className="text-xs font-bold tracking-widest text-[#2563EB] uppercase">Case Study</span>
-        <h2 className="text-3xl md:text-4xl font-bold mt-4 text-white">
-          Velocity AI in action: AquaFit accelerates software delivery and performance insights
+        <p className={`${typography.sectionLabel} mb-4`}>CASE STUDY</p>
+        <h2 className="text-3xl md:text-[48px] lg:text-[48px] font-bold text-white">
+          Velocity AI in action: DART accelerates intelligent resume screening and growth insights
         </h2>
         <p className="text-white text-sm md:text-base mt-3 md:mt-4 max-w-2xl mx-auto leading-relaxed">
-          AquaFit aims to revolutionize smart fitness devices by providing real-time workout analytics, personalized coaching, and seamless app experiences for its users.
+          DART is an AI-powered resume screening platform that parses uploaded resumes, extracts skills and experience, and delivers personalized growth insights—helping organizations identify the right talent and guide employees toward meaningful development opportunities.
         </p>
       </motion.div>
 
@@ -51,7 +51,7 @@ export default function VelocityAICaseStudySection() {
         >
           <Image
             src={CASE_STUDY_IMG}
-            alt="Case study - Myrow"
+            alt="Case study - DART AI resume screening"
             fill
             className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
           />
@@ -61,7 +61,7 @@ export default function VelocityAICaseStudySection() {
           {stats.map((stat, index) => (
             <motion.div
               key={stat.value}
-              className={`absolute hidden md:block ${statPositions[index]} bg-[#03050C]/80 backdrop-blur-md border border-white/10 p-6 rounded-[12px] animate-float`}
+              className={`absolute hidden md:block ${statPositions[index]} rounded-[12px] border border-white/25 bg-white/10 p-6 shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl backdrop-saturate-150 animate-float`}
               style={{ animationDelay: `${index}s` }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -78,7 +78,7 @@ export default function VelocityAICaseStudySection() {
           {stats.map((stat, index) => (
             <motion.div
               key={stat.value}
-              className="bg-[#03050C]/90 backdrop-blur-md border border-white/10 p-4 rounded-[12px]"
+              className="rounded-[12px] border border-white/25 bg-white/10 p-4 shadow-[0_8px_32px_rgba(0,0,0,0.25)] backdrop-blur-xl backdrop-saturate-150"
               initial={{ opacity: 0, y: 12 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.4 + index * 0.08 }}
@@ -90,6 +90,7 @@ export default function VelocityAICaseStudySection() {
         </div>
       </div>
 
+      {/* Read Case Study CTA preserved for possible future reuse
       <motion.div
         className="text-center mt-8 md:mt-12"
         initial={{ opacity: 0, y: 20 }}
@@ -103,6 +104,7 @@ export default function VelocityAICaseStudySection() {
           Read Case Study
         </Link>
       </motion.div>
+      */}
     </section>
   );
 }

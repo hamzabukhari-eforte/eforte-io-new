@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { FaGithub } from "react-icons/fa";
@@ -8,8 +7,431 @@ import { SiJira, SiGitlab, SiVscodium } from "react-icons/si";
 import { section, typography } from "./layout";
 import { useInViewReplay } from "@/lib/useInViewReplay";
 
-const BENTO_CARD_1_IMG = "/assets/images/velocity-ai/bento-ai-pods.png";
-const BENTO_CARD_3_IMG = "/assets/images/velocity-ai/bento-metrics-chart.png";
+const BLUE = "#426CFF";
+const PINK = "#D3287A";
+
+/* PNG paths preserved for possible reuse:
+   /assets/images/velocity-ai/bento-ai-pods.png
+   /assets/images/velocity-ai/bento-metrics-chart.png */
+
+const easeSoft = [0.45, 0, 0.55, 1] as const;
+
+function AiPodsSvg() {
+  // AI at the center of a cross-functional engineering pod
+  const roles = [
+    { x: 110, y: 28, label: "Design" },
+    { x: 178, y: 80, label: "Build" },
+    { x: 110, y: 132, label: "Test" },
+    { x: 42, y: 80, label: "Ship" },
+  ];
+
+  return (
+    <svg
+      viewBox="0 0 220 160"
+      className="h-auto w-full max-h-[180px] transition-transform duration-500 group-hover:scale-105"
+      fill="none"
+      aria-hidden
+    >
+      <defs>
+        <radialGradient id="podCoreGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor={BLUE} stopOpacity="0.45" />
+          <stop offset="100%" stopColor={BLUE} stopOpacity="0" />
+        </radialGradient>
+        <linearGradient id="podRing" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor={BLUE} />
+          <stop offset="100%" stopColor={PINK} stopOpacity="0.7" />
+        </linearGradient>
+      </defs>
+
+      <motion.circle
+        cx="110"
+        cy="80"
+        r="62"
+        fill="url(#podCoreGlow)"
+        animate={{ opacity: [0.55, 1, 0.55] }}
+        transition={{ duration: 4.5, repeat: Infinity, ease: easeSoft }}
+      />
+
+      {roles.map((role, i) => (
+        <motion.line
+          key={`line-${role.label}`}
+          x1="110"
+          y1="80"
+          x2={role.x}
+          y2={role.y}
+          stroke="url(#podRing)"
+          strokeWidth="1.5"
+          animate={{ opacity: [0.3, 0.75, 0.3] }}
+          transition={{
+            duration: 3.2,
+            delay: i * 0.35,
+            repeat: Infinity,
+            ease: easeSoft,
+          }}
+        />
+      ))}
+
+      <motion.circle
+        cx="110"
+        cy="80"
+        r="54"
+        stroke="white"
+        strokeOpacity="0.2"
+        strokeWidth="1.5"
+        strokeDasharray="4 6"
+        animate={{ strokeDashoffset: [0, -40] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
+      />
+
+      {roles.map((role, i) => (
+        <motion.g
+          key={role.label}
+          animate={{ scale: [1, 1.06, 1] }}
+          transition={{
+            duration: 3.5,
+            delay: i * 0.4,
+            repeat: Infinity,
+            ease: easeSoft,
+          }}
+          style={{ transformOrigin: `${role.x}px ${role.y}px` }}
+        >
+          <circle cx={role.x} cy={role.y} r="16" fill="#0B1020" stroke={BLUE} strokeWidth="1.5" />
+          <circle cx={role.x} cy={role.y - 3} r="4" fill="white" opacity="0.85" />
+          <path
+            d={`M${role.x - 7} ${role.y + 8} Q${role.x} ${role.y + 2} ${role.x + 7} ${role.y + 8}`}
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            opacity="0.7"
+          />
+        </motion.g>
+      ))}
+
+      <motion.g
+        animate={{ scale: [1, 1.05, 1] }}
+        transition={{ duration: 3, repeat: Infinity, ease: easeSoft }}
+        style={{ transformOrigin: "110px 80px" }}
+      >
+        <circle cx="110" cy="80" r="22" fill="#0B1020" stroke="url(#podRing)" strokeWidth="2" />
+        <circle cx="110" cy="80" r="22" fill={BLUE} fillOpacity="0.15" />
+      </motion.g>
+
+      <motion.g
+        animate={{ rotate: [0, 360] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
+        style={{ transformOrigin: "110px 80px" }}
+      >
+        <path
+          d="M110 66 L113 76 L123 79 L113 82 L110 92 L107 82 L97 79 L107 76 Z"
+          fill={PINK}
+        />
+      </motion.g>
+      <circle cx="110" cy="80" r="3" fill="white" />
+    </svg>
+  );
+}
+
+function EngineeringFrameworkSvg() {
+  const stages = [
+    { y: 36, label: "Design", accent: BLUE, progress: 12 },
+    { y: 84, label: "Develop", accent: "#7C9BFF", progress: 20 },
+    { y: 132, label: "Deliver", accent: PINK, progress: 28 },
+  ];
+
+  return (
+    <svg
+      viewBox="0 0 240 180"
+      className="h-auto w-full max-h-[200px] transition-transform duration-500 group-hover:scale-105"
+      fill="none"
+      aria-hidden
+    >
+      <defs>
+        <linearGradient id="fwAiRibbon" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor={BLUE} />
+          <stop offset="100%" stopColor={PINK} />
+        </linearGradient>
+      </defs>
+
+      <motion.path
+        d="M48 28 V152"
+        stroke="url(#fwAiRibbon)"
+        strokeWidth="3"
+        strokeLinecap="round"
+        initial={{ pathLength: 0 }}
+        animate={{ pathLength: [0, 1, 1, 0] }}
+        transition={{
+          duration: 5.5,
+          times: [0, 0.45, 0.7, 1],
+          repeat: Infinity,
+          ease: easeSoft,
+          repeatDelay: 0.4,
+        }}
+      />
+      <motion.circle
+        cx="48"
+        cy="28"
+        r="6"
+        fill={BLUE}
+        animate={{ opacity: [0.5, 1, 0.5] }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: easeSoft }}
+      />
+      <motion.circle
+        cx="48"
+        cy="152"
+        r="6"
+        fill={PINK}
+        animate={{ opacity: [0.5, 1, 0.5] }}
+        transition={{ duration: 2.5, delay: 0.4, repeat: Infinity, ease: easeSoft }}
+      />
+
+      {stages.map((stage, i) => (
+        <motion.g
+          key={stage.label}
+          initial={{ opacity: 0.35, x: -6 }}
+          animate={{ opacity: [0.4, 1, 1, 0.4], x: [-6, 0, 0, -6] }}
+          transition={{
+            duration: 5.5,
+            delay: 0.35 + i * 0.35,
+            times: [0, 0.2, 0.75, 1],
+            repeat: Infinity,
+            ease: easeSoft,
+            repeatDelay: 0.4,
+          }}
+        >
+          <rect
+            x="68"
+            y={stage.y - 18}
+            width="148"
+            height="36"
+            rx="10"
+            fill="#12162a"
+            stroke="white"
+            strokeOpacity="0.1"
+          />
+          <rect x="68" y={stage.y - 18} width="5" height="36" rx="2" fill={stage.accent} />
+          <line
+            x1="48"
+            y1={stage.y}
+            x2="68"
+            y2={stage.y}
+            stroke={stage.accent}
+            strokeWidth="1.5"
+            strokeOpacity="0.6"
+          />
+          <motion.rect
+            x="78"
+            y={stage.y - 9}
+            width="28"
+            height="18"
+            rx="5"
+            fill={stage.accent}
+            fillOpacity="0.2"
+            stroke={stage.accent}
+            strokeWidth="1"
+            animate={{ opacity: [0.6, 1, 0.6] }}
+            transition={{
+              duration: 2.2,
+              delay: i * 0.3,
+              repeat: Infinity,
+              ease: easeSoft,
+            }}
+          />
+          <text
+            x="92"
+            y={stage.y + 4}
+            fill={stage.accent}
+            fontSize="8"
+            fontFamily="sans-serif"
+            fontWeight="700"
+            textAnchor="middle"
+          >
+            AI
+          </text>
+          <text
+            x="118"
+            y={stage.y + 5}
+            fill="white"
+            fontSize="13"
+            fontFamily="sans-serif"
+            fontWeight="600"
+          >
+            {stage.label}
+          </text>
+          <rect x="176" y={stage.y - 4} width="28" height="8" rx="3" fill="white" fillOpacity="0.08" />
+          <motion.rect
+            x="176"
+            y={stage.y - 4}
+            height="8"
+            rx="3"
+            fill={stage.accent}
+            fillOpacity="0.7"
+            initial={{ width: 0 }}
+            animate={{ width: [0, stage.progress, stage.progress, 0] }}
+            transition={{
+              duration: 5.5,
+              delay: 0.5 + i * 0.35,
+              times: [0, 0.35, 0.75, 1],
+              repeat: Infinity,
+              ease: easeSoft,
+              repeatDelay: 0.4,
+            }}
+          />
+        </motion.g>
+      ))}
+    </svg>
+  );
+}
+
+function MetricsKpiSvg() {
+  return (
+    <svg
+      viewBox="0 0 240 180"
+      className="h-auto w-full max-h-[200px] transition-transform duration-500 group-hover:scale-105"
+      fill="none"
+      aria-hidden
+    >
+      <defs>
+        <linearGradient id="kpiAiBar" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" stopColor={BLUE} stopOpacity="0.35" />
+          <stop offset="100%" stopColor={BLUE} />
+        </linearGradient>
+        <linearGradient id="kpiUplift" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor={BLUE} />
+          <stop offset="100%" stopColor={PINK} />
+        </linearGradient>
+      </defs>
+
+      <rect
+        x="20"
+        y="24"
+        width="140"
+        height="132"
+        rx="12"
+        fill="#12162a"
+        stroke="white"
+        strokeOpacity="0.1"
+      />
+
+      <text x="36" y="48" fill="white" fontSize="10" fontFamily="sans-serif" opacity="0.5">
+        Baseline vs AI
+      </text>
+
+      <text x="36" y="78" fill="white" fontSize="9" fontFamily="sans-serif" opacity="0.55">
+        Non-AI
+      </text>
+      <rect x="36" y="86" width="100" height="12" rx="4" fill="white" fillOpacity="0.08" />
+      <motion.rect
+        x="36"
+        y="86"
+        height="12"
+        rx="4"
+        fill="white"
+        fillOpacity="0.28"
+        initial={{ width: 0 }}
+        animate={{ width: [0, 48, 48, 0] }}
+        transition={{
+          duration: 5,
+          times: [0, 0.35, 0.7, 1],
+          repeat: Infinity,
+          ease: easeSoft,
+          repeatDelay: 0.35,
+        }}
+      />
+
+      <text x="36" y="122" fill={BLUE} fontSize="9" fontFamily="sans-serif" fontWeight="600">
+        With AI
+      </text>
+      <rect x="36" y="130" width="100" height="12" rx="4" fill="white" fillOpacity="0.08" />
+      <motion.rect
+        x="36"
+        y="130"
+        height="12"
+        rx="4"
+        fill="url(#kpiAiBar)"
+        initial={{ width: 0 }}
+        animate={{ width: [0, 92, 92, 0] }}
+        transition={{
+          duration: 5,
+          delay: 0.2,
+          times: [0, 0.4, 0.7, 1],
+          repeat: Infinity,
+          ease: easeSoft,
+          repeatDelay: 0.35,
+        }}
+      />
+
+      <motion.g
+        animate={{ opacity: [0.7, 1, 0.7], scale: [0.97, 1.03, 0.97] }}
+        transition={{ duration: 3.5, repeat: Infinity, ease: easeSoft }}
+        style={{ transformOrigin: "198px 68px" }}
+      >
+        <rect
+          x="172"
+          y="40"
+          width="52"
+          height="56"
+          rx="10"
+          fill="#0B1020"
+          stroke="url(#kpiUplift)"
+          strokeWidth="1.5"
+        />
+        <text
+          x="198"
+          y="68"
+          fill={PINK}
+          fontSize="16"
+          fontFamily="sans-serif"
+          fontWeight="700"
+          textAnchor="middle"
+        >
+          +55%
+        </text>
+        <text
+          x="198"
+          y="84"
+          fill="white"
+          fontSize="8"
+          fontFamily="sans-serif"
+          opacity="0.55"
+          textAnchor="middle"
+        >
+          uplift
+        </text>
+      </motion.g>
+
+      <motion.rect
+        x="172"
+        y="108"
+        width="52"
+        height="22"
+        rx="6"
+        fill="#12162a"
+        stroke="white"
+        strokeOpacity="0.1"
+        animate={{ opacity: [0.55, 1, 0.55] }}
+        transition={{ duration: 2.8, repeat: Infinity, ease: easeSoft }}
+      />
+      <text x="198" y="123" fill="white" fontSize="9" fontFamily="sans-serif" fontWeight="600" textAnchor="middle">
+        KPI
+      </text>
+      <motion.rect
+        x="172"
+        y="136"
+        width="52"
+        height="22"
+        rx="6"
+        fill="#12162a"
+        stroke={PINK}
+        strokeOpacity="0.4"
+        animate={{ opacity: [0.55, 1, 0.55] }}
+        transition={{ duration: 2.8, delay: 0.35, repeat: Infinity, ease: easeSoft }}
+      />
+      <text x="198" y="151" fill={PINK} fontSize="9" fontFamily="sans-serif" fontWeight="600" textAnchor="middle">
+        Score
+      </text>
+    </svg>
+  );
+}
 
 export default function VelocityAIFrameworkSection() {
   const ref = useRef(null);
@@ -23,12 +445,10 @@ export default function VelocityAIFrameworkSection() {
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <div className="inline-flex h-10 items-center justify-center px-3 py-0 md:px-4 rounded-full leading-none border border-white/20 bg-white/5 backdrop-blur-sm mb-4 md:mb-6">
-          <span className={typography.badge + " text-white tracking-widest"}>
-            5 Key Components
-          </span>
-        </div>
-        <h3 className="text-2xl md:text-3xl lg:text-[40px] font-medium text-white tracking-tight">
+        <p className={`${typography.sectionLabel} mb-4 md:mb-6`}>
+          5 KEY COMPONENTS
+        </p>
+        <h3 className="text-2xl md:text-[48px] lg:text-[48px] font-medium text-white tracking-tight">
           eForte Velocity AI framework
         </h3>
       </motion.div>
@@ -43,15 +463,8 @@ export default function VelocityAIFrameworkSection() {
         >
           <div className="flex-1 flex items-center justify-center relative">
             <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 to-transparent opacity-50" />
-            <div className="relative w-full h-full flex items-center justify-center">
-              <div className="absolute w-48 h-48 rounded-full border border-dashed border-white/20 animate-spin-slow" />
-              <Image
-                src={BENTO_CARD_1_IMG}
-                alt="AI-enabled Pods"
-                width={180}
-                height={180}
-                className="w-full h-auto max-h-[180px] object-contain relative z-10 mix-blend-screen opacity-90 group-hover:scale-105 transition-transform duration-500"
-              />
+            <div className="relative z-10 w-full max-w-[220px]">
+              <AiPodsSvg />
             </div>
           </div>
           <div className="mt-4 md:mt-6 relative z-10">
@@ -69,23 +482,9 @@ export default function VelocityAIFrameworkSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
         >
-          <div className="flex-1 flex items-center justify-center relative bg-[#05060D] rounded-[12px] border border-white/5 overflow-hidden">
-            <div className="w-full p-4 font-mono text-xs text-blue-300/80 leading-loose">
-              <div className="flex items-center gap-2 mb-4 border-b border-white/5 pb-2">
-                <span className="w-2 h-2 rounded-full bg-red-500" />
-                <span className="w-2 h-2 rounded-full bg-yellow-500" />
-                <span className="w-2 h-2 rounded-full bg-green-500" />
-                <div className="ml-auto flex gap-2 text-[10px] text-gray-500">
-                  <span className="bg-white/10 px-1 rounded">HTML</span>
-                  <span>React</span>
-                </div>
-              </div>
-              <div className="opacity-70">
-                <span className="text-gray-600">1</span> &lt;html lang=&quot;en&quot;&gt;<br />
-                <span className="text-gray-600">2</span> &lt;head&gt;<br />
-                <span className="text-gray-600">3</span> &nbsp;&nbsp;&lt;meta <span className="bg-blue-500/20 text-blue-200 px-1">charset=&quot;UTF-8&quot;</span>&gt;<br />
-                <span className="text-gray-600">4</span> &nbsp;&nbsp;&lt;meta name=&quot;viewport&quot;
-              </div>
+          <div className="flex-1 flex items-center justify-center relative">
+            <div className="relative z-10 w-full max-w-[240px]">
+              <EngineeringFrameworkSvg />
             </div>
           </div>
           <div className="mt-4 md:mt-6 relative z-10">
@@ -105,17 +504,8 @@ export default function VelocityAIFrameworkSection() {
         >
           <div className="flex-1 flex items-center justify-center relative">
             <div className="absolute inset-0 bg-gradient-to-t from-purple-900/10 to-transparent opacity-30" />
-            <div className="w-full h-full flex items-center justify-center p-4">
-              <Image
-                src={BENTO_CARD_3_IMG}
-                alt="Defined metrics"
-                width={200}
-                height={200}
-                className="w-full h-auto max-h-[200px] object-contain mix-blend-screen opacity-90 group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
-            <div className="absolute bottom-8 left-8 right-8 flex justify-between text-[10px] text-gray-600 font-mono">
-              <span>0</span><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span>
+            <div className="relative z-10 w-full max-w-[240px]">
+              <MetricsKpiSvg />
             </div>
           </div>
           <div className="mt-4 md:mt-6 relative z-10">
@@ -169,13 +559,13 @@ export default function VelocityAIFrameworkSection() {
             </p>
           </div>
           <div className="relative w-32 h-32 flex items-center justify-center">
-            <div className="absolute inset-0 bg-blue-500/20 blur-2xl rounded-full" />
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 p-[2px] relative z-20 shadow-[0_0_20px_rgba(59,130,246,0.5)]">
+            <div className="absolute inset-0 rounded-full bg-[#426CFF]/20 blur-2xl" />
+            <div className="w-16 h-16 rounded-full bg-[#426CFF] p-[2px] relative z-20 shadow-[0_0_20px_rgba(66,108,255,0.5)]">
               <div className="w-full h-full rounded-full bg-[#0A0B14] flex items-center justify-center overflow-hidden">
                 <span className="text-white text-2xl">🤖</span>
               </div>
             </div>
-            <div className="inline-flex items-center justify-center h-10 absolute -bottom-4 right-0 bg-[#3B82F6] text-white text-[10px] font-bold px-3 py-0 rounded-full leading-none shadow-lg z-30">
+            <div className="inline-flex items-center justify-center h-10 absolute -bottom-4 right-0 bg-[#426CFF] text-white text-[10px] font-bold px-3 py-0 rounded-full leading-none shadow-lg z-30">
               AI Steve
             </div>
           </div>

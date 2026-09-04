@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
-import { section } from "./layout";
+import { section, typography } from "./layout";
 import { useInViewReplay } from "@/lib/useInViewReplay";
 import { cn } from "@/lib/utils";
 
@@ -78,8 +78,8 @@ export default function VelocityAIInsightsSection({
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
-          Expert Insights
+        <p className={`${typography.sectionLabel} mb-4`}>
+          EXPERT INSIGHTS
         </p>
         {/* Capsule eyebrow preserved for possible reuse
         {plainEyebrow ? null : (
@@ -90,7 +90,7 @@ export default function VelocityAIInsightsSection({
           </div>
         )}
         */}
-        <h2 className="text-2xl md:text-3xl lg:text-[42px] font-bold text-white tracking-tight leading-tight">
+        <h2 className="text-2xl md:text-[48px] lg:text-[48px] font-bold text-white tracking-tight leading-tight">
           Imagine. Learn. Discuss.
         </h2>
         <div className="flex flex-wrap justify-center gap-2 md:gap-3 mt-6 md:mt-10">

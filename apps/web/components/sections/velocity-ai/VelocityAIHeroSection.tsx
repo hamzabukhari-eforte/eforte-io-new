@@ -56,6 +56,19 @@ export default function VelocityAIHeroSection() {
           Secure-First Governance for AI Delivery
         </motion.p>
 
+        <motion.p
+          className="text-lg font-light leading-relaxed text-white max-w-4xl mx-auto mb-8 md:mb-16 px-2"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
+        >
+          Velocity AI is eForte&apos;s comprehensive methodology detailing best
+          practices, workflows, and tools that enhance digital delivery
+          efficiency and quality while ensuring a secure-first approach. We
+          transform traditional Agile squads into AI-first teams equipped for
+          data-driven development.
+        </motion.p>
+
         <motion.div
           className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-6 text-base text-white font-medium mb-8 md:mb-12"
           initial={{ opacity: 0, y: 20 }}
