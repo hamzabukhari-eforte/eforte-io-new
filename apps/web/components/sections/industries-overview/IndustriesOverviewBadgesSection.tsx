@@ -9,7 +9,7 @@ export default function IndustriesOverviewBadgesSection() {
   return (
     <section className={styles.badges}>
       <IndustriesReveal className={styles.content} direction="bottom" duration={400}>
-        <p className={styles.title}>Ecosystem &amp; Partners</p>
+        <p className={styles.sectionLabel}>Ecosystem &amp; Partners</p>
         <ul>
           {industriesMedia.partnerLogos.map((logo) => (
             <li key={logo.alt}>

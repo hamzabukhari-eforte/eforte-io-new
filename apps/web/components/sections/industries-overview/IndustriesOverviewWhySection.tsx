@@ -16,6 +16,7 @@ export default function IndustriesOverviewWhySection() {
     <section className={styles["why-eforte-boxes"]}>
       <div className={styles.content}>
         <IndustriesReveal className={styles.head} direction="bottom" duration={400}>
+          <p className={styles.sectionLabel}>{industriesWhy.label}</p>
           <h2 className={styles.title}>{industriesWhy.title}</h2>
           <p className={styles.description}>
             {industriesWhy.descriptionLines.map((line) => (

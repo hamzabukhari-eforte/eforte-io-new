@@ -14,6 +14,7 @@ export default function IndustriesOverviewOutcomesSection() {
     <section className={styles["our-solutions"]}>
       <div className={styles.content}>
         <IndustriesReveal className={styles.head} direction="bottom" duration={400}>
+          <p className={styles.sectionLabel}>{industriesOutcomesIntro.label}</p>
           <h2 className={styles.title}>
             <span>{industriesOutcomesIntro.titleLine1}</span>{" "}
             {industriesOutcomesIntro.titleLine2}

@@ -15,6 +15,7 @@ export default function IndustriesOverviewGridSection() {
     <section className={styles["service-partners"]}>
       <div className={styles.content}>
         <IndustriesReveal className={styles.head} direction="bottom" duration={400}>
+          <p className={styles.sectionLabel}>{industriesGridIntro.label}</p>
           <h2 className={styles.title}>
             <span>{industriesGridIntro.titleLine1}</span>{" "}
             {industriesGridIntro.titleLine2}

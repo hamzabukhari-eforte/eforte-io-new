@@ -56,6 +56,7 @@ export const industriesMedia = {
 };
 
 export const industriesHero = {
+  label: "Industries",
   title: "Deep industry expertise, engineered around your reality",
   subtitle:
     "eForte delivers AI native technology solutions across finance, insurance, health & wellbeing, heavy industry, automotive, hospitality, and BPO & shared services.",
@@ -64,6 +65,7 @@ export const industriesHero = {
 };
 
 export const industriesWhy = {
+  label: "Expertise",
   title: "Why eForte",
   descriptionLines: [
     "eForte brings together deep domain and",
@@ -92,6 +94,7 @@ export const industriesWhy = {
 };
 
 export const industriesGridIntro = {
+  label: "Our Industries",
   titleLine1: "A full stack AI",
   titleLine2: "services partner",
   descriptionBefore:
@@ -196,6 +199,7 @@ export type IndustryCaseStudy = {
 };
 
 export const industriesOutcomesIntro = {
+  label: "Case Studies",
   titleLine1: "Outcomes achieved for",
   titleLine2: "clients across our industries",
   description:
