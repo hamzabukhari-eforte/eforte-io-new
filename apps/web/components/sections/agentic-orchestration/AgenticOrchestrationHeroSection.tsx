@@ -20,9 +20,9 @@ export default function AgenticOrchestrationHeroSection() {
   return (
     <section
       ref={ref}
-      className={`relative overflow-hidden flex flex-col justify-center items-center pt-24 bg-black md:min-h-[500px] lg:min-h-[700px] ${section.paddingX}`}
+      className={`relative flex flex-col items-center justify-center bg-black pt-24 md:min-h-[500px] lg:min-h-[700px] ${section.paddingX}`}
     >
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <div className="absolute top-[-20%] right-[-30%] md:right-[-10%] w-[120%] md:w-[80%] h-[140%] md:h-[120%] bg-[#581c87] rounded-full blur-[120px] md:blur-[180px] opacity-80 md:opacity-90" />
         <div className="absolute top-[10%] right-[10%] w-[80%] md:w-[60%] h-[100%] md:h-[80%] bg-[#4338ca] rounded-full blur-[100px] md:blur-[150px] opacity-70 md:opacity-80" />
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-transparent z-0" />

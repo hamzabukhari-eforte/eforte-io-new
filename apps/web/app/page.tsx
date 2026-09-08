@@ -34,16 +34,16 @@ export default function Home() {
       <ServiceCategoriesSection items={defaultServiceCategories} />
       <VelocityAISection />
       <IntegratedAIOfferingsSection />
-      <ServiceCategoriesSection items={defaultServiceCategories} />
+      {/* <ServiceCategoriesSection items={defaultServiceCategories} /> */}
       <AgenticOrchestrationSection />
-      <ServiceCategoriesSection items={defaultServiceCategories} />
+      {/* <ServiceCategoriesSection items={defaultServiceCategories} /> */}
       <FoundationalDataLayerSection />
-      <ServiceCategoriesSection items={defaultServiceCategories} />
+      {/* <ServiceCategoriesSection items={defaultServiceCategories} /> */}
       <HomeCaseStudiesSection />
       <TestimonialsSection />
       <NavigateAISection />
       <GlobalLeadersSection />
-      <ServiceCategoriesSection items={defaultServiceCategories} />
+      {/* <ServiceCategoriesSection items={defaultServiceCategories} /> */}
       <SecureDataPracticesSection />
     </main>
   );

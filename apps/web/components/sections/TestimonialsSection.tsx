@@ -1,122 +1,209 @@
 "use client";
 
 import Container from "@/components/atoms/Container";
-import { motion } from "framer-motion";
+import {
+  getTestimonialSlides,
+  testimonials,
+  type Testimonial,
+} from "@/data/testimonials";
+import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
 import { useInViewReplay } from "@/lib/useInViewReplay";
-import { useRef } from "react";
+import Link from "next/link";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
-interface Testimonial {
-  id: string;
-  companyName: string;
-  testimonial: string;
-  author: string;
-  title: string;
-  website?: string;
+const EASE = [0.22, 1, 0.36, 1] as const;
+const AUTOPLAY_MS = 3000;
+
+function TestimonialCard({
+  item,
+  index,
+}: {
+  item: Testimonial;
+  index: number;
+}) {
+  return (
+    <motion.div
+      className="flex flex-col items-center self-start text-center"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.55, delay: 0.08 + index * 0.08, ease: EASE }}
+    >
+      <h3 className="mb-4 text-2xl font-bold text-white md:mb-6 md:text-3xl">
+        {item.companyName}
+      </h3>
+      <p className="mb-6 flex-1 text-base font-light leading-relaxed text-white md:mb-8 md:text-[17px]">
+        {item.testimonial}
+      </p>
+      <div className="text-[15px] text-white">
+        <span className="font-bold">{item.author}</span>
+        <span className="mx-2">|</span>
+        <span>{item.title}</span>
+        {item.website ? (
+          <>
+            <span className="mx-2">-</span>
+            <span>{item.website}</span>
+          </>
+        ) : null}
+      </div>
+    </motion.div>
+  );
 }
-
-const testimonials: Testimonial[] = [
-  {
-    id: "krank",
-    companyName: "Krank",
-    testimonial:
-      "Consider the expertise that you require. They are one of the best groups around. Trust that they'll put good people into the project. They want to do the right thing.",
-    author: "Mark Turner",
-    title: "CEO & Founder",
-    website: "krank.com",
-  },
-  {
-    id: "investment-markets",
-    companyName: "Investment Markets",
-    testimonial:
-      "We've tripled our output from 20-25 to about 60-70 story points per week. They're fantastic to work with. Everyone I've worked with on their team has gone over and beyond to understand our goals and been very thorough in their approach. Everyone on their team has a lot of talent and knowledge in what they do.",
-    author: "Chris Mortan",
-    title: "Owner",
-    website: "IM",
-  },
-  {
-    id: "oddysee",
-    companyName: "Oddysee",
-    testimonial:
-      "I appreciate their ability to respond and be dynamic. They've taken an individual interest in understanding our business. As soon as I started working with them, their lead sat with us for 2 weeks in order to understand everything before providing direction.",
-    author: "Zeta Ceti",
-    title: "CEO",
-    website: "GRC",
-  },
-];
 
 export default function TestimonialsSection() {
   const ref = useRef(null);
   const isInView = useInViewReplay(ref);
+  const slides = getTestimonialSlides(testimonials);
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [direction, setDirection] = useState(1);
+
+  const goTo = useCallback(
+    (index: number, dir?: number) => {
+      setDirection(dir ?? (index > active ? 1 : -1));
+      setActive((index + slides.length) % slides.length);
+    },
+    [active, slides.length]
+  );
+
+  const goPrev = () => goTo(active - 1, -1);
+  const goNext = () => goTo(active + 1, 1);
+
+  useEffect(() => {
+    if (paused || !isInView || slides.length <= 1) return;
+    const id = window.setInterval(() => {
+      setDirection(1);
+      setActive((current) => (current + 1) % slides.length);
+    }, AUTOPLAY_MS);
+    return () => window.clearInterval(id);
+  }, [paused, isInView, slides.length, active]);
 
   return (
-    <section ref={ref} className="w-full bg-default py-16 md:py-24 lg:py-32">
+    <section ref={ref} className="w-full bg-default">
       <Container>
-
-          {/* Header */}
+        <motion.div
+          className="mb-12 text-center md:mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           <motion.div
-            className="text-center mb-12 md:mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="mb-3 inline-block"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={
+              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }
+            }
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
           >
-            {/* Subtitle/Label */}
-            <motion.div
-              className="inline-block mb-6 md:mb-8"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-            >
-              <span className="inline-flex h-10 items-center justify-center px-6 md:px-8 py-0 text-primary-pink text-[11px] font-bold uppercase tracking-[0.15em] border border-primary-pink/30 rounded-full leading-none">
-                WHAT OUR CLIENTS SAY
-              </span>
-            </motion.div>
-
-            {/* Main Title */}
-            <motion.h2
-              className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-tight tracking-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-            >
-              Trusted by Industry Leaders
-            </motion.h2>
+            <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
+              WHAT OUR CLIENTS SAY
+            </span>
           </motion.div>
 
-          {/* Testimonials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.id}
-                className="flex flex-col self-start items-center"
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                transition={{ duration: 0.6, delay: 0.5 + index * 0.1, ease: "easeOut" }}
-              >
-                {/* Company Name */}
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6">
-                  {testimonial.companyName}
-                </h3>
+          <motion.h2
+            className="text-4xl font-medium leading-tight tracking-tight text-white md:text-5xl lg:text-[56px]"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
+          >
+            Trusted by Industry Leaders
+          </motion.h2>
+        </motion.div>
 
-                {/* Testimonial Text */}
-                <p className="text-base md:text-[17px] text-desc font-light leading-relaxed mb-6 md:mb-8 flex-1 text-center">
-                  {testimonial.testimonial}
-                </p>
+        <div
+          className="relative"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          onFocus={() => setPaused(true)}
+          onBlur={() => setPaused(false)}
+        >
+          <div className="relative min-h-[320px] md:min-h-[280px]">
+            <div className="overflow-hidden">
+              <AnimatePresence mode="wait" custom={direction}>
+                <motion.div
+                  key={active}
+                  custom={direction}
+                  initial={{ opacity: 0, x: direction * 48 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: direction * -48 }}
+                  transition={{ duration: 0.45, ease: EASE }}
+                  className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-3 lg:gap-12"
+                >
+                  {slides[active]?.map((item, index) => (
+                    <TestimonialCard key={item.id} item={item} index={index} />
+                  ))}
+                </motion.div>
+              </AnimatePresence>
+            </div>
 
-                {/* Attribution */}
-                <div className="text-[15px] text-white/70">
-                  <span className="font-bold">{testimonial.author}</span>
-                  <span className="mx-2">|</span>
-                  <span>{testimonial.title}</span>
-                  {testimonial.website && (
-                    <>
-                      <span className="mx-2">-</span>
-                      <span>{testimonial.website}</span>
-                    </>
-                  )}
-                </div>
-              </motion.div>
-            ))}
+            {/* Side chevrons — vertically centered on the cards */}
+            <button
+              type="button"
+              onClick={goPrev}
+              aria-label="Previous testimonials"
+              className="absolute top-1/2 left-0 z-10 hidden h-11 w-11 -translate-x-full -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/20 text-white/50 transition-colors hover:border-primary-pink hover:text-primary-pink lg:flex"
+            >
+              <HiChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              type="button"
+              onClick={goNext}
+              aria-label="Next testimonials"
+              className="absolute top-1/2 right-0 z-10 hidden h-11 w-11 translate-x-full -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border border-white/20 text-white/50 transition-colors hover:border-primary-pink hover:text-primary-pink lg:flex"
+            >
+              <HiChevronRight className="h-6 w-6" />
+            </button>
           </div>
+
+          <div className="mt-10 flex flex-col items-center gap-6 sm:mt-12">
+            <div className="flex items-center gap-5">
+              {/* Mobile chevrons */}
+              <button
+                type="button"
+                onClick={goPrev}
+                aria-label="Previous testimonials"
+                className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white/20 text-white/50 transition-colors hover:border-primary-pink hover:text-primary-pink lg:hidden"
+              >
+                <HiChevronLeft className="h-5 w-5" />
+              </button>
+
+              <div className="flex items-center gap-2.5">
+                {slides.map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    aria-label={`Go to slide ${i + 1}`}
+                    aria-current={i === active}
+                    onClick={() => goTo(i)}
+                    className={cn(
+                      "h-1.5 cursor-pointer rounded-full transition-all duration-300",
+                      i === active
+                        ? "w-7 bg-primary-pink"
+                        : "w-1.5 bg-white/25 hover:bg-white/45"
+                    )}
+                  />
+                ))}
+              </div>
+
+              <button
+                type="button"
+                onClick={goNext}
+                aria-label="Next testimonials"
+                className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white/20 text-white/50 transition-colors hover:border-primary-pink hover:text-primary-pink lg:hidden"
+              >
+                <HiChevronRight className="h-5 w-5" />
+              </button>
+            </div>
+
+            <Link
+              href="/reviews"
+              className="inline-flex h-10 cursor-pointer items-center justify-center rounded-full border border-primary-pink px-9 text-[15px] font-medium leading-none text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white"
+            >
+              View all
+            </Link>
+          </div>
+        </div>
       </Container>
     </section>
   );

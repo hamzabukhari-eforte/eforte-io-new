@@ -31,25 +31,20 @@ export default function TrustedBySection({
     <section
       ref={ref}
       className={cn(
-        "w-full py-12 md:py-16",
+        "w-full overflow-visible pt-4 pb-10 md:pt-6 md:pb-12",
         isLight ? "bg-white" : "bg-default"
       )}
     >
-      <div className="w-full">
+      <div className="relative w-full overflow-visible">
         {/* Heading - Only show if heading prop is provided */}
         {heading && (
           <motion.div
-            className="text-center mb-8 md:mb-12"
+            className="mb-6 text-center md:mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h2
-              className={cn(
-                "text-base md:text-[17px] font-light",
-                isLight ? "text-default/70" : "text-desc"
-              )}
-            >
+            <h2 className="text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
               {heading}
             </h2>
           </motion.div>
@@ -57,6 +52,7 @@ export default function TrustedBySection({
 
         {/* Carousel - Full width, no container */}
         <motion.div
+          className="relative z-20 overflow-visible"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.5, delay: heading ? 0.2 : 0, ease: "easeOut" }}

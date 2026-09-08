@@ -1,144 +1,167 @@
+import Image from "next/image";
+import type { ReactNode } from "react";
 import {
-  SiGoogle,
-  SiShopify,
-  SiSlack,
-  SiPaypal,
   SiAmazonwebservices,
+  SiFigma,
+  SiGoogle,
+  SiPaypal,
+  SiSlack,
 } from "react-icons/si";
 
-const iconWrapperClass = "flex items-center justify-center h-12 md:h-16 px-4 text-white";
-const iconWrapperClassDark = "flex items-center justify-center h-12 md:h-16 px-4 text-default";
+const wrap =
+  "flex h-12 items-center justify-center px-4 md:h-16";
+const imgClass = "h-7 w-auto object-contain md:h-8";
+const iconClass = "text-2xl md:text-3xl";
 
-export const defaultTrustedByLogos = [
-  {
-    id: "google-g",
-    content: (
-      <div className={iconWrapperClass}>
-        <SiGoogle className="text-2xl md:text-3xl" />
-      </div>
-    ),
-  },
-  {
-    id: "shopify",
-    content: (
-      <div className={iconWrapperClass}>
-        <SiShopify className="text-2xl md:text-3xl" />
-      </div>
-    ),
-  },
-  {
-    id: "land-id",
-    content: (
-      <div className="flex items-center justify-center h-12 md:h-16 px-4">
-        <span className="text-white text-lg md:text-xl font-normal">Land id.</span>
-      </div>
-    ),
-  },
-  {
-    id: "slack",
-    content: (
-      <div className={iconWrapperClass}>
-        <SiSlack className="text-2xl md:text-3xl" />
-      </div>
-    ),
-  },
-  {
-    id: "nest",
-    content: (
-      <div className="flex items-center justify-center h-12 md:h-16 px-4">
-        <span className="text-white text-lg md:text-xl font-normal lowercase">nest</span>
-      </div>
-    ),
-  },
-  {
-    id: "paypal",
-    content: (
-      <div className={iconWrapperClass}>
-        <SiPaypal className="text-2xl md:text-3xl" />
-      </div>
-    ),
-  },
-  {
-    id: "idb",
-    content: (
-      <div className="flex items-center justify-center h-12 md:h-16 px-4">
-        <span className="text-white text-xl md:text-2xl font-semibold">IDB</span>
-      </div>
-    ),
-  },
-  {
-    id: "aws",
-    content: (
-      <div className={iconWrapperClass}>
-        <SiAmazonwebservices className="text-2xl md:text-3xl" />
-      </div>
-    ),
-  },
-];
+function LogoTooltip({
+  name,
+  children,
+}: {
+  name: string;
+  children: ReactNode;
+}) {
+  return (
+    <div className="group relative z-10 flex items-center justify-center overflow-visible hover:z-[100]">
+      {children}
+      <span className="pointer-events-none absolute left-1/2 top-full z-[100] mt-2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/10 bg-black px-3 py-1 text-xs font-medium tracking-wide text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100">
+        {name}
+      </span>
+    </div>
+  );
+}
 
-export const defaultTrustedByLogosDark = [
-  {
-    id: "google-g",
-    content: (
-      <div className={iconWrapperClassDark}>
-        <SiGoogle className="text-2xl md:text-3xl" />
+function BrandImage({
+  src,
+  alt,
+  width = 120,
+  tone,
+}: {
+  src: string;
+  alt: string;
+  width?: number;
+  tone: "white" | "dark";
+}) {
+  // Gray brand SVGs → pure white on dark bg, pure black on light bg
+  const toneClass =
+    tone === "white" ? " brightness-0 invert" : " brightness-0";
+
+  return (
+    <LogoTooltip name={alt}>
+      <div className={wrap}>
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={32}
+          className={`${imgClass}${toneClass}`}
+        />
       </div>
-    ),
-  },
-  {
-    id: "shopify",
-    content: (
-      <div className={iconWrapperClassDark}>
-        <SiShopify className="text-2xl md:text-3xl" />
-      </div>
-    ),
-  },
-  {
-    id: "land-id",
-    content: (
-      <div className="flex items-center justify-center h-12 md:h-16 px-4">
-        <span className="text-default text-lg md:text-xl font-normal">Land id.</span>
-      </div>
-    ),
-  },
-  {
-    id: "slack",
-    content: (
-      <div className={iconWrapperClassDark}>
-        <SiSlack className="text-2xl md:text-3xl" />
-      </div>
-    ),
-  },
-  {
-    id: "nest",
-    content: (
-      <div className="flex items-center justify-center h-12 md:h-16 px-4">
-        <span className="text-default text-lg md:text-xl font-normal lowercase">nest</span>
-      </div>
-    ),
-  },
-  {
-    id: "paypal",
-    content: (
-      <div className={iconWrapperClassDark}>
-        <SiPaypal className="text-2xl md:text-3xl" />
-      </div>
-    ),
-  },
-  {
-    id: "idb",
-    content: (
-      <div className="flex items-center justify-center h-12 md:h-16 px-4">
-        <span className="text-default text-xl md:text-2xl font-semibold">IDB</span>
-      </div>
-    ),
-  },
-  {
-    id: "aws",
-    content: (
-      <div className={iconWrapperClassDark}>
-        <SiAmazonwebservices className="text-2xl md:text-3xl" />
-      </div>
-    ),
-  },
-];
+    </LogoTooltip>
+  );
+}
+
+function buildLogos(tone: "white" | "dark") {
+  const iconTone = tone === "white" ? "text-white" : "text-default";
+
+  return [
+    {
+      id: "land-id",
+      content: (
+        <BrandImage
+          src="/assets/final-images/brands/landid.svg"
+          alt="Land id."
+          width={110}
+          tone={tone}
+        />
+      ),
+    },
+    {
+      id: "figma",
+      content: (
+        <LogoTooltip name="Figma">
+          <div className={`${wrap} ${iconTone}`}>
+            <SiFigma className={iconClass} aria-hidden />
+          </div>
+        </LogoTooltip>
+      ),
+    },
+    {
+      id: "ripple",
+      content: (
+        <BrandImage
+          src="/assets/final-images/brands/ripple.svg"
+          alt="Ripple"
+          width={110}
+          tone={tone}
+        />
+      ),
+    },
+    {
+      id: "google",
+      content: (
+        <LogoTooltip name="Google">
+          <div className={`${wrap} ${iconTone}`}>
+            <SiGoogle className={iconClass} aria-hidden />
+          </div>
+        </LogoTooltip>
+      ),
+    },
+    {
+      id: "shopify",
+      content: (
+        <BrandImage
+          src="/assets/final-images/brands/shopify.svg"
+          alt="Shopify"
+          width={120}
+          tone={tone}
+        />
+      ),
+    },
+    {
+      id: "onesignal",
+      content: (
+        <BrandImage
+          src="/assets/final-images/brands/onesignal.svg"
+          alt="OneSignal"
+          width={130}
+          tone={tone}
+        />
+      ),
+    },
+    {
+      id: "slack",
+      content: (
+        <LogoTooltip name="Slack">
+          <div className={`${wrap} ${iconTone}`}>
+            <SiSlack className={iconClass} aria-hidden />
+          </div>
+        </LogoTooltip>
+      ),
+    },
+    {
+      id: "paypal",
+      content: (
+        <LogoTooltip name="PayPal">
+          <div className={`${wrap} ${iconTone}`}>
+            <SiPaypal className={iconClass} aria-hidden />
+          </div>
+        </LogoTooltip>
+      ),
+    },
+    {
+      id: "aws",
+      content: (
+        <LogoTooltip name="AWS">
+          <div className={`${wrap} ${iconTone}`}>
+            <SiAmazonwebservices className={iconClass} aria-hidden />
+          </div>
+        </LogoTooltip>
+      ),
+    },
+  ];
+}
+
+export const defaultTrustedByLogos = buildLogos("white");
+
+/** Light-background variant — dark logos */
+export const defaultTrustedByLogosDark = buildLogos("dark");

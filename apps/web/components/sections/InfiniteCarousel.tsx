@@ -15,18 +15,28 @@ export default function InfiniteCarousel({
   className = "",
 }: InfiniteCarouselProps) {
   return (
-    <div className={`relative w-full overflow-hidden ${className}`}>
-      <div className="flex animate-scroll">
-        {/* Duplicate items for seamless infinite scroll; margin matches gap so spacing is even at loop */}
-        {[...Array(3)].map((_, setIndex) => (
-          <div key={setIndex} className={`flex ${gap} shrink-0 mr-8 md:mr-12 lg:mr-16`}>
-            {items.map((item) => (
-              <div key={`${setIndex}-${item.id}`} className="shrink-0">
-                {item.content}
-              </div>
-            ))}
-          </div>
-        ))}
+    // overflow-x clips the scroll track; vertical padding keeps tooltip room
+    // inside the clip box (overflow-x-hidden forces overflow-y to clip too)
+    <div className={`relative w-full overflow-x-hidden ${className}`}>
+      <div className="pb-12 -mb-12 pt-2">
+        <div className="flex animate-scroll">
+          {/* Duplicate items for seamless infinite scroll; margin matches gap so spacing is even at loop */}
+          {[...Array(3)].map((_, setIndex) => (
+            <div
+              key={setIndex}
+              className={`mr-8 flex ${gap} shrink-0 md:mr-12 lg:mr-16`}
+            >
+              {items.map((item) => (
+                <div
+                  key={`${setIndex}-${item.id}`}
+                  className="relative z-30 shrink-0 overflow-visible"
+                >
+                  {item.content}
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

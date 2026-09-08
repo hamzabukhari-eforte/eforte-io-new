@@ -12,7 +12,8 @@ import {
 } from "react-icons/si";
 import { cn } from "@/lib/utils";
 
-const iconClass = "h-7 w-auto text-white/80 transition-colors group-hover:text-white md:h-8";
+const iconClass =
+  "h-7 w-auto text-white/80 transition-colors group-hover:text-white md:h-8";
 
 const partnerLogos: {
   id: string;
@@ -26,7 +27,8 @@ const partnerLogos: {
     id: "aws",
     name: "AWS",
     Icon: SiAmazonwebservices,
-    iconClassName: "h-8 w-auto text-[2.25rem] text-white/80 transition-colors group-hover:text-white md:h-9 md:text-[2.75rem]",
+    iconClassName:
+      "h-8 w-auto text-[2.25rem] text-white/80 transition-colors group-hover:text-white md:h-9 md:text-[2.75rem]",
   },
   {
     id: "azure",
@@ -44,19 +46,27 @@ interface PartnerLogosRowProps {
   className?: string;
 }
 
-export default function PartnerLogosRow({ heading, className }: PartnerLogosRowProps) {
+export default function PartnerLogosRow({
+  heading,
+  className,
+}: PartnerLogosRowProps) {
   return (
-    <div className={cn("mx-auto mt-12 w-full max-w-6xl md:mt-16", className)}>
+    <div
+      className={cn(
+        "mx-auto mt-8 w-full max-w-6xl overflow-visible md:mt-10",
+        className
+      )}
+    >
       {heading && (
         <h2 className="mb-6 text-center text-xs font-semibold uppercase tracking-[0.2em] text-primary-pink">
           {heading}
         </h2>
       )}
-      <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-8 pb-6 md:gap-x-10">
+      <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-8 md:gap-x-10">
         {partnerLogos.map((item) => (
           <div
             key={item.id}
-            className="group relative flex h-9 items-center justify-center transition-transform duration-300 hover:-translate-y-0.5"
+            className="group relative z-10 flex h-9 items-center justify-center transition-transform duration-300 hover:z-50 hover:-translate-y-0.5"
           >
             {item.src ? (
               <Image
@@ -74,7 +84,7 @@ export default function PartnerLogosRow({ heading, className }: PartnerLogosRowP
                 />
               )
             )}
-            <span className="pointer-events-none absolute top-full left-1/2 z-10 mt-2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/10 bg-black/80 px-3 py-1 text-xs font-medium tracking-wide text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100">
+            <span className="pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/10 bg-black/80 px-3 py-1 text-xs font-medium tracking-wide text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100">
               {item.name}
             </span>
           </div>

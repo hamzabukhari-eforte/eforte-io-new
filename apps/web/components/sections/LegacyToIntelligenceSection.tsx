@@ -10,7 +10,7 @@ export default function LegacyToIntelligenceSection() {
   const ref = useRef(null);
   const isInView = useInViewReplay(ref);
   return (
-    <section className="relative w-full min-h-auto bg-default py-16 md:py-24 lg:py-32">
+    <section className="relative w-full min-h-auto bg-default pt-16 pb-8">
       <Container>
         {/* Background Image */}
         <div className="absolute inset-0">
@@ -36,19 +36,19 @@ export default function LegacyToIntelligenceSection() {
           >
             {/* EVOLVING Label */}
             <motion.div
-              className="inline-flex items-center justify-center mb-6 md:mb-8"
+              className="inline-flex items-center justify-center mb-3"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <span className="inline-flex items-center justify-center h-10 text-primary-pink text-[11px] font-bold uppercase tracking-[0.15em] px-8 py-0 border border-primary-pink rounded-full leading-none">
+              <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
                 Evolving
               </span>
             </motion.div>
 
             {/* Main Title */}
             <motion.h2
-              className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-tight mb-6 md:mb-8 tracking-tight"
+              className="mb-6 text-[48px] font-medium leading-tight tracking-tight text-white md:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
@@ -58,7 +58,7 @@ export default function LegacyToIntelligenceSection() {
 
             {/* Description */}
             <motion.div
-              className="space-y-4 text-base md:text-[17px] text-desc font-light leading-relaxed"
+              className="space-y-4 text-[18px] font-light leading-relaxed text-white"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}

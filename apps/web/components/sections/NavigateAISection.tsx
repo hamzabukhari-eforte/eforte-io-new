@@ -3,97 +3,226 @@
 import Container from "@/components/atoms/Container";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { useInViewReplay } from "@/lib/useInViewReplay";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const THEME_BLUE = "#426CFF";
+const ACCENT_PINK = "#D3287A";
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+const copyContainer: Variants = {
+  hidden: {
+    transition: { staggerChildren: 0.06, staggerDirection: -1 },
+  },
+  visible: {
+    transition: { staggerChildren: 0.11, delayChildren: 0.15 },
+  },
+};
+
+const fadeUp: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 26,
+    transition: { duration: 0.35, ease: EASE },
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: EASE },
+  },
+};
 
 export default function NavigateAISection() {
   const ref = useRef(null);
-  const isInView = useInViewReplay(ref);
+  const isInView = useInViewReplay(ref, {
+    amount: 0.2,
+    exitMargin: "40px",
+    exitDelayMs: 200,
+    settleMs: 500,
+  });
+
+  const [playId, setPlayId] = useState(0);
+  const hasLeft = useRef(false);
+
+  useEffect(() => {
+    if (!isInView) {
+      hasLeft.current = true;
+      return;
+    }
+    if (hasLeft.current) {
+      setPlayId((id) => id + 1);
+      hasLeft.current = false;
+    }
+  }, [isInView]);
 
   return (
-    <section ref={ref} className="w-full bg-default py-16 md:py-24 lg:py-32">
+    <section ref={ref} className="relative w-full overflow-hidden bg-default py-16">
+      {/* Ambient atmosphere */}
+      <motion.div
+        className="pointer-events-none absolute top-1/2 left-[8%] h-72 w-72 -translate-y-1/2 rounded-full bg-[#426CFF]/15 blur-3xl"
+        aria-hidden
+        animate={
+          isInView
+            ? { opacity: [0.35, 0.7, 0.35], scale: [1, 1.12, 1] }
+            : { opacity: 0.25, scale: 1 }
+        }
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="pointer-events-none absolute top-1/3 right-[5%] h-56 w-56 rounded-full bg-primary-pink/12 blur-3xl"
+        aria-hidden
+        animate={
+          isInView
+            ? { opacity: [0.3, 0.65, 0.3], scale: [1, 1.1, 1] }
+            : { opacity: 0.2, scale: 1 }
+        }
+        transition={{
+          duration: 5.5,
+          delay: 0.4,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
-          {/* Left Side - Image */}
+        <div className="relative grid grid-cols-1 items-center gap-12 md:gap-16 lg:grid-cols-2 lg:gap-20">
+          {/* Left — visual */}
           <motion.div
-            className="flex items-center justify-center"
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            key={`visual-${playId}`}
+            className="relative flex items-center justify-center"
+            initial={{ opacity: 0, x: -40, scale: 0.94 }}
+            animate={
+              isInView
+                ? { opacity: 1, x: 0, scale: 1 }
+                : { opacity: 0, x: -40, scale: 0.94 }
+            }
+            transition={{ duration: 0.85, ease: EASE }}
           >
-            <div className="relative w-full max-w-lg rounded-[12px] overflow-hidden">
-              <Image
-                src="/assets/images/landing/navigate.png"
-                alt="AI Adoption Brain Network"
-                width={600}
-                height={600}
-                className="w-full h-auto object-cover"
+            {/* Orbit rings */}
+            <motion.div
+              className="pointer-events-none absolute h-[88%] w-[88%] max-w-[480px] rounded-full border border-[#426CFF]/25"
+              aria-hidden
+              animate={isInView ? { rotate: 360 } : { rotate: 0 }}
+              transition={{
+                duration: 28,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              <span
+                className="absolute top-0 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#426CFF] shadow-[0_0_12px_#426CFF]"
+                aria-hidden
               />
-            </div>
+            </motion.div>
+            <motion.div
+              className="pointer-events-none absolute h-[102%] w-[102%] max-w-[540px] rounded-full border border-dashed border-primary-pink/20"
+              aria-hidden
+              animate={isInView ? { rotate: -360 } : { rotate: 0 }}
+              transition={{
+                duration: 40,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              <span
+                className="absolute bottom-6 right-8 h-1.5 w-1.5 rounded-full bg-primary-pink shadow-[0_0_10px_#D3287A]"
+                aria-hidden
+              />
+            </motion.div>
+
+            <motion.div
+              className="relative w-full max-w-lg overflow-hidden rounded-[16px]"
+              animate={
+                isInView ? { y: [0, -8, 0] } : { y: 0 }
+              }
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              {/* Soft frame glow */}
+              <div
+                className="pointer-events-none absolute -inset-px rounded-[16px] opacity-80"
+                style={{
+                  background: `linear-gradient(135deg, ${THEME_BLUE}55, transparent 40%, ${ACCENT_PINK}40)`,
+                }}
+                aria-hidden
+              />
+              <div className="relative overflow-hidden rounded-[16px] bg-[#0A0A1A]">
+                <Image
+                  src="/assets/images/landing/navigate.png"
+                  alt="AI Adoption Brain Network"
+                  width={600}
+                  height={600}
+                  className="relative z-10 h-auto w-full object-cover"
+                />
+                {/* Bottom vignette */}
+                <div
+                  className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-1/3 bg-linear-to-t from-[#0A0A1A]/80 to-transparent"
+                  aria-hidden
+                />
+              </div>
+            </motion.div>
           </motion.div>
 
-          {/* Right Side - Text Content */}
+          {/* Right — copy */}
           <motion.div
-            className="flex flex-col"
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+            key={`copy-${playId}`}
+            className="relative flex flex-col"
+            variants={copyContainer}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
           >
-            {/* White Paper Badge */}
-            <motion.div
-              className="mb-6 md:mb-8"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
-            >
-              <span className="inline-flex h-10 items-center justify-center px-6 md:px-8 py-0 text-primary-pink text-[11px] font-bold uppercase tracking-[0.15em] border border-primary-pink/30 rounded-full leading-none">
+            <motion.div className="mb-3" variants={fadeUp}>
+              <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
                 WHITE PAPER
               </span>
             </motion.div>
 
-            {/* Main Heading */}
             <motion.h2
-              className="text-3xl md:text-4xl lg:text-[56px] font-medium text-white leading-tight mb-6 md:mb-8 tracking-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+              variants={fadeUp}
+              className="mb-6 text-[48px] font-medium leading-tight tracking-tight text-white md:mb-8"
             >
-              Navigate the Complexities of AI Adoption to Unlock Real-World Business Value.
+              Navigate the Complexities of AI Adoption to Unlock Real-World
+              Business Value.
             </motion.h2>
 
-            {/* First Paragraph */}
             <motion.p
-              className="text-base md:text-[17px] text-white font-light leading-relaxed mb-6 md:mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
+              variants={fadeUp}
+              className="mb-5 text-[18px] font-light leading-relaxed text-white md:mb-6"
             >
-              AI is a game-changer, but successful implementation requires expert guidance. eForte empowers your organization to strategically adopt AI, transforming key operations from reactive to predictive.
+              AI is a game-changer, but successful implementation requires
+              expert guidance. eForte empowers your organization to strategically
+              adopt AI, transforming key operations from reactive to predictive.
             </motion.p>
 
-            {/* Second Paragraph */}
             <motion.p
-              className="text-base md:text-[17px] text-white font-light leading-relaxed mb-8 md:mb-10"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
+              variants={fadeUp}
+              className="mb-8 text-[18px] font-light leading-relaxed text-white md:mb-10"
             >
-              Our expertise spans complex domains: from deploying sophisticated bankruptcy prediction models in finance to engineering personalized, adaptive learning systems in EdTech, ensuring high efficiency and impactful innovation.
+              Our expertise spans complex domains: from deploying sophisticated
+              bankruptcy prediction models in finance to engineering
+              personalized, adaptive learning systems in EdTech, ensuring high
+              efficiency and impactful innovation.
             </motion.p>
 
-            {/* Read Now Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: 0.7, ease: "easeOut" }}
-            >
+            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
               <Link
                 href="#"
-                className="inline-flex h-10 items-center justify-center px-9 py-0 rounded-full leading-none text-[15px] font-medium text-white border border-primary-pink bg-transparent hover:bg-primary-pink hover:border-primary-pink transition-all duration-200"
+                className="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-full border border-primary-pink bg-transparent px-9 text-[15px] font-medium leading-none text-white transition-colors duration-300 hover:bg-primary-pink"
               >
-                Read now
+                <span className="relative z-10">Read now</span>
               </Link>
+              <motion.span
+                className="hidden text-[13px] text-white/50 sm:inline"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ delay: 0.7, duration: 0.5 }}
+              >
+                Strategy · Finance · EdTech
+              </motion.span>
             </motion.div>
           </motion.div>
         </div>

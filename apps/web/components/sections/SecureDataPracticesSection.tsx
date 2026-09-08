@@ -42,24 +42,24 @@ export default function SecureDataPracticesSection() {
   const isInView = useInViewReplay(ref);
 
   return (
-    <section ref={ref} className="w-full bg-default py-16 md:py-24 lg:py-32">
+    <section ref={ref} className="w-full bg-default py-16">
       <Container>
         <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
           {/* Badge */}
           <motion.div
-            className="mb-6 md:mb-8"
+            className="mb-3"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <span className="inline-flex h-10 items-center justify-center px-6 md:px-8 py-0 text-primary-pink text-[11px] font-bold uppercase tracking-[0.15em] border border-primary-pink rounded-full leading-none">
+            <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
               UNCOMPROMISED DIGITAL SECURITY
             </span>
           </motion.div>
 
           {/* Main Title */}
           <motion.h2
-            className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white leading-tight mb-6 md:mb-8 tracking-tight"
+            className="mb-6 text-[48px] font-medium leading-tight tracking-tight text-white md:mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
@@ -69,7 +69,7 @@ export default function SecureDataPracticesSection() {
 
           {/* Introductory Paragraph */}
           <motion.p
-            className="text-sm md:text-base lg:text-lg text-desc leading-relaxed max-w-3xl mx-auto"
+            className="text-sm md:text-base lg:text-lg text-white leading-relaxed max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
@@ -105,7 +105,7 @@ export default function SecureDataPracticesSection() {
               </h3>
 
               {/* Description */}
-              <p className="text-[15px] text-desc leading-relaxed">
+              <p className="text-[15px] text-white leading-relaxed">
                 {certification.description}
               </p>
             </motion.div>

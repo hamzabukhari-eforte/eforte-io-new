@@ -43,7 +43,7 @@ export default function HomeCaseStudiesSection() {
 
   return (
     <section
-      className="w-full bg-black py-16 md:py-24 lg:py-28"
+      className="w-full bg-black py-16"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocus={() => setIsPaused(true)}
@@ -89,14 +89,14 @@ export default function HomeCaseStudiesSection() {
                   {study.title}
                 </h2>
 
-                <div className="mt-5 max-w-xl space-y-4 text-[15px] leading-relaxed text-white/80 md:text-base">
+                <div className="mt-5 max-w-xl space-y-4 text-[15px] leading-relaxed text-white md:text-base">
                   {study.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
                 </div>
 
                 {study.highlights && study.highlights.length > 0 ? (
-                  <ul className="mt-6 space-y-2 text-[15px] text-white/85">
+                  <ul className="mt-6 space-y-2 text-[15px] text-white">
                     {study.highlights.map((item) => (
                       <li key={item.label}>
                         <span className="font-semibold text-white">

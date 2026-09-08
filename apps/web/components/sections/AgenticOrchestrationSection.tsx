@@ -12,9 +12,9 @@ export default function AgenticOrchestrationSection() {
   const isInView = useInViewReplay(ref);
 
   return (
-    <section ref={ref} className="w-full bg-default py-16 md:py-24 lg:py-32">
+    <section ref={ref} className="w-full bg-default pt-4 md:pt-6">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 items-center gap-10 md:gap-12 lg:grid-cols-2 lg:gap-14">
           {/* Left Side - Circles Diagram */}
           <motion.div
             className="w-full"
@@ -130,7 +130,7 @@ export default function AgenticOrchestrationSection() {
           >
             {/* Main Heading */}
             <motion.h2
-              className="text-3xl md:text-4xl lg:text-[56px] font-medium text-white leading-tight mb-6 md:mb-8 tracking-tight"
+              className="mb-6 text-[36px] font-medium leading-tight tracking-tight text-white md:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
@@ -140,7 +140,7 @@ export default function AgenticOrchestrationSection() {
 
             {/* First Paragraph */}
             <motion.p
-              className="text-xl font-semibold text-white leading-relaxed mb-6 md:mb-8"
+              className="mb-6 text-[18px] font-semibold leading-relaxed text-white md:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
@@ -150,7 +150,7 @@ export default function AgenticOrchestrationSection() {
 
             {/* Second Paragraph */}
             <motion.p
-              className="text-base md:text-[17px] text-desc font-light leading-relaxed"
+              className="text-[18px] font-light leading-relaxed text-white"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
