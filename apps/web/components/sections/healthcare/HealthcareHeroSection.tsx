@@ -11,13 +11,14 @@ import InfiniteCarousel from "@/components/sections/InfiniteCarousel";
 import { defaultTrustedByLogos } from "@/data/trustedByLogos";
 
 const HERO_IMAGE =
-  "/assets/images/package/industries/health-wellbeing-industry-hero.png";
+  "/assets/final-images/industries/healthcare/hero-v4.png";
 // Previous hero art preserved for possible future reuse:
+// "/assets/images/package/industries/health-wellbeing-industry-hero.png"
 // "/assets/images/package/industries/health-wellbeing-industry-hero.svg"
 
 export default function HealthcareHeroSection() {
   return (
-    <section className="relative flex min-h-[760px] flex-col justify-center overflow-hidden bg-default pt-28 pb-10 md:min-h-screen md:pt-36 md:pb-14">
+    <section className="relative flex flex-col justify-center overflow-hidden bg-default pt-28 pb-6 md:min-h-[500px] md:pt-36 md:pb-8 lg:min-h-[700px]">
       <div className="absolute inset-0">
         <Image
           src={HERO_IMAGE}
@@ -38,7 +39,7 @@ export default function HealthcareHeroSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-0 text-[13px] font-medium uppercase leading-none tracking-[0.18em] text-white backdrop-blur"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-full leading-none border border-white/25 bg-white/10 px-4 py-0 text-[13px] font-medium uppercase tracking-[0.18em] text-white backdrop-blur"
           >
             <HiSparkles className="h-3.5 w-3.5 text-primary-pink" />
             Health &amp; Wellbeing
@@ -100,7 +101,7 @@ export default function HealthcareHeroSection() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="relative z-10 mt-12"
+        className="relative z-20 mt-6 w-full md:mt-8"
       >
         <InfiniteCarousel items={defaultTrustedByLogos} />
       </motion.div>

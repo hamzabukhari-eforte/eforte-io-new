@@ -13,7 +13,11 @@ export const automobileIndustry: IndustryPageContent = {
       "eForte partners with automotive manufacturers, suppliers, and mobility companies to bring connected, AI driven experiences to the road, powered by Velocity AI for rapid product delivery, Agentic Orchestration for intelligent vehicle systems, and a resilient Foundational Data Layer for fleet and telemetry data."
     ],
     ctaLabel: "Contact Us",
-    imageSrc: "/assets/images/package/industries/automobile-industry-hero.svg",
+    imageSrc: "/assets/final-images/industries/automobile/hero-v4.png",
+    // Previous hero graphics preserved for possible future reuse:
+    // "/assets/final-images/industries/automobile/hero-v3.png",
+    // "/assets/final-images/industries/automobile/hero-v2.png",
+    // "/assets/images/package/industries/automobile-industry-hero.svg",
   },
   expertise: {
     title: "Our automotive expertise",

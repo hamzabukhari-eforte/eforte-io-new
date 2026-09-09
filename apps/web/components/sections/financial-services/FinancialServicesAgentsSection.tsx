@@ -78,14 +78,14 @@ export default function FinancialServicesAgentsSection() {
   const activeTab = tabs.find((tab) => tab.id === activeId) ?? tabs[0];
 
   return (
-    <section className="bg-white py-16 text-default">
+    <section className="bg-default py-20 text-white md:py-28">
       <Container>
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-default/70"
+          className="text-center text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-pink"
         >
           Sample Agents Categories
         </motion.p>
@@ -95,7 +95,7 @@ export default function FinancialServicesAgentsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="mx-auto mt-4 max-w-2xl text-center text-3xl font-semibold leading-tight text-default md:text-4xl"
+          className="mx-auto mt-4 max-w-2xl text-center text-3xl font-semibold leading-tight text-white md:text-4xl"
         >
           Purpose built AI agents for the workflows that run modern finance
         </motion.h2>
@@ -104,7 +104,7 @@ export default function FinancialServicesAgentsSection() {
           <div
             role="tablist"
             aria-label="Sample agents categories"
-            className="flex w-full max-w-4xl flex-wrap items-center justify-center gap-1 rounded-full border border-default/10 bg-white p-1.5 shadow-sm"
+            className="flex w-full max-w-4xl flex-wrap items-center justify-center gap-1 rounded-full border border-white/15 bg-white/5 p-1.5"
           >
             {tabs.map((tab) => {
               const isActive = tab.id === activeId;
@@ -120,8 +120,8 @@ export default function FinancialServicesAgentsSection() {
                   className={cn(
                     "inline-flex h-[25px] items-center justify-center cursor-pointer rounded-full leading-none px-4 py-0.5 text-sm font-medium transition-all duration-200 md:px-6",
                     isActive
-                      ? "bg-default text-white shadow-[0_2px_8px_rgba(0, 0, 0, 0.15)]"
-                      : "text-default/70 hover:bg-default hover:text-white"
+                      ? "bg-primary-pink text-white shadow-[0_8px_24px_rgba(211,40,122,0.35)]"
+                      : "text-white/70 hover:bg-white/10 hover:text-white"
                   )}
                 >
                   {tab.label}
@@ -145,17 +145,17 @@ export default function FinancialServicesAgentsSection() {
               className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
             >
               <div className="max-w-lg">
-                <h3 className="text-2xl font-semibold leading-tight text-default md:text-[26px]">
+                <h3 className="text-2xl font-semibold leading-tight text-white md:text-[26px]">
                   {activeTab.title}
                 </h3>
-                <p className="mt-5 text-[15px] leading-relaxed text-default/75 md:text-base">
+                <p className="mt-5 text-[15px] leading-relaxed text-white/82 md:text-base">
                   {activeTab.description}
                 </p>
 
-                <ul className="mt-8 space-y-3 text-[15px] text-default md:text-base">
+                <ul className="mt-8 space-y-3 text-[15px] text-white/90 md:text-base">
                   {activeTab.bullets.map((bullet) => (
                     <li key={bullet} className="flex items-start gap-2.5">
-                      <HiCheckCircle className="h-5 w-5 shrink-0 text-default/70" />
+                      <HiCheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary-pink" />
                       <span>{bullet}</span>
                     </li>
                   ))}
@@ -163,7 +163,7 @@ export default function FinancialServicesAgentsSection() {
               </div>
 
               <div className="flex justify-center lg:justify-end">
-                <div className="relative aspect-900/734 w-full max-w-[560px] overflow-hidden rounded-[12px] border border-default/10 bg-default">
+                <div className="relative aspect-900/734 w-full max-w-[560px] overflow-hidden rounded-[12px] border border-white/10 bg-black">
                   <Image
                     src={activeTab.imageSrc}
                     alt={activeTab.title}

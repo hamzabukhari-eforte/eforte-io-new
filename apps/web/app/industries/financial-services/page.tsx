@@ -13,8 +13,6 @@ import {
   FinancialServicesTestimonialsSection,
   FinancialServicesWebinarSection,
 } from "@/components/sections/financial-services";
-import TrustedBySection from "@/components/sections/TrustedBySection";
-import { defaultTrustedByLogosDark } from "@/data/trustedByLogos";
 
 export const metadata = {
   title: "Finance | eForte",
@@ -25,7 +23,6 @@ export default function FinancialServicesPage() {
   return (
     <main className="min-h-screen bg-white text-default">
       <FinancialServicesHeroSection />
-      <TrustedBySection items={defaultTrustedByLogosDark} variant="light" />
       <FinancialServicesOurWorkSection />
       <FinancialServicesFinanceStudioSection />
       <FinancialServicesAgentsSection />

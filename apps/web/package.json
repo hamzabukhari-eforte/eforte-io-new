@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "dotenv -o -e ../../.env -e .env -- sh -c 'next dev --port \"${WEB_PORT:-6200}\"'",
+    "dev": "dotenv -o -e ../../.env -e .env -- node ./scripts/run-next.mjs dev",
     "build": "next build --webpack",
-    "start": "dotenv -o -e ../../.env -e .env -- sh -c 'next start --port \"${WEB_PORT:-6200}\"'",
+    "start": "dotenv -o -e ../../.env -e .env -- node ./scripts/run-next.mjs start",
     "lint": "eslint"
   },
   "dependencies": {

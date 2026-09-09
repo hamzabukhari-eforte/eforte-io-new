@@ -41,35 +41,41 @@ export default function IndustrySecuritySection({
   const security = content ?? defaultSecurity;
 
   return (
-    <section className="bg-default py-16 text-white md:py-24">
+    <section className="bg-default pt-6 pb-8 text-white md:pt-8 md:pb-12">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="rounded-[12px] bg-[#101219] p-8 md:rounded-[12px] md:p-12 lg:p-14"
+          className="rounded-[12px] bg-[#101219] p-8 pb-6 md:rounded-[12px] md:p-12 md:pb-8 lg:p-14 lg:pb-10"
         >
           <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
             <h2 className="text-3xl font-semibold leading-tight text-white md:text-4xl">
               {security.heading}
             </h2>
-            <p className="max-w-xl text-[15px] leading-relaxed text-white/60 md:text-base">
+            <p className="max-w-xl text-[15px] leading-relaxed text-white md:text-base">
               {security.body}
             </p>
           </div>
 
           <div className="relative mt-10 aspect-2400/900 w-full overflow-hidden rounded-[12px] md:mt-12">
             <Image
-              src="/assets/images/industry/bg-security.jpg"
-              alt="eForte team collaborating on data security"
+              src="/assets/final-images/industries/security/banner-sunlight-v6.png"
+              alt="eForte team reviewing data security in a sunlit office"
               fill
               sizes="(max-width: 1400px) 90vw, 1280px"
               className="object-cover object-center"
             />
           </div>
+          {/* Previous section images preserved for possible future reuse: */}
+          {/* "/assets/final-images/industries/security/banner-sunlight-v5.png" */}
+          {/* "/assets/final-images/industries/security/banner-sunlight-v3.png" */}
+          {/* "/assets/final-images/industries/security/banner-sunlight.png" */}
+          {/* "/assets/final-images/industries/security/banner.png" */}
+          {/* "/assets/images/industry/bg-security.jpg" */}
 
-          <div className="mt-12 grid gap-10 md:mt-16 md:grid-cols-3 md:gap-12">
+          <div className="mt-8 grid gap-4 md:mt-10 md:grid-cols-3 md:gap-5">
             {certifications.map((cert, index) => (
               <motion.div
                 key={cert.alt}
@@ -77,9 +83,9 @@ export default function IndustrySecuritySection({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, margin: "-80px", amount: 0.15 }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="flex flex-col items-center text-center"
+                className="flex h-full flex-col items-center rounded-[12px] border border-white/10 bg-white/[0.03] px-5 py-5 text-center"
               >
-                <div className="relative h-24 w-24 md:h-28 md:w-28">
+                <div className="relative h-20 w-20 md:h-[88px] md:w-[88px]">
                   <Image
                     src={cert.logo}
                     alt={cert.alt}
@@ -87,7 +93,7 @@ export default function IndustrySecuritySection({
                     className="object-contain"
                   />
                 </div>
-                <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-white/60">
+                <p className="mt-3 max-w-xs text-[15px] leading-relaxed text-white">
                   {cert.description}
                 </p>
               </motion.div>

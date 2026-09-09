@@ -8,10 +8,12 @@ import { motion } from "@/lib/replayMotion";
 
 type IndustryExpertiseSectionProps = {
   content: IndustryPageContent["expertise"];
+  expandStatCards?: boolean;
 };
 
 export default function IndustryExpertiseSection({
   content,
+  expandStatCards = false,
 }: IndustryExpertiseSectionProps) {
   return (
     <section className="bg-default py-16 text-white md:py-24">
@@ -28,23 +30,52 @@ export default function IndustryExpertiseSection({
               <h2 className="text-[36px] font-bold leading-[40px] text-black">
                 {content.title}
               </h2>
-              <p className="mt-5 text-[15px] leading-[23px] text-[#454545]">
+              <p
+                className={
+                  expandStatCards
+                    ? "mt-5 text-[18px] leading-[27px] text-[#454545]"
+                    : "mt-5 text-[15px] leading-[23px] text-[#454545]"
+                }
+              >
                 {content.description}
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div
+              className={
+                expandStatCards
+                  ? "grid auto-rows-[280px] items-end gap-4 sm:grid-cols-3 lg:auto-rows-[292px]"
+                  : "grid gap-4 sm:grid-cols-3"
+              }
+            >
               {content.stats.map((stat) => (
                 <div
                   key={stat.value}
-                  className="rounded-[12px] border border-default/10 bg-[#F6F8FC] p-6"
+                  className={
+                    expandStatCards
+                      ? "flex h-[230px] w-full cursor-pointer flex-col justify-between self-end overflow-hidden rounded-[12px] border border-default/10 bg-white p-5 transition-all duration-300 ease-out hover:h-full hover:bg-linear-to-t hover:from-[#BFD9FF] hover:to-white md:h-[240px] md:p-6"
+                      : "rounded-[12px] border border-default/10 bg-[#F6F8FC] p-6"
+                  }
                 >
-                  <p className="w-fit bg-linear-to-br from-[#5AA0F0] to-[#0A2EC1] bg-clip-text text-[62px] font-normal leading-[74px] text-transparent">
-                    {stat.value}
-                  </p>
-                  <p className="mt-4 text-[14px] leading-[20px] text-[#002EC1]">
-                    {stat.label}
-                  </p>
+                  {expandStatCards ? (
+                    <>
+                      <p className="text-[16px] leading-snug text-[#002EC1]">
+                        {stat.label}
+                      </p>
+                      <p className="mt-8 w-fit bg-linear-to-br from-[#5AA0F0] to-[#0A2EC1] bg-clip-text text-5xl font-semibold tracking-tight text-transparent md:text-[62px] md:leading-[74px] md:font-normal">
+                        {stat.value}
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="w-fit bg-linear-to-br from-[#5AA0F0] to-[#0A2EC1] bg-clip-text text-[62px] font-normal leading-[74px] text-transparent">
+                        {stat.value}
+                      </p>
+                      <p className="mt-4 text-[14px] leading-[20px] text-[#002EC1]">
+                        {stat.label}
+                      </p>
+                    </>
+                  )}
                 </div>
               ))}
             </div>
@@ -109,7 +140,7 @@ export default function IndustryExpertiseSection({
                 <h3 className="max-w-md text-3xl font-medium leading-tight text-white md:text-4xl">
                   {card.title}
                 </h3>
-                <ContactCTA className="mt-auto inline-flex h-10 w-fit items-center justify-center rounded-full leading-none border border-white/50 px-7 text-sm font-medium text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-default">
+                <ContactCTA className="mt-auto inline-flex h-10 w-fit items-center justify-center rounded-full leading-none border border-primary-pink bg-transparent px-7 text-sm font-medium text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white">
                   Learn more
                 </ContactCTA>
               </div>
@@ -119,10 +150,10 @@ export default function IndustryExpertiseSection({
                   <li key={bullet.title} className="flex gap-3">
                     <span className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-white/80" />
                     <div>
-                      <p className="text-base font-semibold text-white md:text-[17px]">
+                      <p className="text-base font-semibold text-white md:text-[20px]">
                         {bullet.title}
                       </p>
-                      <p className="mt-1.5 text-[15px] leading-relaxed text-white/65">
+                      <p className="mt-1.5 text-[16px] leading-relaxed text-white">
                         {bullet.text}
                       </p>
                     </div>
