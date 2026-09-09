@@ -1,7 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { industriesMedia, industriesWhy } from "@/data/industriesOverview";
+import IndustriesMethodologyCard, {
+  type IndustryCardAccent,
+} from "./IndustriesMethodologyCard";
 import IndustriesReveal from "./IndustriesReveal";
 import styles from "./industriesOverview.module.css";
 
@@ -10,6 +12,8 @@ const iconMap = {
   silicon: industriesMedia.silicon,
   secure: industriesMedia.secure,
 };
+
+const accents: IndustryCardAccent[] = ["blue", "pink", "green"];
 
 export default function IndustriesOverviewWhySection() {
   return (
@@ -25,24 +29,20 @@ export default function IndustriesOverviewWhySection() {
           </p>
         </IndustriesReveal>
 
-        <IndustriesReveal as="ul" className={styles["ai-agents"]} direction="bottom" duration={400}>
-          {industriesWhy.cards.map((card) => (
+        <IndustriesReveal
+          as="ul"
+          className={styles.methodologyGrid}
+          direction="bottom"
+          duration={400}
+        >
+          {industriesWhy.cards.map((card, index) => (
             <li key={card.title}>
-              <div className={styles["box-border"]}>
-                <div className={styles["box-content"]}>
-                  <figure className={card.iconKey === "experts" ? styles.experts : undefined}>
-                    <Image
-                      src={iconMap[card.iconKey]}
-                      alt=""
-                      width={160}
-                      height={40}
-                      className="h-full w-auto"
-                    />
-                  </figure>
-                  <h3>{card.title}</h3>
-                  <p>{card.description}</p>
-                </div>
-              </div>
+              <IndustriesMethodologyCard
+                title={card.title}
+                description={card.description}
+                accent={accents[index] ?? "blue"}
+                iconSrc={iconMap[card.iconKey]}
+              />
             </li>
           ))}
         </IndustriesReveal>

@@ -15,10 +15,10 @@ export const industriesMedia = {
   industryIcons: {
     financial: "/assets/images/industry/data.svg",
     insurance: "/assets/images/industry/compliance-1.svg",
-    health: "/assets/images/industry/hlth.svg",
+    health: "/assets/images/industry/icon-health.svg",
     heavy: "/assets/images/industry/platform.svg",
     automobile: "/assets/images/industry/media.svg",
-    hospitality: "/assets/images/industry/deliver-1.svg",
+    hospitality: "/assets/images/industry/icon-hospitality.svg",
     bpo: "/assets/images/industry/data.svg",
     // Preserved for legacy pages still referencing these keys
     banking: "/assets/images/industry/deliver-1.svg",
@@ -43,6 +43,7 @@ export const industriesMedia = {
       alt: "Partner",
     },
   ],
+  // Preserved for possible future reuse (legacy Avant / OnePay / MyRow cards)
   caseStudyBgs: {
     avant: "/assets/images/industry/bg-1.png",
     onepay: "/assets/images/industry/bg-2.png",
@@ -95,8 +96,8 @@ export const industriesWhy = {
 
 export const industriesGridIntro = {
   label: "Our Industries",
-  titleLine1: "A full stack AI",
-  titleLine2: "services partner",
+  titleLine1: "A full stack AI services partner",
+  titleLine2: "",
   descriptionBefore:
     "From digital banking and connected claims to smart factories and guest experiences, eForte delivers across the industries",
   descriptionHighlight: "where AI, data, and software are reshaping how work gets done.",
@@ -188,68 +189,69 @@ export const industriesDatabricks = {
 
 export type IndustryCaseStudy = {
   slug: string;
-  logoSrc: string;
-  logoWidth: number;
-  bgSrc: string;
+  imageSrc: string;
+  imageAlt: string;
+  imageWidth: number;
   pill: string;
   title: string;
   description: string;
-  href?: string;
+  href: string;
   metrics: { number: string; labelLines: string[] }[];
 };
 
 export const industriesOutcomesIntro = {
   label: "Case Studies",
-  titleLine1: "Outcomes achieved for",
-  titleLine2: "clients across our industries",
+  titleLine1: "Outcomes achieved for clients across our industries",
+  titleLine2: "",
   description:
-    "A selection of our work helping clients reshape finance, healthcare, insurance, and beyond.",
+    "A selection of Impact Studies helping clients reshape finance, healthcare, insurance, and beyond.",
 };
 
+/** Featured Impact Studies mapped to industries on this page */
 export const industriesCaseStudies: IndustryCaseStudy[] = [
   {
-    slug: "avant",
-    logoSrc: industriesMedia.caseStudyLogos.avant,
-    logoWidth: 270,
-    bgSrc: industriesMedia.caseStudyBgs.avant,
+    slug: "meridian-pay",
+    imageSrc: "/assets/images/case-study/webp/meridian-pay/image-1.webp",
+    imageAlt: "Meridian Pay payments platform",
+    imageWidth: 420,
     pill: "Finance",
-    title: "Scaling cross border payments without scaling risk",
+    title: "Reinventing core payment functions with data and agentic AI",
     description:
-      "eForte helped Meridian Pay automate compliance screening so it could expand into new markets without growing its compliance team at the same rate.",
-    href: "/industries/financial-services",
+      "Meridian Pay reinvents core payment functions with data and agentic AI, optimizing high-volume transactions while cutting processing errors across the payment lifecycle.",
+    href: "/case-studies/meridian-pay",
     metrics: [
-      { number: "3", labelLines: ["new markets entered", "in under a year"] },
+      { number: "85M+", labelLines: ["transactions", "optimized"] },
+      { number: "60%", labelLines: ["payment processing", "errors down"] },
     ],
   },
   {
-    slug: "onepay",
-    logoSrc: industriesMedia.caseStudyLogos.onepay,
-    logoWidth: 200,
-    bgSrc: industriesMedia.caseStudyBgs.onepay,
+    slug: "allied-insurance",
+    imageSrc: "/assets/images/case-study/webp/allied-insurance/image-1.webp",
+    imageAlt: "Allied Insurance claims platform",
+    imageWidth: 420,
     pill: "Insurance",
-    title: "Automating claims response during peak catastrophe volume",
+    title: "Transforming claims processing with agentic AI and computer vision",
     description:
-      "eForte built an automated First Notice of Loss system that let Brightwell Mutual handle record claims volume without expanding call center staff.",
-    href: "/industries/insurance",
+      "Integrating computer vision with a legacy system, Allied Insurance automated claims verification and fraud detection — cutting processing time from 9 days to 36 hours.",
+    href: "/case-studies/allied-insurance",
     metrics: [
-      { number: "0", labelLines: ["added headcount at", "record claims volume"] },
+      { number: "36h", labelLines: ["average claims", "turnaround"] },
+      { number: "94%", labelLines: ["fraud detection", "accuracy"] },
     ],
   },
   {
-    slug: "myrow",
-    logoSrc: industriesMedia.caseStudyLogos.myrow,
-    logoWidth: 250,
-    bgSrc: industriesMedia.caseStudyBgs.myrow,
+    slug: "bioresearch-labs",
+    imageSrc: "/assets/images/case-study/webp/bioresearch-labs/image-1.webp",
+    imageAlt: "BioResearch Labs clinical data platform",
+    imageWidth: 420,
     pill: "Health & Wellbeing",
-    title: "Scaling a wearable data platform for a major product launch",
+    title: "Ensuring compliant clinical trials with agentic data validation",
     description:
-      "eForte rebuilt PulseWell's data foundation to handle a surge in connected device users without downtime.",
-    href: "/industries/healthcare",
+      "We automated extraction and standardization of clinical data across global research sites, achieving 99.8% data accuracy and accelerating study completion by 42%.",
+    href: "/case-studies/bioresearch-labs",
     metrics: [
-      {
-        number: "0",
-        labelLines: ["downtime at", "new launch scale"],
-      },
+      { number: "99.8%", labelLines: ["clinical data", "accuracy"] },
+      { number: "42%", labelLines: ["faster study", "completion"] },
     ],
   },
 ];

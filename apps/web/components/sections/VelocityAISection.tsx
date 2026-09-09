@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useInViewReplay } from "@/lib/useInViewReplay";
 import { useRef } from "react";
-import { FaCode, FaUserCheck, FaBalanceScale } from "react-icons/fa";
+import { FaCode, FaUserCheck, FaBalanceScale, FaBrain } from "react-icons/fa";
 
 interface FeatureCard {
   id: string;
@@ -48,6 +48,28 @@ const badges = [
   { id: "soc2", image: "/assets/images/landing/soc.png", alt: "SOC 2 TYPE 2" },
   { id: "nist", image: "/assets/images/landing/nist.png", alt: "NIST Compliant" },
 ];
+
+/** Card orbit around the center circle — keeps “Velocity AI” text clear */
+const cardLayout: Record<
+  FeatureCard["position"],
+  { className: string; from: { opacity: number; x: number; y: number; scale: number } }
+> = {
+  top: {
+    // Top-center above the circle
+    className: "left-1/2 top-[calc(50%-325px)] w-[210px] -translate-x-1/2",
+    from: { opacity: 0, x: 0, y: -28, scale: 0.94 },
+  },
+  "bottom-left": {
+    // Nudged right toward the circle
+    className: "left-[calc(50%-330px)] top-[calc(50%+8px)] w-[210px]",
+    from: { opacity: 0, x: -28, y: 20, scale: 0.94 },
+  },
+  "bottom-right": {
+    // Nudged left toward the circle
+    className: "left-[calc(50%+120px)] top-[calc(50%+8px)] w-[210px]",
+    from: { opacity: 0, x: 28, y: 20, scale: 0.94 },
+  },
+};
 
 export default function VelocityAISection() {
   const ref = useRef(null);
@@ -164,89 +186,90 @@ export default function VelocityAISection() {
             </div>
           </div>
 
-          {/* Desktop Layout — pink center, blue cards */}
-          <div className="relative hidden min-h-[700px] xl:block">
-            {/* Pink glow around middle circle */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="absolute h-[500px] w-[500px] rounded-full border border-primary-pink/20 blur-3xl" />
-              <div className="absolute h-[400px] w-[400px] rounded-full border border-primary-pink/30 blur-2xl" />
-              <div className="absolute h-[380px] w-[380px] rounded-full bg-primary-pink/25 blur-3xl" />
-            </div>
-
+          {/* Desktop Layout — red center, blue feather, blue cards */}
+          <div className="relative mx-auto hidden h-[640px] w-full max-w-[720px] overflow-visible xl:block">
+            {/* Circle sits above cards so Velocity AI stays readable */}
             <motion.div
-              className="absolute top-1/2 left-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-              transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+              className="absolute top-1/2 left-1/2 z-30 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center"
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.85 }}
+              transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="flex h-64 w-64 items-center justify-center xl:h-[500px] xl:w-[500px]">
-                <Image
-                  src="/assets/images/landing/AI-value.png"
-                  alt="Velocity AI Core Framework"
-                  width={400}
-                  height={400}
-                  className="h-full w-full object-contain"
-                />
+              <div className="relative flex h-[175px] w-[175px] items-center justify-center">
+                <div className="pointer-events-none absolute -inset-7 rounded-full bg-[#426CFF]/30 blur-3xl" />
+                <div className="pointer-events-none absolute -inset-4 rounded-full bg-[#426CFF]/20 blur-2xl" />
+                <div className="pointer-events-none absolute -inset-2 rounded-full border border-[#426CFF]/50 blur-[2px]" />
+                <div className="pointer-events-none absolute inset-0 rounded-full shadow-[0_0_32px_10px_rgba(66,108,255,0.45)]" />
+
+                <div className="relative z-10 flex h-full w-full flex-col items-center justify-center rounded-full border border-primary-pink/35 bg-[radial-gradient(circle_at_center,rgba(211,40,122,0.28)_0%,rgba(211,40,122,0.12)_55%,rgba(10,10,26,0.85)_100%)]">
+                  <motion.div
+                    className="mb-2.5"
+                    animate={
+                      isInView
+                        ? {
+                            y: [0, -4, 0],
+                            scale: [1, 1.06, 1],
+                            filter: [
+                              "drop-shadow(0 0 8px rgba(211,40,122,0.4))",
+                              "drop-shadow(0 0 16px rgba(211,40,122,0.75))",
+                              "drop-shadow(0 0 8px rgba(211,40,122,0.4))",
+                            ],
+                          }
+                        : { y: 0, scale: 1 }
+                    }
+                    transition={{
+                      duration: 2.8,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    <FaBrain className="h-10 w-10 text-primary-pink" />
+                  </motion.div>
+                  <p className="text-[21px] font-bold leading-none tracking-tight text-primary-pink">
+                    Velocity AI
+                  </p>
+                  <p className="mt-2 text-[12px] font-medium tracking-wide text-white">
+                    Core Framework
+                  </p>
+                </div>
               </div>
             </motion.div>
 
             {features.map((feature, index) => {
-              let positionClasses = "";
-              if (feature.position === "top") {
-                positionClasses =
-                  "top-30 -right-45 -translate-x-1/2 -translate-y-1/2";
-              } else if (feature.position === "bottom-left") {
-                positionClasses = "-bottom-5 -left-16";
-              } else {
-                positionClasses = "-bottom-5 -right-16";
-              }
+              const layout = cardLayout[feature.position];
 
               return (
-                <motion.div
+                <div
                   key={feature.id}
-                  className={`absolute z-10 w-full max-w-[320px] ${positionClasses}`}
-                  initial={{
-                    opacity: 0,
-                    y: feature.position === "top" ? -30 : 30,
-                    x:
-                      feature.position === "bottom-left"
-                        ? -30
-                        : feature.position === "bottom-right"
-                          ? 30
-                          : 0,
-                  }}
-                  animate={
-                    isInView
-                      ? { opacity: 1, y: 0, x: 0 }
-                      : {
-                          opacity: 0,
-                          y: feature.position === "top" ? -30 : 30,
-                          x:
-                            feature.position === "bottom-left"
-                              ? -30
-                              : feature.position === "bottom-right"
-                                ? 30
-                                : 0,
-                        }
-                  }
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.6 + index * 0.2,
-                    ease: "easeOut",
-                  }}
+                  className={`absolute z-10 ${layout.className}`}
                 >
-                  <div className="rounded-[12px] border border-[#426CFF]/30 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[#426CFF]">
-                    <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-[#426CFF] bg-[#426CFF]/20">
-                      <div className="text-[#426CFF]">{feature.icon}</div>
+                  <motion.div
+                    initial={layout.from}
+                    animate={
+                      isInView
+                        ? { opacity: 1, x: 0, y: 0, scale: 1 }
+                        : layout.from
+                    }
+                    transition={{
+                      duration: 0.75,
+                      delay: 0.4 + index * 0.12,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    whileHover={{ y: -4, transition: { duration: 0.25 } }}
+                  >
+                    <div className="rounded-[10px] border border-[#426CFF]/30 bg-[#0A0A1A]/95 p-4 shadow-[0_8px_28px_rgba(0,0,0,0.4)] backdrop-blur-sm transition-colors duration-300 hover:border-[#426CFF]">
+                      <div className="mb-2.5 flex h-9 w-9 items-center justify-center rounded-full border border-[#426CFF] bg-[#426CFF]/20">
+                        <div className="scale-75 text-[#426CFF]">{feature.icon}</div>
+                      </div>
+                      <h4 className="mb-1.5 text-[15px] font-bold leading-snug text-white">
+                        {feature.title}
+                      </h4>
+                      <p className="text-[12px] leading-relaxed text-white">
+                        {feature.description}
+                      </p>
                     </div>
-                    <h4 className="mb-3 text-xl font-bold text-white">
-                      {feature.title}
-                    </h4>
-                    <p className="text-[15px] leading-relaxed text-white">
-                      {feature.description}
-                    </p>
-                  </div>
-                </motion.div>
+                  </motion.div>
+                </div>
               );
             })}
           </div>

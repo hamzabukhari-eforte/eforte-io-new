@@ -29,28 +29,26 @@ export default function IndustriesOverviewOutcomesSection() {
             <IndustriesReveal
               key={study.slug}
               as="li"
-              className={`${styles["solution-box"]} ${styles[study.slug] ?? ""}`}
+              className={styles["solution-box"]}
               direction="bottom"
               duration={400}
             >
               <div className={styles.left}>
-                <figure style={{ width: study.logoWidth }}>
+                <figure style={{ width: study.imageWidth }}>
                   <Image
-                    src={study.logoSrc}
-                    alt=""
-                    width={study.logoWidth}
-                    height={80}
-                    className="h-auto w-full object-contain object-left"
+                    src={study.imageSrc}
+                    alt={study.imageAlt}
+                    width={study.imageWidth}
+                    height={Math.round(study.imageWidth * 0.75)}
+                    className="h-auto w-full rounded-xl object-cover object-left"
                   />
                 </figure>
-                {study.href ? (
-                  <Link
-                    href={study.href}
-                    className={`${styles["explore-button"]} ${styles["desktop-button"]}`}
-                  >
-                    Learn more →
-                  </Link>
-                ) : null}
+                <Link
+                  href={study.href}
+                  className={`${styles["explore-button"]} ${styles["desktop-button"]}`}
+                >
+                  Learn more →
+                </Link>
               </div>
               <div className={styles.right}>
                 <p className={styles.pill}>{study.pill}</p>
@@ -58,7 +56,7 @@ export default function IndustriesOverviewOutcomesSection() {
                 <p className={styles.description}>{study.description}</p>
                 <ul className={styles.values}>
                   {study.metrics.map((metric) => (
-                    <li key={metric.number}>
+                    <li key={`${metric.number}-${metric.labelLines.join("-")}`}>
                       <p className={styles.number}>{metric.number}</p>
                       <p className={styles.label}>
                         {metric.labelLines.map((line) => (
@@ -68,14 +66,12 @@ export default function IndustriesOverviewOutcomesSection() {
                     </li>
                   ))}
                 </ul>
-                {study.href ? (
-                  <Link
-                    href={study.href}
-                    className={`${styles["explore-button"]} ${styles["mobile-button"]}`}
-                  >
-                    Learn more →
-                  </Link>
-                ) : null}
+                <Link
+                  href={study.href}
+                  className={`${styles["explore-button"]} ${styles["mobile-button"]}`}
+                >
+                  Learn more →
+                </Link>
               </div>
             </IndustriesReveal>
           ))}

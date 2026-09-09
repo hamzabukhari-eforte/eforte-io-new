@@ -1,7 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "@/lib/replayMotion";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import {
   HiOutlineIdentification,
   HiOutlineDeviceMobile,
@@ -22,7 +28,6 @@ type Capability = {
   heading: string;
   bullets: Bullet[];
   image: string;
-  imageSide: "left" | "right";
 };
 
 const capabilities: Capability[] = [
@@ -50,7 +55,6 @@ const capabilities: Capability[] = [
       },
     ],
     image: "/assets/images/case-study/krank-banner.png",
-    imageSide: "right",
   },
   {
     id: "mhealth",
@@ -72,7 +76,6 @@ const capabilities: Capability[] = [
       },
     ],
     image: "/assets/images/case-study/oddysee-banner.png",
-    imageSide: "left",
   },
   {
     id: "virtual-care",
@@ -94,7 +97,6 @@ const capabilities: Capability[] = [
       },
     ],
     image: "/assets/images/case-study/invesment-banner.png",
-    imageSide: "right",
   },
   {
     id: "agentic-care",
@@ -116,7 +118,6 @@ const capabilities: Capability[] = [
       },
     ],
     image: "/assets/images/case-study/prism-banner.png",
-    imageSide: "left",
   },
   {
     id: "foundational-data",
@@ -138,125 +139,226 @@ const capabilities: Capability[] = [
       },
     ],
     image: "/assets/images/case-study/sellsMart4.png",
-    imageSide: "right",
   },
 ];
 
-
-function CapabilityNav({ activeId }: { activeId: string }) {
-  return (
-    <div className="mt-12 flex flex-wrap justify-center gap-1.5 md:justify-start">
-      {capabilities.map((c) => {
-        const Icon = c.icon;
-        const isActive = c.id === activeId;
-        return (
-          <div
-            key={c.id}
-            className="flex w-20 flex-col items-center gap-2 text-center md:w-24"
-          >
-            <span
-              className={cn(
-                "flex h-14 w-14 items-center justify-center rounded-[12px] transition-all duration-300",
-                isActive
-                  ? "bg-[#2D68F0] text-white shadow-md"
-                  : "bg-[#E6EEFF] text-[#2D68F0]"
-              )}
-            >
-              <Icon className="h-6 w-6" />
-            </span>
-            <span
-              className={cn(
-                "text-[11px] font-medium leading-tight transition-colors duration-300",
-                isActive ? "text-[#2D68F0]" : "text-[#9aa3b2]"
-              )}
-            >
-              {c.label}
-            </span>
-          </div>
-        );
-      })}
-    </div>
-  );
-}
+/** Extra scroll room per slide so changes feel paced, not abrupt */
+const STEP_VH = 110;
+const EASE = [0.22, 1, 0.36, 1] as const;
+const FADE = { duration: 0.55, ease: EASE };
 
 export default function HealthcareCapabilitiesSection() {
+  const trackRef = useRef<HTMLElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeIndexRef = useRef(0);
+  const clickLockRef = useRef(false);
+  const clickUnlockTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const rafRef = useRef<number | null>(null);
+
+  const setActiveSmooth = useCallback((next: number) => {
+    if (next === activeIndexRef.current) return;
+    activeIndexRef.current = next;
+    setActiveIndex(next);
+  }, []);
+
+  const syncFromScroll = useCallback(() => {
+    if (clickLockRef.current) return;
+    const track = trackRef.current;
+    if (!track) return;
+
+    const rect = track.getBoundingClientRect();
+    const scrollable = track.offsetHeight - window.innerHeight;
+    if (scrollable <= 0) {
+      setActiveSmooth(0);
+      return;
+    }
+
+    const scrolled = Math.min(scrollable, Math.max(0, -rect.top));
+    const progress = scrolled / scrollable;
+    // Hold each slide near segment center; round for softer boundaries
+    const scaled = progress * (capabilities.length - 0.0001);
+    const next = Math.min(
+      capabilities.length - 1,
+      Math.max(0, Math.round(scaled - 0.15))
+    );
+    setActiveSmooth(next);
+  }, [setActiveSmooth]);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (rafRef.current != null) return;
+      rafRef.current = requestAnimationFrame(() => {
+        rafRef.current = null;
+        syncFromScroll();
+      });
+    };
+
+    syncFromScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (rafRef.current != null) cancelAnimationFrame(rafRef.current);
+      if (clickUnlockTimer.current) clearTimeout(clickUnlockTimer.current);
+    };
+  }, [syncFromScroll]);
+
+  const goToIndex = (index: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    clickLockRef.current = true;
+    setActiveSmooth(index);
+
+    const scrollable = Math.max(0, track.offsetHeight - window.innerHeight);
+    const segment = scrollable / capabilities.length;
+    const top =
+      window.scrollY +
+      track.getBoundingClientRect().top +
+      index * segment +
+      segment * 0.35;
+
+    window.scrollTo({ top, behavior: "smooth" });
+
+    if (clickUnlockTimer.current) clearTimeout(clickUnlockTimer.current);
+    clickUnlockTimer.current = setTimeout(() => {
+      clickLockRef.current = false;
+      syncFromScroll();
+    }, 900);
+  };
+
+  const capability = capabilities[activeIndex];
+
   return (
-    <section className="overflow-hidden rounded-b-[12px] bg-white py-8 pb-16 md:rounded-b-[12px] md:py-12 md:pb-24">
-      {capabilities.map((capability) => {
-        const isImageRight = capability.imageSide === "right";
-
-        const textBlock = (
-          <motion.div
-            initial={{ opacity: 0, x: isImageRight ? -80 : 80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, margin: "-120px", amount: 0.15 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col justify-center"
-          >
-            <h3 className="max-w-md text-3xl font-semibold leading-tight text-[#011C57] md:text-4xl">
-              {capability.heading}
-            </h3>
-            <ul className="mt-7 space-y-5">
-              {capability.bullets.map((bullet) => (
-                <li key={bullet.title} className="flex gap-3">
-                  <span className="mt-2.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#888888]" />
-                  <p className="text-[15px] leading-relaxed text-[#666]">
-                    <span className="font-semibold text-[#222]">
-                      {bullet.title}
-                    </span>{" "}
-                    {bullet.text}
-                  </p>
-                </li>
-              ))}
-            </ul>
-
-            <CapabilityNav activeId={capability.id} />
-          </motion.div>
-        );
-
-        const imageBlock = (
-          <motion.div
-            initial={{ opacity: 0, x: isImageRight ? 80 : -80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, margin: "-120px", amount: 0.15 }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className={cn(
-              "relative flex items-center",
-              isImageRight ? "justify-start lg:-mr-24" : "justify-end lg:-ml-24"
-            )}
-          >
-            <div className="relative aspect-4/3 w-full lg:scale-110">
-              <Image
-                src={capability.image}
-                alt={capability.heading}
-                fill
-                sizes="(max-width: 1024px) 100vw, 800px"
-                className="object-contain object-center"
-              />
-            </div>
-          </motion.div>
-        );
-
-        return (
-          <div key={capability.id} className="py-12 md:py-16">
-            <Container>
-              <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.25fr] lg:gap-16">
-                {isImageRight ? (
-                  <>
-                    {textBlock}
-                    {imageBlock}
-                  </>
-                ) : (
-                  <>
-                    {imageBlock}
-                    {textBlock}
-                  </>
-                )}
+    <section
+      ref={trackRef}
+      className="relative bg-white"
+      style={{ height: `${capabilities.length * STEP_VH}vh` }}
+      aria-label="Healthcare capabilities"
+    >
+      <div className="sticky top-0 flex min-h-screen items-center overflow-hidden py-16 md:py-20">
+        <Container className="w-full">
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-14">
+            <div className="flex flex-col justify-center">
+              <div className="relative min-h-[280px] md:min-h-[320px]">
+                <AnimatePresence mode="sync" initial={false}>
+                  <motion.div
+                    key={capability.id}
+                    initial={{ opacity: 0, y: 22, filter: "blur(4px)" }}
+                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    exit={{
+                      opacity: 0,
+                      y: -16,
+                      filter: "blur(4px)",
+                      position: "absolute",
+                      inset: 0,
+                    }}
+                    transition={FADE}
+                    className="w-full"
+                  >
+                    <h3 className="max-w-md text-3xl font-semibold leading-tight text-[#011C57] md:text-4xl">
+                      {capability.heading}
+                    </h3>
+                    <ul className="mt-7 space-y-5">
+                      {capability.bullets.map((bullet, i) => (
+                        <motion.li
+                          key={bullet.title}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{
+                            duration: 0.4,
+                            delay: 0.08 + i * 0.05,
+                            ease: EASE,
+                          }}
+                          className="flex gap-3"
+                        >
+                          <span className="mt-2.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#888888]" />
+                          <p className="text-[15px] leading-relaxed text-[#666]">
+                            <span className="font-semibold text-[#222]">
+                              {bullet.title}
+                            </span>{" "}
+                            {bullet.text}
+                          </p>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                </AnimatePresence>
               </div>
-            </Container>
+
+              <div className="mt-10 flex flex-wrap justify-center gap-1.5 md:mt-12 md:justify-start">
+                {capabilities.map((item, index) => {
+                  const Icon = item.icon;
+                  const isActive = index === activeIndex;
+                  return (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => goToIndex(index)}
+                      aria-label={item.label}
+                      aria-current={isActive ? "true" : undefined}
+                      className="flex w-20 flex-col items-center gap-2 text-center md:w-24"
+                    >
+                      <span
+                        className={cn(
+                          "flex h-14 w-14 items-center justify-center rounded-[12px] transition-all duration-500 ease-out",
+                          isActive
+                            ? "scale-105 bg-primary-pink text-white shadow-[0_10px_24px_rgba(211,40,122,0.35)]"
+                            : "bg-primary-pink/10 text-primary-pink hover:bg-primary-pink/15"
+                        )}
+                      >
+                        <Icon className="h-6 w-6" />
+                      </span>
+                      <span
+                        className={cn(
+                          "text-[11px] font-medium leading-tight transition-colors duration-500",
+                          isActive ? "text-primary-pink" : "text-[#9aa3b2]"
+                        )}
+                      >
+                        {item.label}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div className="relative flex items-center justify-start lg:-mr-16">
+              <div className="relative aspect-4/3 w-full max-w-[640px]">
+                {/* Crossfade all images for a softer swap */}
+                {capabilities.map((item, index) => (
+                  <motion.div
+                    key={item.id}
+                    className="absolute inset-0"
+                    initial={false}
+                    animate={{
+                      opacity: index === activeIndex ? 1 : 0,
+                      scale: index === activeIndex ? 1 : 0.97,
+                      filter:
+                        index === activeIndex ? "blur(0px)" : "blur(6px)",
+                    }}
+                    transition={{ duration: 0.65, ease: EASE }}
+                    style={{
+                      pointerEvents: index === activeIndex ? "auto" : "none",
+                      zIndex: index === activeIndex ? 2 : 1,
+                    }}
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.heading}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 640px"
+                      className="object-contain object-center"
+                      priority={index === 0}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
-        );
-      })}
+        </Container>
+      </div>
     </section>
   );
 }

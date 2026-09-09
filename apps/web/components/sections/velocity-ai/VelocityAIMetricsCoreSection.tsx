@@ -347,7 +347,7 @@ export default function VelocityAIMetricsCoreSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          VELOCITY AI: METRICS AT ITS CORE
+            VELOCITY AI: METRICS AT ITS CORE
         </motion.p>
 
         <motion.h2

@@ -1,5 +1,4 @@
-import Image from "next/image";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import {
   SiAmazonwebservices,
   SiFigma,
@@ -7,11 +6,12 @@ import {
   SiPaypal,
   SiSlack,
 } from "react-icons/si";
+import { cn } from "@/lib/utils";
 
 const wrap =
   "flex h-12 items-center justify-center px-4 md:h-16";
-const imgClass = "h-7 w-auto object-contain md:h-8";
-const iconClass = "text-2xl md:text-3xl";
+const iconClass =
+  "text-2xl md:text-3xl transition-[color,transform] duration-300 ease-out";
 
 function LogoTooltip({
   name,
@@ -21,9 +21,16 @@ function LogoTooltip({
   children: ReactNode;
 }) {
   return (
-    <div className="group relative z-10 flex items-center justify-center overflow-visible hover:z-[100]">
+    <div
+      title={name}
+      className="group relative z-10 flex items-center justify-center overflow-visible hover:z-[200]"
+    >
       {children}
-      <span className="pointer-events-none absolute left-1/2 top-full z-[100] mt-2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/10 bg-black px-3 py-1 text-xs font-medium tracking-wide text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100">
+      {/* Above the logo so overflow-hidden heroes don't clip the name */}
+      <span
+        role="tooltip"
+        className="pointer-events-none absolute bottom-full left-1/2 z-[200] mb-2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/15 bg-black/95 px-3 py-1.5 text-xs font-semibold tracking-wide text-white opacity-0 shadow-[0_8px_24px_rgba(0,0,0,0.45)] transition-opacity duration-200 group-hover:opacity-100"
+      >
         {name}
       </span>
     </div>
@@ -35,25 +42,65 @@ function BrandImage({
   alt,
   width = 120,
   tone,
+  hoverColor,
 }: {
   src: string;
   alt: string;
   width?: number;
   tone: "white" | "dark";
+  hoverColor: string;
 }) {
-  // Gray brand SVGs → pure white on dark bg, pure black on light bg
-  const toneClass =
-    tone === "white" ? " brightness-0 invert" : " brightness-0";
+  // Monochrome mask so hover can swap to brand color (assets are gray fills)
+  const maskStyle: CSSProperties = {
+    width,
+    height: 32,
+    WebkitMaskImage: `url(${src})`,
+    maskImage: `url(${src})`,
+    WebkitMaskSize: "contain",
+    maskSize: "contain",
+    WebkitMaskRepeat: "no-repeat",
+    maskRepeat: "no-repeat",
+    WebkitMaskPosition: "center",
+    maskPosition: "center",
+  };
 
   return (
     <LogoTooltip name={alt}>
       <div className={wrap}>
-        <Image
-          src={src}
-          alt={alt}
-          width={width}
-          height={32}
-          className={`${imgClass}${toneClass}`}
+        <span
+          aria-label={alt}
+          role="img"
+          style={maskStyle}
+          className={cn(
+            "inline-block transition-[background-color,transform] duration-300 ease-out group-hover:scale-105",
+            tone === "white" ? "bg-white" : "bg-default",
+            hoverColor
+          )}
+        />
+      </div>
+    </LogoTooltip>
+  );
+}
+
+function BrandIcon({
+  name,
+  tone,
+  hoverClass,
+  Icon,
+}: {
+  name: string;
+  tone: "white" | "dark";
+  hoverClass: string;
+  Icon: typeof SiFigma;
+}) {
+  const iconTone = tone === "white" ? "text-white" : "text-default";
+
+  return (
+    <LogoTooltip name={name}>
+      <div className={cn(wrap, iconTone)}>
+        <Icon
+          className={cn(iconClass, "group-hover:scale-105", hoverClass)}
+          aria-hidden
         />
       </div>
     </LogoTooltip>
@@ -61,8 +108,6 @@ function BrandImage({
 }
 
 function buildLogos(tone: "white" | "dark") {
-  const iconTone = tone === "white" ? "text-white" : "text-default";
-
   return [
     {
       id: "land-id",
@@ -72,17 +117,19 @@ function buildLogos(tone: "white" | "dark") {
           alt="Land id."
           width={110}
           tone={tone}
+          hoverColor="group-hover:bg-[#4F46E5]"
         />
       ),
     },
     {
       id: "figma",
       content: (
-        <LogoTooltip name="Figma">
-          <div className={`${wrap} ${iconTone}`}>
-            <SiFigma className={iconClass} aria-hidden />
-          </div>
-        </LogoTooltip>
+        <BrandIcon
+          name="Figma"
+          tone={tone}
+          Icon={SiFigma}
+          hoverClass="group-hover:text-[#F24E1E]"
+        />
       ),
     },
     {
@@ -93,17 +140,19 @@ function buildLogos(tone: "white" | "dark") {
           alt="Ripple"
           width={110}
           tone={tone}
+          hoverColor="group-hover:bg-[#008CFF]"
         />
       ),
     },
     {
       id: "google",
       content: (
-        <LogoTooltip name="Google">
-          <div className={`${wrap} ${iconTone}`}>
-            <SiGoogle className={iconClass} aria-hidden />
-          </div>
-        </LogoTooltip>
+        <BrandIcon
+          name="Google"
+          tone={tone}
+          Icon={SiGoogle}
+          hoverClass="group-hover:text-[#4285F4]"
+        />
       ),
     },
     {
@@ -114,6 +163,7 @@ function buildLogos(tone: "white" | "dark") {
           alt="Shopify"
           width={120}
           tone={tone}
+          hoverColor="group-hover:bg-[#96BF48]"
         />
       ),
     },
@@ -125,37 +175,41 @@ function buildLogos(tone: "white" | "dark") {
           alt="OneSignal"
           width={130}
           tone={tone}
+          hoverColor="group-hover:bg-[#E54B4D]"
         />
       ),
     },
     {
       id: "slack",
       content: (
-        <LogoTooltip name="Slack">
-          <div className={`${wrap} ${iconTone}`}>
-            <SiSlack className={iconClass} aria-hidden />
-          </div>
-        </LogoTooltip>
+        <BrandIcon
+          name="Slack"
+          tone={tone}
+          Icon={SiSlack}
+          hoverClass="group-hover:text-[#E01E5A]"
+        />
       ),
     },
     {
       id: "paypal",
       content: (
-        <LogoTooltip name="PayPal">
-          <div className={`${wrap} ${iconTone}`}>
-            <SiPaypal className={iconClass} aria-hidden />
-          </div>
-        </LogoTooltip>
+        <BrandIcon
+          name="PayPal"
+          tone={tone}
+          Icon={SiPaypal}
+          hoverClass="group-hover:text-[#0070BA]"
+        />
       ),
     },
     {
       id: "aws",
       content: (
-        <LogoTooltip name="AWS">
-          <div className={`${wrap} ${iconTone}`}>
-            <SiAmazonwebservices className={iconClass} aria-hidden />
-          </div>
-        </LogoTooltip>
+        <BrandIcon
+          name="AWS"
+          tone={tone}
+          Icon={SiAmazonwebservices}
+          hoverClass="group-hover:text-[#FF9900]"
+        />
       ),
     },
   ];

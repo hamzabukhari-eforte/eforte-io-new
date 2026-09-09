@@ -2,7 +2,7 @@ import {
   HealthcareHeroSection,
   HealthcareExpertiseSection,
   HealthcareVideoSection,
-  HealthcareEventsSection,
+  // HealthcareEventsSection, // preserved — “mission to make healthcare more human” section
   HealthcareHighlightsSection,
   HealthcareCertificationsSection,
   HealthcareCapabilitiesSection,
@@ -23,7 +23,7 @@ export default function HealthcarePage() {
       <HealthcareHeroSection />
       <HealthcareExpertiseSection />
       <HealthcareVideoSection />
-      <HealthcareEventsSection />
+      {/* <HealthcareEventsSection /> */}
       <HealthcareHighlightsSection />
       <HealthcareCertificationsSection />
       <HealthcareCapabilitiesSection />

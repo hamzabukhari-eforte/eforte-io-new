@@ -18,7 +18,8 @@ export default function InfiniteCarousel({
     // overflow-x clips the scroll track; vertical padding keeps tooltip room
     // inside the clip box (overflow-x-hidden forces overflow-y to clip too)
     <div className={`relative w-full overflow-x-hidden ${className}`}>
-      <div className="pb-12 -mb-12 pt-2">
+      {/* Top padding keeps name tooltips (above logos) inside the clip box */}
+      <div className="pb-4 -mb-4 pt-10 -mt-2">
         <div className="flex animate-scroll">
           {/* Duplicate items for seamless infinite scroll; margin matches gap so spacing is even at loop */}
           {[...Array(3)].map((_, setIndex) => (
@@ -29,7 +30,7 @@ export default function InfiniteCarousel({
               {items.map((item) => (
                 <div
                   key={`${setIndex}-${item.id}`}
-                  className="relative z-30 shrink-0 overflow-visible"
+                  className="relative z-30 shrink-0 overflow-visible hover:z-[200]"
                 >
                   {item.content}
                 </div>

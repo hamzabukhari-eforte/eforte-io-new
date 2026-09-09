@@ -4,6 +4,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState, type Mutable
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 import { useScroll } from "@/hooks/useScroll";
 import { useLenisControl } from "@/components/providers/SmoothScrollProvider";
 import { cn } from "@/lib/utils";
@@ -65,6 +66,33 @@ const menuIconMap: Record<string, IconType> = {
   link: FiLink,
 };
 
+function isNavHrefActive(pathname: string, href?: string): boolean {
+  if (!href) return false;
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+/** Shared mega-menu item chrome: theme pink 1px stroke hover + selected */
+function megaMenuItemClassName(
+  pathname: string,
+  href: string | undefined,
+  layoutClassName?: string
+) {
+  const selected = isNavHrefActive(pathname, href);
+  return cn(
+    "group border border-transparent bg-white/[0.04]",
+    "transition-[border-color,background-color,box-shadow] duration-300 ease-out",
+    "hover:border-primary-pink/70 hover:bg-primary-pink/[0.06]",
+    selected &&
+      "border-primary-pink/55 bg-primary-pink/[0.1] shadow-[inset_0_0_0_1px_rgba(211,40,122,0.28)]",
+    "cursor-pointer",
+    layoutClassName
+  );
+}
+
+const megaMenuIconBoxClass =
+  "transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-rotate-6";
+
 interface NavLink {
   id: string;
   label: string;
@@ -76,6 +104,10 @@ interface MegaMenuItem {
   description?: string;
   tag?: string;
   imageSrc?: string;
+  /** cover (default) or contain — use contain for full logos/badges */
+  imageFit?: "cover" | "contain";
+  /** Optional logo row for cards like Technology Partners */
+  logos?: { src: string; alt: string }[];
   /** Key from menuIconMap (react-icons). Use with iconColorClass for the icon box. */
   iconName?: keyof typeof menuIconMap;
   iconColorClass?: string;
@@ -191,7 +223,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "eForte's comprehensive framework encompassing best practices, workflows, and advanced AI methodologies.",
             iconName: "lightning-bolt",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/velocity-ai",
           },
           {
@@ -199,7 +231,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Design and deploy AI agents customized to address industry-specific challenges.",
             iconName: "view-list",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/agentic-orchestration",
           },
           {
@@ -207,7 +239,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Build robust data foundations that power next-generation enterprises.",
             iconName: "database",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/foundational-data-layer",
           },
         ],
@@ -255,7 +287,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "User experience research, service design, design thinking, and intuitive UI design.",
             iconName: "pencil",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/capabilities/product-design",
           },
           {
@@ -263,7 +295,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Agentic AI, generative AI, machine learning, natural language processing, and computer vision.",
             iconName: "chip",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/capabilities/artificial-intelligence",
           },
           {
@@ -271,7 +303,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Data engineering, transformation, visualization, and predictive analytics.",
             iconName: "database",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/capabilities/data",
           },
           {
@@ -279,7 +311,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Native and hybrid app development, SDK creation, system integrations, and app store optimization.",
             iconName: "device-mobile",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/capabilities/app-solutions",
           },
           {
@@ -287,7 +319,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Cloud migration, CI/CD pipeline implementation, site reliability engineering, and infrastructure as code.",
             iconName: "cloud",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/capabilities/cloud-sre",
           },
           {
@@ -295,7 +327,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Secure SDLC, AI-driven cybersecurity, penetration testing, and AI security assessments.",
             iconName: "shield-check",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/capabilities/cybersecurity",
           },
           {
@@ -303,7 +335,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Scalable platforms, resilient infrastructure, API development, and efficient deployment strategies.",
             iconName: "cog",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/capabilities/platform-engineering",
           },
           {
@@ -311,7 +343,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "AI-augmented testing, test automation, CI/CD integration, performance, load, and data testing.",
             iconName: "check-circle",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/capabilities/quality-assurance",
           },
           {
@@ -319,7 +351,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Product strategy, lifecycle management, process optimization, and monetization consulting.",
             iconName: "view-grid",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/capabilities/product-management",
           },
           {
@@ -327,7 +359,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Smart contract development, decentralized applications, and blockchain system integration.",
             iconName: "link",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/capabilities/blockchain",
           },
           {
@@ -335,7 +367,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Accelerate delivery with dedicated AI, data, cloud, and engineering talent seamlessly embedded into your teams, eliminating hiring complexity and ramp-up time.",
             iconName: "user-group",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/capabilities/staff-augmentation",
           },
           // Embedded Engineering preserved for future reuse (not in mega menu DOC 4August2026):
@@ -365,7 +397,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Autonomous Customer Service Workflows: AI agents route, respond, analyze sentiment, and continuously optimize customer interactions.",
             iconName: "user-group",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/ai-workflows/customer-service",
           },
           {
@@ -373,7 +405,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Agentic Revenue Workflows: AI agents qualify leads, generate proposals, and accelerate deal cycles.",
             iconName: "lightning-bolt",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/ai-workflows/sales-marketing",
           },
           {
@@ -381,7 +413,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Autonomous Financial Workflows: AI agents process invoices, detect fraud, and ensure continuous compliance.",
             iconName: "currency-dollar",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/ai-workflows/financial-operations",
           },
         ],
@@ -394,7 +426,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Agentic Talent Workflows: AI agents screen candidates, coordinate onboarding, and manage lifecycle tasks.",
             iconName: "badge-check",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/ai-workflows/human-resources",
           },
           {
@@ -402,7 +434,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "AI-Orchestrated Risk & Compliance Workflows: Autonomous monitoring and regulatory reporting with built-in governance.",
             iconName: "shield-check",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/ai-workflows/operations-compliance",
           },
           {
@@ -410,7 +442,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Intelligent Delivery & Data Workflows: AI agents allocate resources, track progress, and generate predictive insights.",
             iconName: "database",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/ai-workflows/project-management-data",
           },
         ],
@@ -431,7 +463,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "AI-driven healthcare solutions improving patient outcomes, operational efficiency, and personalized care.",
             iconName: "heart",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/industries/healthcare",
           },
           {
@@ -439,7 +471,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Intelligent AI and data platforms enabling smarter decisions, risk mitigation, and digital financial transformation.",
             iconName: "currency-dollar",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/industries/financial-services",
           },
           {
@@ -447,7 +479,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "AI-powered automation and analytics streamlining underwriting, claims processing, and customer engagement.",
             iconName: "shield-check",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/industries/insurance",
           },
           {
@@ -455,7 +487,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Advanced AI enabling connected vehicles, predictive maintenance, and intelligent manufacturing ecosystems.",
             iconName: "device-mobile",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/industries/automobile",
           },
           {
@@ -463,7 +495,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Industrial AI solutions driving predictive maintenance, operational excellence, and smart factory transformation.",
             iconName: "office-building",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/industries/heavy-industries",
           },
           {
@@ -471,7 +503,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "Agentic AI and automation enhancing service delivery, productivity, and scalable customer operations.",
             iconName: "user-group",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/industries/bpo-shared-services",
           },
           {
@@ -479,7 +511,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "AI-powered personalization and operational intelligence elevating guest experiences and optimizing hospitality operations.",
             iconName: "badge-check",
-            iconColorClass: "bg-[#050514]",
+            iconColorClass: "bg-[#426CFF]/25",
             href: "/industries/hospitality",
           },
           // Legacy industries preserved for future reuse:
@@ -637,6 +669,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             description:
               "eForte helps businesses evolve from Digital-Native to AI Native.",
             imageSrc: "/assets/images/landing/Expertise.png",
+            imageFit: "contain",
             href: "/about-us",
           },
           {
@@ -644,7 +677,24 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             tag: "PARTNERS",
             description:
               "Explore our ecosystem of technology and delivery partnerships powering AI and data transformation.",
-            imageSrc: "/assets/images/about/handshake.svg",
+            logos: [
+              {
+                src: "/assets/images/capabilities/providers/aws.svg",
+                alt: "AWS",
+              },
+              {
+                src: "/assets/images/databricks/databricks-small.svg",
+                alt: "Databricks",
+              },
+              {
+                src: "/assets/images/capabilities/providers/azure.svg",
+                alt: "Microsoft Azure",
+              },
+              {
+                src: "/assets/images/capabilities/providers/google-cloud.svg",
+                alt: "Google Cloud",
+              },
+            ],
             href: "/technology-partners",
           },
           {
@@ -652,7 +702,7 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
             tag: "CAREERS",
             description:
               "Backed by 20 years of experience, we deliver end-to-end AI capabilities across data engineering, agentic AI development, cloud integration, and human-centric product design.",
-            imageSrc: "/assets/images/velocity-ai/cta-team.png",
+            imageSrc: "/assets/final-images/footer-cta/footer_cta.png",
             href: "/careers",
           },
         ],
@@ -925,7 +975,7 @@ export default function Navbar({
                 <h2 className="text-2xl font-semibold leading-snug">
                   {config.title}
                 </h2>
-                <p className="text-sm text-desc">{config.description}</p>
+                <p className="text-sm text-white">{config.description}</p>
                 <div className="mt-4 h-px w-10 bg-white/10" />
 
                 <Link
@@ -945,21 +995,57 @@ export default function Navbar({
               {/* Right image cards row */}
               <div className="flex-1 grid grid-cols-3 gap-6">
                 {companyCards.map((item) => {
-                  const cardClass =
-                    "group flex flex-col overflow-hidden rounded-[12px] border border-white/10 bg-white/6 shadow-lg shadow-black/20 hover:bg-white/8 hover:border-white/15 transition-all duration-200 cursor-pointer";
+                  const cardClass = megaMenuItemClassName(
+                    pathname,
+                    item.href,
+                    "group flex flex-col overflow-hidden rounded-[12px] shadow-lg shadow-black/20"
+                  );
 
                   const cardContent = (
                     <>
-                      <div className="relative aspect-4/3 w-full bg-black/40 shrink-0">
-                        {item.imageSrc && (
+                      <div className="relative aspect-4/3 w-full shrink-0 overflow-hidden bg-[#0A0A1A]">
+                        {item.logos && item.logos.length > 0 ? (
+                          <div className="absolute inset-0 flex flex-wrap items-center justify-center gap-x-5 gap-y-4 bg-gradient-to-br from-[#12122a] via-[#0A0A1A] to-[#151530] p-5">
+                            {item.logos.map((logo, logoIndex) => (
+                              <motion.div
+                                key={logo.alt}
+                                className="flex h-12 w-[42%] items-center justify-center rounded-[10px] border border-white/10 bg-white/[0.06] px-3 py-2"
+                                animate={{ y: [0, -3, 0] }}
+                                transition={{
+                                  duration: 2.6,
+                                  repeat: Infinity,
+                                  ease: "easeInOut",
+                                  delay: logoIndex * 0.18,
+                                }}
+                                whileHover={{
+                                  scale: 1.06,
+                                  borderColor: "rgba(211,40,122,0.45)",
+                                  transition: { duration: 0.25 },
+                                }}
+                              >
+                                <Image
+                                  src={logo.src}
+                                  alt={logo.alt}
+                                  width={96}
+                                  height={36}
+                                  className="h-7 w-auto max-w-full object-contain opacity-95"
+                                />
+                              </motion.div>
+                            ))}
+                          </div>
+                        ) : item.imageSrc ? (
                           <Image
                             src={item.imageSrc}
                             alt={item.title}
                             fill
-                            className="object-cover"
+                            className={
+                              item.imageFit === "contain"
+                                ? "object-contain object-center p-5"
+                                : "object-cover"
+                            }
                             sizes="(max-width: 1024px) 33vw, 280px"
                           />
-                        )}
+                        ) : null}
                       </div>
                       <div className="flex flex-col flex-1 p-5 space-y-3">
                         {item.tag && (
@@ -971,7 +1057,7 @@ export default function Navbar({
                           {item.title}
                         </p>
                         {item.description && (
-                          <p className="text-sm text-white/80 line-clamp-3 leading-relaxed">
+                          <p className="text-sm text-white line-clamp-3 leading-relaxed">
                             {item.description}
                           </p>
                         )}
@@ -1027,7 +1113,7 @@ export default function Navbar({
                   </p>
                 )}
                 <h2 className="text-2xl font-semibold leading-snug">{config.title}</h2>
-                <p className="text-sm text-desc">{config.description}</p>
+                <p className="text-sm text-white">{config.description}</p>
                 <Link
                   href="/capabilities"
                   onClick={closeMegaMenu}
@@ -1045,14 +1131,18 @@ export default function Navbar({
                 <div className="grid grid-cols-2 gap-x-8 gap-y-4">
                   {studios.map((item) => {
                     const IconComponent = item.iconName ? menuIconMap[item.iconName] : null;
-                    const cardClass =
-                      "flex gap-3 items-start rounded-[12px] border border-white/5 bg-white/5 px-4 py-3 hover:bg-white/10 transition-colors cursor-pointer";
+                    const cardClass = megaMenuItemClassName(
+                      pathname,
+                      item.href,
+                      "flex gap-3 items-start rounded-[12px] px-4 py-3"
+                    );
                     const content = (
                       <>
                         <div
                           className={cn(
                             "shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-[12px] text-white",
-                            item.iconColorClass ?? "bg-primary-pink"
+                            megaMenuIconBoxClass,
+                            item.iconColorClass ?? "bg-[#426CFF]/25"
                           )}
                         >
                           {IconComponent && <IconComponent className="w-5 h-5" />}
@@ -1060,7 +1150,7 @@ export default function Navbar({
                         <div>
                           <p className="text-sm font-medium text-white">{item.title}</p>
                           {item.description && (
-                            <p className="mt-0.5 text-xs text-desc">{item.description}</p>
+                            <p className="mt-0.5 text-xs text-white">{item.description}</p>
                           )}
                         </div>
                       </>
@@ -1109,7 +1199,7 @@ export default function Navbar({
                   </p>
                 )}
                 <h2 className="text-2xl font-semibold leading-snug">{config.title}</h2>
-                <p className="text-sm text-desc">{config.description}</p>
+                <p className="text-sm text-white">{config.description}</p>
                 <Link
                   href="/impact-studies"
                   onClick={closeMegaMenu}
@@ -1129,8 +1219,11 @@ export default function Navbar({
                 <div className="grid grid-cols-2 gap-3">
                   {caseStudies.map((item) => {
                     const href = item.href;
-                    const cardClass =
-                      "flex gap-3 rounded-[12px] border border-white/5 bg-white/5 p-3 transition-colors hover:bg-white/10";
+                    const cardClass = megaMenuItemClassName(
+                      pathname,
+                      item.href,
+                      "flex gap-3 rounded-[12px] p-3"
+                    );
 
                     const content = (
                       <>
@@ -1150,7 +1243,7 @@ export default function Navbar({
                             {item.title}
                           </p>
                           {item.description && (
-                            <p className="mt-0.5 text-xs text-desc line-clamp-2">
+                            <p className="mt-0.5 text-xs text-white line-clamp-2">
                               {item.description}
                             </p>
                           )}
@@ -1204,7 +1297,7 @@ export default function Navbar({
                   </p>
                 )}
                 <h2 className="text-2xl font-semibold leading-snug">{config.title}</h2>
-                <p className="text-sm text-desc">{config.description}</p>
+                <p className="text-sm text-white">{config.description}</p>
                 <Link
                   href="/blog"
                   onClick={closeMegaMenu}
@@ -1248,7 +1341,7 @@ export default function Navbar({
                     {highlighted.map((item) => (
                       <div
                         key={item.title}
-                        className="flex gap-3 rounded-[12px] border border-white/5 bg-white/5 p-3 hover:bg-white/10 cursor-pointer"
+                        className={megaMenuItemClassName(pathname, item.href, "flex gap-3 rounded-[12px] p-3")}
                       >
                         <div className="relative h-16 w-20 shrink-0 overflow-hidden rounded-[12px] bg-black/40">
                           {item.imageSrc && (
@@ -1258,7 +1351,7 @@ export default function Navbar({
                         <div className="min-w-0">
                           <p className="text-sm font-medium text-white line-clamp-2">{item.title}</p>
                           {item.description && (
-                            <p className="mt-0.5 text-xs text-desc line-clamp-2">{item.description}</p>
+                            <p className="mt-0.5 text-xs text-white line-clamp-2">{item.description}</p>
                           )}
                         </div>
                       </div>
@@ -1273,7 +1366,7 @@ export default function Navbar({
                     {latest.map((item) => (
                       <div
                         key={item.title}
-                        className="flex gap-3 rounded-[12px] border border-white/5 bg-white/5 p-3 hover:bg-white/10 cursor-pointer"
+                        className={megaMenuItemClassName(pathname, item.href, "flex gap-3 rounded-[12px] p-3")}
                       >
                         <div className="relative h-14 w-16 shrink-0 overflow-hidden rounded-[12px] bg-black/40">
                           {item.imageSrc && (
@@ -1283,7 +1376,7 @@ export default function Navbar({
                         <div className="min-w-0">
                           <p className="text-sm font-medium text-white line-clamp-2">{item.title}</p>
                           {item.description && (
-                            <p className="mt-0.5 text-xs text-desc line-clamp-1">{item.description}</p>
+                            <p className="mt-0.5 text-xs text-white line-clamp-1">{item.description}</p>
                           )}
                         </div>
                       </div>
@@ -1318,7 +1411,7 @@ export default function Navbar({
                   </p>
                 )}
                 <h2 className="text-2xl font-semibold leading-snug">{config.title}</h2>
-                <p className="text-sm text-desc">{config.description}</p>
+                <p className="text-sm text-white">{config.description}</p>
                 <div className="mt-4 h-px w-10 bg-white/10" />
               </div>
               <div className="w-1/3">
@@ -1328,14 +1421,18 @@ export default function Navbar({
                 <div className="space-y-4">
                   {highlights.map((item) => {
                     const IconComponent = item.iconName ? menuIconMap[item.iconName] : null;
-                    const cardClass =
-                      "flex gap-3 items-start rounded-[12px] px-3.5 py-3 transition-colors hover:bg-white/5";
+                    const cardClass = megaMenuItemClassName(
+                      pathname,
+                      item.href,
+                      "flex gap-3 items-start rounded-[12px] px-3.5 py-3"
+                    );
                     const content = (
                       <>
                       <div
                         className={cn(
                           "shrink-0 inline-flex h-9 w-9 items-center justify-center rounded-[12px] text-white",
-                          item.iconColorClass ?? "bg-primary-pink"
+                          megaMenuIconBoxClass,
+                          item.iconColorClass ?? "bg-[#426CFF]/25"
                         )}
                       >
                         {IconComponent && <IconComponent className="w-5 h-5" />}
@@ -1343,7 +1440,7 @@ export default function Navbar({
                       <div>
                         <p className="text-sm font-semibold text-white">{item.title}</p>
                         {item.description && (
-                          <p className="mt-0.5 text-xs text-desc">{item.description}</p>
+                          <p className="mt-0.5 text-xs text-white">{item.description}</p>
                         )}
                       </div>
                       </>
@@ -1373,7 +1470,7 @@ export default function Navbar({
                   {insightCards.map((item) => (
                     <div
                       key={item.title}
-                      className="flex gap-3 rounded-[12px] border border-white/5 bg-white/5 p-3 hover:bg-white/10 cursor-pointer"
+                      className={megaMenuItemClassName(pathname, item.href, "flex gap-3 rounded-[12px] p-3")}
                     >
                       <div className="relative h-14 w-20 shrink-0 overflow-hidden rounded-[12px] bg-black/40">
                         {item.imageSrc && (
@@ -1383,7 +1480,7 @@ export default function Navbar({
                       <div className="min-w-0">
                         <p className="text-sm font-medium text-white line-clamp-2">{item.title}</p>
                         {item.description && (
-                          <p className="mt-0.5 text-xs text-desc line-clamp-2">{item.description}</p>
+                          <p className="mt-0.5 text-xs text-white line-clamp-2">{item.description}</p>
                         )}
                       </div>
                     </div>
@@ -1418,7 +1515,7 @@ export default function Navbar({
                 <h2 className="text-2xl font-semibold leading-snug">
                   {config.title}
                 </h2>
-                <p className="text-sm text-desc">{config.description}</p>
+                <p className="text-sm text-white">{config.description}</p>
                 <Link
                   href="/industries"
                   onClick={closeMegaMenu}
@@ -1446,14 +1543,18 @@ export default function Navbar({
                       const IconComponent = item.iconName
                         ? menuIconMap[item.iconName]
                         : null;
-                      const cardClass =
-                        "group flex gap-3 items-start rounded-[12px] border border-white/5 bg-white/5 px-3 py-2.5 transition-colors duration-200 hover:bg-white/10 cursor-pointer";
+                      const cardClass = megaMenuItemClassName(
+                        pathname,
+                        item.href,
+                        "group flex gap-3 items-start rounded-[12px] px-3 py-2.5"
+                      );
                       const content = (
                         <>
                           <div
                             className={cn(
                               "mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] text-white",
-                              item.iconColorClass ?? "bg-primary-pink"
+                              megaMenuIconBoxClass,
+                              item.iconColorClass ?? "bg-[#426CFF]/25"
                             )}
                           >
                             {IconComponent ? (
@@ -1465,7 +1566,7 @@ export default function Navbar({
                               {item.title}
                             </p>
                             {item.description ? (
-                              <p className="mt-1 text-xs text-desc">
+                              <p className="mt-1 text-xs text-white">
                                 {item.description}
                               </p>
                             ) : null}
@@ -1499,7 +1600,7 @@ export default function Navbar({
                     {insightItems.map((item) => (
                       <div
                         key={item.title}
-                        className="flex cursor-pointer gap-3 rounded-[12px] border border-white/5 bg-white/5 p-2 transition-colors duration-200 hover:bg-white/10"
+                        className={megaMenuItemClassName(pathname, item.href, "flex gap-3 rounded-[12px] p-2")}
                       >
                         <div className="relative h-14 w-16 shrink-0 overflow-hidden rounded-[12px] bg-black/40">
                           {item.imageSrc ? (
@@ -1516,7 +1617,7 @@ export default function Navbar({
                             {item.title}
                           </p>
                           {item.description ? (
-                            <p className="mt-1 text-xs text-desc line-clamp-2">
+                            <p className="mt-1 text-xs text-white line-clamp-2">
                               {item.description}
                             </p>
                           ) : null}
@@ -1558,7 +1659,7 @@ export default function Navbar({
               <h2 className="text-2xl font-semibold leading-snug">
                 {config.title}
               </h2>
-              <p className="text-sm text-desc">{config.description}</p>
+              <p className="text-sm text-white">{config.description}</p>
               {activeMenu !== "ai-pillars" ? (
                 <Link
                   href={
@@ -1589,9 +1690,13 @@ export default function Navbar({
                   <div className="space-y-2">
                     {column.items.map((item) => {
                       const hasImage = !!item.imageSrc;
-                      const cardClass = cn(
-                        "group rounded-[12px] border border-white/5 bg-white/5 hover:bg-white/10 transition-colors duration-200 cursor-pointer block",
-                        hasImage ? "p-2" : "px-3 py-2.5"
+                      const cardClass = megaMenuItemClassName(
+                        pathname,
+                        item.href,
+                        cn(
+                          "group block rounded-[12px]",
+                          hasImage ? "p-2" : "px-3 py-2.5"
+                        )
                       );
                       const cardContent = (
                         <>
@@ -1612,7 +1717,7 @@ export default function Navbar({
                                   {item.title}
                                 </p>
                                 {item.description && (
-                                  <p className="mt-1 text-xs text-desc line-clamp-2">
+                                  <p className="mt-1 text-xs text-white line-clamp-2">
                                     {item.description}
                                   </p>
                                 )}
@@ -1630,10 +1735,11 @@ export default function Navbar({
                                   <div
                                     className={cn(
                                       "mt-0.5 shrink-0 inline-flex h-10 w-10 items-center justify-center text-white",
+                                      megaMenuIconBoxClass,
                                       activeMenu === "ai-pillars"
                                         ? "rounded-full"
                                         : "rounded-[12px]",
-                                      item.iconColorClass ?? "bg-primary-pink"
+                                      item.iconColorClass ?? "bg-[#426CFF]/25"
                                     )}
                                   >
                                     {(() => {
@@ -1646,7 +1752,7 @@ export default function Navbar({
                                       {item.title}
                                     </p>
                                     {item.description && (
-                                      <p className="mt-1 text-xs text-desc">
+                                      <p className="mt-1 text-xs text-white">
                                         {item.description}
                                       </p>
                                     )}
@@ -1663,7 +1769,7 @@ export default function Navbar({
                                     {item.title}
                                   </p>
                                   {item.description && (
-                                    <p className="mt-1 text-xs text-desc">
+                                    <p className="mt-1 text-xs text-white">
                                       {item.description}
                                     </p>
                                   )}
@@ -1890,7 +1996,7 @@ export default function Navbar({
                                         <span
                                           className={cn(
                                             "mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-[12px] text-white",
-                                            item.iconColorClass ?? "bg-primary-pink"
+                                            item.iconColorClass ?? "bg-[#426CFF]/25"
                                           )}
                                         >
                                           <ItemIcon className="h-4 w-4" />
