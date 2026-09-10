@@ -5,68 +5,41 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
-import { financialServicesWhitePaper } from "@/data/industries/financialServicesWhitePaper";
+import { financialServicesWhitePapers } from "@/data/industries/financialServicesWhitePaper";
 import { cn } from "@/lib/utils";
-
-type WhitePaper = {
-  id: string;
-  subtitle: string;
-  description: string;
-  imageSrc: string;
-  imageAlt: string;
-  href: string;
-};
-
-const whitePapers: WhitePaper[] = [
-  {
-    id: financialServicesWhitePaper.slug,
-    subtitle: financialServicesWhitePaper.title,
-    description: financialServicesWhitePaper.description,
-    imageSrc: financialServicesWhitePaper.coverSrc,
-    imageAlt: financialServicesWhitePaper.coverAlt,
-    href: financialServicesWhitePaper.href,
-  },
-  // Preserved for possible future reuse
-  // {
-  //   id: "ai-agents",
-  //   subtitle: "Designing Trustworthy AI Agents for Regulated Finance",
-  //   description:
-  //     "A practical guide to building agentic AI systems in finance that remain explainable, auditable, and safe to deploy in production.",
-  //   imageSrc: "/assets/images/velocity-ai/insight-1.png",
-  //   imageAlt: "Designing Trustworthy AI Agents for Regulated Finance white paper",
-  //   href: "#",
-  // },
-  // {
-  //   id: "ux-ui-fintech",
-  //   subtitle: "Best UX/UI practices to create differentiation in fintech",
-  //   description:
-  //     "The fintech revolution demands exceptional user experiences. Discover how to overcome the unique challenges of UX/UI design in our white paper, based on eForte's work at New York University.",
-  //   imageSrc: "/assets/images/velocity-ai/insight-3.png",
-  //   imageAlt: "Best UX/UI practices to create differentiation in fintech white paper",
-  //   href: "#",
-  // },
-];
-
 
 const AUTOPLAY_INTERVAL_MS = 6000;
 
 export default function FinancialServicesInsightsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const paper = whitePapers[activeIndex];
+  const paper = financialServicesWhitePapers[activeIndex];
+
+  const goPrev = () => {
+    setActiveIndex(
+      (current) =>
+        (current - 1 + financialServicesWhitePapers.length) %
+        financialServicesWhitePapers.length
+    );
+  };
+
+  const goNext = () => {
+    setActiveIndex(
+      (current) => (current + 1) % financialServicesWhitePapers.length
+    );
+  };
 
   useEffect(() => {
     if (isPaused) return;
-    const id = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % whitePapers.length);
-    }, AUTOPLAY_INTERVAL_MS);
+    const id = window.setInterval(goNext, AUTOPLAY_INTERVAL_MS);
     return () => window.clearInterval(id);
   }, [isPaused, activeIndex]);
 
   return (
-    <section className="bg-default py-20 text-white md:py-28">
+    <section className="bg-default py-10 text-white md:py-16">
       <Container>
         <div
+          className="relative"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           onFocus={() => setIsPaused(true)}
@@ -74,7 +47,7 @@ export default function FinancialServicesInsightsSection() {
         >
           <AnimatePresence mode="wait">
             <motion.div
-              key={paper.id}
+              key={paper.slug}
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
@@ -82,18 +55,27 @@ export default function FinancialServicesInsightsSection() {
               className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
             >
               <div className="flex justify-center lg:justify-start">
-                <Link
-                  href={paper.href}
-                  className="relative aspect-4/3 w-full max-w-xl overflow-hidden rounded-[12px]"
-                >
+                <div className="relative aspect-4/3 w-full max-w-xl overflow-hidden rounded-[12px]">
                   <Image
-                    src={paper.imageSrc}
-                    alt={paper.imageAlt}
+                    src={paper.coverSrc}
+                    alt={paper.coverAlt}
                     fill
                     sizes="(max-width: 1024px) 100vw, 580px"
-                    className="object-cover transition-transform duration-500 hover:scale-105"
+                    className="pointer-events-none object-cover"
                   />
-                </Link>
+                  <button
+                    type="button"
+                    aria-label="Previous white paper"
+                    onClick={goPrev}
+                    className="absolute inset-y-0 left-0 z-10 w-1/2 cursor-pointer"
+                  />
+                  <button
+                    type="button"
+                    aria-label="Next white paper"
+                    onClick={goNext}
+                    className="absolute inset-y-0 right-0 z-10 w-1/2 cursor-pointer"
+                  />
+                </div>
               </div>
 
               <div className="max-w-xl">
@@ -104,7 +86,7 @@ export default function FinancialServicesInsightsSection() {
                   Finance Insights
                 </h2>
                 <p className="mt-4 text-xl font-medium leading-snug text-white md:text-[22px]">
-                  {paper.subtitle}
+                  {paper.title}
                 </p>
                 <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-white md:text-base">
                   {paper.description}
@@ -119,26 +101,24 @@ export default function FinancialServicesInsightsSection() {
             </motion.div>
           </AnimatePresence>
 
-          {whitePapers.length > 1 ? (
-          <div className="mt-12 flex items-center justify-center gap-2.5">
-            {whitePapers.map((wp, idx) => {
+          <div className="mt-8 flex items-center justify-center gap-2.5 md:mt-10">
+            {financialServicesWhitePapers.map((wp, idx) => {
               const isActive = idx === activeIndex;
               return (
                 <button
-                  key={wp.id}
+                  key={wp.slug}
                   type="button"
                   onClick={() => setActiveIndex(idx)}
                   aria-label={`Show white paper ${idx + 1}`}
                   aria-current={isActive ? "true" : undefined}
                   className={cn(
-                    "h-1.5 cursor-pointer rounded-full transition-all duration-300",
-                    isActive ? "w-1.5 bg-[#2563eb]" : "w-1.5 bg-white/25 hover:bg-white/40"
+                    "h-2.5 w-2.5 cursor-pointer rounded-full transition-all duration-300",
+                    isActive ? "bg-[#2563eb]" : "bg-white/25 hover:bg-white/40"
                   )}
                 />
               );
             })}
           </div>
-          ) : null}
         </div>
       </Container>
     </section>

@@ -4,19 +4,17 @@ import Image from "next/image";
 import Container from "@/components/atoms/Container";
 import {
   financialServicesWhitePaper,
-  whitePaperClosing,
-  whitePaperControls,
-  whitePaperExecutiveSummary,
-  whitePaperLayers,
-  whitePaperSequence,
-  whitePaperUseCases,
-  whitePaperWhyNow,
+  type FinanceWhitePaper,
 } from "@/data/industries/financialServicesWhitePaper";
 import { motion } from "@/lib/replayMotion";
 
-export default function FinancialServicesWhitePaperArticleSection() {
-  const paper = financialServicesWhitePaper;
+type FinancialServicesWhitePaperArticleSectionProps = {
+  paper?: FinanceWhitePaper;
+};
 
+export default function FinancialServicesWhitePaperArticleSection({
+  paper = financialServicesWhitePaper,
+}: FinancialServicesWhitePaperArticleSectionProps) {
   return (
     <section className="bg-white py-14 text-default md:py-20">
       <Container>
@@ -31,7 +29,7 @@ export default function FinancialServicesWhitePaperArticleSection() {
               Executive summary
             </p>
             <div className="mt-5 space-y-4 text-[17px] leading-relaxed text-black md:text-[18px]">
-              {whitePaperExecutiveSummary.map((paragraph) => (
+              {paper.executiveSummary.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
@@ -45,10 +43,10 @@ export default function FinancialServicesWhitePaperArticleSection() {
             className="mt-14"
           >
             <h2 className="text-[32px] font-medium leading-tight text-black md:text-[36px]">
-              Why 2026 is the year agents leave the sandbox
+              {paper.whyNowTitle}
             </h2>
             <div className="mt-5 space-y-4 text-[17px] leading-relaxed text-black md:text-[18px]">
-              {whitePaperWhyNow.map((paragraph) => (
+              {paper.whyNow.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
@@ -72,8 +70,7 @@ export default function FinancialServicesWhitePaperArticleSection() {
             />
           </div>
           <p className="mt-3 text-center text-sm text-black/55">
-            The operating model: governed data, explainable models, then agents with a
-            narrow mandate.
+            {paper.operatingModelCaption}
           </p>
         </motion.div>
 
@@ -85,18 +82,16 @@ export default function FinancialServicesWhitePaperArticleSection() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-[32px] font-medium leading-tight text-black md:text-[36px]">
-              Build in this order, not the reverse
+              {paper.buildOrderTitle}
             </h2>
             <p className="mt-5 text-[17px] leading-relaxed text-black md:text-[18px]">
-              Most failed pilots start with the agent and try to bolt on governance later.
-              The sequence that survives an exam is the same sequence Finance Studio uses
-              to move a transaction: data, then models, then orchestration.
+              {paper.buildOrderLead}
             </p>
           </motion.div>
         </article>
 
         <div className="mx-auto mt-10 grid max-w-5xl gap-5 md:grid-cols-3">
-          {whitePaperLayers.map((layer, index) => (
+          {paper.layers.map((layer, index) => (
             <motion.article
               key={layer.title}
               initial={{ opacity: 0, y: 16 }}
@@ -126,17 +121,15 @@ export default function FinancialServicesWhitePaperArticleSection() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-[32px] font-medium leading-tight text-black md:text-[36px]">
-              Five controls every production agent needs
+              {paper.controlsTitle}
             </h2>
             <p className="mt-5 text-[17px] leading-relaxed text-black md:text-[18px]">
-              Policy PDFs do not govern agents. Runtime controls do. These five are the
-              minimum set we put around any agent that can change money, credit, or a
-              customer’s legal record.
+              {paper.controlsLead}
             </p>
           </motion.div>
 
           <ol className="mt-8 space-y-6">
-            {whitePaperControls.map((control, index) => (
+            {paper.controls.map((control, index) => (
               <motion.li
                 key={control.title}
                 initial={{ opacity: 0, y: 12 }}
@@ -173,8 +166,7 @@ export default function FinancialServicesWhitePaperArticleSection() {
             />
           </div>
           <p className="mt-3 text-center text-sm text-black/55">
-            Supervision belongs on the irreversible step: approve, escalate, or halt —
-            with a trail a reviewer can reconstruct.
+            {paper.supervisionCaption}
           </p>
         </motion.div>
 
@@ -186,17 +178,16 @@ export default function FinancialServicesWhitePaperArticleSection() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-[32px] font-medium leading-tight text-black md:text-[36px]">
-              Where it pays off first
+              {paper.useCasesTitle}
             </h2>
             <p className="mt-5 text-[17px] leading-relaxed text-black md:text-[18px]">
-              Do not give an agent the whole bank. Give it a workflow that already has a
-              clock, a policy, and an audit question.
+              {paper.useCasesLead}
             </p>
           </motion.div>
         </article>
 
         <div className="mx-auto mt-10 grid max-w-5xl gap-5 md:grid-cols-2">
-          {whitePaperUseCases.map((item, index) => (
+          {paper.useCases.map((item, index) => (
             <motion.article
               key={item.title}
               initial={{ opacity: 0, y: 16 }}
@@ -221,16 +212,15 @@ export default function FinancialServicesWhitePaperArticleSection() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-[32px] font-medium leading-tight text-black md:text-[36px]">
-              A ninety-day sequence
+              {paper.sequenceTitle}
             </h2>
             <p className="mt-5 text-[17px] leading-relaxed text-black md:text-[18px]">
-              This is not a transformation program. It is the shortest path from a
-              regulated pain point to a supervised agent in production.
+              {paper.sequenceLead}
             </p>
           </motion.div>
 
           <ol className="mt-10 space-y-8">
-            {whitePaperSequence.map((item, index) => (
+            {paper.sequence.map((item, index) => (
               <motion.li
                 key={item.step}
                 initial={{ opacity: 0, y: 12 }}
@@ -262,10 +252,10 @@ export default function FinancialServicesWhitePaperArticleSection() {
             className="mt-16 border-t border-black/10 pt-10"
           >
             <h2 className="text-[32px] font-medium leading-tight text-black md:text-[36px]">
-              The paper trail is the product
+              {paper.closingTitle}
             </h2>
             <div className="mt-5 space-y-4 text-[17px] leading-relaxed text-black md:text-[18px]">
-              {whitePaperClosing.map((paragraph) => (
+              {paper.closing.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>

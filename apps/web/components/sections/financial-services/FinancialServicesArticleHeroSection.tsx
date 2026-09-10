@@ -2,9 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { HiArrowLeft } from "react-icons/hi";
 import Container from "@/components/atoms/Container";
 import type { FinanceArticle } from "@/data/industries/financialServicesArticles";
 import { motion } from "@/lib/replayMotion";
+
+const FINANCE_PAGE_HREF = "/industries/financial-services";
 
 type FinancialServicesArticleHeroSectionProps = {
   article: FinanceArticle;
@@ -13,6 +17,21 @@ type FinancialServicesArticleHeroSectionProps = {
 export default function FinancialServicesArticleHeroSection({
   article,
 }: FinancialServicesArticleHeroSectionProps) {
+  const router = useRouter();
+
+  const goBack = () => {
+    const referrer = document.referrer;
+    const cameFromThisSite =
+      Boolean(referrer) && referrer.includes(window.location.origin);
+
+    if (cameFromThisSite) {
+      router.back();
+      return;
+    }
+
+    router.push(FINANCE_PAGE_HREF);
+  };
+
   return (
     <section className="relative flex min-h-[420px] items-end overflow-hidden bg-default pt-28 md:min-h-[500px] md:pt-36">
       <Image
@@ -26,6 +45,15 @@ export default function FinancialServicesArticleHeroSection({
       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A1A] via-[#0A0A1A]/80 to-[#0A0A1A]/45" />
 
       <Container className="relative z-10 pb-12 md:pb-16">
+        <button
+          type="button"
+          onClick={goBack}
+          aria-label="Go back to previous page"
+          className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/30 text-white transition-colors hover:border-white hover:bg-white/10"
+        >
+          <HiArrowLeft className="h-5 w-5" />
+        </button>
+
         <nav className="mb-5 text-xs text-white/70" aria-label="Breadcrumb">
           <ol className="flex flex-wrap items-center gap-2">
             <li>
