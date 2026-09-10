@@ -57,6 +57,30 @@ body {
   color-scheme: dark;
 }
 
+/* Thin royal-blue scrollbar on every page and scrollable region */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2563EB #0A0A1A;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0A0A1A;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #2563EB;
+  border-radius: 12px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #3B82F6;
+}
+
 html.scroll-locked {
   overflow: hidden;
   scrollbar-width: none;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { HiCheckCircle } from "react-icons/hi";
 import {
@@ -17,6 +17,8 @@ import { motion } from "@/lib/replayMotion";
 const BLUE = "#2563EB";
 const BLUE_SOFT = "#3B82F6";
 const PINK = "#D3287A";
+const ILLUSTRATION_VIEWBOX = "0 28 900 576";
+const LABEL_SIZE = 28;
 
 const AGENT_ILLUSTRATION_STYLES = `
 @keyframes fs-ag-dash { to { stroke-dashoffset: -40; } }
@@ -34,7 +36,6 @@ const AGENT_ILLUSTRATION_STYLES = `
   55% { stroke-dashoffset: 72; }
   100% { stroke-dashoffset: 250; }
 }
-@keyframes fs-ag-flow { to { offset-distance: 100%; } }
 @keyframes fs-ag-glow {
   0%, 100% { opacity: 0.35; }
   50% { opacity: 1; }
@@ -57,31 +58,10 @@ const AGENT_ILLUSTRATION_STYLES = `
 .fs-ag-glow { animation: fs-ag-glow 2.2s ease-in-out infinite; }
 .fs-ag-slide { animation: fs-ag-slide 4.6s ease-in-out infinite; }
 .fs-ag-stack { animation: fs-ag-stack 2.8s ease-in-out infinite; }
-.fs-ag-token-pay {
-  offset-path: path("M 118 478 C 250 478 290 300 450 300 C 640 300 690 478 792 478");
-  offset-rotate: 0deg;
-  animation: fs-ag-flow 5.6s linear infinite;
-}
-.fs-ag-token-lend {
-  offset-path: path("M 160 520 C 280 430 360 250 450 250 C 560 250 640 430 760 520");
-  offset-rotate: 0deg;
-  animation: fs-ag-flow 6s linear infinite;
-}
-.fs-ag-token-infra {
-  offset-path: path("M 210 560 V 390 H 450 V 220 H 690 V 390 H 450 V 560");
-  offset-rotate: 0deg;
-  animation: fs-ag-flow 7s linear infinite;
-}
-.fs-ag-token-bank {
-  offset-path: path("M 180 560 C 180 420 320 390 450 390 C 620 390 720 430 720 560");
-  offset-rotate: 0deg;
-  animation: fs-ag-flow 6.4s linear infinite;
-}
 
 @media (prefers-reduced-motion: reduce) {
   .fs-ag-dash, .fs-ag-pulse, .fs-ag-float, .fs-ag-spin,
-  .fs-ag-gauge, .fs-ag-glow, .fs-ag-slide, .fs-ag-stack,
-  .fs-ag-token-pay, .fs-ag-token-lend, .fs-ag-token-infra, .fs-ag-token-bank {
+  .fs-ag-gauge, .fs-ag-glow, .fs-ag-slide, .fs-ag-stack {
     animation: none !important;
   }
 }
@@ -175,37 +155,66 @@ function SceneBackdrop({ id }: { id: string }) {
           <path d="M 36 0 L 0 0 0 36" fill="none" stroke="rgba(59,130,246,0.08)" strokeWidth="1" />
         </pattern>
       </defs>
-      <rect width="900" height="734" fill={`url(#${id}-bg)`} />
-      <rect width="900" height="734" fill={`url(#${id}-grid)`} />
-      <circle cx="120" cy="640" r="160" fill={BLUE} opacity="0.07" />
-      <circle cx="790" cy="110" r="150" fill={BLUE} opacity="0.08" />
-      <circle cx="780" cy="620" r="90" fill={PINK} opacity="0.06" />
+      <rect width="900" height="620" fill={`url(#${id}-bg)`} />
+      <rect width="900" height="620" fill={`url(#${id}-grid)`} />
+      <circle cx="120" cy="560" r="120" fill={BLUE} opacity="0.07" />
+      <circle cx="790" cy="90" r="110" fill={BLUE} opacity="0.08" />
+      <circle cx="780" cy="540" r="70" fill={PINK} opacity="0.06" />
     </>
   );
 }
 
+function TravelingDot({
+  pathId,
+  duration,
+  delay = "0s",
+  color = PINK,
+  radius = 7,
+}: {
+  pathId: string;
+  duration: string;
+  delay?: string;
+  color?: string;
+  radius?: number;
+}) {
+  return (
+    <g>
+      <animateMotion dur={duration} begin={delay} repeatCount="indefinite" rotate="0">
+        <mpath href={`#${pathId}`} />
+      </animateMotion>
+      <circle r={radius} fill={color} />
+      <circle
+        r={radius * 2}
+        fill="none"
+        stroke={color}
+        strokeWidth="1.2"
+        opacity="0.45"
+      />
+    </g>
+  );
+}
 function PaymentsIllustration() {
   return (
-    <svg viewBox="0 0 900 734" className="h-full w-full" role="img" aria-label="Payments and settlement agents moving transactions across rails and ledgers">
+    <svg viewBox={ILLUSTRATION_VIEWBOX} className="h-full w-full" role="img" aria-label="Payments and settlement agents moving transactions across rails and ledgers">
       <SceneBackdrop id="pay" />
-      <text x="450" y="64" textAnchor="middle" fill="#fff" fontSize="13" fontWeight="600" letterSpacing="2.4">
+      <text x="450" y="64" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600" letterSpacing="2.4">
         SETTLEMENT RAILS
       </text>
 
-      <rect x="86" y="118" width="210" height="118" rx="16" fill="url(#pay-panel)" stroke={BLUE_SOFT} strokeWidth="1.4" />
-      <text x="191" y="162" textAnchor="middle" fill="#fff" fontSize="14" fontWeight="600">TX IN</text>
-      <text x="191" y="186" textAnchor="middle" fill="#fff" fontSize="12">Card · ACH · wire</text>
-      <circle className="fs-ag-glow" cx="248" cy="142" r="5" fill={BLUE} />
+      <rect x="32" y="118" width="268" height="118" rx="16" fill="url(#pay-panel)" stroke={BLUE_SOFT} strokeWidth="1.4" />
+      <text x="166" y="162" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600">TX IN</text>
+      <text x="166" y="190" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE}>Card · ACH · wire</text>
+      <circle className="fs-ag-glow" cx="274" cy="142" r="5" fill={BLUE} />
 
-      <rect x="604" y="118" width="210" height="118" rx="16" fill="url(#pay-panel)" stroke={BLUE_SOFT} strokeWidth="1.4" />
-      <text x="709" y="162" textAnchor="middle" fill="#fff" fontSize="14" fontWeight="600">CLEARED</text>
-      <text x="709" y="186" textAnchor="middle" fill="#fff" fontSize="12">Matched · posted</text>
-      <circle className="fs-ag-glow" cx="766" cy="142" r="5" fill={BLUE} />
+      <rect x="600" y="118" width="268" height="118" rx="16" fill="url(#pay-panel)" stroke={BLUE_SOFT} strokeWidth="1.4" />
+      <text x="734" y="162" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600">CLEARED</text>
+      <text x="734" y="190" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE}>Matched · posted</text>
+      <circle className="fs-ag-glow" cx="842" cy="142" r="5" fill={BLUE} />
 
       <g className="fs-ag-float">
-        <rect x="352" y="108" width="196" height="86" rx="14" fill="rgba(37,99,235,0.12)" stroke={BLUE} strokeWidth="1.5" />
-        <text x="450" y="144" textAnchor="middle" fill="#fff" fontSize="13" fontWeight="600">Reconciliation</text>
-        <text x="450" y="168" textAnchor="middle" fill="#fff" fontSize="11">Ledger A  ↔  Ledger B</text>
+        <rect x="316" y="108" width="268" height="86" rx="14" fill="rgba(37,99,235,0.12)" stroke={BLUE} strokeWidth="1.5" />
+        <text x="450" y="144" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600">Reconciliation</text>
+        <text x="450" y="172" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE}>Ledger A  ↔  Ledger B</text>
       </g>
 
       {[0, 1, 2, 3].map((row) => (
@@ -223,22 +232,31 @@ function PaymentsIllustration() {
       ))}
 
       <path
+        id="pay-rail"
         d="M 118 478 C 250 478 290 300 450 300 C 640 300 690 478 792 478"
         fill="none"
         stroke={BLUE}
         strokeWidth="2"
         opacity="0.45"
       />
-
-      <g filter="url(#pay-glow)">
-        <circle className="fs-ag-token-pay" r="7" fill={PINK} />
-        <circle className="fs-ag-token-pay" r="14" fill="none" stroke={PINK} strokeWidth="1.2" opacity="0.45" />
-      </g>
+      <path
+        d="M 118 478 C 250 478 290 300 450 300 C 640 300 690 478 792 478"
+        fill="none"
+        stroke={PINK}
+        strokeWidth="2"
+        strokeLinecap="round"
+        pathLength="100"
+        strokeDasharray="10 90"
+        opacity="0.9"
+      >
+        <animate attributeName="stroke-dashoffset" values="0;-100" dur="6s" repeatCount="indefinite" />
+      </path>
+      <TravelingDot pathId="pay-rail" duration="6s" />
 
       <g transform="translate(400 560)">
         <circle className="fs-ag-pulse" r="18" fill="rgba(211,40,122,0.18)" stroke={PINK} strokeWidth="1.4" />
         <circle r="5" fill={PINK} />
-        <text x="36" y="5" fill="#fff" fontSize="12">Fraud triage</text>
+        <text x="36" y="6" fill="#fff" fontSize={LABEL_SIZE}>Fraud triage</text>
       </g>
     </svg>
   );
@@ -247,9 +265,9 @@ function PaymentsIllustration() {
 function LendingIllustration() {
   const ring = 2 * Math.PI * 78;
   return (
-    <svg viewBox="0 0 900 734" className="h-full w-full" role="img" aria-label="Lending and credit agents scoring applications and watching portfolio risk">
+    <svg viewBox={ILLUSTRATION_VIEWBOX} className="h-full w-full" role="img" aria-label="Lending and credit agents scoring applications and watching portfolio risk">
       <SceneBackdrop id="lend" />
-      <text x="450" y="64" textAnchor="middle" fill="#fff" fontSize="13" fontWeight="600" letterSpacing="2.4">
+      <text x="450" y="64" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600" letterSpacing="2.4">
         CREDIT DECISIONING
       </text>
 
@@ -259,7 +277,7 @@ function LendingIllustration() {
         <rect x="98" y="198" width="88" height="8" rx="4" fill="rgba(255,255,255,0.2)" />
         <rect x="98" y="218" width="96" height="8" rx="4" fill="rgba(255,255,255,0.16)" />
         <rect x="98" y="238" width="72" height="8" rx="4" fill="rgba(255,255,255,0.12)" />
-        <text x="153" y="310" textAnchor="middle" fill="#fff" fontSize="12" fontWeight="600">Intake</text>
+        <text x="153" y="314" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600">Intake</text>
       </g>
 
       <g transform="translate(450 340)">
@@ -277,81 +295,112 @@ function LendingIllustration() {
           strokeDashoffset="90"
         />
         <path d="M 0 -6 L 8 70 L -8 70 Z" fill={PINK} opacity="0.95" />
-        <text y="8" textAnchor="middle" fill="#fff" fontSize="28" fontWeight="700">742</text>
-        <text y="32" textAnchor="middle" fill="#fff" fontSize="12">score</text>
+        <text y="8" textAnchor="middle" fill="#fff" fontSize="46" fontWeight="700">742</text>
+        <text y="36" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE}>score</text>
       </g>
 
       <g className="fs-ag-float">
         <rect x="672" y="168" width="150" height="64" rx="14" fill="rgba(37,99,235,0.16)" stroke={BLUE} strokeWidth="1.4" />
-        <text x="747" y="206" textAnchor="middle" fill="#fff" fontSize="14" fontWeight="600">Approve</text>
+        <text x="747" y="206" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600">Approve</text>
         <rect x="672" y="248" width="150" height="64" rx="14" fill="rgba(211,40,122,0.12)" stroke={PINK} strokeWidth="1.4" />
-        <text x="747" y="286" textAnchor="middle" fill="#fff" fontSize="14" fontWeight="600">Review</text>
+        <text x="747" y="286" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600">Review</text>
       </g>
 
       <path
-        className="fs-ag-dash"
+        id="lend-rail"
         d="M 80 560 C 180 500 280 620 380 540 C 480 460 560 620 680 520 C 760 460 820 540 850 500"
         fill="none"
         stroke={BLUE_SOFT}
         strokeWidth="2"
+        opacity="0.45"
       />
-      <text x="450" y="660" textAnchor="middle" fill="#fff" fontSize="12">
+      <path
+        d="M 80 560 C 180 500 280 620 380 540 C 480 460 560 620 680 520 C 760 460 820 540 850 500"
+        fill="none"
+        stroke={PINK}
+        strokeWidth="2"
+        strokeLinecap="round"
+        pathLength="100"
+        strokeDasharray="10 90"
+        opacity="0.9"
+      >
+        <animate attributeName="stroke-dashoffset" values="0;-100" dur="7s" repeatCount="indefinite" />
+      </path>
+      <text x="450" y="588" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE}>
         Portfolio risk waveform
       </text>
-      <circle className="fs-ag-token-lend" r="6" fill={PINK} />
+      <TravelingDot pathId="lend-rail" duration="7s" radius={6} />
     </svg>
   );
 }
 
 function InfrastructureIllustration() {
   return (
-    <svg viewBox="0 0 900 734" className="h-full w-full" role="img" aria-label="Financial infrastructure agents syncing ledgers, compliance, and vendor payments">
+    <svg viewBox={ILLUSTRATION_VIEWBOX} className="h-full w-full" role="img" aria-label="Financial infrastructure agents syncing ledgers, compliance, and vendor payments">
       <SceneBackdrop id="infra" />
-      <text x="450" y="64" textAnchor="middle" fill="#fff" fontSize="13" fontWeight="600" letterSpacing="2.4">
+      <text x="450" y="64" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600" letterSpacing="2.4">
         CORE SYNC FABRIC
       </text>
 
       <path d="M 210 560 V 390 H 690 V 560" fill="none" stroke="rgba(59,130,246,0.35)" strokeWidth="1.6" />
       <path d="M 450 560 V 220 H 690 V 390" fill="none" stroke="rgba(59,130,246,0.35)" strokeWidth="1.6" />
       <path d="M 210 390 H 450 V 220" fill="none" stroke="rgba(59,130,246,0.35)" strokeWidth="1.6" />
+      <path
+        id="infra-rail"
+        d="M 210 560 V 390 H 450 V 220 H 690 V 390 H 450 V 560"
+        fill="none"
+        stroke="transparent"
+      />
+      <path
+        d="M 210 560 V 390 H 450 V 220 H 690 V 390 H 450 V 560"
+        fill="none"
+        stroke={PINK}
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        pathLength="100"
+        strokeDasharray="8 92"
+        opacity="0.85"
+      >
+        <animate attributeName="stroke-dashoffset" values="0;-100" dur="8s" repeatCount="indefinite" />
+      </path>
 
       <g className="fs-ag-float">
         <rect x="300" y="168" width="300" height="96" rx="18" fill="url(#infra-panel)" stroke={BLUE} strokeWidth="1.6" />
-        <text x="450" y="212" textAnchor="middle" fill="#fff" fontSize="16" fontWeight="600">Ledger core</text>
-        <text x="450" y="236" textAnchor="middle" fill="#fff" fontSize="12">Near-real-time sync</text>
+        <text x="450" y="212" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600">Ledger core</text>
+        <text x="450" y="240" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE}>Near-real-time sync</text>
       </g>
 
       <rect x="96" y="332" width="220" height="92" rx="16" fill="url(#infra-panel)" stroke={BLUE_SOFT} strokeWidth="1.4" />
-      <text x="206" y="374" textAnchor="middle" fill="#fff" fontSize="14" fontWeight="600">Partner bank</text>
-      <text x="206" y="398" textAnchor="middle" fill="#fff" fontSize="12">External ledger</text>
+      <text x="206" y="374" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600">Partner bank</text>
+      <text x="206" y="402" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE}>External ledger</text>
 
       <rect x="584" y="332" width="220" height="92" rx="16" fill="url(#infra-panel)" stroke={BLUE_SOFT} strokeWidth="1.4" />
-      <text x="694" y="374" textAnchor="middle" fill="#fff" fontSize="14" fontWeight="600">Vendor pay</text>
-      <text x="694" y="398" textAnchor="middle" fill="#fff" fontSize="12">Invoice match</text>
+      <text x="694" y="374" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600">Vendor pay</text>
+      <text x="694" y="402" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE}>Invoice match</text>
 
       <g className="fs-ag-spin">
         <circle cx="450" cy="500" r="54" fill="rgba(37,99,235,0.12)" stroke={BLUE} strokeWidth="1.6" />
         <circle cx="450" cy="500" r="28" fill="none" stroke={BLUE_SOFT} strokeWidth="1.2" strokeDasharray="6 8" />
-        <text x="450" y="506" textAnchor="middle" fill="#fff" fontSize="12" fontWeight="600">API</text>
       </g>
+      <text x="450" y="506" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600">API</text>
 
       <g transform="translate(206 560)">
         <circle className="fs-ag-pulse" r="16" fill="rgba(211,40,122,0.16)" stroke={PINK} strokeWidth="1.4" />
         <circle r="5" fill={PINK} />
       </g>
-      <text x="234" y="564" fill="#fff" fontSize="12">KYC / AML</text>
+      <text x="234" y="566" fill="#fff" fontSize={LABEL_SIZE}>KYC / AML</text>
 
-      <circle className="fs-ag-token-infra" r="6" fill={BLUE} />
-      <circle className="fs-ag-token-infra" r="6" fill={PINK} style={{ animationDelay: "-3.5s" }} />
+      <TravelingDot pathId="infra-rail" duration="8s" radius={6} color={BLUE} />
+      <TravelingDot pathId="infra-rail" duration="8s" delay="-4s" radius={6} />
     </svg>
   );
 }
 
 function BankingIllustration() {
   return (
-    <svg viewBox="0 0 900 734" className="h-full w-full" role="img" aria-label="Banking agents guiding onboarding, servicing, and regulatory reporting">
+    <svg viewBox={ILLUSTRATION_VIEWBOX} className="h-full w-full" role="img" aria-label="Banking agents guiding onboarding, servicing, and regulatory reporting">
       <SceneBackdrop id="bank" />
-      <text x="450" y="64" textAnchor="middle" fill="#fff" fontSize="13" fontWeight="600" letterSpacing="2.4">
+      <text x="450" y="64" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600" letterSpacing="2.4">
         BANKING OPERATIONS
       </text>
 
@@ -365,31 +414,44 @@ function BankingIllustration() {
       </g>
 
       <path
+        id="bank-rail"
         d="M 180 560 C 180 420 320 390 450 390 C 620 390 720 430 720 560"
         fill="none"
         stroke={BLUE}
         strokeWidth="1.8"
         opacity="0.45"
       />
+      <path
+        d="M 180 560 C 180 420 320 390 450 390 C 620 390 720 430 720 560"
+        fill="none"
+        stroke={PINK}
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        pathLength="100"
+        strokeDasharray="10 90"
+        opacity="0.9"
+      >
+        <animate attributeName="stroke-dashoffset" values="0;-100" dur="6.5s" repeatCount="indefinite" />
+      </path>
 
       <g className="fs-ag-stack">
-        <rect x="86" y="470" width="168" height="96" rx="14" fill="url(#bank-panel)" stroke={BLUE_SOFT} strokeWidth="1.4" />
-        <text x="170" y="514" textAnchor="middle" fill="#fff" fontSize="13" fontWeight="600">Onboarding</text>
-        <text x="170" y="536" textAnchor="middle" fill="#fff" fontSize="11">KYC concierge</text>
+        <rect x="46" y="470" width="248" height="96" rx="14" fill="url(#bank-panel)" stroke={BLUE_SOFT} strokeWidth="1.4" />
+        <text x="170" y="512" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600">Onboarding</text>
+        <text x="170" y="540" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE}>KYC concierge</text>
       </g>
 
-      <rect x="366" y="500" width="168" height="96" rx="14" fill="url(#bank-panel)" stroke={BLUE_SOFT} strokeWidth="1.4" />
-      <text x="450" y="544" textAnchor="middle" fill="#fff" fontSize="13" fontWeight="600">Servicing</text>
-      <text x="450" y="566" textAnchor="middle" fill="#fff" fontSize="11">Limits · disputes</text>
+      <rect x="326" y="500" width="248" height="96" rx="14" fill="url(#bank-panel)" stroke={BLUE_SOFT} strokeWidth="1.4" />
+      <text x="450" y="542" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600">Servicing</text>
+      <text x="450" y="570" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE}>Limits · disputes</text>
 
       <g className="fs-ag-stack" style={{ animationDelay: "0.6s" }}>
-        <rect x="646" y="470" width="168" height="96" rx="14" fill="url(#bank-panel)" stroke={BLUE_SOFT} strokeWidth="1.4" />
-        <text x="730" y="514" textAnchor="middle" fill="#fff" fontSize="13" fontWeight="600">Reporting</text>
-        <text x="730" y="536" textAnchor="middle" fill="#fff" fontSize="11">Audit pack</text>
-        <circle cx="786" cy="488" r="8" fill={PINK} className="fs-ag-glow" />
+        <rect x="606" y="470" width="248" height="96" rx="14" fill="url(#bank-panel)" stroke={BLUE_SOFT} strokeWidth="1.4" />
+        <text x="730" y="512" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE} fontWeight="600">Reporting</text>
+        <text x="730" y="540" textAnchor="middle" fill="#fff" fontSize={LABEL_SIZE}>Audit pack</text>
+        <circle cx="826" cy="488" r="8" fill={PINK} className="fs-ag-glow" />
       </g>
 
-      <circle className="fs-ag-token-bank" r="7" fill={PINK} />
+      <TravelingDot pathId="bank-rail" duration="6.5s" />
     </svg>
   );
 }
@@ -402,114 +464,185 @@ function AgentTabIllustration({ id }: { id: Tab["id"] }) {
 }
 
 export default function FinancialServicesAgentsSection() {
+  const trackRef = useRef<HTMLDivElement>(null);
   const [activeId, setActiveId] = useState<Tab["id"]>(tabs[0].id);
+  const [reduceMotion, setReduceMotion] = useState(false);
   const activeTab = tabs.find((tab) => tab.id === activeId) ?? tabs[0];
 
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const syncMotion = () => setReduceMotion(media.matches);
+    syncMotion();
+    media.addEventListener("change", syncMotion);
+    return () => media.removeEventListener("change", syncMotion);
+  }, []);
+
+  useEffect(() => {
+    if (reduceMotion) return;
+
+    const track = trackRef.current;
+    if (!track) return;
+
+    let frame = 0;
+    const updateActiveTab = () => {
+      frame = 0;
+      const rect = track.getBoundingClientRect();
+      const scrollable = track.offsetHeight - window.innerHeight;
+      if (scrollable <= 0) return;
+
+      const scrolled = Math.min(scrollable, Math.max(0, -rect.top));
+      const progress = scrolled / scrollable;
+      const nextIndex = Math.min(
+        tabs.length - 1,
+        Math.floor(progress * tabs.length)
+      );
+      const nextId = tabs[nextIndex].id;
+      setActiveId((current) => (current === nextId ? current : nextId));
+    };
+
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(updateActiveTab);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    updateActiveTab();
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [reduceMotion]);
+
+  const selectTab = (id: Tab["id"]) => {
+    if (reduceMotion) {
+      setActiveId(id);
+      return;
+    }
+
+    const track = trackRef.current;
+    const index = tabs.findIndex((tab) => tab.id === id);
+    if (!track || index < 0) {
+      setActiveId(id);
+      return;
+    }
+
+    const start = track.getBoundingClientRect().top + window.scrollY;
+    const scrollable = track.offsetHeight - window.innerHeight;
+    const target =
+      start + ((index + 0.2) / tabs.length) * Math.max(scrollable, 0);
+    window.scrollTo({ top: target, behavior: "smooth" });
+  };
+
   return (
-    <section className="bg-default py-20 text-white md:py-28">
-      <style>{AGENT_ILLUSTRATION_STYLES}</style>
-      <Container>
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-80px", amount: 0.15 }}
-          transition={{ duration: 0.5 }}
-          className="text-center text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-pink"
-        >
-          Sample Agents Categories
-        </motion.p>
-
-        <motion.h2
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-80px", amount: 0.15 }}
-          transition={{ duration: 0.5, delay: 0.08 }}
-          className="mx-auto mt-4 max-w-2xl text-center text-3xl font-semibold leading-tight text-white md:text-4xl"
-        >
-          Purpose built AI agents for the workflows that run modern finance
-        </motion.h2>
-
-        <div className="mt-12 md:mt-16">
-          <div
-            role="tablist"
-            aria-label="Sample agents categories"
-            className="grid w-full grid-cols-1 border-b border-white/12 sm:grid-cols-2 lg:grid-cols-4"
+    <div
+      ref={trackRef}
+      className="relative"
+      style={reduceMotion ? undefined : { height: `${tabs.length * 100}vh` }}
+    >
+      <section className="sticky top-16 flex min-h-[calc(100svh-4rem)] items-center bg-default py-16 text-white md:top-20 md:min-h-[calc(100svh-5rem)] md:py-20">
+        <style>{AGENT_ILLUSTRATION_STYLES}</style>
+        <Container>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, margin: "-40px", amount: 0.15 }}
+            transition={{ duration: 0.5 }}
+            className="text-center text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-pink"
           >
-            {tabs.map((tab) => {
-              const isActive = tab.id === activeId;
-              const Icon = tab.icon;
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={isActive}
-                  aria-controls={`tabpanel-${tab.id}`}
-                  id={`tab-${tab.id}`}
-                  onClick={() => setActiveId(tab.id)}
-                  className={cn(
-                    "relative flex min-h-12 cursor-pointer items-center justify-center gap-2 px-4 py-3.5 text-[13px] font-medium tracking-wide transition-colors duration-200 md:text-sm",
-                    isActive
-                      ? "text-white"
-                      : "text-white hover:text-white"
-                  )}
-                >
-                  {isActive ? (
-                    <Icon className="h-4 w-4 shrink-0 text-primary-pink" aria-hidden />
-                  ) : null}
-                  <span>{tab.label}</span>
-                  <span
-                    className={cn(
-                      "absolute inset-x-0 -bottom-px h-0.5 transition-colors duration-200",
-                      isActive ? "bg-primary-pink" : "bg-transparent"
-                    )}
-                  />
-                </button>
-              );
-            })}
-          </div>
-        </div>
+            Sample Agents Categories
+          </motion.p>
 
-        <div className="mt-12 md:mt-16">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab.id}
-              role="tabpanel"
-              id={`tabpanel-${activeTab.id}`}
-              aria-labelledby={`tab-${activeTab.id}`}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, margin: "-40px", amount: 0.15 }}
+            transition={{ duration: 0.5, delay: 0.08 }}
+            className="mx-auto mt-4 max-w-2xl text-center text-3xl font-semibold leading-tight text-white md:text-4xl"
+          >
+            Purpose built AI agents for the workflows that run modern finance
+          </motion.h2>
+
+          <div className="mt-10 md:mt-12">
+            <div
+              role="tablist"
+              aria-label="Sample agents categories"
+              className="grid w-full grid-cols-1 border-b border-white/12 sm:grid-cols-2 lg:grid-cols-4"
             >
-              <div className="max-w-lg">
-                <h3 className="text-2xl font-semibold leading-tight text-white md:text-[26px]">
-                  {activeTab.title}
-                </h3>
-                <p className="mt-5 text-[15px] leading-relaxed text-white md:text-base">
-                  {activeTab.description}
-                </p>
+              {tabs.map((tab) => {
+                const isActive = tab.id === activeId;
+                const Icon = tab.icon;
+                return (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-controls={`tabpanel-${tab.id}`}
+                    id={`tab-${tab.id}`}
+                    onClick={() => selectTab(tab.id)}
+                    className={cn(
+                      "relative flex min-h-12 cursor-pointer items-center justify-center gap-2 px-3 py-3.5 text-[18px] font-medium tracking-wide transition-colors duration-200",
+                      isActive ? "text-white" : "text-white hover:text-white"
+                    )}
+                  >
+                    {isActive ? (
+                      <Icon className="h-5 w-5 shrink-0 text-primary-pink" aria-hidden />
+                    ) : null}
+                    <span>{tab.label}</span>
+                    <span
+                      className={cn(
+                        "absolute inset-x-0 -bottom-px h-0.5 transition-colors duration-200",
+                        isActive ? "bg-primary-pink" : "bg-transparent"
+                      )}
+                    />
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
-                <ul className="mt-8 space-y-3 text-[15px] text-white md:text-base">
-                  {activeTab.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-start gap-2.5">
-                      <HiCheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary-pink" />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <div className="mt-10 md:mt-12">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab.id}
+                role="tabpanel"
+                id={`tabpanel-${activeTab.id}`}
+                aria-labelledby={`tab-${activeTab.id}`}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -16 }}
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
+              >
+                <div className="max-w-lg">
+                  <h3 className="text-2xl font-semibold leading-tight text-white md:text-[26px]">
+                    {activeTab.title}
+                  </h3>
+                  <p className="mt-5 text-[15px] leading-relaxed text-white md:text-base">
+                    {activeTab.description}
+                  </p>
 
-              <div className="flex justify-center lg:justify-end">
-                <div className="relative aspect-900/734 w-full max-w-[560px] overflow-hidden rounded-[12px] border border-white/10 bg-black">
-                  <AgentTabIllustration id={activeTab.id} />
+                  <ul className="mt-8 space-y-3 text-[15px] text-white md:text-base">
+                    {activeTab.bullets.map((bullet) => (
+                      <li key={bullet} className="flex items-start gap-2.5">
+                        <HiCheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary-pink" />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </Container>
-    </section>
+
+                <div className="flex justify-center lg:justify-end">
+                  <div className="relative aspect-[900/576] w-full max-w-[480px] overflow-hidden rounded-[12px] border border-white/10 bg-black lg:max-w-[520px]">
+                    <AgentTabIllustration id={activeTab.id} />
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </Container>
+      </section>
+    </div>
   );
 }

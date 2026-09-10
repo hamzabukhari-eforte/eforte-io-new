@@ -98,7 +98,7 @@ export default function FinancialServicesDataFoundationsSection() {
           transition={{ duration: 0.6, delay: 0.16 }}
           className="mt-12 md:mt-16"
         >
-          <div className="relative aspect-[21/9] w-full overflow-hidden rounded-[12px]">
+          <div className="relative h-[240px] w-full overflow-hidden rounded-[12px] sm:h-[280px] md:h-[320px] lg:h-[340px]">
             <Image
               src="/assets/final-images/industries/financial-services/data-foundations-v1.png"
               alt="Foundational data layer architecture underpinning modern financial products"

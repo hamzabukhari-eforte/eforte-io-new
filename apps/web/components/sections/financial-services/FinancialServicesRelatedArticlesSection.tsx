@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/atoms/Container";
+import { insightProfileImages } from "@/data/capabilities/insightProfileImages";
 import { motion } from "@/lib/replayMotion";
 
 type Article = {
@@ -19,102 +20,100 @@ type Article = {
 
 const articles: Article[] = [
   {
-    id: "silicon-to-systems",
-    author: "Marcelo Cordini",
-    authorAvatar: "/assets/images/velocity-ai/avatar-2.jpg",
+    id: "agentic-ai-regulated-finance",
+    author: "Gabriel Fagundez",
+    authorAvatar: "/assets/images/capabilities/ai/avatar-gabriel-fagundez.jpg",
     title:
-      "From Silicon to Systems: How End-to-End AI Capabilities Help Generate Real Impact",
+      "Agentic AI in regulated finance only works when the data layer is audit-ready",
     excerpt:
-      "End-to-end AI capabilities are essential for turning innovation into real-world impact. By integrating the full stack - from semiconductor and embedded engineering, to data platforms, machine learning models, and cloud infrastructure, through to user-facing applications - organizations can build scalable, efficient, and adaptable AI systems. This holistic approach reduces fragmentation between layers, accelerates deployment, and ensures that AI solutions remain reliable, interoperable, and aligned with business goals over time.",
-    date: "March 19, 2026",
-    categories: ["Data and AI", "Software Engineering"],
-    imageSrc: "/assets/images/velocity-ai/insight-2.png",
-    imageAlt: "AI chip on a circuit board",
-  },
-  {
-    id: "fintech-conferences-2026",
-    author: "Marcelo Cordini",
-    authorAvatar: "/assets/images/velocity-ai/avatar-2.jpg",
-    title: "List of fintech conferences in 2026",
-    excerpt:
-      "If you're interested in expanding your understanding of the Fintech industry, consider attending some of the most anticipated events in 2026.",
-    date: "January 12, 2026",
-    categories: ["Culture & Events"],
-    imageSrc: "/assets/images/industry/wrappers.jpg",
-    imageAlt: "Person checking fintech app on a phone",
-  },
-  {
-    id: "agentic-ai-webinar",
-    author: "Sebastian Diaz",
-    authorAvatar: "/assets/images/velocity-ai/avatar-3.jpg",
-    title:
-      "Webinar: Agentic AI in finance - How to build Agents using Databricks and LangGraph",
-    excerpt:
-      "In this post, I share how to build production-grade systems in finance. By combining Databricks, LangGraph, Milvus, and Neo4j, enterprises can build agentic AI architectures that unify data silos, ensure compliance, and deliver trustworthy insights at scale.",
-    date: "October 8, 2025",
+      "Banks and fintechs are moving AI agents into payments, collections, and credit operations — not as chatbots, but as systems that take action. In 2026 that shift is colliding with NIST AI RMF, the EU AI Act, and audit requirements that still expect a human-readable trail. The institutions that get this right do not start with the agent. They start with a governed foundational data layer, then applied AI, then orchestration — the same sequence Finance Studio uses to move a transaction from insight to an explainable decision.",
+    date: "August 21, 2026",
     categories: ["Data and AI"],
-    imageSrc: "/assets/images/velocity-ai/case-study-myrow.png",
-    imageAlt: "Agentic AI in finance webinar",
+    imageSrc: "/assets/images/velocity-ai/insight-2.png",
+    imageAlt: "NIST AI Risk Management Framework for governed financial AI",
+  },
+  {
+    id: "embedded-finance-core-apis",
+    author: "Marcelo Cordini",
+    authorAvatar: insightProfileImages.benjamin,
+    title:
+      "Embedded finance is becoming the financial fabric. Core banking APIs are the glue.",
+    excerpt:
+      "The global conversation has moved past dropping a payment widget into an app. Platforms now expect accounts, lending, and payouts to live inside their own product, while a licensed bank or BaaS partner remains the regulated core. That only holds if open APIs, ISO 20022-rich payment data, and core banking integration are treated as product infrastructure — not a side project. It is the same problem our Embedded Banking and Core Banking API work is built to solve.",
+    date: "July 30, 2026",
+    categories: ["Software Engineering"],
+    imageSrc: "/assets/images/industry/wrappers.jpg",
+    imageAlt: "Customer sending a cross-border payment from a mobile banking app",
+  },
+  {
+    id: "alternative-data-credit-scoring",
+    author: "Sebastian Diaz",
+    authorAvatar: insightProfileImages.edward,
+    title:
+      "Alternative-data credit scoring is going mainstream. Explainability has to travel with it.",
+    excerpt:
+      "Cash-flow, rent, and utility signals are finally letting lenders underwrite thin-file borrowers that legacy bureau scores miss. Regulators are not far behind: creditworthiness models sit in the high-risk tier of the EU AI Act, and US lenders still have to show that a score is fair, stable, and contestable. The next advantage is not a slightly better model. It is pairing alternative-data scoring with early delinquency prediction and collections prioritization — so credit teams can see risk forming before the first missed payment, and defend every decision.",
+    date: "June 12, 2026",
+    categories: ["Data and AI", "Software Engineering"],
+    imageSrc: "/assets/images/industry/bi.jpg",
+    imageAlt: "Risk and credit analytics dashboards used to underwrite and monitor lending",
   },
 ];
 
 export default function FinancialServicesRelatedArticlesSection() {
   return (
-    <section className="bg-white py-16 text-default">
+    <section className="bg-white pt-16 pb-0 text-black">
       <Container>
         <motion.h2
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, margin: "-80px", amount: 0.15 }}
+          viewport={{ once: false, margin: "-40px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="text-3xl font-medium leading-tight text-default md:text-4xl"
+          className="mx-auto max-w-3xl text-center text-3xl font-semibold text-black md:text-4xl"
         >
           Related Articles
         </motion.h2>
 
-        <div className="mt-12 space-y-12 md:mt-16 md:space-y-14">
+        <div className="mt-16 space-y-8 md:space-y-10">
           {articles.map((article, index) => (
             <motion.article
               key={article.id}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, margin: "-80px", amount: 0.15 }}
-              transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
-              className="grid gap-6 border-b border-default/10 pb-12 last:border-b-0 last:pb-0 md:grid-cols-[1fr_260px] md:gap-10"
+              viewport={{ once: false, margin: "-40px", amount: 0.15 }}
+              transition={{ duration: 0.45, delay: index * 0.06 }}
+              className="grid items-start gap-6 md:grid-cols-[1fr_280px] md:gap-12 lg:grid-cols-[1fr_320px]"
             >
               <div>
-                <div className="flex items-center gap-2.5">
-                  <span className="relative h-7 w-7 overflow-hidden rounded-full bg-default/10">
+                <div className="flex items-center gap-3">
+                  <div className="relative h-9 w-9 overflow-hidden rounded-full">
                     <Image
                       src={article.authorAvatar}
                       alt={article.author}
                       fill
-                      sizes="28px"
+                      sizes="36px"
                       className="object-cover"
                     />
-                  </span>
-                  <span className="text-sm font-medium text-default">
-                    {article.author}
-                  </span>
+                  </div>
+                  <p className="text-sm font-medium text-black">{article.author}</p>
                 </div>
 
-                <h3 className="mt-4 text-xl font-semibold leading-snug text-default md:text-2xl">
-                  <Link href="#" className="transition-colors hover:text-primary-pink">
+                <Link href="/blog" className="group mt-4 block">
+                  <h3 className="text-2xl font-semibold leading-snug text-black transition-colors group-hover:text-brand-blue md:text-[28px]">
                     {article.title}
-                  </Link>
-                </h3>
+                  </h3>
+                  <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-black">
+                    {article.excerpt}
+                  </p>
+                </Link>
 
-                <p className="mt-3 text-[15px] leading-relaxed text-black">
-                  {article.excerpt}
-                </p>
-
-                <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
                   <span className="text-black">{article.date}</span>
                   {article.categories.map((category) => (
                     <Link
                       key={category}
-                      href="#"
-                      className="font-medium text-[#2563eb] transition-colors hover:text-[#1d4ed8]"
+                      href="/blog"
+                      className="font-medium text-primary-pink hover:underline"
                     >
                       {category}
                     </Link>
@@ -122,17 +121,18 @@ export default function FinancialServicesRelatedArticlesSection() {
                 </div>
               </div>
 
-              <div className="md:pt-1">
-                <div className="relative aspect-video w-full overflow-hidden rounded-[12px] bg-default/5 md:aspect-4/3">
-                  <Image
-                    src={article.imageSrc}
-                    alt={article.imageAlt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 260px"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
+              <Link
+                href="/blog"
+                className="relative aspect-[16/9] w-full overflow-hidden rounded-[12px] md:aspect-[3/2]"
+              >
+                <Image
+                  src={article.imageSrc}
+                  alt={article.imageAlt}
+                  fill
+                  sizes="(max-width: 768px) 90vw, 320px"
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </Link>
             </motion.article>
           ))}
         </div>
