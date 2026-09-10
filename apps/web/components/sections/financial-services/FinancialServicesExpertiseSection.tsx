@@ -28,7 +28,11 @@ const services: ExpertService[] = [
     label: "Cybersecurity",
     icon: HiOutlineShieldCheck,
     imageSrc:
-      "/assets/final-images/industries/financial-services/expertise-cybersecurity.png",
+      "/assets/final-images/industries/financial-services/expertise-cybersecurity-v4.png",
+    // imageSrc:
+    //   "/assets/final-images/industries/financial-services/expertise-cybersecurity.jpg",
+    // imageSrc:
+    //   "/assets/final-images/industries/financial-services/expertise-cybersecurity.png",
     // imageSrc: "/assets/images/industry/cybersecurity.jpg",
     imageAlt: "Security analysts reviewing shield and lock alerts on a tablet in a SOC",
     description:
@@ -39,7 +43,11 @@ const services: ExpertService[] = [
     label: "BI & Data Engineering",
     icon: HiOutlineChartBar,
     imageSrc:
-      "/assets/final-images/industries/financial-services/expertise-bi-data.png",
+      "/assets/final-images/industries/financial-services/expertise-bi-data-v4.png",
+    // imageSrc:
+    //   "/assets/final-images/industries/financial-services/expertise-bi-data-v2.png",
+    // imageSrc:
+    //   "/assets/final-images/industries/financial-services/expertise-bi-data.png",
     // imageSrc: "/assets/images/industry/bi.jpg",
     imageAlt: "Analysts reviewing financial dashboards and data pipelines on a tablet",
     description:
@@ -50,9 +58,15 @@ const services: ExpertService[] = [
     label: "Banking as a Service & API Integrations",
     icon: HiOutlineCodeBracket,
     imageSrc:
-      "/assets/final-images/industries/financial-services/expertise-baas-api.png",
+      "/assets/final-images/industries/financial-services/expertise-baas-api-v4.png",
+    // imageSrc:
+    //   "/assets/final-images/industries/financial-services/expertise-baas-api-v3.png",
+    // imageSrc:
+    //   "/assets/final-images/industries/financial-services/expertise-baas-api-v2.png",
+    // imageSrc:
+    //   "/assets/final-images/industries/financial-services/expertise-baas-api.png",
     // imageSrc: "/assets/images/industry/baas.jpg",
-    imageAlt: "Banking specialists reviewing API rails and a payment card on a tablet",
+    imageAlt: "Banking specialists reviewing API nodes and a debit card on a tablet",
     description:
       "Connect core systems to modern banking infrastructure providers.",
   },
@@ -61,9 +75,13 @@ const services: ExpertService[] = [
     label: "Cloud Migration & Optimization",
     icon: HiOutlineCloud,
     imageSrc:
-      "/assets/final-images/industries/financial-services/expertise-cloud.png",
+      "/assets/final-images/industries/financial-services/expertise-cloud-v4.png",
+    // imageSrc:
+    //   "/assets/final-images/industries/financial-services/expertise-cloud-v2.png",
+    // imageSrc:
+    //   "/assets/final-images/industries/financial-services/expertise-cloud.png",
     // imageSrc: "/assets/images/industry/cloud.jpg",
-    imageAlt: "Cloud architects reviewing a cloud migration topology on a tablet",
+    imageAlt: "Cloud architects reviewing a cloud network diagram on a tablet",
     description:
       "Move and right size financial workloads on secure, cost efficient cloud infrastructure.",
   },
@@ -72,9 +90,13 @@ const services: ExpertService[] = [
     label: "App Modernization",
     icon: HiOutlineSquares2X2,
     imageSrc:
-      "/assets/final-images/industries/financial-services/expertise-app-modernization.png",
+      "/assets/final-images/industries/financial-services/expertise-app-modernization-v4.png",
+    // imageSrc:
+    //   "/assets/final-images/industries/financial-services/expertise-app-modernization-v2.png",
+    // imageSrc:
+    //   "/assets/final-images/industries/financial-services/expertise-app-modernization.png",
     // imageSrc: "/assets/images/industry/app-modernization.jpg",
-    imageAlt: "Product team reviewing a modern banking app interface on a tablet",
+    imageAlt: "Product team reviewing a modern banking app on a tablet",
     description:
       "Rebuild legacy financial applications on modern, maintainable architectures.",
   },
@@ -93,7 +115,7 @@ const services: ExpertService[] = [
 export default function FinancialServicesExpertiseSection() {
   return (
     <section className="bg-default">
-      <div className="rounded-t-[12px] bg-white py-12 text-black md:py-16">
+      <div className="rounded-t-[12px] bg-white pt-12 pb-8 text-black md:pt-16 md:pb-10">
         <Container>
           <motion.p
             initial={{ opacity: 0, y: 12 }}
@@ -122,7 +144,7 @@ export default function FinancialServicesExpertiseSection() {
               className="pointer-events-none absolute left-1/2 top-8 hidden h-[calc(100%-4rem)] w-px -translate-x-1/2 bg-black/10 lg:block"
             />
 
-            <div className="space-y-6 pb-4 lg:space-y-5 lg:pb-20">
+            <div className="space-y-6 pb-2 lg:space-y-5 lg:pb-8">
               {services.map((service, index) => {
                 const Icon = service.icon;
                 const reversed = index % 2 === 1;
@@ -144,7 +166,7 @@ export default function FinancialServicesExpertiseSection() {
                         reversed && "lg:[&>*:first-child]:order-2"
                       )}
                     >
-                      <div className="relative aspect-[16/9] overflow-hidden rounded-[12px] bg-[#0A0A1A] lg:aspect-[2/1] lg:min-h-[200px] lg:max-h-[240px]">
+                      <div className="relative h-[200px] w-full overflow-hidden rounded-[12px] bg-[#0A0A1A] md:h-[220px] lg:h-[240px]">
                         <Image
                           src={service.imageSrc}
                           alt={service.imageAlt}
@@ -162,10 +184,10 @@ export default function FinancialServicesExpertiseSection() {
                           </span>
                         </div>
 
-                        <h3 className="mt-2.5 text-[28px] font-semibold leading-snug text-black md:text-[32px]">
+                        <h3 className="mt-2.5 text-[36px] font-semibold leading-snug text-black">
                           {service.label}
                         </h3>
-                        <p className="mt-2.5 max-w-md text-[16px] leading-relaxed text-black/80">
+                        <p className="mt-2.5 max-w-md text-[18px] leading-relaxed text-black/80">
                           {service.description}
                         </p>
                       </div>

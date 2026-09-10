@@ -79,7 +79,7 @@ export default function FinancialServicesTestimonialsSection() {
   return (
     <section className="bg-primary-pink">
       <div
-        className="rounded-t-[12px] bg-default py-20 text-white md:rounded-t-[12px] md:py-52"
+        className="rounded-t-[12px] bg-default py-14 text-white md:rounded-t-[12px] md:py-24"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onFocus={() => setIsPaused(true)}

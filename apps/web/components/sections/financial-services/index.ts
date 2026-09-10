@@ -11,3 +11,8 @@ export { default as FinancialServicesSuccessStoriesSection } from "./FinancialSe
 export { default as FinancialServicesInsightsSection } from "./FinancialServicesInsightsSection";
 export { default as FinancialServicesRelatedArticlesSection } from "./FinancialServicesRelatedArticlesSection";
 export { default as FinancialServicesFaqSection } from "./FinancialServicesFaqSection";
+export { default as FinancialServicesWhitePaperHeroSection } from "./FinancialServicesWhitePaperHeroSection";
+export { default as FinancialServicesWhitePaperArticleSection } from "./FinancialServicesWhitePaperArticleSection";
+export { default as FinancialServicesWhitePaperCtaSection } from "./FinancialServicesWhitePaperCtaSection";
+export { default as FinancialServicesArticleHeroSection } from "./FinancialServicesArticleHeroSection";
+export { default as FinancialServicesArticleBodySection } from "./FinancialServicesArticleBodySection";

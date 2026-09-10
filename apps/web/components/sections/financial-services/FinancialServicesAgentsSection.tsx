@@ -537,10 +537,10 @@ export default function FinancialServicesAgentsSection() {
   return (
     <div
       ref={trackRef}
-      className="relative"
-      style={reduceMotion ? undefined : { height: `${tabs.length * 100}vh` }}
+      className="relative bg-default"
+      style={reduceMotion ? undefined : { height: `${tabs.length * 70}vh` }}
     >
-      <section className="sticky top-16 flex min-h-[calc(100svh-4rem)] items-center bg-default py-10 text-white md:top-20 md:min-h-[calc(100svh-5rem)] md:py-14">
+      <section className="sticky top-16 bg-default pt-6 pb-6 text-white md:top-20 md:pt-8 md:pb-8">
         <style>{AGENT_ILLUSTRATION_STYLES}</style>
         <Container>
           <motion.p
