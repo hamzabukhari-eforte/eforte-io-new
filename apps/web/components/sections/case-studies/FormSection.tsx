@@ -6,26 +6,26 @@ export default function FormSection() {
       <h2 className="text-2xl lg:text-3xl font-semibold text-white text-center">
         Let’s build intelligence together
       </h2>
-      <p className="mt-3 text-sm md:text-base text-white/70 text-center max-w-2xl mx-auto leading-relaxed">
+      <p className="mt-3 text-sm md:text-base text-white text-center max-w-2xl mx-auto leading-relaxed">
         Share a few details and we’ll reach out with next steps.
       </p>
 
       <form className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-        <label className="flex flex-col gap-2 text-sm text-white/80">
+        <label className="flex flex-col gap-2 text-sm text-white">
           Name
           <input
             className="h-11 rounded-[12px] bg-white/5 border border-white/10 px-4 outline-none focus:border-primary-pink/60"
             placeholder="Your name"
           />
         </label>
-        <label className="flex flex-col gap-2 text-sm text-white/80">
+        <label className="flex flex-col gap-2 text-sm text-white">
           Work Email
           <input
             className="h-11 rounded-[12px] bg-white/5 border border-white/10 px-4 outline-none focus:border-primary-pink/60"
             placeholder="you@company.com"
           />
         </label>
-        <label className="flex flex-col gap-2 text-sm text-white/80 md:col-span-2">
+        <label className="flex flex-col gap-2 text-sm text-white md:col-span-2">
           Message
           <textarea
             className="min-h-[120px] rounded-[12px] bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-primary-pink/60"

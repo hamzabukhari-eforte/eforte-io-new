@@ -4,6 +4,13 @@ import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence } from "framer-motion";
 import { HiCheckCircle } from "react-icons/hi";
+import {
+  HiOutlineBuildingLibrary,
+  HiOutlineCreditCard,
+  HiOutlineDocumentText,
+  HiOutlineSquares2X2,
+} from "react-icons/hi2";
+import type { IconType } from "react-icons";
 import Container from "@/components/atoms/Container";
 import { cn } from "@/lib/utils";
 import { motion } from "@/lib/replayMotion";
@@ -15,12 +22,14 @@ type Tab = {
   description: string;
   bullets: string[];
   imageSrc: string;
+  icon: IconType;
 };
 
 const tabs: Tab[] = [
   {
     id: "paytech",
     label: "Payments & settlement",
+    icon: HiOutlineCreditCard,
     title: "Payments & settlement",
     description:
       "Purpose built AI agents for the workflows that run modern payments and settlement operations.",
@@ -34,6 +43,7 @@ const tabs: Tab[] = [
   {
     id: "lendtech",
     label: "Lending & credit",
+    icon: HiOutlineDocumentText,
     title: "Lending & credit",
     description:
       "Purpose built AI agents for the workflows that run modern lending and credit operations.",
@@ -47,6 +57,7 @@ const tabs: Tab[] = [
   {
     id: "financial-infrastructure",
     label: "Financial infrastructure",
+    icon: HiOutlineSquares2X2,
     title: "Financial infrastructure",
     description:
       "Purpose built AI agents for the workflows that run modern financial infrastructure.",
@@ -60,6 +71,7 @@ const tabs: Tab[] = [
   {
     id: "banking-banktech",
     label: "Banking & banktech",
+    icon: HiOutlineBuildingLibrary,
     title: "Banking & banktech",
     description:
       "Purpose built AI agents for the workflows that run modern banking and banktech operations.",
@@ -100,14 +112,15 @@ export default function FinancialServicesAgentsSection() {
           Purpose built AI agents for the workflows that run modern finance
         </motion.h2>
 
-        <div className="mt-12 flex justify-center md:mt-16">
+        <div className="mt-12 md:mt-16">
           <div
             role="tablist"
             aria-label="Sample agents categories"
-            className="flex w-full max-w-4xl flex-wrap items-center justify-center gap-1 rounded-full border border-white/15 bg-white/5 p-1.5"
+            className="grid w-full grid-cols-1 border-b border-white/12 sm:grid-cols-2 lg:grid-cols-4"
           >
             {tabs.map((tab) => {
               const isActive = tab.id === activeId;
+              const Icon = tab.icon;
               return (
                 <button
                   key={tab.id}
@@ -118,13 +131,22 @@ export default function FinancialServicesAgentsSection() {
                   id={`tab-${tab.id}`}
                   onClick={() => setActiveId(tab.id)}
                   className={cn(
-                    "inline-flex h-[25px] items-center justify-center cursor-pointer rounded-full leading-none px-4 py-0.5 text-sm font-medium transition-all duration-200 md:px-6",
+                    "relative flex min-h-12 cursor-pointer items-center justify-center gap-2 px-4 py-3.5 text-[13px] font-medium tracking-wide transition-colors duration-200 md:text-sm",
                     isActive
-                      ? "bg-primary-pink text-white shadow-[0_8px_24px_rgba(211,40,122,0.35)]"
-                      : "text-white/70 hover:bg-white/10 hover:text-white"
+                      ? "text-white"
+                      : "text-white/45 hover:text-white"
                   )}
                 >
-                  {tab.label}
+                  {isActive ? (
+                    <Icon className="h-4 w-4 shrink-0 text-primary-pink" aria-hidden />
+                  ) : null}
+                  <span>{tab.label}</span>
+                  <span
+                    className={cn(
+                      "absolute inset-x-0 -bottom-px h-0.5 transition-colors duration-200",
+                      isActive ? "bg-primary-pink" : "bg-transparent"
+                    )}
+                  />
                 </button>
               );
             })}

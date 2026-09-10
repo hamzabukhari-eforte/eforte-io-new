@@ -28,19 +28,19 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 /** Capabilities-aligned type + badge tokens */
 const badgeLight =
-  "inline-flex h-10 items-center justify-center rounded-full leading-none border border-default/20 px-4 py-0.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-default";
+  "inline-flex h-10 items-center justify-center rounded-full leading-none border border-default/20 px-4 py-0.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-black";
 const badgeDark =
   "inline-flex h-10 items-center justify-center rounded-full leading-none border border-white/25 px-4 py-0.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white";
 const badgeOnColor =
   "inline-flex h-10 items-center justify-center rounded-full leading-none border border-white/30 px-4 py-0.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-white";
 const sectionTitle =
   "text-3xl font-semibold leading-tight tracking-tight md:text-4xl lg:text-[42px]";
-const bodyMuted = "text-[15px] leading-relaxed text-[#555] md:text-base";
-const bodyOnDark = "text-[15px] leading-relaxed text-white/75 md:text-base";
+const bodyMuted = "text-[15px] leading-relaxed text-black md:text-base";
+const bodyOnDark = "text-[15px] leading-relaxed text-white md:text-base";
 const eyebrowPlain =
   "text-[12px] font-semibold uppercase tracking-[0.18em]";
 const cardTitle = "text-xl font-semibold md:text-[22px]";
-const cardBody = "text-[15px] leading-relaxed text-[#555] md:text-base";
+const cardBody = "text-[15px] leading-relaxed text-black md:text-base";
 
 const pillarIcons = [HiOutlineLightningBolt, HiOutlineDatabase, HiOutlineCog];
 const resultIcons = [HiOutlineClock, HiOutlineShieldCheck, HiOutlineChartBar];
@@ -82,7 +82,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
     content.challenge.image;
 
   return (
-    <div className="relative z-10 -mt-6 text-default md:-mt-10">
+    <div className="relative z-10 -mt-6 text-black md:-mt-10">
       {/* ── Overview: white overlapping panel ── */}
       <section className="relative overflow-hidden rounded-t-[12px] bg-white pb-16 pt-14 shadow-[0_-16px_48px_rgba(0,0,0,0.18)] md:rounded-t-[12px] md:pb-24 md:pt-20">
         <div
@@ -110,7 +110,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
             <span className={cn(badgeLight, "shadow-[0_4px_16px_rgba(0,0,0,0.04)]")}>
               Impact study
             </span>
-            <h2 className={cn("mt-6 text-default", sectionTitle)}>
+            <h2 className={cn("mt-6 text-black", sectionTitle)}>
               {content.headline}
             </h2>
             <div
@@ -152,7 +152,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
 
               <p
                 className={cn(
-                  "relative text-center text-white/70",
+                  "relative text-center text-white",
                   eyebrowPlain
                 )}
               >
@@ -187,7 +187,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
             <Reveal>
               <p
                 className={cn(
-                  "mb-6 text-center text-default/70",
+                  "mb-6 text-center text-black",
                   eyebrowPlain
                 )}
               >
@@ -266,7 +266,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                   transition={{ duration: 0.5, delay: 0.25 }}
                   className="absolute -bottom-5 left-6 max-w-[240px] rounded-[12px] border border-white/15 bg-black/80 px-4 py-3 backdrop-blur-md md:left-10"
                 >
-                  <p className="text-[14px] leading-relaxed text-white/90">
+                  <p className="text-[14px] leading-relaxed text-white">
                     {content.challenge.paragraphs[0]?.slice(0, 110)}
                     {(content.challenge.paragraphs[0]?.length ?? 0) > 110
                       ? "…"
@@ -284,7 +284,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
         <Container>
           <Reveal className="mx-auto max-w-3xl text-center">
             <span className={badgeLight}>Solution</span>
-            <h3 className={cn("mt-4 text-default", sectionTitle)}>
+            <h3 className={cn("mt-4 text-black", sectionTitle)}>
               {content.solution.title}
             </h3>
             <p className={cn("mt-5", bodyMuted)}>{content.solution.lead}</p>
@@ -319,11 +319,11 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                           style={{ backgroundColor: accent }}
                           aria-hidden
                         />
-                        <p className={cn("text-default/70", eyebrowPlain)}>
+                        <p className={cn("text-black", eyebrowPlain)}>
                           Capability {String(index + 1).padStart(2, "0")}
                         </p>
                       </div>
-                      <h4 className={cn("text-default", cardTitle)}>
+                      <h4 className={cn("text-black", cardTitle)}>
                         {item.title}
                       </h4>
                       <p className={cn("mt-3", cardBody)}>{item.body}</p>
@@ -385,7 +385,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
               <h3 className={cn("mt-4 text-white", sectionTitle)}>
                 {content.results.title}
               </h3>
-              <p className="mt-5 text-[15px] leading-relaxed text-white/85 md:text-base">
+              <p className="mt-5 text-[15px] leading-relaxed text-white md:text-base">
                 {content.results.lead}
               </p>
             </Reveal>
@@ -398,12 +398,12 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                     <motion.article
                       whileHover={{ y: -6 }}
                       transition={{ duration: 0.25 }}
-                      className="flex h-full flex-col rounded-[12px] bg-white p-7 text-default shadow-[0_20px_50px_rgba(0,0,0,0.18)] md:p-8"
+                      className="flex h-full flex-col rounded-[12px] bg-white p-7 text-black shadow-[0_20px_50px_rgba(0,0,0,0.18)] md:p-8"
                     >
                       <span className="mb-5 inline-flex h-10 w-12 items-center justify-center rounded-[12px] bg-primary-pink/10 text-primary-pink">
                         <Icon className="h-6 w-6" />
                       </span>
-                      <h4 className={cn("text-default", cardTitle)}>
+                      <h4 className={cn("text-black", cardTitle)}>
                         {item.title}
                       </h4>
                       <p className={cn("mt-3", cardBody)}>{item.body}</p>
@@ -443,10 +443,10 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
 
               <div className="flex flex-col justify-between gap-10 bg-[#f7f7fb] px-8 py-12 md:px-10 md:py-16 lg:px-12">
                 <div>
-                  <p className={cn("text-default/70", eyebrowPlain)}>
+                  <p className={cn("text-black", eyebrowPlain)}>
                     Impact study
                   </p>
-                  <p className="mt-3 text-2xl font-semibold tracking-tight text-default md:text-[28px]">
+                  <p className="mt-3 text-2xl font-semibold tracking-tight text-black md:text-[28px]">
                     {content.name}
                   </p>
                   <p className={cn("mt-3", bodyMuted)}>
@@ -457,7 +457,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                 <div className="space-y-3">
                   <a
                     href="/impact-studies"
-                    className="group inline-flex w-full items-center justify-between rounded-[12px] border border-black/8 bg-white px-5 py-4 text-sm font-semibold text-default transition-colors hover:border-primary-pink/40 hover:text-primary-pink"
+                    className="group inline-flex w-full items-center justify-between rounded-[12px] border border-black/8 bg-white px-5 py-4 text-sm font-semibold text-black transition-colors hover:border-primary-pink/40 hover:text-primary-pink"
                   >
                     Browse all impact studies
                     <HiArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -515,7 +515,7 @@ function DeliverableCard({
           <HiOutlineCheckCircle className="h-4 w-4" />
         </span>
       </div>
-      <p className="mt-auto text-[15px] font-semibold leading-snug text-default md:text-base">
+      <p className="mt-auto text-[15px] font-semibold leading-snug text-black md:text-base">
         {item}
       </p>
     </motion.li>

@@ -10,8 +10,9 @@ import InfiniteCarousel from "@/components/sections/InfiniteCarousel";
 import { defaultTrustedByLogos } from "@/data/trustedByLogos";
 
 const HERO_IMAGE =
-  "/assets/final-images/industries/financial-services/finance-studio-hero-v5.png";
+  "/assets/final-images/industries/financial-services/finance-studio-hero-v6.png";
 // Previous hero graphics preserved for possible future reuse:
+// "/assets/final-images/industries/financial-services/finance-studio-hero-v5.png"
 // "/assets/final-images/industries/financial-services/finance-studio-hero-v4.png"
 // "/assets/final-images/industries/financial-services/finance-studio-hero-blue-red-accent.png"
 // "/assets/final-images/industries/financial-services/finance-studio-hero-blue.png"

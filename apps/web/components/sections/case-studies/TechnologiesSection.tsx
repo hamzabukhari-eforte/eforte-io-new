@@ -77,7 +77,7 @@ export default function TechnologiesSection({
           variants={fadeUp}
           className="flex w-full flex-col items-center justify-center pb-8 text-2xl font-semibold text-white lg:text-4xl"
         >
-          <span className="mb-2 flex items-center gap-2 text-sm text-gray-300">
+          <span className="mb-2 flex items-center gap-2 text-sm text-white">
             <span className="h-2 w-2 rounded-full bg-purple-500" />
             Case Study
           </span>

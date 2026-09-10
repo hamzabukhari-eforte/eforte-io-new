@@ -13,8 +13,9 @@ export const hospitalityIndustry: IndustryPageContent = {
       "eForte partners with hotel groups, restaurant brands, and travel platforms to build guest experiences powered by Velocity AI for rapid iteration, Agentic Orchestration for personalized service at scale, and a Foundational Data Layer that keeps guest data secure and useful."
     ],
     ctaLabel: "Contact Us",
-    imageSrc: "/assets/final-images/industries/hospitality/hero-v4.png",
+    imageSrc: "/assets/final-images/industries/hospitality/hero-v5.png",
     // Previous hero graphics preserved for possible future reuse:
+    // "/assets/final-images/industries/hospitality/hero-v4.png",
     // "/assets/final-images/industries/hospitality/hero-v3.png",
     // "/assets/final-images/industries/hospitality/hero-v2.png",
     // "/assets/images/package/industries/hospitality-industry-hero.svg",

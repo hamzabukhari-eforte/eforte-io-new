@@ -33,7 +33,7 @@ export default function DetailsCard({
             <h2 className="text-2xl lg:text-4xl font-semibold text-white">
               {heading}
             </h2>
-            <p className="text-white/70 leading-relaxed text-base lg:text-lg">
+            <p className="text-white leading-relaxed text-base lg:text-lg">
               {description}
             </p>
           </div>
@@ -53,7 +53,7 @@ export default function DetailsCard({
             <h2 className="text-3xl lg:text-4xl font-semibold text-white">
               {heading}
             </h2>
-            <p className="text-white/70 leading-relaxed text-base lg:text-lg">
+            <p className="text-white leading-relaxed text-base lg:text-lg">
               {description}
             </p>
           </div>

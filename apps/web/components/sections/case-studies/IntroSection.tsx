@@ -66,7 +66,7 @@ export default function IntroSection({
           variants={textVariant}
         >
           <h1 className="text-center text-5xl font-semibold">{title}</h1>
-          <p className="max-w-3xl text-center text-lg text-white/80">
+          <p className="max-w-3xl text-center text-lg text-white">
             {description}
           </p>
         </motion.div>

@@ -28,7 +28,7 @@ export default function TechCard({ image, title, info }: CardProps) {
         <h3 className="text-xl font-semibold tracking-wide">{title}</h3>
       </div>
 
-      <p className="text-sm text-white/70 leading-relaxed">{info}</p>
+      <p className="text-sm text-white leading-relaxed">{info}</p>
     </div>
   );
 }
