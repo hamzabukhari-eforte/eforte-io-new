@@ -111,7 +111,7 @@ export default function FinancialServicesSolutionsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="text-center text-sm font-medium italic text-white/80"
+          className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-pink"
         >
           eForte Finance Studio, IP driven solutions
         </motion.p>
@@ -132,20 +132,20 @@ export default function FinancialServicesSolutionsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.6, delay: 0.16 }}
-          className="mt-12 md:mt-16"
+          className="mt-6 md:mt-8"
         >
-          <div className="relative aspect-2044/1287 w-full overflow-hidden">
+          <div className="relative aspect-[2.2/1] w-full overflow-hidden">
             <Image
               src="/assets/images/industry/learn-more.webp"
               alt="eForte Finance Studio solutions diagram"
               fill
               sizes="(max-width: 1400px) 100vw, 1400px"
-              className="object-contain"
+              className="object-cover object-center"
             />
           </div>
         </motion.div>
 
-        <div className="mt-12 grid gap-x-10 gap-y-12 md:mt-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-16">
+        <div className="mt-6 grid gap-x-10 gap-y-12 md:mt-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-16">
           {solutions.map((solution, index) => (
             <motion.div
               key={solution.title}
@@ -162,7 +162,7 @@ export default function FinancialServicesSolutionsSection() {
               <h3 className="text-lg font-semibold leading-snug text-white">
                 {solution.title}
               </h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-white/70">
+              <p className="mt-3 text-[15px] leading-relaxed text-white">
                 {solution.description}
               </p>
             </motion.div>
@@ -175,7 +175,7 @@ export default function FinancialServicesSolutionsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-80px", amount: 0.15 }}
             transition={{ duration: 0.5 }}
-            className="text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-white"
+            className="text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-pink"
           >
             Velocities
           </motion.p>
@@ -196,7 +196,7 @@ export default function FinancialServicesSolutionsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-80px", amount: 0.15 }}
             transition={{ duration: 0.5, delay: 0.16 }}
-            className="mx-auto mt-6 max-w-2xl text-center text-[15px] leading-relaxed text-white/75 md:text-base"
+            className="mx-auto mt-6 max-w-2xl text-center text-[15px] leading-relaxed text-white md:text-base"
           >
             They ensure high quality results, based on tried-and-tested
             technologies, ensuring alignment with industry best practices and
@@ -224,7 +224,7 @@ export default function FinancialServicesSolutionsSection() {
                       "inline-flex items-center justify-center h-10 cursor-pointer rounded-full leading-none px-5 py-0 text-sm font-medium transition-all duration-200 md:px-6",
                       isActive
                         ? "bg-primary-pink text-white shadow-[0_4px_18px_rgba(211, 40, 122, 0.4)]"
-                        : "bg-white/15 text-white/80 hover:bg-primary-pink hover:text-white"
+                        : "bg-white/15 text-white hover:bg-primary-pink hover:text-white"
                     )}
                   >
                     {accelerator.label}
@@ -259,7 +259,7 @@ export default function FinancialServicesSolutionsSection() {
                   </div>
                 </div>
 
-                <div className="max-w-xl space-y-4 text-[15px] leading-relaxed text-white/80 md:text-base">
+                <div className="max-w-xl space-y-4 text-[15px] leading-relaxed text-white md:text-base">
                   {activeAccelerator.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}

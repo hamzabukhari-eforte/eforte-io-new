@@ -109,7 +109,7 @@ export default function FinancialServicesHeroSection() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-full leading-none border border-white/25 bg-white/10 px-4 py-0 text-[13px] font-medium uppercase tracking-[0.18em] text-white backdrop-blur"
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-full leading-none border border-white/25 bg-white/10 px-4 py-0 text-[13px] font-medium uppercase tracking-[0.18em] text-primary-pink backdrop-blur"
           >
             <HiSparkles className="h-3.5 w-3.5 text-primary-pink" />
             FINANCE STUDIO
@@ -128,7 +128,7 @@ export default function FinancialServicesHeroSection() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.16 }}
-            className="mt-6 max-w-2xl text-base leading-7 text-white/82 md:text-lg"
+            className="mt-6 max-w-2xl text-base leading-7 text-white md:text-lg"
           >
             eForte partners with banks, lenders, and payment innovators to turn
             financial services ambitions into shipped products, engineering

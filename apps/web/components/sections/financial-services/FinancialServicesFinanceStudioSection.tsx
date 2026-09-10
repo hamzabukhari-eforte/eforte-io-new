@@ -51,34 +51,34 @@ function FinanceStudioTrustFlow() {
 
       <rect x="78" y="520" width="180" height="92" rx="18" fill="rgba(211,40,122,0.12)" stroke={PINK} strokeWidth="1.5" />
       <text x="168" y="558" textAnchor="middle" fill="#fff" fontSize="16" fontWeight="600">Transaction in</text>
-      <text x="168" y="582" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="12">Bank · lender · payments</text>
+      <text x="168" y="582" textAnchor="middle" fill="#fff" fontSize="12">Bank · lender · payments</text>
 
       <rect x="250" y="418" width="360" height="96" rx="16" fill="url(#fs-layer)" stroke="rgba(255,255,255,0.22)" strokeWidth="1.5" />
       <text x="430" y="460" textAnchor="middle" fill="#fff" fontSize="17" fontWeight="600">Foundational Data Layer</text>
-      <text x="430" y="486" textAnchor="middle" fill="rgba(255,255,255,0.68)" fontSize="12">Lineage, encryption, KYC / AML</text>
+      <text x="430" y="486" textAnchor="middle" fill="#fff" fontSize="12">Lineage, encryption, KYC / AML</text>
 
       <rect x="250" y="292" width="360" height="96" rx="16" fill="url(#fs-layer)" stroke="rgba(255,255,255,0.22)" strokeWidth="1.5" />
       <text x="430" y="334" textAnchor="middle" fill="#fff" fontSize="17" fontWeight="600">Applied AI</text>
-      <text x="430" y="360" textAnchor="middle" fill="rgba(255,255,255,0.68)" fontSize="12">Credit scoring, fraud, delinquency</text>
+      <text x="430" y="360" textAnchor="middle" fill="#fff" fontSize="12">Credit scoring, fraud, delinquency</text>
 
       <rect x="250" y="166" width="360" height="96" rx="16" fill="url(#fs-layer)" stroke={PINK} strokeWidth="1.5" />
       <text x="430" y="208" textAnchor="middle" fill="#fff" fontSize="17" fontWeight="600">Agentic Orchestration</text>
-      <text x="430" y="234" textAnchor="middle" fill="rgba(255,255,255,0.68)" fontSize="12">Settlement, servicing, onboarding</text>
+      <text x="430" y="234" textAnchor="middle" fill="#fff" fontSize="12">Settlement, servicing, onboarding</text>
 
       <path d="M 610 214 C 680 214 700 246 760 246" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1.6" />
       <rect x="760" y="206" width="230" height="80" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.2)" strokeWidth="1.4" />
       <text x="875" y="240" textAnchor="middle" fill="#fff" fontSize="15" fontWeight="600">Payments & settlement</text>
-      <text x="875" y="262" textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize="11">Reconcile · chargeback · rails</text>
+      <text x="875" y="262" textAnchor="middle" fill="#fff" fontSize="11">Reconcile · chargeback · rails</text>
 
       <path d="M 610 340 C 680 340 700 372 760 372" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1.6" />
       <rect x="760" y="332" width="230" height="80" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.2)" strokeWidth="1.4" />
       <text x="875" y="366" textAnchor="middle" fill="#fff" fontSize="15" fontWeight="600">Lending & credit</text>
-      <text x="875" y="388" textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize="11">Intake · score · decision</text>
+      <text x="875" y="388" textAnchor="middle" fill="#fff" fontSize="11">Intake · score · decision</text>
 
       <path d="M 610 466 C 680 466 700 498 760 498" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1.6" />
       <rect x="760" y="458" width="230" height="80" rx="14" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.2)" strokeWidth="1.4" />
       <text x="875" y="492" textAnchor="middle" fill="#fff" fontSize="15" fontWeight="600">Embedded finance</text>
-      <text x="875" y="514" textAnchor="middle" fill="rgba(255,255,255,0.65)" fontSize="11">BaaS · APIs · banking features</text>
+      <text x="875" y="514" textAnchor="middle" fill="#fff" fontSize="11">BaaS · APIs · banking features</text>
 
       <path d="M 990 246 C 1040 246 1050 320 1088 352" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1.6" />
       <path d="M 990 372 H 1088" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1.6" />
@@ -86,7 +86,7 @@ function FinanceStudioTrustFlow() {
 
       <rect x="1088" y="312" width="150" height="88" rx="18" fill="rgba(211,40,122,0.14)" stroke={PINK} strokeWidth="1.6" />
       <text x="1163" y="350" textAnchor="middle" fill="#fff" fontSize="16" fontWeight="600">Trust proven</text>
-      <text x="1163" y="374" textAnchor="middle" fill="rgba(255,255,255,0.7)" fontSize="11">Audit-ready outcome</text>
+      <text x="1163" y="374" textAnchor="middle" fill="#fff" fontSize="11">Audit-ready outcome</text>
 
       <g filter="url(#fs-glow)">
         <circle r="7" fill={PINK}>
@@ -109,7 +109,7 @@ export default function FinancialServicesFinanceStudioSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80"
+          className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-pink"
         >
           Data and AI-Driven Financial Services
         </motion.p>

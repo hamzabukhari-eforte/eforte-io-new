@@ -115,7 +115,7 @@ export default function FinancialServicesOurWorkSection() {
                   Our work in action
                 </h3>
 
-                <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-default/80 md:text-base">
+                <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-black md:text-base">
                   {slide.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
@@ -128,7 +128,7 @@ export default function FinancialServicesOurWorkSection() {
                 )}
 
                 {slide.bullets && (
-                  <ul className="mt-4 space-y-3 text-[15px] leading-relaxed text-default/80 md:text-base">
+                  <ul className="mt-4 space-y-3 text-[15px] leading-relaxed text-black md:text-base">
                     {slide.bullets.map((bullet, idx) => (
                       <li
                         key={idx}
@@ -145,7 +145,7 @@ export default function FinancialServicesOurWorkSection() {
                     {slide.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex h-[25px] items-center justify-center rounded-full leading-none bg-default/5 px-4 py-0.5 text-sm text-default/80"
+                        className="inline-flex h-[25px] items-center justify-center rounded-full leading-none bg-default/5 px-4 py-0.5 text-sm text-black"
                       >
                         {tag}
                       </span>

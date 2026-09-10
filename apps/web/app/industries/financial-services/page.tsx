@@ -11,7 +11,7 @@ import {
   FinancialServicesSolutionsSection,
   FinancialServicesSuccessStoriesSection,
   FinancialServicesTestimonialsSection,
-  FinancialServicesWebinarSection,
+  // FinancialServicesWebinarSection, // preserved — Agentic Orchestration Webinar section
 } from "@/components/sections/financial-services";
 
 export const metadata = {
@@ -26,7 +26,7 @@ export default function FinancialServicesPage() {
       <FinancialServicesOurWorkSection />
       <FinancialServicesFinanceStudioSection />
       <FinancialServicesAgentsSection />
-      <FinancialServicesWebinarSection />
+      {/* <FinancialServicesWebinarSection /> */}
       <FinancialServicesDataFoundationsSection />
       <FinancialServicesSolutionsSection />
       <FinancialServicesExpertiseSection />

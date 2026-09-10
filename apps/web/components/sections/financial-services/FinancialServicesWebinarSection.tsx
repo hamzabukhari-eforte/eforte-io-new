@@ -18,7 +18,7 @@ export default function FinancialServicesWebinarSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80"
+          className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-pink"
         >
           Agentic Orchestration Webinar
         </motion.p>

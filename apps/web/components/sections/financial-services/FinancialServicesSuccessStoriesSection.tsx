@@ -122,7 +122,7 @@ export default function FinancialServicesSuccessStoriesSection() {
             className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16"
           >
             <div className="max-w-xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-default/70">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-pink">
                 Success Stories
               </p>
 
@@ -130,7 +130,7 @@ export default function FinancialServicesSuccessStoriesSection() {
                 {story.title}
               </h2>
 
-              <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-default/70 md:text-base">
+              <div className="mt-6 space-y-4 text-[15px] leading-relaxed text-black md:text-base">
                 {story.paragraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}

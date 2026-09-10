@@ -82,7 +82,7 @@ export default function FinancialServicesInsightsSection() {
               </div>
 
               <div className="max-w-xl">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-white">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-pink">
                   White Paper
                 </p>
                 <h2 className="mt-4 text-3xl font-medium leading-tight text-white md:text-4xl lg:text-[40px]">
@@ -91,7 +91,7 @@ export default function FinancialServicesInsightsSection() {
                 <p className="mt-4 text-xl font-medium leading-snug text-white md:text-[22px]">
                   {paper.subtitle}
                 </p>
-                <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-white/70 md:text-base">
+                <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-white md:text-base">
                   {paper.description}
                 </p>
                 <Link

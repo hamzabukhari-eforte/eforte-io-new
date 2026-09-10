@@ -69,7 +69,7 @@ export default function FinancialServicesFaqSection() {
           />
           <div className="relative">
             <p className="text-4xl font-medium text-white md:text-5xl">FAQs</p>
-            <p className="mt-2 text-base text-white/80">
+            <p className="mt-2 text-base text-white">
               FAQs about eForte&apos;s financial services capabilities
             </p>
           </div>
@@ -105,7 +105,7 @@ export default function FinancialServicesFaqSection() {
                       className="overflow-hidden"
                     >
                       <div className="px-11 pb-4 pt-1 md:px-12">
-                        <p className="text-base leading-relaxed text-default/70 md:text-[17px]">
+                        <p className="text-base leading-relaxed text-black md:text-[17px]">
                           {faq.answer}
                         </p>
                       </div>

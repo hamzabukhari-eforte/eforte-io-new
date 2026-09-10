@@ -104,12 +104,12 @@ export default function FinancialServicesRelatedArticlesSection() {
                   </Link>
                 </h3>
 
-                <p className="mt-3 text-[15px] leading-relaxed text-default/60">
+                <p className="mt-3 text-[15px] leading-relaxed text-black">
                   {article.excerpt}
                 </p>
 
                 <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-                  <span className="text-default/60">{article.date}</span>
+                  <span className="text-black">{article.date}</span>
                   {article.categories.map((category) => (
                     <Link
                       key={category}

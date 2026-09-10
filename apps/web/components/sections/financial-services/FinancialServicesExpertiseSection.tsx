@@ -157,7 +157,7 @@ export default function FinancialServicesExpertiseSection() {
                     className="object-cover"
                   />
                 </div>
-                <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-white/90 md:text-base">
+                <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-white md:text-base">
                   {activeService.description}
                 </p>
               </motion.div>

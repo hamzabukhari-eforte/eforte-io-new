@@ -15,6 +15,7 @@ import Container from "@/components/atoms/Container";
 
 type Capability = {
   icon: IconType;
+  iconBg: string;
   title: string;
   description: string;
 };
@@ -22,36 +23,42 @@ type Capability = {
 const capabilities: Capability[] = [
   {
     icon: HiTrendingUp,
+    iconBg: "#8B5CF6",
     title: "Data engineering & ETL",
     description:
       "Build resilient pipelines that ingest high volume transactional and behavioral data without bottlenecks.",
   },
   {
     icon: HiCloud,
+    iconBg: "#F59E0B",
     title: "Data platform development",
     description:
       "Architect secure, cloud native platforms (Databricks and beyond) built for financial grade scale.",
   },
   {
     icon: HiShieldCheck,
+    iconBg: "#22C55E",
     title: "Data security & compliance",
     description:
       "Protect financial data with encryption, access controls, and continuous monitoring aligned to regulated environments.",
   },
   {
     icon: HiCheckCircle,
+    iconBg: "#EF4444",
     title: "Data quality & governance",
     description:
       "Establish lineage, accuracy, and audit ready controls across financial datasets.",
   },
   {
     icon: HiSwitchHorizontal,
+    iconBg: "#D3287A",
     title: "Data migration services",
     description:
       "Move legacy financial systems to modern platforms without disrupting daily operations.",
   },
   {
     icon: HiChartBar,
+    iconBg: "#F97316",
     title: "Data analytics & visualization",
     description:
       "Deliver dashboards and embedded reporting built for financial operations teams.",
@@ -68,7 +75,7 @@ export default function FinancialServicesDataFoundationsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-default/70"
+          className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-pink"
         >
           The Data Foundations
         </motion.p>
@@ -91,43 +98,47 @@ export default function FinancialServicesDataFoundationsSection() {
           transition={{ duration: 0.6, delay: 0.16 }}
           className="mt-12 md:mt-16"
         >
-          <div className="relative aspect-2403/510 w-full overflow-hidden rounded-[12px]">
+          <div className="relative aspect-[21/9] w-full overflow-hidden rounded-[12px]">
             <Image
-              src="/assets/images/industry/working.jpg"
-              alt="eForte finance studio team at work"
+              src="/assets/final-images/industries/financial-services/data-foundations-v1.png"
+              alt="Foundational data layer architecture underpinning modern financial products"
               fill
               sizes="(max-width: 1400px) 100vw, 1400px"
-              className="object-cover"
+              className="object-cover object-center"
             />
           </div>
+          {/* Previous photo preserved for possible future reuse:
+              src="/assets/images/industry/working.jpg" */}
         </motion.div>
 
-        <div className="mt-16 grid gap-x-10 gap-y-12 md:mt-20 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-12 lg:gap-y-16">
+        <div className="mt-16 grid gap-10 md:mt-20 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-14">
           {capabilities.map((item, index) => {
             const Icon = item.icon;
             return (
-              <motion.div
+              <motion.article
                 key={item.title}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, margin: "-80px", amount: 0.15 }}
                 transition={{
-                  duration: 0.5,
+                  duration: 0.4,
                   delay: 0.06 * (index % 3),
                   ease: "easeOut",
                 }}
-                className="max-w-md mx-auto"
               >
-                <div className="flex items-center gap-3">
-                  <Icon className="h-7 w-7 shrink-0 text-[#5b34ff]" />
-                  <h3 className="text-lg font-medium leading-snug text-default max-w-[200px]">
-                    {item.title}
-                  </h3>
+                <div
+                  className="flex h-10 w-10 items-center justify-center rounded-[12px] text-white"
+                  style={{ backgroundColor: item.iconBg }}
+                >
+                  <Icon className="h-5 w-5" />
                 </div>
-                <p className="mt-3 text-[15px] leading-relaxed text-default/70 max-w-[350px]">
+                <h3 className="mt-5 text-[24px] font-semibold leading-tight text-black">
+                  {item.title}
+                </h3>
+                <p className="mt-4 text-[16px] leading-relaxed text-black">
                   {item.description}
                 </p>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>
@@ -139,7 +150,7 @@ export default function FinancialServicesDataFoundationsSection() {
           transition={{ duration: 0.5 }}
           className="mt-20 md:mt-24"
         >
-          <p className="text-center text-sm font-semibold uppercase tracking-[0.18em] text-default">
+          <p className="text-center text-sm font-semibold uppercase tracking-[0.18em] text-primary-pink">
             Our Key Partner Certifications
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-10 md:gap-14">

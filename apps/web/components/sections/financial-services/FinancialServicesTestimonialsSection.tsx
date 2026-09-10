@@ -122,7 +122,7 @@ export default function FinancialServicesTestimonialsSection() {
               <div className="mt-12 flex items-center gap-4">
                 <div className="leading-tight">
                   <p className="text-lg font-bold text-white">Clutch</p>
-                  <p className="text-[11px] text-white/60">57 reviews</p>
+                  <p className="text-[11px] text-white">57 reviews</p>
                 </div>
                 <div className="flex items-center gap-1 text-white">
                   {[0, 1, 2, 3, 4].map((i) => (
@@ -146,12 +146,12 @@ export default function FinancialServicesTestimonialsSection() {
                     <span className="flex h-9 w-9 items-center justify-center rounded-[12px] bg-white/10 text-white">
                       <HiChatBubbleOvalLeft className="h-5 w-5" />
                     </span>
-                    <span className="text-base text-white/90">
+                    <span className="text-base text-white">
                       {testimonial.companyName}
                     </span>
                   </div>
 
-                  <p className="mt-6 max-w-xl text-base italic leading-relaxed text-white/80 md:text-[17px]">
+                  <p className="mt-6 max-w-xl text-base italic leading-relaxed text-white md:text-[17px]">
                     &ldquo;{testimonial.testimonial}&rdquo;
                   </p>
 
@@ -159,7 +159,7 @@ export default function FinancialServicesTestimonialsSection() {
                     <p className="text-base font-bold text-white">
                       {testimonial.author}
                     </p>
-                    <p className="mt-1 text-sm italic text-white/80">
+                    <p className="mt-1 text-sm italic text-white">
                       {testimonial.title}
                     </p>
                   </div>
