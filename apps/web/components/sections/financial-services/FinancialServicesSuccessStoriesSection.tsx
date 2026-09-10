@@ -1,10 +1,11 @@
 "use client";
 
 import { StudioSuccessStoriesSection } from "@/components/sections/studio-shared";
-import { productDesignShowcase } from "@/data/productDesign";
+import { financialServicesShowcase } from "@/data/industries/financialServicesShowcase";
 
 /**
- * Same success stories carousel as Capabilities → Product Design.
+ * Same success stories carousel format as Capabilities → Product Design,
+ * plus Northbridge, Velora Financial, and Arclight Capital case studies.
  * Previous finance-only carousel (Meridian Pay, Cobalt Digital Bank,
  * Fenwick Capital Markets) preserved below for possible reuse.
  */
@@ -12,7 +13,7 @@ export default function FinancialServicesSuccessStoriesSection() {
   return (
     <div className="relative -mt-8 bg-default md:-mt-10">
       <StudioSuccessStoriesSection
-        stories={productDesignShowcase}
+        stories={financialServicesShowcase}
         className="rounded-[12px] bg-white py-20 md:py-28"
       />
     </div>

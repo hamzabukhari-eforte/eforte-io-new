@@ -963,6 +963,138 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     },
     closing: "By automating fleet scheduling, Vantage Mobility gained the ability to grow its fleet and delivery volume without a proportional increase in operations staff.",
   },
+  "northbridge": {
+    slug: "northbridge",
+    name: "Northbridge",
+    headline: "Faster credit decisions without loosening risk",
+    intro: [
+      "Northbridge, a mid market small business lender processing 500,000+ loan applications a year, needed to cut manual underwriting review time without loosening risk standards. eForte built a hybrid scoring engine combining bureau data, cash-flow signals, and behavioral indicators to flag low-risk applications for instant approval.",
+      "This case study highlights how eForte combined Velocity AI, Agentic Orchestration, and a Foundational Data Layer to keep a person in control of every declined application while dramatically cutting average decision time.",
+    ],
+    pillars: ["Velocity AI", "Agentic Orchestration", "Foundational Data Layer"],
+    deliverables: [
+      "Hybrid credit scoring engine",
+      "Human-in-the-loop underwriting queue",
+      "Bureau, cash-flow, and behavioral data layer",
+      "Instant-approval decisioning workflow",
+    ],
+    challenge: {
+      title: "Manual underwriting could not keep pace with application volume",
+      paragraphs: [
+        "Northbridge processed more than 500,000 small business loan applications a year, but every file still entered the same manual review queue. Low-risk applicants waited as long as borderline cases, stretching decision time and driving up cost-per-application.",
+        "Underwriters also lacked a single view of bureau data, cash-flow signals, and behavioral indicators, so they rebuilt the risk picture by hand for each application.",
+      ],
+      image: "/assets/final-images/industries/financial-services/case-northbridge-dashboard.png",
+    },
+    solution: {
+      title: "Built for measurable impact",
+      lead: "eForte built a hybrid scoring engine with a human review layer so speed never came at the expense of risk standards.",
+      items: [
+        { title: "Foundational Data Layer for underwriting signals", body: "Bureau data, cash-flow signals, and behavioral indicators were unified so the scoring engine and underwriters worked from the same picture of each applicant." },
+        { title: "Velocity AI for hybrid credit scoring", body: "A Velocity AI model flags low-risk applications for instant approval while routing borderline files to a human review queue." },
+        { title: "Agentic Orchestration for human-in-the-loop review", body: "Agentic Orchestration keeps underwriters focused on exceptions and keeps a person in control of every declined application." },
+      ],
+    },
+    results: {
+      title: "Outcomes that matter",
+      lead: "Northbridge now decides faster without loosening the standards that protect the book.",
+      items: [
+        { title: "Faster loan decisions", body: "Low-risk applications move to instant approval, cutting average decision time across the portfolio." },
+        { title: "Lower cost-per-application", body: "Underwriters no longer spend time on files the model can safely clear." },
+        { title: "Reduced underwriter workload", body: "Review capacity is reserved for borderline cases instead of the full application volume." },
+        { title: "Risk control retained", body: "Every decline still has a person in the loop, preserving credit policy and auditability." },
+      ],
+    },
+    closing: "Through this collaboration, Northbridge turned underwriting from a volume bottleneck into a hybrid process that is both faster and still under human control.",
+  },
+  "velora-financial": {
+    slug: "velora-financial",
+    name: "Velora Financial",
+    headline: "A mobile banking experience that can compete",
+    intro: [
+      "Velora Financial, a regional credit union network, was losing members to digital first competitors because its mobile banking app couldn't support real time transfers or spending insights. eForte rebuilt Velora's mobile experience on a modern core-banking API layer, adding real time payment rails and a personalized spending-insights dashboard powered by transaction categorization models.",
+      "This case study highlights how eForte applied Agentic Orchestration, a Foundational Data Layer, and Velocity AI so a credit union could compete on experience, not just rates.",
+    ],
+    pillars: ["Agentic Orchestration", "Foundational Data Layer", "Velocity AI"],
+    deliverables: [
+      "Mobile banking experience on core APIs",
+      "Real time payment rails",
+      "Personalized spending-insights dashboard",
+      "Transaction categorization models",
+    ],
+    challenge: {
+      title: "Members were leaving for digital first banks",
+      paragraphs: [
+        "Velora's mobile app could not support real time transfers or spending insights, two features members now expected from digital first competitors.",
+        "The existing experience sat on an older core integration, so even basic money movement felt delayed, and attrition to competing digital banks was rising.",
+      ],
+      image: "/assets/final-images/industries/financial-services/case-velora-phone.png",
+    },
+    solution: {
+      title: "Built for measurable impact",
+      lead: "eForte rebuilt the mobile experience around modern core APIs so Velora could offer the same real time banking members were leaving for.",
+      items: [
+        { title: "Foundational Data Layer on core banking APIs", body: "Account, payment, and transaction data now flow through a modern API layer instead of brittle core integrations." },
+        { title: "Agentic Orchestration for real time rails", body: "Payment orchestration supports real time transfers so members can move money with the speed they expect from digital banks." },
+        { title: "Velocity AI for spending insights", body: "Transaction categorization models power a personalized spending-insights dashboard that helps members understand their money in the app." },
+      ],
+    },
+    results: {
+      title: "Outcomes that matter",
+      lead: "Within months of launch, Velora proved a credit union could compete on experience, not just rates.",
+      items: [
+        { title: "Modernized mobile banking", body: "Members now have a mobile experience built for real time use rather than delayed core updates." },
+        { title: "Real time payments", body: "Transfers clear on modern rails instead of waiting on batch windows." },
+        { title: "Reduced member attrition", body: "Fewer members left for competing digital banks after the new experience launched." },
+        { title: "Higher mobile engagement", body: "Spending insights and faster money movement drove a sharp rise in app usage." },
+      ],
+    },
+    closing: "eForte helped Velora Financial turn a lagging mobile app into a reason members stay, not a reason they leave.",
+  },
+  "arclight-capital": {
+    slug: "arclight-capital",
+    name: "Arclight Capital",
+    headline: "Advisor-ready insights in seconds, not hours",
+    intro: [
+      "Arclight Capital, a wealth management firm, needed to give advisors faster access to portfolio insights without asking clients to repeat information across systems. eForte built an AI financial analyst tool that pulls from custodial data, market feeds, and client notes to generate advisor-ready portfolio summaries in seconds instead of hours.",
+      "This case study highlights how eForte combined a Foundational Data Layer, Velocity AI, and Agentic Orchestration so advisors spend less time on prep and more time with clients.",
+    ],
+    pillars: ["Foundational Data Layer", "Velocity AI", "Agentic Orchestration"],
+    deliverables: [
+      "AI financial analyst for advisors",
+      "Custodial, market, and notes data layer",
+      "Advisor-ready portfolio briefs",
+      "Client meeting prep workflow",
+    ],
+    challenge: {
+      title: "Advisors rebuilt the same client picture by hand before every meeting",
+      paragraphs: [
+        "Custodial data, market feeds, and client notes lived in separate systems. Advisors spent hours assembling portfolio briefs, and clients were often asked to repeat information the firm already held.",
+        "That prep burden limited how many relationships each advisor could serve well, even as the firm wanted to grow its book without adding headcount at the same rate.",
+      ],
+      image: "/assets/final-images/industries/financial-services/case-arclight-dashboard.png",
+    },
+    solution: {
+      title: "Built for measurable impact",
+      lead: "eForte built an AI financial analyst that turns disconnected client data into advisor-ready briefs in seconds.",
+      items: [
+        { title: "Foundational Data Layer for client context", body: "Custodial holdings, market feeds, and client notes were unified so advisors and the model share one current view of each relationship." },
+        { title: "Velocity AI financial analyst", body: "A Velocity AI model generates advisor-ready portfolio summaries from that unified context instead of leaving advisors to assemble them by hand." },
+        { title: "Agentic Orchestration for meeting prep", body: "Agentic Orchestration sequences data pulls and brief generation so advisors walk into meetings with a current picture, not a last-minute spreadsheet." },
+      ],
+    },
+    results: {
+      title: "Outcomes that matter",
+      lead: "Advisors now spend far less time on prep work and more time in front of clients.",
+      items: [
+        { title: "Faster portfolio insights", body: "Advisor-ready summaries are generated in seconds instead of hours of manual assembly." },
+        { title: "More advisor capacity", body: "The firm expanded its advisor-to-client ratio without sacrificing service quality." },
+        { title: "Improved client-facing time", body: "Time previously spent rebuilding briefs is now spent in client conversations." },
+        { title: "Less repeated client intake", body: "Advisors no longer need to ask clients to restate information already held across systems." },
+      ],
+    },
+    closing: "With an AI financial analyst in the workflow, Arclight Capital turned meeting prep from a hours-long bottleneck into a seconds-long brief.",
+  },
 };
 
 export const impactStudySlugs = Object.keys(impactStudyNarratives);
