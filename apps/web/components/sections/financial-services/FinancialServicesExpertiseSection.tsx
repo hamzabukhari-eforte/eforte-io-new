@@ -30,7 +30,7 @@ const services: ExpertService[] = [
     imageSrc:
       "/assets/final-images/industries/financial-services/expertise-cybersecurity.png",
     // imageSrc: "/assets/images/industry/cybersecurity.jpg",
-    imageAlt: "Cybersecurity shield protecting financial data",
+    imageAlt: "Security analysts reviewing shield and lock alerts on a tablet in a SOC",
     description:
       "Protect sensitive financial data with layered, continuously monitored security architecture.",
   },
@@ -41,7 +41,7 @@ const services: ExpertService[] = [
     imageSrc:
       "/assets/final-images/industries/financial-services/expertise-bi-data.png",
     // imageSrc: "/assets/images/industry/bi.jpg",
-    imageAlt: "BI dashboards and data engineering visualizations",
+    imageAlt: "Analysts reviewing financial dashboards and data pipelines on a tablet",
     description:
       "Turn raw financial data into decision ready insight across the organization.",
   },
@@ -52,7 +52,7 @@ const services: ExpertService[] = [
     imageSrc:
       "/assets/final-images/industries/financial-services/expertise-baas-api.png",
     // imageSrc: "/assets/images/industry/baas.jpg",
-    imageAlt: "BaaS and API integrations diagram",
+    imageAlt: "Banking specialists reviewing API rails and a payment card on a tablet",
     description:
       "Connect core systems to modern banking infrastructure providers.",
   },
@@ -63,7 +63,7 @@ const services: ExpertService[] = [
     imageSrc:
       "/assets/final-images/industries/financial-services/expertise-cloud.png",
     // imageSrc: "/assets/images/industry/cloud.jpg",
-    imageAlt: "Cloud migration and optimization illustration",
+    imageAlt: "Cloud architects reviewing a cloud migration topology on a tablet",
     description:
       "Move and right size financial workloads on secure, cost efficient cloud infrastructure.",
   },
@@ -74,7 +74,7 @@ const services: ExpertService[] = [
     imageSrc:
       "/assets/final-images/industries/financial-services/expertise-app-modernization.png",
     // imageSrc: "/assets/images/industry/app-modernization.jpg",
-    imageAlt: "Omnichannel banking app modernization diagram",
+    imageAlt: "Product team reviewing a modern banking app interface on a tablet",
     description:
       "Rebuild legacy financial applications on modern, maintainable architectures.",
   },
