@@ -68,14 +68,14 @@ const capabilities: Capability[] = [
 
 export default function FinancialServicesDataFoundationsSection() {
   return (
-    <section className="bg-white py-16 text-default">
+    <section className="bg-white py-12 text-default md:py-14">
       <Container>
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-pink"
+          className="text-center text-[12px] font-semibold uppercase tracking-[0.2em] text-primary-pink"
         >
           The Data Foundations
         </motion.p>
@@ -85,7 +85,7 @@ export default function FinancialServicesDataFoundationsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="mx-auto mt-4 max-w-3xl text-center text-3xl font-medium leading-tight text-default md:text-4xl lg:text-[44px]"
+          className="mx-auto mt-3 max-w-4xl text-center text-[48px] font-medium leading-[52px] text-default"
         >
           We engineer the Foundational Data layer behind modern financial
           products
@@ -96,9 +96,9 @@ export default function FinancialServicesDataFoundationsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.6, delay: 0.16 }}
-          className="mt-12 md:mt-16"
+          className="mt-8 md:mt-10"
         >
-          <div className="relative h-[240px] w-full overflow-hidden rounded-[12px] sm:h-[280px] md:h-[320px] lg:h-[340px]">
+          <div className="relative h-[200px] w-full overflow-hidden rounded-[12px] sm:h-[230px] md:h-[260px] lg:h-[280px]">
             <Image
               src="/assets/final-images/industries/financial-services/data-foundations-v1.png"
               alt="Foundational data layer architecture underpinning modern financial products"
@@ -111,7 +111,7 @@ export default function FinancialServicesDataFoundationsSection() {
               src="/assets/images/industry/working.jpg" */}
         </motion.div>
 
-        <div className="mt-16 grid gap-10 md:mt-20 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-14">
+        <div className="mt-12 grid gap-8 md:mt-14 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-10">
           {capabilities.map((item, index) => {
             const Icon = item.icon;
             return (
@@ -148,7 +148,7 @@ export default function FinancialServicesDataFoundationsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="mt-20 md:mt-24"
+          className="mt-14 md:mt-16"
         >
           <p className="text-center text-sm font-semibold uppercase tracking-[0.18em] text-primary-pink">
             Our Key Partner Certifications

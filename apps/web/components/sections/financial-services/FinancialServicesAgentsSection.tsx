@@ -540,7 +540,7 @@ export default function FinancialServicesAgentsSection() {
       className="relative"
       style={reduceMotion ? undefined : { height: `${tabs.length * 100}vh` }}
     >
-      <section className="sticky top-16 flex min-h-[calc(100svh-4rem)] items-center bg-default py-16 text-white md:top-20 md:min-h-[calc(100svh-5rem)] md:py-20">
+      <section className="sticky top-16 flex min-h-[calc(100svh-4rem)] items-center bg-default py-10 text-white md:top-20 md:min-h-[calc(100svh-5rem)] md:py-14">
         <style>{AGENT_ILLUSTRATION_STYLES}</style>
         <Container>
           <motion.p
@@ -548,7 +548,7 @@ export default function FinancialServicesAgentsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-40px", amount: 0.15 }}
             transition={{ duration: 0.5 }}
-            className="text-center text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-pink"
+            className="text-center text-[12px] font-semibold uppercase tracking-[0.16em] text-primary-pink"
           >
             Sample Agents Categories
           </motion.p>
@@ -558,12 +558,12 @@ export default function FinancialServicesAgentsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-40px", amount: 0.15 }}
             transition={{ duration: 0.5, delay: 0.08 }}
-            className="mx-auto mt-4 max-w-2xl text-center text-3xl font-semibold leading-tight text-white md:text-4xl"
+            className="mx-auto mt-3 max-w-4xl text-center text-[48px] font-semibold leading-[52px] text-white"
           >
             Purpose built AI agents for the workflows that run modern finance
           </motion.h2>
 
-          <div className="mt-10 md:mt-12">
+          <div className="mt-7 md:mt-8">
             <div
               role="tablist"
               aria-label="Sample agents categories"
@@ -602,7 +602,7 @@ export default function FinancialServicesAgentsSection() {
             </div>
           </div>
 
-          <div className="mt-10 md:mt-12">
+          <div className="mt-7 md:mt-8">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab.id}

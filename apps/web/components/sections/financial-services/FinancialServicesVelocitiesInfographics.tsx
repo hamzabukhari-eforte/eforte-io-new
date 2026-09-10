@@ -1,30 +1,34 @@
 const BLUE = "#2563EB";
 const BLUE_SOFT = "#3B82F6";
 const PINK = "#D3287A";
+const LABEL_SIZE = 18;
+const TILE_LABEL_SIZE = 32;
+const SUB_SIZE = 14;
+const GAUGE_SIZE = 46;
 
 const VELOCITY_ILLUSTRATION_STYLES = `
-@keyframes fs-vel-dash { to { stroke-dashoffset: -36; } }
+@keyframes fs-vel-dash { to { stroke-dashoffset: -48; } }
+@keyframes fs-vel-trail { to { stroke-dashoffset: -280; } }
 @keyframes fs-vel-pulse {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.12); }
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.22); }
 }
 @keyframes fs-vel-float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-14px); }
 }
 @keyframes fs-vel-spin { to { transform: rotate(360deg); } }
 @keyframes fs-vel-gauge {
   0% { stroke-dashoffset: 220; }
-  55% { stroke-dashoffset: 58; }
+  55% { stroke-dashoffset: 48; }
   100% { stroke-dashoffset: 220; }
 }
-@keyframes fs-vel-flow { to { offset-distance: 100%; } }
 @keyframes fs-vel-glow {
-  0%, 100% { opacity: 0.3; }
+  0%, 100% { opacity: 0.28; }
   50% { opacity: 1; }
 }
 @keyframes fs-vel-bar {
-  0%, 100% { transform: scaleY(0.42); }
+  0%, 100% { transform: scaleY(0.38); }
   50% { transform: scaleY(1); }
 }
 @keyframes fs-vel-draw {
@@ -33,49 +37,67 @@ const VELOCITY_ILLUSTRATION_STYLES = `
   100% { stroke-dashoffset: 420; }
 }
 @keyframes fs-vel-scan {
-  0% { transform: translateY(0); opacity: 0.15; }
-  50% { transform: translateY(118px); opacity: 0.85; }
-  100% { transform: translateY(0); opacity: 0.15; }
+  0% { transform: translateY(0); opacity: 0.2; }
+  50% { transform: translateY(118px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.2; }
 }
 
-.fs-vel-dash { stroke-dasharray: 6 10; animation: fs-vel-dash 1.05s linear infinite; }
-.fs-vel-pulse { transform-box: fill-box; transform-origin: center; animation: fs-vel-pulse 2.1s ease-in-out infinite; }
-.fs-vel-float { animation: fs-vel-float 3.2s ease-in-out infinite; }
-.fs-vel-spin { transform-box: fill-box; transform-origin: center; animation: fs-vel-spin 18s linear infinite; }
-.fs-vel-gauge { stroke-dasharray: 230; animation: fs-vel-gauge 4s ease-in-out infinite; }
-.fs-vel-glow { animation: fs-vel-glow 2.2s ease-in-out infinite; }
-.fs-vel-bar { transform-box: fill-box; transform-origin: bottom; animation: fs-vel-bar 2.8s ease-in-out infinite; }
-.fs-vel-draw { stroke-dasharray: 420; animation: fs-vel-draw 4.4s ease-in-out infinite; }
-.fs-vel-scan { animation: fs-vel-scan 3.6s ease-in-out infinite; }
-.fs-vel-token-ui {
-  offset-path: path("M 168 430 C 250 430 310 210 430 210 C 540 210 590 360 690 360");
-  offset-rotate: 0deg;
-  animation: fs-vel-flow 5.4s linear infinite;
-}
-.fs-vel-token-flow {
-  offset-path: path("M 90 300 H 250 V 180 H 410 V 300 H 570 V 420 H 710");
-  offset-rotate: 0deg;
-  animation: fs-vel-flow 6.2s linear infinite;
-}
-.fs-vel-token-dash {
-  offset-path: path("M 70 470 C 180 430 280 510 400 450 C 530 380 640 500 740 430");
-  offset-rotate: 0deg;
-  animation: fs-vel-flow 5.8s linear infinite;
-}
-.fs-vel-token-infra {
-  offset-path: path("M 140 470 H 400 V 240 H 660 V 470 H 400 V 240");
-  offset-rotate: 0deg;
-  animation: fs-vel-flow 7s linear infinite;
-}
+.fs-vel-dash { stroke-dasharray: 8 12; animation: fs-vel-dash 0.9s linear infinite; }
+.fs-vel-trail { stroke-dasharray: 48 220; animation: fs-vel-trail 4.2s linear infinite; }
+.fs-vel-pulse { transform-box: fill-box; transform-origin: center; animation: fs-vel-pulse 1.8s ease-in-out infinite; }
+.fs-vel-float { transform-box: fill-box; transform-origin: center; animation: fs-vel-float 2.6s ease-in-out infinite; }
+.fs-vel-spin { transform-box: fill-box; transform-origin: center; animation: fs-vel-spin 12s linear infinite; }
+.fs-vel-gauge { stroke-dasharray: 230; animation: fs-vel-gauge 3.4s ease-in-out infinite; }
+.fs-vel-glow { animation: fs-vel-glow 1.6s ease-in-out infinite; }
+.fs-vel-bar { transform-box: fill-box; transform-origin: bottom; animation: fs-vel-bar 2.2s ease-in-out infinite; }
+.fs-vel-draw { stroke-dasharray: 420; animation: fs-vel-draw 3.8s ease-in-out infinite; }
+.fs-vel-scan { animation: fs-vel-scan 2.8s ease-in-out infinite; }
 
 @media (prefers-reduced-motion: reduce) {
-  .fs-vel-dash, .fs-vel-pulse, .fs-vel-float, .fs-vel-spin,
-  .fs-vel-gauge, .fs-vel-glow, .fs-vel-bar, .fs-vel-draw, .fs-vel-scan,
-  .fs-vel-token-ui, .fs-vel-token-flow, .fs-vel-token-dash, .fs-vel-token-infra {
+  .fs-vel-dash, .fs-vel-trail, .fs-vel-pulse, .fs-vel-float, .fs-vel-spin,
+  .fs-vel-gauge, .fs-vel-glow, .fs-vel-bar, .fs-vel-draw, .fs-vel-scan {
     animation: none !important;
   }
 }
 `;
+
+function TravelingDot({
+  pathId,
+  duration,
+  delay = "0s",
+  color = PINK,
+  radius = 18,
+}: {
+  pathId: string;
+  duration: string;
+  delay?: string;
+  color?: string;
+  radius?: number;
+}) {
+  return (
+    <g>
+      <animateMotion dur={duration} begin={delay} repeatCount="indefinite" rotate="0">
+        <mpath href={`#${pathId}`} xlinkHref={`#${pathId}`} />
+      </animateMotion>
+      <circle r={radius} fill={color} />
+      <circle
+        r={radius * 2.1}
+        fill="none"
+        stroke={color}
+        strokeWidth="2.2"
+        opacity="0.55"
+      />
+    </g>
+  );
+}
+
+function InfographicTitle({ children }: { children: string }) {
+  return (
+    <p className="pointer-events-none absolute inset-x-0 top-2 z-10 text-center text-[14px] font-semibold tracking-[0.16em] text-white">
+      {children}
+    </p>
+  );
+}
 
 function SceneBackdrop({ id }: { id: string }) {
   return (
@@ -108,11 +130,10 @@ function SceneBackdrop({ id }: { id: string }) {
 
 function BankingUiInfographic() {
   return (
-    <svg viewBox="0 0 800 600" className="h-full w-full" role="img" aria-label="Banking UI component library outline">
+    <div className="relative h-full w-full">
+      <InfographicTitle>UI COMPONENT LIBRARY</InfographicTitle>
+      <svg viewBox="0 20 800 520" className="h-full w-full" role="img" aria-label="Banking UI component library outline">
       <SceneBackdrop id="vel-ui" />
-      <text x="400" y="46" textAnchor="middle" fill="#fff" fontSize="12" fontWeight="600" letterSpacing="2.4">
-        UI COMPONENT LIBRARY
-      </text>
 
       <g className="fs-vel-float">
         <rect x="86" y="96" width="196" height="368" rx="28" fill="none" stroke={BLUE} strokeWidth="1.8" />
@@ -157,7 +178,7 @@ function BankingUiInfographic() {
           <circle cx={tile.x + 28} cy={tile.y + 28} r="7" fill="none" stroke={BLUE} strokeWidth="1.4" />
           <rect x={tile.x + 46} y={tile.y + 22} width="90" height="8" rx="4" fill="rgba(255,255,255,0.22)" />
           <rect x={tile.x + 22} y={tile.y + 52} width="124" height="8" rx="4" fill="rgba(59,130,246,0.35)" />
-          <text x={tile.x + 84} y={tile.y + 86} textAnchor="middle" fill="#fff" fontSize="12" fontWeight="600">
+          <text x={tile.x + 84} y={tile.y + 86} textAnchor="middle" fill="#fff" fontSize={TILE_LABEL_SIZE} fontWeight="600">
             {tile.label}
           </text>
         </g>
@@ -171,16 +192,24 @@ function BankingUiInfographic() {
         strokeWidth="1.5"
       />
       <path
+        id="vel-ui-path"
         d="M 168 430 C 250 430 310 210 430 210 C 540 210 590 360 690 360"
         fill="none"
         stroke={BLUE}
-        strokeWidth="1.5"
-        opacity="0.35"
+        strokeWidth="1.8"
+        opacity="0.4"
       />
-      <g filter="url(#vel-ui-glow)">
-        <circle className="fs-vel-token-ui" r="6" fill={PINK} />
-      </g>
-    </svg>
+      <path
+        className="fs-vel-trail"
+        d="M 168 430 C 250 430 310 210 430 210 C 540 210 590 360 690 360"
+        fill="none"
+        stroke={PINK}
+        strokeWidth="5"
+        strokeLinecap="round"
+      />
+      <TravelingDot pathId="vel-ui-path" duration="5.4s" />
+      </svg>
+    </div>
   );
 }
 
@@ -194,13 +223,13 @@ function OrchestrationInfographic() {
   ];
 
   return (
-    <svg viewBox="0 0 800 600" className="h-full w-full" role="img" aria-label="Workflow orchestration blueprint DAG">
+    <div className="relative h-full w-full">
+      <InfographicTitle>ORCHESTRATION BLUEPRINT</InfographicTitle>
+      <svg viewBox="0 20 800 520" className="h-full w-full" role="img" aria-label="Workflow orchestration blueprint DAG">
       <SceneBackdrop id="vel-flow" />
-      <text x="400" y="46" textAnchor="middle" fill="#fff" fontSize="12" fontWeight="600" letterSpacing="2.4">
-        ORCHESTRATION BLUEPRINT
-      </text>
 
       <path
+        id="vel-flow-path"
         d="M 90 300 H 250 V 180 H 410 V 300 H 570 V 420 H 710"
         fill="none"
         stroke={BLUE}
@@ -212,7 +241,15 @@ function OrchestrationInfographic() {
         d="M 90 300 H 250 V 180 H 410 V 300 H 570 V 420 H 710"
         fill="none"
         stroke={BLUE_SOFT}
-        strokeWidth="1.6"
+        strokeWidth="1.8"
+      />
+      <path
+        className="fs-vel-trail"
+        d="M 90 300 H 250 V 180 H 410 V 300 H 570 V 420 H 710"
+        fill="none"
+        stroke={PINK}
+        strokeWidth="5"
+        strokeLinecap="round"
       />
 
       {nodes.map((node, index) => (
@@ -235,10 +272,10 @@ function OrchestrationInfographic() {
             fill={index === 3 ? PINK : BLUE}
             style={{ animationDelay: `${index * 0.25}s` }}
           />
-          <text x={node.x + 70} y={node.y + 40} textAnchor="middle" fill="#fff" fontSize="14" fontWeight="600">
+          <text x={node.x + 70} y={node.y + 40} textAnchor="middle" fill="#fff" fontSize={28} fontWeight="600">
             {node.label}
           </text>
-          <text x={node.x + 70} y={node.y + 62} textAnchor="middle" fill="#fff" fontSize="11">
+          <text x={node.x + 70} y={node.y + 62} textAnchor="middle" fill="#fff" fontSize={20}>
             {node.sub}
           </text>
         </g>
@@ -246,16 +283,15 @@ function OrchestrationInfographic() {
 
       <g className="fs-vel-float">
         <rect x="268" y="488" width="264" height="64" rx="12" fill="none" stroke={BLUE_SOFT} strokeWidth="1.4" />
-        <text x="400" y="526" textAnchor="middle" fill="#fff" fontSize="13" fontWeight="600">
+        <text x="400" y="526" textAnchor="middle" fill="#fff" fontSize={24} fontWeight="600">
           Retry · SLA · lineage
         </text>
       </g>
 
-      <g filter="url(#vel-flow-glow)">
-        <circle className="fs-vel-token-flow" r="6" fill={PINK} />
-        <circle className="fs-vel-token-flow" r="6" fill={BLUE} style={{ animationDelay: "-3.1s" }} />
-      </g>
-    </svg>
+      <TravelingDot pathId="vel-flow-path" duration="6.2s" />
+      <TravelingDot pathId="vel-flow-path" duration="6.2s" delay="-3.1s" color={BLUE} />
+      </svg>
+    </div>
   );
 }
 
@@ -263,11 +299,10 @@ function DashboardsInfographic() {
   const ring = 2 * Math.PI * 62;
 
   return (
-    <svg viewBox="0 0 800 600" className="h-full w-full" role="img" aria-label="Model performance dashboard outline">
+    <div className="relative h-full w-full">
+      <InfographicTitle>MODEL PERFORMANCE</InfographicTitle>
+      <svg viewBox="0 20 800 520" className="h-full w-full" role="img" aria-label="Model performance dashboard outline">
       <SceneBackdrop id="vel-dash" />
-      <text x="400" y="46" textAnchor="middle" fill="#fff" fontSize="12" fontWeight="600" letterSpacing="2.4">
-        MODEL PERFORMANCE
-      </text>
 
       <rect x="48" y="84" width="704" height="452" rx="18" fill="none" stroke="rgba(59,130,246,0.35)" strokeWidth="1.4" />
       <rect className="fs-vel-scan" x="64" y="104" width="672" height="2" fill={BLUE} opacity="0.7" />
@@ -286,10 +321,10 @@ function DashboardsInfographic() {
           strokeDasharray={ring}
           strokeDashoffset="70"
         />
-        <text y="4" textAnchor="middle" fill="#fff" fontSize="26" fontWeight="700">
+        <text y="4" textAnchor="middle" fill="#fff" fontSize={GAUGE_SIZE} fontWeight="700">
           98
         </text>
-        <text y="26" textAnchor="middle" fill="#fff" fontSize="11">
+        <text y="26" textAnchor="middle" fill="#fff" fontSize={20}>
           accuracy
         </text>
       </g>
@@ -315,10 +350,18 @@ function DashboardsInfographic() {
           style={{ animationDelay: bar.delay }}
         />
       ))}
-      <text x="558" y="372" textAnchor="middle" fill="#fff" fontSize="12">
+      <text x="558" y="372" textAnchor="middle" fill="#fff" fontSize={28}>
         Drift · latency · recall
       </text>
 
+      <path
+        id="vel-dash-path"
+        d="M 70 470 C 160 430 230 510 320 450 C 410 390 500 500 590 430 C 660 380 720 460 740 430"
+        fill="none"
+        stroke={BLUE}
+        strokeWidth="1.4"
+        opacity="0.4"
+      />
       <path
         className="fs-vel-draw"
         d="M 70 470 C 160 430 230 510 320 450 C 410 390 500 500 590 430 C 660 380 720 460 740 430"
@@ -327,40 +370,39 @@ function DashboardsInfographic() {
         strokeWidth="2"
       />
       <path
+        className="fs-vel-trail"
         d="M 70 470 C 160 430 230 510 320 450 C 410 390 500 500 590 430 C 660 380 720 460 740 430"
         fill="none"
-        stroke={BLUE}
-        strokeWidth="1.2"
-        opacity="0.35"
+        stroke={PINK}
+        strokeWidth="5"
+        strokeLinecap="round"
       />
 
       <g transform="translate(620 148)">
         <circle className="fs-vel-pulse" r="10" fill="none" stroke={PINK} strokeWidth="1.6" />
         <circle r="4" fill={PINK} />
       </g>
-      <text x="644" y="152" fill="#fff" fontSize="12">
+      <text x="644" y="152" fill="#fff" fontSize={28}>
         Drift watch
       </text>
 
-      <g filter="url(#vel-dash-glow)">
-        <circle className="fs-vel-token-dash" r="6" fill={PINK} />
-      </g>
-    </svg>
+      <TravelingDot pathId="vel-dash-path" duration="5.8s" />
+      </svg>
+    </div>
   );
 }
 
 function InfraInfographic() {
   return (
-    <svg viewBox="0 0 800 600" className="h-full w-full" role="img" aria-label="AI infrastructure engine outline">
+    <div className="relative h-full w-full">
+      <InfographicTitle>AI INFRASTRUCTURE ENGINE</InfographicTitle>
+      <svg viewBox="0 20 800 520" className="h-full w-full" role="img" aria-label="AI infrastructure engine outline">
       <SceneBackdrop id="vel-infra" />
-      <text x="400" y="46" textAnchor="middle" fill="#fff" fontSize="12" fontWeight="600" letterSpacing="2.4">
-        AI INFRASTRUCTURE ENGINE
-      </text>
 
       <g className="fs-vel-float">
         <ellipse cx="400" cy="136" rx="168" ry="46" fill="none" stroke={BLUE} strokeWidth="1.7" />
         <path d="M 232 136 V 176 C 232 204 308 224 400 224 C 492 224 568 204 568 176 V 136" fill="none" stroke={BLUE_SOFT} strokeWidth="1.5" />
-        <text x="400" y="142" textAnchor="middle" fill="#fff" fontSize="13" fontWeight="600">
+        <text x="400" y="142" textAnchor="middle" fill="#fff" fontSize={28} fontWeight="600">
           Secure cloud
         </text>
       </g>
@@ -376,11 +418,20 @@ function InfraInfographic() {
       </g>
 
       <path
+        id="vel-infra-path"
         d="M 140 470 H 400 V 240 H 660 V 470 H 400 V 240"
         fill="none"
         stroke={BLUE}
-        strokeWidth="1.5"
-        opacity="0.35"
+        strokeWidth="1.6"
+        opacity="0.4"
+      />
+      <path
+        className="fs-vel-trail"
+        d="M 140 470 H 400 V 240 H 660 V 470 H 400 V 240"
+        fill="none"
+        stroke={PINK}
+        strokeWidth="5"
+        strokeLinecap="round"
       />
       <path
         className="fs-vel-dash"
@@ -411,17 +462,16 @@ function InfraInfographic() {
               strokeWidth="1.2"
             />
           ))}
-          <text x={rack.x + 60} y="526" textAnchor="middle" fill="#fff" fontSize="12" fontWeight="600">
+          <text x={rack.x + 60} y="526" textAnchor="middle" fill="#fff" fontSize={28} fontWeight="600">
             {rack.label}
           </text>
         </g>
       ))}
 
-      <g filter="url(#vel-infra-glow)">
-        <circle className="fs-vel-token-infra" r="6" fill={PINK} />
-        <circle className="fs-vel-token-infra" r="6" fill={BLUE} style={{ animationDelay: "-3.5s" }} />
-      </g>
-    </svg>
+      <TravelingDot pathId="vel-infra-path" duration="7s" />
+      <TravelingDot pathId="vel-infra-path" duration="7s" delay="-3.5s" color={BLUE} />
+      </svg>
+    </div>
   );
 }
 

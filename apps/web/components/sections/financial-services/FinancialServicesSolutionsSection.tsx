@@ -141,6 +141,7 @@ const SOLUTION_CARD_STYLES = `
 }
 `;
 
+/* Word-by-word blur LoadText preserved for possible future reuse:
 function LoadText({
   text,
   delay = 0,
@@ -174,6 +175,7 @@ function LoadText({
     </span>
   );
 }
+*/
 
 
 
@@ -243,14 +245,14 @@ export default function FinancialServicesSolutionsSection() {
   //   accelerators.find((a) => a.id === activeId) ?? accelerators[0];
 
   return (
-    <section className="rounded-t-[12px] bg-default py-20 text-white md:rounded-t-[12px] md:py-28">
+    <section className="rounded-t-[12px] bg-default pt-14 pb-8 text-white md:rounded-t-[12px] md:pt-20 md:pb-10">
       <Container>
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-pink"
+          className="text-center text-[12px] font-semibold uppercase tracking-[0.2em] text-primary-pink"
         >
           eForte Finance Studio, IP driven solutions
         </motion.p>
@@ -260,7 +262,7 @@ export default function FinancialServicesSolutionsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="mx-auto mt-4 max-w-3xl text-center text-3xl font-medium leading-tight text-white md:text-4xl lg:text-[44px]"
+          className="mx-auto mt-3 max-w-4xl text-center text-[48px] font-medium leading-[52px] text-white"
         >
           Six customizable finance solutions built to add velocity for
           time to market
@@ -288,7 +290,7 @@ export default function FinancialServicesSolutionsSection() {
 
         <style>{SOLUTION_CARD_STYLES}</style>
 
-        <div className="mt-10 grid gap-5 md:mt-14 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+        <div className="mt-8 grid gap-4 md:mt-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
           {solutions.map((solution, index) => {
             const Icon = solution.icon;
             return (
@@ -302,12 +304,12 @@ export default function FinancialServicesSolutionsSection() {
                   delay: 0.06 * (index % 3),
                   ease: "easeOut",
                 }}
-                className="group relative h-full overflow-hidden rounded-[12px] border border-white/10 bg-[#0C1020] p-6 md:p-7"
+                className="group relative h-full overflow-hidden rounded-[12px] border border-white/10 bg-[#0C1020] p-5 md:p-6"
               >
                 <span
                   aria-hidden
                   className={cn(
-                    "pointer-events-none absolute inset-0 rounded-[12px] border-[3px] transition-[clip-path] duration-500 ease-out",
+                    "pointer-events-none absolute inset-0 rounded-[12px] border-2 transition-[clip-path] duration-500 ease-out",
                     cornerClip[solution.corner]
                   )}
                   style={{ borderColor: solution.accent }}
@@ -326,32 +328,46 @@ export default function FinancialServicesSolutionsSection() {
                       aria-hidden
                     />
                   </span>
-                  <h3 className="text-[20px] font-semibold leading-snug text-white">
-                    <LoadText
-                      text={solution.title}
-                      delay={0.08 + 0.05 * (index % 3)}
-                    />
-                  </h3>
+                  <motion.h3
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: false, margin: "-60px", amount: 0.4 }}
+                    transition={{
+                      duration: 0.55,
+                      delay: 0.12 + 0.04 * (index % 3),
+                      ease: "easeOut",
+                    }}
+                    className="text-[20px] font-semibold leading-snug text-white"
+                  >
+                    {solution.title}
+                  </motion.h3>
                 </div>
 
-                <p className="relative mt-4 text-[16px] leading-relaxed text-white">
-                  <LoadText
-                    text={solution.description}
-                    delay={0.18 + 0.05 * (index % 3)}
-                  />
-                </p>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: false, margin: "-60px", amount: 0.4 }}
+                  transition={{
+                    duration: 0.7,
+                    delay: 0.22 + 0.04 * (index % 3),
+                    ease: "easeOut",
+                  }}
+                  className="relative mt-3 text-[16px] leading-relaxed text-white"
+                >
+                  {solution.description}
+                </motion.p>
               </motion.article>
             );
           })}
         </div>
 
-        <div className="mt-24 md:mt-32">
+        <div className="mt-12 md:mt-16">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-80px", amount: 0.15 }}
             transition={{ duration: 0.5 }}
-            className="text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-primary-pink"
+            className="text-center text-[12px] font-semibold uppercase tracking-[0.22em] text-primary-pink"
           >
             Velocities
           </motion.p>
@@ -361,7 +377,7 @@ export default function FinancialServicesSolutionsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-80px", amount: 0.15 }}
             transition={{ duration: 0.5, delay: 0.08 }}
-            className="mx-auto mt-4 max-w-3xl text-center text-3xl font-medium leading-tight text-white md:text-4xl lg:text-[40px]"
+            className="mx-auto mt-3 max-w-4xl text-center text-[48px] font-medium leading-[52px] text-white"
           >
             eForte&apos;s Velocities are pre built assets that are integral to
             our solutions and drive faster delivery without sacrificing quality.
@@ -372,17 +388,16 @@ export default function FinancialServicesSolutionsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-80px", amount: 0.15 }}
             transition={{ duration: 0.5, delay: 0.16 }}
-            className="mx-auto mt-6 max-w-2xl text-center text-[15px] leading-relaxed text-white md:text-base"
+            className="mx-auto mt-4 max-w-2xl text-center text-[18px] leading-relaxed text-white"
           >
             They ensure high quality results, based on tried-and-tested
             technologies, ensuring alignment with industry best practices and
             regulations.
           </motion.p>
 
-          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 md:mt-16 md:gap-5">
+          <div className="mt-8 grid grid-cols-1 items-start gap-3 sm:grid-cols-2 lg:grid-cols-4 md:mt-10 md:gap-4">
             {accelerators.map((accelerator, index) => {
               const Icon = accelerator.icon;
-              const number = String(index + 1).padStart(2, "0");
               return (
                 <motion.article
                   key={accelerator.id}
@@ -394,10 +409,10 @@ export default function FinancialServicesSolutionsSection() {
                     delay: 0.08 * index,
                     ease: "easeOut",
                   }}
-                  className="group flex h-full flex-col overflow-hidden rounded-[12px] border border-white/10 bg-[#0C1020] transition-colors duration-300 hover:border-white/20"
+                  className="group flex flex-col overflow-hidden rounded-[12px] border border-white/10 bg-[#0C1020] transition-colors duration-300 hover:border-white/20"
                 >
-                  <div className="relative h-[112px] w-full overflow-hidden bg-black md:h-[124px]">
-                    <div className="absolute inset-0 origin-center transition-transform duration-700 group-hover:scale-[1.04]">
+                  <div className="relative h-[156px] w-full overflow-hidden bg-black md:h-[164px] lg:h-[172px]">
+                    <div className="absolute inset-0 origin-center">
                       {/* Photos kept for later reuse:
                       <Image
                         src={accelerator.imageSrc}
@@ -409,23 +424,19 @@ export default function FinancialServicesSolutionsSection() {
                       */}
                       <FinancialServicesVelocitiesInfographics id={accelerator.id} />
                     </div>
+                    {/* Left accent bar preserved for possible future reuse:
                     <span
                       aria-hidden
                       className="absolute left-0 top-0 h-full w-[3px]"
                       style={{ backgroundColor: accelerator.accent }}
                     />
+                    */}
                   </div>
 
-                  <div className="flex flex-1 flex-col p-4 md:p-5">
-                    <div className="flex items-start gap-2.5">
-                      <span
-                        className="mt-0.5 text-[11px] font-semibold tracking-[0.18em]"
-                        style={{ color: accelerator.accent }}
-                      >
-                        {number}
-                      </span>
+                  <div className="flex flex-col px-3.5 pb-3.5 pt-2 md:px-4 md:pb-4 md:pt-2.5">
+                    <div className="flex flex-col items-start gap-1.5">
                       <Icon
-                        className="mt-0.5 h-5 w-5 shrink-0"
+                        className="h-5 w-5 shrink-0"
                         style={{ color: accelerator.accent }}
                         aria-hidden
                       />
@@ -434,7 +445,7 @@ export default function FinancialServicesSolutionsSection() {
                       </h3>
                     </div>
 
-                    <div className="mt-3 flex flex-1 flex-col justify-start space-y-2.5 text-[14px] leading-relaxed text-white">
+                    <div className="mt-2 space-y-2 text-[14px] leading-relaxed text-white">
                       {accelerator.paragraphs.map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>
                       ))}

@@ -181,14 +181,14 @@ function FinanceStudioTrustFlow() {
 
 export default function FinancialServicesFinanceStudioSection() {
   return (
-    <section className="rounded-[12px] bg-default py-20 text-white md:rounded-[12px] md:py-28">
+    <section className="rounded-[12px] bg-default py-14 text-white md:rounded-[12px] md:py-20">
       <Container>
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5 }}
-          className="text-center text-[11px] font-semibold uppercase tracking-[0.2em] text-primary-pink"
+          className="text-center text-[12px] font-semibold uppercase tracking-[0.2em] text-primary-pink"
         >
           Data and AI-Driven Financial Services
         </motion.p>
@@ -198,7 +198,7 @@ export default function FinancialServicesFinanceStudioSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="mx-auto mt-4 max-w-2xl text-center text-3xl font-medium leading-tight text-white md:text-4xl lg:text-[44px]"
+          className="mx-auto mt-3 max-w-4xl text-center text-[48px] font-medium leading-[52px] text-white"
         >
           Inside eForte&apos;s Finance Studio: engineering trust into every
           transaction
@@ -209,7 +209,7 @@ export default function FinancialServicesFinanceStudioSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, margin: "-80px", amount: 0.15 }}
           transition={{ duration: 0.6, delay: 0.16 }}
-          className="mx-auto mt-12 max-w-5xl md:mt-16"
+          className="mx-auto mt-8 max-w-5xl md:mt-10"
         >
           <div className="relative w-full overflow-hidden rounded-[12px] border border-white/10 shadow-[0_20px_60px_rgba(0, 0, 0, 0.4)]">
             <FinanceStudioTrustFlow />
