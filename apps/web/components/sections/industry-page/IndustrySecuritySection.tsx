@@ -93,7 +93,7 @@ export default function IndustrySecuritySection({
                     className="object-contain"
                   />
                 </div>
-                <p className="mt-3 max-w-xs text-[15px] leading-relaxed text-white">
+                <p className="mt-3 max-w-xs text-base leading-relaxed text-white">
                   {cert.description}
                 </p>
               </motion.div>
