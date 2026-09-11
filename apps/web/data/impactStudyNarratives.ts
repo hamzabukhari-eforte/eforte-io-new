@@ -1,4 +1,5 @@
 import type { ImpactStudyNarrative } from "./impactStudyNarrativeTypes";
+import { enterpriseCaseStudyOverrides } from "./enterpriseCaseStudyOverrides";
 
 export type { ImpactStudyNarrative } from "./impactStudyNarrativeTypes";
 
@@ -1341,5 +1342,7 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     closing: "Helix Health Data made the Foundational Data Layer the product — not a project that analytics has to redo every quarter.",
   },
 };
+
+Object.assign(impactStudyNarratives, enterpriseCaseStudyOverrides);
 
 export const impactStudySlugs = Object.keys(impactStudyNarratives);

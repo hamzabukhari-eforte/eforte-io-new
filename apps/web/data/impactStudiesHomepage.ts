@@ -155,7 +155,7 @@ export const impactStudiesProjectsTop: ImpactProjectCard[] = [
     size: "full",
     layout: "splitLeft",
     accent: "#010101",
-    productImage: "/assets/images/case-study/new-images/prism/prism-main.png",
+    productImage: "/assets/final-images/case-studies/prism/screen-1.png",
   },
   {
     id: "krank",
@@ -271,7 +271,7 @@ export const impactStudiesProjectsBottom: ImpactProjectCard[] = [
     size: "full",
     layout: "colorFloat",
     accent: "#1a3a6e",
-    productImage: "/assets/images/case-study/webp/iberian-ventures/image-2.webp",
+    productImage: "/assets/final-images/case-studies/iberian-ventures/screen-1.png",
   },
   {
     id: "globaltrade-solutions",
@@ -293,7 +293,7 @@ export const impactStudiesProjectsBottom: ImpactProjectCard[] = [
     size: "mid",
     layout: "midLogo",
     accent: "linear-gradient(359.9deg, #1a3050 4.35%, #000 108.99%)",
-    backgroundImage: "/assets/images/case-study/webp/allied-insurance/image-1.webp",
+    backgroundImage: "/assets/final-images/case-studies/allied-insurance/hero.png",
   },
   {
     id: "bioresearch-labs",

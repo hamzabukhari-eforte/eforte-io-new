@@ -1,9 +1,12 @@
-import { productDesignShowcase } from "@/data/productDesign";
 import type { ProductDesignShowcaseItem } from "@/data/productDesign";
 
 const IMAGE_BASE = "/assets/final-images/industries/financial-services";
 
-const financialServicesWorkStories: ProductDesignShowcaseItem[] = [
+/**
+ * Finance industry work stories.
+ * Wired to /industries/financial-services via industryShowcases.
+ */
+export const financialServicesWorkStories: ProductDesignShowcaseItem[] = [
   {
     id: "northbridge",
     brand: "Northbridge",
@@ -43,10 +46,4 @@ const financialServicesWorkStories: ProductDesignShowcaseItem[] = [
     background: "#3a0d24",
     href: "/case-studies/arclight-capital",
   },
-];
-
-/** Existing Product Design stories plus Northbridge, Velora, and Arclight. */
-export const financialServicesShowcase: ProductDesignShowcaseItem[] = [
-  ...productDesignShowcase,
-  ...financialServicesWorkStories,
 ];

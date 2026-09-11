@@ -1,18 +1,19 @@
 "use client";
 
 import { StudioSuccessStoriesSection } from "@/components/sections/studio-shared";
-import { healthcareShowcase } from "@/data/industries/healthcareShowcase";
+import { getIndustryShowcase } from "@/data/industries/industryShowcases";
 
 /**
- * Same success stories carousel as Product Design, plus the five Healthcare
- * Capabilities tab case studies (Digital Patient Experience, mHealth, Virtual
- * Care, Agentic Orchestration, Foundational Data Layer).
+ * Health & Wellbeing industry Success Stories only
+ * (Aurelia, PulseLink, Northstar, Thornfield, Helix + ClearPath, Harborlight, PulseWell, BioResearch).
  */
 export default function HealthcareSuccessStoriesSection() {
+  const stories = getIndustryShowcase("healthcare") ?? [];
+
   return (
     <div className="relative -mt-8 bg-default md:-mt-10">
       <StudioSuccessStoriesSection
-        stories={healthcareShowcase}
+        stories={stories}
         className="rounded-[12px] bg-white pt-10 pb-16 md:pt-12 md:pb-20"
       />
     </div>

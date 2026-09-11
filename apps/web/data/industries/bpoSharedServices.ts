@@ -1,7 +1,7 @@
 import type { IndustryPageContent } from "./types";
 
 export const bpoSharedServicesIndustry: IndustryPageContent = {
-  slug: "bpo-shared services",
+  slug: "bpo-shared-services",
   metadata: {
     title: "BPO & Shared Services | eForte",
     description: "Scaling service delivery with intelligent automation, Agentic Orchestration, client self service, and a Foundational Data Layer for shared services.",

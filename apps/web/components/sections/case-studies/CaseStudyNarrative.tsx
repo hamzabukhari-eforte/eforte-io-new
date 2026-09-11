@@ -126,6 +126,19 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                 <p key={paragraph.slice(0, 48)}>{paragraph}</p>
               ))}
             </div>
+            {content.productUrl ? (
+              <p className="mt-6 text-[14px] text-black/70 md:text-[15px]">
+                Product experience:{" "}
+                <a
+                  href={content.productUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-primary-pink underline-offset-4 hover:underline"
+                >
+                  {content.productUrl.replace(/^https?:\/\//, "")}
+                </a>
+              </p>
+            ) : null}
           </Reveal>
 
           {/* Pillars strip */}

@@ -1,13 +1,11 @@
-import {
-  productDesignShowcase,
-  type ProductDesignShowcaseItem,
-} from "@/data/productDesign";
+import type { ProductDesignShowcaseItem } from "@/data/productDesign";
 
 const IMAGE_BASE = "/assets/final-images/industries/healthcare";
 
 /**
- * Success Stories cards for the five Healthcare Capabilities tabs,
- * styled for StudioSuccessStoriesSection (colored backgrounds).
+ * Healthcare Capabilities / Health & Wellbeing success stories.
+ * Wired to /industries/healthcare via industryShowcases.
+ * Also remain available on Product Design through shared catalog picks where relevant.
  */
 export const healthcareWorkStories: ProductDesignShowcaseItem[] = [
   {
@@ -95,13 +93,4 @@ export const healthcareWorkStories: ProductDesignShowcaseItem[] = [
     background: "#1a1030",
     href: "/case-studies/helix-health-data",
   },
-];
-
-/**
- * Existing Product Design success stories plus the five Healthcare
- * Capabilities tab case studies.
- */
-export const healthcareShowcase: ProductDesignShowcaseItem[] = [
-  ...productDesignShowcase,
-  ...healthcareWorkStories,
 ];

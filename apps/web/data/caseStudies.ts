@@ -340,12 +340,12 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Prism",
       description: "Retailers live and die by their ability to anticipate demand, but seasonal effects, holidays, and unpredictable outliers make accurate forecasting genuinely hard. PRISM was built to solve exactly that problem: a trends forecasting engine designed to handle strong seasonal patterns and messy real world data without losing accuracy.",
-      image: "/assets/images/case-study/new-images/prism/prism-main.png",
+      image: "/assets/final-images/case-studies/prism/hero.png",
       link: "/case-studies/prism",
-      theme: [72, 48, 110],
+      theme: [114, 72, 179],
     },
     technologySection: {
-      theme: [72, 48, 110],
+      theme: [114, 72, 179],
       frontEnd: [
       {
         name: "React",
@@ -422,18 +422,18 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Prism",
-      theme: [72, 48, 110],
+      theme: [114, 72, 179],
       sections: [
         {
           heading: "Retail demand doesn't move in a straight line",
           description: "Retail demand doesn't move in a straight line. It shifts with the seasons, spikes around holidays, and gets thrown off by one off outlier events that can badly skew a naive forecast. PRISM's client needed a forecasting engine that could account for all of this at once: yearly, weekly, and daily seasonality, holiday effects, and enough historical data to generate genuinely reliable predictions.",
-          image: "/assets/images/case-study/new-images/prism/prism-main.png",
+          image: "/assets/final-images/case-studies/prism/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "Working with forecasting methods that were new territory even for eForte's own engineering team, the team built PRISM around Facebook's Prophet API and an additive modeling approach.",
-          image: "/assets/images/case-study/new-images/prism/prism2.png",
+          image: "/assets/final-images/case-studies/prism/screen-3.png",
           format: "right",
         },
       ],
@@ -1449,7 +1449,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Meridian Pay",
       description: "Meridian Pay is a digital payments provider processing millions of consumer and merchant transactions every month. As transaction volume grew, so did the complexity of detecting fraud, resolving disputes, and keeping settlement operations running without delay.",
-      image: "/assets/images/case-study/webp/meridian-pay/image-1.webp",
+      image: "/assets/final-images/case-studies/meridian-pay/hero.png",
       link: "/case-studies/meridian-pay",
       theme: [20, 90, 140],
     },
@@ -1536,13 +1536,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Before working with eForte, Meridian Pay relied on a patchwork of legacy fraud rules an",
           description: "Before working with eForte, Meridian Pay relied on a patchwork of legacy fraud rules and manual review queues that couldn't keep pace with transaction growth. Suspicious transactions were often flagged hours after the fact, by which point the damage to customers and merchants was already done.",
-          image: "/assets/images/case-study/webp/meridian-pay/image-1.webp",
+          image: "/assets/final-images/case-studies/meridian-pay/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "Recognizing the scale of Meridian Pay's data and risk challenges, eForte designed a solution built around real time intelligence and autonomous response.",
-          image: "/assets/images/case-study/webp/meridian-pay/image-2.webp",
+          image: "/assets/final-images/case-studies/meridian-pay/screen-3.png",
           format: "right",
         },
       ],
@@ -1553,12 +1553,12 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Iberian Ventures",
       description: "Iberian Ventures is a mid sized M&A advisory firm based in Lisbon, Portugal, managing more than 30 active buy side mandates and tracking over 500 potential acquisition targets at any given time. As mandate volume grew, the firm's analysts found themselves buried in administrative work instead of advisory work.",
-      image: "/assets/images/case-study/webp/iberian-ventures/image-1.webp",
+      image: "/assets/final-images/case-studies/iberian-ventures/hero.png",
       link: "/case-studies/iberian-ventures",
-      theme: [120, 85, 55],
+      theme: [26, 58, 110],
     },
     technologySection: {
-      theme: [120, 85, 55],
+      theme: [26, 58, 110],
       frontEnd: [
       {
         name: "React",
@@ -1635,18 +1635,18 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Iberian Ventures",
-      theme: [120, 85, 55],
+      theme: [26, 58, 110],
       sections: [
         {
           heading: "Iberian Ventures' analysts spent 70 percent of their time on administrative tasks, revi",
           description: "Iberian Ventures' analysts spent 70 percent of their time on administrative tasks, reviewing buy side requirements, searching databases for matching sell side opportunities, scoring compatibility, creating presentations, coordinating communications, and drafting agreements. This inefficiency limited how many deals the firm could pursue at once and created bottlenecks between initial match and first meeting.",
-          image: "/assets/images/case-study/webp/iberian-ventures/image-1.webp",
+          image: "/assets/final-images/case-studies/iberian-ventures/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte implemented a comprehensive AI automation system across the full deal lifecycle.",
-          image: "/assets/images/case-study/webp/iberian-ventures/image-2.webp",
+          image: "/assets/final-images/case-studies/iberian-ventures/screen-3.png",
           format: "right",
         },
       ],
@@ -1657,7 +1657,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "GlobalTrade Solutions",
       description: "GlobalTrade Solutions is an international trading house managing over 1,200 annual transactions across multiple commodity categories, supported by a network of more than 350 suppliers. As transaction volume grew, the firm's trading workflow struggled to keep pace.",
-      image: "/assets/images/case-study/webp/globaltrade-solutions/image-1.webp",
+      image: "/assets/final-images/case-studies/globaltrade-solutions/hero.png",
       link: "/case-studies/globaltrade-solutions",
       theme: [25, 70, 100],
     },
@@ -1744,13 +1744,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "GlobalTrade Solutions faced significant operational inefficiencies in its trading workflow",
           description: "GlobalTrade Solutions faced significant operational inefficiencies in its trading workflow. The team was overwhelmed by manually reviewing client requirements from emails, matching appropriate suppliers, creating quotations, and coordinating agreements and logistics and payment processes. This resulted in slow response times, missed opportunities, and frequent errors in documentation.",
-          image: "/assets/images/case-study/webp/globaltrade-solutions/image-1.webp",
+          image: "/assets/final-images/case-studies/globaltrade-solutions/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte developed an end to end AI automation system spanning the entire trade lifecycle.",
-          image: "/assets/images/case-study/webp/globaltrade-solutions/image-2.webp",
+          image: "/assets/final-images/case-studies/globaltrade-solutions/screen-3.png",
           format: "right",
         },
       ],
@@ -1761,12 +1761,12 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Allied Insurance",
       description: "Allied Insurance is a regional insurance provider processing more than 50,000 claims annually across auto, home, and commercial lines. Its legacy claims process required extensive manual intervention at nearly every step.",
-      image: "/assets/images/case-study/webp/allied-insurance/image-1.webp",
+      image: "/assets/final-images/case-studies/allied-insurance/hero.png",
       link: "/case-studies/allied-insurance",
-      theme: [30, 70, 120],
+      theme: [30, 90, 160],
     },
     technologySection: {
-      theme: [30, 70, 120],
+      theme: [30, 90, 160],
       frontEnd: [
       {
         name: "React",
@@ -1843,18 +1843,18 @@ export const caseStudies: CaseStudy[] = [
     },
     Details: {
       title: "Allied Insurance",
-      theme: [30, 70, 120],
+      theme: [30, 90, 160],
       sections: [
         {
           heading: "Allied Insurance was struggling with a legacy claims processing system requiring extens",
           description: "Allied Insurance was struggling with a legacy claims processing system requiring extensive manual intervention. Claims adjusters spent 65 percent of their time inputting data, cross referencing policy information, and managing documentation rather than making substantive decisions on claims. This created a backlog of cases, extended settlement times, and reduced customer satisfaction.",
-          image: "/assets/images/case-study/webp/allied-insurance/image-1.webp",
+          image: "/assets/final-images/case-studies/allied-insurance/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte implemented an AI driven claims automation system spanning intake through resolution.",
-          image: "/assets/images/case-study/webp/allied-insurance/image-2.webp",
+          image: "/assets/final-images/case-studies/allied-insurance/screen-3.png",
           format: "right",
         },
       ],
@@ -1968,8 +1968,8 @@ export const caseStudies: CaseStudy[] = [
     slug: "global-manufacturing-corp",
     introSection: {
       title: "Global Manufacturing Corp",
-      description: "Global Manufacturing Corp is a regional insurance provider processing more than 50,000 claims annually across auto, home, and commercial lines. As invoice volume grew across disparate systems, the company's accounts payable department became increasingly strained.",
-      image: "/assets/images/case-study/webp/global-manufacturing-corp/image-1.webp",
+      description: "Global Manufacturing Corp runs multi-plant production with complex supplier and AP operations. Disconnected MES, ERP, and invoice tools left leaders without a trusted view of throughput, quality, or cash — until eForte unified them at ops.globalmfgcorp.com.",
+      image: "/assets/final-images/case-studies/global-manufacturing-corp/hero.png",
       link: "/case-studies/global-manufacturing-corp",
       theme: [50, 55, 60],
     },
@@ -2056,13 +2056,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Global Manufacturing Corp's accounts payable department was struggling with fragmented ",
           description: "Global Manufacturing Corp's accounts payable department was struggling with fragmented processes, duplicate payments, missed discounts, and compliance issues. Their team of 45 AP specialists was overwhelmed by manual invoice processing across disparate systems, leading to payment delays, strained supplier relationships, and limited financial visibility.",
-          image: "/assets/images/case-study/webp/global-manufacturing-corp/image-1.webp",
+          image: "/assets/final-images/case-studies/global-manufacturing-corp/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte implemented an AI driven claims automation system tailored to accounts payable operations.",
-          image: "/assets/images/case-study/webp/global-manufacturing-corp/image-2.webp",
+          image: "/assets/final-images/case-studies/global-manufacturing-corp/screen-3.png",
           format: "right",
         },
       ],
@@ -2073,7 +2073,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Altura Motors",
       description: "Altura Motors designs and manufactures passenger vehicles, running engineering simulations and design reviews across multiple teams for every new model. Long design iteration cycles were slowing the company's ability to bring new vehicles to market.",
-      image: "/assets/images/case-study/webp/altura-motors/image-1.webp",
+      image: "/assets/final-images/case-studies/altura-motors/hero.png",
       link: "/case-studies/altura-motors",
       theme: [40, 40, 45],
     },
@@ -2160,13 +2160,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Altura Motors' design process required engineers to manually hand off simulation result",
           description: "Altura Motors' design process required engineers to manually hand off simulation results between aerodynamics, structural, and safety teams, with each handoff introducing delay while the receiving team waited for the right data in the right format. Design data also lived in separate tools per discipline, making it hard to see how a change in one area affected others.",
-          image: "/assets/images/case-study/webp/altura-motors/image-1.webp",
+          image: "/assets/final-images/case-studies/altura-motors/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte worked with Altura Motors to automate the coordination between engineering disciplines.",
-          image: "/assets/images/case-study/webp/altura-motors/image-2.webp",
+          image: "/assets/final-images/case-studies/altura-motors/screen-3.png",
           format: "right",
         },
       ],
@@ -2177,7 +2177,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Anchor Point Insurance",
       description: "Anchor Point Insurance offers life and health coverage to individuals and families, processing a high volume of claims each month. As fraudulent claims grew more sophisticated, the company's existing detection methods struggled to keep up.",
-      image: "/assets/images/case-study/webp/anchor-point-insurance/image-1.webp",
+      image: "/assets/final-images/case-studies/anchor-point-insurance/hero.png",
       link: "/case-studies/anchor-point-insurance",
       theme: [55, 35, 90],
     },
@@ -2264,13 +2264,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Anchor Point Insurance's fraud detection relied on static, rules based checks that flag",
           description: "Anchor Point Insurance's fraud detection relied on static, rules based checks that flagged only known fraud patterns, leaving newer and more sophisticated schemes undetected until after claims were paid. Investigators also lacked a consolidated view of claims history, making it difficult to spot connections between related fraudulent submissions.",
-          image: "/assets/images/case-study/webp/anchor-point-insurance/image-1.webp",
+          image: "/assets/final-images/case-studies/anchor-point-insurance/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte worked with Anchor Point Insurance to modernize fraud detection from the ground up.",
-          image: "/assets/images/case-study/webp/anchor-point-insurance/image-2.webp",
+          image: "/assets/final-images/case-studies/anchor-point-insurance/screen-3.png",
           format: "right",
         },
       ],
@@ -2281,7 +2281,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Apex Shared Services",
       description: "Apex Shared Services provides centralized finance, HR, and IT support functions to multiple business units within a large parent organization. Coordinating requests across so many internal customers had become a significant operational challenge.",
-      image: "/assets/images/case-study/webp/apex-shared-services/image-1.webp",
+      image: "/assets/final-images/case-studies/apex-shared-services/hero.png",
       link: "/case-studies/apex-shared-services",
       theme: [30, 45, 70],
     },
@@ -2368,13 +2368,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Apex Shared Services fielded requests from finance, HR, and IT across dozens of interna",
           description: "Apex Shared Services fielded requests from finance, HR, and IT across dozens of internal business units, each with its own approval chains and priority levels. Requests were manually triaged and routed by service desk staff, a process that grew harder to manage as the number of supported business units increased.",
-          image: "/assets/images/case-study/webp/apex-shared-services/image-1.webp",
+          image: "/assets/final-images/case-studies/apex-shared-services/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte helped Apex Shared Services unify and automate request handling across all its shared service functions.",
-          image: "/assets/images/case-study/webp/apex-shared-services/image-2.webp",
+          image: "/assets/final-images/case-studies/apex-shared-services/screen-3.png",
           format: "right",
         },
       ],
@@ -2385,7 +2385,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Birchwood Hospitality Group",
       description: "Birchwood Hospitality Group manages a collection of hotels and event venues, overseeing everything from staffing to procurement across properties. Rising operational costs were squeezing margins, and leadership lacked the visibility needed to identify where savings could be found.",
-      image: "/assets/images/case-study/webp/birchwood-hospitality-group/image-1.webp",
+      image: "/assets/final-images/case-studies/birchwood-hospitality-group/hero.png",
       link: "/case-studies/birchwood-hospitality-group",
       theme: [55, 35, 45],
     },
@@ -2472,13 +2472,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Birchwood Hospitality Group's properties each tracked staffing, procurement, and operat",
           description: "Birchwood Hospitality Group's properties each tracked staffing, procurement, and operating costs in their own systems, making it nearly impossible for leadership to compare cost performance across the portfolio or spot inefficiencies. Procurement decisions were made property by property, missing opportunities for group wide purchasing efficiencies.",
-          image: "/assets/images/case-study/webp/birchwood-hospitality-group/image-1.webp",
+          image: "/assets/final-images/case-studies/birchwood-hospitality-group/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte worked with Birchwood Hospitality Group to unify cost data and surface savings opportunities across its portfolio.",
-          image: "/assets/images/case-study/webp/birchwood-hospitality-group/image-2.webp",
+          image: "/assets/final-images/case-studies/birchwood-hospitality-group/screen-3.png",
           format: "right",
         },
       ],
@@ -2489,7 +2489,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Brightwell Mutual",
       description: "Brightwell Mutual is a regional insurer offering home, auto, and umbrella coverage to policyholders across the country. As claims volume grew, the company's manual review process became a bottleneck that frustrated both adjusters and policyholders.",
-      image: "/assets/images/case-study/webp/brightwell-mutual/image-1.webp",
+      image: "/assets/final-images/case-studies/brightwell-mutual/hero.png",
       link: "/case-studies/brightwell-mutual",
       theme: [40, 70, 160],
     },
@@ -2576,13 +2576,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Before partnering with eForte, Brightwell Mutual's claims adjusters manually reviewed e",
           description: "Before partnering with eForte, Brightwell Mutual's claims adjusters manually reviewed every incoming claim regardless of complexity, creating a backlog that pushed simple claims to take days to resolve. Policyholder data was also scattered across separate systems for policy details, prior claims history, and communication logs.",
-          image: "/assets/images/case-study/webp/brightwell-mutual/image-1.webp",
+          image: "/assets/final-images/case-studies/brightwell-mutual/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte worked with Brightwell Mutual to rebuild its claims process around automation and unified data.",
-          image: "/assets/images/case-study/webp/brightwell-mutual/image-2.webp",
+          image: "/assets/final-images/case-studies/brightwell-mutual/screen-3.png",
           format: "right",
         },
       ],
@@ -2593,7 +2593,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "ClearPath Diabetes Care",
       description: "ClearPath Diabetes Care provides remote monitoring and care coordination for patients managing diabetes, working closely with endocrinologists, dietitians, and care coordinators. As its patient base grew, keeping every care team member informed in real time became a growing challenge.",
-      image: "/assets/images/case-study/webp/clearpath-diabetes-care/image-1.webp",
+      image: "/assets/final-images/case-studies/clearpath-diabetes-care/hero.png",
       link: "/case-studies/clearpath-diabetes-care",
       theme: [30, 80, 120],
     },
@@ -2680,13 +2680,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "ClearPath Diabetes Care's patients used connected glucose monitors that generated a ste",
           description: "ClearPath Diabetes Care's patients used connected glucose monitors that generated a steady stream of data, but that data wasn't consistently reaching the right care team members in time to act on it. Endocrinologists, dietitians, and care coordinators often worked from different systems, making coordinated care difficult.",
-          image: "/assets/images/case-study/webp/clearpath-diabetes-care/image-1.webp",
+          image: "/assets/final-images/case-studies/clearpath-diabetes-care/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte worked with ClearPath Diabetes Care to connect real time patient data directly to the people who needed to act on it.",
-          image: "/assets/images/case-study/webp/clearpath-diabetes-care/image-2.webp",
+          image: "/assets/final-images/case-studies/clearpath-diabetes-care/screen-3.png",
           format: "right",
         },
       ],
@@ -2697,7 +2697,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Coastal Assurance Group",
       description: "Coastal Assurance Group provides commercial property and casualty insurance to businesses along the coast, where weather related risk assessment adds significant complexity to underwriting. Growing application volume was straining the company's manual underwriting process.",
-      image: "/assets/images/case-study/webp/coastal-assurance-group/image-1.webp",
+      image: "/assets/final-images/case-studies/coastal-assurance-group/hero.png",
       link: "/case-studies/coastal-assurance-group",
       theme: [25, 80, 110],
     },
@@ -2779,13 +2779,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Coastal Assurance Group's underwriters manually assessed each commercial property appli",
           description: "Coastal Assurance Group's underwriters manually assessed each commercial property application by pulling data from multiple external sources, including weather risk databases, property records, and prior claims history. This process routinely took several days per application, delaying quotes and frustrating brokers.",
-          image: "/assets/images/case-study/webp/coastal-assurance-group/image-1.webp",
+          image: "/assets/final-images/case-studies/coastal-assurance-group/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte partnered with Coastal Assurance Group to build a real time underwriting platform grounded in unified data.",
-          image: "/assets/images/case-study/webp/coastal-assurance-group/image-2.webp",
+          image: "/assets/final-images/case-studies/coastal-assurance-group/screen-3.png",
           format: "right",
         },
       ],
@@ -2796,7 +2796,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Coastline Resorts",
       description: "Coastline Resorts operates a group of beachfront resorts offering dining, spa, and activity services alongside accommodations. Guest service requests routed manually across departments were creating delays that affected the guest experience.",
-      image: "/assets/images/case-study/webp/coastline-resorts/image-1.webp",
+      image: "/assets/final-images/case-studies/coastline-resorts/hero.png",
       link: "/case-studies/coastline-resorts",
       theme: [16, 55, 75],
     },
@@ -2883,13 +2883,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Coastline Resorts' guest requests, whether for housekeeping, dining reservations, or sp",
           description: "Coastline Resorts' guest requests, whether for housekeeping, dining reservations, or spa bookings, were phoned or logged manually and then routed by front desk staff to the relevant department. This manual routing process introduced delay, and requests occasionally got lost between departments during busy periods.",
-          image: "/assets/images/case-study/webp/coastline-resorts/image-1.webp",
+          image: "/assets/final-images/case-studies/coastline-resorts/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte helped Coastline Resorts automate guest request handling from submission to resolution.",
-          image: "/assets/images/case-study/webp/coastline-resorts/image-2.webp",
+          image: "/assets/final-images/case-studies/coastline-resorts/screen-3.png",
           format: "right",
         },
       ],
@@ -2900,7 +2900,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Cobalt Digital Bank",
       description: "Cobalt Digital Bank is a fast growing challenger bank offering checking, savings, and lending products entirely through its mobile app. As its customer base expanded across regions, its data infrastructure struggled to keep up with the demands of real time banking.",
-      image: "/assets/images/case-study/webp/cobalt-digital-bank/image-1.webp",
+      image: "/assets/final-images/case-studies/cobalt-digital-bank/hero.png",
       link: "/case-studies/cobalt-digital-bank",
       theme: [11, 61, 92],
     },
@@ -2987,13 +2987,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Cobalt Digital Bank's customer data was spread across separate systems for onboarding, ",
           description: "Cobalt Digital Bank's customer data was spread across separate systems for onboarding, transactions, and lending, making it difficult to build a complete picture of any single customer. This fragmentation slowed down loan approvals and made regulatory reporting a slow, manual exercise.",
-          image: "/assets/images/case-study/webp/cobalt-digital-bank/image-1.webp",
+          image: "/assets/final-images/case-studies/cobalt-digital-bank/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte partnered with Cobalt Digital Bank to rebuild its data infrastructure around a foundation that could support real time banking at scale.",
-          image: "/assets/images/case-study/webp/cobalt-digital-bank/image-2.webp",
+          image: "/assets/final-images/case-studies/cobalt-digital-bank/screen-3.png",
           format: "right",
         },
       ],
@@ -3004,7 +3004,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Crestline BPO Group",
       description: "Crestline BPO Group provides outsourced transaction processing and customer administration services to clients in retail, healthcare, and financial services. High transaction volume and tight service level agreements were putting increasing pressure on manual processing teams.",
-      image: "/assets/images/case-study/webp/crestline-bpo-group/image-1.webp",
+      image: "/assets/final-images/case-studies/crestline-bpo-group/hero.png",
       link: "/case-studies/crestline-bpo-group",
       theme: [50, 35, 65],
     },
@@ -3091,13 +3091,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Crestline BPO Group's processing teams handled high volumes of client transactions manu",
           description: "Crestline BPO Group's processing teams handled high volumes of client transactions manually, from claims administration to order processing, under strict service level agreements. As transaction volume grew, teams increasingly struggled to keep processing times within agreed SLA windows, particularly during seasonal demand spikes.",
-          image: "/assets/images/case-study/webp/crestline-bpo-group/image-1.webp",
+          image: "/assets/final-images/case-studies/crestline-bpo-group/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte worked with Crestline BPO Group to automate transaction processing and give management a clear view of SLA performance.",
-          image: "/assets/images/case-study/webp/crestline-bpo-group/image-2.webp",
+          image: "/assets/final-images/case-studies/crestline-bpo-group/screen-3.png",
           format: "right",
         },
       ],
@@ -3108,7 +3108,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Fenwick Capital Markets",
       description: "Fenwick Capital Markets manages trading and portfolio strategy for institutional clients across equities, fixed income, and derivatives. With markets moving faster than ever, the firm needed its systems to keep pace with real time decision making.",
-      image: "/assets/images/case-study/webp/fenwick-capital-markets/image-1.webp",
+      image: "/assets/final-images/case-studies/fenwick-capital-markets/hero.png",
       link: "/case-studies/fenwick-capital-markets",
       theme: [1, 72, 90],
     },
@@ -3195,13 +3195,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Fenwick Capital Markets' trading desks relied on data feeds that updated on a delay, me",
           description: "Fenwick Capital Markets' trading desks relied on data feeds that updated on a delay, meaning by the time analysts saw a signal, the opportunity had often already shifted. Portfolio rebalancing was still largely a manual process, requiring analysts to recalculate exposure by hand across dozens of accounts.",
-          image: "/assets/images/case-study/webp/fenwick-capital-markets/image-1.webp",
+          image: "/assets/final-images/case-studies/fenwick-capital-markets/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte worked with Fenwick Capital Markets to modernize its trading infrastructure from the data layer up.",
-          image: "/assets/images/case-study/webp/fenwick-capital-markets/image-2.webp",
+          image: "/assets/final-images/case-studies/fenwick-capital-markets/screen-3.png",
           format: "right",
         },
       ],
@@ -3212,7 +3212,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Frontier Energy Partners",
       description: "Frontier Energy Partners manages a distributed network of energy generation and transmission assets across multiple regions. Coordinating maintenance across so many geographically dispersed assets was becoming increasingly difficult to manage manually.",
-      image: "/assets/images/case-study/webp/frontier-energy-partners/image-1.webp",
+      image: "/assets/final-images/case-studies/frontier-energy-partners/hero.png",
       link: "/case-studies/frontier-energy-partners",
       theme: [20, 80, 55],
     },
@@ -3294,13 +3294,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Frontier Energy Partners' assets were spread across a wide geographic area, each report",
           description: "Frontier Energy Partners' assets were spread across a wide geographic area, each reporting data to separate regional systems. This made it difficult for the central operations team to get a real time view of asset health across the entire network, and maintenance scheduling was largely reactive to reported issues rather than based on predictive signals.",
-          image: "/assets/images/case-study/webp/frontier-energy-partners/image-1.webp",
+          image: "/assets/final-images/case-studies/frontier-energy-partners/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte worked with Frontier Energy Partners to unify asset data and forecast failures before they caused outages.",
-          image: "/assets/images/case-study/webp/frontier-energy-partners/image-2.webp",
+          image: "/assets/final-images/case-studies/frontier-energy-partners/screen-3.png",
           format: "right",
         },
       ],
@@ -3311,7 +3311,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Harborlight Recovery",
       description: "Harborlight Recovery operates a network of behavioral health and addiction recovery centers, supporting patients through multi stage treatment programs. As patient volume grew across locations, delivering consistent, personalized care plans became increasingly difficult to manage.",
-      image: "/assets/images/case-study/webp/harborlight-recovery/image-1.webp",
+      image: "/assets/final-images/case-studies/harborlight-recovery/hero.png",
       link: "/case-studies/harborlight-recovery",
       theme: [25, 95, 105],
     },
@@ -3398,13 +3398,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Harborlight Recovery's patient records were split across separate systems for intake, c",
           description: "Harborlight Recovery's patient records were split across separate systems for intake, clinical notes, and medication management, making it hard for clinicians to see a patient's full treatment history at a glance. Care plans were largely standardized by program type rather than tailored to each patient's specific history and progress.",
-          image: "/assets/images/case-study/webp/harborlight-recovery/image-1.webp",
+          image: "/assets/final-images/case-studies/harborlight-recovery/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte partnered with Harborlight Recovery to unify patient data and personalize care planning across the network.",
-          image: "/assets/images/case-study/webp/harborlight-recovery/image-2.webp",
+          image: "/assets/final-images/case-studies/harborlight-recovery/screen-3.png",
           format: "right",
         },
       ],
@@ -3415,7 +3415,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Ironclad Manufacturing",
       description: "Ironclad Manufacturing operates multiple heavy equipment production facilities, running machinery around the clock to meet demand. Unplanned equipment downtime was costing the company significant production time and revenue.",
-      image: "/assets/images/case-study/webp/ironclad-manufacturing/image-1.webp",
+      image: "/assets/final-images/case-studies/ironclad-manufacturing/hero.png",
       link: "/case-studies/ironclad-manufacturing",
       theme: [70, 50, 30],
     },
@@ -3497,13 +3497,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Ironclad Manufacturing's equipment generated sensor data across dozens of machines per ",
           description: "Ironclad Manufacturing's equipment generated sensor data across dozens of machines per facility, but that data lived in isolated systems tied to each machine's manufacturer, making plant wide visibility nearly impossible. Maintenance teams typically only learned about a developing problem when a machine had already failed or was showing obvious signs of distress.",
-          image: "/assets/images/case-study/webp/ironclad-manufacturing/image-1.webp",
+          image: "/assets/final-images/case-studies/ironclad-manufacturing/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte worked with Ironclad Manufacturing to unify equipment data and predict failures before they occurred.",
-          image: "/assets/images/case-study/webp/ironclad-manufacturing/image-2.webp",
+          image: "/assets/final-images/case-studies/ironclad-manufacturing/screen-3.png",
           format: "right",
         },
       ],
@@ -3514,7 +3514,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Lantern Hotel Collective",
       description: "Lantern Hotel Collective operates a portfolio of boutique hotels across multiple markets, aiming to give every guest a personalized stay regardless of location. As the portfolio grew, delivering that consistency without a much larger staff became a real challenge.",
-      image: "/assets/images/case-study/webp/lantern-hotel-collective/image-1.webp",
+      image: "/assets/final-images/case-studies/lantern-hotel-collective/hero.png",
       link: "/case-studies/lantern-hotel-collective",
       theme: [70, 35, 55],
     },
@@ -3601,13 +3601,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Lantern Hotel Collective's guest data, including preferences, past stays, and special r",
           description: "Lantern Hotel Collective's guest data, including preferences, past stays, and special requests, was stored separately at each property, so guests who visited multiple locations had to reintroduce themselves every time. Front desk and concierge staff had no easy way to anticipate guest preferences ahead of arrival.",
-          image: "/assets/images/case-study/webp/lantern-hotel-collective/image-1.webp",
+          image: "/assets/final-images/case-studies/lantern-hotel-collective/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte partnered with Lantern Hotel Collective to unify guest data and personalize the experience across every property.",
-          image: "/assets/images/case-study/webp/lantern-hotel-collective/image-2.webp",
+          image: "/assets/final-images/case-studies/lantern-hotel-collective/screen-3.png",
           format: "right",
         },
       ],
@@ -3618,7 +3618,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Meridian Outsourcing Solutions",
       description: "Meridian Outsourcing Solutions provides back office processing services, including data entry, document processing, and customer support administration, to enterprise clients across industries. As client volume grew, manual processing was becoming a bottleneck to scaling the business.",
-      image: "/assets/images/case-study/webp/meridian-outsourcing-solutions/image-1.webp",
+      image: "/assets/final-images/case-studies/meridian-outsourcing-solutions/hero.png",
       link: "/case-studies/meridian-outsourcing-solutions",
       theme: [25, 40, 70],
     },
@@ -3705,13 +3705,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Meridian Outsourcing Solutions' processing teams manually reviewed and entered data fro",
           description: "Meridian Outsourcing Solutions' processing teams manually reviewed and entered data from client documents, a labor intensive process that scaled linearly with client volume. As new clients came on board, the company found itself needing to hire proportionally just to keep pace with processing demand.",
-          image: "/assets/images/case-study/webp/meridian-outsourcing-solutions/image-1.webp",
+          image: "/assets/final-images/case-studies/meridian-outsourcing-solutions/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte worked with Meridian Outsourcing Solutions to automate document processing and unify operational data.",
-          image: "/assets/images/case-study/webp/meridian-outsourcing-solutions/image-2.webp",
+          image: "/assets/final-images/case-studies/meridian-outsourcing-solutions/screen-3.png",
           format: "right",
         },
       ],
@@ -3722,7 +3722,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "PulseWell Fitness",
       description: "PulseWell Fitness operates a chain of health and wellness clubs offering fitness coaching, nutrition guidance, and recovery services to members nationwide. As membership grew, delivering genuinely personalized wellness plans became difficult without more scalable tools.",
-      image: "/assets/images/case-study/webp/pulsewell-fitness/image-1.webp",
+      image: "/assets/final-images/case-studies/pulsewell-fitness/hero.png",
       link: "/case-studies/pulsewell-fitness",
       theme: [15, 110, 100],
     },
@@ -3804,13 +3804,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "PulseWell Fitness's coaches relied on generic program templates that were only lightly ",
           description: "PulseWell Fitness's coaches relied on generic program templates that were only lightly adjusted per member, since building a truly individualized plan for every member manually wasn't feasible at scale. Member activity data from wearables, class check ins, and nutrition logs also lived in separate systems, making it hard for coaches to see the full picture of a member's progress.",
-          image: "/assets/images/case-study/webp/pulsewell-fitness/image-1.webp",
+          image: "/assets/final-images/case-studies/pulsewell-fitness/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte helped PulseWell Fitness build a platform that could personalize wellness guidance without adding coaching headcount.",
-          image: "/assets/images/case-study/webp/pulsewell-fitness/image-2.webp",
+          image: "/assets/final-images/case-studies/pulsewell-fitness/screen-3.png",
           format: "right",
         },
       ],
@@ -3821,7 +3821,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Ridgeline Auto Group",
       description: "Ridgeline Auto Group operates a network of dealerships selling and servicing vehicles across multiple brands. Each dealership's sales, service, and inventory data lived in its own system, making it difficult for group leadership to get a consolidated view of the business.",
-      image: "/assets/images/case-study/webp/ridgeline-auto-group/image-1.webp",
+      image: "/assets/final-images/case-studies/ridgeline-auto-group/hero.png",
       link: "/case-studies/ridgeline-auto-group",
       theme: [45, 45, 50],
     },
@@ -3908,13 +3908,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Ridgeline Auto Group's dealerships each ran their own dealership management system, mea",
           description: "Ridgeline Auto Group's dealerships each ran their own dealership management system, meaning inventory levels, sales performance, and service bookings couldn't be compared or coordinated across locations. This made it hard for group leadership to know where to shift inventory or staff to meet demand.",
-          image: "/assets/images/case-study/webp/ridgeline-auto-group/image-1.webp",
+          image: "/assets/final-images/case-studies/ridgeline-auto-group/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte worked with Ridgeline Auto Group to unify data across its dealership network and automate key operational processes.",
-          image: "/assets/images/case-study/webp/ridgeline-auto-group/image-2.webp",
+          image: "/assets/final-images/case-studies/ridgeline-auto-group/screen-3.png",
           format: "right",
         },
       ],
@@ -3925,7 +3925,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Summit Steel Works",
       description: "Summit Steel Works operates steel production facilities that convert raw materials into finished products through a multi stage process. Inconsistent yield across production runs was eating into margins and complicating capacity planning.",
-      image: "/assets/images/case-study/webp/summit-steel-works/image-1.webp",
+      image: "/assets/final-images/case-studies/summit-steel-works/hero.png",
       link: "/case-studies/summit-steel-works",
       theme: [55, 45, 35],
     },
@@ -4007,13 +4007,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Summit Steel Works' production process involved dozens of variables, from raw material ",
           description: "Summit Steel Works' production process involved dozens of variables, from raw material composition to furnace temperature and timing, but data on these variables was captured separately at each production stage. This made it difficult to understand which combinations of factors led to higher or lower yield on any given run.",
-          image: "/assets/images/case-study/webp/summit-steel-works/image-1.webp",
+          image: "/assets/final-images/case-studies/summit-steel-works/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte partnered with Summit Steel Works to unify production data and model the factors that drive yield.",
-          image: "/assets/images/case-study/webp/summit-steel-works/image-2.webp",
+          image: "/assets/final-images/case-studies/summit-steel-works/screen-3.png",
           format: "right",
         },
       ],
@@ -4024,7 +4024,7 @@ export const caseStudies: CaseStudy[] = [
     introSection: {
       title: "Vantage Mobility",
       description: "Vantage Mobility manages a large commercial vehicle fleet providing logistics and delivery services across multiple regions. Coordinating vehicle assignments, maintenance windows, and driver schedules manually was becoming a growing operational burden.",
-      image: "/assets/images/case-study/webp/vantage-mobility/image-1.webp",
+      image: "/assets/final-images/case-studies/vantage-mobility/hero.png",
       link: "/case-studies/vantage-mobility",
       theme: [35, 40, 50],
     },
@@ -4106,13 +4106,13 @@ export const caseStudies: CaseStudy[] = [
         {
           heading: "Vantage Mobility's dispatchers manually assigned vehicles and drivers to routes each da",
           description: "Vantage Mobility's dispatchers manually assigned vehicles and drivers to routes each day, juggling maintenance windows, driver availability, and delivery deadlines by hand. As the fleet grew, this manual coordination increasingly resulted in scheduling conflicts, underutilized vehicles, and last minute scrambles when a vehicle needed unplanned maintenance.",
-          image: "/assets/images/case-study/webp/vantage-mobility/image-1.webp",
+          image: "/assets/final-images/case-studies/vantage-mobility/screen-2.png",
           format: "left",
         },
         {
           heading: "Built for measurable impact",
           description: "eForte helped Vantage Mobility automate fleet scheduling around a unified, real time view of its operations.",
-          image: "/assets/images/case-study/webp/vantage-mobility/image-2.webp",
+          image: "/assets/final-images/case-studies/vantage-mobility/screen-3.png",
           format: "right",
         },
       ],

@@ -226,7 +226,7 @@ export const industriesCaseStudies: IndustryCaseStudy[] = [
   },
   {
     slug: "allied-insurance",
-    imageSrc: "/assets/images/case-study/webp/allied-insurance/image-1.webp",
+    imageSrc: "/assets/final-images/case-studies/allied-insurance/hero.png",
     imageAlt: "Allied Insurance claims platform",
     imageWidth: 420,
     pill: "Insurance",

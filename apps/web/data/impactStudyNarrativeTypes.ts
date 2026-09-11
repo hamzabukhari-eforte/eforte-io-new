@@ -8,6 +8,8 @@ export type ImpactStudyNarrative = {
   slug: string;
   name: string;
   headline: string;
+  /** Public product concept URL shown on the case study */
+  productUrl?: string;
   intro: string[];
   pillars: string[];
   deliverables: string[];

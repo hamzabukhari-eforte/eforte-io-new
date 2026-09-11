@@ -174,7 +174,7 @@ export const cloudSreSuccessStories = [
       "Seasonality modeling",
       "Prophet API",
     ],
-    image: "/assets/images/case-study/new-images/prism/prism-main.png",
+    image: "/assets/final-images/case-studies/prism/hero.png",
     imageAlt: "Prism retail trends forecasting platform",
     background: "#48306E",
     href: "/case-studies/prism",
