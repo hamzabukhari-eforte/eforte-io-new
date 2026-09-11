@@ -6,3 +6,6 @@ export { default as FoundationalDataLayerDatabricksServicesSection } from "./Fou
 export { default as FoundationalDataLayerInsightsSection } from "./FoundationalDataLayerInsightsSection";
 export { default as FoundationalDataLayerPillarsSection } from "./FoundationalDataLayerPillarsSection";
 export { default as FoundationalDataLayerCTASection } from "./FoundationalDataLayerCTASection";
+export { default as FoundationalDataLayerInsightHeroSection } from "./FoundationalDataLayerInsightHeroSection";
+export { default as FoundationalDataLayerInsightBodySection } from "./FoundationalDataLayerInsightBodySection";
+export { default as FoundationalDataLayerInsightsListingSection } from "./FoundationalDataLayerInsightsListingSection";
