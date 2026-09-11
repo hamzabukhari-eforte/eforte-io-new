@@ -77,9 +77,12 @@ function Reveal({
 export default function CaseStudyNarrative({ content, theme }: Props) {
   const accent = `rgb(${theme[0]}, ${theme[1]}, ${theme[2]})`;
   const accentSoft = `rgba(${theme[0]}, ${theme[1]}, ${theme[2]}, 0.22)`;
-  const solutionImage =
+  const solutionFallback =
     content.challenge.image.replace("Detail1", "Detail2") ||
     content.challenge.image;
+  const solutionImages = content.solution.images?.length
+    ? content.solution.images
+    : [content.challenge.image, solutionFallback];
 
   return (
     <div className="relative z-10 -mt-6 text-black md:-mt-10">
@@ -346,9 +349,8 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                         <div className="relative h-full w-full">
                           <Image
                             src={
-                              index === 0
-                                ? content.challenge.image
-                                : solutionImage
+                              item.image ??
+                              solutionImages[index % solutionImages.length]
                             }
                             alt=""
                             fill

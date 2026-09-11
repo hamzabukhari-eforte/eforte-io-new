@@ -1,6 +1,7 @@
 export type ImpactStudyNarrativeItem = {
   title: string;
   body: string;
+  image?: string;
 };
 
 export type ImpactStudyNarrative = {
@@ -18,6 +19,7 @@ export type ImpactStudyNarrative = {
   solution: {
     title: string;
     lead: string;
+    images?: string[];
     items: ImpactStudyNarrativeItem[];
   };
   results: {

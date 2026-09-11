@@ -1095,6 +1095,251 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
     },
     closing: "With an AI financial analyst in the workflow, Arclight Capital turned meeting prep from a hours-long bottleneck into a seconds-long brief.",
   },
+  "aurelia-clinics": {
+    slug: "aurelia-clinics",
+    name: "Aurelia Clinics",
+    headline: "A patient-first digital front door across every clinic",
+    intro: [
+      "Aurelia Clinics, a multi-site outpatient network, needed one place for patients to book, message, and read results without bouncing between a dated portal, phone trees, and clinic-specific apps.",
+      "This case study highlights how eForte combined a Foundational Data Layer, accessible product design, and a health CRM so engagement and records sit together for every site.",
+    ],
+    pillars: ["Foundational Data Layer", "Agentic Orchestration", "Velocity AI"],
+    deliverables: [
+      "Patient web and mobile experience",
+      "Health-specific CRM",
+      "Reminders and records in one history",
+      "Accessible, inclusive interface design",
+    ],
+    challenge: {
+      title: "Patients had no single place to manage their care",
+      paragraphs: [
+        "Each clinic ran its own booking flow. Records, reminders, and messages lived in different tools, so patients who were not already tech-savvy dropped off before they arrived.",
+        "Staff could not see a single relationship history, which made follow-up feel like starting over at every visit.",
+      ],
+      image: "/assets/final-images/industries/healthcare/aurelia-challenge.png",
+    },
+    solution: {
+      title: "Built for measurable impact",
+      lead: "eForte rebuilt the digital front door as one accessible experience with a CRM underneath.",
+      images: [
+        "/assets/final-images/industries/healthcare/aurelia-solution-portal.png",
+        "/assets/final-images/industries/healthcare/aurelia-solution-crm.png",
+        "/assets/final-images/industries/healthcare/aurelia-solution-mobile.png",
+      ],
+      items: [
+        { title: "Patient-first interface", body: "Web, mobile, and messaging share one design system so booking, results, and messages feel like the same product." },
+        { title: "Health CRM", body: "Every relationship has one history, so reminders and outreach are based on the patient, not the clinic app they happened to open." },
+        { title: "Accessible by default", body: "Health design thinking went into the flows so the tools work for every patient, not only the tech-savvy ones." },
+      ],
+    },
+    results: {
+      title: "Outcomes that matter",
+      lead: "Patients now have one front door, and clinics share one view of the relationship.",
+      items: [
+        { title: "Fewer dropped bookings", body: "Patients no longer have to learn a new app at each site." },
+        { title: "One relationship history", body: "Staff can follow up without asking patients to repeat information." },
+        { title: "Higher engagement", body: "Reminders and personalized content land in the same place as records." },
+        { title: "Inclusive access", body: "The experience is usable for patients who were previously left on the phone tree." },
+      ],
+    },
+    closing: "Aurelia Clinics turned five digital front doors into one patient experience that still respects how each clinic works.",
+  },
+  "pulselink": {
+    slug: "pulselink",
+    name: "PulseLink",
+    headline: "Consumer health metrics that coaches can actually use",
+    intro: [
+      "PulseLink needed a consumer health app that could sit on Apple Health and Google Fit, then add its own wearable metrics over BLE so patients and coaches could see the same numbers at the same time.",
+      "This case study highlights how eForte built the mobile experience, the device path, and the real-time metrics layer as one connected-health product.",
+    ],
+    pillars: ["Velocity AI", "Foundational Data Layer", "Agentic Orchestration"],
+    deliverables: [
+      "Consumer health mobile app",
+      "Apple Health and Google Fit integrations",
+      "Custom wearable BLE path",
+      "Real-time coaching metrics",
+    ],
+    challenge: {
+      title: "Wearable data never reached the coaching workflow",
+      paragraphs: [
+        "PulseLink’s device streamed well in a lab, but the consumer app could not combine it with Apple Health and Google Fit.",
+        "Coaches still asked patients to self-report, which defeated the point of shipping a connected device.",
+      ],
+      image: "/assets/final-images/industries/healthcare/pulselink-challenge.png",
+    },
+    solution: {
+      title: "Built for measurable impact",
+      lead: "eForte connected the phone, the wearable, and the coaching view on one metrics layer.",
+      images: [
+        "/assets/final-images/industries/healthcare/pulselink-solution-app.png",
+        "/assets/final-images/industries/healthcare/pulselink-solution-integrations.png",
+        "/assets/final-images/industries/healthcare/pulselink-solution-coach.png",
+      ],
+      items: [
+        { title: "Consumer health app", body: "Symptom tracking, coaching, and reminders live on the patient’s phone instead of a separate portal." },
+        { title: "Health ecosystem integrations", body: "Apple Health and Google Fit feed the same dashboard as PulseLink’s own device." },
+        { title: "Custom wearable engineering", body: "BLE metrics arrive in real time so coaches stop relying on self-reported numbers." },
+      ],
+    },
+    results: {
+      title: "Outcomes that matter",
+      lead: "Patients and coaches now look at the same live metrics.",
+      items: [
+        { title: "Live device data in the app", body: "Heart rate, activity, and sleep land in the same view as coaching tasks." },
+        { title: "Less self-reporting", body: "Coaches no longer rebuild the picture from patient memory." },
+        { title: "One metrics layer", body: "Ecosystem health data and PulseLink’s wearable share a single timeline." },
+        { title: "Faster coaching loops", body: "Reminders and check-ins can react to real readings, not a weekly form." },
+      ],
+    },
+    closing: "PulseLink turned a lab-ready wearable into a consumer health product coaches can run a program on.",
+  },
+  "northstar-care": {
+    slug: "northstar-care",
+    name: "Northstar Care",
+    headline: "Virtual visits with the clinical context already in the room",
+    intro: [
+      "Northstar Care needed virtual visits that felt as solid as an in-person appointment, plus remote monitoring that reached the care team before a small issue became an admission.",
+      "This case study highlights how eForte put telehealth, at-home devices, and medication adherence on one clinical workflow.",
+    ],
+    pillars: ["Agentic Orchestration", "Foundational Data Layer", "Velocity AI"],
+    deliverables: [
+      "Telehealth video and audio platform",
+      "Remote patient monitoring feeds",
+      "Medication adherence tools",
+      "Visit-ready clinical sidebar",
+    ],
+    challenge: {
+      title: "Virtual care was a video call with no clinical context",
+      paragraphs: [
+        "Clinicians joined visits without device readings or adherence history sitting next to the call.",
+        "Remote monitors existed, but they did not land in the same place as the consultation, so signals turned into emergencies instead of scheduled outreach.",
+      ],
+      image: "/assets/final-images/industries/healthcare/northstar-challenge.png",
+    },
+    solution: {
+      title: "Built for measurable impact",
+      lead: "eForte built the visit, the device feed, and the medication tracker as one remote-care desk.",
+      images: [
+        "/assets/final-images/industries/healthcare/northstar-solution-visit.png",
+        "/assets/final-images/industries/healthcare/northstar-solution-rpm.png",
+        "/assets/final-images/industries/healthcare/northstar-solution-meds.png",
+      ],
+      items: [
+        { title: "Telehealth that feels in-person", body: "High-quality video and audio sit beside vitals and notes, not in a separate consumer app." },
+        { title: "Remote patient monitoring", body: "At-home devices connect into the same clinical system so teams can act before a reading becomes an admission." },
+        { title: "Medication adherence", body: "Patients and caregivers track prescriptions in the same workflow as the visit." },
+      ],
+    },
+    results: {
+      title: "Outcomes that matter",
+      lead: "Care teams now walk into a virtual visit with the remote picture already loaded.",
+      items: [
+        { title: "Context in the call", body: "Vitals and adherence sit next to the video instead of in another tab." },
+        { title: "Earlier intervention", body: "Remote signals reach the team before they become emergencies." },
+        { title: "Simpler adherence", body: "Medication tracking is part of the visit, not a separate pamphlet." },
+        { title: "One remote-care desk", body: "Devices, visits, and follow-up share a single workflow." },
+      ],
+    },
+    closing: "Northstar Care made virtual care a clinical encounter, not a standalone video call.",
+  },
+  "thornfield-health": {
+    slug: "thornfield-health",
+    name: "Thornfield Health",
+    headline: "Give clinicians the visit back from the notes",
+    intro: [
+      "Thornfield Health Network had clinicians spending nearly a third of every shift on documentation instead of patients. Incoming questions waited in a shared inbox, and care-team updates were typed after the clinic day ended.",
+      "This case study highlights how eForte applied Agentic Orchestration so drafts, triage, and coordination always stop for a clinician before anything touches the record.",
+    ],
+    pillars: ["Agentic Orchestration", "Velocity AI", "Foundational Data Layer"],
+    deliverables: [
+      "Clinical documentation agents",
+      "Patient triage routing",
+      "Care-coordination timeline",
+      "Human review before chart write-back",
+    ],
+    challenge: {
+      title: "Documentation was stealing time from the visit",
+      paragraphs: [
+        "Notes, triage inboxes, and care-team updates were manual. Incoming patient questions sat until someone had time to route them.",
+        "Visit summaries were written after the clinic day ended, which meant the chart lagged the care actually delivered.",
+      ],
+      image: "/assets/final-images/industries/healthcare/thornfield-challenge.png",
+    },
+    solution: {
+      title: "Built for measurable impact",
+      lead: "eForte put agents on documentation, triage, and coordination — with a person on every write to the record.",
+      images: [
+        "/assets/final-images/industries/healthcare/thornfield-solution-notes.png",
+        "/assets/final-images/industries/healthcare/thornfield-solution-triage.png",
+        "/assets/final-images/industries/healthcare/thornfield-solution-coord.png",
+      ],
+      items: [
+        { title: "Documentation agents", body: "Visit summaries are drafted in real time and held for clinician review before they touch the chart." },
+        { title: "Patient triage agents", body: "Incoming questions route to the right team member instead of waiting in a shared inbox." },
+        { title: "Care-coordination agents", body: "Multidisciplinary teams stay aligned on the treatment plan as it changes, without another status meeting." },
+      ],
+    },
+    results: {
+      title: "Outcomes that matter",
+      lead: "Clinicians spend more of the shift with patients, and the chart still has a human on every write.",
+      items: [
+        { title: "Less after-hours documentation", body: "Drafts are ready for review instead of being written from memory at the end of the day." },
+        { title: "Faster triage", body: "Patient requests reach the right person without a manual sort." },
+        { title: "Aligned care teams", body: "The treatment plan is visible as it evolves, not in scattered threads." },
+        { title: "Human gate retained", body: "Nothing is written to the record until a clinician accepts the draft." },
+      ],
+    },
+    closing: "Thornfield Health used agents to take back the visit — and kept a person between every draft and the chart.",
+  },
+  "helix-health-data": {
+    slug: "helix-health-data",
+    name: "Helix Health Data",
+    headline: "One HIPAA-aligned layer for EHR, devices, and insight",
+    intro: [
+      "Helix Health Data needed a governed foundation that could ingest EHR, device, and remote-monitoring feeds without rebuilding the same joins for every report.",
+      "This case study highlights how eForte built the pipelines, the interoperability map, and the analytics so care quality and operations run from the same source of truth.",
+    ],
+    pillars: ["Foundational Data Layer", "Velocity AI", "Agentic Orchestration"],
+    deliverables: [
+      "HIPAA-aligned data architecture",
+      "EHR and device interoperability",
+      "Governed health pipelines",
+      "Care quality and operations analytics",
+    ],
+    challenge: {
+      title: "Clinical and device data could not be trusted together",
+      paragraphs: [
+        "Wearables, remote monitors, and EHR extracts lived in separate stores. Analytics teams rebuilt the same joins by hand.",
+        "Nothing had a lineage story that would survive an audit, so insight and operations never shared one picture.",
+      ],
+      image: "/assets/final-images/industries/healthcare/helix-challenge.png",
+    },
+    solution: {
+      title: "Built for measurable impact",
+      lead: "eForte stood up a Foundational Data Layer that health systems can actually govern.",
+      images: [
+        "/assets/final-images/industries/healthcare/helix-solution-pipeline.png",
+        "/assets/final-images/industries/healthcare/helix-solution-interop.png",
+        "/assets/final-images/industries/healthcare/helix-solution-analytics.png",
+      ],
+      items: [
+        { title: "HIPAA-aligned architecture", body: "Sensitive health data is ingested and stored with encryption, access control, and lineage from the start." },
+        { title: "EHR and device interoperability", body: "Wearables, remote monitors, and medical devices connect directly into the same layer as the record." },
+        { title: "Health data analytics", body: "Care quality and operational insight run from one governed picture instead of spreadsheet overlays." },
+      ],
+    },
+    results: {
+      title: "Outcomes that matter",
+      lead: "Insight and operations now share a source of truth that can be shown in an audit.",
+      items: [
+        { title: "One governed layer", body: "EHR, device, and remote feeds land in the same foundation." },
+        { title: "Lineage that survives an exam", body: "Teams can show where a number came from instead of rebuilding it." },
+        { title: "Faster analytics", body: "Care quality reporting no longer starts with a manual join." },
+        { title: "Safer interoperability", body: "Devices write into a controlled environment, not a side database." },
+      ],
+    },
+    closing: "Helix Health Data made the Foundational Data Layer the product — not a project that analytics has to redo every quarter.",
+  },
 };
 
 export const impactStudySlugs = Object.keys(impactStudyNarratives);

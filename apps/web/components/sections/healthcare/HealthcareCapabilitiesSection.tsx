@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import {
   useCallback,
   useEffect,
@@ -26,6 +27,8 @@ type Capability = {
   label: string;
   icon: IconType;
   heading: string;
+  caseBrand: string;
+  href: string;
   bullets: Bullet[];
   image: string;
 };
@@ -36,6 +39,8 @@ const capabilities: Capability[] = [
     label: "Digital Patient Experience",
     icon: HiOutlineIdentification,
     heading: "Digital Patient Experience",
+    caseBrand: "Aurelia Clinics",
+    href: "/case-studies/aurelia-clinics",
     bullets: [
       {
         title: "Patient-first interface design",
@@ -54,13 +59,18 @@ const capabilities: Capability[] = [
         text: "Apply health design thinking so digital tools work for every patient, not just the tech-savvy ones.",
       },
     ],
-    image: "/assets/images/case-study/krank-banner.png",
+    image:
+      "/assets/final-images/industries/healthcare/health-case-patient-experience.png",
+    // Previous unrelated visual preserved for possible reuse:
+    // image: "/assets/images/case-study/krank-banner.png",
   },
   {
     id: "mhealth",
     label: "mHealth & Connected Devices",
     icon: HiOutlineDeviceMobile,
     heading: "mHealth & Connected Devices",
+    caseBrand: "PulseLink",
+    href: "/case-studies/pulselink",
     bullets: [
       {
         title: "Consumer health apps",
@@ -75,13 +85,16 @@ const capabilities: Capability[] = [
         text: "Design connected devices over BLE, WiFi, or NFC that deliver meaningful, real time health metrics.",
       },
     ],
-    image: "/assets/images/case-study/oddysee-banner.png",
+    image: "/assets/final-images/industries/healthcare/health-case-mhealth.png",
+    // image: "/assets/images/case-study/oddysee-banner.png",
   },
   {
     id: "virtual-care",
     label: "Virtual Care & Remote Monitoring",
     icon: HiOutlineVideoCamera,
     heading: "Virtual Care & Remote Monitoring",
+    caseBrand: "Northstar Care",
+    href: "/case-studies/northstar-care",
     bullets: [
       {
         title: "Telehealth platforms",
@@ -96,13 +109,17 @@ const capabilities: Capability[] = [
         text: "Help patients and caregivers track and manage prescriptions accurately.",
       },
     ],
-    image: "/assets/images/case-study/invesment-banner.png",
+    image:
+      "/assets/final-images/industries/healthcare/health-case-virtual-care.png",
+    // image: "/assets/images/case-study/invesment-banner.png",
   },
   {
     id: "agentic-care",
     label: "Agentic Orchestration",
     icon: HiOutlineChartSquareBar,
     heading: "Agentic Orchestration for Care Teams",
+    caseBrand: "Thornfield Health",
+    href: "/case-studies/thornfield-health",
     bullets: [
       {
         title: "Clinical documentation agents",
@@ -117,13 +134,16 @@ const capabilities: Capability[] = [
         text: "Keep multidisciplinary care teams aligned on a patient's evolving treatment plan.",
       },
     ],
-    image: "/assets/images/case-study/prism-banner.png",
+    image: "/assets/final-images/industries/healthcare/health-case-agentic.png",
+    // image: "/assets/images/case-study/prism-banner.png",
   },
   {
     id: "foundational-data",
     label: "Foundational Data Layer",
     icon: HiOutlineViewGridAdd,
     heading: "Foundational Data Layer for Health Systems",
+    caseBrand: "Helix Health Data",
+    href: "/case-studies/helix-health-data",
     bullets: [
       {
         title: "HIPAA aligned data architecture",
@@ -138,7 +158,9 @@ const capabilities: Capability[] = [
         text: "Turn clinical and operational data into insight that improves both care quality and efficiency.",
       },
     ],
-    image: "/assets/images/case-study/sellsMart4.png",
+    image:
+      "/assets/final-images/industries/healthcare/health-case-data-layer.png",
+    // image: "/assets/images/case-study/sellsMart4.png",
   },
 ];
 
@@ -241,7 +263,7 @@ export default function HealthcareCapabilitiesSection() {
         <Container className="w-full">
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-14">
             <div className="flex flex-col justify-center">
-              <div className="relative min-h-[280px] md:min-h-[320px]">
+              <div className="relative min-h-[340px] md:min-h-[400px]">
                 <AnimatePresence mode="sync" initial={false}>
                   <motion.div
                     key={capability.id}
@@ -260,6 +282,9 @@ export default function HealthcareCapabilitiesSection() {
                     <h3 className="max-w-md text-3xl font-semibold leading-tight text-[#011C57] md:text-4xl">
                       {capability.heading}
                     </h3>
+                    <p className="mt-2 text-sm font-medium text-primary-pink">
+                      Case study · {capability.caseBrand}
+                    </p>
                     <ul className="mt-7 space-y-5">
                       {capability.bullets.map((bullet, i) => (
                         <motion.li
@@ -283,6 +308,12 @@ export default function HealthcareCapabilitiesSection() {
                         </motion.li>
                       ))}
                     </ul>
+                    <Link
+                      href={capability.href}
+                      className="mt-7 inline-flex h-10 items-center justify-center rounded-full bg-[#011C57] px-6 text-sm font-medium text-white transition-colors hover:bg-[#011C57]/90"
+                    >
+                      Learn more
+                    </Link>
                   </motion.div>
                 </AnimatePresence>
               </div>

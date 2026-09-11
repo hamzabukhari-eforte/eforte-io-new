@@ -1,4 +1,5 @@
 import { financialServicesCaseStudies } from "./industries/financialServicesCaseStudies";
+import { healthcareCaseStudies } from "./industries/healthcareCaseStudies";
 
 export type TechItem = {
   name: string;
@@ -4118,4 +4119,5 @@ export const caseStudies: CaseStudy[] = [
     },
   },
   ...financialServicesCaseStudies,
+  ...healthcareCaseStudies,
 ];
