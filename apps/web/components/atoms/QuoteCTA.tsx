@@ -15,6 +15,7 @@ export default function QuoteCTA({
   className,
   onOpen,
   type = "button",
+  onClick,
   ...props
 }: QuoteCTAProps) {
   const { openQuoteModal } = useQuoteModal();
@@ -24,7 +25,7 @@ export default function QuoteCTA({
       type={type}
       className={cn("cursor-pointer", className)}
       onClick={(event) => {
-        props.onClick?.(event);
+        onClick?.(event);
         if (event.defaultPrevented) return;
         onOpen?.();
         openQuoteModal();

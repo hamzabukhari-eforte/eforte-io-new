@@ -15,6 +15,7 @@ export default function ContactCTA({
   className,
   onOpen,
   type = "button",
+  onClick,
   ...props
 }: ContactCTAProps) {
   const { openContactModal } = useContactModal();
@@ -24,7 +25,7 @@ export default function ContactCTA({
       type={type}
       className={cn("cursor-pointer", className)}
       onClick={(event) => {
-        props.onClick?.(event);
+        onClick?.(event);
         if (event.defaultPrevented) return;
         onOpen?.();
         openContactModal();
