@@ -13,7 +13,7 @@ export default function HealthcareSuccessStoriesSection() {
     <div className="relative -mt-8 bg-default md:-mt-10">
       <StudioSuccessStoriesSection
         stories={healthcareShowcase}
-        className="rounded-[12px] bg-white py-20 md:py-28"
+        className="rounded-[12px] bg-white pt-10 pb-16 md:pt-12 md:pb-20"
       />
     </div>
   );

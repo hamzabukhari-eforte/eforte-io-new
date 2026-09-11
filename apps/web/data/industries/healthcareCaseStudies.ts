@@ -93,7 +93,7 @@ export const healthcareCaseStudies: CaseStudy[] = [
       title: "Aurelia Clinics",
       description:
         "Aurelia Clinics, a multi-site outpatient network, needed a patient-first digital front door. Patients were bouncing between a dated portal, phone trees, and clinic-specific apps just to book a visit or read a result. eForte rebuilt the experience across web, mobile, and messaging, with a health CRM underneath so every relationship had one history.",
-      image: `${IMAGE_BASE}/health-case-patient-experience.png`,
+      image: `${IMAGE_BASE}/aurelia-clinics-intro.png`,
       link: "/case-studies/aurelia-clinics",
       theme: THEME,
     },
@@ -125,7 +125,7 @@ export const healthcareCaseStudies: CaseStudy[] = [
       title: "PulseLink",
       description:
         "PulseLink needed a consumer health app that could sit on Apple Health and Google Fit, then add its own wearable metrics over BLE. eForte built the mobile experience, the device firmware path, and the real-time metrics layer so patients and coaches could see the same numbers at the same time.",
-      image: `${IMAGE_BASE}/health-case-mhealth.png`,
+      image: `${IMAGE_BASE}/pulselink-intro.png`,
       link: "/case-studies/pulselink",
       theme: THEME,
     },
@@ -157,7 +157,7 @@ export const healthcareCaseStudies: CaseStudy[] = [
       title: "Northstar Care",
       description:
         "Northstar Care needed virtual visits that felt as solid as an in-person appointment, plus remote monitoring that reached the care team before a small issue became an admission. eForte built the telehealth layer, connected at-home devices, and medication-adherence tools on one clinical workflow.",
-      image: `${IMAGE_BASE}/health-case-virtual-care.png`,
+      image: `${IMAGE_BASE}/northstar-intro.png`,
       link: "/case-studies/northstar-care",
       theme: THEME,
     },
@@ -189,7 +189,7 @@ export const healthcareCaseStudies: CaseStudy[] = [
       title: "Thornfield Health",
       description:
         "Thornfield Health Network had clinicians spending nearly a third of every shift on documentation instead of patients. eForte built agentic orchestration for care teams: documentation drafts, patient triage, and care-coordination that always stop for a clinician before anything touches the record.",
-      image: `${IMAGE_BASE}/health-case-agentic.png`,
+      image: `${IMAGE_BASE}/thornfield-intro.png`,
       link: "/case-studies/thornfield-health",
       theme: THEME,
     },
@@ -221,7 +221,7 @@ export const healthcareCaseStudies: CaseStudy[] = [
       title: "Helix Health Data",
       description:
         "Helix Health Data needed a HIPAA-aligned foundation that could ingest EHR, device, and remote-monitoring feeds into one governed layer. eForte built the pipelines, the interoperability map, and the analytics so care quality and operations run from the same source of truth.",
-      image: `${IMAGE_BASE}/health-case-data-layer.png`,
+      image: `${IMAGE_BASE}/helix-intro-v2.png`,
       link: "/case-studies/helix-health-data",
       theme: THEME,
     },

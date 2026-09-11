@@ -53,11 +53,9 @@ function FlowEllipse({
   title,
   subtitle,
   tone,
-  connector,
-}: (typeof flowEllipses)[number]) {
+}: Omit<(typeof flowEllipses)[number], "connector">) {
   return (
     <div
-      data-connector={connector}
       className={cn(
         diagram.ellipse,
         tone === "client" && diagram.client,
@@ -142,6 +140,7 @@ const coreCards = [
 
 export default function AgenticOrchestrationPlatformSection() {
   const ref = useRef(null);
+  const diagramRef = useRef<HTMLDivElement>(null);
   const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
   return (
@@ -183,52 +182,74 @@ export default function AgenticOrchestrationPlatformSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
         >
-          <div className="relative flex w-full flex-col items-start justify-center gap-10 lg:flex-row lg:gap-0">
+          <div
+            ref={diagramRef}
+            className="relative flex w-full flex-col items-start justify-center gap-10 lg:flex-row lg:gap-0"
+          >
             <div className="flex w-full shrink-0 items-stretch lg:w-auto">
-              <div className="flex w-full flex-col items-center pt-2 lg:w-[420px] lg:max-w-[420px]">
+              <div
+                data-connector="ellipse-column"
+                className="flex w-full flex-col items-center lg:relative lg:w-[340px] lg:max-w-[340px]"
+              >
                 {flowEllipses.map((ellipse, i) => (
-                  <div key={ellipse.title} className="flex w-full flex-col items-center">
-                    <FlowEllipse {...ellipse} />
-                    {i < flowEllipses.length - 1 && <FlowArrow />}
+                  <div
+                    key={ellipse.title}
+                    data-connector={ellipse.connector}
+                    className="flex w-full flex-col items-center lg:w-auto"
+                  >
+                    <FlowEllipse
+                      title={ellipse.title}
+                      subtitle={ellipse.subtitle}
+                      tone={ellipse.tone}
+                    />
+                    {i < flowEllipses.length - 1 && (
+                      <div className="lg:hidden">
+                        <FlowArrow />
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
-              <AgenticPlatformConnectors />
             </div>
 
-            {/* Right: platform module cards */}
-            <div className="flex w-full min-w-0 flex-1 flex-col gap-4">
-            <div data-connector="row-apps" className="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
-              <PlatformCard tone="app" icon={<HiOutlineDevicePhoneMobile />} title="Modern App" subtitle="Next-gen digital experiences" />
-              <PlatformCard tone="app" icon={<HiOutlineServerStack />} title="Legacy App & Platforms" subtitle="Integrate, modernize, extend" />
+            {/* Right: 5 rows with equal spacing; oval links use each row's vertical center */}
+            <div
+              data-connector="cards-column"
+              className="flex w-full min-w-0 flex-1 flex-col gap-3 lg:pl-10"
+            >
+              <div data-connector="row-apps" className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+                <PlatformCard tone="app" icon={<HiOutlineDevicePhoneMobile />} title="Modern App" subtitle="Next-gen digital experiences" />
+                <PlatformCard tone="app" icon={<HiOutlineServerStack />} title="Legacy App & Platforms" subtitle="Integrate, modernize, extend" />
+              </div>
+
+              <div data-connector="row-agents-3" className="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
+                <PlatformCard compact icon={<FaRobot />} title="Finance Agent" />
+                <PlatformCard compact icon={<HiOutlineIdentification />} title="KYC Agent" />
+                <PlatformCard compact icon={<HiOutlineShieldExclamation />} title="Risk Financial Agent" />
+              </div>
+
+              <div data-connector="row-agents-4" className="grid grid-cols-2 gap-2.5 lg:grid-cols-4">
+                <PlatformCard compact icon={<HiOutlineDocumentMagnifyingGlass />} title="Context Retriever Agent" />
+                <PlatformCard compact icon={<HiOutlineCircleStack />} title="SQL Analyst Agent" />
+                <PlatformCard compact icon={<HiOutlineChatBubbleLeftRight />} title="User Intention Classifier Agent" />
+                <PlatformCard compact icon={<HiOutlineLightBulb />} title="Chain of Thought" />
+              </div>
+
+              <div data-connector="row-orchestrator" className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+                <PlatformCard icon={<HiOutlineCpuChip />} title="Multi-Agent Orchestrator" />
+                <PlatformCard icon={<HiOutlineShieldCheck />} title="Guardrails" />
+              </div>
+
+              <div data-connector="row-infra" className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-5">
+                <PlatformCard compact tone="infra" icon={<HiOutlineCog6Tooth />} title="Orchestration" />
+                <PlatformCard compact tone="infra" icon={<HiOutlineLockClosed />} title="Security & Governance" />
+                <PlatformCard compact tone="infra" icon={<HiOutlineChartBar />} title="Monitoring" />
+                <PlatformCard compact tone="infra" icon={<HiOutlineCloudArrowUp />} title="Deployment" />
+                <PlatformCard compact tone="infra" icon={<HiOutlineArrowsPointingOut />} title="Scalability" />
+              </div>
             </div>
 
-            <div data-connector="row-agents-3" className="grid grid-cols-1 gap-3.5 sm:grid-cols-3">
-              <PlatformCard compact icon={<FaRobot />} title="Finance Agent" />
-              <PlatformCard compact icon={<HiOutlineIdentification />} title="KYC Agent" />
-              <PlatformCard compact icon={<HiOutlineShieldExclamation />} title="Risk Financial Agent" />
-            </div>
-
-            <div data-connector="row-agents-4" className="grid grid-cols-2 gap-3.5 lg:grid-cols-4">
-              <PlatformCard compact icon={<HiOutlineDocumentMagnifyingGlass />} title="Context Retriever Agent" />
-              <PlatformCard compact icon={<HiOutlineCircleStack />} title="SQL Analyst Agent" />
-              <PlatformCard compact icon={<HiOutlineChatBubbleLeftRight />} title="User Intention Classifier Agent" />
-              <PlatformCard compact icon={<HiOutlineLightBulb />} title="Chain of Thought" />
-            </div>
-
-            <div data-connector="row-orchestrator" className="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
-              <PlatformCard icon={<HiOutlineCpuChip />} title="Multi-Agent Orchestrator" />
-              <PlatformCard icon={<HiOutlineShieldCheck />} title="Guardrails" />
-            </div>
-
-            <div data-connector="row-infra" className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 lg:grid-cols-5">
-              <PlatformCard compact tone="infra" icon={<HiOutlineCog6Tooth />} title="Orchestration" />
-              <PlatformCard compact tone="infra" icon={<HiOutlineLockClosed />} title="Security & Governance" />
-              <PlatformCard compact tone="infra" icon={<HiOutlineChartBar />} title="Monitoring" />
-              <PlatformCard compact tone="infra" icon={<HiOutlineCloudArrowUp />} title="Deployment" />
-              <PlatformCard compact tone="infra" icon={<HiOutlineArrowsPointingOut />} title="Scalability" />
-            </div>
-            </div>
+            <AgenticPlatformConnectors containerRef={diagramRef} />
           </div>
         </motion.div>
       </div>

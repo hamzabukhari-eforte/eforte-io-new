@@ -60,9 +60,10 @@ const capabilities: Capability[] = [
       },
     ],
     image:
-      "/assets/final-images/industries/healthcare/health-case-patient-experience.png",
+      "/assets/final-images/industries/healthcare/aurelia-clinics-intro.png",
     // Previous unrelated visual preserved for possible reuse:
     // image: "/assets/images/case-study/krank-banner.png",
+    // image: "/assets/final-images/industries/healthcare/health-case-patient-experience.png",
   },
   {
     id: "mhealth",
@@ -85,7 +86,11 @@ const capabilities: Capability[] = [
         text: "Design connected devices over BLE, WiFi, or NFC that deliver meaningful, real time health metrics.",
       },
     ],
-    image: "/assets/final-images/industries/healthcare/health-case-mhealth.png",
+    image: "/assets/final-images/industries/healthcare/pulselink-mhealth-clear.png",
+    // image: "/assets/final-images/industries/healthcare/pulselink-mhealth-tab.png",
+    // image: "/assets/final-images/industries/healthcare/pulselink-intro-v2.png",
+    // image: "/assets/final-images/industries/healthcare/pulselink-intro.png",
+    // image: "/assets/final-images/industries/healthcare/health-case-mhealth.png",
     // image: "/assets/images/case-study/oddysee-banner.png",
   },
   {
@@ -110,7 +115,8 @@ const capabilities: Capability[] = [
       },
     ],
     image:
-      "/assets/final-images/industries/healthcare/health-case-virtual-care.png",
+      "/assets/final-images/industries/healthcare/northstar-intro.png",
+    // image: "/assets/final-images/industries/healthcare/health-case-virtual-care.png",
     // image: "/assets/images/case-study/invesment-banner.png",
   },
   {
@@ -134,7 +140,8 @@ const capabilities: Capability[] = [
         text: "Keep multidisciplinary care teams aligned on a patient's evolving treatment plan.",
       },
     ],
-    image: "/assets/final-images/industries/healthcare/health-case-agentic.png",
+    image: "/assets/final-images/industries/healthcare/thornfield-intro.png",
+    // image: "/assets/final-images/industries/healthcare/health-case-agentic.png",
     // image: "/assets/images/case-study/prism-banner.png",
   },
   {
@@ -158,8 +165,9 @@ const capabilities: Capability[] = [
         text: "Turn clinical and operational data into insight that improves both care quality and efficiency.",
       },
     ],
-    image:
-      "/assets/final-images/industries/healthcare/health-case-data-layer.png",
+    image: "/assets/final-images/industries/healthcare/helix-intro-v2.png",
+    // image: "/assets/final-images/industries/healthcare/helix-intro.png",
+    // image: "/assets/final-images/industries/healthcare/health-case-data-layer.png",
     // image: "/assets/images/case-study/sellsMart4.png",
   },
 ];
