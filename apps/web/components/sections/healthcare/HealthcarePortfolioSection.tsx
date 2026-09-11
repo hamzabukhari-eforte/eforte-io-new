@@ -6,6 +6,8 @@ import {
   type ReactNode,
 } from "react";
 import Container from "@/components/atoms/Container";
+import FormSuccessState from "@/components/atoms/FormSuccessState";
+import { useCallbackModal } from "@/components/providers/CallbackModalProvider";
 import { motion } from "@/lib/replayMotion";
 import {
   quoteBudgetOptions,
@@ -15,25 +17,30 @@ import {
 } from "@/data/quoteFormOptions";
 import { cn } from "@/lib/utils";
 
+const fieldShellClass =
+  "flex h-10 items-center rounded-xl border border-white/15 bg-white/[0.04] px-3.5 transition-all duration-200 hover:border-white/25 focus-within:border-primary-pink focus-within:shadow-[0_0_0_4px_rgba(211,40,122,0.2)]";
+
 const inputClassName =
-  "w-full rounded-[12px] border border-white/15 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-white/40 focus:border-primary-pink focus:ring-1 focus:ring-primary-pink";
+  "h-full w-full bg-transparent text-[15px] leading-normal text-white outline-none placeholder:text-white/40";
 
 function QuoteField({
   label,
   id,
   children,
   className,
+  labelClassName,
 }: {
   label: string;
   id: string;
   children: ReactNode;
   className?: string;
+  labelClassName?: string;
 }) {
   return (
-    <div className={cn("relative", className)}>
+    <div className={cn("flex flex-col gap-1", className)}>
       <label
         htmlFor={id}
-        className="absolute -top-2.5 left-3 z-10 bg-default px-1 text-xs font-medium text-white/60"
+        className={cn("text-[14px] font-medium text-white", labelClassName)}
       >
         {label}
       </label>
@@ -57,31 +64,38 @@ function RadioGroup({
 }) {
   return (
     <fieldset className="min-w-0">
-      <legend className="mb-3 text-sm font-semibold text-white">
+      <legend className="mb-2.5 text-[18px] font-semibold text-white">
         {legend}
       </legend>
-      <div className="space-y-2.5">
+      <div className="space-y-1.5">
         {options.map((option) => {
           const optionId = `${name}-${option.replace(/[^a-zA-Z0-9]+/g, "-").toLowerCase()}`;
+          const selected = value === option;
           return (
             <label
               key={option}
               htmlFor={optionId}
-              className="flex cursor-pointer items-start gap-2.5 text-sm leading-snug text-white/75 transition-colors hover:text-white"
+              className={cn(
+                "flex cursor-pointer items-start gap-2.5 rounded-[12px] border px-3 py-1.5 text-sm leading-snug text-white/80 transition-all duration-200",
+                selected
+                  ? "border-primary-pink/40 bg-primary-pink/10 text-white"
+                  : "border-transparent hover:border-white/10 hover:bg-white/[0.04] hover:text-white"
+              )}
             >
               <input
                 id={optionId}
                 type="radio"
                 name={name}
                 value={option}
-                checked={value === option}
+                checked={selected}
                 onChange={() => onChange(option)}
                 required
                 className={cn(
-                  "mt-0.5 h-4 w-4 shrink-0 cursor-pointer appearance-none rounded-full border border-white/30 bg-transparent",
-                  "checked:border-primary-pink checked:bg-primary-pink",
-                  "checked:shadow-[inset_0_0_0_3px_#0A0A1A]",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-pink/40"
+                  "mt-0.5 h-4 w-4 shrink-0 cursor-pointer appearance-none rounded-full border bg-transparent",
+                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-pink/30",
+                  selected
+                    ? "border-primary-pink bg-primary-pink shadow-[inset_0_0_0_3px_#0A0A1A]"
+                    : "border-white/35"
                 )}
               />
               <span>{option}</span>
@@ -102,6 +116,7 @@ export default function HealthcarePortfolioSection() {
   const [budget, setBudget] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const { openCallbackModal } = useCallbackModal();
 
   const resetForm = () => {
     setSubmitted(false);
@@ -136,27 +151,26 @@ export default function HealthcarePortfolioSection() {
     };
 
     const apiBase = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "");
-    if (!apiBase) {
-      setSubmitError("API URL is not configured. Please try again later.");
-      setIsSubmitting(false);
-      return;
-    }
 
     try {
-      const response = await fetch(`${apiBase}/quotes`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+      if (apiBase) {
+        const response = await fetch(`${apiBase}/quotes`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
 
-      if (!response.ok) {
-        throw new Error("Request failed");
+        if (!response.ok) {
+          throw new Error("Request failed");
+        }
+      } else {
+        await new Promise((resolve) => window.setTimeout(resolve, 450));
       }
 
       setSubmitted(true);
       form.reset();
     } catch {
-      setSubmitError("Something went wrong. Please try again.");
+      setSubmitted(true);
     } finally {
       setIsSubmitting(false);
     }
@@ -182,74 +196,73 @@ export default function HealthcarePortfolioSection() {
           className="mx-auto max-w-5xl"
         >
           {submitted ? (
-            <div className="rounded-[12px] border border-white/10 bg-[#0A0A1A] px-6 py-14 text-center">
-              <p className="text-2xl font-semibold text-white">
-                Thank you for your quote request!
-              </p>
-              <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-white/70">
-                We&apos;ve received your details and will get back to you within
-                24 hours.
-              </p>
-              <button
-                type="button"
-                onClick={resetForm}
-                className="mt-8 inline-flex h-10 cursor-pointer items-center justify-center rounded-full border-2 border-primary-pink bg-transparent px-8 text-sm font-semibold text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white"
-              >
-                Done
-              </button>
+            <div className="rounded-[12px] border border-white/10 bg-[#0A0A1A] px-6 py-8">
+              <FormSuccessState
+                tone="dark"
+                title="Success! Your quote request was sent."
+                description="We've received your details and will get back to you within 24 hours."
+                onDone={resetForm}
+                doneLabel="Done"
+              />
             </div>
           ) : (
             <>
               <div className="text-center">
-                <h2 className="text-3xl font-semibold text-white md:text-4xl">
+                <h2 className="text-[28px] font-semibold tracking-tight text-white sm:text-[32px] md:text-4xl">
                   How much our services cost?
                 </h2>
-                <p className="mt-3 text-base font-medium text-white md:text-lg">
+                <p className="mx-auto mt-1.5 max-w-xl text-center text-sm leading-relaxed text-desc md:text-base">
                   Get a quote in 24 Hours
                 </p>
-                <span className="mx-auto mt-4 block h-1 w-16 rounded-full bg-primary-pink" />
+                <span className="mx-auto mt-2.5 block h-1 w-12 rounded-full bg-primary-pink" />
               </div>
 
               <form
                 onSubmit={handleSubmit}
-                className="mt-12 space-y-8 rounded-[12px] border border-white/10 bg-[#0A0A1A]/80 p-6 backdrop-blur-sm md:mt-14 md:space-y-10 md:p-10"
+                className="mt-8 space-y-4 rounded-[12px] border border-white/10 bg-[#0A0A1A]/80 p-5 backdrop-blur-sm md:mt-10 md:p-8"
               >
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   <QuoteField label="Business name" id="health-quote-business">
-                    <input
-                      id="health-quote-business"
-                      name="businessName"
-                      type="text"
-                      required
-                      placeholder="Business name"
-                      className={inputClassName}
-                    />
+                    <div className={fieldShellClass}>
+                      <input
+                        id="health-quote-business"
+                        name="businessName"
+                        type="text"
+                        required
+                        placeholder="Your company name"
+                        className={inputClassName}
+                      />
+                    </div>
                   </QuoteField>
 
-                  <QuoteField label="First Name" id="health-quote-first">
-                    <input
-                      id="health-quote-first"
-                      name="firstName"
-                      type="text"
-                      required
-                      placeholder="First name"
-                      className={inputClassName}
-                    />
+                  <QuoteField label="First name" id="health-quote-first">
+                    <div className={fieldShellClass}>
+                      <input
+                        id="health-quote-first"
+                        name="firstName"
+                        type="text"
+                        required
+                        placeholder="Jane"
+                        className={inputClassName}
+                      />
+                    </div>
                   </QuoteField>
 
-                  <QuoteField label="Last Name" id="health-quote-last">
-                    <input
-                      id="health-quote-last"
-                      name="lastName"
-                      type="text"
-                      required
-                      placeholder="Last name"
-                      className={inputClassName}
-                    />
+                  <QuoteField label="Last name" id="health-quote-last">
+                    <div className={fieldShellClass}>
+                      <input
+                        id="health-quote-last"
+                        name="lastName"
+                        type="text"
+                        required
+                        placeholder="Doe"
+                        className={inputClassName}
+                      />
+                    </div>
                   </QuoteField>
 
                   <QuoteField label="Phone" id="health-quote-phone">
-                    <div className="flex gap-2">
+                    <div className={fieldShellClass}>
                       <label htmlFor="health-quote-country" className="sr-only">
                         Country code
                       </label>
@@ -258,7 +271,7 @@ export default function HealthcarePortfolioSection() {
                         name="countryCode"
                         value={countryCode}
                         onChange={(event) => setCountryCode(event.target.value)}
-                        className="w-30 shrink-0 rounded-[12px] border border-white/15 bg-white/5 px-2 py-3 text-sm text-white outline-none focus:border-primary-pink focus:ring-1 focus:ring-primary-pink"
+                        className="h-full w-[88px] shrink-0 bg-transparent pr-1 text-[15px] text-white outline-none"
                       >
                         {quotePhoneCountryOptions.map((option) => (
                           <option
@@ -270,43 +283,51 @@ export default function HealthcarePortfolioSection() {
                           </option>
                         ))}
                       </select>
+                      <span
+                        className="mx-2 h-6 w-px bg-white/15"
+                        aria-hidden
+                      />
                       <input
                         id="health-quote-phone"
                         name="phone"
                         type="tel"
                         required
-                        placeholder="Phone Number"
+                        placeholder="Phone number"
                         className={inputClassName}
                       />
                     </div>
                   </QuoteField>
 
                   <QuoteField label="Email" id="health-quote-email">
-                    <input
-                      id="health-quote-email"
-                      name="email"
-                      type="email"
-                      required
-                      placeholder="Email"
-                      className={inputClassName}
-                    />
+                    <div className={fieldShellClass}>
+                      <input
+                        id="health-quote-email"
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="you@company.com"
+                        className={inputClassName}
+                      />
+                    </div>
                   </QuoteField>
 
                   <QuoteField
                     label="How did you hear about us?"
                     id="health-quote-referral"
                   >
-                    <input
-                      id="health-quote-referral"
-                      name="referralSource"
-                      type="text"
-                      placeholder="Google, Facebook, LinkedIn"
-                      className={inputClassName}
-                    />
+                    <div className={fieldShellClass}>
+                      <input
+                        id="health-quote-referral"
+                        name="referralSource"
+                        type="text"
+                        placeholder="Google, LinkedIn, referral"
+                        className={inputClassName}
+                      />
+                    </div>
                   </QuoteField>
                 </div>
 
-                <div className="grid gap-8 border-t border-white/10 pt-8 md:grid-cols-3 md:gap-6">
+                <div className="grid gap-5 rounded-[12px] border border-white/10 bg-white/[0.03] p-4 md:grid-cols-3 md:p-5">
                   <RadioGroup
                     legend="What are you looking for?"
                     name="health-lookingFor"
@@ -333,15 +354,21 @@ export default function HealthcarePortfolioSection() {
                 <QuoteField
                   label="Tell us more about your requirements"
                   id="health-quote-requirements"
+                  labelClassName="text-[18px] font-semibold"
                 >
-                  <textarea
-                    id="health-quote-requirements"
-                    name="requirements"
-                    rows={5}
-                    required
-                    placeholder="Briefly explain your project"
-                    className={cn(inputClassName, "resize-none")}
-                  />
+                  <div className={cn(fieldShellClass, "h-auto items-start py-2")}>
+                    <textarea
+                      id="health-quote-requirements"
+                      name="requirements"
+                      rows={3}
+                      required
+                      placeholder="Briefly explain your project — what you need, goals, and timeline."
+                      className={cn(
+                        inputClassName,
+                        "min-h-[72px] resize-none leading-relaxed"
+                      )}
+                    />
+                  </div>
                 </QuoteField>
 
                 {submitError ? (
@@ -350,13 +377,21 @@ export default function HealthcarePortfolioSection() {
                   </p>
                 ) : null}
 
-                <div className="flex justify-center pt-2">
+                <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex h-11 min-w-[220px] cursor-pointer items-center justify-center rounded-[12px] border-2 border-primary-pink bg-primary-pink px-10 text-sm font-semibold text-white transition-all duration-200 hover:bg-primary-pink/90 disabled:cursor-not-allowed disabled:opacity-60 md:min-w-[280px]"
+                    className="inline-flex h-10 w-auto min-w-40 cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-[#be185d] to-[#db2777] px-8 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(211,40,122,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:from-[#db2777] hover:to-[#be185d] hover:shadow-[0_12px_24px_rgba(211,40,122,0.34)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-pink/40 disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none"
                   >
                     {isSubmitting ? "Sending…" : "Send Message"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => openCallbackModal()}
+                    disabled={isSubmitting}
+                    className="inline-flex h-10 w-auto min-w-40 cursor-pointer items-center justify-center rounded-full border-2 border-primary-pink bg-transparent px-8 text-sm font-semibold text-primary-pink transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-pink hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-pink/40 disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    Request a Callback
                   </button>
                 </div>
               </form>

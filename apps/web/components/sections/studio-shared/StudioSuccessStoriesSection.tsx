@@ -57,6 +57,7 @@ function SuccessStoryCard({ story }: { story: StudioSuccessStoryItem }) {
       <div className="flex min-h-[220px] w-full items-center justify-center lg:min-h-0">
         <div className="relative w-full overflow-hidden lg:min-h-full">
           <Image
+            key={story.image}
             src={story.image}
             alt={story.imageAlt}
             fill
