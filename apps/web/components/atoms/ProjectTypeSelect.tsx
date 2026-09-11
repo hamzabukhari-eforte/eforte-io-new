@@ -7,7 +7,7 @@ import { projectTypeOptions } from "@/data/contactFormOptions";
 import { cn } from "@/lib/utils";
 
 const triggerClassName =
-  "w-full rounded-[12px] border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition-colors focus:border-primary-pink focus:ring-1 focus:ring-primary-pink";
+  "flex h-10 w-full cursor-pointer items-center justify-between gap-2 rounded-xl border border-[#E5E7EB] bg-white px-3.5 text-left text-[15px] text-black outline-none transition-all duration-200 hover:border-[#C7CBD4] focus:border-primary-pink focus:shadow-[0_0_0_4px_rgba(211,40,122,0.16)]";
 
 interface ProjectTypeSelectProps {
   id: string;
@@ -68,14 +68,10 @@ export default function ProjectTypeSelect({
         aria-haspopup="listbox"
         aria-expanded={open}
         onClick={() => setOpen((current) => !current)}
-        className={cn(
-          triggerClassName,
-          "flex cursor-pointer items-center justify-between gap-2 pr-3 text-left",
-          !value && "text-gray-400"
-        )}
+        className={cn(triggerClassName, !value && "text-[#9CA3AF]")}
       >
         <span className="truncate">{value || "Select project type"}</span>
-        <span className="flex h-5 w-5 shrink-0 items-center justify-center text-gray-500">
+        <span className="flex h-5 w-5 shrink-0 items-center justify-center text-[#6B7280]">
           {open ? (
             <HiChevronUp className="h-4 w-4" aria-hidden />
           ) : (
@@ -103,7 +99,7 @@ export default function ProjectTypeSelect({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.15, ease: "easeOut" }}
-            className="absolute left-0 right-0 top-[calc(100%+6px)] z-50 max-h-56 overflow-y-auto overscroll-contain rounded-[12px] border border-gray-200 bg-white py-1.5 shadow-[0_12px_40px_rgba(0,0,0,0.12)]"
+            className="absolute left-0 right-0 top-[calc(100%+6px)] z-50 max-h-56 overflow-y-auto overscroll-contain rounded-xl border border-[#E5E7EB] bg-white py-1.5 shadow-[0_12px_40px_rgba(0,0,0,0.12)]"
           >
             {projectTypeOptions.map((option) => {
               const isSelected = value === option;
@@ -116,7 +112,7 @@ export default function ProjectTypeSelect({
                       setOpen(false);
                     }}
                     className={cn(
-                      "w-full cursor-pointer px-4 py-2.5 text-left text-sm text-gray-700 transition-colors hover:bg-primary-pink/8 hover:text-primary-pink",
+                      "w-full cursor-pointer px-3.5 py-2 text-left text-[15px] text-black transition-colors hover:bg-primary-pink/8 hover:text-primary-pink",
                       isSelected &&
                         "bg-primary-pink/10 font-medium text-primary-pink"
                     )}

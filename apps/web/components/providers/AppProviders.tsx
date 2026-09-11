@@ -9,11 +9,11 @@ import QuoteModalProvider from "@/components/providers/QuoteModalProvider";
 export default function AppProviders({ children }: { children: ReactNode }) {
   return (
     <SmoothScrollProvider>
-      <ContactModalProvider>
-        <CallbackModalProvider>
+      <CallbackModalProvider>
+        <ContactModalProvider>
           <QuoteModalProvider>{children}</QuoteModalProvider>
-        </CallbackModalProvider>
-      </ContactModalProvider>
+        </ContactModalProvider>
+      </CallbackModalProvider>
     </SmoothScrollProvider>
   );
 }
