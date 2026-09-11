@@ -1,13 +1,13 @@
 import {
   HealthcareHeroSection,
   HealthcareExpertiseSection,
-  HealthcareVideoSection,
+  // HealthcareVideoSection, // preserved — Health & Wellbeing Studio video block
   // HealthcareEventsSection, // preserved — “mission to make healthcare more human” section
   HealthcareHighlightsSection,
   HealthcareCertificationsSection,
   HealthcareCapabilitiesSection,
   HealthcareTestimonialsSection,
-  HealthcareStoryVideoSection,
+  // HealthcareStoryVideoSection, // preserved — placeholder YouTube under testimonials
   HealthcarePortfolioSection,
   HealthcareSuccessStoriesSection,
 } from "@/components/sections/healthcare";
@@ -22,13 +22,13 @@ export default function HealthcarePage() {
     <main className="min-h-screen bg-default text-white">
       <HealthcareHeroSection />
       <HealthcareExpertiseSection />
-      <HealthcareVideoSection />
+      {/* <HealthcareVideoSection /> */}
       {/* <HealthcareEventsSection /> */}
       <HealthcareHighlightsSection />
       <HealthcareCertificationsSection />
       <HealthcareCapabilitiesSection />
       <HealthcareTestimonialsSection />
-      <HealthcareStoryVideoSection />
+      {/* <HealthcareStoryVideoSection /> */}
       <HealthcarePortfolioSection />
       <HealthcareSuccessStoriesSection />
     </main>

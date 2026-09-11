@@ -79,7 +79,7 @@ export default function HealthcareTestimonialsSection() {
   return (
     <section className="bg-default">
       <div
-        className="bg-default py-20 text-white md:py-52"
+        className="bg-default pt-12 pb-16 text-white md:pt-16 md:pb-20"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onFocus={() => setIsPaused(true)}
