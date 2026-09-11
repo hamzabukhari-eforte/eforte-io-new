@@ -102,7 +102,7 @@ export default function HealthcareCertificationsSection() {
   return (
     <section
       ref={ref}
-      className="relative w-full overflow-hidden bg-default py-16 md:py-24"
+      className="relative w-full overflow-hidden bg-default pt-16 pb-10 md:pt-20 md:pb-12"
     >
       <motion.div
         className="pointer-events-none absolute top-24 left-1/4 h-64 w-64 rounded-full bg-primary-pink/10 blur-3xl"

@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, type FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import { jobOpenings } from "@/data/careersJobs";
@@ -20,6 +21,10 @@ export default function CareersJoinTeamSection() {
     once: true,
   });
   const [submitted, setSubmitted] = useState(false);
+  const searchParams = useSearchParams();
+  const roleParam = searchParams.get("role");
+  const selectedRole =
+    jobOpenings.find((job) => job.id === roleParam)?.title ?? "";
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -112,7 +117,8 @@ export default function CareersJoinTeamSection() {
                 Position Interested In
                 <select
                   name="position"
-                  defaultValue=""
+                  key={selectedRole || "none"}
+                  defaultValue={selectedRole}
                   className={cn(fieldClassName, "appearance-none")}
                 >
                   <option value="" disabled>

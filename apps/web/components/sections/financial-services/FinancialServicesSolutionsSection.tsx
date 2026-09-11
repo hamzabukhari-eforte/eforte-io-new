@@ -191,7 +191,7 @@ const accelerators: Accelerator[] = [
     imageAlt: "Banking UI component library preview",
     paragraphs: [
       "Pre built, brandable interface components for banking and lending apps.",
-      "eForte's Velocities are pre built assets that are integral to our solutions and drive faster delivery without sacrificing quality.",
+      "Ship consistent banking screens faster with a component kit aligned to financial UX patterns.",
     ],
   },
   {
@@ -395,7 +395,7 @@ export default function FinancialServicesSolutionsSection() {
             regulations.
           </motion.p>
 
-          <div className="mt-8 grid grid-cols-1 items-start gap-3 sm:grid-cols-2 lg:grid-cols-4 md:mt-10 md:gap-4">
+          <div className="mt-8 grid grid-cols-1 items-stretch gap-4 md:mt-10 md:grid-cols-2 lg:grid-cols-4 md:gap-5">
             {accelerators.map((accelerator, index) => {
               const Icon = accelerator.icon;
               return (
@@ -409,10 +409,11 @@ export default function FinancialServicesSolutionsSection() {
                     delay: 0.08 * index,
                     ease: "easeOut",
                   }}
-                  className="group flex flex-col overflow-hidden rounded-[12px] border border-white/10 bg-[#0C1020] transition-colors duration-300 hover:border-white/20"
+                  className="group flex min-h-[360px] flex-col overflow-hidden rounded-[12px] border border-white/10 bg-[#0A0B14] transition-colors duration-300 hover:border-white/20 md:min-h-[420px]"
                 >
-                  <div className="relative h-[156px] w-full overflow-hidden bg-black md:h-[164px] lg:h-[172px]">
-                    <div className="absolute inset-0 origin-center">
+                  <div className="relative flex min-h-[200px] flex-1 items-center justify-center overflow-hidden px-4 pt-6 md:min-h-[240px]">
+                    <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 to-transparent opacity-50" />
+                    <div className="relative z-10 w-full max-w-[240px]">
                       {/* Photos kept for later reuse:
                       <Image
                         src={accelerator.imageSrc}
@@ -422,18 +423,12 @@ export default function FinancialServicesSolutionsSection() {
                         className="object-cover"
                       />
                       */}
+                      {/* Previous custom finance SVG animations preserved in git history */}
                       <FinancialServicesVelocitiesInfographics id={accelerator.id} />
                     </div>
-                    {/* Left accent bar preserved for possible future reuse:
-                    <span
-                      aria-hidden
-                      className="absolute left-0 top-0 h-full w-[3px]"
-                      style={{ backgroundColor: accelerator.accent }}
-                    />
-                    */}
                   </div>
 
-                  <div className="flex flex-col px-3.5 pb-3.5 pt-2 md:px-4 md:pb-4 md:pt-2.5">
+                  <div className="relative z-10 flex flex-col px-5 pb-6 pt-2 md:px-6 md:pb-7">
                     <div className="flex flex-col items-start gap-1.5">
                       <Icon
                         className="h-5 w-5 shrink-0"

@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import CareersHeroSection from "@/components/sections/careers/CareersHeroSection";
 import CareersValuesIntroSection from "@/components/sections/careers/CareersValuesIntroSection";
 import CareersValuesGridSection from "@/components/sections/careers/CareersValuesGridSection";
@@ -24,7 +25,9 @@ export default function CareersPageContent() {
       <CareersTestimonialsSection />
       <CareersJobOpeningsSection />
       {/* <CareersPhotoGallerySection /> */}
-      <CareersJoinTeamSection />
+      <Suspense fallback={null}>
+        <CareersJoinTeamSection />
+      </Suspense>
     </main>
   );
 }

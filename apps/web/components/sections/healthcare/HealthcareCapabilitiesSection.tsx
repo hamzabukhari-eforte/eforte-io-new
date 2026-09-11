@@ -259,9 +259,9 @@ export default function HealthcareCapabilitiesSection() {
       style={{ height: `${capabilities.length * STEP_VH}vh` }}
       aria-label="Healthcare capabilities"
     >
-      <div className="sticky top-0 flex min-h-screen items-center overflow-hidden py-16 md:py-20">
+      <div className="sticky top-16 overflow-hidden pt-8 pb-8 md:top-20 md:pt-10 md:pb-10">
         <Container className="w-full">
-          <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-14">
+          <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-14">
             <div className="flex flex-col justify-center">
               <div className="relative min-h-[340px] md:min-h-[400px]">
                 <AnimatePresence mode="sync" initial={false}>
@@ -310,7 +310,7 @@ export default function HealthcareCapabilitiesSection() {
                     </ul>
                     <Link
                       href={capability.href}
-                      className="mt-7 inline-flex h-10 items-center justify-center rounded-full bg-[#011C57] px-6 text-sm font-medium text-white transition-colors hover:bg-[#011C57]/90"
+                      className="mt-7 inline-flex h-10 items-center justify-center rounded-full bg-black px-6 text-sm font-medium text-white transition-colors hover:bg-black/80"
                     >
                       Learn more
                     </Link>
@@ -318,7 +318,7 @@ export default function HealthcareCapabilitiesSection() {
                 </AnimatePresence>
               </div>
 
-              <div className="mt-10 flex flex-wrap justify-center gap-1.5 md:mt-12 md:justify-start">
+              <div className="mt-8 flex flex-wrap justify-center gap-1.5 md:mt-10 md:justify-start">
                 {capabilities.map((item, index) => {
                   const Icon = item.icon;
                   const isActive = index === activeIndex;

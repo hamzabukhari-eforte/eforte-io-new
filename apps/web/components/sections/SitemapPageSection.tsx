@@ -18,7 +18,7 @@ export default function SitemapPageSection() {
           <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">
             Sitemap
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-desc md:text-lg">
+          <p className="mt-4 text-base leading-relaxed text-white md:text-lg">
             Browse all public pages on our website. For the XML sitemap used by
             search engines, see{" "}
             <Link
@@ -40,7 +40,7 @@ export default function SitemapPageSection() {
               transition={{ duration: 0.4, delay: 0.05 + index * 0.04 }}
               className="mb-12 break-inside-avoid"
             >
-              <h2 className="text-lg font-semibold text-white">{group.title}</h2>
+              <h2 className="text-[18px] font-semibold text-white">{group.title}</h2>
               <div className="mt-3 h-px w-full bg-white/15" />
               <ul
                 className={
@@ -53,7 +53,7 @@ export default function SitemapPageSection() {
                   <li key={`${group.title}-${link.href}-${link.label}`}>
                     <Link
                       href={link.href}
-                      className="text-[15px] text-[#A0A0C0] underline decoration-white/20 underline-offset-2 transition-colors hover:text-primary-pink hover:decoration-primary-pink"
+                      className="text-[15px] text-white underline decoration-white/20 underline-offset-2 transition-colors hover:text-primary-pink hover:decoration-primary-pink"
                     >
                       {link.label}
                     </Link>

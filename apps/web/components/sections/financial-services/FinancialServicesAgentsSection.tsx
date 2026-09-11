@@ -542,46 +542,46 @@ export default function FinancialServicesAgentsSection() {
     >
       <section className="sticky top-16 bg-default pt-6 pb-6 text-white md:top-20 md:pt-8 md:pb-8">
         <style>{AGENT_ILLUSTRATION_STYLES}</style>
-        <Container>
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
+      <Container>
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-40px", amount: 0.15 }}
-            transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5 }}
             className="text-center text-[12px] font-semibold uppercase tracking-[0.16em] text-primary-pink"
-          >
-            Sample Agents Categories
-          </motion.p>
+        >
+          Sample Agents Categories
+        </motion.p>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        <motion.h2
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-40px", amount: 0.15 }}
-            transition={{ duration: 0.5, delay: 0.08 }}
+          transition={{ duration: 0.5, delay: 0.08 }}
             className="mx-auto mt-3 max-w-4xl text-center text-[48px] font-semibold leading-[52px] text-white"
-          >
-            Purpose built AI agents for the workflows that run modern finance
-          </motion.h2>
+        >
+          Purpose built AI agents for the workflows that run modern finance
+        </motion.h2>
 
           <div className="mt-7 md:mt-8">
-            <div
-              role="tablist"
-              aria-label="Sample agents categories"
+          <div
+            role="tablist"
+            aria-label="Sample agents categories"
               className="grid w-full grid-cols-1 border-b border-white/12 sm:grid-cols-2 lg:grid-cols-4"
-            >
-              {tabs.map((tab) => {
-                const isActive = tab.id === activeId;
+          >
+            {tabs.map((tab) => {
+              const isActive = tab.id === activeId;
                 const Icon = tab.icon;
-                return (
-                  <button
-                    key={tab.id}
-                    type="button"
-                    role="tab"
-                    aria-selected={isActive}
-                    aria-controls={`tabpanel-${tab.id}`}
-                    id={`tab-${tab.id}`}
+              return (
+                <button
+                  key={tab.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-controls={`tabpanel-${tab.id}`}
+                  id={`tab-${tab.id}`}
                     onClick={() => selectTab(tab.id)}
-                    className={cn(
+                  className={cn(
                       "relative flex min-h-12 cursor-pointer items-center justify-center gap-2 px-3 py-3.5 text-[18px] font-medium tracking-wide transition-colors duration-200",
                       isActive ? "text-white" : "text-white hover:text-white"
                     )}
@@ -596,53 +596,53 @@ export default function FinancialServicesAgentsSection() {
                         isActive ? "bg-primary-pink" : "bg-transparent"
                       )}
                     />
-                  </button>
-                );
-              })}
-            </div>
+                </button>
+              );
+            })}
           </div>
+        </div>
 
           <div className="mt-7 md:mt-8">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTab.id}
-                role="tabpanel"
-                id={`tabpanel-${activeTab.id}`}
-                aria-labelledby={`tab-${activeTab.id}`}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab.id}
+              role="tabpanel"
+              id={`tabpanel-${activeTab.id}`}
+              aria-labelledby={`tab-${activeTab.id}`}
                 initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }}
-                transition={{ duration: 0.35, ease: "easeOut" }}
-                className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
-              >
-                <div className="max-w-lg">
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
+            >
+              <div className="max-w-lg">
                   <h3 className="text-2xl font-semibold leading-tight text-white md:text-[26px]">
-                    {activeTab.title}
-                  </h3>
+                  {activeTab.title}
+                </h3>
                   <p className="mt-5 text-[15px] leading-relaxed text-white md:text-base">
-                    {activeTab.description}
-                  </p>
+                  {activeTab.description}
+                </p>
 
                   <ul className="mt-8 space-y-3 text-[15px] text-white md:text-base">
-                    {activeTab.bullets.map((bullet) => (
-                      <li key={bullet} className="flex items-start gap-2.5">
+                  {activeTab.bullets.map((bullet) => (
+                    <li key={bullet} className="flex items-start gap-2.5">
                         <HiCheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary-pink" />
-                        <span>{bullet}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-                <div className="flex justify-center lg:justify-end">
+              <div className="flex justify-center lg:justify-end">
                   <div className="relative aspect-[900/576] w-full max-w-[480px] overflow-hidden rounded-[12px] border border-white/10 bg-black lg:max-w-[520px]">
                     <AgentTabIllustration id={activeTab.id} />
                   </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </Container>
-      </section>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </Container>
+    </section>
     </div>
   );
 }

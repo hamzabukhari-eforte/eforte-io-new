@@ -9,6 +9,7 @@ export interface FormSuccessStateProps {
   className?: string;
   onDone?: () => void;
   doneLabel?: string;
+  tone?: "light" | "dark";
 }
 
 export default function FormSuccessState({
@@ -17,7 +18,9 @@ export default function FormSuccessState({
   className,
   onDone,
   doneLabel = "Done",
+  tone = "light",
 }: FormSuccessStateProps) {
+  const isDark = tone === "dark";
   return (
     <motion.div
       className={cn(
@@ -30,7 +33,7 @@ export default function FormSuccessState({
     >
       <div className="relative flex h-24 w-24 items-center justify-center sm:h-28 sm:w-28">
         <motion.span
-          className="absolute inset-0 rounded-full bg-primary-pink/10"
+          className="absolute inset-0 rounded-full bg-emerald-500/10"
           initial={{ scale: 0.6, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
@@ -47,7 +50,7 @@ export default function FormSuccessState({
             fill="none"
             stroke="currentColor"
             strokeWidth="2.5"
-            className="text-primary-pink/35"
+            className="text-emerald-500/40"
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 1 }}
             transition={{ duration: 0.55, ease: "easeInOut" }}
@@ -59,7 +62,7 @@ export default function FormSuccessState({
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-primary-pink"
+            className="text-emerald-500"
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 1 }}
             transition={{ duration: 0.45, delay: 0.35, ease: "easeOut" }}
@@ -70,7 +73,10 @@ export default function FormSuccessState({
       <motion.p
         role="heading"
         aria-level={2}
-        className="mt-6 text-xl font-semibold text-gray-900 sm:text-2xl"
+        className={cn(
+          "mt-6 text-xl font-semibold sm:text-2xl",
+          isDark ? "text-white" : "text-gray-900"
+        )}
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, delay: 0.55 }}
@@ -78,7 +84,10 @@ export default function FormSuccessState({
         {title}
       </motion.p>
       <motion.p
-        className="mt-2 max-w-md text-sm leading-relaxed text-gray-600 sm:text-base"
+        className={cn(
+          "mt-2 max-w-md text-sm leading-relaxed sm:text-base",
+          isDark ? "text-white/70" : "text-gray-600"
+        )}
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.35, delay: 0.65 }}
@@ -90,7 +99,12 @@ export default function FormSuccessState({
         <motion.button
           type="button"
           onClick={onDone}
-          className="mt-8 cursor-pointer inline-flex items-center justify-center h-10 rounded-full leading-none border-2 border-primary-pink bg-white px-8 py-0 text-sm font-semibold text-primary-pink transition-all duration-200 hover:bg-primary-pink hover:text-white"
+          className={cn(
+            "mt-8 inline-flex h-10 cursor-pointer items-center justify-center rounded-full px-8 py-0 text-sm leading-none font-semibold transition-all duration-200",
+            isDark
+              ? "bg-gradient-to-r from-[#be185d] to-[#db2777] text-white hover:from-[#db2777] hover:to-[#be185d]"
+              : "border-2 border-primary-pink bg-white text-primary-pink hover:bg-primary-pink hover:text-white"
+          )}
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35, delay: 0.75 }}
