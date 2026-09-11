@@ -245,7 +245,7 @@ export default function FinancialServicesSolutionsSection() {
   //   accelerators.find((a) => a.id === activeId) ?? accelerators[0];
 
   return (
-    <section className="rounded-t-[12px] bg-default pt-14 pb-8 text-white md:rounded-t-[12px] md:pt-20 md:pb-10">
+    <section className="rounded-t-[12px] bg-default pt-14 pb-5 text-white md:rounded-t-[12px] md:pt-20 md:pb-6">
       <Container>
         <motion.p
           initial={{ opacity: 0, y: 12 }}
@@ -397,7 +397,6 @@ export default function FinancialServicesSolutionsSection() {
 
           <div className="mt-8 grid grid-cols-1 items-stretch gap-4 md:mt-10 md:grid-cols-2 lg:grid-cols-4 md:gap-5">
             {accelerators.map((accelerator, index) => {
-              const Icon = accelerator.icon;
               return (
                 <motion.article
                   key={accelerator.id}
@@ -409,11 +408,11 @@ export default function FinancialServicesSolutionsSection() {
                     delay: 0.08 * index,
                     ease: "easeOut",
                   }}
-                  className="group flex min-h-[360px] flex-col overflow-hidden rounded-[12px] border border-white/10 bg-[#0A0B14] transition-colors duration-300 hover:border-white/20 md:min-h-[420px]"
+                  className="group flex flex-col overflow-hidden rounded-[12px] border border-white/10 bg-[#0A0B14] transition-colors duration-300 hover:border-white/20"
                 >
-                  <div className="relative flex min-h-[200px] flex-1 items-center justify-center overflow-hidden px-4 pt-6 md:min-h-[240px]">
+                  <div className="relative flex min-h-0 items-center justify-center overflow-hidden px-4 pb-1 pt-2">
                     <div className="absolute inset-0 bg-gradient-to-b from-blue-900/10 to-transparent opacity-50" />
-                    <div className="relative z-10 w-full max-w-[240px]">
+                    <div className="relative z-10 w-full max-w-[200px]">
                       {/* Photos kept for later reuse:
                       <Image
                         src={accelerator.imageSrc}
@@ -428,17 +427,10 @@ export default function FinancialServicesSolutionsSection() {
                     </div>
                   </div>
 
-                  <div className="relative z-10 flex flex-col px-5 pb-6 pt-2 md:px-6 md:pb-7">
-                    <div className="flex flex-col items-start gap-1.5">
-                      <Icon
-                        className="h-5 w-5 shrink-0"
-                        style={{ color: accelerator.accent }}
-                        aria-hidden
-                      />
-                      <h3 className="text-[16px] font-semibold leading-snug text-white md:text-[17px]">
-                        {accelerator.label}
-                      </h3>
-                    </div>
+                  <div className="relative z-10 flex flex-col px-5 pb-3 pt-1 md:px-6 md:pb-3">
+                    <h3 className="text-[16px] font-semibold leading-snug text-white md:text-[17px]">
+                      {accelerator.label}
+                    </h3>
 
                     <div className="mt-2 space-y-2 text-[14px] leading-relaxed text-white">
                       {accelerator.paragraphs.map((paragraph) => (

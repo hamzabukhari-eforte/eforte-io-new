@@ -7,7 +7,7 @@ const PINK = "#D3287A";
 const easeSoft = [0.45, 0, 0.55, 1] as const;
 
 const visualClassName =
-  "h-full w-full max-h-none transition-transform duration-500 group-hover:scale-105";
+  "mx-auto h-auto w-full max-h-[165px] max-w-[200px] transition-transform duration-500 group-hover:scale-105";
 
 /** Banking UI component library — reusable UI pieces around a shared kit */
 function BankingUiVisual() {
