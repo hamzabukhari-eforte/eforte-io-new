@@ -72,7 +72,7 @@ function ThemeCard({
 }) {
   return (
     <motion.article
-      className="group relative flex h-full flex-col overflow-hidden rounded-[12px] border border-white/10 bg-[#0A0A1A] p-6 transition-[border-color,transform] duration-300 hover:border-primary-pink md:p-7"
+      className="group relative flex h-full flex-col overflow-hidden rounded-[12px] border border-white/10 bg-[#0A0A1A] p-5 transition-[border-color,transform] duration-300 hover:border-primary-pink md:p-5"
       initial={{ opacity: 0, y: 32 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
       transition={{
@@ -83,7 +83,7 @@ function ThemeCard({
       whileHover={{ y: -4, transition: { duration: 0.3, ease: EASE } }}
     >
       <div className="relative flex min-h-0 flex-1 flex-col">{children}</div>
-      <div className="relative mt-auto border-t border-white/10 pt-5">
+      <div className="relative mt-auto border-t border-white/10 pt-3">
         {certs}
       </div>
     </motion.article>
@@ -102,7 +102,7 @@ export default function HealthcareCertificationsSection() {
   return (
     <section
       ref={ref}
-      className="relative w-full overflow-hidden bg-default pt-16 pb-10 md:pt-20 md:pb-12"
+      className="relative w-full overflow-hidden bg-default pt-8 pb-10 md:pt-10 md:pb-12"
     >
       <motion.div
         className="pointer-events-none absolute top-24 left-1/4 h-64 w-64 rounded-full bg-primary-pink/10 blur-3xl"
@@ -146,38 +146,38 @@ export default function HealthcareCertificationsSection() {
             index={0}
             isInView={isInView}
             certs={
-              <div className="flex min-h-[100px] flex-wrap items-center gap-3">
+              <div className="flex min-h-[72px] flex-wrap items-center gap-2.5">
                 <CertLogo
                   src="/assets/images/landing/soc.png"
                   alt="SOC 2 Type 2 certified"
-                  width={72}
-                  height={72}
+                  width={56}
+                  height={56}
                   delay={0.7}
                   isInView={isInView}
                 />
                 <CertLogo
                   src="/assets/images/landing/iso.png"
                   alt="ISO 27001 certified"
-                  width={72}
-                  height={72}
+                  width={56}
+                  height={56}
                   delay={0.82}
                   isInView={isInView}
                 />
                 <CertLogo
                   src="/assets/images/landing/nist.png"
                   alt="NIST AI compliant"
-                  width={72}
-                  height={72}
+                  width={56}
+                  height={56}
                   delay={0.94}
                   isInView={isInView}
                 />
               </div>
             }
           >
-            <div className="mb-5">
-              <div className="mb-3 flex items-center gap-4">
+            <div className="mb-3">
+              <div className="mb-2 flex items-center gap-3">
                 <motion.div
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#426CFF]/40 bg-[#426CFF]/15 text-[#426CFF]"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#426CFF]/40 bg-[#426CFF]/15 text-[#426CFF]"
                   animate={isInView ? { scale: [1, 1.06, 1] } : { scale: 1 }}
                   transition={{
                     duration: 2.6,
@@ -186,26 +186,26 @@ export default function HealthcareCertificationsSection() {
                     ease: "easeInOut",
                   }}
                 >
-                  <FaAward className="text-2xl" />
+                  <FaAward className="text-xl" />
                 </motion.div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">
+                  <h3 className="text-lg font-bold text-white md:text-xl">
                     Enterprise Certifications
                   </h3>
-                  <p className="mt-1 text-[13px] text-white/80">
+                  <p className="mt-0.5 text-[12px] text-white/80 md:text-[13px]">
                     SOC 2 Type 2 · ISO 27001 · NIST AI
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="mb-5 border-t border-white/10" />
+            <div className="mb-3 border-t border-white/10" />
 
-            <div className="mb-2">
-              <h4 className="mb-3 text-xl font-bold text-white">
+            <div className="mb-1">
+              <h4 className="mb-2 text-lg font-bold text-white md:text-xl">
                 Security Standards
               </h4>
-              <p className="text-[15px] leading-relaxed text-white">
+              <p className="text-[14px] leading-relaxed text-white md:text-[15px]">
                 eForte holds ISO 27001 and SOC 2 Type 2 certifications and aligns
                 with the NIST AI Risk Management Framework, giving healthcare
                 partners confidence in how we handle sensitive data at every
@@ -219,22 +219,22 @@ export default function HealthcareCertificationsSection() {
             index={1}
             isInView={isInView}
             certs={
-              <div className="flex min-h-[100px] items-center">
+              <div className="flex min-h-[72px] items-center">
                 <CertLogo
                   src="/assets/images/landing/HIPAA.png"
                   alt="HIPAA compliance"
-                  width={80}
-                  height={96}
+                  width={64}
+                  height={76}
                   delay={0.85}
                   isInView={isInView}
                 />
               </div>
             }
           >
-            <div className="mb-5">
-              <div className="mb-3 flex items-center gap-4">
+            <div className="mb-3">
+              <div className="mb-2 flex items-center gap-3">
                 <motion.div
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#426CFF]/40 bg-[#426CFF]/15 text-[#426CFF]"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#426CFF]/40 bg-[#426CFF]/15 text-[#426CFF]"
                   animate={isInView ? { scale: [1, 1.06, 1] } : { scale: 1 }}
                   transition={{
                     duration: 2.6,
@@ -243,26 +243,26 @@ export default function HealthcareCertificationsSection() {
                     ease: "easeInOut",
                   }}
                 >
-                  <FaShieldAlt className="text-2xl" />
+                  <FaShieldAlt className="text-xl" />
                 </motion.div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">
+                  <h3 className="text-lg font-bold text-white md:text-xl">
                     HIPAA Aligned
                   </h3>
-                  <p className="mt-1 text-[13px] text-white/80">
+                  <p className="mt-0.5 text-[12px] text-white/80 md:text-[13px]">
                     Clinical &amp; consumer health platforms
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="mb-5 border-t border-white/10" />
+            <div className="mb-3 border-t border-white/10" />
 
-            <div className="mb-2">
-              <h4 className="mb-3 text-xl font-bold text-white">
+            <div className="mb-1">
+              <h4 className="mb-2 text-lg font-bold text-white md:text-xl">
                 HIPAA Compliance Expertise
               </h4>
-              <p className="text-[15px] leading-relaxed text-white">
+              <p className="text-[14px] leading-relaxed text-white md:text-[15px]">
                 Our team has built numerous HIPAA aligned platforms across
                 clinical and consumer health settings.
               </p>
@@ -274,22 +274,22 @@ export default function HealthcareCertificationsSection() {
             index={2}
             isInView={isInView}
             certs={
-              <div className="flex min-h-[100px] items-center">
+              <div className="flex min-h-[72px] items-center">
                 <CertLogo
                   src="/assets/images/industry/fda.svg"
                   alt="FDA"
-                  width={120}
-                  height={80}
+                  width={96}
+                  height={64}
                   delay={0.9}
                   isInView={isInView}
                 />
               </div>
             }
           >
-            <div className="mb-5">
-              <div className="mb-3 flex items-center gap-4">
+            <div className="mb-3">
+              <div className="mb-2 flex items-center gap-3">
                 <motion.div
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primary-pink/40 bg-primary-pink/15 text-primary-pink"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary-pink/40 bg-primary-pink/15 text-primary-pink"
                   animate={isInView ? { scale: [1, 1.06, 1] } : { scale: 1 }}
                   transition={{
                     duration: 2.8,
@@ -298,26 +298,26 @@ export default function HealthcareCertificationsSection() {
                     ease: "easeInOut",
                   }}
                 >
-                  <FaBalanceScale className="text-2xl" />
+                  <FaBalanceScale className="text-xl" />
                 </motion.div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">
+                  <h3 className="text-lg font-bold text-white md:text-xl">
                     FDA-Ready Delivery
                   </h3>
-                  <p className="mt-1 text-[13px] text-white/80">
+                  <p className="mt-0.5 text-[12px] text-white/80 md:text-[13px]">
                     Regulated product submissions
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="mb-5 border-t border-white/10" />
+            <div className="mb-3 border-t border-white/10" />
 
-            <div className="mb-2">
-              <h4 className="mb-3 text-xl font-bold text-white">
+            <div className="mb-1">
+              <h4 className="mb-2 text-lg font-bold text-white md:text-xl">
                 FDA-Cleared Support
               </h4>
-              <p className="text-[15px] leading-relaxed text-white">
+              <p className="text-[14px] leading-relaxed text-white md:text-[15px]">
                 Our team has supported FDA-cleared product submissions across
                 clinical and consumer health settings.
               </p>

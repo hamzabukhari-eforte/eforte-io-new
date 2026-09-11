@@ -31,7 +31,7 @@ const highlights: { icon: IconType; text: string }[] = [
 
 export default function HealthcareHighlightsSection() {
   return (
-    <section className="bg-default py-16 md:py-24">
+    <section className="bg-default pt-16 pb-8 md:pt-24 md:pb-10">
       <Container>
         <motion.h2
           initial={{ opacity: 0, y: 16 }}
