@@ -1,3 +1,5 @@
+import { impactStudyHref } from "@/data/impactStudiesHomepage";
+
 export type HomeCaseStudyStat = {
   value: string;
   label: string;
@@ -32,26 +34,28 @@ export const homeCaseStudies: HomeCaseStudy[] = [
     ],
     stats: [
       {
-        value: "10x",
-        label: "Faster turnaround time for machine learning predictions",
+        value: "99.8%",
+        label: "Data accuracy across 40+ global research sites",
       },
       {
-        value: "56%",
-        label: "Increase in model delivery and iteration speed",
+        value: "42%",
+        label: "Faster study completion timeline",
       },
       {
-        value: "15+",
-        label: "Fully operational, value-driving machine learning models",
+        value: "76%",
+        label: "Reduction in clinical data processing time",
       },
       {
-        value: "60%",
-        label: "Reduction in data preparation and support expenses",
+        value: "0",
+        label: "Compliance findings in regulatory audits",
       },
     ],
     ctaLabel: "View Case Study",
-    ctaHref: "/impact-studies",
-    imageSrc: "/assets/images/case-study/health.webp",
-    imageAlt: "BioResearch Labs clinical trial data platform",
+    ctaHref: impactStudyHref("bioresearch-labs"),
+    imageSrc:
+      "/assets/final-images/home-case-studies/bioresearch-labs-mockup.png",
+    imageAlt:
+      "BioResearch Labs clinical trial data platform mockup across laptop, phone, and tablet",
   },
   {
     id: "allied-insurance",
@@ -61,19 +65,29 @@ export const homeCaseStudies: HomeCaseStudy[] = [
       "Integrating computer vision with a 15-year-old legacy system, we automated claims verification and fraud detection. The result was a dramatic reduction in processing time from 9 days to 36 hours, with fraud detection accuracy improving to 94%.",
       "Allied Insurance set out to simplify modern insurance claims. Through collaboration with eForte, they harnessed deep data insights to sustain aggressive growth, deliver a superior user experience, and secure their position as a standout leader in the global Insurance sector.",
     ],
-    highlights: [
+    stats: [
       {
-        label: "User Base",
-        text: "Over 2 million satisfied users",
+        value: "36h",
+        label: "Average claims resolution, down from 9 days",
       },
       {
-        label: "App Rating",
-        text: "Consistently high 4.7 App Store Ranking",
+        value: "94%",
+        label: "Fraud detection accuracy, up from 71%",
+      },
+      {
+        value: "83%",
+        label: "Reduction in manual data entry at intake",
+      },
+      {
+        value: "42%",
+        label: "Decrease in processing cost per claim",
       },
     ],
     ctaLabel: "View Case Study",
-    ctaHref: "/impact-studies",
-    imageSrc: "/assets/images/industry/insurance-banner.jpg",
-    imageAlt: "Allied Insurance AI-driven claims experience",
+    ctaHref: impactStudyHref("allied-insurance"),
+    imageSrc:
+      "/assets/final-images/home-case-studies/allied-insurance-mockup.png",
+    imageAlt:
+      "Allied Insurance claims command center mockup across laptop, phone, and tablet",
   },
 ];

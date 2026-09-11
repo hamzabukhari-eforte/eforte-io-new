@@ -156,14 +156,8 @@ export default function AIWorkflowsSection() {
                     ease: "easeInOut",
                   }}
                 />
-                <div
-                  className={`pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r to-transparent ${
-                    isPink ? "from-primary-pink" : "from-[#426CFF]"
-                  }`}
-                  aria-hidden
-                />
 
-                <div className="relative mb-3.5 flex items-start justify-between gap-4">
+                <div className="relative mb-3.5">
                   <motion.div
                     className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-[10px] border ${
                       isPink
@@ -179,14 +173,6 @@ export default function AIWorkflowsSection() {
                   >
                     <Icon className="h-5 w-5" />
                   </motion.div>
-
-                  <span
-                    className={`text-[11px] font-semibold tabular-nums tracking-wider ${
-                      isPink ? "text-primary-pink" : "text-[#426CFF]"
-                    }`}
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
                 </div>
 
                 <h3 className="relative mb-2 text-[24px] font-semibold leading-tight text-white">

@@ -76,7 +76,7 @@ export default function VelocityAISection() {
   const isInView = useInViewReplay(ref);
 
   return (
-    <section ref={ref} className="w-full bg-default py-16">
+    <section ref={ref} className="w-full bg-default pt-16 pb-10">
       <Container>
         <div className="grid grid-cols-1 items-center gap-12 md:gap-16 xl:grid-cols-2 xl:gap-20">
           {/* Left Side - Text Content */}
@@ -87,7 +87,7 @@ export default function VelocityAISection() {
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <motion.h2
-              className="mb-4 text-3xl font-bold leading-tight tracking-tight text-white md:mb-6 md:text-4xl lg:text-[40px]"
+              className="mb-4 text-[36px] font-bold leading-tight tracking-tight text-white md:mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
@@ -96,7 +96,7 @@ export default function VelocityAISection() {
             </motion.h2>
 
             <motion.h3
-              className="mb-6 text-xl font-semibold text-white md:mb-8"
+              className="mb-6 text-[24px] font-semibold text-white md:mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }}
@@ -106,7 +106,7 @@ export default function VelocityAISection() {
             </motion.h3>
 
             <motion.p
-              className="mb-8 text-base font-light leading-relaxed text-white md:mb-10 md:text-[17px]"
+              className="mb-8 text-[18px] font-light leading-relaxed text-white md:mb-10"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}

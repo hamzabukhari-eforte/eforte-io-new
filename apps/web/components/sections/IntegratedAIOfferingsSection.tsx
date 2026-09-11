@@ -10,7 +10,7 @@ export default function IntegratedAIOfferingsSection() {
   const isInView = useInViewReplay(ref);
 
   return (
-    <section ref={ref} className="w-full bg-default pt-16 pb-2 md:pb-4">
+    <section ref={ref} className="w-full bg-default pt-10 pb-2 md:pb-4">
       <Container>
         <div className="max-w-6xl mx-auto">
           {/* Badge */}

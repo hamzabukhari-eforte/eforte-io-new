@@ -183,7 +183,7 @@ export default function NavigateAISection() {
 
             <motion.h2
               variants={fadeUp}
-              className="mb-6 text-[48px] font-medium leading-tight tracking-tight text-white md:mb-8"
+              className="mb-6 text-[36px] font-medium leading-[42px] tracking-tight text-white md:mb-8"
             >
               Navigate the Complexities of AI Adoption to Unlock Real-World
               Business Value.
@@ -191,7 +191,7 @@ export default function NavigateAISection() {
 
             <motion.p
               variants={fadeUp}
-              className="mb-5 text-[18px] font-light leading-relaxed text-white md:mb-6"
+              className="mb-5 text-[18px] font-light leading-[24px] text-white md:mb-6"
             >
               AI is a game-changer, but successful implementation requires
               expert guidance. eForte empowers your organization to strategically
@@ -200,7 +200,7 @@ export default function NavigateAISection() {
 
             <motion.p
               variants={fadeUp}
-              className="mb-8 text-[18px] font-light leading-relaxed text-white md:mb-10"
+              className="mb-8 text-[18px] font-light leading-[24px] text-white md:mb-10"
             >
               Our expertise spans complex domains: from deploying sophisticated
               bankruptcy prediction models in finance to engineering
@@ -210,7 +210,7 @@ export default function NavigateAISection() {
 
             <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-4">
               <Link
-                href="#"
+                href="/white-papers/navigate-ai-adoption"
                 className="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-full border border-primary-pink bg-transparent px-9 text-[15px] font-medium leading-none text-white transition-colors duration-300 hover:bg-primary-pink"
               >
                 <span className="relative z-10">Read now</span>

@@ -7,3 +7,6 @@ export { default as AgenticOrchestrationUseCasesSection } from "./AgenticOrchest
 export { default as AgenticOrchestrationMethodologySection } from "./AgenticOrchestrationMethodologySection";
 export { default as AgenticOrchestrationCoreServicesSection } from "./AgenticOrchestrationCoreServicesSection";
 export { default as AgenticOrchestrationFooterCTASection } from "./AgenticOrchestrationFooterCTASection";
+export { default as AgenticOrchestrationInsightHeroSection } from "./AgenticOrchestrationInsightHeroSection";
+export { default as AgenticOrchestrationInsightBodySection } from "./AgenticOrchestrationInsightBodySection";
+export { default as AgenticOrchestrationInsightsListingSection } from "./AgenticOrchestrationInsightsListingSection";

@@ -9,6 +9,17 @@ import {
   AgenticOrchestrationCoreServicesSection,
 } from "@/components/sections/agentic-orchestration";
 import { VelocityAIInsightsSection } from "@/components/sections/velocity-ai";
+import { agenticOrchestrationInsights } from "@/data/agenticOrchestrationInsights";
+
+const agenticInsightCards = agenticOrchestrationInsights.map((article) => ({
+  id: article.slug,
+  href: article.href,
+  image: article.imageSrc,
+  category: article.category,
+  title: article.title,
+  author: `by ${article.author}`,
+  date: article.date,
+}));
 
 export default function AgenticOrchestrationPage() {
   return (
@@ -21,8 +32,12 @@ export default function AgenticOrchestrationPage() {
       <AgenticOrchestrationUseCasesSection />
       <AgenticOrchestrationMethodologySection />
       <AgenticOrchestrationCoreServicesSection />
-      <VelocityAIInsightsSection plainEyebrow />
-      
+      {/* Keep Expert Insights in its current page position */}
+      <VelocityAIInsightsSection
+        plainEyebrow
+        articles={agenticInsightCards}
+        discoverMoreHref="/agentic-orchestration/insights"
+      />
     </main>
   );
 }

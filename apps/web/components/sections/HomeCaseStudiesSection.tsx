@@ -57,7 +57,7 @@ export default function HomeCaseStudiesSection() {
             The right offset tracks the left column's edge: half the grid plus
             half the column gap.
           */}
-          <div className="absolute right-0 top-10 z-10 flex items-center gap-3 lg:right-[calc(50%+2rem)] xl:right-[calc(50%+2.5rem)]">
+          <div className="absolute right-0 top-10 z-10 flex items-center gap-3 lg:right-[calc(50%-0.75rem)] xl:right-[calc(50%-0.25rem)]">
             <button
               type="button"
               onClick={goPrev}
@@ -81,15 +81,15 @@ export default function HomeCaseStudiesSection() {
             <AnimatePresence mode="wait">
               <motion.div key={study.id} {...SLIDE_MOTION}>
                 {/* Room for the controls, which overlap this line until lg. */}
-                <p className="pr-28 text-2xl font-semibold tracking-tight text-primary-pink md:text-3xl lg:pr-0">
+                <p className="pr-28 text-[18px] font-semibold tracking-tight text-primary-pink lg:pr-0">
                   {study.clientName}
                 </p>
 
-                <h2 className="mt-4 max-w-xl text-3xl font-semibold leading-[1.15] tracking-tight text-white md:text-4xl lg:text-[42px]">
+                <h2 className="mt-4 max-w-xl pr-28 text-[36px] font-semibold leading-[1.15] tracking-tight text-white lg:pr-16">
                   {study.title}
                 </h2>
 
-                <div className="mt-5 max-w-xl space-y-4 text-[15px] leading-relaxed text-white md:text-base">
+                <div className="mt-5 max-w-xl space-y-4 text-[18px] leading-relaxed text-white">
                   {study.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
@@ -113,12 +113,12 @@ export default function HomeCaseStudiesSection() {
                     {study.stats.map((stat) => (
                       <div
                         key={`${stat.value}-${stat.label}`}
-                        className="flex items-center gap-4 rounded-[12px] bg-white px-4 py-4 shadow-[0_8px_30px_rgba(0,0,0,0.25)]"
+                        className="flex items-center gap-3 rounded-[12px] bg-white px-3 py-2.5 shadow-[0_8px_30px_rgba(0,0,0,0.25)] md:gap-4 md:px-4 md:py-3"
                       >
-                        <span className="shrink-0 text-3xl font-semibold leading-none text-primary-pink md:text-[34px]">
+                        <span className="shrink-0 text-2xl font-semibold leading-none text-primary-pink md:text-[28px]">
                           {stat.value}
                         </span>
-                        <span className="text-sm leading-snug text-[#1a1a2e]">
+                        <span className="text-[13px] leading-snug text-[#1a1a2e] md:text-sm">
                           {stat.label}
                         </span>
                       </div>
@@ -144,16 +144,15 @@ export default function HomeCaseStudiesSection() {
               className="relative mx-auto w-full max-w-lg lg:max-w-none"
             >
               <div className="pointer-events-none absolute -inset-8 rounded-full bg-primary-pink/10 blur-3xl" />
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[12px] border border-white/10 bg-[#111] shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:aspect-[5/6] lg:aspect-[4/5]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[12px] border border-white/10 bg-[#0A0A1A] shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:aspect-[5/6] lg:aspect-[4/5]">
                 <Image
                   src={study.imageSrc}
                   alt={study.imageAlt}
                   fill
                   sizes="(max-width: 1024px) 90vw, 520px"
-                  className="object-cover"
+                  className="object-contain object-center p-3 sm:p-4"
                   priority={activeIndex === 0}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
               </div>
             </motion.div>
           </AnimatePresence>

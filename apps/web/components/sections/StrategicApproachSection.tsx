@@ -29,7 +29,7 @@ const features: FeatureBlock[] = [
     icon: "/assets/images/landing/icon-shield.svg",
     iconLeft: "12.29%", // 73.13 / 595
     iconTop: "34.16%", // 179.671 / 526
-    iconSize: 118,
+    iconSize: 100,
   },
   {
     id: "verifiable-transparency",
@@ -40,7 +40,7 @@ const features: FeatureBlock[] = [
     icon: "/assets/images/landing/icon-bolt.svg",
     iconLeft: "87.58%", // 521.129 / 595
     iconTop: "33.87%", // 178.139 / 526
-    iconSize: 118,
+    iconSize: 100,
   },
   {
     id: "human-oversight",
@@ -51,7 +51,7 @@ const features: FeatureBlock[] = [
     icon: "/assets/images/landing/icon-head.svg",
     iconLeft: "51.37%", // 305.68 / 595
     iconTop: "86.08%", // 452.801 / 526
-    iconSize: 118,
+    iconSize: 100,
   },
 ];
 
@@ -64,7 +64,7 @@ export default function StrategicApproachSection() {
   const isInView = useInViewReplay(ref);
 
   return (
-    <section ref={ref} className="w-full bg-default py-16">
+    <section ref={ref} className="w-full bg-default pt-16 pb-[30px]">
       <Container>
         <div>
           <motion.div
@@ -138,10 +138,12 @@ export default function StrategicApproachSection() {
             </div>
           </div>
 
-          {/* Desktop diagram */}
-          <div className="relative mt-2 hidden min-h-[640px] xl:block">
+          {/* Desktop diagram — slightly scaled; icon/copy placement stays connected */}
+          <div className="relative mt-2 hidden h-[520px] xl:block">
+            <div className="absolute left-0 top-0 w-full origin-top scale-[0.875]">
+              <div className="relative min-h-[640px] w-full">
             {/* Diagram stage — sized to SVG aspect */}
-            <div className="absolute left-1/2 top-[38%] w-[480px] max-w-[90%] -translate-x-1/2 -translate-y-1/2 overflow-visible">
+            <div className="absolute left-1/2 top-[38%] w-[400px] max-w-[90%] -translate-x-1/2 -translate-y-1/2 overflow-visible">
               <div className="relative aspect-[595/526] w-full overflow-visible">
                 {/* 1) Main big circle + wireframe first */}
                 <motion.div
@@ -210,7 +212,7 @@ export default function StrategicApproachSection() {
               } else if (feature.position === "right") {
                 positionClasses = "right-10 -right-24 top-[32%] -translate-y-1/2";
               } else {
-                positionClasses = "bottom-2 left-1/2 -translate-x-1/2";
+                positionClasses = "bottom-14 left-1/2 -translate-x-1/2";
               }
 
               return (
@@ -266,6 +268,8 @@ export default function StrategicApproachSection() {
                 </motion.div>
               );
             })}
+              </div>
+            </div>
           </div>
         </div>
       </Container>

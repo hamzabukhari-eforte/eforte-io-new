@@ -99,7 +99,7 @@ function ThemeCard({
 }) {
   return (
     <motion.article
-      className="group relative flex h-full flex-col overflow-hidden rounded-[16px] border border-white/10 bg-[#0A0A1A] p-6 transition-[border-color,transform] duration-300 hover:border-primary-pink md:p-7"
+      className="group relative flex h-full flex-col overflow-hidden rounded-[16px] border border-white/10 bg-[#0A0A1A] p-4 transition-[border-color,transform] duration-300 hover:border-primary-pink md:p-5"
       initial={{ opacity: 0, y: 32 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
       transition={{
@@ -112,7 +112,7 @@ function ThemeCard({
       <div className="relative flex min-h-0 flex-1 flex-col">{children}</div>
 
       {/* Certifications footer — aligned across cards */}
-      <div className="relative mt-auto border-t border-white/10 pt-5">
+      <div className="relative mt-auto border-t border-white/10 pt-3">
         {certs}
       </div>
     </motion.article>
@@ -186,21 +186,21 @@ export default function GlobalLeadersSection() {
 
           <motion.h2
             variants={fadeUp}
-            className="mb-4 text-[48px] font-medium leading-tight tracking-tight text-white md:mb-6"
+            className="mb-4 text-[48px] font-medium leading-[52px] tracking-tight text-white md:mb-6"
           >
             Powered by Global Leaders.
           </motion.h2>
 
           <motion.h2
             variants={fadeUp}
-            className="mb-8 text-[48px] font-medium leading-tight tracking-tight text-white md:mb-12"
+            className="mb-8 text-[48px] font-medium leading-[52px] tracking-tight text-white md:mb-12"
           >
             Recognized for Excellence.
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
-            className="mx-auto mb-12 max-w-4xl text-[18px] font-light leading-relaxed text-white md:mb-16"
+            className="mx-auto mb-12 max-w-4xl text-[18px] font-light leading-[22px] text-white md:mb-16"
           >
             Combine the world&apos;s most advanced AI infrastructure with
             award-winning delivery. As an IBM Global Entrepreneur and ISO
@@ -218,41 +218,41 @@ export default function GlobalLeadersSection() {
             index={0}
             isInView={isInView}
             certs={
-              <div className="flex min-h-[100px] items-center gap-4">
+              <div className="flex min-h-[72px] items-center gap-4">
                 <CertLogo
                   src="/assets/images/landing/IBM.png"
                   alt="IBM Global Entrepreneur"
-                  width={88}
-                  height={80}
+                  width={72}
+                  height={64}
                   delay={0.7}
                   isInView={isInView}
                 />
                 <CertLogo
                   src="/assets/images/landing/Expertise.png"
                   alt="Expertise.com"
-                  width={90}
-                  height={90}
+                  width={72}
+                  height={72}
                   delay={0.82}
                   isInView={isInView}
                 />
               </div>
             }
           >
-            <div className="mb-5">
+            <div className="mb-3">
               <span className="text-[12px] font-semibold uppercase tracking-[0.18em] text-primary-pink">
                 IBM GLOBAL ENTREPRENEUR
               </span>
             </div>
 
-            <p className="mb-5 text-[15px] leading-relaxed text-white">
+            <p className="mb-3 text-[15px] leading-relaxed text-white">
               Recognized for innovation and leadership in emerging technologies
               with the Blockchain & AI Award.
             </p>
 
-            <div className="mb-5 border-t border-white/10" />
+            <div className="mb-3 border-t border-white/10" />
 
-            <div className="mb-2">
-              <h4 className="mb-3 text-xl font-bold text-white">
+            <div className="mb-1">
+              <h4 className="mb-2 text-xl font-bold text-white">
                 Industry Awards
               </h4>
               <p className="text-[15px] leading-relaxed text-white">
@@ -267,22 +267,22 @@ export default function GlobalLeadersSection() {
             index={1}
             isInView={isInView}
             certs={
-              <div className="flex min-h-[100px] items-center">
+              <div className="flex min-h-[72px] items-center">
                 <CertLogo
                   src="/assets/images/landing/iso.png"
                   alt="ISO 27001 Certified"
-                  width={80}
-                  height={80}
+                  width={64}
+                  height={64}
                   delay={0.85}
                   isInView={isInView}
                 />
               </div>
             }
           >
-            <div className="mb-5">
-              <div className="mb-3 flex items-center gap-4">
+            <div className="mb-3">
+              <div className="mb-2 flex items-center gap-3">
                 <motion.div
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#426CFF]/40 bg-[#426CFF]/15 text-[#426CFF]"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#426CFF]/40 bg-[#426CFF]/15 text-[#426CFF]"
                   animate={
                     isInView
                       ? { scale: [1, 1.06, 1] }
@@ -295,23 +295,23 @@ export default function GlobalLeadersSection() {
                     ease: "easeInOut",
                   }}
                 >
-                  <FaShieldAlt className="text-2xl" />
+                  <FaShieldAlt className="text-xl" />
                 </motion.div>
                 <div>
                   <h3 className="text-xl font-bold text-white">
                     ISO 27001 Certified
                   </h3>
-                  <p className="mt-1 text-[13px] text-white">
+                  <p className="mt-0.5 text-[13px] text-white">
                     Demonstrating best-in-class information security.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="mb-5 border-t border-white/10" />
+            <div className="mb-3 border-t border-white/10" />
 
-            <div className="mb-2">
-              <h4 className="mb-3 text-xl font-bold text-white">
+            <div className="mb-1">
+              <h4 className="mb-2 text-xl font-bold text-white">
                 Security & Scale
               </h4>
               <p className="text-[15px] leading-relaxed text-white">
@@ -326,30 +326,30 @@ export default function GlobalLeadersSection() {
             index={2}
             isInView={isInView}
             certs={
-              <div className="flex min-h-[100px] items-center gap-4">
+              <div className="flex min-h-[72px] items-center gap-4">
                 <CertLogo
                   src="/assets/images/landing/CADP.png"
                   alt="CAIDP Member"
-                  width={140}
-                  height={90}
+                  width={120}
+                  height={72}
                   delay={0.9}
                   isInView={isInView}
                 />
                 <CertLogo
                   src="/assets/images/landing/HIPAA.png"
                   alt="HIPAA Compliant"
-                  width={75}
-                  height={90}
+                  width={64}
+                  height={72}
                   delay={1.02}
                   isInView={isInView}
                 />
               </div>
             }
           >
-            <div className="mb-5">
-              <div className="mb-3 flex items-center gap-4">
+            <div className="mb-3">
+              <div className="mb-2 flex items-center gap-3">
                 <motion.div
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-primary-pink/40 bg-primary-pink/15 text-primary-pink"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-primary-pink/40 bg-primary-pink/15 text-primary-pink"
                   animate={
                     isInView
                       ? { scale: [1, 1.06, 1] }
@@ -362,32 +362,32 @@ export default function GlobalLeadersSection() {
                     ease: "easeInOut",
                   }}
                 >
-                  <FaBalanceScale className="text-2xl" />
+                  <FaBalanceScale className="text-xl" />
                 </motion.div>
                 <div>
                   <h3 className="text-xl font-bold text-white">
                     Ethical & Compliant
                   </h3>
-                  <p className="mt-1 text-[13px] text-white">
+                  <p className="mt-0.5 text-[13px] text-white">
                     Adherence to global standards.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="mb-5 border-t border-white/10" />
+            <div className="mb-3 border-t border-white/10" />
 
-            <div className="mb-5">
-              <h4 className="mb-2 text-xl font-bold text-white">
+            <div className="mb-3">
+              <h4 className="mb-1.5 text-xl font-bold text-white">
                 CAIDP Member:
               </h4>
-              <p className="mb-4 text-[15px] leading-relaxed text-white">
+              <p className="mb-3 text-[15px] leading-relaxed text-white">
                 Aligned with global standards for ethical and responsible AI.
               </p>
             </div>
 
-            <div className="mb-2">
-              <h4 className="mb-2 text-xl font-bold text-white">
+            <div className="mb-1">
+              <h4 className="mb-1.5 text-xl font-bold text-white">
                 HIPAA Compliance Expertise:
               </h4>
               <p className="text-[15px] leading-relaxed text-white">
