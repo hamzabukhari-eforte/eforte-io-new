@@ -8,3 +8,6 @@ export { default as VelocityAICapabilitiesSection } from "./VelocityAICapabiliti
 export { default as VelocityAICaseStudySection } from "./VelocityAICaseStudySection";
 export { default as VelocityAIInsightsSection } from "./VelocityAIInsightsSection";
 export { default as VelocityAIFooterCTASection } from "./VelocityAIFooterCTASection";
+export { default as VelocityAIInsightHeroSection } from "./VelocityAIInsightHeroSection";
+export { default as VelocityAIInsightBodySection } from "./VelocityAIInsightBodySection";
+export { default as VelocityAIInsightsListingSection } from "./VelocityAIInsightsListingSection";
