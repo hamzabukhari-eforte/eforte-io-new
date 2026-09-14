@@ -18,10 +18,10 @@ import {
 import { cn } from "@/lib/utils";
 
 const fieldShellClass =
-  "flex h-10 items-center rounded-xl border border-white/15 bg-white/[0.04] px-3.5 transition-all duration-200 hover:border-white/25 focus-within:border-primary-pink focus-within:shadow-[0_0_0_4px_rgba(211,40,122,0.2)]";
+  "flex h-10 min-w-0 w-full items-center overflow-hidden rounded-xl border border-white/15 bg-white/[0.04] px-3.5 transition-all duration-200 hover:border-white/25 focus-within:border-primary-pink focus-within:shadow-[0_0_0_4px_rgba(211,40,122,0.2)]";
 
 const inputClassName =
-  "h-full w-full bg-transparent text-[15px] leading-normal text-white outline-none placeholder:text-white/40";
+  "h-full min-w-0 w-full bg-transparent text-[15px] leading-normal text-white outline-none placeholder:text-white/40";
 
 function QuoteField({
   label,
@@ -37,7 +37,7 @@ function QuoteField({
   labelClassName?: string;
 }) {
   return (
-    <div className={cn("flex flex-col gap-1", className)}>
+    <div className={cn("flex min-w-0 flex-col gap-1", className)}>
       <label
         htmlFor={id}
         className={cn("text-[14px] font-medium text-white", labelClassName)}
@@ -98,7 +98,7 @@ function RadioGroup({
                     : "border-white/35"
                 )}
               />
-              <span>{option}</span>
+              <span className="min-w-0 break-words">{option}</span>
             </label>
           );
         })}
@@ -219,9 +219,9 @@ export default function HealthcarePortfolioSection() {
 
               <form
                 onSubmit={handleSubmit}
-                className="mt-8 space-y-4 rounded-[12px] border border-white/10 bg-[#0A0A1A]/80 p-5 backdrop-blur-sm md:mt-10 md:p-8"
+                className="mt-8 min-w-0 space-y-4 rounded-[12px] border border-white/10 bg-[#0A0A1A]/80 p-4 backdrop-blur-sm sm:p-5 md:mt-10 md:p-8"
               >
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid min-w-0 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   <QuoteField label="Business name" id="health-quote-business">
                     <div className={fieldShellClass}>
                       <input
@@ -266,25 +266,27 @@ export default function HealthcarePortfolioSection() {
                       <label htmlFor="health-quote-country" className="sr-only">
                         Country code
                       </label>
-                      <select
-                        id="health-quote-country"
-                        name="countryCode"
-                        value={countryCode}
-                        onChange={(event) => setCountryCode(event.target.value)}
-                        className="h-full w-[88px] shrink-0 bg-transparent pr-1 text-[15px] text-white outline-none"
-                      >
-                        {quotePhoneCountryOptions.map((option) => (
-                          <option
-                            key={option.code}
-                            value={option.code}
-                            className="bg-default text-white"
-                          >
-                            {option.flag} {option.code}
-                          </option>
-                        ))}
-                      </select>
+                      <div className="relative h-full w-[4.75rem] shrink-0 overflow-hidden">
+                        <select
+                          id="health-quote-country"
+                          name="countryCode"
+                          value={countryCode}
+                          onChange={(event) => setCountryCode(event.target.value)}
+                          className="h-full w-full max-w-full bg-transparent pr-1 text-[15px] text-white outline-none"
+                        >
+                          {quotePhoneCountryOptions.map((option) => (
+                            <option
+                              key={option.code}
+                              value={option.code}
+                              className="bg-default text-white"
+                            >
+                              {option.flag} {option.code}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
                       <span
-                        className="mx-2 h-6 w-px bg-white/15"
+                        className="mx-2 h-6 w-px shrink-0 bg-white/15"
                         aria-hidden
                       />
                       <input
@@ -327,7 +329,7 @@ export default function HealthcarePortfolioSection() {
                   </QuoteField>
                 </div>
 
-                <div className="grid gap-5 rounded-[12px] border border-white/10 bg-white/[0.03] p-4 md:grid-cols-3 md:p-5">
+                <div className="grid min-w-0 gap-5 rounded-[12px] border border-white/10 bg-white/[0.03] p-3 sm:p-4 md:grid-cols-3 md:p-5">
                   <RadioGroup
                     legend="What are you looking for?"
                     name="health-lookingFor"
@@ -377,11 +379,11 @@ export default function HealthcarePortfolioSection() {
                   </p>
                 ) : null}
 
-                <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
+                <div className="flex flex-col items-stretch justify-center gap-3 pt-1 sm:flex-row sm:flex-wrap sm:items-center">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex h-10 w-auto min-w-40 cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-[#be185d] to-[#db2777] px-8 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(211,40,122,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:from-[#db2777] hover:to-[#be185d] hover:shadow-[0_12px_24px_rgba(211,40,122,0.34)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-pink/40 disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none"
+                    className="inline-flex h-10 w-full cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-[#be185d] to-[#db2777] px-8 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(211,40,122,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:from-[#db2777] hover:to-[#be185d] hover:shadow-[0_12px_24px_rgba(211,40,122,0.34)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-pink/40 disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none sm:w-auto sm:min-w-40"
                   >
                     {isSubmitting ? "Sending…" : "Send Message"}
                   </button>
@@ -389,7 +391,7 @@ export default function HealthcarePortfolioSection() {
                     type="button"
                     onClick={() => openCallbackModal()}
                     disabled={isSubmitting}
-                    className="inline-flex h-10 w-auto min-w-40 cursor-pointer items-center justify-center rounded-full border-2 border-primary-pink bg-transparent px-8 text-sm font-semibold text-primary-pink transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-pink hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-pink/40 disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60"
+                    className="inline-flex h-10 w-full cursor-pointer items-center justify-center rounded-full border-2 border-primary-pink bg-transparent px-8 text-sm font-semibold text-primary-pink transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-pink hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-pink/40 disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:min-w-40"
                   >
                     Request a Callback
                   </button>

@@ -41,10 +41,10 @@ export function useQuoteModal() {
 }
 
 const fieldShellClass =
-  "flex h-10 items-center rounded-xl border border-[#E5E7EB] bg-white px-3.5 transition-all duration-200 hover:border-[#C7CBD4] focus-within:border-primary-pink focus-within:shadow-[0_0_0_4px_rgba(211,40,122,0.16)]";
+  "flex h-10 min-w-0 w-full items-center overflow-hidden rounded-xl border border-[#E5E7EB] bg-white px-3.5 transition-all duration-200 hover:border-[#C7CBD4] focus-within:border-primary-pink focus-within:shadow-[0_0_0_4px_rgba(211,40,122,0.16)]";
 
 const inputClassName =
-  "h-full w-full bg-transparent text-[15px] leading-normal text-black outline-none placeholder:text-[#9CA3AF]";
+  "h-full min-w-0 w-full bg-transparent text-[15px] leading-normal text-black outline-none placeholder:text-[#9CA3AF]";
 
 function QuoteField({
   label,
@@ -60,7 +60,7 @@ function QuoteField({
   labelClassName?: string;
 }) {
   return (
-    <div className={cn("flex flex-col gap-1", className)}>
+    <div className={cn("flex min-w-0 flex-col gap-1", className)}>
       <label
         htmlFor={id}
         className={cn("text-[14px] font-medium text-black", labelClassName)}
@@ -121,7 +121,7 @@ function RadioGroup({
                     : "border-[#D1D5DB]"
                 )}
               />
-              <span>{option}</span>
+              <span className="min-w-0 break-words">{option}</span>
             </label>
           );
         })}
@@ -239,7 +239,7 @@ function QuoteModal({
     <AnimatePresence>
       {isOpen ? (
         <motion.div
-          className="fixed inset-0 z-[120] flex items-center justify-center p-4 sm:p-6"
+          className="fixed inset-0 z-[120] flex items-center justify-center p-3 sm:p-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -256,7 +256,7 @@ function QuoteModal({
             role="dialog"
             aria-modal="true"
             aria-labelledby="quote-modal-title"
-            className="relative z-10 w-full max-w-5xl overflow-hidden rounded-[12px] border border-[#ECECF3] bg-white shadow-[0_24px_80px_rgba(10,10,26,0.22)]"
+            className="relative z-10 flex max-h-[min(92dvh,900px)] w-full min-w-0 max-w-5xl flex-col overflow-hidden rounded-[12px] border border-[#ECECF3] bg-white shadow-[0_24px_80px_rgba(10,10,26,0.22)]"
             initial={{ opacity: 0, y: 24, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.98 }}
@@ -265,14 +265,14 @@ function QuoteModal({
             <button
               type="button"
               onClick={onClose}
-              className="absolute right-4 top-4 z-20 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-[#E5E7EB] text-[#6B7280] transition-all duration-200 hover:border-[#D1D5DB] hover:bg-[#F7F7FA] hover:text-black"
+              className="absolute right-3 top-3 z-20 flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-[#E5E7EB] text-[#6B7280] transition-all duration-200 hover:border-[#D1D5DB] hover:bg-[#F7F7FA] hover:text-black sm:right-4 sm:top-4"
               aria-label="Close"
             >
               <HiX className="h-5 w-5" />
             </button>
 
             <div
-              className="overflow-y-auto overscroll-contain px-6 py-5 sm:px-8 sm:py-6"
+              className="min-h-0 min-w-0 flex-1 overflow-x-hidden overflow-y-auto overscroll-contain px-4 py-5 sm:px-8 sm:py-6"
               onWheel={(event) => event.stopPropagation()}
             >
               {submitted ? (
@@ -297,9 +297,9 @@ function QuoteModal({
 
                   <form
                     onSubmit={handleSubmit}
-                    className="mt-5 space-y-4"
+                    className="mt-5 min-w-0 space-y-4"
                   >
-                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="grid min-w-0 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                       <QuoteField label="Business name" id="quote-business-name">
                         <div className={fieldShellClass}>
                           <input
@@ -344,23 +344,25 @@ function QuoteModal({
                           <label htmlFor="quote-country-code" className="sr-only">
                             Country code
                           </label>
-                          <select
-                            id="quote-country-code"
-                            name="countryCode"
-                            value={countryCode}
-                            onChange={(event) =>
-                              setCountryCode(event.target.value)
-                            }
-                            className="h-full w-[88px] shrink-0 bg-transparent pr-1 text-[15px] text-black outline-none"
-                          >
-                            {quotePhoneCountryOptions.map((option) => (
-                              <option key={option.code} value={option.code}>
-                                {option.flag} {option.code}
-                              </option>
-                            ))}
-                          </select>
+                          <div className="relative h-full w-[4.75rem] shrink-0 overflow-hidden">
+                            <select
+                              id="quote-country-code"
+                              name="countryCode"
+                              value={countryCode}
+                              onChange={(event) =>
+                                setCountryCode(event.target.value)
+                              }
+                              className="h-full w-full max-w-full bg-transparent pr-1 text-[15px] text-black outline-none"
+                            >
+                              {quotePhoneCountryOptions.map((option) => (
+                                <option key={option.code} value={option.code}>
+                                  {option.flag} {option.code}
+                                </option>
+                              ))}
+                            </select>
+                          </div>
                           <span
-                            className="mx-2 h-6 w-px bg-[#E5E7EB]"
+                            className="mx-2 h-6 w-px shrink-0 bg-[#E5E7EB]"
                             aria-hidden
                           />
                           <input
@@ -403,7 +405,7 @@ function QuoteModal({
                       </QuoteField>
                     </div>
 
-                    <div className="grid gap-5 rounded-[12px] border border-[#ECECF3] bg-[#FCFCFD] p-4 md:grid-cols-3 md:p-5">
+                    <div className="grid min-w-0 gap-5 rounded-[12px] border border-[#ECECF3] bg-[#FCFCFD] p-3 sm:p-4 md:grid-cols-3 md:p-5">
                       <RadioGroup
                         legend="What are you looking for?"
                         name="lookingFor"
@@ -458,11 +460,11 @@ function QuoteModal({
                       </p>
                     ) : null}
 
-                    <div className="flex flex-wrap items-center justify-center gap-3">
+                    <div className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="inline-flex h-10 w-auto min-w-40 cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-[#be185d] to-[#db2777] px-8 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(211,40,122,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:from-[#db2777] hover:to-[#be185d] hover:shadow-[0_12px_24px_rgba(211,40,122,0.34)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-pink/40 focus-visible:ring-offset-2 disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none"
+                        className="inline-flex h-10 w-full cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-[#be185d] to-[#db2777] px-8 text-sm font-semibold text-white shadow-[0_8px_20px_rgba(211,40,122,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:from-[#db2777] hover:to-[#be185d] hover:shadow-[0_12px_24px_rgba(211,40,122,0.34)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-pink/40 focus-visible:ring-offset-2 disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none sm:w-auto sm:min-w-40"
                       >
                         {isSubmitting ? "Sending…" : "Send Message"}
                       </button>
@@ -470,7 +472,7 @@ function QuoteModal({
                         type="button"
                         onClick={handleRequestCallback}
                         disabled={isSubmitting}
-                        className="inline-flex h-10 w-auto min-w-40 cursor-pointer items-center justify-center rounded-full border-2 border-primary-pink bg-white px-8 text-sm font-semibold text-primary-pink transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-pink hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-pink/40 focus-visible:ring-offset-2 disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60"
+                        className="inline-flex h-10 w-full cursor-pointer items-center justify-center rounded-full border-2 border-primary-pink bg-white px-8 text-sm font-semibold text-primary-pink transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-pink hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-pink/40 focus-visible:ring-offset-2 disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:min-w-40"
                       >
                         Request a Callback
                       </button>

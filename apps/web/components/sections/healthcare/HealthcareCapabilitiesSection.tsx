@@ -61,9 +61,6 @@ const capabilities: Capability[] = [
     ],
     image:
       "/assets/final-images/industries/healthcare/aurelia-clinics-intro.png",
-    // Previous unrelated visual preserved for possible reuse:
-    // image: "/assets/images/case-study/krank-banner.png",
-    // image: "/assets/final-images/industries/healthcare/health-case-patient-experience.png",
   },
   {
     id: "mhealth",
@@ -87,11 +84,6 @@ const capabilities: Capability[] = [
       },
     ],
     image: "/assets/final-images/industries/healthcare/pulselink-mhealth-clear.png",
-    // image: "/assets/final-images/industries/healthcare/pulselink-mhealth-tab.png",
-    // image: "/assets/final-images/industries/healthcare/pulselink-intro-v2.png",
-    // image: "/assets/final-images/industries/healthcare/pulselink-intro.png",
-    // image: "/assets/final-images/industries/healthcare/health-case-mhealth.png",
-    // image: "/assets/images/case-study/oddysee-banner.png",
   },
   {
     id: "virtual-care",
@@ -114,10 +106,7 @@ const capabilities: Capability[] = [
         text: "Help patients and caregivers track and manage prescriptions accurately.",
       },
     ],
-    image:
-      "/assets/final-images/industries/healthcare/northstar-intro.png",
-    // image: "/assets/final-images/industries/healthcare/health-case-virtual-care.png",
-    // image: "/assets/images/case-study/invesment-banner.png",
+    image: "/assets/final-images/industries/healthcare/northstar-intro.png",
   },
   {
     id: "agentic-care",
@@ -141,8 +130,6 @@ const capabilities: Capability[] = [
       },
     ],
     image: "/assets/final-images/industries/healthcare/thornfield-intro.png",
-    // image: "/assets/final-images/industries/healthcare/health-case-agentic.png",
-    // image: "/assets/images/case-study/prism-banner.png",
   },
   {
     id: "foundational-data",
@@ -166,13 +153,9 @@ const capabilities: Capability[] = [
       },
     ],
     image: "/assets/final-images/industries/healthcare/helix-intro-v2.png",
-    // image: "/assets/final-images/industries/healthcare/helix-intro.png",
-    // image: "/assets/final-images/industries/healthcare/health-case-data-layer.png",
-    // image: "/assets/images/case-study/sellsMart4.png",
   },
 ];
 
-/** Extra scroll room per slide so changes feel paced, not abrupt */
 const STEP_VH = 110;
 const EASE = [0.22, 1, 0.36, 1] as const;
 const FADE = { duration: 0.55, ease: EASE };
@@ -205,7 +188,6 @@ export default function HealthcareCapabilitiesSection() {
 
     const scrolled = Math.min(scrollable, Math.max(0, -rect.top));
     const progress = scrolled / scrollable;
-    // Hold each slide near segment center; round for softer boundaries
     const scaled = progress * (capabilities.length - 0.0001);
     const next = Math.min(
       capabilities.length - 1,
@@ -267,47 +249,45 @@ export default function HealthcareCapabilitiesSection() {
       style={{ height: `${capabilities.length * STEP_VH}vh` }}
       aria-label="Healthcare capabilities"
     >
-      <div className="sticky top-16 overflow-hidden pt-8 pb-8 md:top-20 md:pt-10 md:pb-10">
+      {/*
+        Sticky scrub on every breakpoint. Panel uses max-height of the viewport
+        (minus navbar) so content stays visible; overflow-y-auto only if needed.
+      */}
+      <div className="sticky top-16 z-10 flex max-h-[calc(100dvh-4rem)] items-center overflow-y-auto overscroll-contain bg-white py-6 md:top-20 md:max-h-[calc(100dvh-5rem)] md:py-8 lg:py-10">
         <Container className="w-full">
-          <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-14">
+          <div className="grid items-center gap-6 lg:grid-cols-[1fr_1.15fr] lg:gap-14">
             <div className="flex flex-col justify-center">
-              <div className="relative min-h-[340px] md:min-h-[400px]">
-                <AnimatePresence mode="sync" initial={false}>
+              <div className="relative">
+                <AnimatePresence mode="wait" initial={false}>
                   <motion.div
                     key={capability.id}
-                    initial={{ opacity: 0, y: 22, filter: "blur(4px)" }}
-                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                    exit={{
-                      opacity: 0,
-                      y: -16,
-                      filter: "blur(4px)",
-                      position: "absolute",
-                      inset: 0,
-                    }}
+                    initial={{ opacity: 0, y: 18 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -12 }}
                     transition={FADE}
                     className="w-full"
                   >
-                    <h3 className="max-w-md text-3xl font-semibold leading-tight text-[#011C57] md:text-4xl">
+                    <h3 className="max-w-md text-2xl font-semibold leading-tight text-[#011C57] sm:text-3xl md:text-4xl">
                       {capability.heading}
                     </h3>
                     <p className="mt-2 text-sm font-medium text-primary-pink">
                       Case study · {capability.caseBrand}
                     </p>
-                    <ul className="mt-7 space-y-5">
+                    <ul className="mt-4 space-y-3 sm:mt-6 sm:space-y-4 md:mt-7 md:space-y-5">
                       {capability.bullets.map((bullet, i) => (
                         <motion.li
                           key={bullet.title}
-                          initial={{ opacity: 0, y: 10 }}
+                          initial={{ opacity: 0, y: 8 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{
-                            duration: 0.4,
-                            delay: 0.08 + i * 0.05,
+                            duration: 0.35,
+                            delay: 0.06 + i * 0.04,
                             ease: EASE,
                           }}
                           className="flex gap-3"
                         >
                           <span className="mt-2.5 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-[#888888]" />
-                          <p className="text-[15px] leading-relaxed text-[#666]">
+                          <p className="text-[13px] leading-relaxed text-[#666] sm:text-[14px] md:text-[15px]">
                             <span className="font-semibold text-[#222]">
                               {bullet.title}
                             </span>{" "}
@@ -318,7 +298,7 @@ export default function HealthcareCapabilitiesSection() {
                     </ul>
                     <Link
                       href={capability.href}
-                      className="mt-7 inline-flex h-10 items-center justify-center rounded-full bg-black px-6 text-sm font-medium text-white transition-colors hover:bg-black/80"
+                      className="mt-5 inline-flex h-10 items-center justify-center rounded-full bg-black px-6 text-sm font-medium text-white transition-colors hover:bg-black/80 sm:mt-6 md:mt-7"
                     >
                       Learn more
                     </Link>
@@ -326,7 +306,7 @@ export default function HealthcareCapabilitiesSection() {
                 </AnimatePresence>
               </div>
 
-              <div className="mt-8 flex flex-wrap justify-center gap-1.5 md:mt-10 md:justify-start">
+              <div className="mt-6 flex flex-wrap justify-center gap-1.5 sm:mt-8 md:mt-10 md:justify-start">
                 {capabilities.map((item, index) => {
                   const Icon = item.icon;
                   const isActive = index === activeIndex;
@@ -337,21 +317,21 @@ export default function HealthcareCapabilitiesSection() {
                       onClick={() => goToIndex(index)}
                       aria-label={item.label}
                       aria-current={isActive ? "true" : undefined}
-                      className="flex w-20 flex-col items-center gap-2 text-center md:w-24"
+                      className="flex w-[4.25rem] flex-col items-center gap-1.5 text-center sm:w-20 md:w-24 md:gap-2"
                     >
                       <span
                         className={cn(
-                          "flex h-14 w-14 items-center justify-center rounded-[12px] transition-all duration-500 ease-out",
+                          "flex h-11 w-11 items-center justify-center rounded-[12px] transition-all duration-500 ease-out sm:h-12 sm:w-12 md:h-14 md:w-14",
                           isActive
                             ? "scale-105 bg-primary-pink text-white shadow-[0_10px_24px_rgba(211,40,122,0.35)]"
                             : "bg-primary-pink/10 text-primary-pink hover:bg-primary-pink/15"
                         )}
                       >
-                        <Icon className="h-6 w-6" />
+                        <Icon className="h-5 w-5 md:h-6 md:w-6" />
                       </span>
                       <span
                         className={cn(
-                          "text-[11px] font-medium leading-tight transition-colors duration-500",
+                          "text-[10px] font-medium leading-tight transition-colors duration-500 sm:text-[11px]",
                           isActive ? "text-primary-pink" : "text-[#9aa3b2]"
                         )}
                       >
@@ -363,9 +343,8 @@ export default function HealthcareCapabilitiesSection() {
               </div>
             </div>
 
-            <div className="relative flex items-center justify-start lg:-mr-16">
-              <div className="relative aspect-4/3 w-full max-w-[640px]">
-                {/* Crossfade all images for a softer swap */}
+            <div className="relative w-full lg:-mr-16">
+              <div className="relative mx-auto aspect-4/3 w-full max-w-[560px] lg:max-w-[640px]">
                 {capabilities.map((item, index) => (
                   <motion.div
                     key={item.id}
@@ -374,10 +353,8 @@ export default function HealthcareCapabilitiesSection() {
                     animate={{
                       opacity: index === activeIndex ? 1 : 0,
                       scale: index === activeIndex ? 1 : 0.97,
-                      filter:
-                        index === activeIndex ? "blur(0px)" : "blur(6px)",
                     }}
-                    transition={{ duration: 0.65, ease: EASE }}
+                    transition={{ duration: 0.55, ease: EASE }}
                     style={{
                       pointerEvents: index === activeIndex ? "auto" : "none",
                       zIndex: index === activeIndex ? 2 : 1,

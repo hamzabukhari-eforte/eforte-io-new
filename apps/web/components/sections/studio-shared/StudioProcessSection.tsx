@@ -46,15 +46,20 @@ export default function StudioProcessSection({
                 transition={{ duration: 0.5, delay: 0.04 * index }}
                 className="grid items-center gap-8 md:grid-cols-2 md:gap-14"
               >
-                <div className={imageFirst ? "md:order-1" : "md:order-2"}>
+                <div
+                  className={cn(
+                    "min-w-0",
+                    imageFirst ? "md:order-1" : "md:order-2"
+                  )}
+                >
                   {sizedFrame ? (
-                    <div className="h-[380px] w-[608px] max-w-full overflow-hidden rounded-[12px] shadow-[0_24px_70px_rgba(10,10,26,0.12)]">
+                    <div className="aspect-[608/380] w-full max-w-[608px] overflow-hidden rounded-[12px] shadow-[0_24px_70px_rgba(10,10,26,0.12)]">
                       <Image
                         src={item.image}
                         alt={item.imageAlt}
                         width={608}
                         height={380}
-                        sizes="608px"
+                        sizes="(max-width: 768px) 100vw, 608px"
                         unoptimized
                         className="size-full object-fill"
                       />
@@ -72,7 +77,12 @@ export default function StudioProcessSection({
                   )}
                 </div>
 
-                <div className={imageFirst ? "md:order-2" : "md:order-1"}>
+                <div
+                  className={cn(
+                    "min-w-0",
+                    imageFirst ? "md:order-2" : "md:order-1"
+                  )}
+                >
                   <p
                     className={cn(
                       "text-sm font-semibold uppercase tracking-[0.18em] text-primary-pink",
@@ -83,9 +93,9 @@ export default function StudioProcessSection({
                   </p>
                   <h3
                     className={cn(
-                      "mt-3 font-semibold leading-tight",
+                      "mt-3 font-semibold leading-tight text-balance",
                       solidTypography
-                        ? "text-[36px] text-black"
+                        ? "text-[28px] text-black sm:text-[36px]"
                         : "text-2xl text-default md:text-4xl",
                       titleClassName
                     )}

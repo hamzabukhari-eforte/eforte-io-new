@@ -467,6 +467,9 @@ export default function FinancialServicesAgentsSection() {
   const trackRef = useRef<HTMLDivElement>(null);
   const [activeId, setActiveId] = useState<Tab["id"]>(tabs[0].id);
   const [reduceMotion, setReduceMotion] = useState(false);
+  const activeIdRef = useRef<Tab["id"]>(tabs[0].id);
+  const clickLockRef = useRef(false);
+  const clickUnlockTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const activeTab = tabs.find((tab) => tab.id === activeId) ?? tabs[0];
 
   useEffect(() => {
@@ -486,18 +489,23 @@ export default function FinancialServicesAgentsSection() {
     let frame = 0;
     const updateActiveTab = () => {
       frame = 0;
+      if (clickLockRef.current) return;
+
       const rect = track.getBoundingClientRect();
       const scrollable = track.offsetHeight - window.innerHeight;
       if (scrollable <= 0) return;
 
       const scrolled = Math.min(scrollable, Math.max(0, -rect.top));
       const progress = scrolled / scrollable;
+      const scaled = progress * (tabs.length - 0.0001);
       const nextIndex = Math.min(
         tabs.length - 1,
-        Math.floor(progress * tabs.length)
+        Math.max(0, Math.round(scaled - 0.15))
       );
       const nextId = tabs[nextIndex].id;
-      setActiveId((current) => (current === nextId ? current : nextId));
+      if (activeIdRef.current === nextId) return;
+      activeIdRef.current = nextId;
+      setActiveId(nextId);
     };
 
     const onScroll = () => {
@@ -506,143 +514,154 @@ export default function FinancialServicesAgentsSection() {
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
     updateActiveTab();
 
     return () => {
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
       if (frame) window.cancelAnimationFrame(frame);
+      if (clickUnlockTimer.current) clearTimeout(clickUnlockTimer.current);
     };
   }, [reduceMotion]);
 
   const selectTab = (id: Tab["id"]) => {
-    if (reduceMotion) {
-      setActiveId(id);
-      return;
-    }
+    const index = tabs.findIndex((tab) => tab.id === id);
+    if (index < 0) return;
+
+    activeIdRef.current = id;
+    setActiveId(id);
+
+    if (reduceMotion) return;
 
     const track = trackRef.current;
-    const index = tabs.findIndex((tab) => tab.id === id);
-    if (!track || index < 0) {
-      setActiveId(id);
-      return;
-    }
+    if (!track) return;
 
+    clickLockRef.current = true;
     const start = track.getBoundingClientRect().top + window.scrollY;
-    const scrollable = track.offsetHeight - window.innerHeight;
-    const target =
-      start + ((index + 0.2) / tabs.length) * Math.max(scrollable, 0);
+    const scrollable = Math.max(0, track.offsetHeight - window.innerHeight);
+    const segment = scrollable / tabs.length;
+    const target = start + index * segment + segment * 0.35;
     window.scrollTo({ top: target, behavior: "smooth" });
+
+    if (clickUnlockTimer.current) clearTimeout(clickUnlockTimer.current);
+    clickUnlockTimer.current = setTimeout(() => {
+      clickLockRef.current = false;
+    }, 900);
   };
 
   return (
     <div
       ref={trackRef}
       className="relative bg-default"
-      style={reduceMotion ? undefined : { height: `${tabs.length * 70}vh` }}
+      style={reduceMotion ? undefined : { height: `${tabs.length * 110}vh` }}
     >
-      <section className="sticky top-16 bg-default pt-6 pb-6 text-white md:top-20 md:pt-8 md:pb-8">
+      <section className="sticky top-16 z-10 max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain bg-default py-5 text-white md:top-20 md:max-h-[calc(100dvh-5rem)] md:py-8">
         <style>{AGENT_ILLUSTRATION_STYLES}</style>
-      <Container>
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
+        <Container>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, margin: "-40px", amount: 0.15 }}
-          transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5 }}
             className="text-center text-[12px] font-semibold uppercase tracking-[0.16em] text-primary-pink"
-        >
-          Sample Agents Categories
-        </motion.p>
-
-        <motion.h2
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, margin: "-40px", amount: 0.15 }}
-          transition={{ duration: 0.5, delay: 0.08 }}
-            className="mx-auto mt-3 max-w-4xl text-center text-[48px] font-semibold leading-[52px] text-white"
-        >
-          Purpose built AI agents for the workflows that run modern finance
-        </motion.h2>
-
-          <div className="mt-7 md:mt-8">
-          <div
-            role="tablist"
-            aria-label="Sample agents categories"
-              className="grid w-full grid-cols-1 border-b border-white/12 sm:grid-cols-2 lg:grid-cols-4"
           >
-            {tabs.map((tab) => {
-              const isActive = tab.id === activeId;
+            Sample Agents Categories
+          </motion.p>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, margin: "-40px", amount: 0.15 }}
+            transition={{ duration: 0.5, delay: 0.08 }}
+            className="mx-auto mt-3 max-w-4xl text-center text-[26px] font-semibold leading-tight text-white sm:text-4xl md:text-[48px] md:leading-[52px]"
+          >
+            Purpose built AI agents for the workflows that run modern finance
+          </motion.h2>
+
+          <div className="mt-5 md:mt-8">
+            <div
+              role="tablist"
+              aria-label="Sample agents categories"
+              className="grid w-full grid-cols-2 border-b border-white/12 lg:grid-cols-4"
+            >
+              {tabs.map((tab) => {
+                const isActive = tab.id === activeId;
                 const Icon = tab.icon;
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={isActive}
-                  aria-controls={`tabpanel-${tab.id}`}
-                  id={`tab-${tab.id}`}
+                return (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-controls={`tabpanel-${tab.id}`}
+                    id={`tab-${tab.id}`}
                     onClick={() => selectTab(tab.id)}
-                  className={cn(
-                      "relative flex min-h-12 cursor-pointer items-center justify-center gap-2 px-3 py-3.5 text-[18px] font-medium tracking-wide transition-colors duration-200",
-                      isActive ? "text-white" : "text-white hover:text-white"
+                    className={cn(
+                      "relative flex min-h-11 cursor-pointer items-center justify-center gap-1.5 px-2 py-2.5 text-left text-[13px] font-medium tracking-wide transition-colors duration-200 sm:min-h-12 sm:gap-2 sm:px-3 sm:py-3.5 sm:text-center sm:text-[16px] md:text-[18px]",
+                      isActive ? "text-white" : "text-white/70 hover:text-white"
                     )}
                   >
                     {isActive ? (
-                      <Icon className="h-5 w-5 shrink-0 text-primary-pink" aria-hidden />
+                      <Icon
+                        className="h-4 w-4 shrink-0 text-primary-pink sm:h-5 sm:w-5"
+                        aria-hidden
+                      />
                     ) : null}
-                    <span>{tab.label}</span>
+                    <span className="leading-snug">{tab.label}</span>
                     <span
                       className={cn(
                         "absolute inset-x-0 -bottom-px h-0.5 transition-colors duration-200",
                         isActive ? "bg-primary-pink" : "bg-transparent"
                       )}
                     />
-                </button>
-              );
-            })}
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        </div>
 
-          <div className="mt-7 md:mt-8">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab.id}
-              role="tabpanel"
-              id={`tabpanel-${activeTab.id}`}
-              aria-labelledby={`tab-${activeTab.id}`}
+          <div className="mt-5 md:mt-8">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeTab.id}
+                role="tabpanel"
+                id={`tabpanel-${activeTab.id}`}
+                aria-labelledby={`tab-${activeTab.id}`}
                 initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.35, ease: "easeOut" }}
-              className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
-            >
-              <div className="max-w-lg">
-                  <h3 className="text-2xl font-semibold leading-tight text-white md:text-[26px]">
-                  {activeTab.title}
-                </h3>
-                  <p className="mt-5 text-[15px] leading-relaxed text-white md:text-base">
-                  {activeTab.description}
-                </p>
+                transition={{ duration: 0.35, ease: "easeOut" }}
+                className="grid items-center gap-6 lg:grid-cols-2 lg:gap-16"
+              >
+                <div className="max-w-lg">
+                  <h3 className="text-xl font-semibold leading-tight text-white sm:text-2xl md:text-[26px]">
+                    {activeTab.title}
+                  </h3>
+                  <p className="mt-3 text-[14px] leading-relaxed text-white sm:mt-5 sm:text-[15px] md:text-base">
+                    {activeTab.description}
+                  </p>
 
-                  <ul className="mt-8 space-y-3 text-[15px] text-white md:text-base">
-                  {activeTab.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-start gap-2.5">
+                  <ul className="mt-5 space-y-2.5 text-[13px] text-white sm:mt-8 sm:space-y-3 sm:text-[15px] md:text-base">
+                    {activeTab.bullets.map((bullet) => (
+                      <li key={bullet} className="flex items-start gap-2.5">
                         <HiCheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-primary-pink" />
-                      <span>{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-              <div className="flex justify-center lg:justify-end">
+                <div className="flex justify-center lg:justify-end">
                   <div className="relative aspect-[900/576] w-full max-w-[480px] overflow-hidden rounded-[12px] border border-white/10 bg-black lg:max-w-[520px]">
                     <AgentTabIllustration id={activeTab.id} />
                   </div>
-              </div>
-            </motion.div>
-          </AnimatePresence>
-        </div>
-      </Container>
-    </section>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </Container>
+      </section>
     </div>
   );
 }

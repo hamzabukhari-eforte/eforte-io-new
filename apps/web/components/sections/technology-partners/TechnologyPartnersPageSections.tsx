@@ -22,7 +22,7 @@ export default function TechnologyPartnersPageSections() {
           solidTypography
           className="pt-0 pb-16 bg-transparent"
           labelClassName="text-[12px]"
-          titleClassName="text-[36px] text-black"
+          titleClassName="text-[28px] text-black sm:text-[36px]"
           descriptionClassName="text-[16px] text-black"
           tagClassName="border-primary-pink text-primary-pink"
         />
