@@ -54,15 +54,15 @@ function SuccessStoryCard({ story }: { story: StudioSuccessStoryItem }) {
         </div>
       </div>
 
-      <div className="flex min-h-[220px] w-full items-center justify-center lg:min-h-0">
-        <div className="relative w-full overflow-hidden lg:min-h-full">
+      <div className="relative w-full overflow-hidden lg:h-full">
+        <div className="relative aspect-4/3 w-full min-h-[200px] sm:min-h-[240px] md:min-h-[280px] lg:aspect-auto lg:h-full lg:min-h-[320px]">
           <Image
             key={story.image}
             src={story.image}
             alt={story.imageAlt}
             fill
             sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-contain object-center"
+            className="object-contain object-center p-4 lg:p-6"
           />
         </div>
       </div>
@@ -82,6 +82,7 @@ export default function StudioSuccessStoriesSection({
   className,
 }: StudioSuccessStoriesSectionProps) {
   const swiperRef = useRef<SwiperType | null>(null);
+  const dotsRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -97,6 +98,26 @@ export default function StudioSuccessStoriesSection({
 
     return () => window.clearInterval(id);
   }, [activeIndex, stories.length]);
+
+  useEffect(() => {
+    const container = dotsRef.current;
+    if (!container) return;
+    const active = container.querySelector<HTMLElement>(
+      `[data-dot-index="${activeIndex}"]`
+    );
+    if (!active) return;
+
+    // Scroll only the dots row horizontally — never the page
+    // (scrollIntoView was jumping capabilities pages down to Success Stories on load)
+    const containerRect = container.getBoundingClientRect();
+    const activeRect = active.getBoundingClientRect();
+    const nextLeft =
+      container.scrollLeft +
+      (activeRect.left - containerRect.left) -
+      (containerRect.width - activeRect.width) / 2;
+
+    container.scrollTo({ left: Math.max(0, nextLeft), behavior: "smooth" });
+  }, [activeIndex]);
 
   return (
     <section className={cn("overflow-hidden bg-white py-16", className)}>
@@ -128,15 +149,19 @@ export default function StudioSuccessStoriesSection({
           </Swiper>
         </div>
 
-        <div className="mt-16 flex items-center justify-center gap-2">
+        <div
+          ref={dotsRef}
+          className="mt-10 flex items-center justify-start gap-1.5 overflow-x-auto px-1 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] md:mt-16 md:justify-center md:gap-2 [&::-webkit-scrollbar]:hidden"
+        >
           {stories.map((story, index) => (
             <button
               key={story.id}
               type="button"
+              data-dot-index={index}
               aria-label={`Go to success story ${index + 1}`}
               onClick={() => swiperRef.current?.slideTo(index)}
               className={cn(
-                "h-2.5 w-2.5 rounded-full transition-colors",
+                "h-2 w-2 shrink-0 rounded-full transition-colors sm:h-2.5 sm:w-2.5",
                 activeIndex === index ? "bg-default" : "bg-default/20"
               )}
             />

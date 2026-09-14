@@ -54,14 +54,15 @@ export default function ProductDesignProcessSection() {
   }, [items]);
 
   return (
-    <section className="relative bg-white pb-12 md:pb-20 pt-10">
+    <section className="relative bg-white pb-12 pt-10 md:pb-20">
       <Container>
         <h2 className="mx-auto max-w-3xl text-center text-3xl font-semibold leading-tight text-default md:text-5xl">
           Core design capabilities
         </h2>
       </Container>
 
-      <div className="sticky top-16 z-40 mt-8 py-3 md:top-20 md:mt-10">
+      {/* Sticky tabs — tablet/desktop only; mobile uses each card’s eyebrow label */}
+      <div className="sticky top-16 z-40 mt-8 hidden py-3 md:top-20 md:mt-10 md:block">
         <Container>
           <div className="flex justify-center">
             <nav
@@ -79,7 +80,7 @@ export default function ProductDesignProcessSection() {
                     onClick={() => scrollToCard(id)}
                     aria-current={isActive ? "true" : undefined}
                     className={cn(
-                      "inline-flex items-center justify-center h-10 shrink-0 cursor-pointer rounded-full leading-none px-5 py-0 text-base font-medium whitespace-nowrap transition-colors duration-200 md:px-6 md:text-lg",
+                      "inline-flex h-10 shrink-0 cursor-pointer items-center justify-center rounded-full px-5 py-0 text-base leading-none font-medium whitespace-nowrap transition-colors duration-200 md:px-6 md:text-lg",
                       isActive
                         ? "bg-black text-white"
                         : "bg-transparent text-gray-500 hover:text-gray-800"
@@ -94,8 +95,8 @@ export default function ProductDesignProcessSection() {
         </Container>
       </div>
 
-      <Container className="mt-8 md:mt-10">
-        <div className="space-y-16 md:space-y-20">
+      <Container className="mt-10 md:mt-10">
+        <div className="space-y-12 md:space-y-20">
           {items.map((item, index) => {
             const id = toTabId(item.eyebrow);
             const imageFirst = item.imageSide === "left";
@@ -108,18 +109,17 @@ export default function ProductDesignProcessSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.18 }}
                 transition={{ duration: 0.5, delay: 0.04 * index }}
-                className="scroll-mt-36 grid items-center gap-8 md:scroll-mt-40 md:grid-cols-2 md:gap-14"
+                className="grid scroll-mt-24 items-center gap-6 md:scroll-mt-40 md:grid-cols-2 md:gap-14"
               >
                 <div className={imageFirst ? "md:order-1" : "md:order-2"}>
-                  <div className="h-[380px] w-[608px] max-w-full overflow-hidden rounded-[12px] shadow-[0_24px_70px_rgba(10,10,26,0.12)]">
+                  <div className="relative aspect-16/10 w-full overflow-hidden rounded-[12px] shadow-[0_24px_70px_rgba(10,10,26,0.12)] sm:aspect-3/2 md:aspect-auto md:h-[380px] md:max-w-[608px]">
                     <Image
                       src={item.image}
                       alt={item.imageAlt}
-                      width={608}
-                      height={380}
-                      sizes="608px"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 608px"
                       unoptimized
-                      className="size-full object-fill"
+                      className="object-cover object-center md:object-fill"
                     />
                   </div>
                 </div>
@@ -138,7 +138,7 @@ export default function ProductDesignProcessSection() {
                     {item.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="inline-flex h-[25px] items-center justify-center rounded-full leading-none border border-gray-200 px-3 py-0 text-xs font-medium text-gray-600"
+                        className="inline-flex h-[25px] items-center justify-center rounded-full border border-gray-200 px-3 py-0 text-xs leading-none font-medium text-gray-600"
                       >
                         {tag}
                       </span>
