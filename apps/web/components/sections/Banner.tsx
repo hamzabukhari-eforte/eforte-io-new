@@ -33,7 +33,7 @@ export default function Banner() {
         aria-hidden
       />
 
-      <div className="relative z-10 w-full py-[120px]">
+      <div className="relative z-10 w-full py-20 md:py-28 lg:py-[120px]">
         <Container>
           <motion.div
             className="mx-auto max-w-4xl text-center"
@@ -42,7 +42,7 @@ export default function Banner() {
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <motion.h1
-              className="mb-6 text-[90px] font-medium leading-tight tracking-tight text-white"
+              className="mb-4 text-[48px] font-medium leading-[1.1] tracking-tight text-white sm:mb-5 sm:text-[48px] md:mb-6 md:text-[64px] md:leading-[1.08] lg:text-[90px] lg:leading-tight"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
@@ -50,7 +50,7 @@ export default function Banner() {
               The Integrated AI Transformation Partner.
             </motion.h1>
             <motion.p
-              className="mx-auto text-[24px] font-light leading-relaxed text-white"
+              className="mx-auto max-w-3xl text-[16px] font-light leading-relaxed text-white sm:text-[18px] md:max-w-none md:text-[20px] lg:text-[24px]"
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
