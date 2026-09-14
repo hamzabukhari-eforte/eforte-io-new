@@ -101,18 +101,18 @@ export default function VelocityAIFrameworkSection() {
 
         {/* Card 4: Certified Tools (wide) */}
         <motion.div
-          className="lg:col-span-7 bg-[#0A0B14] border border-white/5 rounded-[12px] p-8 relative overflow-hidden group hover:border-white/10 transition-all duration-300 min-h-[240px] flex flex-col md:flex-row items-center justify-between gap-6"
+          className="lg:col-span-7 bg-[#0A0B14] border border-white/5 rounded-[12px] p-6 md:p-8 relative overflow-hidden group hover:border-white/10 transition-all duration-300 min-h-[240px] flex flex-col md:flex-row items-stretch md:items-center justify-between gap-6"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
         >
-          <div className="max-w-[45%] relative z-10 pr-6">
+          <div className="w-full max-w-none relative z-10 md:max-w-[45%] md:pr-6">
             <h4 className={typography.cardTitle + " text-white mb-2 md:mb-3"}>Certified tools and platforms</h4>
             <p className={typography.cardBody}>
               All tools and platforms are reviewed and approved by AI and security specialists before adoption to ensure reliability and compliance.
             </p>
           </div>
-          <div className="flex-1 relative h-32 flex items-center justify-end gap-4 flex-wrap">
+          <div className="w-full flex-1 relative h-auto md:h-32 flex items-center justify-center md:justify-end gap-4 flex-wrap">
             <div className="w-14 h-14 bg-[#1C1D26] rounded-[12px] flex items-center justify-center border border-white/10 shadow-lg transform rotate-3 hover:rotate-0 transition-all duration-300 hover:scale-110 z-20">
               <SiJira className="text-white text-3xl opacity-90" />
             </div>
@@ -130,18 +130,18 @@ export default function VelocityAIFrameworkSection() {
 
         {/* Card 5: Custom AI Agents */}
         <motion.div
-          className="lg:col-span-5 bg-[#0A0B14] border border-white/5 rounded-[12px] p-8 relative overflow-hidden group hover:border-white/10 transition-all duration-300 min-h-[240px] flex flex-col md:flex-row items-center justify-between gap-6"
+          className="lg:col-span-5 bg-[#0A0B14] border border-white/5 rounded-[12px] p-6 md:p-8 relative overflow-hidden group hover:border-white/10 transition-all duration-300 min-h-[240px] flex flex-col md:flex-row items-stretch md:items-center justify-between gap-6"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
         >
-          <div className="max-w-[50%] relative z-10">
+          <div className="w-full max-w-none relative z-10 md:max-w-[50%]">
             <h4 className={typography.cardTitle + " text-white mb-2 md:mb-3"}>Custom AI Agents</h4>
             <p className={typography.cardBody}>
               Secure, tailored AI agents designed to drive productivity, consistency, and efficiency across engineering teams.
             </p>
           </div>
-          <div className="relative w-32 h-32 flex items-center justify-center">
+          <div className="relative mx-auto md:mx-0 w-32 h-32 flex items-center justify-center shrink-0">
             <div className="absolute inset-0 rounded-full bg-[#426CFF]/20 blur-2xl" />
             <div className="w-16 h-16 rounded-full bg-[#426CFF] p-[2px] relative z-20 shadow-[0_0_20px_rgba(66,108,255,0.5)]">
               <div className="w-full h-full rounded-full bg-[#0A0B14] flex items-center justify-center overflow-hidden">

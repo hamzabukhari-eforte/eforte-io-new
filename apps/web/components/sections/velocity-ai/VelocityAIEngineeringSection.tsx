@@ -20,7 +20,7 @@ type Step = {
 
 function IconUsers() {
   return (
-    <svg viewBox="0 0 24 24" className="h-7 w-7 sm:h-8 sm:w-8" fill="none" aria-hidden>
+    <svg viewBox="0 0 24 24" className="h-4 w-4 sm:h-7 sm:w-7 md:h-8 md:w-8" fill="none" aria-hidden>
       <circle cx="9" cy="7" r="3" stroke="white" strokeWidth="1.8" />
       <path
         d="M3 20v-1a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v1"
@@ -41,7 +41,7 @@ function IconUsers() {
 
 function IconDatabase() {
   return (
-    <svg viewBox="0 0 24 24" className="h-7 w-7 sm:h-8 sm:w-8" fill="none" aria-hidden>
+    <svg viewBox="0 0 24 24" className="h-4 w-4 sm:h-7 sm:w-7 md:h-8 md:w-8" fill="none" aria-hidden>
       <ellipse cx="12" cy="5" rx="7" ry="3" stroke="white" strokeWidth="1.8" />
       <path
         d="M5 5v6c0 1.66 3.13 3 7 3s7-1.34 7-3V5"
@@ -68,7 +68,7 @@ function IconDatabase() {
 
 function IconCode() {
   return (
-    <svg viewBox="0 0 24 24" className="h-7 w-7 sm:h-8 sm:w-8" fill="none" aria-hidden>
+    <svg viewBox="0 0 24 24" className="h-4 w-4 sm:h-7 sm:w-7 md:h-8 md:w-8" fill="none" aria-hidden>
       <path d="M8 6L3 12l5 6" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M16 6l5 6-5 6" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M14 4L10 20" stroke={ACCENT_PINK} strokeWidth="2.4" strokeLinecap="round" />
@@ -78,7 +78,7 @@ function IconCode() {
 
 function IconCog() {
   return (
-    <svg viewBox="0 0 24 24" className="h-7 w-7 sm:h-8 sm:w-8" aria-hidden>
+    <svg viewBox="0 0 24 24" className="h-4 w-4 sm:h-7 sm:w-7 md:h-8 md:w-8" aria-hidden>
       <path
         fill="white"
         d="M19.4 13a7.7 7.7 0 0 0 .1-1 7.7 7.7 0 0 0-.1-1l2-1.6a.5.5 0 0 0 .1-.6l-1.9-3.3a.5.5 0 0 0-.6-.2l-2.4 1a7.3 7.3 0 0 0-1.7-1l-.4-2.5a.5.5 0 0 0-.5-.4h-3.8a.5.5 0 0 0-.5.4l-.4 2.5a7.3 7.3 0 0 0-1.7 1l-2.4-1a.5.5 0 0 0-.6.2L2.4 8.8a.5.5 0 0 0 .1.6l2 1.6a7.7 7.7 0 0 0-.1 1 7.7 7.7 0 0 0 .1 1l-2 1.6a.5.5 0 0 0-.1.6l1.9 3.3a.5.5 0 0 0 .6.2l2.4-1a7.3 7.3 0 0 0 1.7 1l.4 2.5a.5.5 0 0 0 .5.4h3.8a.5.5 0 0 0 .5-.4l.4-2.5a7.3 7.3 0 0 0 1.7-1l2.4 1a.5.5 0 0 0 .6-.2l1.9-3.3a.5.5 0 0 0-.1-.6z"
@@ -90,7 +90,7 @@ function IconCog() {
 
 function IconCloudUpload() {
   return (
-    <svg viewBox="0 0 24 24" className="h-7 w-7 sm:h-8 sm:w-8" aria-hidden>
+    <svg viewBox="0 0 24 24" className="h-4 w-4 sm:h-7 sm:w-7 md:h-8 md:w-8" aria-hidden>
       <path
         fill="white"
         d="M19.3 10.1A6 6 0 0 0 8.2 8.4 4.5 4.5 0 0 0 4.5 17H19a4 4 0 0 0 .3-6.9z"
@@ -269,7 +269,7 @@ function ProcessRing({
 }) {
   return (
     <motion.div
-      className="group relative z-10 flex h-20 w-20 shrink-0 cursor-pointer items-center justify-center sm:h-24 sm:w-24 md:h-28 md:w-28"
+      className="group relative z-10 flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-28 lg:w-28"
       animate={{
         y: [0, -5, 0],
         scale: active ? 1.08 : 1,
@@ -309,10 +309,10 @@ function ProcessRing({
       />
       <div className="relative z-10">{children}</div>
 
-      {/* Tooltip */}
+      {/* Tooltip — hidden on small screens where rings are tight */}
       <div
         className={cn(
-          "pointer-events-none absolute bottom-[calc(100%+12px)] left-1/2 z-30 w-56 -translate-x-1/2 rounded-[12px] border border-white/15 bg-black/95 p-4 text-left opacity-0 shadow-[0_12px_40px_rgba(0,0,0,0.55)] transition-opacity duration-300",
+          "pointer-events-none absolute bottom-[calc(100%+12px)] left-1/2 z-30 hidden w-56 -translate-x-1/2 rounded-[12px] border border-white/15 bg-black/95 p-4 text-left opacity-0 shadow-[0_12px_40px_rgba(0,0,0,0.55)] transition-opacity duration-300 sm:block",
           active && "opacity-100"
         )}
       >
@@ -335,26 +335,26 @@ function VelocityServicesProcessVisual({
   setActiveIndex: (index: number | null) => void;
 }) {
   return (
-    <div className="relative mx-auto w-full max-w-5xl py-10 md:py-14">
+    <div className="relative mx-auto w-full max-w-5xl overflow-x-hidden py-6 sm:py-10 md:py-14">
       <div
-        className="pointer-events-none absolute top-1/2 left-[8%] right-[8%] h-8 -translate-y-1/2 rounded-full bg-white/10 blur-[2px] md:h-10"
+        className="pointer-events-none absolute top-1/2 left-[4%] right-[4%] h-6 -translate-y-1/2 rounded-full bg-white/10 blur-[2px] sm:left-[8%] sm:right-[8%] sm:h-8 md:h-10"
         aria-hidden
       />
 
-      <div className="relative flex items-center justify-between gap-0 sm:gap-1 md:gap-2">
+      <div className="relative flex w-full items-center justify-between gap-0 sm:gap-1 md:gap-2">
         {/* Input funnel with people */}
-        <div className="relative z-10 flex w-14 shrink-0 flex-col items-center sm:w-20 md:w-24">
-          <div className="relative flex h-24 w-full items-center justify-center sm:h-28 md:h-32">
+        <div className="relative z-10 flex w-9 shrink-0 flex-col items-center sm:w-14 md:w-20 lg:w-24">
+          <div className="relative flex h-14 w-full items-center justify-center sm:h-24 md:h-28 lg:h-32">
             <div
-              className="absolute inset-y-2 left-0 right-1 bg-white/10"
+              className="absolute inset-y-1 left-0 right-0.5 bg-white/10 sm:inset-y-2 sm:right-1"
               style={{
                 clipPath: "polygon(0 0, 100% 28%, 100% 72%, 0 100%)",
               }}
               aria-hidden
             />
-            <div className="relative z-10 grid grid-cols-3 gap-0.5 text-white/60">
+            <div className="relative z-10 grid grid-cols-3 gap-px text-white/60 sm:gap-0.5">
               {Array.from({ length: 9 }).map((_, i) => (
-                <PersonSilhouette key={i} className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+                <PersonSilhouette key={i} className="h-2 w-2 sm:h-3 sm:w-3 md:h-3.5 md:w-3.5" />
               ))}
             </div>
           </div>
@@ -381,7 +381,7 @@ function VelocityServicesProcessVisual({
         <DashedConnector />
 
         {/* Output rocket — floating with flame */}
-        <div className="relative z-10 flex h-20 w-20 shrink-0 items-center justify-center sm:h-24 sm:w-24 md:h-28 md:w-28">
+        <div className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-28 lg:w-28">
           <motion.div
             className="absolute inset-0 rounded-full border-2 border-dashed border-white/40"
             style={{ boxShadow: `0 0 20px ${PINK_10}` }}
@@ -390,12 +390,12 @@ function VelocityServicesProcessVisual({
             aria-hidden
           />
           <div
-            className="absolute inset-4 rounded-full"
+            className="absolute inset-2 rounded-full sm:inset-4"
             style={{ background: PINK_10 }}
             aria-hidden
           />
           <motion.div
-            className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full text-white sm:h-14 sm:w-14"
+            className="relative z-10 flex h-7 w-7 items-center justify-center rounded-full text-white sm:h-12 sm:w-12 md:h-14 md:w-14"
             style={{
               background: THEME_BLUE,
               boxShadow: `0 0 28px ${THEME_BLUE}66, 0 0 12px ${PINK_10}`,
@@ -416,7 +416,7 @@ function VelocityServicesProcessVisual({
               aria-hidden
             >
               <motion.span
-                className="absolute h-4 w-2.5 rounded-full bg-gradient-to-b from-white via-[#D3287A] to-transparent blur-[1px] sm:h-5 sm:w-3"
+                className="absolute h-2.5 w-1.5 rounded-full bg-gradient-to-b from-white via-[#D3287A] to-transparent blur-[1px] sm:h-4 sm:w-2.5 md:h-5 md:w-3"
                 animate={{
                   scaleY: [0.85, 1.25, 0.9, 1.35, 0.85],
                   opacity: [0.7, 1, 0.75, 1, 0.7],
@@ -424,7 +424,7 @@ function VelocityServicesProcessVisual({
                 transition={{ duration: 0.45, repeat: Infinity, ease: "easeInOut" }}
               />
               <motion.span
-                className="absolute h-5 w-1.5 rounded-full bg-gradient-to-b from-[#F472B6] via-[#D3287A] to-transparent opacity-90 blur-[0.5px] sm:h-6"
+                className="absolute h-3 w-1 rounded-full bg-gradient-to-b from-[#F472B6] via-[#D3287A] to-transparent opacity-90 blur-[0.5px] sm:h-5 sm:w-1.5 md:h-6"
                 animate={{
                   scaleY: [1, 1.4, 0.95, 1.5, 1],
                   y: [0, 2, 0, 3, 0],
@@ -433,7 +433,7 @@ function VelocityServicesProcessVisual({
                 transition={{ duration: 0.35, repeat: Infinity, ease: "easeInOut" }}
               />
             </span>
-            <FaRocket className="relative z-10 text-lg text-white sm:text-xl" />
+            <FaRocket className="relative z-10 text-[10px] text-white sm:text-lg md:text-xl" />
           </motion.div>
         </div>
       </div>
@@ -464,7 +464,7 @@ export default function VelocityAIEngineeringSection() {
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between md:gap-12 lg:gap-20">
             <h2 className="max-w-3xl text-[28px] font-bold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-[48px] lg:text-[48px]">
               AI-Augmented Software Development
-            </h2>
+          </h2>
             <p className={`${typography.lead} max-w-2xl shrink-0 text-white md:pb-1`}>
               Velocity AI empowers engineering teams to become AI-first, turning
               traditional agile pods into data-centric, AI-driven squads for
