@@ -35,7 +35,7 @@ export default function CyberInsightsSection() {
                   <div className="relative h-9 w-9 overflow-hidden rounded-full">
                     <Image
                       src={article.authorImage}
-                      alt=""
+                      alt={article.author}
                       fill
                       sizes="36px"
                       className="object-cover"
@@ -75,7 +75,7 @@ export default function CyberInsightsSection() {
               >
                 <Image
                   src={article.image}
-                  alt=""
+                  alt={article.title}
                   fill
                   sizes="(max-width: 768px) 90vw, 320px"
                   className="object-cover transition-transform duration-500 hover:scale-105"

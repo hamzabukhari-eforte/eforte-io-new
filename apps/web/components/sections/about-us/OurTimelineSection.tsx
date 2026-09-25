@@ -124,10 +124,13 @@ export default function OurTimelineSection() {
               1920: { spaceBetween: 40 },
             }}
           >
-            {tripleItems.map((item, index) => (
+            {tripleItems.map((item, index) => {
+              const isClone = index < total || index >= total * 2;
+              return (
               <SwiperSlide
                 key={`${item.id}-${index}`}
                 className="group w-[280px]! md:w-[320px]! lg:w-[360px]! py-8 transition-transform duration-300 [&.swiper-slide-active]:scale-110 [&.swiper-slide-active]:z-10"
+                aria-hidden={isClone || undefined}
               >
                 <div
                   className="w-full h-full cursor-pointer"
@@ -142,8 +145,9 @@ export default function OurTimelineSection() {
                     }
                   }}
                   role="button"
-                  tabIndex={0}
+                  tabIndex={isClone ? -1 : 0}
                   aria-label={`Go to timeline: ${item.year}`}
+                  aria-hidden={isClone || undefined}
                 >
                   <TimelineCard
                     year={item.year}
@@ -153,7 +157,8 @@ export default function OurTimelineSection() {
                   />
                 </div>
               </SwiperSlide>
-            ))}
+              );
+            })}
           </Swiper>
         </div>
 

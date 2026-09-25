@@ -339,7 +339,7 @@ export const caseStudies: CaseStudy[] = [
     slug: "prism",
     introSection: {
       title: "Prism",
-      description: "Retailers live and die by their ability to anticipate demand, but seasonal effects, holidays, and unpredictable outliers make accurate forecasting genuinely hard. PRISM was built to solve exactly that problem: a trends forecasting engine designed to handle strong seasonal patterns and messy real world data without losing accuracy.",
+      description: "Retailers live and die by their ability to anticipate demand, but seasonal effects, holidays, and unpredictable outliers make accurate forecasting genuinely hard. PRISM was built to solve exactly that problem: a trends forecasting platform with dashboards, API integrations, and interactive charts designed to handle strong seasonal patterns and messy real-world data.",
       image: "/assets/final-images/case-studies/prism/hero.png",
       link: "/case-studies/prism",
       theme: [114, 72, 179],
@@ -432,7 +432,7 @@ export const caseStudies: CaseStudy[] = [
         },
         {
           heading: "Built for measurable impact",
-          description: "Working with forecasting methods that were new territory even for eForte's own engineering team, the team built PRISM around Facebook's Prophet API and an additive modeling approach.",
+          description: "eForte built PRISM as a full product stack: forecasting services wired into user and admin dashboards, interactive charts, and third-party API integrations so merchandising and ops teams could act on predictions without leaving the app.",
           image: "/assets/final-images/case-studies/prism/screen-3.png",
           format: "right",
         },

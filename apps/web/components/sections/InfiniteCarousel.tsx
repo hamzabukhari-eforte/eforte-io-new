@@ -28,6 +28,7 @@ export default function InfiniteCarousel({
             <div
               key={setIndex}
               className={`mr-8 flex ${gap} shrink-0 md:mr-12 lg:mr-16`}
+              aria-hidden={setIndex > 0 ? true : undefined}
             >
               {items.map((item) => (
                 <div

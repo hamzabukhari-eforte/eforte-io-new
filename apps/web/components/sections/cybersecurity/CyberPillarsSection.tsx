@@ -52,10 +52,9 @@ export default function CyberPillarsSection() {
                   <div className="relative h-16 w-16 shrink-0 md:h-20 md:w-20">
                     <Image
                       src={pillar.iconSrc}
-                      alt=""
+                      alt={pillar.title}
                       fill
                       className="object-contain"
-                      aria-hidden
                     />
                   </div>
                   <h3 className="mt-5 text-[36px] font-semibold leading-tight">

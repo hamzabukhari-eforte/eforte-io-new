@@ -60,7 +60,7 @@ export const industriesHero = {
   label: "Industries",
   title: "Deep industry expertise, engineered around your reality",
   subtitle:
-    "eForte delivers AI native technology solutions across finance, insurance, health & wellbeing, heavy industry, automotive, hospitality, and BPO & shared services.",
+    "eForte delivers AI-native technology solutions across finance, insurance, health & wellbeing, heavy industry, automotive, hospitality, and BPO & shared services.",
   description:
     "We partner with organizations across these seven industries to deliver technology that drives measurable transformation, combining specialized domain knowledge with our Velocity AI, Agentic Orchestration, and Foundational Data Layer pillars.",
 };
@@ -80,7 +80,7 @@ export const industriesWhy = {
       iconKey: "experts" as const,
     },
     {
-      title: "AI native from strategy to deployment",
+      title: "AI-native from strategy to deployment",
       description:
         "Our three pillars, Velocity AI, Agentic Orchestration, and Foundational Data Layer, are tuned to the specific challenges of each industry we serve, backed by certified engineers and proven accelerators.",
       iconKey: "silicon" as const,

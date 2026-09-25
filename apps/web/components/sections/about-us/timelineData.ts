@@ -39,7 +39,7 @@ export const timelineItems: TimelineItem[] = [
     id: 3,
     year: "2017",
     description:
-      "Our team grows past 40 dedicated engineers, and we expand our staff augmentation practice to support long term embedded partnerships with clients.",
+      "Our team grows past 40 dedicated engineers, and we expand our staff augmentation practice to support long-term embedded partnerships with clients.",
     imageSrc: timelineImages[2],
     imageAlt: "Team growth and staff augmentation",
   },
@@ -87,7 +87,7 @@ export const timelineItems: TimelineItem[] = [
     id: 9,
     year: "2026",
     description:
-      "We expand our Impact Studies portfolio across seven industries, reflecting eForte's growth into a full AI native software and staff augmentation partner.",
+      "We expand our Impact Studies portfolio across seven industries, reflecting eForte's growth into a full AI-native software and staff augmentation partner.",
     imageSrc: timelineImages[8],
     imageAlt: "Impact Studies portfolio expansion",
   },

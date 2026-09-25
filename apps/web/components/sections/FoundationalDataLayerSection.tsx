@@ -202,8 +202,8 @@ export default function FoundationalDataLayerSection() {
               variants={fadeUp}
               className="mb-6 max-w-xl text-[18px] font-light leading-relaxed text-white"
             >
-              We help clients master the complete data lifecycle— from
-              high-volume ingestion to rigorous governance—building the robust,
+              We help clients master the complete data lifecycle — from
+              high-volume ingestion to rigorous governance — building the robust,
               scalable data foundation required for every AI and GenAI
               initiative.
             </motion.p>

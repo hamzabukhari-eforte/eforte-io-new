@@ -59,8 +59,8 @@ export default function Banner() {
               secure-first methodologies with intelligent automation. We provide
               custom AI-Augmented Software and intelligent AI-Powered Business
               Workflows, all built on a robust, future-proof Foundational Data
-              Layer. We are Shaping the Future by Integrating Advanced AI with
-              High-Quality UX and Enterprise Security.
+              Layer. We are shaping the future by integrating advanced AI with
+              high-quality UX and enterprise security.
             </motion.p>
           </motion.div>
         </Container>

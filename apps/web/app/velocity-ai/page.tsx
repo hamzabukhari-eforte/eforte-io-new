@@ -11,6 +11,13 @@ import {
 } from "@/components/sections/velocity-ai";
 import { velocityAIInsights } from "@/data/velocityAIInsights";
 
+export const metadata = {
+  title: "Velocity AI | eForte",
+  description:
+    "Ship AI-augmented software faster with Velocity AI — eForte's delivery methodology for production-ready models, governed data, and measurable outcomes.",
+  alternates: { canonical: "/velocity-ai" },
+};
+
 const velocityInsightCards = velocityAIInsights.map((article) => ({
   id: article.slug,
   href: article.href,

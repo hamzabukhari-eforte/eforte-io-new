@@ -155,7 +155,7 @@ export default function AgenticOrchestrationSection() {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
             >
-              Deploy industry-specific AI agents for finance, HR, sales, and operations to deliver speed, compliance, and guaranteed data quality. Our workflows represent standard business automation solutions that can be adapted to any industry
+              Our workflows are general-purpose business automation solutions configured per industry. We deploy AI agents for finance, HR, sales, and operations to deliver speed, compliance, and consistent, governed data quality.
             </motion.p>
           </motion.div>
         </div>

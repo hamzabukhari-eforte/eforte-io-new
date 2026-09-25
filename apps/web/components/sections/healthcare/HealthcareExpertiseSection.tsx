@@ -16,7 +16,7 @@ const stats = [
   {
     value: "6+",
     label:
-      "6+ years, the average length of our long term healthcare client partnerships",
+      "6+ years, the average length of our long-term healthcare client partnerships",
   },
   {
     value: "#5",

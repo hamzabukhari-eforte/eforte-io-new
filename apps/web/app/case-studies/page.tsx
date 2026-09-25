@@ -1,6 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function CaseStudiesLanding() {
-  redirect("/impact-studies");
+  permanentRedirect("/impact-studies");
 }
-

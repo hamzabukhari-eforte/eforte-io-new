@@ -106,12 +106,17 @@ function TestimonialCarouselRow({
         }
         onAnimationComplete={handleAnimationComplete}
       >
-        {looped.map((testimonial, i) => (
-          <TestimonialCard
-            key={`${testimonial.id}-${i}`}
-            testimonial={testimonial}
-          />
-        ))}
+        {looped.map((testimonial, i) => {
+          const isClone = i < count || i >= count * 2;
+          return (
+            <div
+              key={`${testimonial.id}-${i}`}
+              aria-hidden={isClone || undefined}
+            >
+              <TestimonialCard testimonial={testimonial} />
+            </div>
+          );
+        })}
       </motion.div>
     </div>
   );

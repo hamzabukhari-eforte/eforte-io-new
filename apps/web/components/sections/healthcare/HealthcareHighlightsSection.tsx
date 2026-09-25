@@ -25,7 +25,7 @@ const highlights: { icon: IconType; text: string }[] = [
   },
   {
     icon: HiOutlineDeviceMobile,
-    text: "Extensive hands on experience with wearables and BLE/NFC-connected health devices.",
+    text: "Extensive hands-on experience with wearables and BLE/NFC-connected health devices.",
   },
 ];
 

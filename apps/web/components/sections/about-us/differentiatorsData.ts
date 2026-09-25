@@ -55,7 +55,7 @@ export const differentiatorsCards: DifferentiatorCard[] = [
   },
   {
     id: 5,
-    title: "AI Native Engineering",
+    title: "AI-Native Engineering",
     description:
       "Velocity AI, Agentic Orchestration, and the Foundational Data Layer are built into how we approach every engagement, not bolted on afterward.",
     iconName: "lightning",

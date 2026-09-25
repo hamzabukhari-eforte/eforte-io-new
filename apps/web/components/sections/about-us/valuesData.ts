@@ -30,14 +30,14 @@ export const values: ValueItem[] = [
     id: 2,
     title: "Dependable and Trustworthy",
     description:
-      "We build relationships on consistency, transparency, and follow through, engagement after engagement.",
+      "We build relationships on consistency, transparency, and follow-through, engagement after engagement.",
     iconName: "relationships",
   },
   {
     id: 3,
     title: "Integrity in Everything",
     description:
-      "Our commitment to ethical conduct and honest communication has earned the long term trust of our partners.",
+      "Our commitment to ethical conduct and honest communication has earned the long-term trust of our partners.",
     iconName: "standards",
   },
   {

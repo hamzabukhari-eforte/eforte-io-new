@@ -7,6 +7,8 @@ import {
   getRecentInsightPosts,
   getStrapiCategories,
 } from "@/lib/strapi/insights";
+import JsonLd from "@/components/atoms/JsonLd";
+import { articleJsonLd, breadcrumbJsonLd } from "@/lib/seo/jsonLd";
 
 export const dynamicParams = true;
 
@@ -24,9 +26,25 @@ export async function generateMetadata({
   const post = await getInsightBySlug(slug);
   if (!post) return { title: "Blog | eForte" };
 
+  const title = `${post.title} | Blog | eForte`;
+  const description = post.description;
+  const canonical = `/blog/${slug}`;
+
   return {
-    title: `${post.title} | Blog | eForte`,
-    description: post.description,
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
 
@@ -47,9 +65,25 @@ export default async function InsightDetailPage({
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://eforte.io";
   const shareUrl = `${siteUrl}/blog/${slug}`;
+  const path = `/blog/${slug}`;
 
   return (
     <main className="min-h-screen bg-default text-white">
+      <JsonLd
+        data={[
+          articleJsonLd({
+            title: post.title,
+            description: post.description,
+            path,
+            datePublished: post.publishedAt || undefined,
+          }),
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Insights", path: "/blog" },
+            { name: post.title, path },
+          ]),
+        ]}
+      />
       <InsightDetailSection
         post={post}
         recentPosts={recentPosts}

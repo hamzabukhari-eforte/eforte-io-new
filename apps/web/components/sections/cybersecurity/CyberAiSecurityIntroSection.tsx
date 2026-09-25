@@ -41,10 +41,9 @@ export default function CyberAiSecurityIntroSection() {
                 <div className="relative mx-auto h-20 w-20 shrink-0 md:h-24 md:w-24">
                   <Image
                     src={card.iconSrc}
-                    alt=""
+                    alt={card.title}
                     fill
                     className="object-contain"
-                    aria-hidden
                   />
                 </div>
                 <h3 className="mt-5 text-[20px] font-semibold leading-tight md:mt-6">

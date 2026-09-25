@@ -97,7 +97,7 @@ function BrandIcon({
 
   return (
     <LogoTooltip name={name}>
-      <div className={cn(wrap, iconTone)}>
+      <div className={cn(wrap, iconTone)} role="img" aria-label={name}>
         <Icon
           className={cn(iconClass, "group-hover:scale-105", hoverClass)}
           aria-hidden

@@ -79,26 +79,74 @@ export const impactStudyNarratives: Record<string, ImpactStudyNarrative> = {
   "prism": {
     slug: "prism",
     name: "Prism",
-    headline: "Forecasting Retail Trends with Facebook's Prophet API",
-    intro: ["Retailers live and die by their ability to anticipate demand, but seasonal effects, holidays, and unpredictable outliers make accurate forecasting genuinely hard. PRISM was built to solve exactly that problem: a trends forecasting engine designed to handle strong seasonal patterns and messy real world data without losing accuracy.", "This case study highlights how eForte leaned on Velocity AI and Foundational Data Layer engineering, working with unfamiliar forecasting methods, to deliver a robust engine built on Facebook's Prophet API."],
+    headline: "Retail Demand Forecasting with Dashboards and Seasonality Modeling",
+    intro: [
+      "Retailers live and die by their ability to anticipate demand, but seasonal effects, holidays, and unpredictable outliers make accurate forecasting genuinely hard. PRISM was built to solve exactly that problem: a trends forecasting platform with user and admin dashboards, API integrations, and interactive charts designed to handle strong seasonal patterns and messy real-world data.",
+      "This case study highlights how eForte combined Velocity AI and Foundational Data Layer engineering to deliver a production forecasting product — not a research notebook — with a PWA front end teams could actually use day to day.",
+    ],
     pillars: ["Velocity AI", "Foundational Data Layer"],
-    deliverables: ["Web App PWA forecasting interface", "R based forecasting engine using Facebook's Prophet API", "React.js, HTML, and PHP front end and integration layers", "Outlier smoothing and trend adjustment logic", "Yearly, weekly, and daily seasonality modeling, including holiday effects"],
+    deliverables: [
+      "Web App PWA forecasting interface with interactive charts",
+      "User and admin dashboards for demand visibility",
+      "Third-party API integrations for retail and data sources",
+      "R-based forecasting engine with seasonality and holiday effects",
+      "React.js, HTML, and PHP front-end and integration layers",
+      "Outlier smoothing and trend adjustment logic",
+    ],
     challenge: {
       title: "Retail demand doesn't move in a straight line",
-      paragraphs: ["Retail demand doesn't move in a straight line. It shifts with the seasons, spikes around holidays, and gets thrown off by one off outlier events that can badly skew a naive forecast. PRISM's client needed a forecasting engine that could account for all of this at once: yearly, weekly, and daily seasonality, holiday effects, and enough historical data to generate genuinely reliable predictions.", "The single hardest problem was smoothing outliers without dulling the model's sensitivity. Smooth too aggressively and the forecast stops reacting to real shifts in demand; smooth too little and one bad data point throws off the whole projection."],
+      paragraphs: [
+        "Retail demand doesn't move in a straight line. It shifts with the seasons, spikes around holidays, and gets thrown off by one-off outlier events that can badly skew a naive forecast. PRISM's client needed a forecasting engine that could account for all of this at once: yearly, weekly, and daily seasonality, holiday effects, and enough historical data to generate genuinely reliable predictions — surfaced through dashboards operators could trust.",
+        "The single hardest problem was smoothing outliers without dulling the model's sensitivity. Smooth too aggressively and the forecast stops reacting to real shifts in demand; smooth too little and one bad data point throws off the whole projection.",
+      ],
       image: "/assets/images/case-study/new-images/prism/prism-main.png",
     },
     solution: {
       title: "Built for measurable impact",
-      lead: "Working with forecasting methods that were new territory even for eForte's own engineering team, the team built PRISM around Facebook's Prophet API and an additive modeling approach.",
-      items: [{"title": "Additive Forecasting Model", "body": "Velocity AI powers PRISM's core engine, which forecasts time series data using an additive model that adjusts non linear trends for yearly, weekly, and daily seasonality, plus holiday effects, giving retailers a forecast that reflects how their business actually moves throughout the year."}, {"title": "Careful Outlier Handling", "body": "The team engineered a deliberate balance in the smoothing logic within the Foundational Data Layer, reducing the distorting effect of outliers on forecasted values while preserving the model's ability to detect genuine shifts in demand."}, {"title": "Cross Stack Delivery", "body": "Built across R, React.js, HTML, and PHP, PRISM's architecture reflects the reality of integrating a specialized forecasting language into a broader retail facing web application."}],
+      lead: "eForte built PRISM as a full product stack: forecasting services wired into dashboards, charts, and API integrations so merchandising and ops teams could act on predictions without leaving the app.",
+      items: [
+        {
+          title: "Forecasting engine with seasonality",
+          body: "Velocity AI powers PRISM's core engine, modeling non-linear demand trends with yearly, weekly, and daily seasonality plus holiday effects, so retailers get forecasts that reflect how their business actually moves throughout the year.",
+        },
+        {
+          title: "Dashboards and interactive charts",
+          body: "User and admin dashboards present forecasts, outliers, and adjustments in interactive charts, making the model outputs usable for planning rather than buried in raw exports.",
+        },
+        {
+          title: "Careful outlier handling",
+          body: "The team engineered a deliberate balance in the smoothing logic within the Foundational Data Layer, reducing the distorting effect of outliers on forecasted values while preserving the model's ability to detect genuine shifts in demand.",
+        },
+        {
+          title: "Cross-stack delivery",
+          body: "Built across R, React.js, HTML, and PHP, PRISM's architecture integrates specialized forecasting services into a broader retail-facing web application with third-party API connections.",
+        },
+      ],
     },
     results: {
       title: "Outcomes that matter",
-      lead: "PRISM gave its retail client a forecasting capability built on one of the more sophisticated modeling approaches available at the time.",
-      items: [{"title": "Resilient to Missing and Messy Data", "body": "Because Prophet is inherently robust to missing data points and trend shifts, PRISM continued producing usable forecasts even with imperfect input data."}, {"title": "Accurate Seasonal Forecasting", "body": "The additive model's handling of yearly, weekly, and daily seasonality gave retailers forecasts that matched their real demand cycles, including holidays."}, {"title": "Balanced Outlier Sensitivity", "body": "The custom smoothing approach struck a workable balance between stability and responsiveness, a genuinely hard problem the team solved through extensive research and testing."}],
+      lead: "PRISM gave its retail client a forecasting capability they could operate from dashboards, with models that stayed useful even when input data was incomplete.",
+      items: [
+        {
+          title: "Resilient to missing and messy data",
+          body: "PRISM continued producing usable forecasts even with imperfect input data, so planners were not blocked by gaps in historical series.",
+        },
+        {
+          title: "Accurate seasonal forecasting",
+          body: "Handling of yearly, weekly, and daily seasonality gave retailers forecasts that matched their real demand cycles, including holidays.",
+        },
+        {
+          title: "Actionable visibility",
+          body: "Interactive charts and role-based dashboards turned model output into day-to-day planning tools for operators and administrators.",
+        },
+        {
+          title: "Balanced outlier sensitivity",
+          body: "The custom smoothing approach struck a workable balance between stability and responsiveness — a hard problem solved through extensive research and testing.",
+        },
+      ],
     },
-    closing: "eForte's close, research driven collaboration with the PRISM client reflects the kind of technically demanding work the team takes on when the problem is genuinely new. New Internal Expertise The project pushed eForte's own team to build new expertise in R based statistical forecasting, expertise that has informed later data driven projects.",
+    closing:
+      "eForte's close, research-driven collaboration with the PRISM client reflects the kind of technically demanding product work the team takes on when forecasting has to ship as a real application — dashboards, APIs, and all. The engagement also built lasting internal expertise in statistical forecasting that has informed later data-driven projects.",
   },
   "scheduling-engine": {
     slug: "scheduling-engine",
