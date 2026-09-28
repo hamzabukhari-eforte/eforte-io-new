@@ -83,13 +83,23 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           >
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="flex flex-col items-center gap-3 sm:flex-row sm:gap-6">
+              <div className="flex flex-col items-center gap-3 sm:items-start sm:gap-3">
                 <p className="text-sm text-white">
                   © {new Date().getFullYear()} eForte.io. All rights reserved.
                 </p>
+                <p className="max-w-md text-center text-sm text-white/70 sm:text-left">
+                  eForte Solutions · 1207 Delaware Ave, Suite 2858, Wilmington, DE
+                  19806 ·{" "}
+                  <a
+                    href="mailto:hr@eforte.net"
+                    className="underline-offset-2 hover:text-primary-pink hover:underline"
+                  >
+                    hr@eforte.net
+                  </a>
+                </p>
                 <nav
                   aria-label="Legal"
-                  className="flex flex-wrap items-center justify-center gap-4"
+                  className="flex flex-wrap items-center justify-center gap-4 sm:justify-start"
                 >
                   <FooterItemLink href="/privacy-policy" label="Privacy Policy" />
                   <FooterItemLink

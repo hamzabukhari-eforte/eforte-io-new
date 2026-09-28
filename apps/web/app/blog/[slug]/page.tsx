@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import { notFound } from "next/navigation";
 import { InsightDetailSection } from "@/components/sections/insights";
 import {
@@ -26,26 +27,12 @@ export async function generateMetadata({
   const post = await getInsightBySlug(slug);
   if (!post) return { title: "Blog | eForte" };
 
-  const title = `${post.title} | Blog | eForte`;
-  const description = post.description;
-  const canonical = `/blog/${slug}`;
-
-  return {
-    title,
-    description,
-    alternates: { canonical },
-    openGraph: {
-      title,
-      description,
-      url: canonical,
-      type: "article",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
-  };
+  return pageMeta({
+    title: `${post.title} | Blog | eForte`,
+    description: post.description,
+    path: `/blog/${slug}`,
+    type: "article",
+  });
 }
 
 export default async function InsightDetailPage({

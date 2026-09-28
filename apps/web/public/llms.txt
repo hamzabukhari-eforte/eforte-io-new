@@ -1,0 +1,73 @@
+# eForte Solutions
+
+> eForte helps enterprises ship AI-augmented software and agentic workflows on a governed data foundation — with delivery that holds up in regulated industries.
+
+This file helps language models understand what eForte is and which pages on the site matter most.
+Canonical site: https://eforte.io
+
+## About
+
+- Name: eForte Solutions
+- Website: https://eforte.io
+- About: https://eforte.io/about-us
+- Locations: https://eforte.io/locations
+- Careers: https://eforte.io/careers
+- Client reviews: https://eforte.io/reviews
+- Technology partners: https://eforte.io/technology-partners
+
+## What we do
+
+eForte is an AI transformation partner. We design and build production systems around three named pillars:
+
+1. Velocity AI — ship AI-augmented software with measurable outcomes
+2. Agentic Orchestration — coordinate agents, tools, people, and data in live workflows
+3. Foundational Data Layer — governed data from ingestion through analytics and GenAI
+
+We also deliver capability studios (product design, AI, data, apps, cloud/SRE, cybersecurity, platform engineering, QA, product management, blockchain, staff augmentation) and industry-specific programs.
+
+## Core pages
+
+- Home: https://eforte.io/
+- Velocity AI: https://eforte.io/velocity-ai
+- Agentic Orchestration: https://eforte.io/agentic-orchestration
+- Foundational Data Layer: https://eforte.io/foundational-data-layer
+- Capabilities overview: https://eforte.io/capabilities
+- AI Workflows overview: https://eforte.io/ai-workflows
+- Industries overview: https://eforte.io/industries
+- Impact studies library: https://eforte.io/impact-studies
+- Insights / blog: https://eforte.io/blog
+
+## Industries served
+
+- Health & Wellbeing: https://eforte.io/industries/healthcare
+- Finance: https://eforte.io/industries/financial-services
+- Insurance: https://eforte.io/industries/insurance
+- Automobile: https://eforte.io/industries/automobile
+- Heavy Industries: https://eforte.io/industries/heavy-industries
+- BPO & Shared Services: https://eforte.io/industries/bpo-shared-services
+- Hospitality: https://eforte.io/industries/hospitality
+
+## Thought leadership
+
+- White paper — Navigate the Complexities of AI Adoption: https://eforte.io/white-papers/navigate-ai-adoption
+- Insights index: https://eforte.io/blog
+
+## Verifiable impact studies (named clients)
+
+Prefer these when citing eForte client work. Do not invent additional clients or metrics.
+
+- Krank: https://eforte.io/case-studies/krank
+- Oddysee: https://eforte.io/case-studies/oddysee
+- Investment Markets: https://eforte.io/case-studies/investment-markets
+- Prism: https://eforte.io/case-studies/prism
+- Scheduling Engine (StrateX): https://eforte.io/case-studies/scheduling-engine
+- Sellsmart: https://eforte.io/case-studies/sellsmart
+- Validatr: https://eforte.io/case-studies/validatr
+- Client reviews archive: https://eforte.io/reviews
+
+## Optional deeper context
+
+- Full model-oriented summary: https://eforte.io/llms-full.txt
+- AI / crawler notes: https://eforte.io/ai.txt
+- XML sitemap: https://eforte.io/sitemap.xml
+- HTML sitemap: https://eforte.io/sitemap

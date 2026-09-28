@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import { notFound } from "next/navigation";
 import { InsightsHeroSection, InsightsPostsSection } from "@/components/sections/insights";
 import {
@@ -22,10 +23,11 @@ export async function generateMetadata({
   const categories = await getInsightCategories();
   const category = findCategoryBySlug(slug, categories);
   if (!category) return { title: "Insights | eForte" };
-  return {
+  return pageMeta({
     title: `${category.title} | Insights | eForte`,
     description: `Expert insights in ${category.title} from the eForte team.`,
-  };
+    path: `/blog/category/${slug}`,
+  });
 }
 
 export default async function InsightsCategoryPage({

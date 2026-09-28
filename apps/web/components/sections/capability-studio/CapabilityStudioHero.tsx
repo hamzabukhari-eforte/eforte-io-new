@@ -101,12 +101,11 @@ export default function CapabilityStudioHero({
                 ) : (
                   <Image
                     src={hero.graphicSrc}
-                    alt=""
+                    alt={`${hero.label} capability illustration`}
                     width={560}
                     height={560}
                     className={graphicClassName}
                     priority
-                    aria-hidden
                   />
                 )}
               </div>

@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { AiWorkflowPage } from "@/components/sections/ai-workflows";
@@ -22,10 +23,11 @@ export async function generateMetadata({
   if (!domain) {
     return { title: "AI Workflows | eForte" };
   }
-  return {
+  return pageMeta({
     title: `${domain.label} | AI Workflows | eForte`,
     description: domain.body,
-  };
+    path: `/ai-workflows/${slug}`,
+  });
 }
 
 export default async function AiWorkflowDomainPage({ params }: PageProps) {

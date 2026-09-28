@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import { notFound } from "next/navigation";
 import {
   AgenticOrchestrationFooterCTASection,
@@ -22,10 +23,12 @@ export async function generateMetadata({
   const article = getAgenticInsightBySlug(slug);
   if (!article) return { title: "Insight | eForte" };
 
-  return {
+  return pageMeta({
     title: `${article.title} | eForte`,
     description: article.excerpt,
-  };
+    path: `/agentic-orchestration/insights/${slug}`,
+    type: "article",
+  });
 }
 
 export default async function AgenticOrchestrationInsightPage({

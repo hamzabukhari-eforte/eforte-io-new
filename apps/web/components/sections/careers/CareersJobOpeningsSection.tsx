@@ -112,7 +112,7 @@ export default function CareersJobOpeningsSection() {
           className="mb-10 text-center md:mb-14"
         >
           <h2 className="text-3xl font-semibold text-white md:text-4xl lg:text-[42px]">
-            Open Roles
+            Current openings
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white md:text-lg">
             We&apos;re hiring in Karachi. Apply for a role below, or send us

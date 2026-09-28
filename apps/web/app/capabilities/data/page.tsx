@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import {
   DataAcceleratorsSection,
   // Legacy pink Success Stories carousel — preserved for future reuse
@@ -15,11 +16,11 @@ import {
   DataShowcaseSection,
 } from "@/components/sections/data";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Data | eForte",
-  description:
-    "Data engineering, governance, analytics, and modern platform capabilities — from architecture and ETL to lakehouses, BI, and AI-ready foundations.",
-};
+  description: "Data engineering, governance, analytics, and modern platform capabilities — from architecture and ETL to lakehouses, BI, and AI-ready foundations.",
+  path: "/capabilities/data",
+});
 
 export default function DataCapabilityPage() {
   return (

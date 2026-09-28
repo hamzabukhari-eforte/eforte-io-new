@@ -50,7 +50,7 @@ export const benefits: Benefit[] = [
     id: "mentorship",
     label: "Mentorship & Career Pathing",
     description:
-      "Structured growth plans and pairing with senior Polymaths who help you level up.",
+      "Structured growth plans and pairing with senior engineers who help you level up.",
     iconSrc: "/assets/images/careers/mentorship.svg",
     iconWidth: 72,
     iconHeight: 68,

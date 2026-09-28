@@ -1,11 +1,12 @@
+import { pageMeta } from "@/lib/seo/meta";
 import { LegalPageSection } from "@/components/sections/legal";
 import { privacyPolicySections } from "@/data/legalContent";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Privacy Policy | eForte",
-  description:
-    "Learn how eForte collects, uses, and protects your personal information.",
-};
+  description: "Learn how eForte collects, uses, and protects your personal information.",
+  path: "/privacy-policy",
+});
 
 export default function PrivacyPolicyPage() {
   return (

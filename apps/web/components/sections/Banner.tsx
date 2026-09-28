@@ -2,9 +2,11 @@
 
 import Container from "@/components/atoms/Container";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
 export default function Banner() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <section className="relative flex min-h-[85vh] max-h-[1024px] w-full items-center overflow-hidden bg-default">
       {/* Preserved previous banner art for possible reuse:
@@ -14,13 +16,12 @@ export default function Banner() {
       <div className="pointer-events-none absolute inset-0 bg-black" aria-hidden />
       <Image
         src="/assets/final-images/home/hero.jpg?v3"
-        alt=""
+        alt="Abstract network visualization representing eForte AI transformation"
         fill
         priority
         quality={90}
         sizes="100vw"
         className="object-contain object-right"
-        aria-hidden
       />
 
       {/* Match capabilities / industries banner treatment */}
@@ -37,23 +38,37 @@ export default function Banner() {
         <Container>
           <motion.div
             className="mx-auto max-w-4xl text-center"
-            initial={{ opacity: 0, y: 24 }}
+            initial={
+              prefersReducedMotion ? false : { opacity: 1, y: 12 }
+            }
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
+            transition={
+              prefersReducedMotion
+                ? { duration: 0 }
+                : { duration: 0.3, ease: "easeOut" }
+            }
           >
             <motion.h1
               className="mb-4 text-[48px] font-medium leading-[1.1] tracking-tight text-white sm:mb-5 sm:text-[48px] md:mb-6 md:text-[64px] md:leading-[1.08] lg:text-[90px] lg:leading-tight"
-              initial={{ opacity: 0, y: 16 }}
+              initial={prefersReducedMotion ? false : { opacity: 1, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+              transition={
+                prefersReducedMotion
+                  ? { duration: 0 }
+                  : { duration: 0.3, ease: "easeOut" }
+              }
             >
               The Integrated AI Transformation Partner.
             </motion.h1>
             <motion.p
               className="mx-auto max-w-3xl text-[16px] font-light leading-relaxed text-white sm:text-[18px] md:max-w-none md:text-[20px] lg:text-[24px]"
-              initial={{ opacity: 0, y: 16 }}
+              initial={prefersReducedMotion ? false : { opacity: 1, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
+              transition={
+                prefersReducedMotion
+                  ? { duration: 0 }
+                  : { duration: 0.3, delay: 0.05, ease: "easeOut" }
+              }
             >
               eForte delivers end-to-end data and AI solutions, combining
               secure-first methodologies with intelligent automation. We provide

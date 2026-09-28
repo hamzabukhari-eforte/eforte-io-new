@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import {
   EmbeddedEngineeringHeroSection,
   EmbeddedEngineeringWorkSection,
@@ -10,11 +11,11 @@ import {
   EmbeddedEngineeringFaqSection,
 } from "@/components/sections/embedded-engineering";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Embedded Engineering | eForte",
-  description:
-    "Embedded engineering services for semiconductors and embedded systems - nearshore firmware development with a proven methodology and highly qualified software engineers.",
-};
+  description: "Embedded engineering services for semiconductors and embedded systems - nearshore firmware development with a proven methodology and highly qualified software engineers.",
+  path: "/industries/embedded-engineering",
+});
 
 export default function EmbeddedEngineeringPage() {
   return (

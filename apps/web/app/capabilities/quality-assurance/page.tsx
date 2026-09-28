@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import {
   QualityAssuranceAcceleratorsSection,
   QualityAssuranceCapabilitiesSection,
@@ -8,11 +9,11 @@ import {
   QualityAssuranceSuccessStoriesSection,
 } from "@/components/sections/quality-assurance";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Quality Assurance | eForte",
-  description:
-    "AI-driven QA for impactful digital experiences — test automation, CI/CD integration, and agile expertise from eForte.",
-};
+  description: "AI-driven QA for impactful digital experiences — test automation, CI/CD integration, and agile expertise from eForte.",
+  path: "/capabilities/quality-assurance",
+});
 
 export default function QualityAssurancePage() {
   return (

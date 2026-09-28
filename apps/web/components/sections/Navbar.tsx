@@ -648,8 +648,12 @@ const megaMenuConfig: Record<string, MegaMenuConfig> = {
       {
         title: "More Insights",
         items: [
-          { title: "White Papers" },
-          { title: "Events" },
+          {
+            title: "White Paper: Navigate AI Adoption",
+            href: "/white-papers/navigate-ai-adoption",
+          },
+          // Events preserved for future reuse when content exists:
+          // { title: "Events" },
         ],
       },
     ],
@@ -1214,7 +1218,7 @@ export default function Navbar({
                 ref={setImpactStudiesScrollNode}
                 data-lenis-prevent
                 data-lenis-prevent-wheel
-                className="min-h-0 max-h-full flex-1 overflow-y-auto overscroll-contain pr-2 [scrollbar-gutter:stable]"
+                className="min-h-0 max-h-full flex-1 overflow-y-auto overscroll-contain pr-2 [@media(pointer:fine)]:[scrollbar-gutter:stable]"
               >
                 <div className="grid grid-cols-2 gap-3">
                   {caseStudies.map((item) => {
@@ -1325,8 +1329,20 @@ export default function Navbar({
                   </p>
                   <ul className="mt-2 space-y-1.5 text-sm text-desc">
                     {moreInsights.map((c) => (
-                      <li key={c.title} className="cursor-pointer hover:text-white">
-                        {c.title}
+                      <li key={c.title}>
+                        {c.href ? (
+                          <Link
+                            href={c.href}
+                            onClick={closeMegaMenu}
+                            className="cursor-pointer hover:text-white"
+                          >
+                            {c.title}
+                          </Link>
+                        ) : (
+                          <span className="cursor-pointer hover:text-white">
+                            {c.title}
+                          </span>
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -1537,7 +1553,7 @@ export default function Navbar({
                     ref={setIndustriesScrollNode}
                     data-lenis-prevent
                     data-lenis-prevent-wheel
-                    className="min-h-0 flex-1 space-y-2 overflow-y-auto overscroll-contain pr-2 [scrollbar-gutter:stable]"
+                    className="min-h-0 flex-1 space-y-2 overflow-y-auto overscroll-contain pr-2 [@media(pointer:fine)]:[scrollbar-gutter:stable]"
                   >
                     {industryItems.map((item) => {
                       const IconComponent = item.iconName
@@ -1907,9 +1923,11 @@ export default function Navbar({
           "fixed inset-0 z-[110] xl:hidden transition-all duration-300",
           isMobileMenuOpen
             ? "opacity-100 visible"
-            : "opacity-0 invisible"
+            : "opacity-0 invisible pointer-events-none"
         )}
         onClick={closeMobileMenu}
+        inert={!isMobileMenuOpen ? true : undefined}
+        aria-hidden={!isMobileMenuOpen}
       >
         {/* Backdrop */}
         {/* <div className="absolute inset-0 bg-black/50" /> */}

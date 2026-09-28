@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import {
   DatabricksConferencesSection,
   DatabricksExperienceSection,
@@ -13,11 +14,11 @@ import {
   DatabricksWhitepaperSection,
 } from "@/components/sections/databricks";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Databricks | eForte",
-  description:
-    "Databricks data and AI professional services from eForte — Gold Partner expertise for the Databricks Intelligence Platform.",
-};
+  description: "Databricks data and AI professional services from eForte — Gold Partner expertise for the Databricks Intelligence Platform.",
+  path: "/databricks",
+});
 
 export default function DatabricksPage() {
   return (

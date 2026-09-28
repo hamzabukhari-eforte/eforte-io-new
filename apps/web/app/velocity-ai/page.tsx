@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import {
   VelocityAIHeroSection,
   VelocityAIDefinitionSection,
@@ -11,12 +12,11 @@ import {
 } from "@/components/sections/velocity-ai";
 import { velocityAIInsights } from "@/data/velocityAIInsights";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Velocity AI | eForte",
-  description:
-    "Ship AI-augmented software faster with Velocity AI — eForte's delivery methodology for production-ready models, governed data, and measurable outcomes.",
-  alternates: { canonical: "/velocity-ai" },
-};
+  description: "Ship AI-augmented software faster with Velocity AI — eForte's delivery methodology for production-ready models, governed data, and measurable outcomes.",
+  path: "/velocity-ai",
+});
 
 const velocityInsightCards = velocityAIInsights.map((article) => ({
   id: article.slug,

@@ -38,7 +38,7 @@ function MidCardBody({ project }: { project: ImpactProjectCard }) {
         <figure className={styles.midMedia}>
           <Image
             src={mediaSrc}
-            alt=""
+            alt={`${project.name} — ${project.headline}`}
             fill
             sizes="(max-width: 1024px) 90vw, 400px"
             className={styles.midMediaImg}
@@ -126,7 +126,7 @@ function ProjectCard({
               <figure className={styles.splitLeftImage}>
                 <Image
                   src={project.productImage}
-                  alt=""
+                  alt={`${project.name} product screenshot`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 55vw"
                   className={styles.splitLeftImageImg}
@@ -156,7 +156,7 @@ function ProjectCard({
               <figure className={styles.colorFloatPrimary}>
                 <Image
                   src={project.productImage}
-                  alt=""
+                  alt={`${project.name} product screenshot`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 60vw"
                   className={styles.colorFloatPrimaryImg}
@@ -167,7 +167,7 @@ function ProjectCard({
               <figure className={styles.colorFloatSecondary}>
                 <Image
                   src={project.productImageSecondary}
-                  alt=""
+                  alt={`${project.name} secondary screenshot`}
                   fill
                   sizes="200px"
                   className={styles.colorFloatSecondaryImg}
@@ -200,7 +200,7 @@ function ProjectCard({
               <figure className={styles.photoFloatImage}>
                 <Image
                   src={project.productImage}
-                  alt=""
+                  alt={`${project.name} product screenshot`}
                   fill
                   sizes="(max-width: 1024px) 100vw, 70vw"
                   className={styles.photoFloatImageImg}

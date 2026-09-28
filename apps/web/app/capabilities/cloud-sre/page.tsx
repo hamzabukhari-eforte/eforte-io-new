@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import {
   CloudSreAcceleratorsSection,
   CloudSreApproachSection,
@@ -12,11 +13,11 @@ import {
   CloudSreSuccessStoriesSection,
 } from "@/components/sections/cloud-sre";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Cloud, SRE & DevOps | eForte",
-  description:
-    "Cloud migration, SRE, DevOps, and cybersecurity solutions — from Infrastructure as Code and CI/CD to observability, FinOps, and secure multi-cloud operations.",
-};
+  description: "Cloud migration, SRE, DevOps, and cybersecurity solutions — from Infrastructure as Code and CI/CD to observability, FinOps, and secure multi-cloud operations.",
+  path: "/capabilities/cloud-sre",
+});
 
 export default function CloudSrePage() {
   return (

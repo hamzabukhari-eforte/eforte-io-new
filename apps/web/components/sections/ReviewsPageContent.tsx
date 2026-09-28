@@ -206,7 +206,7 @@ export default function ReviewsPageContent() {
             CLIENT REVIEWS
           </span>
           <h1 className="mb-5 text-[40px] font-medium leading-tight tracking-tight text-white md:text-[48px]">
-            Satisfactory reviews of clients
+            What our clients say
           </h1>
           <p className="text-[18px] font-light leading-relaxed text-white">
             Real feedback from teams we partnered with — project details,

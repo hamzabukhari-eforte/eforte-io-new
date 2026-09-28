@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import {
   CapabilitiesOverviewAdvantagesSection,
   CapabilitiesOverviewHeroSection,
@@ -9,11 +10,11 @@ import {
 } from "@/components/sections/capabilities-overview";
 import styles from "@/components/sections/capabilities-overview/capabilitiesOverview.module.css";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Capabilities | eForte",
-  description:
-    "The eForte Studio model assembles specialist teams across Data & AI, Design, Cybersecurity, Engineering, Quality, and Product Management to deliver holistic solutions.",
-};
+  description: "The eForte Studio model assembles specialist teams across Data & AI, Design, Cybersecurity, Engineering, Quality, and Product Management to deliver holistic solutions.",
+  path: "/capabilities",
+});
 
 export default function CapabilitiesPage() {
   return (

@@ -95,8 +95,9 @@ export const footerColumns: FooterColumn[] = [
       { label: "Cybersecurity", href: "/blog" },
       { label: "Databricks", href: "/blog" },
       // More Insights (mega menu)
-      { label: "White Papers", href: "/blog" },
-      { label: "Events", href: "/blog" },
+      { label: "White Paper: Navigate AI Adoption", href: "/white-papers/navigate-ai-adoption" },
+      // Events preserved for future reuse when content exists:
+      // { label: "Events", href: "/blog" },
     ],
   },
   {

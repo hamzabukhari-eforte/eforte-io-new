@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import { notFound } from "next/navigation";
 import {
   FinancialServicesArticleBodySection,
@@ -22,10 +23,12 @@ export async function generateMetadata({
   const article = getFinanceArticleBySlug(slug);
   if (!article) return { title: "Article | eForte" };
 
-  return {
+  return pageMeta({
     title: `${article.title} | eForte`,
     description: article.excerpt,
-  };
+    path: `/industries/financial-services/articles/${slug}`,
+    type: "article",
+  });
 }
 
 export default async function FinancialServicesArticlePage({

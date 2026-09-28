@@ -1,14 +1,15 @@
+import { pageMeta } from "@/lib/seo/meta";
 import {
   VelocityAIFooterCTASection,
   VelocityAIInsightsListingSection,
 } from "@/components/sections/velocity-ai";
 import { velocityAIInsights } from "@/data/velocityAIInsights";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Velocity AI Insights | eForte",
-  description:
-    "Expert insights on secure AI value pathways, transformation frameworks, and AI-augmented engineering from eForte.",
-};
+  description: "Expert insights on secure AI value pathways, transformation frameworks, and AI-augmented engineering from eForte.",
+  path: "/velocity-ai/insights",
+});
 
 export default function VelocityAIInsightsPage() {
   return (

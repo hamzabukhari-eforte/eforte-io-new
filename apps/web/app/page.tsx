@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import Banner from "@/components/sections/Banner";
 import TrustedBySection from "@/components/sections/TrustedBySection";
 import LegacyToIntelligenceSection from "@/components/sections/LegacyToIntelligenceSection";
@@ -16,6 +17,13 @@ import GlobalLeadersSection from "@/components/sections/GlobalLeadersSection";
 import SecureDataPracticesSection from "@/components/sections/SecureDataPracticesSection";
 import { defaultTrustedByLogos } from "@/data/trustedByLogos";
 import { defaultServiceCategories } from "@/data/serviceCategories";
+
+export const metadata = pageMeta({
+  title: "eForte Solutions | Integrated AI Transformation Partner",
+  description:
+    "eForte delivers end-to-end data and AI solutions — custom AI-augmented software, agentic workflows, and a governed Foundational Data Layer for enterprises.",
+  path: "/",
+});
 
 export default function Home() {
   return (

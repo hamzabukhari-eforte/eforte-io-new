@@ -46,12 +46,14 @@ export default function TechnologiesSection({
   database,
   others,
 }: TechProps) {
-  const [showCard, setShowCard] = useState(frontend[0].name);
-
   const allTech = [...frontend, ...backend, ...database, ...others];
+  const [showCard, setShowCard] = useState(allTech[0]?.name ?? "");
+
   const selectedTech = allTech.find((item) => item.name === showCard);
 
   const glow = `rgba(${theme[0]}, ${theme[1]}, ${theme[2]}, 0.5)`;
+
+  if (allTech.length === 0) return null;
 
   return (
     <motion.section
@@ -91,7 +93,9 @@ export default function TechnologiesSection({
               { title: "Back End", items: backend },
               { title: "Database", items: database },
               { title: "Others", items: others },
-            ].map((section) => (
+            ]
+              .filter((section) => section.items.length > 0)
+              .map((section) => (
               <motion.div
                 key={section.title}
                 variants={fadeUp}
@@ -110,7 +114,7 @@ export default function TechnologiesSection({
                       whileTap={{ scale: 0.95 }}
                       onClick={() => setShowCard(item.name)}
                       className="
-                          group relative flex h-14 w-14 items-center justify-center
+                          group relative flex h-14 w-14 cursor-pointer items-center justify-center
                           rounded-[12px] border border-white/10 bg-white/5
                           backdrop-blur-md transition-all duration-300
                           hover:border-white/30

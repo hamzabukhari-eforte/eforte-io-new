@@ -12,12 +12,11 @@ export default function CapabilitiesOverviewHeroSection() {
     <section className={styles.hero}>
       <Image
         src={capabilityMedia.heroBanner}
-        alt=""
+        alt="eForte capabilities overview"
         fill
         priority
         sizes="100vw"
         className={styles.heroImage}
-        aria-hidden
       />
       <div className={styles.heroOverlay} aria-hidden />
       <div className={styles.heroPinkGlow} aria-hidden />

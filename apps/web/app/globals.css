@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
+/* Local TTF preserved for possible offline/fallback reuse:
 @font-face {
   font-family: "Be Vietnam Pro";
   src: url("/fonts/BeVietnamPro-Regular.ttf") format("truetype");
-  /* Cover medium/semibold headings — weight 400 alone fell back to Arial */
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
   size-adjust: 90%;
 }
+*/
 
 :root {
   --background: #0000;
@@ -19,7 +20,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "Be Vietnam Pro", Arial, Helvetica, sans-serif;
+  --font-sans: var(--font-be-vietnam-pro), "Be Vietnam Pro", Arial, Helvetica, sans-serif;
   --font-mono: var(--font-geist-mono);
   
   /* Custom Colors */
@@ -43,12 +44,13 @@
 
 html,
 body {
-  font-family: "Be Vietnam Pro", Arial, Helvetica, sans-serif;
+  font-family: var(--font-be-vietnam-pro), "Be Vietnam Pro", Arial, Helvetica, sans-serif;
 }
 
 html {
   background-color: #000;
   color-scheme: dark;
+  overflow-x: hidden;
 }
 
 body {

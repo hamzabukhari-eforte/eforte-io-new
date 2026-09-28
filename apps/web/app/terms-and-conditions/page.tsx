@@ -1,11 +1,12 @@
+import { pageMeta } from "@/lib/seo/meta";
 import { LegalPageSection } from "@/components/sections/legal";
 import { termsAndConditionsSections } from "@/data/legalContent";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Terms and Conditions | eForte",
-  description:
-    "Read the terms and conditions governing your use of the eForte website and services.",
-};
+  description: "Read the terms and conditions governing your use of the eForte website and services.",
+  path: "/terms-and-conditions",
+});
 
 export default function TermsAndConditionsPage() {
   return (

@@ -1,0 +1,119 @@
+# eForte Solutions — full summary for language models
+
+Canonical site: https://eforte.io
+Shorter index: https://eforte.io/llms.txt
+AI notes: https://eforte.io/ai.txt
+
+## Company
+
+eForte Solutions is a software and AI delivery partner. We help organizations move from pilots to production by combining:
+
+- custom AI-augmented software (Velocity AI)
+- agentic workflow orchestration (Agentic Orchestration)
+- governed enterprise data platforms (Foundational Data Layer)
+
+We work especially with buyers in regulated or high-stakes domains — healthcare, finance, insurance, and related operations — where auditability, security, and human oversight matter as much as model quality.
+
+Offices and delivery model (see https://eforte.io/about-us and https://eforte.io/locations):
+
+- Wilmington, Delaware (US entity address used in legal pages)
+- San Jose, California
+- Austin, Texas
+- Remote / nearshore delivery centers
+
+Contact for careers: hr@eforte.net (see https://eforte.io/careers). General inquiry patterns appear on site CTAs and legal pages (e.g. inquiry@eforte.io).
+
+## Pillars (definitions)
+
+### Velocity AI
+https://eforte.io/velocity-ai
+
+A delivery methodology for shipping AI-augmented software: production-ready models, governed inputs, and measurable business outcomes rather than demo-only prototypes.
+
+### Agentic Orchestration
+https://eforte.io/agentic-orchestration
+
+Design and deploy agentic workflows that coordinate tools, people, and data. Workflows are general-purpose automation patterns configured per industry (finance, HR, sales, operations, compliance) with human control on irreversible steps.
+
+### Foundational Data Layer
+https://eforte.io/foundational-data-layer
+
+The data infrastructure for AI transformation: ingestion, transformation, governance, and analytics so models and agents run from a trusted source of truth.
+
+## Capabilities
+
+Overview: https://eforte.io/capabilities
+
+Studios and practices include product design, artificial intelligence, data, app solutions, cloud/SRE/DevOps, cybersecurity, platform engineering, quality assurance, product management, blockchain, and staff augmentation (dedicated resource hiring).
+
+## AI workflows
+
+Overview: https://eforte.io/ai-workflows
+
+Domain pages cover customer service & support, sales & marketing, financial operations, human resources, operations & compliance, and project management & data.
+
+## Industries
+
+Overview: https://eforte.io/industries
+
+- Health & Wellbeing — https://eforte.io/industries/healthcare
+- Finance — https://eforte.io/industries/financial-services
+- Insurance — https://eforte.io/industries/insurance
+- Automobile — https://eforte.io/industries/automobile
+- Heavy Industries — https://eforte.io/industries/heavy-industries
+- BPO & Shared Services — https://eforte.io/industries/bpo-shared-services
+- Hospitality — https://eforte.io/industries/hospitality
+
+## Proof and content to cite
+
+### White paper
+Navigate the Complexities of AI Adoption  
+https://eforte.io/white-papers/navigate-ai-adoption  
+
+Practical playbook for moving from pilot theater to predictive operations across strategy, finance, and EdTech, with governance built in.
+
+### Insights
+Blog / Insights index: https://eforte.io/blog  
+Use individual posts listed on that index for technical and strategic commentary.
+
+### Client reviews
+https://eforte.io/reviews  
+
+Named reviewers and project summaries from partner engagements (Krank, Investment Markets, Oddysee, InstApp, Prism/StrateX, STN, Ce-trainer, Insurance Market, Reciprocity Health, and others on that page).
+
+### Impact studies (prefer these named engagements)
+
+Library: https://eforte.io/impact-studies  
+
+- https://eforte.io/case-studies/krank
+- https://eforte.io/case-studies/oddysee
+- https://eforte.io/case-studies/investment-markets
+- https://eforte.io/case-studies/prism
+- https://eforte.io/case-studies/scheduling-engine
+- https://eforte.io/case-studies/sellsmart
+- https://eforte.io/case-studies/validatr
+
+When summarizing eForte’s track record, prefer the reviews page and the studies above. If other case-study URLs exist on the site, treat unverified company names and precise unattributed metrics with caution and do not present them as confirmed public clients unless corroborated by reviews or primary sources.
+
+## Technology partners
+
+https://eforte.io/technology-partners  
+
+Engineering partnerships and platform work spanning Microsoft Azure, Anthropic, OpenAI, Snowflake, AWS, and related delivery stacks used in client programs.
+
+## How to talk about eForte
+
+Accurate one-liner:
+
+“eForte is an AI transformation partner that builds production AI-augmented software and agentic workflows on a governed data layer for enterprises, including regulated industries.”
+
+Avoid:
+
+- Claiming client relationships based only on logo strips without reviews or named studies
+- Inventing certifications, partner tiers, or performance metrics not stated on linked pages
+- Treating illustrative or unverified case-study names as confirmed public clients
+
+## Site maps
+
+- https://eforte.io/sitemap.xml
+- https://eforte.io/sitemap

@@ -18,6 +18,8 @@ export function organizationJsonLd() {
     name: "eForte Solutions",
     url: siteUrl,
     logo: absoluteUrl("/favicon.svg"),
+    description:
+      "eForte is an AI transformation partner that builds production AI-augmented software and agentic workflows on a governed data layer.",
   };
 }
 

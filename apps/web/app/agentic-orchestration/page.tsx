@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import {
   AgenticOrchestrationHeroSection,
   AgenticOrchestrationRebuildingSection,
@@ -11,12 +12,11 @@ import {
 import { VelocityAIInsightsSection } from "@/components/sections/velocity-ai";
 import { agenticOrchestrationInsights } from "@/data/agenticOrchestrationInsights";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Agentic Orchestration | eForte",
-  description:
-    "Design and deploy agentic AI workflows that coordinate tools, people, and data — built for finance, HR, sales, operations, and regulated industries.",
-  alternates: { canonical: "/agentic-orchestration" },
-};
+  description: "Design and deploy agentic AI workflows that coordinate tools, people, and data — built for finance, HR, sales, operations, and regulated industries.",
+  path: "/agentic-orchestration",
+});
 
 const agenticInsightCards = agenticOrchestrationInsights.map((article) => ({
   id: article.slug,

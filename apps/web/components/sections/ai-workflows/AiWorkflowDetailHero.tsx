@@ -21,12 +21,11 @@ export default function AiWorkflowDetailHero({
           <Image
             key={domain.heroImageSrc}
             src={domain.heroImageSrc!}
-            alt=""
+            alt={`${domain.label} AI workflow`}
             fill
             priority
             sizes="100vw"
             className={styles.detailHeroBg}
-            aria-hidden
           />
           <div className={styles.detailHeroOverlay} aria-hidden />
           <div className={styles.detailHeroPinkGlow} aria-hidden />

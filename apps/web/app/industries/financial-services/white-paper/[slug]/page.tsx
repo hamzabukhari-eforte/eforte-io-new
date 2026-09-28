@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import { notFound } from "next/navigation";
 import {
   FinancialServicesWhitePaperArticleSection,
@@ -22,10 +23,12 @@ export async function generateMetadata({
   const paper = getFinanceWhitePaperBySlug(slug);
   if (!paper) return { title: "White Paper | eForte" };
 
-  return {
+  return pageMeta({
     title: `${paper.title} | eForte`,
     description: paper.description,
-  };
+    path: `/industries/financial-services/white-paper/${slug}`,
+    type: "article",
+  });
 }
 
 export default async function FinancialServicesWhitePaperSlugPage({

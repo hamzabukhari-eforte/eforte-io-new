@@ -38,7 +38,7 @@ export const clientReviews: ClientReview[] = [
     description:
       "Krank is a platform for the heavy machinery industry. Their aim is to revolutionize how market buys and sells heavy equipment. eForte delivered Timed and Day Auctions, Auto Bidding, Network privacy and detailed subscription module.",
     category: "Web Apps Development",
-    duration: "14 Months",
+    duration: "14 months",
     metaLabel: "Service Offerings",
     metaValue: "Staff Augmentation Solutions",
     comment:
@@ -56,7 +56,7 @@ export const clientReviews: ClientReview[] = [
     description:
       "InvestmentMarkets is a platform for the potential investors that brings them high net worth investment opportunities, primarily aiming for growth, income or both. eForte delivered customized user and admin dashboards, feature to list comprehensive investment listings with back and forth communication and real time online Track Changes feature in documents.",
     category: "Web Apps and Mobile Apps Development",
-    duration: "14 Months",
+    duration: "14 months",
     metaLabel: "Service Offerings",
     metaValue: "Staff Augmentation Solutions",
     comment:
@@ -72,9 +72,9 @@ export const clientReviews: ClientReview[] = [
     id: "oddysee",
     companyName: "Oddysee",
     description:
-      "GRC Oddysee is the platform to automate the govt. licensing process for domains that require a lot of documentation/plans. It has a documentation module with pre written templates of documents to choose from. eForte delivered customized user and admin dashboards, features to automate civic license documentation requirements by answering questions with intuitive UI and Forecasting tool to create P&L statements, Cash Flow and Financial forecastings for businesses.",
+      "GRC Oddysee is the platform to automate the government licensing process for domains that require a lot of documentation/plans. It has a documentation module with pre written templates of documents to choose from. eForte delivered customized user and admin dashboards, features to automate civic license documentation requirements by answering questions with intuitive UI and Forecasting tool to create P&L statements, Cash Flow and Financial forecastings for businesses.",
     category: "Web Apps for User, Admin and Consultants Development",
-    duration: "21 Months and continuing",
+    duration: "21 months, ongoing",
     metaLabel: "Project Size",
     metaValue: "USD 160,000 plus",
     comment:
@@ -92,7 +92,7 @@ export const clientReviews: ClientReview[] = [
     description:
       "InstappDeals is a discount coupon/promotion platform for the retail industry. eForte delivered Promotions by Store owners, Dealbook feature, Custom Chat one to one and one to many.",
     category: "iOS and Android Mobile Apps Development",
-    duration: "22 Months",
+    duration: "22 months",
     metaLabel: "Project Size",
     metaValue: "USD 90,000 plus",
     comment:
@@ -100,7 +100,7 @@ export const clientReviews: ClientReview[] = [
     rating: 5,
     feedback:
       "Our idea of the product matured over time and eForte worked with us tirelessly for that purpose. They truly proved to be a tremendous support for our venture in terms of technology, business ethics and domain knowledge.",
-    author: "Kamran Chaudary",
+    author: "Kamran Chaudhary",
     designation: "CEO - Instappdeals",
     avatarSrc: "/assets/images/reviews/Kamran.png",
   },
@@ -108,9 +108,9 @@ export const clientReviews: ClientReview[] = [
     id: "prism",
     companyName: "Prism",
     description:
-      "Prism is a procedure for forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects. eForte delivered integration of 3rd party APIs, User and Admin dashboards and interactive UI for charts and graphs.",
+      "Prism is a retail demand forecasting platform with dashboards, third-party API integrations, and interactive charts for seasonal and holiday-aware projections. eForte delivered integration of 3rd party APIs, User and Admin dashboards and interactive UI for charts and graphs.",
     category: "Web Apps for User, Admin and Consultants",
-    duration: "Ongoing for 21 Months",
+    duration: "21 months, ongoing",
     metaLabel: "Service Offerings",
     metaValue: "Staff Augmentation Solutions",
     comment:
@@ -128,7 +128,7 @@ export const clientReviews: ClientReview[] = [
     description:
       "STN Site Data Protection Services (SDP) is a leading partner with Cohesity. Their unique Backup as a Service makes worrying about backups a thing of the past. STN Inc. partnered with eForte to deliver a Managed Services Portal where clients can choose and activate services and components that they require for their backup and disaster recovery procedures.",
     category: "Web and Mobile Apps for User, Admin and Clients",
-    duration: "6 Months",
+    duration: "6 months",
     metaLabel: "Project Size",
     metaValue: "USD 65,000",
     comment:
@@ -145,7 +145,7 @@ export const clientReviews: ClientReview[] = [
     description:
       "Ce-trainer is a Learning Management System. eForte enhanced the LMS with improved student navigation, Google Drive uploaders, a comprehensive Student Dashboard, and an Admin Dashboard with robust filtering for streamlined administration.",
     category: "Learning Management System (LMS)",
-    duration: "3 months and Counting",
+    duration: "3 months, ongoing",
     metaLabel: "Service Offerings",
     metaValue: "Staff Augmentation Solutions",
     comment:
@@ -162,7 +162,7 @@ export const clientReviews: ClientReview[] = [
     description:
       "Insurance Market is a platform for comparing and purchasing insurance products from various providers. eForte's staff enhanced the platform by developing an advanced CRM system with AML modules, third-party API integrations, and proactive Anti-Money Laundering capabilities.",
     category: "Customer Relationship Management (CRM)",
-    duration: "10 months and Counting",
+    duration: "10 months, ongoing",
     metaLabel: "Service Offerings",
     metaValue: "Staff Augmentation Solutions",
     comment:
@@ -171,7 +171,7 @@ export const clientReviews: ClientReview[] = [
     feedback:
       "Insurance Market is a platform for comparing and purchasing insurance products from various providers. eForte's staff enhanced the platform by developing an advanced CRM system with modules targeting money laundering concerns, integrating third-party APIs, and creating a proactive Anti-Money Laundering module to improve financial integrity.",
     author: "Hussain Fakhruddin",
-    designation: "CTO - Insurance Market.ae",
+    designation: "CTO - insurancemarket.ae",
   },
   {
     id: "reciprocity-health",

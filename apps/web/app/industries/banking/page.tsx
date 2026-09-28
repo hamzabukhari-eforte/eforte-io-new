@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import {
   BankingApproachSection,
   BankingCapabilitiesSection,
@@ -5,11 +6,11 @@ import {
   BankingTrustSection,
 } from "@/components/sections/banking";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Banking | eForte",
-  description:
-    "AI-driven banking modernization services across core systems, compliance, and cybersecurity.",
-};
+  description: "AI-driven banking modernization services across core systems, compliance, and cybersecurity.",
+  path: "/industries/banking",
+});
 
 export default function BankingPage() {
   return (

@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import { notFound } from "next/navigation";
 import CareersJobDetailHeroSection from "@/components/sections/careers/CareersJobDetailHeroSection";
 import CareersJobDetailBodySection from "@/components/sections/careers/CareersJobDetailBodySection";
@@ -21,10 +22,11 @@ export async function generateMetadata({
     return { title: "Role not found | eForte" };
   }
 
-  return {
+  return pageMeta({
     title: `${job.title} | Careers | eForte`,
     description: job.summary,
-  };
+    path: `/careers/${slug}`,
+  });
 }
 
 export default async function CareersJobDetailPage({

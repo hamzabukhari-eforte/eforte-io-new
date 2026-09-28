@@ -12,11 +12,10 @@ export default function AiHeroSection() {
       <div className="pointer-events-none absolute inset-y-0 right-0 w-[58%] max-w-[720px] md:w-[52%] lg:max-w-[780px]">
         <Image
           src="/assets/final-images/capabilities/AI/AI_hero_section.png"
-          alt=""
+          alt="Artificial Intelligence capability illustration"
           fill
           priority
           className="object-contain object-right"
-          aria-hidden
         />
       </div>
       <div className="absolute inset-0 bg-linear-to-r from-default via-default/90 to-transparent" />

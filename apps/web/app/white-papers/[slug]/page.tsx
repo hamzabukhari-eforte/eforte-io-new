@@ -1,7 +1,10 @@
+import { pageMeta } from "@/lib/seo/meta";
 import { notFound } from "next/navigation";
 import FinancialServicesWhitePaperArticleSection from "@/components/sections/financial-services/FinancialServicesWhitePaperArticleSection";
 import WhitePaperCtaSection from "@/components/sections/white-papers/WhitePaperCtaSection";
 import WhitePaperHeroSection from "@/components/sections/white-papers/WhitePaperHeroSection";
+import JsonLd from "@/components/atoms/JsonLd";
+import { articleJsonLd, breadcrumbJsonLd } from "@/lib/seo/jsonLd";
 import {
   getAiAdoptionWhitePaperBySlug,
   getAiAdoptionWhitePaperSlugs,
@@ -20,10 +23,12 @@ export async function generateMetadata({
   const paper = getAiAdoptionWhitePaperBySlug(slug);
   if (!paper) return { title: "White Paper | eForte" };
 
-  return {
+  return pageMeta({
     title: `${paper.title} | eForte`,
     description: paper.description,
-  };
+    path: `/white-papers/${slug}`,
+    type: "article",
+  });
 }
 
 export default async function WhitePaperSlugPage({
@@ -35,8 +40,24 @@ export default async function WhitePaperSlugPage({
   const paper = getAiAdoptionWhitePaperBySlug(slug);
   if (!paper) notFound();
 
+  const path = `/white-papers/${slug}`;
+
   return (
     <main className="min-h-screen bg-white text-default">
+      <JsonLd
+        data={[
+          articleJsonLd({
+            title: paper.title,
+            description: paper.description,
+            path,
+            datePublished: paper.date,
+          }),
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: paper.title, path },
+          ]),
+        ]}
+      />
       <WhitePaperHeroSection paper={paper} />
       <FinancialServicesWhitePaperArticleSection paper={paper} />
       <WhitePaperCtaSection />

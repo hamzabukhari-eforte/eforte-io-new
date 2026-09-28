@@ -29,9 +29,9 @@ export default function DetailsSection({ title, theme, sections }: Props) {
         />
 
         <div className="z-20 max-w-7xl mx-auto px-6 lg:px-20 flex flex-col gap-12">
-          <h1 className="text-2xl lg:text-4xl font-semibold text-center">
+          <h2 className="text-2xl lg:text-4xl font-semibold text-center">
             {title}
-          </h1>
+          </h2>
 
           {sections.map((item) => (
             <DetailsCard

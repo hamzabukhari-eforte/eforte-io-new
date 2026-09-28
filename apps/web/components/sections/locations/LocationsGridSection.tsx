@@ -49,8 +49,9 @@ function LocationCard({ location }: { location: Location }) {
 
         <Link
           href={location.mapsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
+          {...(location.mapsUrl.startsWith("http")
+            ? { target: "_blank", rel: "noopener noreferrer" }
+            : {})}
           className="inline-flex h-[25px] items-center justify-center mb-0.5 shrink-0 rounded-full leading-none bg-[#3b82f6] px-4 py-0 text-xs font-medium text-white transition-colors hover:bg-[#2563eb] md:px-5 md:text-sm"
         >
           Learn more

@@ -1,14 +1,15 @@
+import { pageMeta } from "@/lib/seo/meta";
 import {
   AiWorkflowsDomainsSection,
   AiWorkflowsOverviewHeroSection,
 } from "@/components/sections/ai-workflows";
 import styles from "@/components/sections/ai-workflows/aiWorkflows.module.css";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "AI Workflows | eForte",
-  description:
-    "AI-driven enterprise domain capabilities where AI meets execution—customer service, sales, finance, HR, operations, and project delivery workflows.",
-};
+  description: "AI-driven enterprise domain capabilities where AI meets execution—customer service, sales, finance, HR, operations, and project delivery workflows.",
+  path: "/ai-workflows",
+});
 
 export default function AiWorkflowsOverviewPage() {
   return (

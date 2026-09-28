@@ -14,12 +14,11 @@ export default function AiWorkflowsOverviewHeroSection() {
     <section className={styles.hero}>
       <Image
         src={heroImageSrc}
-        alt=""
+        alt="AI workflows overview"
         fill
         priority
         className={styles.heroBg}
         sizes="100vw"
-        aria-hidden
       />
       <div className={styles.heroOverlay} aria-hidden />
       <div className={styles.heroOrb} aria-hidden />

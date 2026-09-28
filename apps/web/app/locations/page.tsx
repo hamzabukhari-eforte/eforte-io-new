@@ -1,10 +1,11 @@
+import { pageMeta } from "@/lib/seo/meta";
 import LocationsPageContent from "./LocationsPageContent";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Locations | eForte",
-  description:
-    "Global presence with local delivery. Explore eForte offices across the Americas.",
-};
+  description: "eForte offices in Wilmington, San Jose, and Austin, plus remote and nearshore delivery centers.",
+  path: "/locations",
+});
 
 export default function LocationsPage() {
   return <LocationsPageContent />;

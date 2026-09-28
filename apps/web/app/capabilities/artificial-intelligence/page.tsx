@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import {
   AiCognitiveGatewaySection,
   AiCompoundSystemsSection,
@@ -17,11 +18,11 @@ import {
   AiWhitePaperSection,
 } from "@/components/sections/ai";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Artificial Intelligence | eForte",
-  description:
-    "Enterprise AI solutions from eForte's AI Studio — Compound AI Systems, GenAI, computer vision, ML, and QBricks, our Built on Databricks accelerator for AI agents.",
-};
+  description: "Enterprise AI solutions from eForte's AI Studio — Compound AI Systems, GenAI, computer vision, ML, and QBricks, our Built on Databricks accelerator for AI agents.",
+  path: "/capabilities/artificial-intelligence",
+});
 
 export default function ArtificialIntelligencePage() {
   return (

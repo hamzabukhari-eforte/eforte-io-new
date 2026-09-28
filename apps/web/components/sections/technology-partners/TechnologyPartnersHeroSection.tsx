@@ -13,12 +13,11 @@ export default function TechnologyPartnersHeroSection() {
     <section className={`${styles.detailHero} ${styles.detailHeroMatch}`}>
       <Image
         src="/assets/final-images/technology-partners/Technology_Partners_Hero.png?v3"
-        alt=""
+        alt="Technology partners collaborating on AI delivery"
         fill
         priority
         sizes="100vw"
         className={styles.detailHeroBg}
-        aria-hidden
       />
       <div className={styles.detailHeroOverlay} aria-hidden />
       <div className={styles.detailHeroPinkGlow} aria-hidden />

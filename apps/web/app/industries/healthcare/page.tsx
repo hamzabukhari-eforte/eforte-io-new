@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import {
   HealthcareHeroSection,
   HealthcareExpertiseSection,
@@ -12,10 +13,11 @@ import {
   HealthcareSuccessStoriesSection,
 } from "@/components/sections/healthcare";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Health & Wellbeing | eForte",
   description: "Human centered health technology built with Velocity AI, virtual care, connected devices, Agentic Orchestration, and a Foundational Data Layer for health systems.",
-};
+  path: "/industries/healthcare",
+});
 
 export default function HealthcarePage() {
   return (

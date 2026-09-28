@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import {
   ProductDesignFaqSection,
   ProductDesignHeroSection,
@@ -7,11 +8,11 @@ import {
 } from "@/components/sections/product-design";
 import { VelocityAIInsightsSection } from "@/components/sections/velocity-ai";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Product Design | eForte",
-  description:
-    "eForte's Product Design Studio helps you craft engaging, intuitive experiences that feel effortless to use and easy to love.",
-};
+  description: "eForte's Product Design Studio helps you craft engaging, intuitive experiences that feel effortless to use and easy to love.",
+  path: "/capabilities/product-design",
+});
 
 export default function ProductDesignPage() {
   return (

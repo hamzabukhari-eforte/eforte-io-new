@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import {
   FoundationalDataLayerHeroSection,
   FoundationalDataLayerServicesSection,
@@ -8,11 +9,11 @@ import {
 import { VelocityAIInsightsSection } from "@/components/sections/velocity-ai";
 import { foundationalDataInsights } from "@/data/foundationalDataInsights";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Foundational Data Layer | eForte",
-  description:
-    "Establishing the data infrastructure for AI transformation. Robust, scalable, and secure data ecosystems from ingestion to governance.",
-};
+  description: "Establishing the data infrastructure for AI transformation. Robust, scalable, and secure data ecosystems from ingestion to governance.",
+  path: "/foundational-data-layer",
+});
 
 const foundationalInsightCards = foundationalDataInsights.map((article) => ({
   id: article.slug,

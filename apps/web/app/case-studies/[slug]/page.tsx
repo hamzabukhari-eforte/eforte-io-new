@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import IntroSection from "@/components/sections/case-studies/IntroSection";
@@ -7,7 +8,6 @@ import CaseStudyNarrative from "@/components/sections/case-studies/CaseStudyNarr
 // import BForm from "@/components/sections/case-studies/BForm";
 import { caseStudies } from "@/data/caseStudies";
 import { impactStudyNarratives } from "@/data/impactStudyNarratives";
-import { trimMetaDescription } from "@/lib/seo/meta";
 import JsonLd from "@/components/atoms/JsonLd";
 import { breadcrumbJsonLd } from "@/lib/seo/jsonLd";
 
@@ -44,26 +44,12 @@ export async function generateMetadata({
   const study = caseStudies.find((item) => item.slug === normalizedSlug);
   if (!study) return { title: "Case Study | eForte" };
 
-  const title = `${study.introSection.title} Case Study | eForte`;
-  const description = trimMetaDescription(study.introSection.description);
-  const canonical = `/case-studies/${normalizedSlug}`;
-
-  return {
-    title,
-    description,
-    alternates: { canonical },
-    openGraph: {
-      title,
-      description,
-      url: canonical,
-      type: "article",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
-  };
+  return pageMeta({
+    title: `${study.introSection.title} Case Study | eForte`,
+    description: study.introSection.description,
+    path: `/case-studies/${normalizedSlug}`,
+    type: "article",
+  });
 }
 
 export default async function CaseStudyPage({

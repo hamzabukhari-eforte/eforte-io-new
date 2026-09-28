@@ -1,11 +1,12 @@
+import { pageMeta } from "@/lib/seo/meta";
 import { CapabilityStudioPage } from "@/components/sections/capability-studio";
 import { platformEngineeringContent } from "@/data/capabilities/platformEngineering";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Platform Engineering | eForte",
-  description:
-    "Platform engineering studio for architecture, APIs, code quality, discovery, due diligence, and scalable delivery foundations.",
-};
+  description: "Platform engineering studio for architecture, APIs, code quality, discovery, due diligence, and scalable delivery foundations.",
+  path: "/capabilities/platform-engineering",
+});
 
 export default function PlatformEngineeringPage() {
   return <CapabilityStudioPage content={platformEngineeringContent} />;

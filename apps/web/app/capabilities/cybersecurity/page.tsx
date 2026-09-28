@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import {
   // CyberStudioVideoSection, // preserved — “eForte's approach…” section intentionally omitted
   // CyberExpertsSpotlightSection, // preserved — experts spotlight intentionally omitted
@@ -12,11 +13,11 @@ import {
   CyberSuccessStoriesSection,
 } from "@/components/sections/cybersecurity";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Cybersecurity | eForte",
-  description:
-    "AI-powered cybersecurity from eForte — securing AI systems, managed defense, DevSecOps, compliance, and security advisory for modern enterprises.",
-};
+  description: "AI-powered cybersecurity from eForte — securing AI systems, managed defense, DevSecOps, compliance, and security advisory for modern enterprises.",
+  path: "/capabilities/cybersecurity",
+});
 
 export default function CybersecurityPage() {
   return (

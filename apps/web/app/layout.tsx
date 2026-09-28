@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
+import { Be_Vietnam_Pro, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AppProviders from "@/components/providers/AppProviders";
 import Navbar from "@/components/sections/Navbar";
@@ -9,6 +9,13 @@ import { getAiPillarsInsights, getInsightsMenuData } from "@/lib/strapi/insights
 import JsonLd from "@/components/atoms/JsonLd";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo/jsonLd";
 
+const beVietnamPro = Be_Vietnam_Pro({
+  variable: "--font-be-vietnam-pro",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
@@ -17,27 +24,23 @@ const geistMono = Geist_Mono({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://eforte.io";
 const defaultTitle = "eForte Solutions";
 const defaultDescription =
-  "eForte Solutions is a software development company that provides software development services to businesses.";
+  "eForte is an AI transformation partner that builds production AI-augmented software and agentic workflows on a governed data layer.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: defaultTitle,
-  description: defaultDescription,
-  alternates: {
-    canonical: "/",
+  // Fallback only — each page should set its own title/description/canonical via pageMeta.
+  title: {
+    default: defaultTitle,
+    template: "%s",
   },
+  description: defaultDescription,
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteUrl,
     siteName: "eForte Solutions",
-    title: defaultTitle,
-    description: defaultDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: defaultTitle,
-    description: defaultDescription,
   },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
@@ -56,7 +59,10 @@ export default async function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistMono.variable} antialiased`} suppressHydrationWarning>
+      <body
+        className={`${beVietnamPro.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
+      >
         <JsonLd data={[organizationJsonLd(), websiteJsonLd()]} />
         <AppProviders>
           <Navbar

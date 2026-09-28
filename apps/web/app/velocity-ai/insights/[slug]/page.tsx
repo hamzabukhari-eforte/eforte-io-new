@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo/meta";
 import { notFound } from "next/navigation";
 import {
   VelocityAIFooterCTASection,
@@ -22,10 +23,12 @@ export async function generateMetadata({
   const article = getVelocityAIInsightBySlug(slug);
   if (!article) return { title: "Insight | eForte" };
 
-  return {
+  return pageMeta({
     title: `${article.title} | eForte`,
     description: article.excerpt,
-  };
+    path: `/velocity-ai/insights/${slug}`,
+    type: "article",
+  });
 }
 
 export default async function VelocityAIInsightPage({
