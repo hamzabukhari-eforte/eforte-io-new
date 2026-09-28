@@ -1,0 +1,927 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>eForte Site Audit</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:wght@600&display=swap">
+<style>
+  :root{
+    color-scheme: light;
+    --bg:#F4F5F7;
+    --surface:#FFFFFF;
+    --surface-2:#FAFAFB;
+    --ink:#15181F;
+    --ink-2:#3D4452;
+    --muted:#6B7382;
+    --faint:#949BA8;
+    --line:#E0E3E9;
+    --line-strong:#C9CED8;
+    --accent:#2B4A7E;
+    --accent-soft:#E8EEF7;
+    --crit:#B02A24;
+    --crit-bg:#FBEDEC;
+    --high:#A85A06;
+    --high-bg:#FCF2E4;
+    --med:#3F5C7A;
+    --med-bg:#EAEFF4;
+    --ok:#2A6B47;
+    --ok-bg:#E8F2EC;
+    --shadow:0 1px 2px rgba(21,24,31,.05), 0 8px 24px -12px rgba(21,24,31,.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --bg:#0F1218;
+      --surface:#171B23;
+      --surface-2:#1C212A;
+      --ink:#EDEFF3;
+      --ink-2:#C2C8D2;
+      --muted:#8F97A5;
+      --faint:#6C7482;
+      --line:#272D38;
+      --line-strong:#3A4250;
+      --accent:#7FA6DE;
+      --accent-soft:#1D2735;
+      --crit:#F08A83;
+      --crit-bg:#2C1917;
+      --high:#E0A75C;
+      --high-bg:#2B2117;
+      --med:#9DB6CE;
+      --med-bg:#1B2129;
+      --ok:#76C79B;
+      --ok-bg:#16231C;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --bg:#0F1218; --surface:#171B23; --surface-2:#1C212A;
+    --ink:#EDEFF3; --ink-2:#C2C8D2; --muted:#8F97A5; --faint:#6C7482;
+    --line:#272D38; --line-strong:#3A4250;
+    --accent:#7FA6DE; --accent-soft:#1D2735;
+    --crit:#F08A83; --crit-bg:#2C1917;
+    --high:#E0A75C; --high-bg:#2B2117;
+    --med:#9DB6CE; --med-bg:#1B2129;
+    --ok:#76C79B; --ok-bg:#16231C;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size:15px; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1060px; margin:0 auto; padding-inline:20px; padding-block:0 72px}
+  code, .mono{font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace}
+
+  /* ---------- masthead ---------- */
+  .masthead{padding-block:44px 30px; border-bottom:2px solid var(--ink); margin-bottom:0}
+  .kicker{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600}
+  h1{
+    font-family:"IBM Plex Serif", Georgia, serif; font-weight:600;
+    font-size:clamp(30px, 5.2vw, 46px); line-height:1.1; letter-spacing:-.02em;
+    margin:.3em 0 .35em; text-wrap:balance;
+  }
+  .standfirst{font-size:17px; color:var(--ink-2); max-width:62ch; margin:0}
+  .runmeta{
+    display:flex; flex-wrap:wrap; gap:0 28px; margin-top:22px;
+    font-size:12.5px; color:var(--muted);
+  }
+  .runmeta div{display:flex; gap:7px; align-items:baseline}
+  .runmeta b{color:var(--ink); font-weight:600}
+
+  /* ---------- verdict ---------- */
+  .verdict{
+    margin-top:28px; background:var(--surface); border:1px solid var(--line);
+    border-left:4px solid var(--crit); border-radius:3px; padding:20px 22px; box-shadow:var(--shadow);
+  }
+  .verdict h2{margin:0 0 8px; font-size:16px; letter-spacing:-.01em}
+  .verdict p{margin:0 0 10px; color:var(--ink-2); max-width:70ch}
+  .verdict p:last-child{margin-bottom:0}
+
+  /* ---------- severity tiles ---------- */
+  .tiles{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:22px}
+  .tile{
+    background:var(--surface); border:1px solid var(--line); border-radius:3px;
+    padding:14px 15px; position:relative; overflow:hidden;
+  }
+  .tile::before{content:""; position:absolute; inset:0 auto 0 0; width:3px; background:var(--bar)}
+  .tile .n{font-size:30px; font-weight:600; line-height:1; letter-spacing:-.03em; font-variant-numeric:tabular-nums; color:var(--bar)}
+  .tile .l{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-top:7px; font-weight:600}
+  .tile .d{font-size:12px; color:var(--faint); margin-top:3px}
+  .t-crit{--bar:var(--crit)} .t-high{--bar:var(--high)} .t-med{--bar:var(--med)} .t-ok{--bar:var(--ok)}
+
+  /* ---------- sections ---------- */
+  section{margin-top:48px; scroll-margin-top:16px}
+  .sec-head{display:flex; align-items:baseline; gap:12px; border-bottom:1px solid var(--line-strong); padding-bottom:9px; margin-bottom:18px}
+  .sec-num{
+    font-family:"IBM Plex Mono", monospace; font-size:12px; font-weight:500;
+    color:var(--surface); background:var(--accent); padding:3px 7px; border-radius:2px; line-height:1;
+  }
+  h2.sec-title{font-size:21px; font-weight:600; letter-spacing:-.015em; margin:0; flex:1}
+  .sec-note{font-size:12.5px; color:var(--muted)}
+  p.lead{color:var(--ink-2); max-width:70ch; margin:0 0 16px}
+
+  /* ---------- tables ---------- */
+  .tscroll{overflow-x:auto; border:1px solid var(--line); border-radius:3px; background:var(--surface)}
+  table{border-collapse:collapse; width:100%; font-size:13.5px; min-width:640px}
+  th{
+    text-align:left; font-size:11px; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--muted); font-weight:600; padding:10px 14px; border-bottom:1px solid var(--line-strong);
+    background:var(--surface-2); white-space:nowrap;
+  }
+  td{padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink-2)}
+  tr:last-child td{border-bottom:none}
+  td.path{font-family:"IBM Plex Mono", monospace; font-size:12.5px; color:var(--ink); white-space:nowrap}
+  td.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+
+  /* completeness bar */
+  .score{display:flex; align-items:center; gap:9px; min-width:112px}
+  .score .track{flex:1; height:5px; background:var(--line); border-radius:3px; overflow:hidden; min-width:54px}
+  .score .fill{height:100%; border-radius:3px; background:var(--sc)}
+  .score .v{font-size:12.5px; font-weight:600; font-variant-numeric:tabular-nums; color:var(--sc); width:30px; text-align:right}
+  .s-hi{--sc:var(--ok)} .s-mid{--sc:var(--high)} .s-lo{--sc:var(--crit)}
+
+  /* ---------- findings ---------- */
+  .filters{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:14px}
+  .filters button{
+    font:inherit; font-size:12px; font-weight:600; letter-spacing:.03em;
+    padding:6px 12px; border-radius:2px; border:1px solid var(--line-strong);
+    background:var(--surface); color:var(--ink-2); cursor:pointer;
+  }
+  .filters button[aria-pressed="true"]{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+  .filters button:focus-visible, .themetoggle:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .fcount{font-size:12.5px; color:var(--muted); margin-left:auto; font-variant-numeric:tabular-nums}
+
+  .finding{
+    background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--sv);
+    border-radius:3px; padding:15px 17px; margin-bottom:9px;
+  }
+  .f-crit{--sv:var(--crit); --svbg:var(--crit-bg)}
+  .f-high{--sv:var(--high); --svbg:var(--high-bg)}
+  .f-med{--sv:var(--med); --svbg:var(--med-bg)}
+  .f-top{display:flex; flex-wrap:wrap; gap:9px; align-items:center; margin-bottom:7px}
+  .badge{
+    font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+    padding:3px 7px; border-radius:2px; color:var(--sv); background:var(--svbg); white-space:nowrap;
+  }
+  .fid{font-family:"IBM Plex Mono", monospace; font-size:11.5px; color:var(--faint)}
+  .ftags{font-size:11.5px; color:var(--muted); margin-left:auto}
+  .finding h3{margin:0 0 6px; font-size:15.5px; font-weight:600; letter-spacing:-.01em; line-height:1.35; text-wrap:balance}
+  .finding p{margin:0 0 8px; color:var(--ink-2); font-size:14px; max-width:78ch}
+  .finding p:last-child{margin-bottom:0}
+  .ev{
+    font-family:"IBM Plex Mono", monospace; font-size:12px; background:var(--surface-2);
+    border:1px solid var(--line); border-radius:2px; padding:9px 11px; margin:0 0 8px;
+    color:var(--ink-2); overflow-x:auto; white-space:pre-wrap; word-break:break-word;
+  }
+  .fix{font-size:13.5px; color:var(--ink-2); border-top:1px dashed var(--line-strong); padding-top:8px; margin-top:10px}
+  .fix b{color:var(--ink); font-weight:600}
+
+  ul.plain{margin:0 0 12px; padding-left:20px; color:var(--ink-2)}
+  ul.plain li{margin-bottom:5px}
+  ul.plain li::marker{color:var(--faint)}
+
+  .callout{
+    background:var(--accent-soft); border:1px solid var(--line); border-radius:3px;
+    padding:14px 16px; margin:16px 0; font-size:13.5px; color:var(--ink-2);
+  }
+  .callout b{color:var(--ink)}
+
+  .pill{
+    display:inline-block; font-size:11px; font-weight:600; letter-spacing:.05em;
+    padding:2px 7px; border-radius:2px; text-transform:uppercase;
+  }
+  .p-yes{background:var(--ok-bg); color:var(--ok)}
+  .p-no{background:var(--crit-bg); color:var(--crit)}
+  .p-part{background:var(--high-bg); color:var(--high)}
+
+  .themetoggle{
+    position:absolute; top:0; right:0; font:inherit; font-size:11.5px; font-weight:600;
+    letter-spacing:.06em; text-transform:uppercase; padding:6px 11px; border-radius:2px;
+    border:1px solid var(--line-strong); background:var(--surface); color:var(--muted); cursor:pointer;
+  }
+  .mh-inner{position:relative}
+
+  footer.rep{margin-top:56px; padding-top:18px; border-top:1px solid var(--line-strong); font-size:12.5px; color:var(--faint)}
+
+  @media (max-width:760px){
+    .tiles{grid-template-columns:repeat(2,1fr)}
+    .ftags{margin-left:0; width:100%}
+    .themetoggle{position:static; margin-bottom:14px}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .finding{transition:border-color .15s ease}
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="mh-inner">
+      <button class="themetoggle" id="themeBtn" type="button">Theme</button>
+      <div class="kicker">QA &amp; Content Audit · eforte-io-new.vercel.app</div>
+      <h1>eForte Site Audit</h1>
+      <p class="standfirst">A full crawl of the new eForte marketing site: 101 routes, every page's metadata, the rendered DOM at three viewports, console and network traffic, robots and sitemap directives, and a line-by-line read of the copy.</p>
+      <div class="runmeta">
+        <div><span>Scanned</span><b>24 Sep 2026</b></div>
+        <div><span>Routes crawled</span><b>101</b></div>
+        <div><span>HTTP failures</span><b>0</b></div>
+        <div><span>Findings</span><b>34</b></div>
+        <div><span>Method</span><b>Read-only, no form submitted</b></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="verdict">
+    <h2>Verdict: do not point eforte.io at this build yet</h2>
+    <p>The engineering is sound. Every route returns 200, there are no console errors, no broken images, no failed requests, and the design system is consistent across 101 pages. That is a better starting position than most site rebuilds reach.</p>
+    <p>The blockers are content and claims, not code. Thirty-seven of the forty-eight case studies describe clients that do not appear to exist, complete with invented product domains and precise performance figures — and one of them is the featured study on your homepage. The homepage logo strip presents Google, Slack, PayPal, Shopify, Figma, Ripple and AWS under the heading "Trusted by industry leaders." Separately, <code>robots.txt</code> currently blocks every crawler including Googlebot, so if that file ships as-is the site will not be indexed at all.</p>
+    <p>Fix the four criticals before launch. The high-severity items are a week of focused work and mostly mechanical.</p>
+  </div>
+
+  <div class="tiles">
+    <div class="tile t-crit"><div class="n">4</div><div class="l">Critical</div><div class="d">Block launch</div></div>
+    <div class="tile t-high"><div class="n">11</div><div class="l">High</div><div class="d">Fix before traffic</div></div>
+    <div class="tile t-med"><div class="n">19</div><div class="l">Medium</div><div class="d">Polish backlog</div></div>
+    <div class="tile t-ok"><div class="n">0</div><div class="l">Runtime errors</div><div class="d">Clean console</div></div>
+  </div>
+
+  <!-- ===================== 1. PAGES ===================== -->
+  <section id="pages">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title">Page inventory</h2>
+      <span class="sec-note">101 live routes</span>
+    </div>
+    <p class="lead">Discovered by crawling every internal link from the homepage, then reconciling against <code>/sitemap.xml</code>. Grouped by template, since pages sharing a template share their defects.</p>
+
+    <div class="tscroll">
+      <table>
+        <thead>
+          <tr><th>Group</th><th>Routes</th><th>Count</th><th>Unique title</th><th>Unique description</th><th>In sitemap</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Core marketing</td><td class="path">/, /about-us, /capabilities, /ai-workflows, /industries, /impact-studies, /blog</td><td class="num">7</td><td><span class="pill p-part">6 of 7</span></td><td><span class="pill p-part">6 of 7</span></td><td><span class="pill p-yes">Yes</span></td></tr>
+          <tr><td>AI pillars</td><td class="path">/velocity-ai, /agentic-orchestration, /foundational-data-layer</td><td class="num">3</td><td><span class="pill p-part">1 of 3</span></td><td><span class="pill p-part">1 of 3</span></td><td><span class="pill p-yes">Yes</span></td></tr>
+          <tr><td>Capabilities (studios)</td><td class="path">/capabilities/*</td><td class="num">11</td><td><span class="pill p-yes">All</span></td><td><span class="pill p-yes">All</span></td><td><span class="pill p-yes">Yes</span></td></tr>
+          <tr><td>AI workflows</td><td class="path">/ai-workflows/*</td><td class="num">6</td><td><span class="pill p-yes">All</span></td><td><span class="pill p-yes">All</span></td><td><span class="pill p-yes">Yes</span></td></tr>
+          <tr><td>Industries</td><td class="path">/industries/*</td><td class="num">7</td><td><span class="pill p-yes">All</span></td><td><span class="pill p-yes">All</span></td><td><span class="pill p-yes">Yes</span></td></tr>
+          <tr><td>Case studies</td><td class="path">/case-studies/*</td><td class="num">48</td><td><span class="pill p-no">None</span></td><td><span class="pill p-no">None</span></td><td><span class="pill p-yes">Yes</span></td></tr>
+          <tr><td>Blog posts</td><td class="path">/blog/*</td><td class="num">8</td><td><span class="pill p-yes">All</span></td><td><span class="pill p-yes">All</span></td><td><span class="pill p-no">No</span></td></tr>
+          <tr><td>White paper</td><td class="path">/white-papers/navigate-ai-adoption</td><td class="num">1</td><td><span class="pill p-yes">Yes</span></td><td><span class="pill p-yes">Yes</span></td><td><span class="pill p-no">No</span></td></tr>
+          <tr><td>Careers</td><td class="path">/careers, /careers/associate-dotnet-developer, /careers/data-engineer</td><td class="num">3</td><td><span class="pill p-yes">All</span></td><td><span class="pill p-yes">All</span></td><td><span class="pill p-part">1 of 3</span></td></tr>
+          <tr><td>Trust &amp; proof</td><td class="path">/reviews, /technology-partners</td><td class="num">2</td><td><span class="pill p-yes">All</span></td><td><span class="pill p-yes">All</span></td><td><span class="pill p-part">1 of 2</span></td></tr>
+          <tr><td>Unlinked</td><td class="path">/databricks, /locations</td><td class="num">2</td><td><span class="pill p-yes">All</span></td><td><span class="pill p-yes">All</span></td><td><span class="pill p-yes">Yes</span></td></tr>
+          <tr><td>Utility</td><td class="path">/sitemap, /privacy-policy, /terms-and-conditions</td><td class="num">3</td><td><span class="pill p-yes">All</span></td><td><span class="pill p-yes">All</span></td><td><span class="pill p-yes">Yes</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <b>Also live but not counted above:</b> <code>/case-studies</code> returns 200 and serves the identical page as <code>/impact-studies</code>, same title and all. It is not in the sitemap and nothing links to it, but it is crawlable and will read as duplicate content. Either 301 it to <code>/impact-studies</code> or add a canonical tag. The 404 page is correct and well-built — <code>/nonexistent</code> returns a real 404 status with a proper "Page not found" template, which many Next.js sites get wrong.
+    </div>
+  </section>
+
+  <!-- ===================== 2. COMPLETENESS ===================== -->
+  <section id="completeness">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title">Completeness score by page</h2>
+      <span class="sec-note">Out of 100</span>
+    </div>
+    <p class="lead">Scored against five weighted criteria: unique metadata (20), content depth and structure (25), factual integrity and absence of placeholder material (30), discoverability via sitemap and internal links (15), media and accessibility hygiene (10). Factual integrity carries the most weight because it is the hardest thing to fix after launch.</p>
+
+    <div class="tscroll">
+      <table>
+        <thead>
+          <tr><th>Page or group</th><th>Score</th><th>Words</th><th>What is holding it back</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="path">/white-papers/navigate-ai-adoption</td>
+            <td><div class="score s-hi"><div class="track"><div class="fill" style="width:92%"></div></div><div class="v">92</div></div></td>
+            <td class="num">2,828</td>
+            <td>The strongest page on the site. Genuine argument, specific, well-structured. Missing only from the sitemap and unreachable from the footer.</td>
+          </tr>
+          <tr>
+            <td class="path">/blog/* (8 posts)</td>
+            <td><div class="score s-hi"><div class="track"><div class="fill" style="width:84%"></div></div><div class="v">84</div></div></td>
+            <td class="num">~1,100 ea.</td>
+            <td>Good metadata, real technical substance. None are in the sitemap. No author, date or article schema.</td>
+          </tr>
+          <tr>
+            <td class="path">/careers (+ 2 role pages)</td>
+            <td><div class="score s-hi"><div class="track"><div class="fill" style="width:82%"></div></div><div class="v">82</div></div></td>
+            <td class="num">2,499</td>
+            <td>Only two open roles listed. "Senior Polymaths" is an undefined term used nowhere else. Values list contradicts /about-us. Role pages absent from sitemap.</td>
+          </tr>
+          <tr>
+            <td class="path">/industries/* (7)</td>
+            <td><div class="score s-hi"><div class="track"><div class="fill" style="width:80%"></div></div><div class="v">80</div></div></td>
+            <td class="num">1,200–2,380</td>
+            <td>Solid and well-differentiated. Each links to case studies that appear to be fabricated. Up to 6 images per page with empty alt text.</td>
+          </tr>
+          <tr>
+            <td class="path">/capabilities/* (11)</td>
+            <td><div class="score s-hi"><div class="track"><div class="fill" style="width:78%"></div></div><div class="v">78</div></div></td>
+            <td class="num">925–1,919</td>
+            <td>Consistent depth. /capabilities/staff-augmentation is thinnest at 925 words. Cybersecurity page has 13 images with no alt text out of 58.</td>
+          </tr>
+          <tr>
+            <td class="path">/ai-workflows/* (6)</td>
+            <td><div class="score s-hi"><div class="track"><div class="fill" style="width:76%"></div></div><div class="v">76</div></div></td>
+            <td class="num">950–1,110</td>
+            <td>Tight and consistent, but the thinnest template family. Only 4 images and 3 H2s each — little to rank on beyond the hero copy.</td>
+          </tr>
+          <tr>
+            <td class="path">/technology-partners</td>
+            <td><div class="score s-mid"><div class="track"><div class="fill" style="width:68%"></div></div><div class="v">68</div></div></td>
+            <td class="num">1,211</td>
+            <td>Names Microsoft, Anthropic, OpenAI, Snowflake and AWS as "partnerships" and attaches hard client metrics to each. Both need verification. One sentence is missing its punctuation.</td>
+          </tr>
+          <tr>
+            <td class="path">/about-us</td>
+            <td><div class="score s-mid"><div class="track"><div class="fill" style="width:66%"></div></div><div class="v">66</div></div></td>
+            <td class="num">1,359</td>
+            <td>Timeline is duplicated three times in the DOM. Location list contradicts /locations and /databricks. "Some of our incredible clients" section has no named clients.</td>
+          </tr>
+          <tr>
+            <td class="path">/ (homepage)</td>
+            <td><div class="score s-mid"><div class="track"><div class="fill" style="width:58%"></div></div><div class="v">58</div></div></td>
+            <td class="num">2,798</td>
+            <td>Third-party brand logos under "Trusted by industry leaders". Featured case study appears fabricated. Hero headline invisible for several seconds after load. Seven certification and award claims, none linked to evidence.</td>
+          </tr>
+          <tr>
+            <td class="path">/reviews</td>
+            <td><div class="score s-mid"><div class="track"><div class="fill" style="width:56%"></div></div><div class="v">56</div></div></td>
+            <td class="num">1,428</td>
+            <td>Nine reviews, five of them genuinely specific. Two "Feedback Summary" blocks restate the project description instead of quoting the client. Page heading is grammatically wrong. Not in the sitemap.</td>
+          </tr>
+          <tr>
+            <td class="path">/velocity-ai, /agentic-orchestration</td>
+            <td><div class="score s-mid"><div class="track"><div class="fill" style="width:54%"></div></div><div class="v">54</div></div></td>
+            <td class="num">1,160 / 1,409</td>
+            <td>Strong content, but both fall back to the site-wide default title "eForte Solutions" and the default description. Two of your three named pillars are invisible in search.</td>
+          </tr>
+          <tr>
+            <td class="path">/databricks</td>
+            <td><div class="score s-lo"><div class="track"><div class="fill" style="width:38%"></div></div><div class="v">38</div></div></td>
+            <td class="num">1,255</td>
+            <td>Unreachable from any navigation. Claims "20+ years" and "250+ certified professionals", both contradicting /about-us. Names a Communications, Media &amp; Gaming specialisation that exists nowhere else on the site.</td>
+          </tr>
+          <tr>
+            <td class="path">/case-studies/* (11 real)</td>
+            <td><div class="score s-lo"><div class="track"><div class="fill" style="width:36%"></div></div><div class="v">36</div></div></td>
+            <td class="num">1,112–1,687</td>
+            <td>Krank, Oddysee, Investment Markets and the rest look like real engagements with named, traceable clients. All are crippled by the shared generic title and description.</td>
+          </tr>
+          <tr>
+            <td class="path">/locations</td>
+            <td><div class="score s-lo"><div class="track"><div class="fill" style="width:22%"></div></div><div class="v">22</div></div></td>
+            <td class="num">537</td>
+            <td>Reads as boilerplate from another company. Six offices that appear nowhere else, an industry list the site does not serve, a malformed state code, and "over 20 years" against a 2013 founding date. Unlinked but crawlable.</td>
+          </tr>
+          <tr>
+            <td class="path">/case-studies/* (37 synthetic)</td>
+            <td><div class="score s-lo"><div class="track"><div class="fill" style="width:15%"></div></div><div class="v">15</div></div></td>
+            <td class="num">893–1,364</td>
+            <td>Invented client names, invented product domains, precise unattributable metrics, and internally contradictory copy within a single page. See finding C-02.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== 3. FINDINGS ===================== -->
+  <section id="findings">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <h2 class="sec-title">Findings</h2>
+      <span class="sec-note">QA, English, content gaps</span>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filter findings by severity">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="crit" aria-pressed="false">Critical</button>
+      <button type="button" data-f="high" aria-pressed="false">High</button>
+      <button type="button" data-f="med" aria-pressed="false">Medium</button>
+      <span class="fcount" id="fcount">34 shown</span>
+    </div>
+
+    <div id="flist">
+
+      <!-- CRITICAL -->
+      <article class="finding f-crit" data-sev="crit">
+        <div class="f-top"><span class="badge">Critical</span><span class="fid">C-01</span><span class="ftags">robots.txt · indexing</span></div>
+        <h3>robots.txt blocks every crawler, including Googlebot</h3>
+        <p>The deployed <code>/robots.txt</code> disallows all of <code>/</code> for seventeen named agents plus the wildcard. If this file reaches production unchanged, eforte.io will be entirely absent from Google, Bing, and every AI crawler on day one.</p>
+        <pre class="ev">User-Agent: *          Disallow: /
+User-Agent: Googlebot  Disallow: /
+User-Agent: GPTBot     Disallow: /
+User-Agent: Bingbot    Disallow: /
+… 13 more agents, all Disallow: /</pre>
+        <p>This is very likely intentional for a Vercel preview build. But the sitemap it ships alongside already points at <code>https://eforte.io</code>, which tells me the robots file and the sitemap are generated by different logic — and only one of them knows it is a preview.</p>
+        <div class="fix"><b>Fix:</b> make robots generation read <code>VERCEL_ENV</code> and emit <code>Allow: /</code> only on production. Then verify the live file on eforte.io within an hour of cutover, before requesting indexing in Search Console.</div>
+      </article>
+
+      <article class="finding f-crit" data-sev="crit">
+        <div class="f-top"><span class="badge">Critical</span><span class="fid">C-02</span><span class="ftags">content integrity · legal</span></div>
+        <h3>37 of 48 case studies describe clients that do not appear to exist</h3>
+        <p>Brightwell Mutual, Cobalt Digital Bank, Harborlight Recovery, Fenwick Capital Markets, Thornfield Health, Velora Financial, Arclight Capital and thirty more follow an identical pattern: a plausible but unverifiable company name, a bespoke product domain, and four precise performance figures. They are presented in the same template, with the same visual weight, as Krank and Oddysee — which are real, named, traceable clients.</p>
+        <pre class="ev">/case-studies/brightwell-mutual
+  "eForte delivered member.brightwellmutual.com"
+  First-contact resolution 78%  ·  Cost per case −24%
+  71% simple claims STP         ·  Retention 93%</pre>
+        <p>The same page also carries two incompatible descriptions of the client. The opening paragraph calls Brightwell a regional insurer with a manual claims-review bottleneck; six lines later it is a mutual serving members across complex benefits plans whose care agents lack next-best actions. Two different content sets are rendering into one template.</p>
+        <p>The commercial exposure is direct. A prospect who searches "Brightwell Mutual eForte" finds nothing. A competitor who notices the pattern has a ready-made story. And in regulated verticals — you are claiming zero compliance findings in audits for a named life-sciences client — invented results are the kind of thing procurement and legal teams escalate rather than query.</p>
+        <div class="fix"><b>Fix:</b> remove all 37 from the sitemap and unpublish them before launch. If they are needed to make the industry pages feel populated, relabel the whole set as illustrative scenarios, strip the invented domains, and present the figures as modelled ranges rather than client outcomes. Keep the 11 real studies as the case-study library.</div>
+      </article>
+
+      <article class="finding f-crit" data-sev="crit">
+        <div class="f-top"><span class="badge">Critical</span><span class="fid">C-03</span><span class="ftags">homepage · brand claims</span></div>
+        <h3>"Trusted by industry leaders" shows logos of companies that are not clients</h3>
+        <p>The homepage logo strip, directly beneath the hero, renders Land id., Figma, Ripple, Google, Shopify, OneSignal, Slack, PayPal and AWS under that heading. The assets are committed at <code>/assets/final-images/brands/</code>, so these are deliberate, not a placeholder library left in by accident.</p>
+        <pre class="ev">/assets/final-images/brands/ripple.svg
+/assets/final-images/brands/shopify.svg
+/assets/final-images/brands/onesignal.svg
+/assets/final-images/brands/landid.svg   → 304, all rendering</pre>
+        <p>Using a company's registered wordmark to imply a client relationship that does not exist is the clearest trademark exposure on the site, and every one of these companies has a brand-enforcement function. It also undercuts the real proof you have: you genuinely do have nine named client reviews with attributable people and domains, and those are more persuasive to a medtech or financial-services buyer than a Google logo ever was.</p>
+        <div class="fix"><b>Fix:</b> replace with the logos of clients who have given written permission, or drop the strip and promote the reviews carousel into that slot. If AWS, Microsoft and Anthropic relationships are formal partner-programme memberships, move those marks to a "Technology partners" strip with the programme name stated, which is what those programmes permit.</div>
+      </article>
+
+      <article class="finding f-crit" data-sev="crit">
+        <div class="f-top"><span class="badge">Critical</span><span class="fid">C-04</span><span class="ftags">certifications · verification</span></div>
+        <h3>Seven certification and award claims, none linked to evidence</h3>
+        <p>The homepage and /databricks between them assert: SOC 2 Type 2, ISO 27001, NIST AI RMF compliance, IBM Global Entrepreneur (two consecutive years), an Expertise.com "A" rating, CAIDP membership, HIPAA compliance expertise, and Databricks Gold Partner status. None carries a certificate number, issuing body, audit date, or verification link.</p>
+        <p>Two are worth checking specifically. SOC 2 Type 2 is the strongest claim on the page — the copy says it "verifies that eForte maintains stringent security protocols over an extended period of time," which asserts a completed observation window and a named auditor. And "Databricks Gold Partner" does not match the tier names Databricks uses for consulting partners; if the correct tier is different, the page is wrong in a way a Databricks-literate buyer will catch immediately.</p>
+        <div class="fix"><b>Fix:</b> for each claim, either attach the certificate, report date and auditor, or remove it. Trust pages are read most carefully by exactly the buyers you want. One verifiable ISO certificate outperforms seven unverifiable badges.</div>
+      </article>
+
+      <!-- HIGH -->
+      <article class="finding f-high" data-sev="high">
+        <div class="f-top"><span class="badge">High</span><span class="fid">H-01</span><span class="ftags">SEO · metadata</span></div>
+        <h3>All 48 case-study pages share one title and one description</h3>
+        <p>Every route under <code>/case-studies/</code> returns <code>&lt;title&gt;eForte Solutions&lt;/title&gt;</code> and the site-wide fallback description. That is 48 pages — nearly half the site — that Google will treat as duplicates and largely drop from the index.</p>
+        <pre class="ev">/case-studies/krank             → "eForte Solutions"
+/case-studies/oddysee           → "eForte Solutions"
+/case-studies/investment-markets → "eForte Solutions"
+… 45 more, identical title and meta description</pre>
+        <div class="fix"><b>Fix:</b> add <code>generateMetadata</code> to the case-study route. Title as <code>{client} Case Study | eForte</code>; description from the existing challenge paragraph, trimmed to 155 characters.</div>
+      </article>
+
+      <article class="finding f-high" data-sev="high">
+        <div class="f-top"><span class="badge">High</span><span class="fid">H-02</span><span class="ftags">SEO · metadata</span></div>
+        <h3>Two of your three AI pillars have no page metadata</h3>
+        <p><code>/velocity-ai</code> and <code>/agentic-orchestration</code> both fall back to "eForte Solutions" and the generic description, while <code>/foundational-data-layer</code> has proper metadata. These are your three named differentiators, repeated in nearly every CTA on the site, and two of them are invisible in search results.</p>
+        <div class="fix"><b>Fix:</b> copy the metadata pattern already working on <code>/foundational-data-layer</code>. Fifteen minutes of work.</div>
+      </article>
+
+      <article class="finding f-high" data-sev="high">
+        <div class="f-top"><span class="badge">High</span><span class="fid">H-03</span><span class="ftags">performance · LCP</span></div>
+        <h3>Hero headline renders at opacity 0 for several seconds after load</h3>
+        <p>The homepage H1 and its supporting paragraph mount with <code>opacity: 0</code> and a translateY offset, and only resolve to full opacity after a delay. Measured in the pane: still at 0 four seconds after the load event, fully visible by ten. For that window the hero is an empty gradient.</p>
+        <pre class="ev">h1  computed opacity: 0   transform: matrix(1,0,0,1,0,16)
+    parent opacity: 0     transform: matrix(1,0,0,1,0,24)
+→ measured again after ~7s: opacity 1</pre>
+        <p>Two consequences. The H1 is almost certainly your Largest Contentful Paint element, and an element hidden until it animates in reports a delayed LCP — a direct Core Web Vitals penalty. And a visitor arriving on a slow connection sees a blank hero, which is the moment they decide whether to stay.</p>
+        <div class="fix"><b>Fix:</b> render the hero text visible at rest and animate only a subtle transform, or cap the entrance delay at roughly 300ms. Also honour <code>prefers-reduced-motion</code>, which the current implementation does not. Confirm with Lighthouse on the production domain — the preview pane may exaggerate the delay.</div>
+      </article>
+
+      <article class="finding f-high" data-sev="high">
+        <div class="f-top"><span class="badge">High</span><span class="fid">H-04</span><span class="ftags">SEO · social</span></div>
+        <h3>No Open Graph or Twitter Card tags on any page</h3>
+        <p>Checked all 101 routes: zero <code>og:</code> or <code>twitter:</code> properties. Every link shared to LinkedIn, Slack, WhatsApp or X will render as a bare URL with no title, description or image. For a B2B services business where LinkedIn is the primary distribution channel, this removes the preview card from every post you or your team will ever make.</p>
+        <div class="fix"><b>Fix:</b> add <code>openGraph</code> and <code>twitter</code> blocks to the root metadata with a default 1200×630 card, then override per template. Next.js <code>opengraph-image.tsx</code> can generate case-study and blog cards automatically from the page data.</div>
+      </article>
+
+      <article class="finding f-high" data-sev="high">
+        <div class="f-top"><span class="badge">High</span><span class="fid">H-05</span><span class="ftags">SEO · duplication</span></div>
+        <h3>No canonical tags, and one route duplicates another</h3>
+        <p>No page declares <code>&lt;link rel="canonical"&gt;</code>. Meanwhile <code>/case-studies</code> serves the identical page as <code>/impact-studies</code>, and the Vercel preview domain is itself a full duplicate of the production site once eforte.io goes live.</p>
+        <div class="fix"><b>Fix:</b> set <code>metadataBase</code> and a self-referencing canonical in root metadata. Redirect <code>/case-studies</code> to <code>/impact-studies</code> with a 301. Keep the preview domain's blanket robots block so it never competes with production.</div>
+      </article>
+
+      <article class="finding f-high" data-sev="high">
+        <div class="f-top"><span class="badge">High</span><span class="fid">H-06</span><span class="ftags">SEO · structured data</span></div>
+        <h3>No structured data anywhere on the site</h3>
+        <p>Zero <code>application/ld+json</code> blocks across 101 pages. No Organization schema, no Article schema on the eight blog posts, no BreadcrumbList, no JobPosting on the two open roles. This is also the single highest-leverage fix for AI answer engines, which lean heavily on structured data to decide what an organisation is and does.</p>
+        <div class="fix"><b>Fix, in priority order:</b> Organization + WebSite schema sitewide (name, logo, sameAs, contactPoint); Article on blog posts with author and datePublished; JobPosting on role pages, which makes them eligible for the Google Jobs panel; BreadcrumbList on the nested templates.</div>
+      </article>
+
+      <article class="finding f-high" data-sev="high">
+        <div class="f-top"><span class="badge">High</span><span class="fid">H-07</span><span class="ftags">sitemap · discoverability</span></div>
+        <h3>Sitemap misses 12 live pages and lists 2 nothing links to</h3>
+        <p><code>/sitemap.xml</code> contains 89 URLs against 101 live routes. The omissions are concentrated in exactly the content you would most want indexed.</p>
+        <pre class="ev">Missing from sitemap (12):
+  /reviews
+  /white-papers/navigate-ai-adoption      ← best page on the site
+  /blog/… (all 8 posts)
+  /careers/associate-dotnet-developer
+  /careers/data-engineer
+
+In sitemap, but unreachable from any navigation (2):
+  /databricks
+  /locations</pre>
+        <div class="fix"><b>Fix:</b> generate the sitemap from the same content source the routes read, so the two cannot drift. Then decide whether /databricks and /locations are real pages — if yes, link them from the footer; if no, delete them.</div>
+      </article>
+
+      <article class="finding f-high" data-sev="high">
+        <div class="f-top"><span class="badge">High</span><span class="fid">H-08</span><span class="ftags">content · consistency</span></div>
+        <h3>Three pages give three different answers about where eForte is</h3>
+        <p>There is no version of this company's geography that a reader can construct from the site.</p>
+        <pre class="ev">/about-us   Wilmington DE · San Jose CA · Austin TX · remote/nearshore
+/locations  Austin · Chicago · Nashville · New York · Montevideo · Cali
+/careers/associate-dotnet-developer
+            "Join the Karachi engineering team"</pre>
+        <p>Karachi — where the engineering actually happens — appears only inside one job description and on no locations list at all. Meanwhile /locations adds Uruguay and Colombia offices that no other page acknowledges, and its Chicago entry reads <code>NIL 60654</code> where the state code should be <code>IL</code>.</p>
+        <div class="fix"><b>Fix:</b> pick one canonical location list, store it once, render it everywhere. Include Karachi and describe the delivery model honestly — a US-registered entity with a Pakistan engineering centre is a completely normal, sellable structure, and buyers discover it during diligence regardless.</div>
+      </article>
+
+      <article class="finding f-high" data-sev="high">
+        <div class="f-top"><span class="badge">High</span><span class="fid">H-09</span><span class="ftags">content · consistency</span></div>
+        <h3>/databricks contradicts the rest of the site on company scale and history</h3>
+        <p>The page claims "20+ years of experience working with data" and "250+ professionals certified on the Databricks Intelligence platform." /about-us dates the founding to 2013 and describes passing 40 engineers in 2017. The homepage and about page both say "over a decade."</p>
+        <p>It also announces a Databricks specialisation for "Communications, Media, Entertainment &amp; Gaming" — a vertical absent from the site's seven industries and from every other page. Combined with the tier-name issue in C-04, this page reads as adapted from another company's site and never reconciled.</p>
+        <div class="fix"><b>Fix:</b> rewrite against real figures, or take the page down. As written it undermines the numbers on every other page a prospect reads.</div>
+      </article>
+
+      <article class="finding f-high" data-sev="high">
+        <div class="f-top"><span class="badge">High</span><span class="fid">H-10</span><span class="ftags">conversion · untested</span></div>
+        <h3>The contact modal is the only conversion path, and it is unverified</h3>
+        <p>Every CTA on the site — "Get in touch", "Get a Quote", "Contact Us", "Let's build intelligence together" — opens the same modal. There is no contact page, no email address, and no phone number anywhere in the markup: zero <code>mailto:</code> and zero <code>tel:</code> links across 101 routes. If the modal's handler fails, the site has no way to reach eForte at all.</p>
+        <pre class="ev">form action: null  (JS handler)
+  name         text      required   labelled
+  email        email     required   labelled
+  phone        tel       optional   labelled
+  projectType  hidden    required   NOT labelled   ← custom select
+  description  textarea  optional   labelled
+Modal promises: "consultant will call you in the next 24 hours"</pre>
+        <p>I did not submit it — that would have sent a real enquiry into your pipeline. Two things I can see without submitting: <code>projectType</code> is a required hidden input backed by a custom dropdown, which is the classic shape for a form that silently fails validation with no visible error; and no input declares an <code>autocomplete</code> attribute, so browser autofill will not assist.</p>
+        <div class="fix"><b>Fix:</b> submit a test enquiry end to end and confirm where it lands, what the success and failure states look like, and whether the 24-hour promise is operationally real. Add a plain email address in the footer as a fallback. Add <code>autocomplete="name | email | tel"</code>. Say the word and I will drive the submission with obvious test data.</div>
+      </article>
+
+      <article class="finding f-high" data-sev="high">
+        <div class="f-top"><span class="badge">High</span><span class="fid">H-11</span><span class="ftags">orphans · internal links</span></div>
+        <h3>Eight case studies are in the sitemap but linked from nowhere</h3>
+        <p>These are crawlable and indexable but have no path from the site's navigation, including from <code>/impact-studies</code> which lists the other forty.</p>
+        <pre class="ev">/case-studies/arclight-capital     /case-studies/northbridge
+/case-studies/aurelia-clinics      /case-studies/northstar-care
+/case-studies/helix-health-data    /case-studies/pulselink
+/case-studies/thornfield-health    /case-studies/velora-financial</pre>
+        <p>All eight carry the same synthetic-client pattern as C-02, so the resolution is likely the same. Flagging them separately because they represent a build-time inconsistency worth understanding: something generated routes and sitemap entries that the listing page does not know about.</p>
+        <div class="fix"><b>Fix:</b> resolve as part of C-02. If any survive, add them to the /impact-studies grid.</div>
+      </article>
+
+      <!-- MEDIUM -->
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-01</span><span class="ftags">navigation · misleading</span></div>
+        <h3>Seven footer links promise different destinations and all go to /blog</h3>
+        <p>The footer's Insights column lists AccelerateAI, Data &amp; AI, Agentic Factory, Cybersecurity, Databricks, White Papers and Events. Every one resolves to <code>/blog</code>. There is no Events page, no White Papers index, and <code>/databricks</code> exists as a real page that this link does not point to.</p>
+        <div class="fix"><b>Fix:</b> point Databricks at <code>/databricks</code> and White Papers at the white paper. Build tag-filtered blog routes for the topic labels, or cut them. Remove Events until there are events.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-02</span><span class="ftags">navigation</span></div>
+        <h3>Three footer social icons link to "#"</h3>
+        <p>Three anchors with <code>href="#"</code> and no accessible text sit in the footer — the social row. They jump to the top of the page instead of opening anything, and a screen reader announces three unlabelled links.</p>
+        <div class="fix"><b>Fix:</b> add the real LinkedIn and X URLs with <code>aria-label</code> on each, or remove the row. LinkedIn in particular matters for a B2B services buyer checking whether the company is active.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-03</span><span class="ftags">template bug</span></div>
+        <h3>Case-study template renders incomplete and contradictory data</h3>
+        <p>Beyond the fabrication issue, the template itself is buggy. On <code>/case-studies/brightwell-mutual</code>: the "Technologies Used" block has four column headers — Front End, Back End, Database, Others — and a single entry, React, under all of them. A stray opening curly quote renders immediately before the "Key takeaway" heading. And the page carries two mutually exclusive descriptions of the client, as noted in C-02.</p>
+        <pre class="ev">Technologies Used
+  Front End | Back End | Database | Others
+  React — "Component-based UI for scalable web client applications."
+  (no other entries)
+
+…Results section ends:  “Key takeaway    ← orphaned quote glyph</pre>
+        <div class="fix"><b>Fix:</b> hide technology columns with no entries rather than rendering empty headers. Find the unclosed quote in the takeaway component. Check whether the dual-description issue affects all 37 or only some.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-04</span><span class="ftags">English</span></div>
+        <h3>Compound modifiers lose their hyphens on some pages but not others</h3>
+        <p>The homepage writes "secure-first", "end-to-end", "AI-Augmented", "Human-in-the-Loop". Other pages write the same constructions with the hyphens stripped.</p>
+        <pre class="ev">/technology-partners  AI native · hands on · enterprise grade
+                      real time · human in the loop · time to market
+/about-us             AI native · high quality · long term · follow through
+/industries/healthcare  long term · hands on
+
+vs. homepage: secure-first · end-to-end · AI-Augmented</pre>
+        <p>Every one of these is a compound modifier before a noun and takes a hyphen. "Enterprise grade cloud" and "enterprise-grade cloud" mean different things; the first is barely grammatical. It reads as inconsistency rather than style, particularly to the US enterprise buyer the site targets.</p>
+        <div class="fix"><b>Fix:</b> one pass across /about-us, /technology-partners and the industry pages. Add the terms to a house style sheet so the next writer matches.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-05</span><span class="ftags">English</span></div>
+        <h3>Reviews page heading says the opposite of what it means</h3>
+        <p>The H1 on <code>/reviews</code> reads "Satisfactory reviews of clients." Reviews <em>of</em> clients would be eForte reviewing them. And "satisfactory" means adequate, barely passing — an odd word to choose for a page of five-star ratings.</p>
+        <div class="fix"><b>Fix:</b> "What our clients say" or "Client reviews". The meta description on the same page already gets it right.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-06</span><span class="ftags">content · attribution</span></div>
+        <h3>The Prism project description is copied from Meta's Prophet documentation</h3>
+        <p>On <code>/reviews</code> and the Prism case study: "Prism is a procedure for forecasting time series data based on an additive model where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects."</p>
+        <p>That is the opening line of the documentation for Prophet, Meta's open-source forecasting library, with the name swapped. It is also nonsensical in context — the client's product is a platform with dashboards and charts, not a forecasting procedure. The review directly beneath it comes from a Product Owner at stratex.nl and describes the engineers, which reads as a real relationship being described with borrowed copy.</p>
+        <div class="fix"><b>Fix:</b> rewrite from what was actually built. The same review already tells you: third-party API integrations, user and admin dashboards, interactive charts.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-07</span><span class="ftags">content</span></div>
+        <h3>Two "Feedback Summary" blocks contain no feedback</h3>
+        <p>For Ce-trainer and Insurance Market, the Feedback Summary restates the project description almost verbatim instead of quoting the client. The Insurance Market entry repeats its own opening sentence word for word, then continues describing the work.</p>
+        <pre class="ev">Ce-trainer › Feedback Summary:
+  "Ce-trainer's LMS underwent significant enhancements, improving
+   student navigation with Google Drive uploaders … promising
+   continued success."     ← no client voice, no opinion</pre>
+        <p>The other seven reviews are specific and clearly genuine — Zeta Ceti's in particular is the most convincing proof on the site. These two dilute them.</p>
+        <div class="fix"><b>Fix:</b> get a real sentence from each client, or drop the Feedback Summary field for those two and show the project detail alone.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-08</span><span class="ftags">responsive</span></div>
+        <h3>18px of horizontal scroll at 375px width</h3>
+        <p>At iPhone width the document scrolls sideways: <code>scrollWidth</code> 393 against a 375 viewport. The overflow traces to the fixed nav and the mobile menu container, which carry a scrollbar-width padding utility that resolves wider than the viewport on touch devices where there is no scrollbar to compensate for.</p>
+        <pre class="ev">documentElement.clientWidth : 375
+documentElement.scrollWidth : 393        ← 18px overflow
+offending: NAV .fixed.top-0.left-0.right-0…pr-(--scrollbar…)
+           + mobile menu .fixed.inset-0 (all width 393)</pre>
+        <p>The mobile menu panel is also present in the DOM at full size while closed, so its links stay in the tab order when the menu is shut.</p>
+        <div class="fix"><b>Fix:</b> guard the scrollbar-width padding behind a pointer query, or set <code>overflow-x: hidden</code> on the wrapper. Give the closed mobile menu <code>inert</code> or <code>visibility: hidden</code> so it leaves the tab order.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-09</span><span class="ftags">accessibility</span></div>
+        <h3>Eight unlabelled buttons on the homepage, and heavy empty-alt use</h3>
+        <p>Eight of twenty-two buttons on the homepage have neither text content nor <code>aria-label</code> — a screen reader announces "button" with no further information. Eleven of twenty-eight images carry <code>alt=""</code>, which is correct for decoration but wrong for the client logo strip, where the brand name is the content.</p>
+        <p>The pattern repeats across templates: <code>/capabilities/cybersecurity</code> has 13 images with no alt attribute out of 58, <code>/capabilities/artificial-intelligence</code> has 10 of 26.</p>
+        <div class="fix"><b>Fix:</b> label every icon-only button. Give every logo and diagram a real alt. Run axe-core over the six page templates — most of these will resolve in one pass per template.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-10</span><span class="ftags">content · trust</span></div>
+        <h3>No contact details appear anywhere on the site</h3>
+        <p>No email address, no phone number, no postal address outside the unlinked /locations page, and no company registration details. For a buyer evaluating an outsourcing partner, the absence of a verifiable business address is itself a signal.</p>
+        <div class="fix"><b>Fix:</b> add a footer block with the registered entity, its address, and a monitored email. Consider a real <code>/contact</code> page — the modal alone gives nothing for someone who just wants to check you are a real company before filling anything in.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-11</span><span class="ftags">content · consistency</span></div>
+        <h3>Company values differ between /about-us and /careers</h3>
+        <p>/about-us lists seven: Client First, Dependable and Trustworthy, Integrity in Everything, Full Focus One Team One Client, Quality and Continuous Improvement, Inventive and Resourceful, Inspirational Growth. /careers lists six with different names and different wording: Dependable, Trustworthy, Integrity, Client First, Inspirational, Quality &amp; Improvement. Both are headed by the same sentence about a collaborative and uplifting workplace.</p>
+        <div class="fix"><b>Fix:</b> one values list, defined once, rendered on both pages.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-12</span><span class="ftags">content</span></div>
+        <h3>"Senior Polymaths" appears once and is never defined</h3>
+        <p>The careers benefits section promises "Mentorship &amp; Career Pathing — structured growth plans and pairing with senior Polymaths who help you…". The capitalisation marks it as a defined internal role, but the term appears nowhere else on the site. It is a known job-title convention at other consultancies, which suggests borrowed copy.</p>
+        <div class="fix"><b>Fix:</b> use your own term, or define it. A candidate reading an unexplained capitalised role assumes they are missing context.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-13</span><span class="ftags">English · logic</span></div>
+        <h3>Homepage sentence lacks a full stop and contradicts the line above it</h3>
+        <p>In the Agentic Orchestration block: "Deploy industry-specific AI agents for finance, HR, sales, and operations to deliver speed, compliance, and guaranteed data quality. Our workflows represent standard business automation solutions that can be adapted to any industry"</p>
+        <p>Two problems. The second sentence has no terminal punctuation. And it undoes the first — one sentence sells industry-specific agents, the next says the workflows are standard and adaptable to anything. "Guaranteed data quality" is also a stronger word than a services contract usually supports.</p>
+        <div class="fix"><b>Fix:</b> add the full stop. Pick one position: either the agents are industry-specific, or the workflows are general-purpose and configured per industry. The second is more credible and still sells.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-14</span><span class="ftags">English</span></div>
+        <h3>Missing punctuation and inconsistent dashes in headline copy</h3>
+        <pre class="ev">/technology-partners
+  "These aren't logos on a slide they're the infrastructure,
+   models, and data engines our teams use daily"
+   → needs an em dash or semicolon after "slide"
+
+/ (homepage)
+  "the complete data lifecycle— from high-volume ingestion to
+   rigorous governance—building the robust…"
+   → space before the first dash, none after; reversed on the second
+
+/ (homepage hero)
+  "We are Shaping the Future by Integrating Advanced AI with
+   High-Quality UX and Enterprise Security."
+   → title case inside a sentence</pre>
+        <div class="fix"><b>Fix:</b> proofread the homepage and /technology-partners hero copy specifically. These sit in the largest type on the site.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-15</span><span class="ftags">English · data</span></div>
+        <h3>Inconsistent formatting through the reviews metadata</h3>
+        <pre class="ev">Project Duration values, as rendered:
+  "14 Months" · "21 Months and continuing" · "22 Months"
+  "Ongoing for 21 Months" · "3 months and Counting"
+  "10 months and Counting" · "Ongoing partnership"
+
+Other:
+  "govt. licensing process"        → spell out "government"
+  "Insurance Market.ae"            → space inside the domain
+  "Kamran Chaudary"                → likely "Chaudhary"
+  "NIL 60654" (/locations)         → should be "IL 60654"</pre>
+        <div class="fix"><b>Fix:</b> normalise duration to one format, e.g. "14 months" or "21 months, ongoing". Correct the domain and check the reviewer name spellings against the original testimonials.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-16</span><span class="ftags">markup</span></div>
+        <h3>About-us timeline is duplicated three times in the DOM</h3>
+        <p>All nine timeline entries from 2013 to 2026 appear three times in the rendered HTML — a marquee or carousel duplicating its track for a seamless loop. Visually fine; for a crawler it is the same content repeated three times on a page, and for a screen reader it is nine years of history read out three times. The homepage logo strip does the same thing.</p>
+        <div class="fix"><b>Fix:</b> add <code>aria-hidden="true"</code> to the duplicated tracks and keep one authoritative copy in the accessibility tree.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-17</span><span class="ftags">performance</span></div>
+        <h3>Seven preloaded assets are never used</h3>
+        <p>Clean load of the homepage produces repeated browser warnings that preloaded fonts and stylesheets were not used within a few seconds of the load event — four CSS files and three WOFF2 faces. Each is bandwidth spent on the critical path for nothing, on the page where it costs the most.</p>
+        <pre class="ev">preloaded but unused:
+  /_next/static/media/e270c9fc4fe96f5a-s.p.woff2
+  /_next/static/media/313510e2713fb214-s.p.woff2
+  /_next/static/media/5ab5267d02dae909-s.p.woff2
+  /_next/static/css/bf17a7ae8a200778.css  (+ 3 more)</pre>
+        <p>Related: the site loads <code>BeVietnamPro-Regular.ttf</code> as a raw TTF from <code>/fonts/</code> alongside the Next.js font pipeline. A TTF is roughly twice the size of the equivalent WOFF2.</p>
+        <div class="fix"><b>Fix:</b> subset the fonts to the character sets actually used, convert the TTF to WOFF2, and preload only the faces the first viewport needs.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-18</span><span class="ftags">content gaps</span></div>
+        <h3>Careers lists two roles; the white paper library has one entry</h3>
+        <p>The careers page is well written and then offers two openings — Associate .NET Developer and Data Engineer. The footer advertises "White Papers" plural against a single paper. There is no Events content behind the Events link. Each of these is a section built for a volume of content that does not exist yet.</p>
+        <div class="fix"><b>Fix:</b> either fill them or soften the framing — "Current opening" rather than an open-roles board, and link the white paper directly rather than implying an index.</div>
+      </article>
+
+      <article class="finding f-med" data-sev="med">
+        <div class="f-top"><span class="badge">Medium</span><span class="fid">M-19</span><span class="ftags">content</span></div>
+        <h3>"Some of our incredible clients" has no clients in it</h3>
+        <p>On /about-us, a section heading promises client names and the block beneath it contains no named clients in the rendered text. Either the logos failed to populate or the section shipped empty.</p>
+        <div class="fix"><b>Fix:</b> populate it with the clients you can name with permission — Krank, Oddysee, Investment Markets, Ce-trainer, STN, InstApp all already appear in your reviews — or remove the heading.</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===================== 4. ORPHANS ===================== -->
+  <section id="orphans">
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <h2 class="sec-title">Orphan pages and unfinished content</h2>
+      <span class="sec-note">What is linked but not written, and written but not linked</span>
+    </div>
+    <p class="lead">You asked specifically about studies and white papers that exist as links but not as content. The situation is the reverse of what you expected in two cases — the content exists and the links do not.</p>
+
+    <div class="tscroll">
+      <table>
+        <thead><tr><th>Item</th><th>State</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td class="path">/white-papers/navigate-ai-adoption</td><td><span class="pill p-part">Written, hidden</span></td><td>2,828 words, dated 11 Sep 2026, genuinely good. Reachable only from one homepage card. Not in the sitemap. Footer "White Papers" goes to /blog instead.</td></tr>
+          <tr><td class="path">/databricks</td><td><span class="pill p-part">Written, orphaned</span></td><td>Full page, in the sitemap, zero inbound links. Footer "Databricks" points at /blog. Content needs the rewrite in H-09 before you link it.</td></tr>
+          <tr><td class="path">/locations</td><td><span class="pill p-no">Boilerplate</span></td><td>In the sitemap, no inbound links. Six offices, an industry list the site does not serve, "over 20 years", and a malformed state code. Reads as another company's page.</td></tr>
+          <tr><td class="path">/reviews</td><td><span class="pill p-part">Linked, unindexed</span></td><td>Reachable from the homepage "View all". Absent from the sitemap, so search engines may never find nine pieces of real social proof.</td></tr>
+          <tr><td class="path">/blog/* (8 posts)</td><td><span class="pill p-part">Linked, unindexed</span></td><td>Listed on /blog with correct per-post metadata. None in the sitemap.</td></tr>
+          <tr><td class="path">/careers/* (2 roles)</td><td><span class="pill p-part">Linked, unindexed</span></td><td>Both reachable from /careers. Neither in the sitemap, so neither is eligible for Google Jobs.</td></tr>
+          <tr><td class="path">8 case studies</td><td><span class="pill p-no">Indexed, unlinked</span></td><td>arclight-capital, aurelia-clinics, helix-health-data, northbridge, northstar-care, pulselink, thornfield-health, velora-financial. In the sitemap, missing from /impact-studies.</td></tr>
+          <tr><td class="path">Footer topic links</td><td><span class="pill p-no">Nothing behind them</span></td><td>AccelerateAI, Data &amp; AI, Agentic Factory, Cybersecurity, Events — five labels with no destination, all landing on /blog.</td></tr>
+          <tr><td class="path">/case-studies</td><td><span class="pill p-no">Duplicate</span></td><td>Serves /impact-studies verbatim under a second URL.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <b>The good news in this section:</b> nothing is a dead link to an unwritten page. Every route on the site returns real, rendered content. The problem is distribution — your two strongest assets, the white paper and the reviews page, are the two hardest for a search engine to reach.
+    </div>
+  </section>
+
+  <!-- ===================== 5. SEO ===================== -->
+  <section id="seo">
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <h2 class="sec-title">SEO fundamentals</h2>
+      <span class="sec-note">Presence check, not a ranking audit</span>
+    </div>
+
+    <div class="tscroll">
+      <table>
+        <thead><tr><th>Signal</th><th>State</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td>Page titles</td><td><span class="pill p-part">51 of 101</span></td><td>50 pages share the fallback "eForte Solutions" — all 48 case studies plus /velocity-ai and /agentic-orchestration. The rest are well written and correctly patterned.</td></tr>
+          <tr><td>Meta descriptions</td><td><span class="pill p-part">51 of 101</span></td><td>Same 50 pages fall back to the generic company description. Where present, descriptions are specific and well sized.</td></tr>
+          <tr><td>H1 per page</td><td><span class="pill p-yes">Pass</span></td><td>Exactly one H1 on every page checked, descriptive and distinct from the title.</td></tr>
+          <tr><td>Heading hierarchy</td><td><span class="pill p-part">Minor</span></td><td>Homepage skips from H2 to H4 in the certifications block. Otherwise clean.</td></tr>
+          <tr><td>Canonical tags</td><td><span class="pill p-no">Absent</span></td><td>None on any page. See H-05.</td></tr>
+          <tr><td>Open Graph / Twitter</td><td><span class="pill p-no">Absent</span></td><td>Zero social tags sitewide. See H-04.</td></tr>
+          <tr><td>Structured data</td><td><span class="pill p-no">Absent</span></td><td>No JSON-LD anywhere. See H-06.</td></tr>
+          <tr><td>XML sitemap</td><td><span class="pill p-part">Partial</span></td><td>Valid, with lastmod, changefreq and priority. 89 of 101 URLs. Correctly uses the eforte.io domain.</td></tr>
+          <tr><td>robots.txt</td><td><span class="pill p-no">Blocking</span></td><td>Disallows everything for all agents. See C-01. Also declares no <code>Sitemap:</code> line.</td></tr>
+          <tr><td>HTML sitemap</td><td><span class="pill p-yes">Present</span></td><td><code>/sitemap</code> exists, is linked from the footer, and cross-references the XML sitemap. Nicely done.</td></tr>
+          <tr><td><code>lang</code> attribute</td><td><span class="pill p-yes">Pass</span></td><td><code>lang="en"</code> set on every page.</td></tr>
+          <tr><td>Internal linking</td><td><span class="pill p-yes">Strong</span></td><td>81 links on the homepage, a deep contextual footer, consistent cross-links between pillars, capabilities and industries. The best-executed part of the site's SEO.</td></tr>
+          <tr><td>Image alt text</td><td><span class="pill p-part">Partial</span></td><td>No missing <code>alt</code> attributes on the homepage, but heavy <code>alt=""</code> use, and 8–13 genuinely missing per page on several capability templates.</td></tr>
+          <tr><td>404 handling</td><td><span class="pill p-yes">Pass</span></td><td>Real 404 status with a proper template and its own metadata.</td></tr>
+          <tr><td>URL structure</td><td><span class="pill p-yes">Pass</span></td><td>Clean, lowercase, hyphenated, logically nested. No parameters or IDs.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <b>One naming note.</b> Your URLs say <code>/case-studies/</code> and <code>/impact-studies</code>; the navigation says "Impact Studies"; the reviews page says "Client Reviews"; the blog is at <code>/blog</code> but titled "Insights" everywhere. Buyers search for "case studies", not "impact studies". Whichever label you settle on, make the URL, the nav label, the page title and the internal link text agree.
+    </div>
+  </section>
+
+  <!-- ===================== 6. LLM ===================== -->
+  <section id="llm">
+    <div class="sec-head">
+      <span class="sec-num">06</span>
+      <h2 class="sec-title">AI and LLM crawlability</h2>
+      <span class="sec-note">Answer engines, not search engines</span>
+    </div>
+    <p class="lead">A growing share of your buyers will ask an assistant "who does AI transformation for medical device manufacturers" rather than typing it into Google. That pathway is currently closed at the front door.</p>
+
+    <div class="tscroll">
+      <table>
+        <thead><tr><th>Signal</th><th>State</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td>AI crawler access</td><td><span class="pill p-no">Blocked</span></td><td>robots.txt explicitly names and blocks GPTBot, ChatGPT-User, Google-Extended and Applebot-Extended, on top of the wildcard block.</td></tr>
+          <tr><td><code>/llms.txt</code></td><td><span class="pill p-no">404</span></td><td>No LLM-oriented site summary. This is the emerging convention for telling a model what a site is and which pages matter.</td></tr>
+          <tr><td><code>/llms-full.txt</code></td><td><span class="pill p-no">404</span></td><td>Not present.</td></tr>
+          <tr><td><code>/ai.txt</code></td><td><span class="pill p-no">404</span></td><td>Not present.</td></tr>
+          <tr><td>Server-rendered content</td><td><span class="pill p-yes">Excellent</span></td><td>Every page delivers complete content in the initial HTML response. I read all 101 pages without executing JavaScript. Any crawler you allow gets the full text.</td></tr>
+          <tr><td>Organization schema</td><td><span class="pill p-no">Absent</span></td><td>Nothing machine-readable states what eForte is, where it operates, or what it does. This is the single highest-value addition for AI retrieval.</td></tr>
+          <tr><td>Semantic HTML</td><td><span class="pill p-yes">Good</span></td><td>Proper nav, footer, headings and landmarks throughout. Content extracts cleanly.</td></tr>
+          <tr><td>Answerable content</td><td><span class="pill p-part">Mixed</span></td><td>The white paper and blog posts are exactly the shape models cite: clear claims, defined terms, structured argument. The fabricated case studies are the opposite — if they are ever indexed, a model may repeat invented client outcomes as fact about your firm.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <b>Once robots is unblocked, add an <code>/llms.txt</code>.</b> A short markdown file at the root: what eForte does in two sentences, the three pillars with one-line definitions, the industries served, and linked pointers to the white paper, the blog posts and the real case studies. It takes an hour and it is the cheapest way to control how assistants describe you. Resolve C-02 first — you do not want a model learning about Brightwell Mutual.
+    </div>
+  </section>
+
+  <!-- ===================== 7. EXTRAS ===================== -->
+  <section id="extras">
+    <div class="sec-head">
+      <span class="sec-num">07</span>
+      <h2 class="sec-title">Things you did not ask about</h2>
+      <span class="sec-note">Worth a decision</span>
+    </div>
+
+    <ul class="plain">
+      <li><b>No analytics or tag manager fires on load.</b> I saw no GA4, no Plausible, no LinkedIn Insight tag, no server-side events in 296 network requests. If you launch without measurement you will have no baseline for anything in this report, and no retargeting pool from the traffic you spend on acquiring.</li>
+      <li><b>No cookie consent mechanism.</b> Not required today because nothing is tracking. The moment analytics goes in, a site that names Delaware and California offices and markets into healthcare and financial services needs a consent layer and a privacy policy that matches what actually runs.</li>
+      <li><b>The privacy policy and terms are substantial but unverified.</b> 1,602 and 1,693 words respectively, well structured. Neither names the legal entity, a jurisdiction, or a contact for data requests — check both against the entity that actually signs your contracts.</li>
+      <li><b>The preview deployment will be a duplicate of production.</b> Keep <code>eforte-io-new.vercel.app</code> blocked in robots permanently, and consider HTTP auth on it. Right now it is publicly readable by anyone with the URL, including the 37 case studies.</li>
+      <li><b>There is no thought-leadership route to Suricat.</b> The site sells regulated-by-design AI, HIPAA expertise and compliance workflows, which is precisely the ground Suricat occupies. Nothing connects the two. A medtech buyer landing on /industries/healthcare gets no signal that you have a product team living inside that regulatory problem daily. That is the strongest differentiator you have and the site does not use it.</li>
+      <li><b>Consider dropping the synthetic industry case studies entirely rather than replacing them.</b> Eleven real, named, verifiable engagements with client quotes attached beats forty-eight studies where three quarters cannot survive a search. The current structure optimises for looking large; your actual advantage is being specific.</li>
+      <li><b>Set up Search Console and Bing Webmaster Tools before cutover</b>, not after. Submit the sitemap on day one so you can see indexing problems while the site is small enough to fix them.</li>
+    </ul>
+
+    <div class="callout">
+      <b>Suggested sequence.</b> Week one: C-01 through C-04, plus H-01 and H-02 (metadata is mechanical and unblocks everything downstream). Week two: H-04 to H-07 — Open Graph, canonicals, schema, sitemap — and reconcile the location and scale contradictions in H-08 and H-09. Week three: verify the contact form end to end, then work the medium list template by template rather than page by page, since the defects are shared. Launch after week two if the criticals are closed; the medium items do not need to block traffic.
+    </div>
+  </section>
+
+  <footer class="rep">
+    Audit of eforte-io-new.vercel.app · 101 routes crawled 24 September 2026 · read-only, no forms submitted, no data written. Metadata, DOM structure, console and network traffic captured live; copy assessed by reading. Claims about certifications, partner tiers and client relationships are flagged for your verification, not asserted as false.
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('themeBtn');
+  var root = document.documentElement;
+  try {
+    var saved = localStorage.getItem('eforte-audit-theme');
+    if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved);
+  } catch(e){}
+  btn.addEventListener('click', function(){
+    var cur = root.getAttribute('data-theme');
+    var isDark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = isDark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('eforte-audit-theme', next); } catch(e){}
+  });
+
+  var buttons = document.querySelectorAll('.filters button');
+  var items = document.querySelectorAll('#flist .finding');
+  var count = document.getElementById('fcount');
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){
+      var f = b.dataset.f;
+      buttons.forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); });
+      var shown = 0;
+      items.forEach(function(it){
+        var match = (f === 'all' || it.dataset.sev === f);
+        it.hidden = !match;
+        if (match) shown++;
+      });
+      count.textContent = shown + ' shown';
+    });
+  });
+})();
+</script>
+
+</body></html>
