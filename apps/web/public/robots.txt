@@ -52,7 +52,8 @@ Disallow: /
 User-Agent: anthropic-ai
 Disallow: /
 
-
+User-Agent: ClaudeBot
+Allow: /
 
 User-Agent: Claude-Web
 Disallow: /
