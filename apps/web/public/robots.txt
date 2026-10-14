@@ -56,7 +56,13 @@ User-Agent: ClaudeBot
 Allow: /
 
 User-Agent: Claude-Web
-Disallow: /
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
 
 User-Agent: CCBot
 Disallow: /
