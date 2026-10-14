@@ -905,10 +905,10 @@ export default function Navbar({
   );
   const useSolidNav = isScrolled || isMobileMenuOpen || isLightHeroPage;
   const isMegaMenuOpen = Boolean(activeMenu) && !isMobileMenuOpen;
+  const isScrollLocked = isMobileMenuOpen || Boolean(activeMenu);
 
   useLayoutEffect(() => {
-    const shouldLockScroll = isMobileMenuOpen || Boolean(activeMenu);
-    if (!shouldLockScroll) return;
+    if (!isScrollLocked) return;
 
     lenisControl?.stop();
     const unlock = lockBodyScroll();
@@ -917,7 +917,7 @@ export default function Navbar({
       unlock();
       lenisControl?.start();
     };
-  }, [isMobileMenuOpen, activeMenu, lenisControl]);
+  }, [isScrollLocked, lenisControl]);
 
   useEffect(() => {
     return () => {
@@ -1830,9 +1830,9 @@ export default function Navbar({
     <>
       <nav
         className={cn(
-          "fixed top-0 left-0 right-0 z-[110]",
+          "fixed top-0 left-0 z-[110] w-full",
           "h-16 md:h-20",
-          SCROLLBAR_COMPENSATION_CLASS,
+          isScrollLocked && SCROLLBAR_COMPENSATION_CLASS,
           isMegaMenuOpen
             ? "bg-transparent shadow-none transition-none"
             : cn(
@@ -1923,7 +1923,7 @@ export default function Navbar({
       {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          "fixed inset-0 z-[110] xl:hidden transition-all duration-300",
+          "fixed top-0 left-0 z-[110] h-full w-full xl:hidden transition-all duration-300",
           isMobileMenuOpen
             ? "opacity-100 visible"
             : "opacity-0 invisible pointer-events-none"
@@ -1939,7 +1939,7 @@ export default function Navbar({
         <div
           id="mobile-nav-menu"
           className={cn(
-            "absolute top-16 md:top-20 left-0 right-0 bottom-0 w-full",
+            "absolute top-16 bottom-0 left-0 w-full md:top-20",
             "bg-black/70 backdrop-blur-xl transform transition-transform duration-300",
             isMobileMenuOpen ? "translate-y-0" : "translate-y-full"
           )}

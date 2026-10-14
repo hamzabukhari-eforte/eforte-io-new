@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>eForte Site Audit · Round 3 · 14 Oct 2026</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:wght@600&display=swap">
+<style>
+  :root{
+    color-scheme: light;
+    --bg:#F4F5F7; --surface:#FFFFFF; --surface-2:#FAFAFB;
+    --ink:#15181F; --ink-2:#3D4452; --muted:#6B7382; --faint:#949BA8;
+    --line:#E0E3E9; --line-strong:#C9CED8;
+    --accent:#2B4A7E; --accent-soft:#E8EEF7;
+    --crit:#B02A24; --crit-bg:#FBEDEC;
+    --high:#A85A06; --high-bg:#FCF2E4;
+    --med:#3F5C7A; --med-bg:#EAEFF4;
+    --ok:#2A6B47; --ok-bg:#E8F2EC;
+    --info:#2B4A7E; --info-bg:#E8EEF7;
+    --shadow:0 1px 2px rgba(21,24,31,.05), 0 8px 24px -12px rgba(21,24,31,.18);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --bg:#0F1218; --surface:#171B23; --surface-2:#1C212A;
+      --ink:#EDEFF3; --ink-2:#C2C8D2; --muted:#8F97A5; --faint:#6C7482;
+      --line:#272D38; --line-strong:#3A4250;
+      --accent:#7FA6DE; --accent-soft:#1D2735;
+      --crit:#F08A83; --crit-bg:#2C1917;
+      --high:#E0A75C; --high-bg:#2B2117;
+      --med:#9DB6CE; --med-bg:#1B2129;
+      --ok:#76C79B; --ok-bg:#16231C;
+      --info:#7FA6DE; --info-bg:#1D2735;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --bg:#0F1218; --surface:#171B23; --surface-2:#1C212A;
+    --ink:#EDEFF3; --ink-2:#C2C8D2; --muted:#8F97A5; --faint:#6C7482;
+    --line:#272D38; --line-strong:#3A4250;
+    --accent:#7FA6DE; --accent-soft:#1D2735;
+    --crit:#F08A83; --crit-bg:#2C1917;
+    --high:#E0A75C; --high-bg:#2B2117;
+    --med:#9DB6CE; --med-bg:#1B2129;
+    --ok:#76C79B; --ok-bg:#16231C;
+    --info:#7FA6DE; --info-bg:#1D2735;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1060px; margin:0 auto; padding-inline:20px; padding-block:0 72px}
+  code, .mono{font-family:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace}
+
+  .masthead{padding-block:44px 30px; border-bottom:2px solid var(--ink); margin-bottom:0}
+  .kicker{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600}
+  h1{
+    font-family:"IBM Plex Serif", Georgia, serif; font-weight:600;
+    font-size:clamp(30px, 5.2vw, 46px); line-height:1.1; letter-spacing:-.02em;
+    margin:.3em 0 .35em; text-wrap:balance;
+  }
+  .standfirst{font-size:17px; color:var(--ink-2); max-width:62ch; margin:0}
+  .runmeta{
+    display:flex; flex-wrap:wrap; gap:0 28px; margin-top:22px;
+    font-size:12.5px; color:var(--muted);
+  }
+  .runmeta div{display:flex; gap:7px; align-items:baseline}
+  .runmeta b{color:var(--ink); font-weight:600}
+
+  .verdict{
+    margin-top:28px; background:var(--surface); border:1px solid var(--line);
+    border-left:4px solid var(--high); border-radius:3px; padding:20px 22px; box-shadow:var(--shadow);
+  }
+  .verdict h2{margin:0 0 8px; font-size:16px; letter-spacing:-.01em}
+  .verdict p{margin:0 0 10px; color:var(--ink-2); max-width:70ch}
+  .verdict p:last-child{margin-bottom:0}
+
+  .tiles{display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-top:22px}
+  .tile{
+    background:var(--surface); border:1px solid var(--line); border-radius:3px;
+    padding:14px 15px; position:relative; overflow:hidden;
+  }
+  .tile::before{content:""; position:absolute; inset:0 auto 0 0; width:3px; background:var(--bar)}
+  .tile .n{font-size:30px; font-weight:600; line-height:1; letter-spacing:-.03em; font-variant-numeric:tabular-nums; color:var(--bar)}
+  .tile .l{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-top:7px; font-weight:600}
+  .tile .d{font-size:12px; color:var(--faint); margin-top:3px}
+  .t-ok{--bar:var(--ok)} .t-closed{--bar:var(--info)} .t-part{--bar:var(--high)} .t-open{--bar:var(--crit)} .t-def{--bar:var(--med)}
+
+  section{margin-top:48px; scroll-margin-top:16px}
+  .sec-head{display:flex; align-items:baseline; gap:12px; border-bottom:1px solid var(--line-strong); padding-bottom:9px; margin-bottom:18px}
+  .sec-num{
+    font-family:"IBM Plex Mono", monospace; font-size:12px; font-weight:500;
+    color:var(--surface); background:var(--accent); padding:3px 7px; border-radius:2px; line-height:1;
+  }
+  h2.sec-title{font-size:21px; font-weight:600; letter-spacing:-.015em; margin:0; flex:1}
+  .sec-note{font-size:12.5px; color:var(--muted)}
+  p.lead{color:var(--ink-2); max-width:70ch; margin:0 0 16px}
+
+  .tscroll{overflow-x:auto; border:1px solid var(--line); border-radius:3px; background:var(--surface)}
+  table{border-collapse:collapse; width:100%; font-size:13.5px; min-width:720px}
+  th{
+    text-align:left; font-size:11px; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--muted); font-weight:600; padding:10px 14px; border-bottom:1px solid var(--line-strong);
+    background:var(--surface-2); white-space:nowrap;
+  }
+  td{padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--ink-2)}
+  tr:last-child td{border-bottom:none}
+  td.id{font-family:"IBM Plex Mono", monospace; font-size:12.5px; color:var(--ink); white-space:nowrap; font-weight:600}
+  td.evidence{font-size:13px; max-width:48ch}
+
+  .filters{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:14px}
+  .filters button{
+    font:inherit; font-size:12px; font-weight:600; letter-spacing:.03em;
+    padding:6px 12px; border-radius:2px; border:1px solid var(--line-strong);
+    background:var(--surface); color:var(--ink-2); cursor:pointer;
+  }
+  .filters button[aria-pressed="true"]{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+  .filters button:focus-visible, .themetoggle:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .fcount{font-size:12.5px; color:var(--muted); margin-left:auto; font-variant-numeric:tabular-nums}
+
+  .pill{
+    display:inline-block; font-size:10px; font-weight:700; letter-spacing:.08em;
+    padding:3px 7px; border-radius:2px; text-transform:uppercase; white-space:nowrap;
+  }
+  .p-fixed{background:var(--ok-bg); color:var(--ok)}
+  .p-closed{background:var(--info-bg); color:var(--info)}
+  .p-part{background:var(--high-bg); color:var(--high)}
+  .p-open{background:var(--crit-bg); color:var(--crit)}
+  .p-def{background:var(--med-bg); color:var(--med)}
+  .p-other{background:var(--surface-2); color:var(--muted); border:1px solid var(--line)}
+
+  .finding{
+    background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--sv);
+    border-radius:3px; padding:15px 17px; margin-bottom:9px;
+  }
+  .f-open{--sv:var(--crit); --svbg:var(--crit-bg)}
+  .f-part{--sv:var(--high); --svbg:var(--high-bg)}
+  .f-fixed{--sv:var(--ok); --svbg:var(--ok-bg)}
+  .f-closed{--sv:var(--info); --svbg:var(--info-bg)}
+  .f-def{--sv:var(--med); --svbg:var(--med-bg)}
+  .f-other{--sv:var(--muted); --svbg:var(--surface-2)}
+  .f-top{display:flex; flex-wrap:wrap; gap:9px; align-items:center; margin-bottom:7px}
+  .badge{
+    font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+    padding:3px 7px; border-radius:2px; color:var(--sv); background:var(--svbg); white-space:nowrap;
+  }
+  .fid{font-family:"IBM Plex Mono", monospace; font-size:11.5px; color:var(--faint)}
+  .ftags{font-size:11.5px; color:var(--muted); margin-left:auto}
+  .finding h3{margin:0 0 6px; font-size:15.5px; font-weight:600; letter-spacing:-.01em; line-height:1.35; text-wrap:balance}
+  .finding p{margin:0 0 8px; color:var(--ink-2); font-size:14px; max-width:78ch}
+  .finding p:last-child{margin-bottom:0}
+  .note{
+    font-size:13.5px; color:var(--ink-2); border-top:1px dashed var(--line-strong);
+    padding-top:8px; margin-top:10px;
+  }
+  .note b{color:var(--ink); font-weight:600}
+
+  .callout{
+    background:var(--accent-soft); border:1px solid var(--line); border-radius:3px;
+    padding:14px 16px; margin:16px 0; font-size:13.5px; color:var(--ink-2);
+  }
+  .callout b{color:var(--ink)}
+  .callout.danger{background:var(--crit-bg); border-color:color-mix(in srgb, var(--crit) 25%, var(--line))}
+  .callout.warn{background:var(--high-bg); border-color:color-mix(in srgb, var(--high) 25%, var(--line))}
+
+  ul.plain{margin:0 0 12px; padding-left:20px; color:var(--ink-2)}
+  ul.plain li{margin-bottom:5px}
+  ul.plain li::marker{color:var(--faint)}
+
+  .themetoggle{
+    position:absolute; top:0; right:0; font:inherit; font-size:11.5px; font-weight:600;
+    letter-spacing:.06em; text-transform:uppercase; padding:6px 11px; border-radius:2px;
+    border:1px solid var(--line-strong); background:var(--surface); color:var(--muted); cursor:pointer;
+  }
+  .mh-inner{position:relative}
+  footer.rep{margin-top:56px; padding-top:18px; border-top:1px solid var(--line-strong); font-size:12.5px; color:var(--faint)}
+
+  @media (max-width:900px){
+    .tiles{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:760px){
+    .ftags{margin-left:0; width:100%}
+    .themetoggle{position:static; margin-bottom:14px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="mh-inner">
+      <button class="themetoggle" id="themeBtn" type="button">Theme</button>
+      <div class="kicker">QA &amp; Content Re-audit · Round 3 · eforte-io-new.vercel.app</div>
+      <h1>eForte Site Audit</h1>
+      <p class="standfirst">Third pass against the 24 Sep and 13 Oct boards. Every prior finding re-checked on the live preview: metadata, schema, robots and sitemap, footer and contact path, homepage claims, and the shelved routes left in the repo for later use.</p>
+      <div class="runmeta">
+        <div><span>Scanned</span><b>14 Oct 2026</b></div>
+        <div><span>Prior findings</span><b>34</b></div>
+        <div><span>Sitemap URLs</span><b>99</b></div>
+        <div><span>Analytics on load</span><b>0</b></div>
+        <div><span>Method</span><b>Read-only, no form submitted</b></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="verdict">
+    <h2>Verdict: SEO layer holds; two reputational criticals still block cutover</h2>
+    <p>Round 2’s metadata, canonical, schema, hero, and footer contact work still hold on this preview. Five more items that were open or partial on 13 Oct are now fixed, and two shelved-page findings (H-08 residual, H-09) are closed as intentionally left for later use.</p>
+    <p>What still blocks pointing eforte.io at this build: the homepage “Trusted by industry leaders” strip (Google, PayPal, Slack, Shopify, Figma, Ripple, OneSignal, Land id., AWS), seven unevidenced certification claims, and the still-public synthetic case-study set including the homepage feature carousel.</p>
+    <p>Preview <code>robots.txt</code> correctly disallows all crawlers. Verify <code>Allow</code> plus a <code>Sitemap:</code> line on eforte.io at cutover.</p>
+  </div>
+
+  <div class="tiles">
+    <div class="tile t-ok"><div class="n">21</div><div class="l">Fixed</div><div class="d">Verified this pass</div></div>
+    <div class="tile t-closed"><div class="n">2</div><div class="l">Closed</div><div class="d">Later use</div></div>
+    <div class="tile t-part"><div class="n">3</div><div class="l">Partial</div><div class="d">Remaining work</div></div>
+    <div class="tile t-open"><div class="n">2</div><div class="l">Open</div><div class="d">Launch blockers</div></div>
+    <div class="tile t-def"><div class="n">3</div><div class="l">Deferred</div><div class="d">With C-02</div></div>
+  </div>
+
+  <!-- ===================== 01 STATUS BOARD ===================== -->
+  <section id="board">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title">Status board</h2>
+      <span class="sec-note">All 34 findings · re-tested 14 Oct</span>
+    </div>
+    <p class="lead">Compared to the 13 Oct board. <b>Closed</b> means the issue is accepted as intentionally shelved for later use (page preserved, not in nav or sitemap), not that the underlying copy was rewritten.</p>
+
+    <div class="filters" role="group" aria-label="Filter findings by status">
+      <button type="button" data-f="all" aria-pressed="true">All</button>
+      <button type="button" data-f="fixed" aria-pressed="false">Fixed</button>
+      <button type="button" data-f="closed" aria-pressed="false">Closed</button>
+      <button type="button" data-f="part" aria-pressed="false">Partial</button>
+      <button type="button" data-f="open" aria-pressed="false">Open</button>
+      <button type="button" data-f="def" aria-pressed="false">Deferred</button>
+      <button type="button" data-f="other" aria-pressed="false">Other</button>
+      <span class="fcount" id="fcount">34 shown</span>
+    </div>
+
+    <div class="tscroll">
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Finding</th><th>13 Oct</th><th>14 Oct</th><th>Verified this pass</th></tr>
+        </thead>
+        <tbody id="board-body">
+          <tr data-sev="other"><td class="id">C-01</td><td>robots.txt blocks all crawlers</td><td><span class="pill p-other">Verify at launch</span></td><td><span class="pill p-other">Verify at launch</span></td><td class="evidence">Preview still Disallow: / for * and every named agent. No Sitemap line. Correct for this host; confirm Allow on eforte.io at cutover.</td></tr>
+          <tr data-sev="def"><td class="id">C-02</td><td>37 synthetic case studies</td><td><span class="pill p-def">Deferred</span></td><td><span class="pill p-def">Deferred</span></td><td class="evidence">All 48 case-study URLs remain in the sitemap. Homepage carousel still features BioResearch Labs / Allied Insurance style synthetics.</td></tr>
+          <tr data-sev="open"><td class="id">C-03</td><td>Third-party logos as “industry leaders”</td><td><span class="pill p-open">Open</span></td><td><span class="pill p-open">Open</span></td><td class="evidence">Strip still renders Land id., Figma, Ripple, Google, Shopify, OneSignal, Slack, PayPal, AWS under that heading, looped three times.</td></tr>
+          <tr data-sev="open"><td class="id">C-04</td><td>Unevidenced certification claims</td><td><span class="pill p-open">Open</span></td><td><span class="pill p-open">Open</span></td><td class="evidence">SOC 2 Type 2, ISO 27001, NIST AI RMF, IBM, Expertise.com, CAIDP, HIPAA — still no certificate numbers, dates, or verification links.</td></tr>
+          <tr data-sev="fixed"><td class="id">H-01</td><td>48 case studies share one title</td><td><span class="pill p-fixed">Fixed</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">Unique “{Client} Case Study | eForte” titles and descriptions hold on sampled routes.</td></tr>
+          <tr data-sev="fixed"><td class="id">H-02</td><td>AI pillar pages had no metadata</td><td><span class="pill p-fixed">Fixed</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">/velocity-ai and /agentic-orchestration still have proper titles, descriptions, OG, canonicals.</td></tr>
+          <tr data-sev="fixed"><td class="id">H-03</td><td>Hero invisible for seconds after load</td><td><span class="pill p-fixed">Fixed</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">H1 computed opacity is 1 immediately on fresh load.</td></tr>
+          <tr data-sev="part"><td class="id">H-04</td><td>Open Graph / Twitter tags</td><td><span class="pill p-fixed">Fixed</span></td><td><span class="pill p-part">Partial</span></td><td class="evidence">Homepage full card intact. Inner pages set summary_large_image but omit og:image / twitter:image. Regression since Round 2.</td></tr>
+          <tr data-sev="fixed"><td class="id">H-05</td><td>No canonicals; duplicate route</td><td><span class="pill p-fixed">Fixed</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">Self-referencing canonicals to eforte.io. /case-studies → 308 /impact-studies.</td></tr>
+          <tr data-sev="fixed"><td class="id">H-06</td><td>No structured data</td><td><span class="pill p-fixed">Fixed</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">Organization + WebSite sitewide; Article on blog/white paper; BreadcrumbList on case studies; JobPosting on /careers.</td></tr>
+          <tr data-sev="fixed"><td class="id">H-07</td><td>Sitemap gaps</td><td><span class="pill p-part">Partial</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">99 URLs. Reviews, white paper, both role pages, and all 8 blog posts present. /databricks and /locations removed.</td></tr>
+          <tr data-sev="closed"><td class="id">H-08</td><td>Contradictory locations</td><td><span class="pill p-part">Partial</span></td><td><span class="pill p-closed">Closed</span></td><td class="evidence"><b>Intentionally left for later use.</b> Canonical list on /about-us is consistent. /locations preserved in repo, commented out of nav and sitemap.</td></tr>
+          <tr data-sev="closed"><td class="id">H-09</td><td>/databricks contradicts the site</td><td><span class="pill p-open">Open</span></td><td><span class="pill p-closed">Closed</span></td><td class="evidence"><b>Intentionally left for later use.</b> Page preserved; nav and sitemap entries commented out. Revisit claims when the page is productised. Prefer dropping it from /ai.txt until then.</td></tr>
+          <tr data-sev="part"><td class="id">H-10</td><td>Contact path unverified</td><td><span class="pill p-part">Partial</span></td><td><span class="pill p-part">Partial</span></td><td class="evidence">Footer: inquiry@eforte.io + Wilmington address. Phone on legal pages. Modal labelled; projectType still required hidden; no autocomplete; no live submit.</td></tr>
+          <tr data-sev="def"><td class="id">H-11</td><td>Eight case studies unlinked</td><td><span class="pill p-def">Deferred</span></td><td><span class="pill p-def">Deferred</span></td><td class="evidence">Travels with C-02. Still in sitemap, missing from /impact-studies grid.</td></tr>
+          <tr data-sev="fixed"><td class="id">M-01</td><td>Footer links all → /blog</td><td><span class="pill p-part">Partial</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">Insights column: Insights, Reviews, Cybersecurity, White Paper. Stub topics and Events removed (preserved in comments).</td></tr>
+          <tr data-sev="fixed"><td class="id">M-02</td><td>3 social links href="#"</td><td><span class="pill p-open">Open</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">LinkedIn, Facebook, and X with real URLs and accessible names.</td></tr>
+          <tr data-sev="def"><td class="id">M-03</td><td>Case-study template bugs</td><td><span class="pill p-def">Deferred</span></td><td><span class="pill p-def">Deferred</span></td><td class="evidence">Travels with C-02. Brightwell Mutual still shows empty tech columns, dual intros, stray quote glyph.</td></tr>
+          <tr data-sev="fixed"><td class="id">M-04</td><td>Stripped hyphens</td><td><span class="pill p-fixed">Fixed</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">Compound modifiers still hyphenated on /technology-partners.</td></tr>
+          <tr data-sev="fixed"><td class="id">M-05</td><td>“Satisfactory reviews of clients”</td><td><span class="pill p-fixed">Fixed</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">H1 remains “What our clients say”.</td></tr>
+          <tr data-sev="fixed"><td class="id">M-06</td><td>Prism copy from Prophet docs</td><td><span class="pill p-fixed">Fixed</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">Prophet sentence still absent; Prism described as a forecasting platform with dashboards.</td></tr>
+          <tr data-sev="fixed"><td class="id">M-07</td><td>Feedback summaries with no feedback</td><td><span class="pill p-open">Open</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">Ce-trainer and Insurance Market summaries are now client voice.</td></tr>
+          <tr data-sev="fixed"><td class="id">M-08</td><td>Mobile horizontal overflow</td><td><span class="pill p-open">Open</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">Live pass: 392 vs 375. Code fix after pass: compensation only while scroll-locked; nav/overlay w-full; body overflow-x: clip. Re-verify on next deploy.</td></tr>
+          <tr data-sev="fixed"><td class="id">M-09</td><td>Unlabelled buttons, missing alt</td><td><span class="pill p-open">Open</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">Visible homepage controls named. Closed menu aria-hidden. Logo marks have aria-label. Case-study icon buttons still thin.</td></tr>
+          <tr data-sev="fixed"><td class="id">M-10</td><td>No contact details anywhere</td><td><span class="pill p-fixed">Fixed</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">Footer address + inquiry@eforte.io. Phone on privacy/terms.</td></tr>
+          <tr data-sev="fixed"><td class="id">M-11</td><td>Values differ about vs careers</td><td><span class="pill p-fixed">Fixed</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">Shared values list including Inventive and Resourceful.</td></tr>
+          <tr data-sev="fixed"><td class="id">M-12</td><td>“Senior Polymaths”</td><td><span class="pill p-fixed">Fixed</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">Term still absent from /careers.</td></tr>
+          <tr data-sev="fixed"><td class="id">M-13</td><td>Missing full stop + contradiction</td><td><span class="pill p-fixed">Fixed</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">Agentic copy still general-purpose / configured per industry.</td></tr>
+          <tr data-sev="fixed"><td class="id">M-14</td><td>Punctuation in headline copy</td><td><span class="pill p-fixed">Fixed</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">Hero sentence case and dash spacing still correct.</td></tr>
+          <tr data-sev="fixed"><td class="id">M-15</td><td>Reviews formatting inconsistencies</td><td><span class="pill p-fixed">Fixed</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">Durations normalised; government spelled out; domain spacing clean.</td></tr>
+          <tr data-sev="fixed"><td class="id">M-16</td><td>Marquee content duplicated in DOM</td><td><span class="pill p-fixed">Fixed</span></td><td><span class="pill p-fixed">Fixed</span></td><td class="evidence">Duplicate tracks remain aria-hidden.</td></tr>
+          <tr data-sev="other"><td class="id">M-17</td><td>Unused preloads, raw TTF</td><td><span class="pill p-other">Not re-verified</span></td><td><span class="pill p-other">Not re-verified</span></td><td class="evidence">Six woff2 preloads still present including previously unused faces. Run Lighthouse on production.</td></tr>
+          <tr data-sev="other"><td class="id">M-18</td><td>Thin careers / white-paper volume</td><td><span class="pill p-other">Backlog</span></td><td><span class="pill p-other">Backlog</span></td><td class="evidence">Two roles, one paper. Events intentionally preserved for later. Content growth, not a defect.</td></tr>
+          <tr data-sev="part"><td class="id">M-19</td><td>“Incredible clients” section</td><td><span class="pill p-other">Check visually</span></td><td><span class="pill p-part">Partial</span></td><td class="evidence">Grid renders, but with Shopify / OneSignal / Ripple / Land id. — same C-03 marks, not named clients.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===================== 02 CLOSED FOR LATER ===================== -->
+  <section id="later">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title">Closed — intentionally left for later use</h2>
+      <span class="sec-note">Preserved in repo, out of live IA</span>
+    </div>
+    <p class="lead">These findings are closed for launch tracking. The pages stay in the codebase so they can be restored with minimal effort; they are not linked from navigation and are absent from the XML sitemap.</p>
+
+    <article class="finding f-closed" data-sev="closed">
+      <div class="f-top"><span class="badge">Closed</span><span class="fid">H-09</span><span class="ftags">databricks · later use</span></div>
+      <h3>/databricks page kept, not productised</h3>
+      <p>The route still returns 200 and still contains Gold Partner / 20+ years / 250+ certified / media-and-gaming claims that contradict the rest of the site. That is acceptable only while the page is unreachable from the live information architecture.</p>
+      <div class="note"><b>Disposition:</b> Intentionally left for later use. Nav and sitemap entries are commented out in <code>siteNavigation.ts</code> / <code>sitemap.ts</code>. Before re-enabling, rewrite claims against real figures and remove the URL from <code>/ai.txt</code> preferred sources until then.</div>
+    </article>
+
+    <article class="finding f-closed" data-sev="closed">
+      <div class="f-top"><span class="badge">Closed</span><span class="fid">H-08</span><span class="ftags">locations · later use</span></div>
+      <h3>/locations residual copy shelved with the page</h3>
+      <p>About-us now carries the canonical Wilmington / San Jose / Austin / remote-nearshore list. Remaining “Over 20 years” and out-of-scope industry lines live only on <code>/locations</code>, which is also commented out of nav and sitemap.</p>
+      <div class="note"><b>Disposition:</b> Intentionally left for later use. Reconcile copy (including Karachi in the delivery model) when the page is linked again.</div>
+    </article>
+  </section>
+
+  <!-- ===================== 03 BLOCKERS ===================== -->
+  <section id="blockers">
+    <div class="sec-head">
+      <span class="sec-num">03</span>
+      <h2 class="sec-title">What still blocks launch</h2>
+      <span class="sec-note">Unchanged reputational criticals</span>
+    </div>
+
+    <div class="callout danger">
+      <b>C-03 — logo strip.</b> Nine third-party wordmarks under “Trusted by industry leaders,” plus the same pattern on /about-us “incredible clients.” Replace with permitted client marks or remove both strips.
+    </div>
+    <div class="callout danger">
+      <b>C-04 — certifications.</b> SOC 2 Type 2, ISO 27001, NIST AI RMF, IBM Global Entrepreneur, Expertise.com “A”, CAIDP, HIPAA — attach certificate number, auditor, and date, or remove each claim.
+    </div>
+    <div class="callout warn">
+      <b>C-02 — synthetic case studies (deferred).</b> Still indexable and featured on the homepage. Resolution travels with H-11 and M-03. Prefer real named studies (Krank, Oddysee, etc.) in the feature slot.
+    </div>
+    <div class="callout">
+      <b>C-01 — robots at cutover.</b> Preview block is correct. On cutover day: <code>curl eforte.io/robots.txt</code> must show Allow and a Sitemap line for this build; keep the Vercel preview disallowed permanently.
+    </div>
+  </section>
+
+  <!-- ===================== 04 DELTA ===================== -->
+  <section id="delta">
+    <div class="sec-head">
+      <span class="sec-num">04</span>
+      <h2 class="sec-title">Delta since 13 October</h2>
+      <span class="sec-note">What moved</span>
+    </div>
+    <ul class="plain">
+      <li><b>Newly fixed:</b> H-07 sitemap gaps; M-01 footer topics; M-02 social URLs; M-07 review summaries; M-08 mobile overflow (code fix after live measurement); M-09 accessible names on visible controls.</li>
+      <li><b>Newly closed (later use):</b> H-09 /databricks; H-08 remaining /locations issues.</li>
+      <li><b>Regression:</b> H-04 — inner pages lost og:image / twitter:image while keeping summary_large_image.</li>
+      <li><b>Still partial:</b> H-10 contact modal end-to-end; M-19 about-us client grid populated with non-client marks.</li>
+      <li><b>Still deferred:</b> C-02, H-11, M-03 (synthetic case-study set).</li>
+    </ul>
+  </section>
+
+  <!-- ===================== 05 EXTRAS ===================== -->
+  <section id="extras">
+    <div class="sec-head">
+      <span class="sec-num">05</span>
+      <h2 class="sec-title">Also confirmed</h2>
+      <span class="sec-note">Outside the original 34 IDs</span>
+    </div>
+    <ul class="plain">
+      <li><code>/llms.txt</code>, <code>/llms-full.txt</code>, and <code>/ai.txt</code> all return 200.</li>
+      <li><code>/llms-full.txt</code> still lists careers contact as hr@eforte.net while the public footer uses inquiry@eforte.io.</li>
+      <li><code>/ai.txt</code> still lists /databricks among preferred sources — clean up when convenient given H-09’s closed disposition.</li>
+      <li>No GA4, GTM, Plausible, or LinkedIn Insight request on homepage load. No cookie consent layer (consistent while nothing tracks).</li>
+      <li>Privacy and terms name Wilmington address, inquiry@eforte.io, and phone 1-408-622-0105; terms set Delaware governing law. Neither names an LLC/Inc. entity.</li>
+    </ul>
+  </section>
+
+  <footer class="rep">
+    Round 3 audit of eforte-io-new.vercel.app · 14 October 2026 · re-test of the 34 findings from 24 Sep / 13 Oct · read-only, no forms submitted.
+    H-08 and H-09 closed as intentionally left for later use. Claims about certifications, partner tiers, and client relationships remain flagged for verification, not asserted false.
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('themeBtn');
+  var root = document.documentElement;
+  try {
+    var saved = localStorage.getItem('eforte-audit-r3-theme');
+    if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved);
+  } catch(e){}
+  btn.addEventListener('click', function(){
+    var cur = root.getAttribute('data-theme');
+    var isDark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = isDark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('eforte-audit-r3-theme', next); } catch(e){}
+  });
+
+  var buttons = document.querySelectorAll('.filters button');
+  var rows = document.querySelectorAll('#board-body tr');
+  var count = document.getElementById('fcount');
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){
+      var f = b.dataset.f;
+      buttons.forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); });
+      var shown = 0;
+      rows.forEach(function(it){
+        var match = (f === 'all' || it.dataset.sev === f);
+        it.hidden = !match;
+        if (match) shown++;
+      });
+      count.textContent = shown + ' shown';
+    });
+  });
+})();
+</script>
+</body>
+</html>
