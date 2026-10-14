@@ -21,10 +21,21 @@ export const sitemapGroups: SitemapGroup[] = [
       { label: "About eForte", href: "/about-us" },
       { label: "Technology Partners", href: "/technology-partners" },
       { label: "Careers", href: "/careers" },
+      {
+        label: "Associate .NET Developer",
+        href: "/careers/associate-dotnet-developer",
+      },
+      { label: "Data Engineer", href: "/careers/data-engineer" },
       { label: "Insights", href: "/blog" },
+      { label: "Reviews", href: "/reviews" },
       { label: "Impact Studies", href: "/impact-studies" },
-      { label: "Locations", href: "/locations" },
-      { label: "Databricks", href: "/databricks" },
+      {
+        label: "White Paper: Navigate AI Adoption",
+        href: "/white-papers/navigate-ai-adoption",
+      },
+      // Preserved for future reuse (pages exist; not actively linked):
+      // { label: "Locations", href: "/locations" },
+      // { label: "Databricks", href: "/databricks" },
     ],
   },
   {

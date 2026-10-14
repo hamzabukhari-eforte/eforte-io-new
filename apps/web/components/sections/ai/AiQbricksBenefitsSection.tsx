@@ -40,11 +40,10 @@ export default function AiQbricksBenefitsSection() {
               >
                 <Image
                   src={benefit.iconSrc}
-                  alt=""
+                  alt={benefit.title}
                   width={34}
                   height={34}
                   className="relative h-[34px] w-[34px] object-contain"
-                  aria-hidden
                 />
               </div>
 

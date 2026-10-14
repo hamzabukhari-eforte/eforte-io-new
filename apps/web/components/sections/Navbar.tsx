@@ -1902,9 +1902,12 @@ export default function Navbar({
 
           {/* Mobile/Tablet Hamburger Menu Button */}
           <button
+            type="button"
             onClick={toggleMobileMenu}
             className="xl:hidden p-2 rounded-[12px] transition-colors duration-200 flex items-center justify-center text-white"
-            aria-label="Toggle menu"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-nav-menu"
           >
             {isMobileMenuOpen ? (
               <HiX className="w-6 h-6" />
@@ -1934,6 +1937,7 @@ export default function Navbar({
 
         {/* Menu Panel - Full Width, Below Navbar (glass effect) */}
         <div
+          id="mobile-nav-menu"
           className={cn(
             "absolute top-16 md:top-20 left-0 right-0 bottom-0 w-full",
             "bg-black/70 backdrop-blur-xl transform transition-transform duration-300",

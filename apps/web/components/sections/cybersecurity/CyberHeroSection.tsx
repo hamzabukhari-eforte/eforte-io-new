@@ -13,13 +13,12 @@ export default function CyberHeroSection() {
       <div className="absolute inset-0">
         <Image
           src={cyberHero.image}
-          alt=""
+          alt="Cybersecurity operations and protected systems background"
           fill
           priority
           sizes="100vw"
           quality={90}
           className="object-cover object-center"
-          aria-hidden
         />
         <div className="absolute inset-0 bg-linear-to-r from-black/95 via-black/75 to-black/35" />
       </div>

@@ -115,8 +115,14 @@ export default function CareersJobOpeningsSection() {
             Current openings
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white md:text-lg">
-            We&apos;re hiring in Karachi. Apply for a role below, or send us
-            your resume and we&apos;ll keep you in mind for what&apos;s next.
+            Open roles for our Karachi studio. Apply below, or email{" "}
+            <a
+              href="mailto:hr@eforte.net"
+              className="text-primary-pink underline-offset-2 hover:underline"
+            >
+              hr@eforte.net
+            </a>{" "}
+            with your resume and we&apos;ll keep you in mind for what&apos;s next.
           </p>
         </motion.div>
 

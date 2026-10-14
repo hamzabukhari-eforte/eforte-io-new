@@ -3,7 +3,7 @@
 import Container from "@/components/atoms/Container";
 import Image from "next/image";
 import Link from "next/link";
-import { FaLinkedinIn, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInViewReplay } from "@/lib/useInViewReplay";
@@ -13,9 +13,21 @@ import FooterImpactStudiesColumn from "@/components/sections/FooterImpactStudies
 import FooterItemLink from "@/components/sections/FooterItemLink";
 
 const socialLinks = [
-  { icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
-  { icon: FaInstagram, href: "#", label: "Instagram" },
-  { icon: FaTwitter, href: "#", label: "Twitter" },
+  {
+    icon: FaLinkedinIn,
+    href: "https://www.linkedin.com/company/eforte-solutions/",
+    label: "LinkedIn",
+  },
+  {
+    icon: FaFacebookF,
+    href: "https://www.facebook.com/eForteSolutions/",
+    label: "Facebook",
+  },
+  {
+    icon: FaTwitter,
+    href: "https://x.com/eforte_net",
+    label: "X",
+  },
 ];
 
 export default function Footer() {
@@ -82,20 +94,25 @@ export default function Footer() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           >
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="flex flex-col items-center gap-3 sm:items-start sm:gap-3">
-                <p className="text-sm text-white">
+            <div className="mb-6 max-w-xl text-center text-sm text-white/70 sm:text-left">
+              <p className="text-white/90">eForte Solutions</p>
+              <p className="mt-1">
+                1207 Delaware Ave, Suite 2858, Wilmington, DE 19806
+              </p>
+              <p className="mt-1">
+                <a
+                  href="mailto:inquiry@eforte.io"
+                  className="underline-offset-2 hover:text-primary-pink hover:underline"
+                >
+                  inquiry@eforte.io
+                </a>
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+              <div className="flex flex-col items-center gap-3 text-sm sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5 sm:gap-y-2">
+                <p className="shrink-0 text-white">
                   © {new Date().getFullYear()} eForte.io. All rights reserved.
-                </p>
-                <p className="max-w-md text-center text-sm text-white/70 sm:text-left">
-                  eForte Solutions · 1207 Delaware Ave, Suite 2858, Wilmington, DE
-                  19806 ·{" "}
-                  <a
-                    href="mailto:hr@eforte.net"
-                    className="underline-offset-2 hover:text-primary-pink hover:underline"
-                  >
-                    hr@eforte.net
-                  </a>
                 </p>
                 <nav
                   aria-label="Legal"
@@ -110,18 +127,19 @@ export default function Footer() {
                 </nav>
               </div>
 
-              {/* Social Media Icons */}
-              <div className="flex items-center gap-4">
+              <div className="flex shrink-0 items-center gap-2 sm:gap-3">
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
                   return (
                     <Link
                       key={social.label}
                       href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label={social.label}
                       className="p-2 text-white transition-colors duration-200 hover:text-primary-pink"
                     >
-                      <Icon className="w-5 h-5" />
+                      <Icon className="h-5 w-5" />
                     </Link>
                   );
                 })}

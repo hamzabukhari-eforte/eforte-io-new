@@ -120,11 +120,10 @@ export default function StrategicApproachSection() {
                   >
                     <Image
                       src={feature.icon}
-                      alt=""
+                      alt={feature.title}
                       width={147}
                       height={147}
                       className="h-[120px] w-[120px] md:h-[146px] md:w-[146px]"
-                      aria-hidden
                     />
                   </motion.div>
                   <h3 className="mb-3 text-[24px] font-bold text-white md:mb-4">
@@ -191,12 +190,11 @@ export default function StrategicApproachSection() {
                     >
                       <Image
                         src={feature.icon}
-                        alt=""
+                        alt={feature.title}
                         width={size}
                         height={size}
                         className="max-w-none object-contain"
                         style={{ width: size, height: size }}
-                        aria-hidden
                       />
                     </motion.div>
                   );

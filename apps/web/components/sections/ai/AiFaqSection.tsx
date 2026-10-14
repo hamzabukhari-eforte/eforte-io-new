@@ -55,6 +55,7 @@ export default function AiFaqSection() {
                 <button
                   type="button"
                   onClick={() => toggleFaq(idx)}
+                  aria-expanded={isOpen}
                   className="flex w-full cursor-pointer items-start gap-4 px-4 py-4 text-left md:px-5"
                 >
                   <HiChevronDown

@@ -213,7 +213,7 @@ export default function NavigateAISection() {
                 href="/white-papers/navigate-ai-adoption"
                 className="group relative inline-flex h-10 items-center justify-center overflow-hidden rounded-full border border-primary-pink bg-transparent px-9 text-[15px] font-medium leading-none text-white transition-colors duration-300 hover:bg-primary-pink"
               >
-                <span className="relative z-10">Read now</span>
+                <span className="relative z-10">Read the white paper</span>
               </Link>
               <motion.span
                 className="hidden text-[13px] text-white/50 sm:inline"

@@ -152,7 +152,7 @@ export const clientReviews: ClientReview[] = [
       "We're delighted to say that the engineers from eForte are an integral part of our team.",
     rating: 5,
     feedback:
-      "Ce-trainer's LMS underwent significant enhancements, improving student navigation with Google Drive uploaders and a comprehensive Student Dashboard. The Admin Dashboard now includes a robust filter process, streamlining administrative tasks for better efficiency and promising continued success.",
+      "The eForte engineers became part of our team. Navigation, dashboards, and admin workflows are clearer for students and staff, and delivery stayed steady while we kept shipping.",
     author: "Huzefa Ammiwala",
     designation: "CTO - cetrainer.nl",
   },
@@ -169,7 +169,7 @@ export const clientReviews: ClientReview[] = [
       "We're happy to have eForte's engineers working alongside us.",
     rating: 5,
     feedback:
-      "Insurance Market is a platform for comparing and purchasing insurance products from various providers. eForte's staff enhanced the platform by developing an advanced CRM system with modules targeting money laundering concerns, integrating third-party APIs, and creating a proactive Anti-Money Laundering module to improve financial integrity.",
+      "Working with eForte's engineers felt like extending our own team. The CRM and AML work improved how we handle risk and third-party integrations without slowing the roadmap.",
     author: "Hussain Fakhruddin",
     designation: "CTO - insurancemarket.ae",
   },

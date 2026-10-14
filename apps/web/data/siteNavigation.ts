@@ -88,14 +88,18 @@ export const footerColumns: FooterColumn[] = [
     title: "Insights",
     links: [
       { label: "Insights", href: "/blog" },
-      // Key Categories (mega menu)
-      { label: "AccelerateAI", href: "/blog" },
-      { label: "Data & AI", href: "/blog" },
-      { label: "Agentic Factory", href: "/blog" },
-      { label: "Cybersecurity", href: "/blog" },
-      { label: "Databricks", href: "/blog" },
-      // More Insights (mega menu)
-      { label: "White Paper: Navigate AI Adoption", href: "/white-papers/navigate-ai-adoption" },
+      { label: "Reviews", href: "/reviews" },
+      { label: "Cybersecurity", href: "/capabilities/cybersecurity" },
+      {
+        label: "White Paper: Navigate AI Adoption",
+        href: "/white-papers/navigate-ai-adoption",
+      },
+      // Category stubs preserved for future tag-filtered routes:
+      // { label: "AccelerateAI", href: "/blog" },
+      // { label: "Data & AI", href: "/blog" },
+      // { label: "Agentic Factory", href: "/blog" },
+      // Databricks page preserved but unused for now:
+      // { label: "Databricks", href: "/databricks" },
       // Events preserved for future reuse when content exists:
       // { label: "Events", href: "/blog" },
     ],

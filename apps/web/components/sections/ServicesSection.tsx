@@ -182,11 +182,10 @@ export default function ServicesSection() {
                     >
                       <Image
                         src={service.icon}
-                        alt=""
+                        alt={service.title}
                         width={96}
                         height={96}
                         className="h-20 w-auto object-contain drop-shadow-[0_0_18px_rgba(66,108,255,0.25)] transition-transform duration-500 group-hover:scale-110"
-                        aria-hidden
                       />
                     </motion.div>
                   </motion.div>
