@@ -53,16 +53,10 @@ User-Agent: anthropic-ai
 Disallow: /
 
 User-Agent: ClaudeBot
-Allow: /
+Disallow: /
 
 User-Agent: Claude-Web
-Allow: /
-
-User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
+Disallow: /
 
 User-Agent: CCBot
 Disallow: /
