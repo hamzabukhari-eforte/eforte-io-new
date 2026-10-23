@@ -35,3 +35,20 @@ model QuoteSubmission {
 
   @@map("quote_submissions")
 }
+
+model CareerApplication {
+  id               String   @id @default(cuid())
+  firstName        String
+  lastName         String
+  email            String
+  phone            String?
+  position         String?
+  message          String?
+  resumeOriginalName String?
+  resumeStoredName   String?
+  resumeMimeType     String?
+  resumeSizeBytes    Int?
+  createdAt        DateTime @default(now())
+
+  @@map("career_applications")
+}

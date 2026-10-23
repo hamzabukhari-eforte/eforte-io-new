@@ -58,3 +58,8 @@ supabase/
 apps/strapi/public/uploads/*
 !apps/strapi/public/uploads/.gitkeep
 
+# Nest API career resume uploads
+apps/api/uploads/careers/*
+!apps/api/uploads/careers/.gitkeep
+
+DOCS/

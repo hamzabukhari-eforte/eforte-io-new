@@ -21,14 +21,44 @@ export default function CareersJoinTeamSection() {
     once: true,
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const searchParams = useSearchParams();
   const roleParam = searchParams.get("role");
   const selectedRole =
     jobOpenings.find((job) => job.id === roleParam)?.title ?? "";
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    setSubmitError(null);
+    setIsSubmitting(true);
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const apiBase = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "");
+    if (!apiBase) {
+      setSubmitError("API URL is not configured. Please try again later.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(`${apiBase}/careers`, {
+        method: "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
+
+      setSubmitted(true);
+    } catch {
+      setSubmitError("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -151,12 +181,19 @@ export default function CareersJoinTeamSection() {
                 />
               </label>
 
+              {submitError ? (
+                <p className="sm:col-span-2 text-sm text-red-600" role="alert">
+                  {submitError}
+                </p>
+              ) : null}
+
               <div className="sm:col-span-2">
                 <button
                   type="submit"
-                  className="w-full cursor-pointer inline-flex items-center justify-center h-10 rounded-full leading-none bg-linear-to-r from-[#be185d] to-[#db2777] px-8 py-0 text-sm font-semibold text-white shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] transition-all hover:-translate-y-0.5 hover:from-[#db2777] hover:to-[#be185d] sm:w-auto"
+                  disabled={isSubmitting}
+                  className="w-full cursor-pointer inline-flex items-center justify-center h-10 rounded-full leading-none bg-linear-to-r from-[#be185d] to-[#db2777] px-8 py-0 text-sm font-semibold text-white shadow-[0_4px_14px_0_rgba(219,39,119,0.39)] transition-all hover:-translate-y-0.5 hover:from-[#db2777] hover:to-[#be185d] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 sm:w-auto"
                 >
-                  Submit
+                  {isSubmitting ? "Submitting…" : "Submit"}
                 </button>
               </div>
             </form>
