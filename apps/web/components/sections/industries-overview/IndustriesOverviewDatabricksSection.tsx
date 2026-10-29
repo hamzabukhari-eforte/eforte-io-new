@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link"; // preserved with Learn more → /databricks CTA below
 import {
   industriesDatabricks,
   industriesMedia,
@@ -21,9 +21,10 @@ export default function IndustriesOverviewDatabricksSection() {
             <br />
             {industriesDatabricks.paragraphs[1]}
           </p>
-          <Link href={industriesDatabricks.href} className={styles.button}>
+          {/* Learn more → /databricks preserved for possible future reuse once that page is finalized */}
+          {/* <Link href={industriesDatabricks.href} className={styles.button}>
             Learn more
-          </Link>
+          </Link> */}
         </div>
         <IndustriesReveal as="figure" direction="bottom" duration={600}>
           <Image

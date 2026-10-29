@@ -24,8 +24,6 @@ Contact: inquiry@eforte.io
 - https://eforte.io/blog
 - https://eforte.io/reviews
 - https://eforte.io/impact-studies
-- https://eforte.io/locations
-- https://eforte.io/databricks
 - https://eforte.io/white-papers/navigate-ai-adoption
 
 ### AI pillars

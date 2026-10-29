@@ -10,7 +10,6 @@ Canonical site: https://eforte.io
 - Name: eForte Solutions
 - Website: https://eforte.io
 - About: https://eforte.io/about-us
-- Locations: https://eforte.io/locations
 - Careers: https://eforte.io/careers
 - Client reviews: https://eforte.io/reviews
 - Technology partners: https://eforte.io/technology-partners

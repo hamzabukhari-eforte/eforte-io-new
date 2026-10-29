@@ -184,7 +184,9 @@ export const industriesDatabricks = {
     "As a Gold Databricks Partner, eForte has demonstrated deep platform expertise and a proven track record of successful implementations across every industry we serve.",
     "Our team includes 200+ professionals certified on the Databricks Intelligence Platform, spanning Data Analyst, Data Engineer, Machine Learning Engineer, and GenAI Engineer certifications.",
   ],
-  href: "/databricks",
+  // /databricks page preserved but unlinked until content is finalized
+  // href: "/databricks",
+  href: "/industries",
 };
 
 export type IndustryCaseStudy = {

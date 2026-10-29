@@ -14,7 +14,7 @@ eForte Solutions is a software and AI delivery partner. We help organizations mo
 
 We work especially with buyers in regulated or high-stakes domains — healthcare, finance, insurance, and related operations — where auditability, security, and human oversight matter as much as model quality.
 
-Offices and delivery model (see https://eforte.io/about-us and https://eforte.io/locations):
+Offices and delivery model (see https://eforte.io/about-us):
 
 - Wilmington, Delaware (US entity address used in legal pages)
 - San Jose, California
