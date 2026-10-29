@@ -2,61 +2,24 @@ import {
   pickProductDesignStories,
   type ProductDesignShowcaseItem,
 } from "@/data/productDesign";
-import { healthcareWorkStories } from "./healthcareShowcase";
-import { financialServicesWorkStories } from "./financialServicesShowcase";
 
 /**
  * Industry-specific Success Stories.
- * Full list stays on Product Design; each industry page shows only its fit.
+ * Only old-site original Impact Studies remain; synthetic studies were removed.
+ * Picks must match ids present in productDesignShowcase.
  */
 export const industryShowcases: Record<string, ProductDesignShowcaseItem[]> = {
-  healthcare: [
-    ...healthcareWorkStories,
-    ...pickProductDesignStories(
-      "clearpath-diabetes-care",
-      "harborlight-recovery",
-      "pulsewell-fitness",
-      "bioresearch-labs"
-    ),
-  ],
-  "financial-services": [
-    ...pickProductDesignStories(
-      "meridian-pay",
-      "cobalt-digital-bank",
-      "fenwick-capital-markets",
-      "iberian-ventures",
-      "dostpay",
-      "investment-markets"
-    ),
-    ...financialServicesWorkStories,
-  ],
-  insurance: pickProductDesignStories(
-    "allied-insurance",
-    "anchor-point-insurance",
-    "brightwell-mutual",
-    "coastal-assurance-group"
+  healthcare: pickProductDesignStories("oddysee", "validatr"),
+  "financial-services": pickProductDesignStories(
+    "dostpay",
+    "investment-markets",
+    "prism"
   ),
-  hospitality: pickProductDesignStories(
-    "birchwood-hospitality-group",
-    "coastline-resorts",
-    "lantern-hotel-collective"
-  ),
-  automobile: pickProductDesignStories(
-    "altura-motors",
-    "ridgeline-auto-group",
-    "vantage-mobility"
-  ),
-  "heavy-industries": pickProductDesignStories(
-    "global-manufacturing-corp",
-    "ironclad-manufacturing",
-    "summit-steel-works",
-    "frontier-energy-partners"
-  ),
-  "bpo-shared-services": pickProductDesignStories(
-    "apex-shared-services",
-    "crestline-bpo-group",
-    "meridian-outsourcing-solutions"
-  ),
+  insurance: pickProductDesignStories("oddysee", "validatr"),
+  hospitality: pickProductDesignStories("oddysee", "validatr"),
+  automobile: pickProductDesignStories("prism", "dostpay"),
+  "heavy-industries": pickProductDesignStories("prism", "oddysee"),
+  "bpo-shared-services": pickProductDesignStories("oddysee", "dostpay"),
 };
 
 export function getIndustryShowcase(

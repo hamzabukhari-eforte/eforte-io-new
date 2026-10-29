@@ -207,51 +207,53 @@ export const industriesOutcomesIntro = {
     "A selection of Impact Studies helping clients reshape finance, healthcare, insurance, and beyond.",
 };
 
-/** Featured Impact Studies mapped to industries on this page */
+/** Featured Impact Studies mapped to industries on this page (old-site originals only) */
 export const industriesCaseStudies: IndustryCaseStudy[] = [
   {
-    slug: "meridian-pay",
-    imageSrc: "/assets/images/case-study/webp/meridian-pay/image-1.webp",
-    imageAlt: "Meridian Pay payments platform",
+    slug: "dostpay",
+    imageSrc: "/assets/images/case-study/new-images/dostpay/Dostpay1.png",
+    imageAlt: "Dostpay digital banking payments platform",
     imageWidth: 420,
     pill: "Finance",
-    title: "Reinventing core payment functions with data and agentic AI",
+    title: "Powering digital banking payments with agentic financial workflows",
     description:
-      "Meridian Pay reinvents core payment functions with data and agentic AI, optimizing high-volume transactions while cutting processing errors across the payment lifecycle.",
-    href: "/case-studies/meridian-pay",
+      "Dostpay integrates with core banking platforms to give end users modern digital banking and payments, with fewer failures as transaction volume grows.",
+    href: "/case-studies/dostpay",
     metrics: [
-      { number: "85M+", labelLines: ["transactions", "optimized"] },
-      { number: "60%", labelLines: ["payment processing", "errors down"] },
+      { number: "5M+", labelLines: ["digital transactions", "enabled"] },
+      { number: "45%", labelLines: ["payment failure", "rate down"] },
     ],
   },
   {
-    slug: "allied-insurance",
-    imageSrc: "/assets/final-images/case-studies/allied-insurance/hero.png",
-    imageAlt: "Allied Insurance claims platform",
+    slug: "investment-markets",
+    imageSrc:
+      "/assets/images/case-study/new-images/investment-market/investment-Markets-Main.png",
+    imageAlt: "Investment Markets platform",
     imageWidth: 420,
-    pill: "Insurance",
-    title: "Transforming claims processing with agentic AI and computer vision",
+    pill: "Investments",
+    title: "Connecting high net worth investors through agentic discovery",
     description:
-      "Integrating computer vision with a legacy system, Allied Insurance automated claims verification and fraud detection — cutting processing time from 9 days to 36 hours.",
-    href: "/case-studies/allied-insurance",
+      "Investment Markets brings high net worth investors to growth and income opportunities with agent-driven matching and discovery.",
+    href: "/case-studies/investment-markets",
     metrics: [
-      { number: "36h", labelLines: ["average claims", "turnaround"] },
-      { number: "94%", labelLines: ["fraud detection", "accuracy"] },
+      { number: "8K+", labelLines: ["investor connections", "facilitated"] },
+      { number: "92%", labelLines: ["deal matching", "accuracy"] },
     ],
   },
   {
-    slug: "bioresearch-labs",
-    imageSrc: "/assets/images/case-study/webp/bioresearch-labs/image-1.webp",
-    imageAlt: "BioResearch Labs clinical data platform",
+    slug: "scheduling-engine",
+    imageSrc:
+      "/assets/images/case-study/new-images/scheduling-engine/scheduling-main.png",
+    imageAlt: "Scheduling Engine workforce platform",
     imageWidth: 420,
-    pill: "Health & Wellbeing",
-    title: "Ensuring compliant clinical trials with agentic data validation",
+    pill: "Operations",
+    title: "Automating workforce scheduling across call centers and retail",
     description:
-      "We automated extraction and standardization of clinical data across global research sites, achieving 99.8% data accuracy and accelerating study completion by 42%.",
-    href: "/case-studies/bioresearch-labs",
+      "Scheduling Engine reduces conflicts and gives supervisors a reliable, agent-driven way to staff every shift at scale.",
+    href: "/case-studies/scheduling-engine",
     metrics: [
-      { number: "99.8%", labelLines: ["clinical data", "accuracy"] },
-      { number: "42%", labelLines: ["faster study", "completion"] },
+      { number: "500K+", labelLines: ["shifts", "scheduled"] },
+      { number: "80%", labelLines: ["scheduling conflicts", "reduced"] },
     ],
   },
 ];

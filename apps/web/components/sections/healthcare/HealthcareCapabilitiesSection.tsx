@@ -40,7 +40,8 @@ const capabilities: Capability[] = [
     icon: HiOutlineIdentification,
     heading: "Digital Patient Experience",
     caseBrand: "Aurelia Clinics",
-    href: "/case-studies/aurelia-clinics",
+    // Synthetic case study removed; link to Impact Studies index
+    href: "/impact-studies",
     bullets: [
       {
         title: "Patient-first interface design",
@@ -68,7 +69,7 @@ const capabilities: Capability[] = [
     icon: HiOutlineDeviceMobile,
     heading: "mHealth & Connected Devices",
     caseBrand: "PulseLink",
-    href: "/case-studies/pulselink",
+    href: "/impact-studies",
     bullets: [
       {
         title: "Consumer health apps",
@@ -91,7 +92,7 @@ const capabilities: Capability[] = [
     icon: HiOutlineVideoCamera,
     heading: "Virtual Care & Remote Monitoring",
     caseBrand: "Northstar Care",
-    href: "/case-studies/northstar-care",
+    href: "/impact-studies",
     bullets: [
       {
         title: "Telehealth platforms",
@@ -114,7 +115,7 @@ const capabilities: Capability[] = [
     icon: HiOutlineChartSquareBar,
     heading: "Agentic Orchestration for Care Teams",
     caseBrand: "Thornfield Health",
-    href: "/case-studies/thornfield-health",
+    href: "/impact-studies",
     bullets: [
       {
         title: "Clinical documentation agents",
@@ -137,7 +138,7 @@ const capabilities: Capability[] = [
     icon: HiOutlineViewGridAdd,
     heading: "Foundational Data Layer for Health Systems",
     caseBrand: "Helix Health Data",
-    href: "/case-studies/helix-health-data",
+    href: "/impact-studies",
     bullets: [
       {
         title: "HIPAA aligned data architecture",

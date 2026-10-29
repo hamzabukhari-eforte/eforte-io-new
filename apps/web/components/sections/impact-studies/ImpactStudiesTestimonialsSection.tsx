@@ -45,6 +45,13 @@ export default function ImpactStudiesTestimonialsSection() {
             pagination={{
               el: paginationEl,
               clickable: true,
+              renderBullet: (index, className) => {
+                const item = impactStudiesTestimonials[index];
+                const label = item
+                  ? `Go to ${item.company} testimonial`
+                  : `Go to testimonial ${index + 1}`;
+                return `<button type="button" class="${className}" aria-label="${label}"></button>`;
+              },
             }}
           >
             {impactStudiesTestimonials.map((item) => (

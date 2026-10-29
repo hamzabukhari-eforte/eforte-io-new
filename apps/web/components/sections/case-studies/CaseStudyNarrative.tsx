@@ -268,7 +268,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                   <div className="relative aspect-4/3">
                     <Image
                       src={content.challenge.image}
-                      alt=""
+                      alt={`${content.name} challenge — ${content.challenge.title}`}
                       fill
                       sizes="(max-width: 1024px) 100vw, 58vw"
                       className="object-contain p-6 md:p-10"
@@ -365,7 +365,7 @@ export default function CaseStudyNarrative({ content, theme }: Props) {
                               item.image ??
                               solutionImages[index % solutionImages.length]
                             }
-                            alt=""
+                            alt={`${content.name} solution — ${item.title}`}
                             fill
                             sizes="(max-width: 1024px) 90vw, 55vw"
                             className="object-contain drop-shadow-2xl"

@@ -96,46 +96,66 @@ export type JobOpeningInput = {
   type: string;
   department: string;
   summary?: string;
+  about?: string;
+  responsibilities?: string[];
+  requirements?: string[];
   workMode?: string;
 };
 
-export function jobPostingsJsonLd(jobs: JobOpeningInput[]) {
-  return jobs.map((job) => {
-    const isRemote =
-      /remote/i.test(job.location) || /remote/i.test(job.workMode ?? "");
-    const description =
-      job.summary ??
-      `${job.title} — ${job.department}. ${job.type}. Location: ${job.location}.`;
+function jobPostingDescription(job: JobOpeningInput): string {
+  const parts = [
+    job.about ?? job.summary,
+    job.responsibilities?.length
+      ? `Responsibilities: ${job.responsibilities.join(" ")}`
+      : null,
+    job.requirements?.length
+      ? `Requirements: ${job.requirements.join(" ")}`
+      : null,
+  ].filter(Boolean);
 
-    return {
-      "@context": "https://schema.org",
-      "@type": "JobPosting",
-      title: job.title,
-      description,
-      identifier: {
-        "@type": "PropertyValue",
-        name: "eForte Solutions",
-        value: job.id,
+  if (parts.length > 0) return parts.join("\n\n");
+
+  return `${job.title} — ${job.department}. ${job.type}. Location: ${job.location}.`;
+}
+
+export function jobPostingJsonLd(job: JobOpeningInput) {
+  const isRemote =
+    /remote/i.test(job.location) || /remote/i.test(job.workMode ?? "");
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    title: job.title,
+    description: jobPostingDescription(job),
+    identifier: {
+      "@type": "PropertyValue",
+      name: "eForte Solutions",
+      value: job.id,
+    },
+    datePosted: new Date().toISOString().slice(0, 10),
+    employmentType: job.type.toUpperCase().includes("FULL")
+      ? "FULL_TIME"
+      : job.type,
+    hiringOrganization: {
+      "@type": "Organization",
+      name: "eForte Solutions",
+      sameAs: siteUrl,
+      logo: absoluteUrl("/assets/images/logo.svg"),
+    },
+    jobLocation: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: job.location.split("·")[0]?.trim() ?? job.location,
+        addressCountry: "PK",
       },
-      datePosted: new Date().toISOString().slice(0, 10),
-      employmentType: job.type.toUpperCase().includes("FULL")
-        ? "FULL_TIME"
-        : job.type,
-      hiringOrganization: {
-        "@type": "Organization",
-        name: "eForte Solutions",
-        sameAs: siteUrl,
-      },
-      jobLocation: {
-        "@type": "Place",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: job.location.split("·")[0]?.trim() ?? job.location,
-          addressCountry: "PK",
-        },
-      },
-      ...(isRemote ? { jobLocationType: "TELECOMMUTE" } : {}),
-      url: absoluteUrl(`/careers/${job.id}`),
-    };
-  });
+    },
+    ...(isRemote ? { jobLocationType: "TELECOMMUTE" } : {}),
+    directApply: false,
+    url: absoluteUrl(`/careers/${job.id}`),
+  };
+}
+
+export function jobPostingsJsonLd(jobs: JobOpeningInput[]) {
+  return jobs.map((job) => jobPostingJsonLd(job));
 }

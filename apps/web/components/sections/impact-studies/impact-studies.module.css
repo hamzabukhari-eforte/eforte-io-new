@@ -316,9 +316,13 @@
   width: 9px;
   height: 9px;
   margin: 0 !important;
+  padding: 0;
+  border: 0;
   background: #373737;
   opacity: 1;
   border-radius: 999px;
+  cursor: pointer;
+  appearance: none;
 }
 
 .heroPagination :global(.swiper-pagination-bullet-active) {
@@ -941,8 +945,12 @@
   width: 7px;
   height: 7px;
   margin: 0 !important;
+  padding: 0;
+  border: 0;
   background: #373737;
   opacity: 1;
+  cursor: pointer;
+  appearance: none;
 }
 
 .testimonialsPagination :global(.swiper-pagination-bullet-active) {

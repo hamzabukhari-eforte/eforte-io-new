@@ -217,22 +217,22 @@ export const dataShowcase: DataShowcaseItem[] = [
     href: "/case-studies/dostpay",
   },
   {
-    id: "bioresearch-labs",
-    brand: "BioResearch Labs",
-    category: "Pharmaceutical research",
+    id: "oddysee",
+    brand: "Oddysee",
+    category: "Licensing | Civic-Municipal",
     paragraphs: [
-      "BioResearch Labs is a pharmaceutical research organization conducting multiple Phase II and III clinical trials across more than 40 global research sites.",
+      "Oddysee automates licensing for domains that need heavy documentation, with pre-written templates and guided agentic workflows.",
     ],
     tags: [
-      "Clinical trial data",
-      "Data governance",
-      "Pharma research",
+      "Licensing automation",
+      "Documentation",
+      "Guided workflows",
     ],
     image:
-      "/assets/final-images/capabilities/product-design/bioresearch_labs_success-story-v2.png",
-    imageAlt: "BioResearch Labs clinical research platform",
-    background: "#000000",
-    href: "/case-studies/bioresearch-labs",
+      "/assets/final-images/capabilities/product-design/oddysee-success-story.png",
+    imageAlt: "Oddysee licensing marketplace across desktop, tablet, and watch",
+    background: "#032841",
+    href: "/case-studies/oddysee",
   },
   {
     id: "investment-markets",

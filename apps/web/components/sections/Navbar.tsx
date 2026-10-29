@@ -150,47 +150,47 @@ function getMobileMenuColumns(
   );
 }
 
-/** Featured Impact Studies from mega menu DOC (4August2026). Full list lives on /impact-studies. */
+/** Featured Impact Studies (old-site originals). Full list lives on /impact-studies. */
 const impactStudiesMenuItems: MegaMenuItem[] = [
   {
-    title: "M&A Process Automation for Iberian Ventures",
+    title: "Krank",
     description:
-      "A mid-sized M&A advisory firm in Lisbon, Portugal managing 30+ active buy-side mandates and tracking 500+ potential acquisition targets.",
-    href: "/case-studies/iberian-ventures",
-    imageSrc: impactStudyImages["iberian-ventures"]?.hero,
+      "A private sales network for buying, selling, renting, and auctioning heavy machinery with protected company networks.",
+    href: "/case-studies/krank",
+    imageSrc: impactStudyImages["krank"]?.hero,
   },
   {
-    title: "Trade Process Automation for GlobalTrade Solutions",
+    title: "Oddysee",
     description:
-      "An international trading house managing 1,200+ annual transactions across multiple commodity categories with a network of 350+ suppliers.",
-    href: "/case-studies/globaltrade-solutions",
-    imageSrc: impactStudyImages["globaltrade-solutions"]?.hero,
+      "Automating licensing paperwork with guided, agentic document workflows for domains that need heavy documentation.",
+    href: "/case-studies/oddysee",
+    imageSrc: impactStudyImages["oddysee"]?.hero,
   },
   {
-    title: "Insurance Claims Processing Automation for Allied Insurance",
+    title: "Investment Markets",
     description:
-      "A regional insurance provider processing 50,000+ claims annually across auto, home, and commercial lines.",
-    href: "/case-studies/allied-insurance",
-    imageSrc: impactStudyImages["allied-insurance"]?.hero,
+      "Connecting high net worth investors to growth and income opportunities through agentic discovery.",
+    href: "/case-studies/investment-markets",
+    imageSrc: impactStudyImages["investment-markets"]?.hero,
   },
   {
-    title: "Clinical Trial Data Management for BioResearch Labs",
+    title: "Prism",
     description:
-      "A pharmaceutical research organization conducting multiple Phase II and III clinical trials across 40+ global research sites.",
-    href: "/case-studies/bioresearch-labs",
-    imageSrc: impactStudyImages["bioresearch-labs"]?.hero,
+      "Powering retail demand forecasting with intelligent trend modeling and agent-driven insights.",
+    href: "/case-studies/prism",
+    imageSrc: impactStudyImages["prism"]?.hero,
   },
   {
-    title: "Accounts Payable Automation for Global Manufacturing Corp",
+    title: "Scheduling Engine",
     description:
-      "Automating accounts payable across regions with agentic invoice intelligence and ERP integration.",
-    href: "/case-studies/global-manufacturing-corp",
-    imageSrc: impactStudyImages["global-manufacturing-corp"]?.hero,
+      "Automating workforce scheduling across call centers and retail chains with fewer conflicts.",
+    href: "/case-studies/scheduling-engine",
+    imageSrc: impactStudyImages["scheduling-engine"]?.hero,
   },
   {
-    title: "Tach Ignite",
+    title: "TachIgnite",
     description:
-      "TachIgnite is a Day Zero startup accelerator focused on transforming raw ideas into market-ready innovations.",
+      "A Day Zero startup accelerator focused on transforming raw ideas into market-ready innovations.",
     href: "/case-studies/tachignite",
     imageSrc: impactStudyImages["tachignite"]?.hero,
   },
@@ -1845,10 +1845,15 @@ export default function Navbar({
       >
         <Container className="h-full flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center" onClick={closeMobileMenu}>
+          <Link
+            href="/"
+            className="flex items-center"
+            onClick={closeMobileMenu}
+            aria-label="eForte home"
+          >
             <Image
               src="/assets/images/logo.svg"
-              alt="eForte Logo"
+              alt="eForte"
               width={105}
               height={32}
               className="h-6 md:h-8 w-full max-w-28"
@@ -1968,14 +1973,20 @@ export default function Navbar({
                           type="button"
                           onClick={() => toggleMobileSection(link.id)}
                           aria-expanded={isExpanded}
+                          aria-label={
+                            isExpanded
+                              ? `Collapse ${link.label} menu`
+                              : `Expand ${link.label} menu`
+                          }
                           className="flex w-full items-center justify-between gap-3 px-6 py-4 text-left text-base font-normal text-white transition-colors duration-200 hover:bg-white/10"
                         >
-                          <span>{link.label}</span>
+                          <span aria-hidden="true">{link.label}</span>
                           <HiChevronDown
                             className={cn(
                               "h-5 w-5 shrink-0 text-white/70 transition-transform duration-200",
                               isExpanded && "rotate-180"
                             )}
+                            aria-hidden
                           />
                         </button>
                       ) : (

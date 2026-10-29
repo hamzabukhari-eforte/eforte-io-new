@@ -25,69 +25,68 @@ export type HomeCaseStudy = {
 
 export const homeCaseStudies: HomeCaseStudy[] = [
   {
-    id: "bioresearch-labs",
-    clientName: "BioResearch Labs",
-    title: "Clinical Trial Data Management",
+    id: "scheduling-engine",
+    clientName: "Scheduling Engine",
+    title: "Automating Workforce Scheduling",
     paragraphs: [
-      "We automated the extraction and standardization of clinical data across global research sites. This eliminated manual data wrangling, achieving 99.8% data accuracy and accelerating the study completion timeline by 42%.",
-      "In partnership with eForte, BioResearch Labs leveraged data and machine learning to fundamentally overhaul crucial functions. We engineered predictive models that deliver faster insights and significantly cut operational costs, revolutionizing clinical assessment.",
+      "Scheduling Engine automates workforce scheduling across call centers and retail chains, reducing conflicts and giving supervisors a reliable, agent-driven way to staff every shift.",
+      "In partnership with eForte, the platform turned fragmented spreadsheet schedules into an intelligent system that balances coverage, preferences, and labor rules at scale.",
     ],
     stats: [
       {
-        value: "99.8%",
-        label: "Data accuracy across 40+ global research sites",
+        value: "500K+",
+        label: "Shifts scheduled across call centers and retail",
       },
       {
-        value: "42%",
-        label: "Faster study completion timeline",
+        value: "80%",
+        label: "Reduction in scheduling conflicts",
       },
       {
-        value: "76%",
-        label: "Reduction in clinical data processing time",
+        value: "10 min",
+        label: "Average time to publish a full weekly roster",
       },
       {
-        value: "0",
-        label: "Compliance findings in regulatory audits",
+        value: "24/7",
+        label: "Agent-assisted coverage for last-minute changes",
       },
     ],
     ctaLabel: "View Case Study",
-    ctaHref: impactStudyHref("bioresearch-labs"),
+    ctaHref: impactStudyHref("scheduling-engine"),
     imageSrc:
-      "/assets/final-images/home-case-studies/bioresearch-labs-mockup.png",
+      "/assets/images/case-study/new-images/scheduling-engine/scheduling-main.png",
     imageAlt:
-      "BioResearch Labs clinical trial data platform mockup across laptop, phone, and tablet",
+      "Scheduling Engine workforce scheduling platform mockup",
   },
   {
-    id: "allied-insurance",
-    clientName: "Allied Insurance",
-    title: "AI-Driven Claims Processing",
+    id: "sellsmart",
+    clientName: "Sellsmart",
+    title: "Agentic Point of Sale Intelligence",
     paragraphs: [
-      "Integrating computer vision with a 15-year-old legacy system, we automated claims verification and fraud detection. The result was a dramatic reduction in processing time from 9 days to 36 hours, with fraud detection accuracy improving to 94%.",
-      "Allied Insurance set out to simplify modern insurance claims. Through collaboration with eForte, they harnessed deep data insights to sustain aggressive growth, deliver a superior user experience, and secure their position as a standout leader in the global Insurance sector.",
+      "Sellsmart brings agentic intelligence to point of sale, helping retailers process transactions faster while keeping every checkout step consistent as volume grows.",
+      "eForte helped Sellsmart unify inventory, payments, and cashier workflows so stores could scale throughput without sacrificing accuracy or customer experience.",
     ],
     stats: [
       {
-        value: "36h",
-        label: "Average claims resolution, down from 9 days",
+        value: "2M+",
+        label: "Transactions processed on the platform",
       },
       {
-        value: "94%",
-        label: "Fraud detection accuracy, up from 71%",
+        value: "35%",
+        label: "Reduction in average checkout time",
       },
       {
-        value: "83%",
-        label: "Reduction in manual data entry at intake",
+        value: "99%",
+        label: "Transaction accuracy across retail locations",
       },
       {
-        value: "42%",
-        label: "Decrease in processing cost per claim",
+        value: "1",
+        label: "Unified POS workflow for every store",
       },
     ],
     ctaLabel: "View Case Study",
-    ctaHref: impactStudyHref("allied-insurance"),
+    ctaHref: impactStudyHref("sellsmart"),
     imageSrc:
-      "/assets/final-images/home-case-studies/allied-insurance-mockup.png",
-    imageAlt:
-      "Allied Insurance claims command center mockup across laptop, phone, and tablet",
+      "/assets/images/case-study/new-images/sellsmart/sellsMart-main.png",
+    imageAlt: "Sellsmart point of sale platform mockup",
   },
 ];

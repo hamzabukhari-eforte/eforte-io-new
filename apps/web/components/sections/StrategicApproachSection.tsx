@@ -161,10 +161,9 @@ export default function StrategicApproachSection() {
                 >
                   <Image
                     src="/assets/images/landing/strategic-approach-core.svg"
-                    alt=""
+                    alt="Strategic approach diagram connecting Regulated-by-Design AI, Verifiable AI Transparency, and Human AI Oversight"
                     fill
                     className="object-contain"
-                    aria-hidden
                   />
                 </motion.div>
 

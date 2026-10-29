@@ -1,17 +1,15 @@
 import type { CSSProperties, ReactNode } from "react";
-import {
-  SiAmazonwebservices,
-  SiFigma,
-  SiGoogle,
-  SiPaypal,
-  SiSlack,
-} from "react-icons/si";
 import { cn } from "@/lib/utils";
 
+/**
+ * All PNGs are height-normalized (128px). Displayed at a shared CSS height.
+ * `opticalScale` corrects ink-density differences (sparse marks like Single Grain
+ * vs bold wordmarks like Greentoe) so they read as the same size.
+ */
+const LOGO_HEIGHT_PX = 36;
+
 const wrap =
-  "flex h-12 items-center justify-center px-4 md:h-16";
-const iconClass =
-  "text-2xl md:text-3xl transition-[color,transform] duration-300 ease-out";
+  "flex h-14 shrink-0 items-center justify-center px-4 md:px-5";
 
 function LogoTooltip({
   name,
@@ -26,7 +24,6 @@ function LogoTooltip({
       className="group relative z-10 flex items-center justify-center overflow-visible hover:z-[200]"
     >
       {children}
-      {/* Above the logo so overflow-hidden heroes don't clip the name */}
       <span
         role="tooltip"
         className="pointer-events-none absolute bottom-full left-1/2 z-[200] mb-2 -translate-x-1/2 whitespace-nowrap rounded-full border border-white/15 bg-black/95 px-3 py-1.5 text-xs font-semibold tracking-wide text-white opacity-0 shadow-[0_8px_24px_rgba(0,0,0,0.45)] transition-opacity duration-200 group-hover:opacity-100"
@@ -37,44 +34,38 @@ function LogoTooltip({
   );
 }
 
-function BrandImage({
+function ClientBrandImage({
   src,
   alt,
-  width = 120,
   tone,
-  hoverColor,
+  opticalScale = 1,
 }: {
   src: string;
   alt: string;
-  width?: number;
   tone: "white" | "dark";
-  hoverColor: string;
+  opticalScale?: number;
 }) {
-  // Monochrome mask so hover can swap to brand color (assets are gray fills)
-  const maskStyle: CSSProperties = {
-    width,
-    height: 32,
-    WebkitMaskImage: `url(${src})`,
-    maskImage: `url(${src})`,
-    WebkitMaskSize: "contain",
-    maskSize: "contain",
-    WebkitMaskRepeat: "no-repeat",
-    maskRepeat: "no-repeat",
-    WebkitMaskPosition: "center",
-    maskPosition: "center",
-  };
+  const style = {
+    height: LOGO_HEIGHT_PX,
+    width: "auto",
+    ["--logo-scale" as string]: String(opticalScale),
+    transform: "scale(var(--logo-scale))",
+  } satisfies CSSProperties;
 
   return (
     <LogoTooltip name={alt}>
       <div className={wrap}>
-        <span
-          aria-label={alt}
-          role="img"
-          style={maskStyle}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={src}
+          alt={alt}
+          style={style}
           className={cn(
-            "inline-block transition-[background-color,transform] duration-300 ease-out group-hover:scale-105",
-            tone === "white" ? "bg-white" : "bg-default",
-            hoverColor
+            "object-contain opacity-90 transition-[opacity,transform] duration-300 ease-out group-hover:opacity-100",
+            "group-hover:[transform:scale(calc(var(--logo-scale)*1.05))]",
+            tone === "white"
+              ? "[mix-blend-mode:screen]"
+              : "[mix-blend-mode:multiply] brightness-0"
           )}
         />
       </div>
@@ -82,138 +73,85 @@ function BrandImage({
   );
 }
 
-function BrandIcon({
-  name,
-  tone,
-  hoverClass,
-  Icon,
-}: {
-  name: string;
-  tone: "white" | "dark";
-  hoverClass: string;
-  Icon: typeof SiFigma;
-}) {
-  const iconTone = tone === "white" ? "text-white" : "text-default";
-
-  return (
-    <LogoTooltip name={name}>
-      <div className={cn(wrap, iconTone)} role="img" aria-label={name}>
-        <Icon
-          className={cn(iconClass, "group-hover:scale-105", hoverClass)}
-          aria-hidden
-        />
-      </div>
-    </LogoTooltip>
-  );
-}
+/**
+ * opticalScale from measured ink density + visual QA:
+ * sparse/light marks scale up; bold wide wordmarks scale down.
+ */
+const CLIENT_LOGOS = [
+  {
+    id: "1and1",
+    src: "/assets/final-images/Clients/Trusted_Brands_1.png?v=8",
+    alt: "1&1",
+    opticalScale: 0.92,
+  },
+  {
+    id: "york-university",
+    src: "/assets/final-images/Clients/Trusted_Brands_2.png?v=8",
+    alt: "York University",
+    opticalScale: 0.95,
+  },
+  {
+    id: "universal-music-sa",
+    src: "/assets/final-images/Clients/Trusted_Brands_3.png?v=8",
+    alt: "Universal Music South Africa",
+    opticalScale: 1.2,
+  },
+  {
+    id: "single-grain",
+    src: "/assets/final-images/Clients/Trusted_Brands_4.png?v=8",
+    alt: "Single Grain",
+    opticalScale: 1.25,
+  },
+  {
+    id: "harley-davidson",
+    src: "/assets/final-images/Clients/Trusted_Brands_5.png?v=8",
+    alt: "Harley-Davidson",
+    opticalScale: 1.15,
+  },
+  {
+    id: "markethealth",
+    src: "/assets/final-images/Clients/Trusted_Brands_6.png?v=8",
+    alt: "MarketHealth Affiliate Network",
+    opticalScale: 1.05,
+  },
+  {
+    id: "decathlon",
+    src: "/assets/final-images/Clients/Trusted_Brands_7.png?v=8",
+    alt: "Decathlon",
+    opticalScale: 0.82,
+  },
+  {
+    id: "greentoe",
+    src: "/assets/final-images/Clients/Trusted_Brands_8.png?v=8",
+    alt: "Greentoe",
+    opticalScale: 0.78,
+  },
+  {
+    id: "london-real",
+    src: "/assets/final-images/Clients/Trusted_Brands_9.png?v=8",
+    alt: "London Real",
+    opticalScale: 0.8,
+  },
+] as const;
 
 function buildLogos(tone: "white" | "dark") {
-  return [
-    {
-      id: "land-id",
-      content: (
-        <BrandImage
-          src="/assets/final-images/brands/landid.svg"
-          alt="Land id."
-          width={110}
-          tone={tone}
-          hoverColor="group-hover:bg-[#4F46E5]"
-        />
-      ),
-    },
-    {
-      id: "figma",
-      content: (
-        <BrandIcon
-          name="Figma"
-          tone={tone}
-          Icon={SiFigma}
-          hoverClass="group-hover:text-[#F24E1E]"
-        />
-      ),
-    },
-    {
-      id: "ripple",
-      content: (
-        <BrandImage
-          src="/assets/final-images/brands/ripple.svg"
-          alt="Ripple"
-          width={110}
-          tone={tone}
-          hoverColor="group-hover:bg-[#008CFF]"
-        />
-      ),
-    },
-    {
-      id: "google",
-      content: (
-        <BrandIcon
-          name="Google"
-          tone={tone}
-          Icon={SiGoogle}
-          hoverClass="group-hover:text-[#4285F4]"
-        />
-      ),
-    },
-    {
-      id: "shopify",
-      content: (
-        <BrandImage
-          src="/assets/final-images/brands/shopify.svg"
-          alt="Shopify"
-          width={120}
-          tone={tone}
-          hoverColor="group-hover:bg-[#96BF48]"
-        />
-      ),
-    },
-    {
-      id: "onesignal",
-      content: (
-        <BrandImage
-          src="/assets/final-images/brands/onesignal.svg"
-          alt="OneSignal"
-          width={130}
-          tone={tone}
-          hoverColor="group-hover:bg-[#E54B4D]"
-        />
-      ),
-    },
-    {
-      id: "slack",
-      content: (
-        <BrandIcon
-          name="Slack"
-          tone={tone}
-          Icon={SiSlack}
-          hoverClass="group-hover:text-[#E01E5A]"
-        />
-      ),
-    },
-    {
-      id: "paypal",
-      content: (
-        <BrandIcon
-          name="PayPal"
-          tone={tone}
-          Icon={SiPaypal}
-          hoverClass="group-hover:text-[#0070BA]"
-        />
-      ),
-    },
-    {
-      id: "aws",
-      content: (
-        <BrandIcon
-          name="AWS"
-          tone={tone}
-          Icon={SiAmazonwebservices}
-          hoverClass="group-hover:text-[#FF9900]"
-        />
-      ),
-    },
-  ];
+  return CLIENT_LOGOS.map((logo) => ({
+    id: logo.id,
+    content: (
+      <ClientBrandImage
+        src={logo.src}
+        alt={logo.alt}
+        tone={tone}
+        opticalScale={logo.opticalScale}
+      />
+    ),
+  }));
 }
+
+/* Preserved prior tech-brand strip (Google, PayPal, Slack, Shopify, Figma,
+   Ripple, OneSignal, AWS, Land id) — removed for audit C-03; assets remain
+   under public/assets/final-images/brands/ for possible reuse.
+   Untouched source PNGs backed up under Clients/_originals/. */
 
 export const defaultTrustedByLogos = buildLogos("white");
 

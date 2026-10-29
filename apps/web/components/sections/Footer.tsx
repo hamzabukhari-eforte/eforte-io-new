@@ -45,10 +45,10 @@ export default function Footer() {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-block" aria-label="eForte home">
               <Image
                 src="/assets/images/logo.svg"
-                alt="eForte Logo"
+                alt="eForte"
                 width={140}
                 height={42}
                 className="h-8 md:h-10 w-auto"

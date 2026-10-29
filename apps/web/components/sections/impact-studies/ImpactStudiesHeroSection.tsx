@@ -62,6 +62,13 @@ export default function ImpactStudiesHeroSection() {
           pagination={{
             el: paginationEl,
             clickable: true,
+            renderBullet: (index, className) => {
+              const slide = impactStudiesHero[index];
+              const label = slide
+                ? `Go to ${slide.name}`
+                : `Go to slide ${index + 1}`;
+              return `<button type="button" class="${className}" aria-label="${label}"></button>`;
+            },
           }}
           onSlideChange={(swiper) => handleSlideChange(swiper.realIndex)}
         >
@@ -73,7 +80,7 @@ export default function ImpactStudiesHeroSection() {
               <figure className={styles.slideBg}>
                 <Image
                   src={slide.image}
-                  alt=""
+                  alt={`${slide.name} — ${slide.headline}`}
                   fill
                   priority={index === 0}
                   sizes="100vw"
