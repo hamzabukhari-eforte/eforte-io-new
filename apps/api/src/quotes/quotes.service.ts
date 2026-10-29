@@ -1,13 +1,19 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
+import { MailService } from '../mail/mail.service';
 import { CreateQuoteDto } from './dto/create-quote.dto';
 
 @Injectable()
 export class QuotesService {
-  constructor(private readonly prisma: PrismaService) {}
+  private readonly logger = new Logger(QuotesService.name);
 
-  create(dto: CreateQuoteDto) {
-    return this.prisma.quoteSubmission.create({
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly mail: MailService,
+  ) {}
+
+  async create(dto: CreateQuoteDto) {
+    const submission = await this.prisma.quoteSubmission.create({
       data: {
         businessName: dto.businessName,
         firstName: dto.firstName,
@@ -22,5 +28,16 @@ export class QuotesService {
         requirements: dto.requirements,
       },
     });
+
+    try {
+      await this.mail.sendQuoteEmails(dto);
+    } catch (error) {
+      this.logger.error(
+        `Quote saved (${submission.id}) but email failed`,
+        error instanceof Error ? error.stack : String(error),
+      );
+    }
+
+    return submission;
   }
 }

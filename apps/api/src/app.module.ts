@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { PrismaModule } from './prisma/prisma.module';
 import { HealthModule } from './health/health.module';
+import { MailModule } from './mail/mail.module';
 import { ContactModule } from './contact/contact.module';
 import { QuotesModule } from './quotes/quotes.module';
 import { CareersModule } from './careers/careers.module';
@@ -9,6 +10,7 @@ import { CareersModule } from './careers/careers.module';
   imports: [
     PrismaModule,
     HealthModule,
+    MailModule,
     ContactModule,
     QuotesModule,
     CareersModule,

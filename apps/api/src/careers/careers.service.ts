@@ -1,5 +1,6 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
+import { MailService } from '../mail/mail.service';
 import { CreateCareerDto } from './dto/create-career.dto';
 
 export type CareerResumeMeta = {
@@ -11,10 +12,15 @@ export type CareerResumeMeta = {
 
 @Injectable()
 export class CareersService {
-  constructor(private readonly prisma: PrismaService) {}
+  private readonly logger = new Logger(CareersService.name);
 
-  create(dto: CreateCareerDto, resume?: CareerResumeMeta) {
-    return this.prisma.careerApplication.create({
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly mail: MailService,
+  ) {}
+
+  async create(dto: CreateCareerDto, resume?: CareerResumeMeta) {
+    const application = await this.prisma.careerApplication.create({
       data: {
         firstName: dto.firstName,
         lastName: dto.lastName,
@@ -28,5 +34,16 @@ export class CareersService {
         resumeSizeBytes: resume?.sizeBytes,
       },
     });
+
+    try {
+      await this.mail.sendCareerEmails(dto, resume);
+    } catch (error) {
+      this.logger.error(
+        `Career application saved (${application.id}) but email failed`,
+        error instanceof Error ? error.stack : String(error),
+      );
+    }
+
+    return application;
   }
 }

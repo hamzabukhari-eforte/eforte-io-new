@@ -1,6 +1,12 @@
+import { config as loadEnv } from 'dotenv';
+import { resolve } from 'path';
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
+
+// Prefer monorepo root .env when running under turbo / nest watch
+loadEnv({ path: resolve(process.cwd(), '../../.env') });
+loadEnv({ path: resolve(process.cwd(), '.env') });
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
