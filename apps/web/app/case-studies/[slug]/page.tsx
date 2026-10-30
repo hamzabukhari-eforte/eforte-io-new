@@ -34,9 +34,9 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+}>): Promise<Metadata> {
   const { slug: rawSlug } = await params;
   if (!rawSlug) return { title: "Case Study | eForte" };
 
@@ -54,9 +54,9 @@ export async function generateMetadata({
 
 export default async function CaseStudyPage({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>;
-}) {
+}>) {
   const { slug: rawSlug } = await params;
   const incomingSlug =
     typeof rawSlug === "string" ? rawSlug.trim().toLowerCase() : "";

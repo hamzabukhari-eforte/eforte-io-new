@@ -18,7 +18,7 @@ const valueImageMap: Record<ValueIconName, string> = {
 const imageSlotClass =
   "w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 shrink-0 flex items-center justify-center overflow-hidden";
 
-function ValueImage({ name }: { name: ValueIconName }) {
+function ValueImage({ name }: Readonly<{ name: ValueIconName }>) {
   const src = valueImageMap[name];
   return (
     <div className={imageSlotClass}>
@@ -50,10 +50,10 @@ const cardVariants = {
 export default function ValueCard({
   item,
   index,
-}: {
+}: Readonly<{
   item: ValueItem;
   index: number;
-}) {
+}>) {
   return (
     <motion.div
       className="relative flex min-h-48 items-start gap-0"

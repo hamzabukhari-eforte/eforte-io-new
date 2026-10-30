@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useLayoutEffect, useRef, useState, type MutableRefObject } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type RefObject } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -70,6 +70,39 @@ function isNavHrefActive(pathname: string, href?: string): boolean {
   if (!href) return false;
   if (href === "/") return pathname === "/";
   return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+function getMegaMenuLearnMoreHref(activeMenu: string | null): string {
+  if (activeMenu === "ai-workflows") return "/ai-workflows";
+  if (activeMenu === "capabilities") return "/capabilities";
+  return "#";
+}
+
+function getNavBarClassName(
+  isMegaMenuOpen: boolean,
+  useSolidNav: boolean,
+  isScrollLocked: boolean
+): string {
+  const base = cn(
+    "fixed top-0 left-0 z-[110] w-full",
+    "h-16 md:h-20",
+    isScrollLocked && SCROLLBAR_COMPENSATION_CLASS
+  );
+
+  if (isMegaMenuOpen) {
+    return cn(base, "bg-transparent shadow-none transition-none");
+  }
+
+  let solidClass = "bg-transparent";
+  if (useSolidNav) {
+    solidClass = "bg-black/60 backdrop-blur-md shadow-sm";
+  }
+
+  return cn(
+    base,
+    "transition-[background-color,box-shadow,backdrop-filter] duration-300",
+    solidClass
+  );
 }
 
 /** Shared mega-menu item chrome: theme pink 1px stroke hover + selected */
@@ -844,7 +877,7 @@ function resolveMegaMenuConfig(
 export default function Navbar({
   insightsMenuData,
   aiPillarsInsights,
-}: NavbarProps) {
+}: Readonly<NavbarProps>) {
   const pathname = usePathname();
   const isScrolled = useScroll(10);
   const lenisControl = useLenisControl();
@@ -858,7 +891,7 @@ export default function Navbar({
   const bindMegaMenuWheelScroll = useCallback(
     (
       node: HTMLDivElement | null,
-      cleanupRef: MutableRefObject<(() => void) | null>
+      cleanupRef: RefObject<(() => void) | null>
     ) => {
       cleanupRef.current?.();
       cleanupRef.current = null;
@@ -958,8 +991,10 @@ export default function Navbar({
           className="hidden xl:block fixed inset-x-0 top-0 bottom-0 z-[100]"
         >
           {/* Backdrop */}
-          <div
-            className="absolute inset-0 bg-black/40"
+          <button
+            type="button"
+            className="absolute inset-0 border-0 bg-black/40 p-0"
+            aria-label="Close menu"
             onClick={closeMegaMenu}
           />
 
@@ -987,7 +1022,7 @@ export default function Navbar({
                   onClick={closeMegaMenu}
                   className="inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80"
                 >
-                  Learn more
+                  Learn more{' '}
                   <span className="ml-1 text-base" aria-hidden="true">
                     →
                   </span>
@@ -1008,7 +1043,7 @@ export default function Navbar({
                   const cardContent = (
                     <>
                       <div className="relative aspect-4/3 w-full shrink-0 overflow-hidden bg-[#0A0A1A]">
-                        {item.logos && item.logos.length > 0 ? (
+                        {item.logos && item.logos.length > 0 && (
                           <div className="absolute inset-0 flex flex-wrap items-center justify-center gap-x-5 gap-y-4 bg-gradient-to-br from-[#12122a] via-[#0A0A1A] to-[#151530] p-5">
                             {item.logos.map((logo, logoIndex) => (
                               <motion.div
@@ -1037,7 +1072,9 @@ export default function Navbar({
                               </motion.div>
                             ))}
                           </div>
-                        ) : item.imageSrc ? (
+                        )}
+                        {!(item.logos && item.logos.length > 0) &&
+                          item.imageSrc && (
                           <Image
                             src={item.imageSrc}
                             alt={item.title}
@@ -1049,7 +1086,7 @@ export default function Navbar({
                             }
                             sizes="(max-width: 1024px) 33vw, 280px"
                           />
-                        ) : null}
+                        )}
                       </div>
                       <div className="flex flex-col flex-1 p-5 space-y-3">
                         {item.tag && (
@@ -1066,7 +1103,7 @@ export default function Navbar({
                           </p>
                         )}
                         <span className="mt-auto pt-1 inline-flex items-center text-sm font-semibold text-primary-pink group-hover:text-primary-pink/90 transition-colors">
-                          Learn more
+                          Learn more{' '}
                           <span className="ml-1" aria-hidden="true">
                             →
                           </span>
@@ -1104,7 +1141,12 @@ export default function Navbar({
         <div
           className="hidden xl:block fixed inset-x-0 top-0 bottom-0 z-[100]"
         >
-          <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
+          <button
+            type="button"
+            className="absolute inset-0 border-0 bg-black/40 p-0"
+            aria-label="Close menu"
+            onClick={closeMegaMenu}
+          />
           <div
             className="absolute inset-x-0 top-0 max-h-full overflow-hidden border-b border-white/10 bg-[#050514]/95 pt-16 backdrop-blur-2xl md:pt-20"
             onMouseLeave={closeMegaMenu}
@@ -1123,7 +1165,7 @@ export default function Navbar({
                   onClick={closeMegaMenu}
                   className="mt-1 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80"
                 >
-                  Learn more
+                  Learn more{' '}
                   <span className="ml-1 text-base" aria-hidden="true">→</span>
                 </Link>
                 <div className="mt-4 h-px w-10 bg-white/10" />
@@ -1190,7 +1232,12 @@ export default function Navbar({
         <div
           className="hidden xl:block fixed inset-x-0 top-0 bottom-0 z-[100]"
         >
-          <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
+          <button
+            type="button"
+            className="absolute inset-0 border-0 bg-black/40 p-0"
+            aria-label="Close menu"
+            onClick={closeMegaMenu}
+          />
           <div
             className="absolute inset-x-0 top-0 flex max-h-[90%] flex-col overflow-hidden border-b border-white/10 bg-[#050514]/95 pt-16 backdrop-blur-2xl md:pt-20"
             onMouseLeave={closeMegaMenu}
@@ -1209,7 +1256,7 @@ export default function Navbar({
                   onClick={closeMegaMenu}
                   className="mt-1 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80"
                 >
-                  Learn more
+                  Learn more{' '}
                   <span className="ml-1 text-base" aria-hidden="true">→</span>
                 </Link>
                 <div className="mt-4 h-px w-10 bg-white/10" />
@@ -1288,7 +1335,12 @@ export default function Navbar({
         <div
           className="hidden xl:block fixed inset-x-0 top-0 bottom-0 z-[100]"
         >
-          <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
+          <button
+            type="button"
+            className="absolute inset-0 border-0 bg-black/40 p-0"
+            aria-label="Close menu"
+            onClick={closeMegaMenu}
+          />
           <div
             className="absolute inset-x-0 top-0 max-h-full overflow-hidden border-b border-white/10 bg-[#050514]/95 pt-16 backdrop-blur-2xl md:pt-20"
             onMouseLeave={closeMegaMenu}
@@ -1307,7 +1359,7 @@ export default function Navbar({
                   onClick={closeMegaMenu}
                   className="mt-1 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80"
                 >
-                  Learn more
+                  Learn more{' '}
                   <span className="ml-1 text-base" aria-hidden="true">→</span>
                 </Link>
                 <div className="h-px w-10 bg-white/10" />
@@ -1414,7 +1466,12 @@ export default function Navbar({
         <div
           className="hidden xl:block fixed inset-x-0 top-0 bottom-0 z-[100]"
         >
-          <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
+          <button
+            type="button"
+            className="absolute inset-0 border-0 bg-black/40 p-0"
+            aria-label="Close menu"
+            onClick={closeMegaMenu}
+          />
           <div
             className="absolute inset-x-0 top-0 max-h-full overflow-hidden border-b border-white/10 bg-[#050514]/95 pt-16 backdrop-blur-2xl md:pt-20"
             onMouseLeave={closeMegaMenu}
@@ -1516,7 +1573,12 @@ export default function Navbar({
 
       return (
         <div className="hidden xl:block fixed inset-x-0 top-0 bottom-0 z-[100]">
-          <div className="absolute inset-0 bg-black/40" onClick={closeMegaMenu} />
+          <button
+            type="button"
+            className="absolute inset-0 border-0 bg-black/40 p-0"
+            aria-label="Close menu"
+            onClick={closeMegaMenu}
+          />
           <div
             className="absolute inset-x-0 top-0 flex max-h-[90%] flex-col overflow-hidden border-b border-white/10 bg-[#050514]/95 pt-16 backdrop-blur-2xl md:pt-20"
             onMouseLeave={closeMegaMenu}
@@ -1537,7 +1599,7 @@ export default function Navbar({
                   onClick={closeMegaMenu}
                   className="mt-2 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80"
                 >
-                  Learn more
+                  Learn more{' '}
                   <span className="ml-1 text-base" aria-hidden="true">
                     →
                   </span>
@@ -1654,8 +1716,10 @@ export default function Navbar({
         className="hidden xl:block fixed inset-x-0 top-0 bottom-0 z-[100]"
       >
         {/* Backdrop */}
-        <div
-          className="absolute inset-0 bg-black/40"
+        <button
+          type="button"
+          className="absolute inset-0 border-0 bg-black/40 p-0"
+          aria-label="Close menu"
           onClick={closeMegaMenu}
         />
 
@@ -1678,17 +1742,11 @@ export default function Navbar({
               <p className="text-sm text-white">{config.description}</p>
               {activeMenu !== "ai-pillars" ? (
                 <Link
-                  href={
-                    activeMenu === "ai-workflows"
-                      ? "/ai-workflows"
-                      : activeMenu === "capabilities"
-                        ? "/capabilities"
-                        : "#"
-                  }
+                  href={getMegaMenuLearnMoreHref(activeMenu)}
                   onClick={closeMegaMenu}
                   className="mt-2 inline-flex items-center text-sm font-semibold text-primary-pink hover:text-primary-pink/80"
                 >
-                  Learn more
+                  Learn more{' '}
                   <span className="ml-1 text-base" aria-hidden="true">
                     →
                   </span>
@@ -1829,18 +1887,10 @@ export default function Navbar({
   return (
     <>
       <nav
-        className={cn(
-          "fixed top-0 left-0 z-[110] w-full",
-          "h-16 md:h-20",
-          isScrollLocked && SCROLLBAR_COMPENSATION_CLASS,
-          isMegaMenuOpen
-            ? "bg-transparent shadow-none transition-none"
-            : cn(
-                "transition-[background-color,box-shadow,backdrop-filter] duration-300",
-                useSolidNav
-                  ? "bg-black/60 backdrop-blur-md shadow-sm"
-                  : "bg-transparent"
-              )
+        className={getNavBarClassName(
+          isMegaMenuOpen,
+          useSolidNav,
+          isScrollLocked
         )}
       >
         <Container className="h-full flex items-center justify-between">
@@ -1873,8 +1923,8 @@ export default function Navbar({
                   onFocus={() => setActiveMenu(link.id)}
                   className={cn(
                     "relative text-base font-normal transition-colors duration-200",
-                    isActive ? "text-white" : "text-white",
-                    "hover:text-white"
+                    // Active state is shown via the underline below; text stays white by design.
+                    "text-white hover:text-white", // NOSONAR typescript:S3923 — intentional identical colors
                   )}
                 >
                   {link.label}
@@ -1933,22 +1983,25 @@ export default function Navbar({
             ? "opacity-100 visible"
             : "opacity-0 invisible pointer-events-none"
         )}
-        onClick={closeMobileMenu}
         inert={!isMobileMenuOpen ? true : undefined}
         aria-hidden={!isMobileMenuOpen}
       >
-        {/* Backdrop */}
-        {/* <div className="absolute inset-0 bg-black/50" /> */}
+        <button
+          type="button"
+          className="absolute inset-0 border-0 bg-transparent p-0"
+          aria-label="Close menu"
+          onClick={closeMobileMenu}
+        />
 
         {/* Menu Panel - Full Width, Below Navbar (glass effect) */}
         <div
           id="mobile-nav-menu"
+          aria-label="Mobile navigation"
           className={cn(
             "absolute top-16 bottom-0 left-0 w-full md:top-20",
             "bg-black/70 backdrop-blur-xl transform transition-transform duration-300",
             isMobileMenuOpen ? "translate-y-0" : "translate-y-full"
           )}
-          onClick={(e) => e.stopPropagation()}
         >
           <div className="flex flex-col h-full">
             {/* Mobile Navigation Links */}
@@ -2006,7 +2059,7 @@ export default function Navbar({
                             onClick={closeMobileMenu}
                             className="inline-flex items-center text-sm font-semibold text-primary-pink"
                           >
-                            View all
+                            View all{' '}
                             <span className="ml-1" aria-hidden="true">
                               →
                             </span>

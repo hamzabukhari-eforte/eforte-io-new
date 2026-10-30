@@ -65,7 +65,21 @@ function getStrapiUrl(): string {
 }
 
 function stripHtml(html: string): string {
-  return html.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+  let text = "";
+  let inTag = false;
+  for (const ch of html) {
+    if (ch === "<") {
+      inTag = true;
+      continue;
+    }
+    if (ch === ">") {
+      inTag = false;
+      text += " ";
+      continue;
+    }
+    if (!inTag) text += ch;
+  }
+  return text.replace(/\s+/g, " ").trim();
 }
 
 function truncate(text: string, maxLength: number): string {

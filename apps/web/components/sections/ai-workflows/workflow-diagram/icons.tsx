@@ -25,11 +25,11 @@ function GrowUp({
   delay,
   inView,
   children,
-}: {
+}: Readonly<{
   delay: number;
   inView: boolean;
   children: ReactNode;
-}) {
+}>) {
   return (
     <motion.g
       style={{ transformBox: "fill-box", transformOrigin: "bottom" }}
@@ -47,11 +47,11 @@ function GrowRight({
   delay,
   inView,
   children,
-}: {
+}: Readonly<{
   delay: number;
   inView: boolean;
   children: ReactNode;
-}) {
+}>) {
   return (
     <motion.g
       style={{ transformBox: "fill-box", transformOrigin: "left" }}
@@ -69,7 +69,7 @@ function GrowRight({
  * ------------------------------------------------------------------ */
 
 /** Inbound message with a live "just arrived" ping. */
-export function MessageIcon({ delay, inView, reduce }: IconProps) {
+export function MessageIcon({ delay, inView, reduce }: Readonly<IconProps>) {
   return (
     <>
       <DrawPath
@@ -115,7 +115,7 @@ export function MessageIcon({ delay, inView, reduce }: IconProps) {
 }
 
 /** Single sheet with a highlighted total line. */
-export function DocumentIcon({ delay, inView }: IconProps) {
+export function DocumentIcon({ delay, inView }: Readonly<IconProps>) {
   return (
     <>
       <PageOutline
@@ -150,7 +150,7 @@ export function DocumentIcon({ delay, inView }: IconProps) {
 }
 
 /** Batch of documents waiting to be processed. */
-export function DocumentStackIcon({ delay, inView }: IconProps) {
+export function DocumentStackIcon({ delay, inView }: Readonly<IconProps>) {
   return (
     <>
       <DrawPath
@@ -185,7 +185,7 @@ export function DocumentStackIcon({ delay, inView }: IconProps) {
 }
 
 /** Application file: a sheet with a person on it. */
-export function PersonFileIcon({ delay, inView }: IconProps) {
+export function PersonFileIcon({ delay, inView }: Readonly<IconProps>) {
   return (
     <>
       <PageOutline
@@ -222,7 +222,7 @@ export function PersonFileIcon({ delay, inView }: IconProps) {
 }
 
 /** Wide top, narrow spout, with a lead dropping through. */
-export function FunnelIcon({ delay, inView, reduce }: IconProps) {
+export function FunnelIcon({ delay, inView, reduce }: Readonly<IconProps>) {
   return (
     <>
       <DrawPath
@@ -261,7 +261,7 @@ export function FunnelIcon({ delay, inView, reduce }: IconProps) {
 }
 
 /** Three feeds converging into an intelligence hub. */
-export function HubIcon({ delay, inView, reduce }: IconProps) {
+export function HubIcon({ delay, inView, reduce }: Readonly<IconProps>) {
   return (
     <>
       <DrawPath
@@ -314,7 +314,29 @@ export function HubIcon({ delay, inView, reduce }: IconProps) {
  * ------------------------------------------------------------------ */
 
 /** Neural core fanning work out to sorted destinations. */
-export function AiCoreIcon({ delay, inView, reduce }: IconProps) {
+export function AiCoreIcon({ delay, inView, reduce }: Readonly<IconProps>) {
+  let coreAnimate:
+    | { r: number; opacity: number }
+    | { r: number[]; opacity: number }
+    | undefined;
+  if (inView) {
+    coreAnimate = reduce
+      ? { r: 3.2, opacity: 1 }
+      : { r: [3, 4.4, 3], opacity: 1 };
+  }
+
+  const coreTransition = reduce
+    ? { duration: 0.3, delay: delay + 0.3 }
+    : {
+        r: {
+          duration: 2.4,
+          delay: delay + 0.4,
+          repeat: Infinity,
+          ease: "easeInOut" as const,
+        },
+        opacity: { duration: 0.3, delay: delay + 0.3 },
+      };
+
   return (
     <>
       <DrawPath
@@ -352,33 +374,37 @@ export function AiCoreIcon({ delay, inView, reduce }: IconProps) {
         cy={20}
         fill={PINK}
         initial={{ r: 0, opacity: 0 }}
-        animate={
-          inView
-            ? reduce
-              ? { r: 3.2, opacity: 1 }
-              : { r: [3, 4.4, 3], opacity: 1 }
-            : undefined
-        }
-        transition={
-          reduce
-            ? { duration: 0.3, delay: delay + 0.3 }
-            : {
-                r: {
-                  duration: 2.4,
-                  delay: delay + 0.4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                },
-                opacity: { duration: 0.3, delay: delay + 0.3 },
-              }
-        }
+        animate={coreAnimate}
+        transition={coreTransition}
       />
     </>
   );
 }
 
 /** Sheet under a sweeping extraction beam. */
-export function ScanIcon({ delay, inView, reduce }: IconProps) {
+export function ScanIcon({ delay, inView, reduce }: Readonly<IconProps>) {
+  let scanAnimate:
+    | { opacity: number }
+    | { opacity: number; y: number[] }
+    | undefined;
+  if (inView) {
+    scanAnimate = reduce
+      ? { opacity: 1 }
+      : { opacity: 1, y: [-5, 5, -5] };
+  }
+
+  const scanTransition = reduce
+    ? { duration: 0.3, delay: delay + 0.3 }
+    : {
+        opacity: { duration: 0.3, delay: delay + 0.3 },
+        y: {
+          duration: 2.6,
+          delay: delay + 0.4,
+          repeat: Infinity,
+          ease: "easeInOut" as const,
+        },
+      };
+
   return (
     <>
       <PageOutline
@@ -404,26 +430,8 @@ export function ScanIcon({ delay, inView, reduce }: IconProps) {
 
       <motion.g
         initial={{ opacity: 0 }}
-        animate={
-          inView
-            ? reduce
-              ? { opacity: 1 }
-              : { opacity: 1, y: [-5, 5, -5] }
-            : undefined
-        }
-        transition={
-          reduce
-            ? { duration: 0.3, delay: delay + 0.3 }
-            : {
-                opacity: { duration: 0.3, delay: delay + 0.3 },
-                y: {
-                  duration: 2.6,
-                  delay: delay + 0.4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                },
-              }
-        }
+        animate={scanAnimate}
+        transition={scanTransition}
       >
         <path
           d="M 7 22 H 33"
@@ -438,7 +446,7 @@ export function ScanIcon({ delay, inView, reduce }: IconProps) {
 }
 
 /** Score dial with the reading swept in as an arc. */
-export function GaugeIcon({ delay, inView, reduce }: IconProps) {
+export function GaugeIcon({ delay, inView, reduce }: Readonly<IconProps>) {
   const cx = 20;
   const cy = 24.5;
   const r = 14;
@@ -504,7 +512,7 @@ export function GaugeIcon({ delay, inView, reduce }: IconProps) {
 }
 
 /** Three sources reconciled into a single confirmation. */
-export function MatchIcon({ delay, inView }: IconProps) {
+export function MatchIcon({ delay, inView }: Readonly<IconProps>) {
   return (
     <>
       <FadeIn delay={delay} inView={inView}>
@@ -579,7 +587,7 @@ export function MatchIcon({ delay, inView }: IconProps) {
 }
 
 /** Capacity sliders being balanced. */
-export function SlidersIcon({ delay, inView }: IconProps) {
+export function SlidersIcon({ delay, inView }: Readonly<IconProps>) {
   const rows = [
     { y: 11, handle: 13, accent: false },
     { y: 20, handle: 24, accent: true },
@@ -627,7 +635,7 @@ export function SlidersIcon({ delay, inView }: IconProps) {
  * ------------------------------------------------------------------ */
 
 /** Turning gear resolving to a confirmed outcome. */
-export function GearCheckIcon({ delay, inView, reduce }: IconProps) {
+export function GearCheckIcon({ delay, inView, reduce }: Readonly<IconProps>) {
   return (
     <>
       <Spin seconds={16} reduce={reduce}>
@@ -660,7 +668,29 @@ export function GearCheckIcon({ delay, inView, reduce }: IconProps) {
 }
 
 /** Hand-off to a headset agent, with an escalation cue. */
-export function AgentIcon({ delay, inView, reduce }: IconProps) {
+export function AgentIcon({ delay, inView, reduce }: Readonly<IconProps>) {
+  let agentAnimate:
+    | { opacity: number }
+    | { opacity: number; y: number[] }
+    | undefined;
+  if (inView) {
+    agentAnimate = reduce
+      ? { opacity: 1 }
+      : { opacity: 1, y: [0, -2.5, 0] };
+  }
+
+  const agentTransition = reduce
+    ? { duration: 0.3, delay: delay + 0.34 }
+    : {
+        opacity: { duration: 0.3, delay: delay + 0.34 },
+        y: {
+          duration: 1.8,
+          delay: delay + 0.6,
+          repeat: Infinity,
+          ease: "easeInOut" as const,
+        },
+      };
+
   return (
     <>
       <DrawCircle cx={18} cy={13} r={6.5} delay={delay} inView={inView} />
@@ -683,26 +713,8 @@ export function AgentIcon({ delay, inView, reduce }: IconProps) {
 
       <motion.g
         initial={{ opacity: 0 }}
-        animate={
-          inView
-            ? reduce
-              ? { opacity: 1 }
-              : { opacity: 1, y: [0, -2.5, 0] }
-            : undefined
-        }
-        transition={
-          reduce
-            ? { duration: 0.3, delay: delay + 0.34 }
-            : {
-                opacity: { duration: 0.3, delay: delay + 0.34 },
-                y: {
-                  duration: 1.8,
-                  delay: delay + 0.6,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                },
-              }
-        }
+        animate={agentAnimate}
+        transition={agentTransition}
       >
         <path
           d="M 34 22 V 10 M 30.6 13.4 L 34 10 L 37.4 13.4"
@@ -718,7 +730,7 @@ export function AgentIcon({ delay, inView, reduce }: IconProps) {
 }
 
 /** Sign-off against a policy or authority hierarchy. */
-export function ClipboardCheckIcon({ delay, inView }: IconProps) {
+export function ClipboardCheckIcon({ delay, inView }: Readonly<IconProps>) {
   return (
     <>
       <DrawPath
@@ -750,7 +762,7 @@ export function ClipboardCheckIcon({ delay, inView }: IconProps) {
 }
 
 /** Rules and regulations enforced. */
-export function ShieldCheckIcon({ delay, inView }: IconProps) {
+export function ShieldCheckIcon({ delay, inView }: Readonly<IconProps>) {
   return (
     <>
       <DrawPath
@@ -770,7 +782,7 @@ export function ShieldCheckIcon({ delay, inView }: IconProps) {
 }
 
 /** Anomaly raised for attention. */
-export function AlertIcon({ delay, inView, reduce }: IconProps) {
+export function AlertIcon({ delay, inView, reduce }: Readonly<IconProps>) {
   return (
     <>
       <DrawPath
@@ -793,7 +805,7 @@ export function AlertIcon({ delay, inView, reduce }: IconProps) {
 }
 
 /** Work advancing through stages, with a rolling highlight. */
-export function StagesIcon({ delay, inView, reduce }: IconProps) {
+export function StagesIcon({ delay, inView, reduce }: Readonly<IconProps>) {
   const chevrons = [
     { d: "M 8 12 L 15 20 L 8 28", stroke: WHITE, width: 1.8 },
     { d: "M 17 12 L 24 20 L 17 28", stroke: WHITE, width: 2 },
@@ -833,7 +845,7 @@ export function StagesIcon({ delay, inView, reduce }: IconProps) {
  * ------------------------------------------------------------------ */
 
 /** Live dashboard with bars growing into place. */
-export function ChartBarIcon({ delay, inView }: IconProps) {
+export function ChartBarIcon({ delay, inView }: Readonly<IconProps>) {
   const bars = [
     { x: 9, height: 10, accent: false },
     { x: 17.5, height: 18, accent: false },
@@ -871,7 +883,7 @@ export function ChartBarIcon({ delay, inView }: IconProps) {
 }
 
 /** Trend line climbing to a highlighted peak. */
-export function TrendUpIcon({ delay, inView, reduce }: IconProps) {
+export function TrendUpIcon({ delay, inView, reduce }: Readonly<IconProps>) {
   return (
     <>
       <DrawPath
@@ -899,7 +911,7 @@ export function TrendUpIcon({ delay, inView, reduce }: IconProps) {
 }
 
 /** Ranked shortlist with the top match starred. */
-export function RankIcon({ delay, inView }: IconProps) {
+export function RankIcon({ delay, inView }: Readonly<IconProps>) {
   const rows = [
     { y: 8, width: 24, accent: true },
     { y: 18, width: 18, accent: false },
@@ -930,7 +942,7 @@ export function RankIcon({ delay, inView }: IconProps) {
 }
 
 /** Cleansed data store. */
-export function DatabaseIcon({ delay, inView }: IconProps) {
+export function DatabaseIcon({ delay, inView }: Readonly<IconProps>) {
   return (
     <>
       <DrawEllipse
@@ -966,7 +978,7 @@ export function DatabaseIcon({ delay, inView }: IconProps) {
 }
 
 /** Generated document, badged as AI-assembled. */
-export function ProposalIcon({ delay, inView, reduce }: IconProps) {
+export function ProposalIcon({ delay, inView, reduce }: Readonly<IconProps>) {
   return (
     <>
       <PageOutline
@@ -1003,7 +1015,7 @@ export function ProposalIcon({ delay, inView, reduce }: IconProps) {
 }
 
 /** Sentiment feeding back into the next run. */
-export function LoopStarIcon({ delay, inView, reduce }: IconProps) {
+export function LoopStarIcon({ delay, inView, reduce }: Readonly<IconProps>) {
   return (
     <>
       <Spin seconds={11} reduce={reduce}>

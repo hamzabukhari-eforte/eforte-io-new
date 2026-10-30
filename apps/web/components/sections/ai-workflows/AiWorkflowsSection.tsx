@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import type { ReactNode } from "react";
 import type { AiWorkflowDomain } from "@/data/ai-workflows";
 import AiWorkflowsReveal from "./AiWorkflowsReveal";
 import { AiWorkflowDiagram, WORKFLOW_STEPS } from "./workflow-diagram";
@@ -12,27 +13,32 @@ function padNumber(index: number) {
 
 export default function AiWorkflowsSection({
   domain,
-}: {
+}: Readonly<{
   domain: AiWorkflowDomain;
-}) {
+}>) {
   const { diagramSrc } = domain;
   const steps = WORKFLOW_STEPS[domain.slug];
-  const diagram = steps ? (
-    <AiWorkflowDiagram
-      steps={steps}
-      label={domain.label}
-      className={styles.workflowDiagramImage}
-    />
-  ) : diagramSrc ? (
-    <Image
-      src={diagramSrc}
-      alt={domain.diagramAlt ?? `${domain.label} workflow diagram`}
-      width={1000}
-      height={240}
-      className={styles.workflowDiagramImage}
-      unoptimized
-    />
-  ) : null;
+  let diagram: ReactNode = null;
+  if (steps) {
+    diagram = (
+      <AiWorkflowDiagram
+        steps={steps}
+        label={domain.label}
+        className={styles.workflowDiagramImage}
+      />
+    );
+  } else if (diagramSrc) {
+    diagram = (
+      <Image
+        src={diagramSrc}
+        alt={domain.diagramAlt ?? `${domain.label} workflow diagram`}
+        width={1000}
+        height={240}
+        className={styles.workflowDiagramImage}
+        unoptimized
+      />
+    );
+  }
 
   return (
     <section className={styles.workflows}>

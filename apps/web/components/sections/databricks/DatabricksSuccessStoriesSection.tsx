@@ -100,19 +100,19 @@ export default function DatabricksSuccessStoriesSection() {
                   {story.outcomes.map((outcome) => {
                     const isWideIcon = outcome.iconSrc.includes("mlflow");
                     const isWideArrows = outcome.iconSrc.includes("arrows");
+                    let iconSizeClass = "h-14 w-14 md:h-16 md:w-16";
+                    if (isWideIcon) {
+                      iconSizeClass = "h-12 w-[140px] md:h-14 md:w-[156px]";
+                    } else if (isWideArrows) {
+                      iconSizeClass = "h-10 w-[72px] md:h-12 md:w-[86px]";
+                    }
                     return (
                       <article
                         key={outcome.id}
                         className="flex min-h-[260px] flex-col rounded-[12px] bg-[#1A1A1A] px-7 py-8 md:min-h-[300px] md:px-8 md:py-9 lg:min-h-[320px]"
                       >
                         <div
-                          className={`relative shrink-0 ${
-                            isWideIcon
-                              ? "h-12 w-[140px] md:h-14 md:w-[156px]"
-                              : isWideArrows
-                                ? "h-10 w-[72px] md:h-12 md:w-[86px]"
-                                : "h-14 w-14 md:h-16 md:w-16"
-                          }`}
+                          className={`relative shrink-0 ${iconSizeClass}`}
                         >
                           <Image
                             src={outcome.iconSrc}

@@ -85,13 +85,13 @@ function ServiceCard({
   icon: Icon,
   accentColor,
   accentGlow,
-}: {
+}: Readonly<{
   title: string;
   description: string;
   icon: IconType;
   accentColor: string;
   accentGlow: string;
-}) {
+}>) {
   return (
     <div
       className="group relative h-full overflow-hidden rounded-[12px] border bg-default/95 p-6 transition-all duration-300 ease-out md:p-8"

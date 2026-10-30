@@ -48,7 +48,7 @@ const nextConfig: NextConfig = {
   },
   // HTML page lives at app/site-map (avoids conflict with app/sitemap.ts → /sitemap.xml).
   // Public URL is /sitemap.
-  async rewrites() {
+  rewrites() {
     return [{ source: "/sitemap", destination: "/site-map" }];
   },
 };

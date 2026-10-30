@@ -96,6 +96,16 @@ const cardVariants = {
   }),
 };
 
+function getAccentIconAnimate(accent: Accent) {
+  if (accent === "pink") {
+    return { rotate: [0, 6, -6, 0] };
+  }
+  if (accent === "blue") {
+    return { rotate: [0, -4, 4, 0] };
+  }
+  return { scale: [1, 1.04, 1] };
+}
+
 export default function ServicesSection() {
   const ref = useRef(null);
   const isInView = useInViewReplay(ref);
@@ -167,13 +177,7 @@ export default function ServicesSection() {
                     }}
                   >
                     <motion.div
-                      animate={
-                        service.accent === "pink"
-                          ? { rotate: [0, 6, -6, 0] }
-                          : service.accent === "blue"
-                            ? { rotate: [0, -4, 4, 0] }
-                            : { scale: [1, 1.04, 1] }
-                      }
+                      animate={getAccentIconAnimate(service.accent)}
                       transition={{
                         duration: 5 + index,
                         repeat: Infinity,

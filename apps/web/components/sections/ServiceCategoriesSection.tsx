@@ -30,7 +30,7 @@ const SHORT_LABELS: Record<string, string> = {
   "project-management": "Project & Data",
 };
 
-function DashedConnector({ active }: { active?: boolean }) {
+function DashedConnector({ active }: Readonly<{ active?: boolean }>) {
   return (
     <div className="relative z-0 mx-0.5 h-2.5 min-w-[10px] flex-1 sm:min-w-[16px] md:min-w-[22px]">
       <motion.svg
@@ -66,13 +66,13 @@ function CategoryNode({
   active,
   onHoverChange,
   isInView,
-}: {
+}: Readonly<{
   item: ServiceCategory;
   index: number;
   active: boolean;
   onHoverChange: (hovered: boolean) => void;
   isInView: boolean;
-}) {
+}>) {
   const short = SHORT_LABELS[item.id] ?? item.text;
   const href = item.href ?? "#";
 
@@ -161,7 +161,7 @@ function CategoryNode({
 
 export default function ServiceCategoriesSection({
   items,
-}: ServiceCategoriesSectionProps) {
+}: Readonly<ServiceCategoriesSectionProps>) {
   const ref = useRef(null);
   const isInView = useInViewReplay(ref);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);

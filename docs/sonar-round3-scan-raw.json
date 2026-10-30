@@ -1,0 +1,503 @@
+{
+  "measures": {
+    "coverage": "0.0",
+    "bugs": "0",
+    "reliability_rating": "1.0",
+    "alert_status": "ERROR",
+    "duplicated_lines_density": "14.8",
+    "code_smells": "44",
+    "security_rating": "1.0",
+    "ncloc": "56746",
+    "vulnerabilities": "0",
+    "security_hotspots": "0",
+    "sqale_index": "268",
+    "sqale_rating": "1.0"
+  },
+  "totalIssues": 40,
+  "issues": [
+    {
+      "severity": "MINOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S1128",
+      "component": "apps/web/components/providers/CallbackModalProvider.tsx",
+      "line": 9,
+      "message": "Remove this unused import of 'useMemo'.",
+      "tags": [
+        "es2015",
+        "type-dependent",
+        "unused"
+      ]
+    },
+    {
+      "severity": "MINOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S7778",
+      "component": "apps/web/components/sections/agentic-orchestration/AgenticPlatformConnectors.tsx",
+      "line": 217,
+      "message": "Do not call `Array#push()` multiple times.",
+      "tags": [
+        "readability",
+        "performance",
+        "editable-source",
+        "type-dependent"
+      ]
+    },
+    {
+      "severity": "MINOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S6551",
+      "component": "apps/web/components/sections/financial-services/FinancialServicesOurWorkSection.tsx",
+      "line": 202,
+      "message": "'bullet.text' may use Object's default stringification format ('[object Object]') when stringified.",
+      "tags": [
+        "string",
+        "type-dependent",
+        "object"
+      ]
+    },
+    {
+      "severity": "MINOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S6759",
+      "component": "apps/web/components/sections/agentic-orchestration/AgenticOrchestrationPlatformSection.tsx",
+      "line": 52,
+      "message": "Mark the props of the component as read-only.",
+      "tags": [
+        "type-dependent",
+        "react"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/app/sitemap.ts",
+      "line": 25,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/ai-workflows/workflow-diagram/primitives.tsx",
+      "line": 170,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "css:S4658",
+      "component": "apps/web/components/sections/industries-overview/industriesOverview.module.css",
+      "line": 229,
+      "message": "Empty block",
+      "tags": []
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/StrategicApproachSection.tsx",
+      "line": 253,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/Navbar.tsx",
+      "line": 1869,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/velocity-ai/VelocityAIMetricsCoreSection.tsx",
+      "line": 301,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/capability-studio/CapabilityStudioFeatureBlock.tsx",
+      "line": 173,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/ai-workflows/AiWorkflowsSection.tsx",
+      "line": 26,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "css:S4658",
+      "component": "apps/web/components/sections/industries-overview/industriesOverview.module.css",
+      "line": 257,
+      "message": "Empty block",
+      "tags": []
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S6819",
+      "component": "apps/web/components/sections/financial-services/FinancialServicesOurWorkSection.tsx",
+      "line": 163,
+      "message": "Use <input type=\"button\">, <input type=\"image\">, <input type=\"reset\">, <input type=\"submit\">, or <button> instead of the \"button\" role to ensure accessibility across all devices.",
+      "tags": [
+        "accessibility",
+        "react"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/ai-workflows/workflow-diagram/icons.tsx",
+      "line": 357,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/ai-workflows/workflow-diagram/icons.tsx",
+      "line": 409,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/lib/replayMotion.tsx",
+      "line": 70,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/Navbar.tsx",
+      "line": 1042,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/capability-studio/CapabilityStudioFeatureBlock.tsx",
+      "line": 111,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/Navbar.tsx",
+      "line": 1713,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/StrategicApproachSection.tsx",
+      "line": 238,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/ServicesSection.tsx",
+      "line": 173,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "css:S7924",
+      "component": "apps/web/components/sections/impact-studies/impact-studies.module.css",
+      "line": 483,
+      "message": "Text does not meet the minimal contrast requirement with its background.",
+      "tags": [
+        "css",
+        "accessibility",
+        "wcag",
+        "contrast"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S4624",
+      "component": "apps/web/components/sections/careers/CareersJobDetailBodySection.tsx",
+      "line": 60,
+      "message": "Refactor this code to not use nested template literals.",
+      "tags": [
+        "es2015",
+        "brain-overload",
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S6819",
+      "component": "apps/web/components/sections/about-us/OurTimelineSection.tsx",
+      "line": 135,
+      "message": "Use <input type=\"button\">, <input type=\"image\">, <input type=\"reset\">, <input type=\"submit\">, or <button> instead of the \"button\" role to ensure accessibility across all devices.",
+      "tags": [
+        "accessibility",
+        "react"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/StrategicApproachSection.tsx",
+      "line": 225,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/velocity-ai/VelocityAIMetricsCoreSection.tsx",
+      "line": 135,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S6481",
+      "component": "apps/web/components/providers/CallbackModalProvider.tsx",
+      "line": 415,
+      "message": "The object passed as the value prop to the Context provider changes every render. To fix this consider wrapping it in a useMemo hook.",
+      "tags": [
+        "performance",
+        "react",
+        "jsx"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S6819",
+      "component": "apps/web/components/sections/industries-overview/IndustriesMethodologyCard.tsx",
+      "line": 55,
+      "message": "Use <img alt=...>, or <img alt=...> instead of the \"img\" role to ensure accessibility across all devices.",
+      "tags": [
+        "accessibility",
+        "react"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/app/sitemap.ts",
+      "line": 19,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/databricks/DatabricksSuccessStoriesSection.tsx",
+      "line": 112,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/ai-workflows/workflow-diagram/icons.tsx",
+      "line": 688,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/capability-studio/CapabilityStudioFeatureBlock.tsx",
+      "line": 288,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/app/sitemap.ts",
+      "line": 23,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/data/testimonials.ts",
+      "line": 199,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3358",
+      "component": "apps/web/components/sections/capability-studio/CapabilityStudioHero.tsx",
+      "line": 99,
+      "message": "Extract this nested ternary operation into an independent statement.",
+      "tags": [
+        "editable-source",
+        "confusing"
+      ]
+    },
+    {
+      "severity": "CRITICAL",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3776",
+      "component": "apps/web/components/sections/impact-studies/ImpactStudiesProjectsSection.tsx",
+      "line": 52,
+      "message": "Refactor this function to reduce its Cognitive Complexity from 21 to the 15 allowed.",
+      "tags": [
+        "brain-overload",
+        "editable-source"
+      ]
+    },
+    {
+      "severity": "CRITICAL",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3776",
+      "component": "apps/web/components/sections/capability-studio/CapabilityStudioFeatureBlock.tsx",
+      "line": 88,
+      "message": "Refactor this function to reduce its Cognitive Complexity from 30 to the 15 allowed.",
+      "tags": [
+        "brain-overload",
+        "editable-source"
+      ]
+    },
+    {
+      "severity": "CRITICAL",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3776",
+      "component": "apps/web/components/sections/impact-studies/ImpactStudiesProjectsSection.tsx",
+      "line": 62,
+      "message": "Refactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.",
+      "tags": [
+        "brain-overload",
+        "editable-source"
+      ]
+    },
+    {
+      "severity": "CRITICAL",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S3776",
+      "component": "apps/web/components/sections/StrategicApproachSection.tsx",
+      "line": 205,
+      "message": "Refactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.",
+      "tags": [
+        "brain-overload",
+        "editable-source"
+      ]
+    }
+  ],
+  "round": 3
+}

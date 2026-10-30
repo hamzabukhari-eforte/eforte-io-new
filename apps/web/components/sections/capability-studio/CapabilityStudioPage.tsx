@@ -11,7 +11,7 @@ type CapabilityStudioPageProps = {
 
 export default function CapabilityStudioPage({
   content,
-}: CapabilityStudioPageProps) {
+}: Readonly<CapabilityStudioPageProps>) {
   return (
     <main className="min-h-screen bg-white text-default">
       <CapabilityStudioHero accent={content.accent} hero={content.hero} />

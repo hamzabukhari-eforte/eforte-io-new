@@ -3,6 +3,7 @@
 import {
   createContext,
   useCallback,
+  useMemo,
   useContext,
   useEffect,
   useRef,
@@ -27,9 +28,9 @@ export function useLenisControl() {
 
 export default function SmoothScrollProvider({
   children,
-}: {
+}: Readonly<{
   children: ReactNode;
-}) {
+}>) {
   const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
@@ -91,8 +92,13 @@ export default function SmoothScrollProvider({
     []
   );
 
+  const value = useMemo(
+    () => ({ stop, start, scrollTo }),
+    [stop, start, scrollTo],
+  );
+
   return (
-    <LenisControlContext.Provider value={{ stop, start, scrollTo }}>
+    <LenisControlContext.Provider value={value}>
       {children}
     </LenisControlContext.Provider>
   );

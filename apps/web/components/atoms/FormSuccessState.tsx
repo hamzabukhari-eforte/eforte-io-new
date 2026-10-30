@@ -19,7 +19,7 @@ export default function FormSuccessState({
   onDone,
   doneLabel = "Done",
   tone = "light",
-}: FormSuccessStateProps) {
+}: Readonly<FormSuccessStateProps>) {
   const isDark = tone === "dark";
   return (
     <motion.div

@@ -1,0 +1,5 @@
+/** Safely read a string field from FormData (avoids Object stringification). */
+export function formString(formData: FormData, key: string): string {
+  const value = formData.get(key);
+  return typeof value === "string" ? value : "";
+}

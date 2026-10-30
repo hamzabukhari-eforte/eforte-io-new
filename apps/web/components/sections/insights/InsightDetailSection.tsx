@@ -20,7 +20,7 @@ export interface InsightDetailSectionProps {
   shareUrl: string;
 }
 
-function MetaItem({ label, children }: { label: string; children: React.ReactNode }) {
+function MetaItem({ label, children }: Readonly<{ label: string; children: React.ReactNode }>) {
   return (
     <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.12em] text-desc">
       <span className="font-semibold text-primary-pink">{label}</span>
@@ -35,7 +35,7 @@ export default function InsightDetailSection({
   categories,
   insightCategories,
   shareUrl,
-}: InsightDetailSectionProps) {
+}: Readonly<InsightDetailSectionProps>) {
   const encodedUrl = encodeURIComponent(shareUrl);
   const encodedTitle = encodeURIComponent(post.title);
 
@@ -47,7 +47,7 @@ export default function InsightDetailSection({
           src={post.imageSrc}
           alt={post.title}
           fill
-          priority
+          fetchPriority="high"
           className="object-cover"
           sizes="100vw"
         />

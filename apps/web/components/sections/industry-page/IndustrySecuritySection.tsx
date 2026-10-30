@@ -32,12 +32,12 @@ const defaultSecurity = {
 };
 
 type IndustrySecuritySectionProps = {
-  content?: IndustryPageContent["security"];
+  content: IndustryPageContent["security"] | undefined;
 };
 
 export default function IndustrySecuritySection({
   content,
-}: IndustrySecuritySectionProps) {
+}: Readonly<IndustrySecuritySectionProps>) {
   const security = content ?? defaultSecurity;
 
   return (

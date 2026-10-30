@@ -209,26 +209,35 @@ function buildDiagram(root: HTMLElement): { segments: Segment[]; dots: Dot[] } {
     const yMin = Math.min(a.y, b.y, c.y);
     const yMax = Math.max(a.y, b.y, c.y);
 
-    segments.push({
-      id: "blue-in",
+    const blueBranches = (
+      [
+        ["a", a],
+        ["c", c],
+      ] as const
+    ).map(([id, point]) => ({
+      id: `blue-${id}`,
       color: "#426cff",
-      d: `M ${oval.x} ${joinY} L ${b.x} ${joinY}`,
-    });
-    segments.push({
-      id: "blue-spine",
-      color: "#426cff",
-      d: `M ${midX} ${yMin} L ${midX} ${yMax}`,
-    });
+      d: `M ${midX} ${point.y} L ${point.x} ${point.y}`,
+    }));
+
+    segments.push(
+      {
+        id: "blue-in",
+        color: "#426cff",
+        d: `M ${oval.x} ${joinY} L ${b.x} ${joinY}`,
+      },
+      {
+        id: "blue-spine",
+        color: "#426cff",
+        d: `M ${midX} ${yMin} L ${midX} ${yMax}`,
+      },
+      ...blueBranches,
+    );
 
     for (const [id, point] of [
       ["a", a],
       ["c", c],
     ] as const) {
-      segments.push({
-        id: `blue-${id}`,
-        color: "#426cff",
-        d: `M ${midX} ${point.y} L ${point.x} ${point.y}`,
-      });
       addDot(`blue-${id}-end`, "#426cff", point.x, point.y);
       addDot(`blue-${id}-join`, "#426cff", midX, point.y);
     }
@@ -254,9 +263,9 @@ function buildDiagram(root: HTMLElement): { segments: Segment[]; dots: Dot[] } {
 
 export default function AgenticPlatformConnectors({
   containerRef,
-}: {
+}: Readonly<{
   containerRef: RefObject<HTMLElement | null>;
-}) {
+}>) {
   const [segments, setSegments] = useState<Segment[]>([]);
   const [dots, setDots] = useState<Dot[]>([]);
   const [size, setSize] = useState({ width: 0, height: 0 });

@@ -27,7 +27,7 @@ export default function InsightsPostsSection({
   categoryTitle = null,
   posts,
   allPosts,
-}: InsightsPostsSectionProps) {
+}: Readonly<InsightsPostsSectionProps>) {
   const [currentPage, setCurrentPage] = useState(1);
 
   const displayPosts: InsightPost[] = useMemo(() => {

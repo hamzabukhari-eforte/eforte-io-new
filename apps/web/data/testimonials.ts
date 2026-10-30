@@ -192,13 +192,19 @@ export const clientReviews: ClientReview[] = [
   },
 ];
 
+function splitDesignation(designation: string): string[] {
+  if (designation.includes(" - ")) {
+    return designation.split(" - ");
+  }
+  if (designation.includes(" @ ")) {
+    return designation.split(" @ ");
+  }
+  return [designation];
+}
+
 /** Homepage carousel — derived from full reviews (feedback + author) */
 export const testimonials: Testimonial[] = clientReviews.map((r) => {
-  const dash = r.designation.includes(" - ")
-    ? r.designation.split(" - ")
-    : r.designation.includes(" @ ")
-      ? r.designation.split(" @ ")
-      : [r.designation];
+  const dash = splitDesignation(r.designation);
   return {
     id: r.id,
     companyName: r.companyName,

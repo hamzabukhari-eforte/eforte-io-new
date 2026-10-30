@@ -22,8 +22,10 @@ export const INSIGHT_CATEGORIES: string[] = [
 export function categoryToSlug(category: string): string {
   return category
     .toLowerCase()
-    .replace(/\s*&\s*/g, "-")
-    .replace(/\s+/g, "-")
+    .replaceAll("&", " ")
+    .split(/\s+/)
+    .filter(Boolean)
+    .join("-")
     .replace(/[^a-z0-9-]/g, "");
 }
 

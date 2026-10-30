@@ -16,9 +16,9 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>;
-}) {
+}>) {
   const { slug } = await params;
   const article = getFoundationalDataInsightBySlug(slug);
   if (!article) return { title: "Insight | eForte" };
@@ -33,9 +33,9 @@ export async function generateMetadata({
 
 export default async function FoundationalDataLayerInsightPage({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>;
-}) {
+}>) {
   const { slug } = await params;
   const article = getFoundationalDataInsightBySlug(slug);
   if (!article) notFound();

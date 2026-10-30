@@ -64,12 +64,6 @@
 .duration600 {
   transition-duration: 0.7s;
 }
-.mobileDuration300 {
-}
-.mobileDuration400 {
-}
-.mobileDuration500 {
-}
 @media (max-width: 1023px) {
   .mobileDuration300 {
     transition-duration: 0.5s;

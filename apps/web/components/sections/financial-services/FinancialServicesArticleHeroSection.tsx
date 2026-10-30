@@ -16,7 +16,7 @@ type FinancialServicesArticleHeroSectionProps = {
 
 export default function FinancialServicesArticleHeroSection({
   article,
-}: FinancialServicesArticleHeroSectionProps) {
+}: Readonly<FinancialServicesArticleHeroSectionProps>) {
   const router = useRouter();
 
   const goBack = () => {

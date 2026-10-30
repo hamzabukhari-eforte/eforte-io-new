@@ -1,5 +1,5 @@
 import { config as loadEnv } from 'dotenv';
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { AppModule } from './app.module';
@@ -32,4 +32,8 @@ async function bootstrap() {
   console.log(`API listening on http://localhost:${port}`);
 }
 
-bootstrap();
+bootstrap().catch((error) => {
+  // eslint-disable-next-line no-console
+  console.error('API failed to start', error);
+  process.exit(1);
+});

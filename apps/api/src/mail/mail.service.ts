@@ -1,7 +1,8 @@
 import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
+import { randomBytes } from 'node:crypto';
+import { join } from 'node:path';
 import { createTransport, type Transporter } from 'nodemailer';
 import type SMTPTransport from 'nodemailer/lib/smtp-transport';
-import { join } from 'path';
 import { CreateContactDto } from '../contact/dto/create-contact.dto';
 import { CreateQuoteDto } from '../quotes/dto/create-quote.dto';
 import { CreateCareerDto } from '../careers/dto/create-career.dto';
@@ -176,7 +177,7 @@ export class MailService implements OnModuleInit {
         html: options.html,
         attachments: options.attachments,
         headers: {
-          'X-Entity-Ref-ID': `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`,
+          'X-Entity-Ref-ID': `${Date.now()}-${randomBytes(8).toString('hex')}`,
         },
       });
       this.logger.log(

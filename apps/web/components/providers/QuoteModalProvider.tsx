@@ -6,9 +6,10 @@ import {
   useContext,
   useEffect,
   useLayoutEffect,
+  useMemo,
   useState,
-  type FormEvent,
   type ReactNode,
+  type SyntheticEvent
 } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { HiX } from "react-icons/hi";
@@ -23,6 +24,7 @@ import {
   quoteProjectTypeOptions,
 } from "@/data/quoteFormOptions";
 import { cn } from "@/lib/utils";
+import { formString } from "@/lib/formData";
 
 type QuoteModalContextValue = {
   openQuoteModal: () => void;
@@ -52,13 +54,13 @@ function QuoteField({
   children,
   className,
   labelClassName,
-}: {
+}: Readonly<{
   label: string;
   id: string;
   children: ReactNode;
   className?: string;
   labelClassName?: string;
-}) {
+}>) {
   return (
     <div className={cn("flex min-w-0 flex-col gap-1", className)}>
       <label
@@ -78,13 +80,13 @@ function RadioGroup({
   options,
   value,
   onChange,
-}: {
+}: Readonly<{
   legend: string;
   name: string;
   options: readonly string[];
   value: string;
   onChange: (value: string) => void;
-}) {
+}>) {
   return (
     <fieldset className="min-w-0">
       <legend className="mb-2.5 text-[18px] font-semibold text-black">
@@ -134,11 +136,11 @@ function QuoteModal({
   isOpen,
   onClose,
   onReopen,
-}: {
+}: Readonly<{
   isOpen: boolean;
   onClose: () => void;
   onReopen: () => void;
-}) {
+}>) {
   const [submitted, setSubmitted] = useState(false);
   const [countryCode, setCountryCode] = useState("+1");
   const [lookingFor, setLookingFor] = useState("");
@@ -186,7 +188,7 @@ function QuoteModal({
     }
   }, [isOpen]);
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitError(null);
     setIsSubmitting(true);
@@ -194,18 +196,18 @@ function QuoteModal({
     const form = event.currentTarget;
     const formData = new FormData(form);
     const payload = {
-      businessName: String(formData.get("businessName") ?? "").trim(),
-      firstName: String(formData.get("firstName") ?? "").trim(),
-      lastName: String(formData.get("lastName") ?? "").trim(),
-      email: String(formData.get("email") ?? "").trim(),
+      businessName: formString(formData, "businessName").trim(),
+      firstName: formString(formData, "firstName").trim(),
+      lastName: formString(formData, "lastName").trim(),
+      email: formString(formData, "email").trim(),
       countryCode,
-      phone: String(formData.get("phone") ?? "").trim(),
+      phone: formString(formData, "phone").trim(),
       referralSource:
-        String(formData.get("referralSource") ?? "").trim() || undefined,
+        formString(formData, "referralSource").trim() || undefined,
       lookingFor,
       projectType,
       budget,
-      requirements: String(formData.get("requirements") ?? "").trim(),
+      requirements: formString(formData, "requirements").trim(),
     };
 
     const apiBase = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "");
@@ -488,16 +490,18 @@ function QuoteModal({
   );
 }
 
-export default function QuoteModalProvider({ children }: { children: ReactNode }) {
+export default function QuoteModalProvider({ children }: Readonly<{ children: ReactNode }>) {
   const [isOpen, setIsOpen] = useState(false);
 
   const openQuoteModal = useCallback(() => setIsOpen(true), []);
   const closeQuoteModal = useCallback(() => setIsOpen(false), []);
+  const value = useMemo(
+    () => ({ openQuoteModal, closeQuoteModal, isOpen }),
+    [openQuoteModal, closeQuoteModal, isOpen],
+  );
 
   return (
-    <QuoteModalContext.Provider
-      value={{ openQuoteModal, closeQuoteModal, isOpen }}
-    >
+    <QuoteModalContext.Provider value={value}>
       {children}
       <QuoteModal
         isOpen={isOpen}

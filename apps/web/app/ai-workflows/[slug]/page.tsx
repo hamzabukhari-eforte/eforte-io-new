@@ -17,7 +17,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: PageProps): Promise<Metadata> {
+}: Readonly<PageProps>): Promise<Metadata> {
   const { slug } = await params;
   const domain = getAiWorkflowBySlug(slug);
   if (!domain) {
@@ -30,7 +30,7 @@ export async function generateMetadata({
   });
 }
 
-export default async function AiWorkflowDomainPage({ params }: PageProps) {
+export default async function AiWorkflowDomainPage({ params }: Readonly<PageProps>) {
   const { slug } = await params;
   const domain = getAiWorkflowBySlug(slug);
   if (!domain) notFound();

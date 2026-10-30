@@ -12,7 +12,7 @@ export default function AnimatedCounter({
   value,
   active,
   durationMs = 1100,
-}: AnimatedCounterProps) {
+}: Readonly<AnimatedCounterProps>) {
   const [display, setDisplay] = useState(0);
   const frameRef = useRef<number | null>(null);
 

@@ -13,7 +13,7 @@ type CapabilityStudioProprietaryTechSectionProps = {
 export default function CapabilityStudioProprietaryTechSection({
   accent: _accent,
   items,
-}: CapabilityStudioProprietaryTechSectionProps) {
+}: Readonly<CapabilityStudioProprietaryTechSectionProps>) {
   return (
     <section className="relative z-10">
       <div className="rounded-t-[12px] bg-[#F5F5F5] py-16 text-black">

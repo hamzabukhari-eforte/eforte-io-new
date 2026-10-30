@@ -105,7 +105,7 @@ export default function ImpactStudiesHeroSection() {
             <h2>{activeSlide.headline}</h2>
             <p className={styles.description}>{activeSlide.description}</p>
             <Link href={activeSlide.href} className={styles.btnBlue}>
-              Learn more
+              Learn more{' '}
               <span className={styles.btnArrow} aria-hidden>
                 →
               </span>

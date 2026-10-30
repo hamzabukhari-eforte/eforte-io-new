@@ -42,7 +42,7 @@ const bars = [
 
 export default function BlockchainInfrastructureMedia({
   className,
-}: BlockchainInfrastructureMediaProps) {
+}: Readonly<BlockchainInfrastructureMediaProps>) {
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"

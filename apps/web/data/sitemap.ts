@@ -158,5 +158,5 @@ export function getSitemapPaths(): string[] {
       }
     }
   }
-  return Array.from(paths).sort();
+  return Array.from(paths).sort((a, b) => a.localeCompare(b));
 }

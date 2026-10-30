@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 import type { StudioBrand } from "./types";
 
 const RELATIVE_DIR = "public/assets/final-images/brands";
@@ -36,7 +36,7 @@ export function getStudioTrustedBrands(): StudioBrand[] {
 
   const brands: StudioBrand[] = [];
 
-  for (const file of fs.readdirSync(dir).sort()) {
+  for (const file of fs.readdirSync(dir).sort((a, b) => a.localeCompare(b))) {
     if (!IMAGE_EXT.test(file)) continue;
     const id = file.replace(IMAGE_EXT, "").toLowerCase();
     const stat = fs.statSync(path.join(dir, file));

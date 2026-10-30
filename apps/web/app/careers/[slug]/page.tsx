@@ -14,9 +14,9 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>;
-}) {
+}>) {
   const { slug } = await params;
   const job = getJobOpening(slug);
 
@@ -33,9 +33,9 @@ export async function generateMetadata({
 
 export default async function CareersJobDetailPage({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>;
-}) {
+}>) {
   const { slug } = await params;
   const job = getJobOpening(slug);
 

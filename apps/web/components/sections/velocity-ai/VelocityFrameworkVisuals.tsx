@@ -15,7 +15,7 @@ export type VelocityVisualProps = {
 export function AiPodsSvg({
   idPrefix = "pods",
   className,
-}: VelocityVisualProps) {
+}: Readonly<VelocityVisualProps>) {
   const roles = [
     { x: 110, y: 28, label: "Design" },
     { x: 178, y: 80, label: "Build" },
@@ -152,7 +152,7 @@ export function AiPodsSvg({
 export function EngineeringFrameworkSvg({
   idPrefix = "fw",
   className,
-}: VelocityVisualProps) {
+}: Readonly<VelocityVisualProps>) {
   const stages = [
     { y: 36, label: "Design", accent: BLUE, progress: 12 },
     { y: 84, label: "Develop", accent: "#7C9BFF", progress: 20 },
@@ -326,7 +326,7 @@ export function EngineeringFrameworkSvg({
 export function MetricsKpiSvg({
   idPrefix = "kpi",
   className,
-}: VelocityVisualProps) {
+}: Readonly<VelocityVisualProps>) {
   const aiBar = `${idPrefix}-kpiAiBar`;
   const uplift = `${idPrefix}-kpiUplift`;
 

@@ -1,0 +1,32 @@
+{
+  "measures": {
+    "coverage": "0.0",
+    "bugs": "0",
+    "reliability_rating": "1.0",
+    "alert_status": "ERROR",
+    "duplicated_lines_density": "14.8",
+    "code_smells": "1",
+    "security_rating": "1.0",
+    "ncloc": "56964",
+    "vulnerabilities": "0",
+    "security_hotspots": "0",
+    "sqale_index": "20",
+    "sqale_rating": "1.0"
+  },
+  "totalIssues": 1,
+  "issues": [
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S8786",
+      "component": "apps/web/lib/strapi/content.ts",
+      "line": 35,
+      "message": "Simplify this regular expression to reduce its runtime, as it has super-linear performance due to backtracking.",
+      "tags": [
+        "regex",
+        "performance"
+      ]
+    }
+  ],
+  "round": 5
+}

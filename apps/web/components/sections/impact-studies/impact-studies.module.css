@@ -479,8 +479,9 @@
   border-radius: 20px;
   padding: 30px;
   height: 500px;
+  /* Dark base so white text meets WCAG; layout variants override background */
   color: #fff;
-  background: #eee;
+  background: #1a1a1a;
 }
 
 .projectItemMid .projectContent {

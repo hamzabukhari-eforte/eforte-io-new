@@ -11,9 +11,9 @@ const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
 function BenefitCard({
   benefit,
-}: {
+}: Readonly<{
   benefit: (typeof benefits)[number];
-}) {
+}>) {
   const ref = useRef<HTMLLIElement>(null);
   const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 

@@ -59,6 +59,33 @@ const MAIN_DELAY = 0.35;
 const MAIN_DURATION = 0.85;
 const ICONS_START = MAIN_DELAY + MAIN_DURATION * 0.55; // icons after main is mostly visible
 
+function getFeatureOffsetX(position: FeatureBlock["position"]): number {
+  if (position === "left") return -24;
+  if (position === "right") return 24;
+  return 0;
+}
+
+function getFeatureOffsetY(position: FeatureBlock["position"]): number {
+  if (position === "bottom") return 24;
+  return 0;
+}
+
+function getFeatureAlignClasses(position: FeatureBlock["position"]): string {
+  if (position === "left") return "items-end text-right";
+  if (position === "right") return "items-start text-left";
+  return "items-center text-center";
+}
+
+function getFeaturePositionClasses(position: FeatureBlock["position"]): string {
+  if (position === "left") {
+    return "left-10 -left-24 top-[32%] -translate-y-1/2";
+  }
+  if (position === "right") {
+    return "right-10 -right-24 top-[32%] -translate-y-1/2";
+  }
+  return "bottom-14 left-1/2 -translate-x-1/2";
+}
+
 export default function StrategicApproachSection() {
   const ref = useRef(null);
   const isInView = useInViewReplay(ref);
@@ -203,42 +230,17 @@ export default function StrategicApproachSection() {
 
             {/* Feature copy around diagram */}
             {features.map((feature, index) => {
-              let positionClasses = "";
-              if (feature.position === "left") {
-                positionClasses = "left-10 -left-24 top-[32%] -translate-y-1/2";
-              } else if (feature.position === "right") {
-                positionClasses = "right-10 -right-24 top-[32%] -translate-y-1/2";
-              } else {
-                positionClasses = "bottom-14 left-1/2 -translate-x-1/2";
-              }
+              const offsetX = getFeatureOffsetX(feature.position);
+              const offsetY = getFeatureOffsetY(feature.position);
+              const hiddenState = { opacity: 0, y: offsetY, x: offsetX };
 
               return (
                 <motion.div
                   key={`copy-${feature.id}`}
-                  className={`absolute w-80 ${positionClasses}`}
-                  initial={{
-                    opacity: 0,
-                    y: feature.position === "bottom" ? 24 : 0,
-                    x:
-                      feature.position === "left"
-                        ? -24
-                        : feature.position === "right"
-                          ? 24
-                          : 0,
-                  }}
+                  className={`absolute w-80 ${getFeaturePositionClasses(feature.position)}`}
+                  initial={hiddenState}
                   animate={
-                    isInView
-                      ? { opacity: 1, y: 0, x: 0 }
-                      : {
-                          opacity: 0,
-                          y: feature.position === "bottom" ? 24 : 0,
-                          x:
-                            feature.position === "left"
-                              ? -24
-                              : feature.position === "right"
-                                ? 24
-                                : 0,
-                        }
+                    isInView ? { opacity: 1, y: 0, x: 0 } : hiddenState
                   }
                   transition={{
                     duration: 0.5,
@@ -247,13 +249,7 @@ export default function StrategicApproachSection() {
                   }}
                 >
                   <div
-                    className={`flex flex-col ${
-                      feature.position === "left"
-                        ? "items-end text-right"
-                        : feature.position === "right"
-                          ? "items-start text-left"
-                          : "items-center text-center"
-                    }`}
+                    className={`flex flex-col ${getFeatureAlignClasses(feature.position)}`}
                   >
                     <h3 className="mb-4 text-[24px] font-bold text-white">
                       {feature.title}

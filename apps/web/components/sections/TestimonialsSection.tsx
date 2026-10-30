@@ -19,10 +19,10 @@ const AUTOPLAY_MS = 3000;
 function TestimonialCard({
   item,
   index,
-}: {
+}: Readonly<{
   item: Testimonial;
   index: number;
-}) {
+}>) {
   return (
     <motion.div
       className="flex flex-col items-center self-start text-center"
@@ -169,9 +169,9 @@ export default function TestimonialsSection() {
               </button>
 
               <div className="flex items-center gap-2.5">
-                {slides.map((_, i) => (
+                {slides.map((slide, i) => (
                   <button
-                    key={i}
+                    key={slide.map((item) => item.id).join("-")}
                     type="button"
                     aria-label={`Go to slide ${i + 1}`}
                     aria-current={i === active}

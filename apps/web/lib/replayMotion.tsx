@@ -57,6 +57,13 @@ function wrapMotionComponent(Component: ElementType) {
       once: viewport?.once ?? false,
     });
 
+    let resolvedAnimate = animate;
+    let resolvedTransition = transition;
+    if (useLatch) {
+      resolvedAnimate = inView ? whileInView : initial;
+      resolvedTransition = inView ? transition : { duration: 0 };
+    }
+
     return (
       <Component
         {...rest}
@@ -67,8 +74,8 @@ function wrapMotionComponent(Component: ElementType) {
         initial={initial}
         whileInView={useLatch ? undefined : whileInView}
         viewport={useLatch ? undefined : viewport}
-        animate={useLatch ? (inView ? whileInView : initial) : animate}
-        transition={useLatch && !inView ? { duration: 0 } : transition}
+        animate={resolvedAnimate}
+        transition={resolvedTransition}
       />
     );
   });

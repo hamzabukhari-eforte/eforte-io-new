@@ -30,14 +30,14 @@ export default function IndustriesReveal({
   duration = 400,
   as: Tag = "div",
   once = false,
-}: {
+}: Readonly<{
   children: ReactNode;
   className?: string;
   direction?: RevealDirection;
   duration?: RevealDuration;
   as?: ElementType;
   once?: boolean;
-}) {
+}>) {
   const ref = useRef<HTMLElement | null>(null);
   const inView = useInViewReplay(ref, {
     margin: "0px",

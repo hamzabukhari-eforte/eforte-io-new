@@ -8,9 +8,9 @@ import styles from "./aiWorkflows.module.css";
 
 export default function AiWorkflowPage({
   domain,
-}: {
+}: Readonly<{
   domain: AiWorkflowDomain;
-}) {
+}>) {
   return (
     <main className={styles.page}>
       <AiWorkflowDetailHero domain={domain} />

@@ -13,7 +13,7 @@ const INTRO_TEXT =
 
 const ease = [0.25, 0.46, 0.45, 0.94] as const;
 
-function LocationCard({ location }: { location: Location }) {
+function LocationCard({ location }: Readonly<{ location: Location }>) {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 

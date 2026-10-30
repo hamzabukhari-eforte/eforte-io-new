@@ -16,7 +16,7 @@ type CapabilityStudioFaqSectionProps = {
 export default function CapabilityStudioFaqSection({
   faqs,
   subtitle = "Frequently asked questions about this studio's services",
-}: CapabilityStudioFaqSectionProps) {
+}: Readonly<CapabilityStudioFaqSectionProps>) {
   const [openFaqs, setOpenFaqs] = useState<number[]>([]);
 
   const toggleFaq = (index: number) => {

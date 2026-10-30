@@ -5,7 +5,7 @@ interface ContainerProps {
   className?: string;
 }
 
-export default function Container({ children, className }: ContainerProps) {
+export default function Container({ children, className }: Readonly<ContainerProps>) {
   return (
     <div
       className={cn(

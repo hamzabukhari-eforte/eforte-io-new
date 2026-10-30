@@ -17,10 +17,13 @@ RUN pnpm run build
 FROM node:24-bookworm-slim AS runner
 WORKDIR /app
 ENV NODE_ENV=production
-COPY --from=build /app/package.json ./
-COPY --from=build /app/node_modules ./node_modules
-COPY --from=build /app/dist ./dist
-COPY --from=build /app/prisma ./prisma
-COPY --from=build /app/prisma.config.ts ./prisma.config.ts
+RUN groupadd --system --gid 1001 nodejs \
+  && useradd --system --uid 1001 --gid nodejs nestjs
+COPY --from=build --chown=nestjs:nodejs /app/package.json ./
+COPY --from=build --chown=nestjs:nodejs /app/node_modules ./node_modules
+COPY --from=build --chown=nestjs:nodejs /app/dist ./dist
+COPY --from=build --chown=nestjs:nodejs /app/prisma ./prisma
+COPY --from=build --chown=nestjs:nodejs /app/prisma.config.ts ./prisma.config.ts
+USER nestjs
 EXPOSE 6100
 CMD ["node", "dist/main.js"]

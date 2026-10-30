@@ -53,7 +53,7 @@ function FlowEllipse({
   title,
   subtitle,
   tone,
-}: Omit<(typeof flowEllipses)[number], "connector">) {
+}: Readonly<Omit<(typeof flowEllipses)[number], "connector">>) {
   return (
     <div
       className={cn(
@@ -83,14 +83,14 @@ function PlatformCard({
   tone = "agent",
   showArrow = false,
   compact = false,
-}: {
+}: Readonly<{
   title: string;
   subtitle?: string;
   icon?: ReactNode;
   tone?: PlatformCardTone;
   showArrow?: boolean;
   compact?: boolean;
-}) {
+}>) {
   return (
     <div
       className={cn(

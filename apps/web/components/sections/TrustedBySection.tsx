@@ -21,7 +21,7 @@ export default function TrustedBySection({
   items,
   heading,
   variant = "dark",
-}: TrustedBySectionProps) {
+}: Readonly<TrustedBySectionProps>) {
   const ref = useRef(null);
   const isInView = useInViewReplay(ref);
 

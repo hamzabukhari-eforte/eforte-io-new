@@ -6,9 +6,10 @@ import {
   useContext,
   useEffect,
   useLayoutEffect,
+  useMemo,
   useState,
-  type FormEvent,
   type ReactNode,
+  type SyntheticEvent,
 } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { HiArrowLeft, HiX } from "react-icons/hi";
@@ -17,6 +18,7 @@ import { useLenisControl } from "@/components/providers/SmoothScrollProvider";
 import { lockBodyScroll } from "@/lib/lockBodyScroll";
 import { quotePhoneCountryOptions } from "@/data/quoteFormOptions";
 import { cn } from "@/lib/utils";
+import { formString } from "@/lib/formData";
 
 type OpenCallbackOptions = {
   onBack?: () => void;
@@ -65,12 +67,12 @@ function CallbackField({
   id,
   required,
   children,
-}: {
+}: Readonly<{
   label: string;
   id: string;
   required?: boolean;
   children: ReactNode;
-}) {
+}>) {
   return (
     <div className="flex flex-col gap-1">
       <label htmlFor={id} className="text-[18px] font-medium text-black">
@@ -86,11 +88,11 @@ function CallbackModal({
   isOpen,
   onClose,
   onBack,
-}: {
+}: Readonly<{
   isOpen: boolean;
   onClose: () => void;
   onBack?: (() => void) | null;
-}) {
+}>) {
   const [submitted, setSubmitted] = useState(false);
   const [countryCode, setCountryCode] = useState("+1");
   const [timeZone, setTimeZone] = useState("");
@@ -135,7 +137,7 @@ function CallbackModal({
     }
   }, [isOpen]);
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitError(null);
     setIsSubmitting(true);
@@ -143,11 +145,11 @@ function CallbackModal({
     const form = event.currentTarget;
     const formData = new FormData(form);
     const payload = {
-      name: String(formData.get("name") ?? "").trim(),
+      name: formString(formData, "name").trim(),
       countryCode,
-      phone: String(formData.get("phone") ?? "").trim(),
-      email: String(formData.get("email") ?? "").trim(),
-      preferredTime: String(formData.get("preferredTime") ?? "").trim(),
+      phone: formString(formData, "phone").trim(),
+      email: formString(formData, "email").trim(),
+      preferredTime: formString(formData, "preferredTime").trim(),
       timeZone,
       type: "callback",
     };
@@ -393,9 +395,9 @@ function CallbackModal({
 
 export default function CallbackModalProvider({
   children,
-}: {
+}: Readonly<{
   children: ReactNode;
-}) {
+}>) {
   const [isOpen, setIsOpen] = useState(false);
   const [onBack, setOnBack] = useState<(() => void) | null>(null);
 
@@ -408,10 +410,13 @@ export default function CallbackModalProvider({
     setIsOpen(false);
   }, []);
 
+  const value = useMemo(
+    () => ({ openCallbackModal, closeCallbackModal, isOpen }),
+    [openCallbackModal, closeCallbackModal, isOpen],
+  );
+
   return (
-    <CallbackModalContext.Provider
-      value={{ openCallbackModal, closeCallbackModal, isOpen }}
-    >
+    <CallbackModalContext.Provider value={value}>
       {children}
       <CallbackModal
         isOpen={isOpen}

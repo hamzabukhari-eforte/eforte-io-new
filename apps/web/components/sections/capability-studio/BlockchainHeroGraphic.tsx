@@ -33,7 +33,7 @@ const paths = [
 
 export default function BlockchainHeroGraphic({
   className,
-}: BlockchainHeroGraphicProps) {
+}: Readonly<BlockchainHeroGraphicProps>) {
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"

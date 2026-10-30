@@ -161,11 +161,11 @@ export default function EmbeddedEngineeringSuccessStoriesSection() {
             </div>
 
             <div className=" grid gap-6 md:grid-cols-3 md:gap-8">
-              {story.cards.map((card, index) => {
+              {story.cards.map((card) => {
                 const Icon = card.icon;
                 return (
                   <div
-                    key={index}
+                    key={card.text}
                     className="rounded-[12px] bg-white p-8 text-default shadow-[0_10px_40px_rgba(0,0,0,0.25)]"
                   >
                     <Icon className="h-8 w-8 text-default" />

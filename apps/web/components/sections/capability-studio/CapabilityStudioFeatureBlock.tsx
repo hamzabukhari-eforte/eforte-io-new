@@ -51,10 +51,10 @@ const themeStyles = {
 function FeatureCopy({
   feature,
   styles,
-}: {
+}: Readonly<{
   feature: StudioFeature;
   styles: (typeof themeStyles)[keyof typeof themeStyles];
-}) {
+}>) {
   return (
     <div className="flex h-full flex-col justify-center p-8 md:p-10 lg:p-12">
       {feature.number ? (
@@ -85,15 +85,173 @@ function FeatureCopy({
   );
 }
 
+function resolveSolidBg(
+  customBg: string | undefined,
+  panel: "image" | "accent" | "black" | undefined,
+  accentColor: string
+): string | undefined {
+  if (customBg) return customBg;
+  if (panel === "black") return "#000000";
+  if (panel === "accent") return accentColor;
+  return undefined;
+}
+
+function resolveObjectPosition(
+  position: StudioFeature["mediaObjectPosition"]
+): string {
+  if (position === "bottom") return "object-bottom";
+  if (position === "top") return "object-top";
+  return "object-center";
+}
+
+function CustomFeatureMedia({
+  feature,
+  solidBg,
+  isFullBleed,
+  kind,
+}: Readonly<{
+  feature: StudioFeature;
+  solidBg: string | undefined;
+  isFullBleed: boolean;
+  kind: "consultancy" | "infrastructure";
+}>) {
+  return (
+    <div
+      className={cn(
+        "relative flex h-full min-h-[300px] items-center justify-center overflow-hidden md:min-h-[380px] lg:min-h-full",
+        isFullBleed ? "" : "p-6 md:p-10"
+      )}
+      style={solidBg ? { backgroundColor: solidBg } : undefined}
+    >
+      {kind === "consultancy" ? (
+        <ConsultancyMentoringMedia className="h-full w-full max-h-full object-contain" />
+      ) : (
+        <BlockchainInfrastructureMedia className="h-full w-full max-h-full object-contain" />
+      )}
+      <span className="sr-only">{feature.imageAlt}</span>
+    </div>
+  );
+}
+
+function InsetFeatureMedia({
+  feature,
+  solidBg,
+}: Readonly<{
+  feature: StudioFeature;
+  solidBg: string | undefined;
+}>) {
+  return (
+    <div className="flex h-full min-h-[300px] items-stretch p-3 md:min-h-[380px] lg:min-h-full">
+      <div
+        className="relative w-full min-h-[260px] overflow-hidden rounded-[12px] bg-black md:min-h-0"
+        style={solidBg ? { backgroundColor: solidBg } : undefined}
+      >
+        <Image
+          key={feature.image}
+          src={feature.image}
+          alt={feature.imageAlt}
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          quality={100}
+          unoptimized
+          className="object-contain object-center"
+        />
+      </div>
+    </div>
+  );
+}
+
+function shouldUseCoverFit(
+  feature: StudioFeature,
+  isSvg: boolean,
+  customBg: string | undefined,
+  isFullBleed: boolean,
+  isSolidPanel: boolean
+): boolean {
+  if (feature.mediaObjectFit === "contain") return false;
+  if (isSvg || customBg) return false;
+  return isFullBleed || !isSolidPanel;
+}
+
+function DefaultFeatureMedia({
+  feature,
+  solidBg,
+  isSolidPanel,
+  isFullBleed,
+  isSvg,
+  customBg,
+}: Readonly<{
+  feature: StudioFeature;
+  solidBg: string | undefined;
+  isSolidPanel: boolean;
+  isFullBleed: boolean;
+  isSvg: boolean;
+  customBg: string | undefined;
+}>) {
+  const useCover = shouldUseCoverFit(
+    feature,
+    isSvg,
+    customBg,
+    isFullBleed,
+    isSolidPanel
+  );
+  const objectPosition = resolveObjectPosition(feature.mediaObjectPosition);
+  const showContained = isSolidPanel && !isFullBleed;
+  const objectFitClass = useCover ? "object-cover" : "object-contain";
+  let svgPaddingClass = "";
+  if (isSvg && !isFullBleed && !isSolidPanel) {
+    svgPaddingClass = "p-6 md:p-10";
+  }
+  const wrapperClass = showContained
+    ? "relative h-full min-h-[300px] overflow-hidden md:min-h-[380px] lg:min-h-full flex items-center justify-center"
+    : "relative h-full min-h-[300px] overflow-hidden md:min-h-[380px] lg:min-h-full";
+
+  if (showContained) {
+    return (
+      <div
+        className={wrapperClass}
+        style={solidBg ? { backgroundColor: solidBg } : undefined}
+      >
+        <div className="relative h-[85%] w-[88%] max-w-none md:h-[90%] md:w-[92%]">
+          <Image
+            src={feature.image}
+            alt={feature.imageAlt}
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-contain object-center"
+            unoptimized={isSvg}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className={wrapperClass}
+      style={solidBg ? { backgroundColor: solidBg } : undefined}
+    >
+      <Image
+        src={feature.image}
+        alt={feature.imageAlt}
+        fill
+        sizes="(max-width: 1024px) 100vw, 50vw"
+        className={cn(objectFitClass, objectPosition, svgPaddingClass)}
+        unoptimized={isSvg || Boolean(customBg)}
+      />
+    </div>
+  );
+}
+
 function FeatureMedia({
   feature,
   accentColor,
   panel,
-}: {
+}: Readonly<{
   feature: StudioFeature;
   accentColor: string;
   panel?: "image" | "accent" | "black";
-}) {
+}>) {
   const customBg = feature.mediaBgColor;
   const isSolidPanel = Boolean(customBg) || panel === "accent" || panel === "black";
   const isInset = Boolean(feature.mediaInset);
@@ -106,118 +264,53 @@ function FeatureMedia({
   const isInfrastructureMedia =
     feature.id === "infrastructure" ||
     imagePath.includes("blockchain-infrastructure-and-deployment");
-  const solidBg =
-    customBg ??
-    (panel === "black" ? "#000000" : panel === "accent" ? accentColor : undefined);
+  const solidBg = resolveSolidBg(customBg, panel, accentColor);
 
   if (isConsultancyMedia) {
     return (
-      <div
-        className={cn(
-          "relative flex h-full min-h-[300px] items-center justify-center overflow-hidden md:min-h-[380px] lg:min-h-full",
-          isFullBleed ? "" : "p-6 md:p-10"
-        )}
-        style={solidBg ? { backgroundColor: solidBg } : undefined}
-      >
-        <ConsultancyMentoringMedia className="h-full w-full max-h-full object-contain" />
-        <span className="sr-only">{feature.imageAlt}</span>
-      </div>
+      <CustomFeatureMedia
+        feature={feature}
+        solidBg={solidBg}
+        isFullBleed={isFullBleed}
+        kind="consultancy"
+      />
     );
   }
 
   if (isInfrastructureMedia) {
     return (
-      <div
-        className={cn(
-          "relative flex h-full min-h-[300px] items-center justify-center overflow-hidden md:min-h-[380px] lg:min-h-full",
-          isFullBleed ? "" : "p-6 md:p-10"
-        )}
-        style={solidBg ? { backgroundColor: solidBg } : undefined}
-      >
-        <BlockchainInfrastructureMedia className="h-full w-full max-h-full object-contain" />
-        <span className="sr-only">{feature.imageAlt}</span>
-      </div>
+      <CustomFeatureMedia
+        feature={feature}
+        solidBg={solidBg}
+        isFullBleed={isFullBleed}
+        kind="infrastructure"
+      />
     );
   }
 
   if (isInset) {
-    return (
-      <div className="flex h-full min-h-[300px] items-stretch p-3 md:min-h-[380px] lg:min-h-full">
-        <div
-          className="relative w-full min-h-[260px] overflow-hidden rounded-[12px] bg-black md:min-h-0"
-          style={solidBg ? { backgroundColor: solidBg } : undefined}
-        >
-          <Image
-            key={feature.image}
-            src={feature.image}
-            alt={feature.imageAlt}
-            fill
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            quality={100}
-            unoptimized
-            className="object-contain object-center"
-          />
-        </div>
-      </div>
-    );
+    return <InsetFeatureMedia feature={feature} solidBg={solidBg} />;
   }
 
-  const useCover =
-    feature.mediaObjectFit !== "contain" &&
-    !isSvg &&
-    !customBg &&
-    (isFullBleed || !isSolidPanel);
-  const objectPosition =
-    feature.mediaObjectPosition === "bottom"
-      ? "object-bottom"
-      : feature.mediaObjectPosition === "top"
-        ? "object-top"
-        : "object-center";
-
   return (
-    <div
-      className={cn(
-        "relative h-full min-h-[300px] overflow-hidden md:min-h-[380px] lg:min-h-full",
-        isSolidPanel && !isFullBleed ? "flex items-center justify-center" : ""
-      )}
-      style={solidBg ? { backgroundColor: solidBg } : undefined}
-    >
-      {isSolidPanel && !isFullBleed ? (
-        <div className="relative h-[85%] w-[88%] max-w-none md:h-[90%] md:w-[92%]">
-          <Image
-            src={feature.image}
-            alt={feature.imageAlt}
-            fill
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-contain object-center"
-            unoptimized={isSvg}
-          />
-        </div>
-      ) : (
-        <Image
-          src={feature.image}
-          alt={feature.imageAlt}
-          fill
-          sizes="(max-width: 1024px) 100vw, 50vw"
-          className={cn(
-            useCover ? "object-cover" : "object-contain",
-            objectPosition,
-            isSvg && !isFullBleed && !isSolidPanel ? "p-6 md:p-10" : ""
-          )}
-          unoptimized={isSvg || Boolean(customBg)}
-        />
-      )}
-    </div>
+    <DefaultFeatureMedia
+      feature={feature}
+      solidBg={solidBg}
+      isSolidPanel={isSolidPanel}
+      isFullBleed={isFullBleed}
+      isSvg={isSvg}
+      customBg={customBg}
+    />
   );
 }
 
 function VisualCard({
   feature,
   styles,
-}: {
+}: Readonly<{
   feature: StudioFeature;
   styles: (typeof themeStyles)[keyof typeof themeStyles];
-}) {
+}>) {
   return (
     <div className="relative flex h-full min-h-[320px] flex-col items-center justify-center gap-6 overflow-hidden p-8 md:min-h-[380px] md:p-10">
       <div className="relative h-28 w-28 md:h-36 md:w-36">
@@ -241,8 +334,13 @@ function VisualCard({
   );
 }
 
-function MediaOnlyCard({ feature }: { feature: StudioFeature }) {
+function MediaOnlyCard({ feature }: Readonly<{ feature: StudioFeature }>) {
   const fit = feature.mediaObjectFit ?? "cover";
+
+  let imageClass = "object-cover object-center";
+  if (fit === "contain") {
+    imageClass = "object-contain object-center";
+  }
 
   return (
     <div className="relative h-full min-h-[320px] overflow-hidden bg-black md:min-h-[380px]">
@@ -254,21 +352,35 @@ function MediaOnlyCard({ feature }: { feature: StudioFeature }) {
         sizes="(max-width: 768px) 100vw, 50vw"
         quality={100}
         unoptimized
-        className={
-          fit === "contain"
-            ? "object-contain object-center"
-            : "object-cover object-center"
-        }
+        className={imageClass}
       />
     </div>
   );
+}
+
+function HalfCardContent({
+  feature,
+  styles,
+  cardKind,
+}: Readonly<{
+  feature: StudioFeature;
+  styles: (typeof themeStyles)[keyof typeof themeStyles];
+  cardKind: string;
+}>) {
+  if (cardKind === "visual") {
+    return <VisualCard feature={feature} styles={styles} />;
+  }
+  if (cardKind === "media") {
+    return <MediaOnlyCard feature={feature} />;
+  }
+  return <FeatureCopy feature={feature} styles={styles} />;
 }
 
 export default function CapabilityStudioFeatureBlock({
   accent,
   feature,
   index,
-}: CapabilityStudioFeatureBlockProps) {
+}: Readonly<CapabilityStudioFeatureBlockProps>) {
   const tokens = getStudioAccent(accent);
   const styles = themeStyles[feature.theme];
   const imageFirst = feature.imageSide === "left";
@@ -283,13 +395,11 @@ export default function CapabilityStudioFeatureBlock({
         transition={{ duration: 0.45, delay: index * 0.04 }}
         className={cn("h-full overflow-hidden rounded-[12px]", styles.card)}
       >
-        {cardKind === "visual" ? (
-          <VisualCard feature={feature} styles={styles} />
-        ) : cardKind === "media" ? (
-          <MediaOnlyCard feature={feature} />
-        ) : (
-          <FeatureCopy feature={feature} styles={styles} />
-        )}
+        <HalfCardContent
+          feature={feature}
+          styles={styles}
+          cardKind={cardKind}
+        />
       </motion.article>
     );
   }

@@ -19,7 +19,7 @@ type FinancialServicesWhitePaperHeroSectionProps = {
 
 export default function FinancialServicesWhitePaperHeroSection({
   paper = financialServicesWhitePaper,
-}: FinancialServicesWhitePaperHeroSectionProps) {
+}: Readonly<FinancialServicesWhitePaperHeroSectionProps>) {
   const router = useRouter();
 
   const goBack = () => {

@@ -39,22 +39,28 @@ export const industryCardAccents = {
 
 export type IndustryCardAccent = keyof typeof industryCardAccents;
 
+const TRANSPARENT_PIXEL =
+  "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
 /** Renders an SVG/PNG as a solid accent-colored glyph via CSS mask */
 function AccentIcon({
   src,
   color,
   className,
   size = 32,
-}: {
+}: Readonly<{
   src: string;
   color: string;
   className?: string;
   size?: number;
-}) {
+}>) {
   return (
-    <span
-      role="img"
+    <img
+      src={TRANSPARENT_PIXEL}
+      alt=""
       aria-hidden
+      width={size}
+      height={size}
       className={className}
       style={{
         display: "inline-block",
@@ -100,7 +106,7 @@ export default function IndustriesMethodologyCard({
   href,
   className,
   showWatermark = true,
-}: IndustriesMethodologyCardProps) {
+}: Readonly<IndustriesMethodologyCardProps>) {
   const { accentColor, accentGlow } = industryCardAccents[accent];
 
   const inner = (

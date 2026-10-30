@@ -39,7 +39,7 @@ function CertLogo({
   delay,
   isInView,
   className,
-}: {
+}: Readonly<{
   src: string;
   alt: string;
   width: number;
@@ -47,7 +47,7 @@ function CertLogo({
   delay: number;
   isInView: boolean;
   className?: string;
-}) {
+}>) {
   return (
     <motion.div
       className={`relative flex items-center justify-center ${className ?? ""}`}
@@ -91,12 +91,12 @@ function ThemeCard({
   isInView,
   children,
   certs,
-}: {
+}: Readonly<{
   index: number;
   isInView: boolean;
   children: ReactNode;
   certs: ReactNode;
-}) {
+}>) {
   return (
     <motion.article
       className="group relative flex h-full flex-col overflow-hidden rounded-[16px] border border-white/10 bg-[#0A0A1A] p-4 transition-[border-color,transform] duration-300 hover:border-primary-pink md:p-5"

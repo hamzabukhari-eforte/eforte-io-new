@@ -7,9 +7,9 @@ import styles from "./aiWorkflows.module.css";
 
 export default function AiWorkflowPillarsSection({
   domain,
-}: {
+}: Readonly<{
   domain: AiWorkflowDomain;
-}) {
+}>) {
   const tiles = [
     {
       ...pillarLinks.agenticOrchestration,
@@ -55,7 +55,7 @@ export default function AiWorkflowPillarsSection({
                 <h4>{tile.label}</h4>
                 <p>{tile.body}</p>
                 <span className={styles.pillarLink}>
-                  Explore
+                  Explore{' '}
                   <span aria-hidden style={{ marginLeft: 4 }}>
                     →
                   </span>

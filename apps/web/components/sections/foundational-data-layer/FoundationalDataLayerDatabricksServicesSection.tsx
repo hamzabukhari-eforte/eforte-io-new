@@ -82,10 +82,10 @@ const cardCenter =
 function ServiceCard({
   item,
   isCenter,
-}: {
+}: Readonly<{
   item: (typeof databricksServices)[0];
   isCenter: boolean;
-}) {
+}>) {
   const Icon = item.icon;
   return (
     <div

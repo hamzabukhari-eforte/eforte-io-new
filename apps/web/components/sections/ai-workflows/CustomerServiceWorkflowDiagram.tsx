@@ -8,9 +8,9 @@ import { AiWorkflowDiagram, WORKFLOW_STEPS } from "./workflow-diagram";
  */
 export default function CustomerServiceWorkflowDiagram({
   className,
-}: {
+}: Readonly<{
   className?: string;
-}) {
+}>) {
   return (
     <AiWorkflowDiagram
       steps={WORKFLOW_STEPS["customer-service"]}

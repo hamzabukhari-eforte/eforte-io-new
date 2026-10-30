@@ -156,7 +156,7 @@ interface DifferentiatorCardProps {
   card: CardType;
 }
 
-export default function DifferentiatorCard({ card }: DifferentiatorCardProps) {
+export default function DifferentiatorCard({ card }: Readonly<DifferentiatorCardProps>) {
   const Icon = iconMap[card.iconName](card.accentColor);
 
   return (

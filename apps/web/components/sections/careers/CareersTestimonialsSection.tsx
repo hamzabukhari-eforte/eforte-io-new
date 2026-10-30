@@ -20,7 +20,7 @@ const PAUSE_MS = 4000;
 const row1Testimonials = employeeTestimonials.filter((_, i) => i % 2 === 0);
 const row2Testimonials = employeeTestimonials.filter((_, i) => i % 2 === 1);
 
-function TestimonialCard({ testimonial }: { testimonial: EmployeeTestimonial }) {
+function TestimonialCard({ testimonial }: Readonly<{ testimonial: EmployeeTestimonial }>) {
   return (
     <div
       style={{ width: CARD_WIDTH }}
@@ -52,11 +52,11 @@ function TestimonialCarouselRow({
   testimonials,
   direction,
   className = "",
-}: {
+}: Readonly<{
   testimonials: EmployeeTestimonial[];
   direction: "rtl" | "ltr";
   className?: string;
-}) {
+}>) {
   const count = testimonials.length;
   const looped = useMemo(
     () => [...testimonials, ...testimonials, ...testimonials],

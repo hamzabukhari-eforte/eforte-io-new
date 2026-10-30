@@ -16,9 +16,9 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>;
-}) {
+}>) {
   const { slug } = await params;
   const paper = getFinanceWhitePaperBySlug(slug);
   if (!paper) return { title: "White Paper | eForte" };
@@ -33,9 +33,9 @@ export async function generateMetadata({
 
 export default async function FinancialServicesWhitePaperSlugPage({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>;
-}) {
+}>) {
   const { slug } = await params;
   const paper = getFinanceWhitePaperBySlug(slug);
   if (!paper) notFound();

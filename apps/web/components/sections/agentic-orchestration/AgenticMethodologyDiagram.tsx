@@ -117,9 +117,9 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 export default function AgenticMethodologyDiagram({
   className,
-}: {
+}: Readonly<{
   className?: string;
-}) {
+}>) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.35 });
   const uid = useId().replace(/:/g, "");
@@ -163,7 +163,7 @@ export default function AgenticMethodologyDiagram({
           </filter>
           {LINE_GRADIENTS.map((gradient, i) => (
             <linearGradient
-              key={`line-${i}`}
+              key={`${gradient.x1}-${gradient.y1}-${gradient.x2}-${gradient.y2}`}
               id={`${uid}-line-${i}`}
               x1={gradient.x1}
               y1={gradient.y1}
@@ -214,7 +214,7 @@ export default function AgenticMethodologyDiagram({
             <stop offset="0.925" stopColor="#715CF8" />
           </linearGradient>
           {CORNERS.map((corner, i) => (
-            <g key={`corner-defs-${i}`}>
+            <g key={corner.fill}>
               <radialGradient
                 id={`${uid}-${corner.fill}`}
                 cx="0"
@@ -339,7 +339,7 @@ export default function AgenticMethodologyDiagram({
         transition={{ duration: 0.45, delay: 0.12, ease: EASE }}
       >
         <p className="text-xs font-semibold leading-tight text-white sm:text-sm">
-          Agentic
+          Agentic{' '}
           <span className="mt-0.5 block font-medium">methodology</span>
         </p>
       </motion.div>

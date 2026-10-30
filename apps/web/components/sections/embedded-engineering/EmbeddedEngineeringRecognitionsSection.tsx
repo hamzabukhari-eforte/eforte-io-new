@@ -32,6 +32,7 @@ export default function EmbeddedEngineeringRecognitionsSection() {
           >
             <p className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-default">
               <span className="inline-block h-2 w-2 rounded-full bg-default" />
+              {' '}
               Recognitions
             </p>
             <h2 className="mt-3 text-3xl font-semibold leading-tight text-default md:text-4xl">

@@ -13,7 +13,7 @@ export default function InfiniteCarousel({
   items,
   gap = "gap-8 md:gap-12 lg:gap-16",
   className = "",
-}: InfiniteCarouselProps) {
+}: Readonly<InfiniteCarouselProps>) {
   return (
     // overflow-x clips the scroll track; vertical padding keeps tooltip room
     // inside the clip box (overflow-x-hidden forces overflow-y to clip too)
@@ -24,9 +24,9 @@ export default function InfiniteCarousel({
       <div className="pb-4 pt-12">
         <div className="flex animate-scroll">
           {/* Duplicate items for seamless infinite scroll; margin matches gap so spacing is even at loop */}
-          {[...Array(3)].map((_, setIndex) => (
+          {(["set-a", "set-b", "set-c"] as const).map((setId, setIndex) => (
             <div
-              key={setIndex}
+              key={setId}
               className={`mr-8 flex ${gap} shrink-0 md:mr-12 lg:mr-16`}
               aria-hidden={setIndex > 0 ? true : undefined}
             >

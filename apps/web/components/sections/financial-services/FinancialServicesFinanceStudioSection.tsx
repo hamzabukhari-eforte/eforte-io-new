@@ -43,11 +43,11 @@ function FlowDot({
   begin,
   radius = 5,
   ring = false,
-}: {
+}: Readonly<{
   begin: string;
   radius?: number;
   ring?: boolean;
-}) {
+}>) {
   return (
     <circle
       cx={0}
@@ -70,7 +70,7 @@ function FlowDot({
   );
 }
 
-function Junction({ cx, cy, delay = "0s" }: { cx: number; cy: number; delay?: string }) {
+function Junction({ cx, cy, delay = "0s" }: Readonly<{ cx: number; cy: number; delay?: string }>) {
   return (
     <circle
       className="fs-tx-pulse"

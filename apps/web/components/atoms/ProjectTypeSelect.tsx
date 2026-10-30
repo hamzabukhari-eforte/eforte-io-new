@@ -21,7 +21,7 @@ export default function ProjectTypeSelect({
   value,
   onChange,
   required = true,
-}: ProjectTypeSelectProps) {
+}: Readonly<ProjectTypeSelectProps>) {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const listRef = useRef<HTMLUListElement>(null);

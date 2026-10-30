@@ -56,7 +56,7 @@ export default function CapabilitiesOverviewStudiosGridSection() {
                     </p>
                     {studio.href ? (
                       <span className={styles.learnMore}>
-                        Learn more
+                        Learn more{' '}
                         <span className={styles.learnMoreArrow} aria-hidden>
                           →
                         </span>

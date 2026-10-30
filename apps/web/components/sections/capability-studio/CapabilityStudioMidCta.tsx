@@ -21,7 +21,7 @@ export default function CapabilityStudioMidCta({
   accent,
   midCta,
   graphicSrc,
-}: CapabilityStudioMidCtaProps) {
+}: Readonly<CapabilityStudioMidCtaProps>) {
   const tokens = getStudioAccent(accent);
 
   return (

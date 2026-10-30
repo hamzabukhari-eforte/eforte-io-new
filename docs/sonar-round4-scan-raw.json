@@ -1,0 +1,70 @@
+{
+  "measures": {
+    "coverage": "0.0",
+    "bugs": "0",
+    "reliability_rating": "1.0",
+    "alert_status": "ERROR",
+    "duplicated_lines_density": "14.8",
+    "code_smells": "4",
+    "security_rating": "1.0",
+    "ncloc": "56950",
+    "vulnerabilities": "0",
+    "security_hotspots": "0",
+    "sqale_index": "50",
+    "sqale_rating": "1.0"
+  },
+  "totalIssues": 4,
+  "issues": [
+    {
+      "severity": "MINOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S6594",
+      "component": "apps/web/lib/strapi/content.ts",
+      "line": 30,
+      "message": "Use the \"RegExp.exec()\" method instead.",
+      "tags": [
+        "regex",
+        "editable-source",
+        "type-dependent"
+      ]
+    },
+    {
+      "severity": "MINOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S6594",
+      "component": "apps/web/lib/strapi/content.ts",
+      "line": 35,
+      "message": "Use the \"RegExp.exec()\" method instead.",
+      "tags": [
+        "regex",
+        "editable-source",
+        "type-dependent"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S8786",
+      "component": "apps/web/lib/strapi/content.ts",
+      "line": 35,
+      "message": "Simplify this regular expression to reduce its runtime, as it has super-linear performance due to backtracking.",
+      "tags": [
+        "regex",
+        "performance"
+      ]
+    },
+    {
+      "severity": "MAJOR",
+      "type": "CODE_SMELL",
+      "rule": "typescript:S8786",
+      "component": "apps/web/lib/strapi/insights.ts",
+      "line": 68,
+      "message": "Simplify this regular expression to reduce its runtime, as it has super-linear performance due to backtracking.",
+      "tags": [
+        "regex",
+        "performance"
+      ]
+    }
+  ],
+  "round": 4
+}

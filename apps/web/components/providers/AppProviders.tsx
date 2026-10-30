@@ -6,7 +6,7 @@ import ContactModalProvider from "@/components/providers/ContactModalProvider";
 import CallbackModalProvider from "@/components/providers/CallbackModalProvider";
 import QuoteModalProvider from "@/components/providers/QuoteModalProvider";
 
-export default function AppProviders({ children }: { children: ReactNode }) {
+export default function AppProviders({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <SmoothScrollProvider>
       <CallbackModalProvider>

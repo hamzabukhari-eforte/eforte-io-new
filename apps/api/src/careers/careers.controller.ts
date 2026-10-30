@@ -10,8 +10,8 @@ import {
 } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
-import { extname, join } from 'path';
-import { randomUUID } from 'crypto';
+import { extname, join } from 'node:path';
+import { randomUUID } from 'node:crypto';
 import { CareersService } from './careers.service';
 import { CreateCareerDto } from './dto/create-career.dto';
 

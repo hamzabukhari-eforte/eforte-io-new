@@ -49,7 +49,7 @@ interface PartnerLogosRowProps {
 export default function PartnerLogosRow({
   heading,
   className,
-}: PartnerLogosRowProps) {
+}: Readonly<PartnerLogosRowProps>) {
   return (
     <div
       className={cn(

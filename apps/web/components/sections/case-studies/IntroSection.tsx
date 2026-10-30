@@ -17,9 +17,9 @@ export default function IntroSection({
   title,
   description,
   image,
-  link,
+  link: _link,
   theme,
-}: IntroSectionProps) {
+}: Readonly<IntroSectionProps>) {
   const glowColor = `rgb(${theme[0]}, ${theme[1]}, ${theme[2]})`;
 
   const textVariant = {
@@ -39,9 +39,6 @@ export default function IntroSection({
       transition: { duration: 1, ease: "easeOut" as const, delay: 0.3 },
     },
   };
-
-  // `link` is kept for parity with the reference implementation.
-  void link;
 
   return (
     <section className="relative w-full overflow-hidden bg-black text-white">

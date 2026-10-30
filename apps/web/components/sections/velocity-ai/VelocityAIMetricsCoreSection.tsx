@@ -126,25 +126,31 @@ function VelocityIcon() {
 
       <ellipse cx="100" cy="168" rx="62" ry="8" fill={BLUE} opacity="0.12" />
 
-      {bars.map((bar, i) => (
-        <motion.rect
-          key={bar.x}
-          x={bar.x}
-          width="20"
-          rx="6"
-          fill={i < 2 ? "url(#velBar1)" : i < 4 ? "url(#velBar2)" : "url(#velBar3)"}
-          animate={{
-            height: [bar.h, bar.h * 1.04, bar.h * 0.97, bar.h],
-            y: [bar.y, bar.y - bar.h * 0.04, bar.y + bar.h * 0.03, bar.y],
-          }}
-          transition={{
-            duration: 5.5,
-            delay: i * 0.18,
-            repeat: Infinity,
-            ease: easeSoft,
-          }}
-        />
-      ))}
+      {bars.map((bar, i) => {
+        let fill = "url(#velBar3)";
+        if (i < 2) fill = "url(#velBar1)";
+        else if (i < 4) fill = "url(#velBar2)";
+
+        return (
+          <motion.rect
+            key={bar.x}
+            x={bar.x}
+            width="20"
+            rx="6"
+            fill={fill}
+            animate={{
+              height: [bar.h, bar.h * 1.04, bar.h * 0.97, bar.h],
+              y: [bar.y, bar.y - bar.h * 0.04, bar.y + bar.h * 0.03, bar.y],
+            }}
+            transition={{
+              duration: 5.5,
+              delay: i * 0.18,
+              repeat: Infinity,
+              ease: easeSoft,
+            }}
+          />
+        );
+      })}
 
       <path
         d="M42 112 C70 96, 88 108, 108 82 C122 64, 138 58, 158 40"
@@ -292,22 +298,28 @@ function AiUtilizationIcon() {
         stroke={BLUE}
         strokeWidth="1.5"
       />
-      {[90, 100, 110].map((cx, i) => (
-        <motion.circle
-          key={cx}
-          cx={cx}
-          cy="157"
-          r="2.5"
-          fill={i === 0 ? PINK : i === 1 ? "white" : BLUE}
-          animate={{ opacity: [0.35, 1, 0.35] }}
-          transition={{
-            duration: 1.2,
-            delay: i * 0.2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
+      {[90, 100, 110].map((cx, i) => {
+        let fill: string = BLUE;
+        if (i === 0) fill = PINK;
+        else if (i === 1) fill = "white";
+
+        return (
+          <motion.circle
+            key={cx}
+            cx={cx}
+            cy="157"
+            r="2.5"
+            fill={fill}
+            animate={{ opacity: [0.35, 1, 0.35] }}
+            transition={{
+              duration: 1.2,
+              delay: i * 0.2,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        );
+      })}
     </svg>
   );
 }

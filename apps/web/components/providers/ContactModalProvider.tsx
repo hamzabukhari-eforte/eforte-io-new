@@ -6,9 +6,10 @@ import {
   useContext,
   useEffect,
   useLayoutEffect,
+  useMemo,
   useState,
-  type FormEvent,
   type ReactNode,
+  type SyntheticEvent,
 } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { HiX } from "react-icons/hi";
@@ -18,6 +19,7 @@ import { useCallbackModal } from "@/components/providers/CallbackModalProvider";
 import { useLenisControl } from "@/components/providers/SmoothScrollProvider";
 import { lockBodyScroll } from "@/lib/lockBodyScroll";
 import { cn } from "@/lib/utils";
+import { formString } from "@/lib/formData";
 
 type ContactModalContextValue = {
   openContactModal: () => void;
@@ -47,13 +49,13 @@ function ContactField({
   children,
   className,
   labelClassName,
-}: {
+}: Readonly<{
   label: string;
   id: string;
   children: ReactNode;
   className?: string;
   labelClassName?: string;
-}) {
+}>) {
   return (
     <div className={cn("flex flex-col gap-1", className)}>
       <label
@@ -71,11 +73,11 @@ function ContactModal({
   isOpen,
   onClose,
   onReopen,
-}: {
+}: Readonly<{
   isOpen: boolean;
   onClose: () => void;
   onReopen: () => void;
-}) {
+}>) {
   const [submitted, setSubmitted] = useState(false);
   const [projectType, setProjectType] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -117,7 +119,7 @@ function ContactModal({
     }
   }, [isOpen]);
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitError(null);
     setIsSubmitting(true);
@@ -125,11 +127,11 @@ function ContactModal({
     const form = event.currentTarget;
     const formData = new FormData(form);
     const payload = {
-      name: String(formData.get("name") ?? "").trim(),
-      email: String(formData.get("email") ?? "").trim(),
-      phone: String(formData.get("phone") ?? "").trim() || undefined,
+      name: formString(formData, "name").trim(),
+      email: formString(formData, "email").trim(),
+      phone: formString(formData, "phone").trim() || undefined,
       projectType: projectType || undefined,
-      description: String(formData.get("description") ?? "").trim() || undefined,
+      description: formString(formData, "description").trim() || undefined,
     };
 
     const apiBase = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "");
@@ -322,16 +324,18 @@ function ContactModal({
   );
 }
 
-export default function ContactModalProvider({ children }: { children: ReactNode }) {
+export default function ContactModalProvider({ children }: Readonly<{ children: ReactNode }>) {
   const [isOpen, setIsOpen] = useState(false);
 
   const openContactModal = useCallback(() => setIsOpen(true), []);
   const closeContactModal = useCallback(() => setIsOpen(false), []);
+  const value = useMemo(
+    () => ({ openContactModal, closeContactModal, isOpen }),
+    [openContactModal, closeContactModal, isOpen],
+  );
 
   return (
-    <ContactModalContext.Provider
-      value={{ openContactModal, closeContactModal, isOpen }}
-    >
+    <ContactModalContext.Provider value={value}>
       {children}
       <ContactModal
         isOpen={isOpen}

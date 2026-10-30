@@ -45,7 +45,7 @@ export default function TechnologiesSection({
   backend,
   database,
   others,
-}: TechProps) {
+}: Readonly<TechProps>) {
   const allTech = [...frontend, ...backend, ...database, ...others];
   const [showCard, setShowCard] = useState(allTech[0]?.name ?? "");
 
@@ -81,8 +81,10 @@ export default function TechnologiesSection({
         >
           <span className="mb-2 flex items-center gap-2 text-sm text-white">
             <span className="h-2 w-2 rounded-full bg-purple-500" />
+            {' '}
             Case Study
           </span>
+          {' '}
           Technologies Used
         </motion.div>
 

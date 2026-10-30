@@ -12,7 +12,7 @@ import "swiper/css";
 
 const AUTOPLAY_INTERVAL_MS = 4500;
 
-function SuccessStoryCard({ story }: { story: StudioSuccessStoryItem }) {
+function SuccessStoryCard({ story }: Readonly<{ story: StudioSuccessStoryItem }>) {
   return (
     <article
       className="grid h-full overflow-hidden rounded-[12px] text-white lg:grid-cols-[1.05fr_0.95fr]"
@@ -80,7 +80,7 @@ export default function StudioSuccessStoriesSection({
   stories,
   title = "Our success stories",
   className,
-}: StudioSuccessStoriesSectionProps) {
+}: Readonly<StudioSuccessStoriesSectionProps>) {
   const swiperRef = useRef<SwiperType | null>(null);
   const dotsRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);

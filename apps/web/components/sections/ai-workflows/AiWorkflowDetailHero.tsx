@@ -9,9 +9,9 @@ import styles from "./aiWorkflows.module.css";
 
 export default function AiWorkflowDetailHero({
   domain,
-}: {
+}: Readonly<{
   domain: AiWorkflowDomain;
-}) {
+}>) {
   const hasHeroImage = Boolean(domain.heroImageSrc);
 
   return (

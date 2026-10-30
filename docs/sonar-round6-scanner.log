@@ -1,0 +1,299 @@
+18:22:47.694 INFO  Scanner configuration file: /opt/sonar-scanner/conf/sonar-scanner.properties
+18:22:47.699 INFO  Project root configuration file: /home/hamza/WORK/eforte-new/sonar-project.properties
+18:22:47.718 INFO  SonarScanner CLI 6.2.1.4610
+18:22:47.721 INFO  Java 17.0.12 Eclipse Adoptium (64-bit)
+18:22:47.721 INFO  Linux 7.0.0-38-generic amd64
+18:22:47.758 INFO  User cache: /home/hamza/.sonar/cache
+18:22:48.354 INFO  JRE provisioning: os[linux], arch[x86_64]
+18:22:48.454 INFO  Communicating with SonarQube Server 26.10.0.133078
+18:22:48.760 INFO  Starting SonarScanner Engine...
+18:22:48.761 INFO  Java 21.0.12.1 Eclipse Adoptium (64-bit)
+18:22:49.629 INFO  Load global settings
+18:22:49.726 INFO  Load global settings (done) | time=94ms
+18:22:49.729 INFO  Server id: CF0800D3-AaGHS-34YK9L4nm8b84h
+18:22:49.740 INFO  Loading required plugins
+18:22:49.740 INFO  Load plugins index
+18:22:49.760 INFO  Load plugins index (done) | time=19ms
+18:22:49.760 INFO  Load/download plugins
+18:22:49.771 INFO  Load/download plugins (done) | time=11ms
+18:22:50.136 INFO  Load project settings for component key: 'eforte-new'
+18:22:50.157 INFO  Load project settings for component key: 'eforte-new' (done) | time=21ms
+18:22:50.171 INFO  Process project properties
+18:22:50.191 INFO  Process project properties (done) | time=19ms
+18:22:50.208 INFO  Project key: eforte-new
+18:22:50.208 INFO  Base dir: /home/hamza/WORK/eforte-new
+18:22:50.209 INFO  Working dir: /home/hamza/WORK/eforte-new/.scannerwork
+18:22:50.315 INFO  Load quality profiles
+18:22:50.364 INFO  Load quality profiles (done) | time=49ms
+18:22:50.403 INFO  Load active rules
+18:22:50.647 INFO  Load active rules (done) | time=244ms
+18:22:50.656 INFO  Load analysis cache
+18:22:50.739 INFO  Load analysis cache | time=84ms
+18:22:50.831 INFO  Preprocessing files...
+18:22:51.647 INFO  5 languages detected in 1639 preprocessed files (done) | time=815ms
+18:22:51.647 INFO  0 files ignored because of inclusion/exclusion patterns
+18:22:51.647 INFO  7 directories skipped because of exclusion patterns (content not counted)
+18:22:51.648 INFO  6 files ignored because of scm ignore settings
+18:22:51.649 INFO  Loading plugins for detected languages
+18:22:51.650 INFO  Load/download plugins
+18:22:51.659 INFO  Load/download plugins (done) | time=9ms
+18:22:51.853 INFO  Load project repositories
+18:22:51.965 INFO  Load project repositories (done) | time=111ms
+18:22:52.005 INFO  Indexing files...
+18:22:52.005 INFO  Project configuration:
+18:22:52.007 INFO    Excluded sources: **/node_modules/**, **/.next/**, **/dist/**, **/build/**, **/.cache/**, **/coverage/**, **/uploads/**, **/*.min.js, **/pnpm-lock.yaml, **/package-lock.json, **/*.map, apps/web/scripts/**, **/docs/**
+18:22:52.380 INFO  1639 files indexed (done) | time=375ms
+18:22:52.381 INFO  Quality profile for css: Sonar way comprehensive
+18:22:52.381 INFO  Quality profile for docker: Sonar way comprehensive
+18:22:52.382 INFO  Quality profile for js: Sonar way comprehensive
+18:22:52.382 INFO  Quality profile for json: Sonar way comprehensive
+18:22:52.382 INFO  Quality profile for ts: Sonar way comprehensive
+18:22:52.382 INFO  ------------- Run sensors on module eForte New
+18:22:52.418 INFO  Load metrics repository
+18:22:52.441 INFO  Load metrics repository (done) | time=22ms
+18:22:52.983 INFO  Reflections took 105 ms to scan 1 urls, producing 30 keys and 303 values
+18:22:53.123 INFO  Sensor IaC YAML File Type Classification Sensor [iac]
+18:22:53.221 INFO  Sensor IaC YAML File Type Classification Sensor [iac] (done) | time=97ms
+18:22:53.221 INFO  Sensor IaC CloudFormation Sensor [iac]
+18:22:53.221 INFO  There are no files to be analyzed for the CloudFormation language
+18:22:53.222 INFO  Sensor IaC CloudFormation Sensor [iac] (done) | time=0ms
+18:22:53.222 INFO  Sensor IaC cfn-lint report Sensor [iac]
+18:22:53.222 INFO  Sensor IaC cfn-lint report Sensor [iac] (done) | time=0ms
+18:22:53.222 INFO  Sensor IaC hadolint report Sensor [iac]
+18:22:53.222 INFO  Sensor IaC hadolint report Sensor [iac] (done) | time=0ms
+18:22:53.223 INFO  Sensor IaC Azure Resource Manager Sensor [iac]
+18:22:53.224 INFO  There are no files to be analyzed for the Azure Resource Manager language
+18:22:53.224 INFO  Sensor IaC Azure Resource Manager Sensor [iac] (done) | time=1ms
+18:22:53.224 INFO  Sensor Java Config Sensor [iac]
+18:22:53.224 INFO  There are no files to be analyzed for the Java language
+18:22:53.224 INFO  Sensor Java Config Sensor [iac] (done) | time=0ms
+18:22:53.225 INFO  Sensor IaC Docker Sensor [iac]
+18:22:53.331 INFO  1 source file to be analyzed
+18:22:53.440 INFO  1/1 source file has been analyzed
+18:22:53.440 INFO  Sensor IaC Docker Sensor [iac] (done) | time=216ms
+18:22:53.440 INFO  Sensor HTML [web]
+18:22:53.449 INFO  Sensor HTML [web] (done) | time=8ms
+18:22:53.449 INFO  Sensor TextAndSecretsSensor [text]
+18:22:53.521 INFO  Available processors: 8
+18:22:53.522 INFO  Using 8 threads for analysis.
+18:22:53.871 INFO  The property "sonar.tests" is not set. To improve the analysis accuracy, we categorize a file as a test file if any of the following is true:
+  * The filename starts with "test"
+  * The filename contains "test." or "tests."
+  * Any directory in the file path is named: "doc", "docs", "test", "tests", "mock" or "mocks"
+  * Any directory in the file path has a name ending in "test" or "tests"
+
+18:22:53.907 INFO  Start fetching files for the text and secrets analysis
+18:22:53.915 INFO  Using Git CLI to retrieve dirty files
+18:22:53.945 INFO  Retrieving language associated files and files included via "sonar.text.inclusions" that are tracked by git
+18:22:54.075 INFO  Starting the text and secrets analysis
+18:22:54.077 INFO  538 source files to be analyzed for the text and secrets analysis
+18:22:54.799 INFO  538/538 source files have been analyzed for the text and secrets analysis
+18:22:54.800 INFO  Skipped 2 file(s) in the secrets analysis due to automatic test file detection
+18:22:54.813 INFO  Sensor TextAndSecretsSensor [text] (done) | time=1363ms
+18:22:54.816 INFO  ------------- Run sensors on project
+18:22:55.189 INFO  Sensor JavaScript/TypeScript/CSS analysis [javascript]
+18:22:55.759 INFO  Detected os: Linux arch: amd64 alpine: false. Platform: LINUX_X64
+18:22:55.760 INFO  Deploy location /home/hamza/.sonar/js/node-runtime, tagetRuntime: /home/hamza/.sonar/js/node-runtime/node,  version: /home/hamza/.sonar/js/node-runtime/version.txt
+18:22:55.774 INFO  Using embedded Node.js runtime.
+18:22:55.775 INFO  Using Node.js executable: '/home/hamza/.sonar/js/node-runtime/node'.
+18:22:58.661 INFO  Memory configuration: OS (31424 MB), Node.js (4288 MB).
+18:22:58.675 INFO  gRPC analyze-project server listening on 127.0.0.1:38137
+18:22:58.842 INFO  Plugin version: [14.0.0.46108]
+18:23:02.474 INFO  Found 4 tsconfig.json file(s): [/home/hamza/WORK/eforte-new/apps/api/tsconfig.json, /home/hamza/WORK/eforte-new/apps/strapi/src/admin/tsconfig.json, /home/hamza/WORK/eforte-new/apps/strapi/tsconfig.json, /home/hamza/WORK/eforte-new/apps/web/tsconfig.json]
+18:23:44.828 INFO  524 source files to be analyzed
+18:23:44.828 INFO  Creating TypeScript(6.0.3) program with configuration file /home/hamza/WORK/eforte-new/apps/api/tsconfig.json [lib: lib.es2023.d.ts, lib.dom.d.ts]
+18:23:44.828 INFO  Analyzing 25 file(s) from tsconfig /home/hamza/WORK/eforte-new/apps/api/tsconfig.json (795 total files in program)
+18:23:44.829 INFO  Creating TypeScript(6.0.3) program with configuration file /home/hamza/WORK/eforte-new/apps/strapi/src/admin/tsconfig.json [lib: lib.dom.d.ts, lib.dom.iterable.d.ts, lib.esnext.d.ts]
+18:23:44.829 INFO  No files to analyze from tsconfig /home/hamza/WORK/eforte-new/apps/strapi/src/admin/tsconfig.json
+18:23:44.829 INFO  Creating TypeScript(6.0.3) program with configuration file /home/hamza/WORK/eforte-new/apps/strapi/tsconfig.json [lib: lib.es2020.d.ts]
+18:23:44.830 INFO  No files to analyze from tsconfig /home/hamza/WORK/eforte-new/apps/strapi/tsconfig.json
+18:23:44.830 INFO  Creating TypeScript(6.0.3) program with configuration file /home/hamza/WORK/eforte-new/apps/web/tsconfig.json [lib: lib.dom.d.ts, lib.dom.iterable.d.ts, lib.esnext.d.ts]
+18:23:44.832 INFO  Analyzing 490 file(s) from tsconfig /home/hamza/WORK/eforte-new/apps/web/tsconfig.json (1077 total files in program)
+18:23:44.851 INFO  Analyzing 3 file(s) using merged compiler options [lib: lib.es2023.d.ts, lib.dom.d.ts]
+18:23:44.852 INFO  524/524 source files have been analyzed
+18:23:44.857 INFO  Hit the cache for 0 out of 518
+18:23:44.858 INFO  Miss the cache for 518 out of 518: ANALYSIS_MODE_INELIGIBLE [518/518]
+18:23:44.858 INFO  Sensor JavaScript/TypeScript/CSS analysis [javascript] (done) | time=49668ms
+18:23:44.858 INFO  Sensor IaC Project Sensor [iac]
+18:23:44.860 INFO  Sensor IaC Project Sensor [iac] (done) | time=2ms
+18:23:44.861 INFO  Sensor Zero Coverage Sensor
+18:23:44.971 INFO  Sensor Zero Coverage Sensor (done) | time=109ms
+18:23:44.971 INFO  ------------- Gather SCA dependencies on project
+18:23:44.982 INFO  Dependency analysis skipped
+18:23:45.044 INFO  SCM Publisher SCM provider for this project is: git
+18:23:45.046 INFO  SCM Publisher 158 source files to be analyzed
+18:23:46.513 INFO  SCM Publisher 0/158 source files have been analyzed (done) | time=1467ms
+18:23:46.514 WARN  Missing blame information for the following files:
+18:23:46.515 WARN    * apps/web/components/sections/financial-services/FinancialServicesVelocitiesInfographics.tsx
+18:23:46.517 WARN    * apps/web/components/sections/case-studies/DetailsCard.tsx
+18:23:46.517 WARN    * apps/web/components/sections/agentic-orchestration/AgenticOrchestrationInsightsListingSection.tsx
+18:23:46.518 WARN    * apps/web/components/sections/foundational-data-layer/FoundationalDataLayerDatabricksServicesSection.tsx
+18:23:46.520 WARN    * apps/web/components/sections/agentic-orchestration/AiSolutionsDiagram.tsx
+18:23:46.521 WARN    * apps/web/components/sections/agentic-orchestration/AgenticOrchestrationCoreServicesSection.tsx
+18:23:46.522 WARN    * apps/web/components/sections/legal/LegalPageSection.tsx
+18:23:46.522 WARN    * apps/web/components/sections/foundational-data-layer/FoundationalDataLayerInsightsListingSection.tsx
+18:23:46.522 WARN    * apps/web/components/sections/financial-services/FinancialServicesWhitePaperArticleSection.tsx
+18:23:46.523 WARN    * apps/web/components/sections/industry-page/IndustrySecuritySection.tsx
+18:23:46.523 WARN    * apps/web/components/sections/ai-workflows/CustomerServiceWorkflowDiagram.tsx
+18:23:46.523 WARN    * apps/web/components/sections/capability-studio/BlockchainHeroGraphic.tsx
+18:23:46.524 WARN    * apps/web/components/sections/TrustedBySection.tsx
+18:23:46.524 WARN    * apps/web/app/case-studies/[slug]/page.tsx
+18:23:46.525 WARN    * apps/web/components/sections/foundational-data-layer/FoundationalDataLayerInsightHeroSection.tsx
+18:23:46.526 WARN    * apps/web/components/sections/insights/data.ts
+18:23:46.527 WARN    * apps/web/lib/replayMotion.tsx
+18:23:46.527 WARN    * apps/web/components/sections/industry-page/IndustryExpertiseSection.tsx
+18:23:46.527 WARN    * apps/web/components/sections/agentic-orchestration/AgenticOrchestrationPlatformFlowSection.tsx
+18:23:46.527 WARN    * apps/api/src/main.ts
+18:23:46.528 WARN    * apps/web/components/sections/careers/CareersTestimonialsSection.tsx
+18:23:46.528 WARN    * apps/web/components/sections/financial-services/FinancialServicesWhitePaperHeroSection.tsx
+18:23:46.528 WARN    * apps/web/components/sections/case-studies/IntroSection.tsx
+18:23:46.528 WARN    * apps/web/components/sections/case-studies/TechCard.tsx
+18:23:46.529 WARN    * apps/web/components/sections/about-us/ValueCard.tsx
+18:23:46.529 WARN    * apps/api/src/mail/mail.service.ts
+18:23:46.529 WARN    * apps/web/components/atoms/ContactCTA.tsx
+18:23:46.530 WARN    * apps/web/next.config.ts
+18:23:46.530 WARN    * apps/web/components/sections/velocity-ai/VelocityAIInsightsListingSection.tsx
+18:23:46.530 WARN    * apps/web/components/sections/careers/CareersBenefitsSection.tsx
+18:23:46.530 WARN    * apps/web/components/sections/industry-page/IndustryPageSections.tsx
+18:23:46.531 WARN    * apps/web/components/sections/ai-workflows/AiWorkflowDetailHero.tsx
+18:23:46.531 WARN    * apps/web/components/sections/financial-services/FinancialServicesFinanceStudioSection.tsx
+18:23:46.531 WARN    * apps/web/components/sections/about-us/DifferentiatorCard.tsx
+18:23:46.533 WARN    * apps/web/components/sections/industry-page/IndustrySuccessStoriesSection.tsx
+18:23:46.534 WARN    * apps/web/components/sections/studio-shared/StudioContactBanner.tsx
+18:23:46.534 WARN    * apps/web/components/sections/ServiceCategoriesSection.tsx
+18:23:46.534 WARN    * apps/web/components/sections/locations/LocationsGridSection.tsx
+18:23:46.535 WARN    * apps/web/data/testimonials.ts
+18:23:46.535 WARN    * apps/web/components/sections/case-studies/TechnologiesSection.tsx
+18:23:46.535 WARN    * apps/web/components/sections/velocity-ai/VelocityAIInsightHeroSection.tsx
+18:23:46.535 WARN    * apps/web/app/sitemap.ts
+18:23:46.536 WARN    * apps/web/components/sections/cloud-sre/CloudSreSplitSection.tsx
+18:23:46.536 WARN    * apps/web/components/sections/capability-studio/CapabilityStudioMidCta.tsx
+18:23:46.536 WARN    * apps/web/components/sections/agentic-orchestration/AgenticPlatformConnectors.tsx
+18:23:46.536 WARN    * apps/web/app/industries/financial-services/white-paper/[slug]/page.tsx
+18:23:46.537 WARN    * apps/web/components/sections/studio-shared/StudioProcessSection.tsx
+18:23:46.537 WARN    * apps/web/data/capabilities/appSolutionImages.ts
+18:23:46.537 WARN    * apps/web/components/sections/agentic-orchestration/AgenticMethodologyCard.tsx
+18:23:46.537 WARN    * apps/web/components/sections/agentic-orchestration/CoreServicesDiagram.tsx
+18:23:46.538 WARN    * apps/web/components/sections/capability-studio/BlockchainInfrastructureMedia.tsx
+18:23:46.538 WARN    * apps/web/components/sections/ai-workflows/AiWorkflowsSection.tsx
+18:23:46.538 WARN    * apps/web/components/sections/embedded-engineering/EmbeddedEngineeringRecognitionsSection.tsx
+18:23:46.538 WARN    * apps/web/components/sections/careers/CareersJoinTeamSection.tsx
+18:23:46.539 WARN    * apps/web/components/sections/capability-studio/CapabilityStudioFeatureBlock.tsx
+18:23:46.539 WARN    * apps/web/components/sections/embedded-engineering/EmbeddedEngineeringSuccessStoriesSection.tsx
+18:23:46.539 WARN    * apps/web/components/atoms/QuoteCTA.tsx
+18:23:46.540 WARN    * apps/web/components/sections/capability-studio/ConsultancyMentoringMedia.tsx
+18:23:46.540 WARN    * apps/web/components/sections/healthcare/HealthcarePortfolioSection.tsx
+18:23:46.540 WARN    * apps/web/components/sections/careers/CareersJobDetailHeroSection.tsx
+18:23:46.541 WARN    * apps/web/app/industries/financial-services/articles/[slug]/page.tsx
+18:23:46.541 WARN    * apps/web/components/sections/databricks/renderBoldText.tsx
+18:23:46.541 WARN    * apps/web/components/sections/capability-studio/CapabilityStudioPage.tsx
+18:23:46.541 WARN    * apps/web/components/sections/financial-services/FinancialServicesArticleBodySection.tsx
+18:23:46.542 WARN    * apps/web/components/sections/InfiniteCarousel.tsx
+18:23:46.542 WARN    * apps/web/components/sections/financial-services/FinancialServicesOurWorkSection.tsx
+18:23:46.542 WARN    * apps/web/components/sections/careers/CareersJobOpeningsSection.tsx
+18:23:46.542 WARN    * apps/web/components/sections/ai-workflows/AiWorkflowMidCta.tsx
+18:23:46.542 WARN    * apps/web/components/sections/databricks/DatabricksSuccessStoriesSection.tsx
+18:23:46.543 WARN    * apps/web/components/providers/QuoteModalProvider.tsx
+18:23:46.543 WARN    * apps/web/components/sections/careers/CareersPhotoGallerySection.tsx
+18:23:46.543 WARN    * apps/web/components/sections/impact-studies/ImpactStudiesHeroSection.tsx
+18:23:46.543 WARN    * apps/web/components/sections/case-studies/DetailsSection.tsx
+18:23:46.544 WARN    * apps/web/data/trustedByLogos.tsx
+18:23:46.544 WARN    * apps/web/components/sections/ai-workflows/AiWorkflowsReveal.tsx
+18:23:46.544 WARN    * apps/web/components/sections/healthcare/HealthcareCertificationsSection.tsx
+18:23:46.544 WARN    * apps/web/components/sections/industry-page/IndustryHeroSection.tsx
+18:23:46.545 WARN    * apps/web/components/sections/agentic-orchestration/AgenticOrchestrationInsightHeroSection.tsx
+18:23:46.545 WARN    * apps/web/components/sections/FooterItemLink.tsx
+18:23:46.545 WARN    * apps/web/components/sections/StrategicApproachSection.tsx
+18:23:46.545 WARN    * apps/api/Dockerfile
+18:23:46.546 WARN    * apps/web/app/velocity-ai/insights/[slug]/page.tsx
+18:23:46.546 WARN    * apps/web/components/sections/impact-studies/ImpactStudiesProjectsSection.tsx
+18:23:46.546 WARN    * apps/web/components/sections/velocity-ai/VelocityAIInsightBodySection.tsx
+18:23:46.547 WARN    * apps/web/components/sections/studio-shared/StudioValuesSection.tsx
+18:23:46.547 WARN    * apps/web/components/sections/ai-workflows/AiWorkflowPage.tsx
+18:23:46.548 WARN    * apps/web/app/careers/[slug]/page.tsx
+18:23:46.548 WARN    * apps/web/components/atoms/JsonLd.tsx
+18:23:46.548 WARN    * apps/web/app/ai-workflows/[slug]/page.tsx
+18:23:46.549 WARN    * apps/web/components/sections/velocity-ai/VelocityAIMetricsCoreSection.tsx
+18:23:46.549 WARN    * apps/web/components/sections/case-studies/CaseStudyNarrative.tsx
+18:23:46.549 WARN    * apps/web/components/sections/impact-studies/impact-studies.module.css
+18:23:46.549 WARN    * apps/web/components/sections/ReviewsPageContent.tsx
+18:23:46.550 WARN    * apps/web/components/atoms/FormSuccessState.tsx
+18:23:46.550 WARN    * apps/web/app/blog/[slug]/page.tsx
+18:23:46.550 WARN    * apps/web/components/sections/GlobalLeadersSection.tsx
+18:23:46.551 WARN    * apps/web/components/sections/industries-overview/IndustriesMethodologyCard.tsx
+18:23:46.551 WARN    * apps/web/components/providers/AppProviders.tsx
+18:23:46.551 WARN    * apps/web/components/sections/foundational-data-layer/FoundationalDataLayerInsightBodySection.tsx
+18:23:46.552 WARN    * apps/web/components/sections/capabilities-overview/CapabilitiesOverviewStudiosGridSection.tsx
+18:23:46.552 WARN    * apps/web/components/sections/capability-studio/CapabilityStudioProprietaryTechSection.tsx
+18:23:46.552 WARN    * apps/web/components/sections/ai-workflows/workflow-diagram/AiWorkflowDiagram.tsx
+18:23:46.552 WARN    * apps/web/components/sections/velocity-ai/VelocityAIMetricsOrbitSection.tsx
+18:23:46.553 WARN    * apps/web/data/capabilities/studioBrands.ts
+18:23:46.553 WARN    * apps/web/components/sections/ai-workflows/workflow-diagram/primitives.tsx
+18:23:46.553 WARN    * apps/web/components/sections/case-studies/FormSection.tsx
+18:23:46.553 WARN    * apps/web/components/sections/industries-overview/IndustriesReveal.tsx
+18:23:46.554 WARN    * apps/web/components/providers/SmoothScrollProvider.tsx
+18:23:46.554 WARN    * apps/web/components/sections/insights/InsightsHeroSection.tsx
+18:23:46.554 WARN    * apps/api/src/mail/mail.utils.ts
+18:23:46.554 WARN    * apps/web/components/atoms/InsightImage.tsx
+18:23:46.554 WARN    * apps/web/components/sections/ai-workflows/AiWorkflowPillarsSection.tsx
+18:23:46.554 WARN    * apps/web/components/sections/insights/InsightDetailSection.tsx
+18:23:46.555 WARN    * apps/web/components/sections/capability-studio/AppSolutionsHeroGraphic.tsx
+18:23:46.555 WARN    * apps/web/components/atoms/ProjectTypeSelect.tsx
+18:23:46.555 WARN    * apps/web/components/sections/TestimonialsSection.tsx
+18:23:46.555 WARN    * apps/web/components/sections/industries-overview/industriesOverview.module.css
+18:23:46.555 WARN    * apps/web/lib/strapi/content.ts
+18:23:46.556 WARN    * apps/web/components/sections/FoundationalDataLayerSection.tsx
+18:23:46.556 WARN    * apps/web/components/sections/capability-studio/CapabilityStudioFeatures.tsx
+18:23:46.557 WARN    * apps/web/data/sitemap.ts
+18:23:46.557 WARN    * apps/web/components/providers/CallbackModalProvider.tsx
+18:23:46.557 WARN    * apps/web/components/sections/Navbar.tsx
+18:23:46.558 WARN    * apps/web/components/sections/velocity-ai/VelocityAIEngineeringSection.tsx
+18:23:46.558 WARN    * apps/web/app/foundational-data-layer/insights/[slug]/page.tsx
+18:23:46.558 WARN    * apps/web/components/sections/FooterImpactStudiesColumn.tsx
+18:23:46.559 WARN    * apps/web/components/sections/capability-studio/CapabilityStudioFaqSection.tsx
+18:23:46.559 WARN    * apps/web/components/sections/industry-page/IndustryHighlightsSection.tsx
+18:23:46.559 WARN    * apps/web/app/white-papers/[slug]/page.tsx
+18:23:46.560 WARN    * apps/web/app/blog/category/[slug]/page.tsx
+18:23:46.560 WARN    * apps/web/components/sections/ai-workflows/workflow-diagram/icons.tsx
+18:23:46.560 WARN    * apps/web/components/sections/capabilities-overview/CapabilitiesReveal.tsx
+18:23:46.560 WARN    * apps/web/components/atoms/ReactPlayerClient.tsx
+18:23:46.561 WARN    * apps/api/src/careers/careers.controller.ts
+18:23:46.561 WARN    * apps/web/lib/formData.ts
+18:23:46.561 WARN    * apps/web/components/sections/agentic-orchestration/AgenticOrchestrationPlatformSection.tsx
+18:23:46.562 WARN    * apps/web/components/sections/financial-services/FinancialServicesAgentsSection.tsx
+18:23:46.562 WARN    * apps/web/components/sections/studio-shared/StudioSuccessStoriesSection.tsx
+18:23:46.562 WARN    * apps/web/components/sections/agentic-orchestration/AgenticMethodologyDiagram.tsx
+18:23:46.563 WARN    * apps/web/components/sections/about-us/OurTimelineSection.tsx
+18:23:46.563 WARN    * apps/web/components/sections/velocity-ai/VelocityFrameworkVisuals.tsx
+18:23:46.564 WARN    * apps/web/components/sections/financial-services/FinancialServicesArticleHeroSection.tsx
+18:23:46.564 WARN    * apps/web/components/sections/insights/InsightsPostsSection.tsx
+18:23:46.564 WARN    * apps/web/components/sections/careers/CareersJobDetailBodySection.tsx
+18:23:46.565 WARN    * apps/web/components/sections/ai-workflows/AiWorkflowsDomainsSection.tsx
+18:23:46.565 WARN    * apps/web/components/atoms/Container.tsx
+18:23:46.566 WARN    * apps/web/components/sections/agentic-orchestration/AgenticOrchestrationInsightBodySection.tsx
+18:23:46.566 WARN    * apps/web/components/sections/capability-studio/PlatformEngineeringHeroGraphic.tsx
+18:23:46.566 WARN    * apps/web/components/sections/impact-studies/AnimatedCounter.tsx
+18:23:46.567 WARN    * apps/web/components/sections/capability-studio/CapabilityStudioHero.tsx
+18:23:46.567 WARN    * apps/web/data/capabilities/blockchainImages.ts
+18:23:46.567 WARN    * apps/web/components/sections/white-papers/WhitePaperHeroSection.tsx
+18:23:46.568 WARN    * apps/web/components/sections/ServicesSection.tsx
+18:23:46.568 WARN    * apps/web/lib/strapi/insights.ts
+18:23:46.568 WARN    * apps/web/components/providers/ContactModalProvider.tsx
+18:23:46.568 WARN    * apps/web/components/atoms/PartnerLogosRow.tsx
+18:23:46.568 WARN    * apps/web/components/sections/foundational-data-layer/FoundationalDataLayerServicesSection.tsx
+18:23:46.569 WARN    * apps/web/app/agentic-orchestration/insights/[slug]/page.tsx
+18:23:46.569 WARN  This may lead to missing/broken features in SonarQube
+18:23:46.678 INFO  CPD Executor 61 files had no CPD blocks
+18:23:46.679 INFO  CPD Executor Calculating CPD for 463 files
+18:23:47.027 INFO  CPD Executor CPD calculation finished (done) | time=348ms
+18:23:47.037 INFO  SCM revision ID '45ccf7269fda130a644f04534991859dd628e8f9'
+18:23:47.419 INFO  Analysis report generated in 342ms, dir size=5.4 MB
+18:23:48.795 INFO  Analysis report compressed in 1375ms, zip size=3.3 MB
+18:23:48.977 INFO  Analysis report uploaded in 182ms
+18:23:48.978 INFO  ANALYSIS SUCCESSFUL, you can find the results at: http://localhost:9000/dashboard?id=eforte-new
+18:23:48.978 INFO  Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+18:23:48.978 INFO  More about the report processing at http://localhost:9000/api/ce/task?id=4654b67e-6090-499e-aabf-efa9f79ab6c5
+18:23:49.540 INFO  Analysis total time: 1:00.729 min
+18:23:49.541 INFO  SonarScanner Engine completed successfully
+18:23:49.605 INFO  EXECUTION SUCCESS
+18:23:49.606 INFO  Total time: 1:01.915s

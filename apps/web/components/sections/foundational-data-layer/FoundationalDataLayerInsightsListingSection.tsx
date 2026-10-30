@@ -12,7 +12,7 @@ type FoundationalDataLayerInsightsListingSectionProps = {
 
 export default function FoundationalDataLayerInsightsListingSection({
   articles,
-}: FoundationalDataLayerInsightsListingSectionProps) {
+}: Readonly<FoundationalDataLayerInsightsListingSectionProps>) {
   return (
     <>
       <section className="relative overflow-hidden bg-default pt-28 pb-12 md:pt-36 md:pb-16">

@@ -20,9 +20,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>;
-}) {
+}>) {
   const { slug } = await params;
   const post = await getInsightBySlug(slug);
   if (!post) return { title: "Blog | eForte" };
@@ -37,9 +37,9 @@ export async function generateMetadata({
 
 export default async function InsightDetailPage({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>;
-}) {
+}>) {
   const { slug } = await params;
   const [post, recentPosts, categories, insightCategories] = await Promise.all([
     getInsightBySlug(slug),

@@ -2,8 +2,8 @@
 
 import {
   useState,
-  type FormEvent,
   type ReactNode,
+  type SyntheticEvent
 } from "react";
 import Container from "@/components/atoms/Container";
 import FormSuccessState from "@/components/atoms/FormSuccessState";
@@ -16,6 +16,7 @@ import {
   quoteProjectTypeOptions,
 } from "@/data/quoteFormOptions";
 import { cn } from "@/lib/utils";
+import { formString } from "@/lib/formData";
 
 const fieldShellClass =
   "flex h-10 min-w-0 w-full items-center overflow-hidden rounded-xl border border-white/15 bg-white/[0.04] px-3.5 transition-all duration-200 hover:border-white/25 focus-within:border-primary-pink focus-within:shadow-[0_0_0_4px_rgba(211,40,122,0.2)]";
@@ -29,13 +30,13 @@ function QuoteField({
   children,
   className,
   labelClassName,
-}: {
+}: Readonly<{
   label: string;
   id: string;
   children: ReactNode;
   className?: string;
   labelClassName?: string;
-}) {
+}>) {
   return (
     <div className={cn("flex min-w-0 flex-col gap-1", className)}>
       <label
@@ -55,13 +56,13 @@ function RadioGroup({
   options,
   value,
   onChange,
-}: {
+}: Readonly<{
   legend: string;
   name: string;
   options: readonly string[];
   value: string;
   onChange: (value: string) => void;
-}) {
+}>) {
   return (
     <fieldset className="min-w-0">
       <legend className="mb-2.5 text-[18px] font-semibold text-white">
@@ -128,7 +129,7 @@ export default function HealthcarePortfolioSection() {
     setSubmitError(null);
   };
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitError(null);
     setIsSubmitting(true);
@@ -136,18 +137,18 @@ export default function HealthcarePortfolioSection() {
     const form = event.currentTarget;
     const formData = new FormData(form);
     const payload = {
-      businessName: String(formData.get("businessName") ?? "").trim(),
-      firstName: String(formData.get("firstName") ?? "").trim(),
-      lastName: String(formData.get("lastName") ?? "").trim(),
-      email: String(formData.get("email") ?? "").trim(),
+      businessName: formString(formData, "businessName").trim(),
+      firstName: formString(formData, "firstName").trim(),
+      lastName: formString(formData, "lastName").trim(),
+      email: formString(formData, "email").trim(),
       countryCode,
-      phone: String(formData.get("phone") ?? "").trim(),
+      phone: formString(formData, "phone").trim(),
       referralSource:
-        String(formData.get("referralSource") ?? "").trim() || undefined,
+        formString(formData, "referralSource").trim() || undefined,
       lookingFor,
       projectType,
       budget,
-      requirements: String(formData.get("requirements") ?? "").trim(),
+      requirements: formString(formData, "requirements").trim(),
     };
 
     const apiBase = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "");

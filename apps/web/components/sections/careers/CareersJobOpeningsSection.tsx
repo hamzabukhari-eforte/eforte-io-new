@@ -33,10 +33,10 @@ const filledButtonClass =
 function JobCard({
   job,
   index,
-}: {
+}: Readonly<{
   job: (typeof jobOpenings)[number];
   index: number;
-}) {
+}>) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
   const Icon = departmentIcons[job.department] ?? HiOutlineBriefcase;

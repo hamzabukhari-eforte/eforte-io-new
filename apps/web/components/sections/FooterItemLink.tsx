@@ -5,7 +5,7 @@ type FooterItemLinkProps = {
   label: string;
 };
 
-export default function FooterItemLink({ href, label }: FooterItemLinkProps) {
+export default function FooterItemLink({ href, label }: Readonly<FooterItemLinkProps>) {
   return (
     <Link
       href={href}

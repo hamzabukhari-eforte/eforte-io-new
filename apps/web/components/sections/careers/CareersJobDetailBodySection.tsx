@@ -11,7 +11,7 @@ type CareersJobDetailBodySectionProps = {
 
 export default function CareersJobDetailBodySection({
   job,
-}: CareersJobDetailBodySectionProps) {
+}: Readonly<CareersJobDetailBodySectionProps>) {
   return (
     <section className="bg-black pb-20">
       <Container>
@@ -54,15 +54,18 @@ export default function CareersJobDetailBodySection({
               on the careers page.
             </p>
             <div className="mt-5 space-y-2">
-              {CAREER_CONTACT_EMAILS.map((email) => (
-                <a
-                  key={email}
-                  href={`mailto:${email}?subject=${encodeURIComponent(`Application: ${job.title}`)}`}
-                  className="block text-sm font-medium text-primary-pink transition-colors hover:text-white"
-                >
-                  {email}
-                </a>
-              ))}
+              {CAREER_CONTACT_EMAILS.map((email) => {
+                const subject = encodeURIComponent(`Application: ${job.title}`);
+                return (
+                  <a
+                    key={email}
+                    href={`mailto:${email}?subject=${subject}`}
+                    className="block text-sm font-medium text-primary-pink transition-colors hover:text-white"
+                  >
+                    {email}
+                  </a>
+                );
+              })}
             </div>
             <Link
               href={`/careers?role=${job.id}#join-our-team`}

@@ -16,9 +16,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>;
-}) {
+}>) {
   const { slug } = await params;
   const categories = await getInsightCategories();
   const category = findCategoryBySlug(slug, categories);
@@ -32,9 +32,9 @@ export async function generateMetadata({
 
 export default async function InsightsCategoryPage({
   params,
-}: {
+}: Readonly<{
   params: Promise<{ slug: string }>;
-}) {
+}>) {
   const { slug } = await params;
   const [allPosts, categories] = await Promise.all([getInsightPosts(), getInsightCategories()]);
   const category = findCategoryBySlug(slug, categories);

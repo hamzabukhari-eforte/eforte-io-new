@@ -131,7 +131,7 @@ const tabs: Tab[] = [
   },
 ];
 
-function SceneBackdrop({ id }: { id: string }) {
+function SceneBackdrop({ id }: Readonly<{ id: string }>) {
   return (
     <>
       <defs>
@@ -170,13 +170,13 @@ function TravelingDot({
   delay = "0s",
   color = PINK,
   radius = 7,
-}: {
+}: Readonly<{
   pathId: string;
   duration: string;
   delay?: string;
   color?: string;
   radius?: number;
-}) {
+}>) {
   return (
     <g>
       <animateMotion dur={duration} begin={delay} repeatCount="indefinite" rotate="0">
@@ -456,7 +456,7 @@ function BankingIllustration() {
   );
 }
 
-function AgentTabIllustration({ id }: { id: Tab["id"] }) {
+function AgentTabIllustration({ id }: Readonly<{ id: Tab["id"] }>) {
   if (id === "paytech") return <PaymentsIllustration />;
   if (id === "lendtech") return <LendingIllustration />;
   if (id === "financial-infrastructure") return <InfrastructureIllustration />;

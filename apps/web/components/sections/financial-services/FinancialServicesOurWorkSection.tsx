@@ -16,7 +16,7 @@ type SlideContent = {
   paragraphs: string[];
   highlight?: string;
   tags?: string[];
-  bullets?: { text: React.ReactNode }[];
+  bullets?: { text: string }[];
 };
 
 const slides: SlideContent[] = [
@@ -160,66 +160,62 @@ export default function FinancialServicesOurWorkSection() {
                 </div>
               </div>
 
-              <div
-                className="max-w-xl cursor-pointer text-default"
-                onClick={goNext}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                    goNext();
-                  }
-                }}
-                aria-label="Next case study"
-              >
-                {slide.brand && (
-                  <p className="mb-6 text-2xl font-light tracking-[0.18em] text-default md:text-[26px]">
-                    {slide.brand}
-                  </p>
-                )}
+              <div className="relative max-w-xl text-default">
+                <button
+                  type="button"
+                  className="absolute inset-0 z-10 cursor-pointer"
+                  onClick={goNext}
+                  aria-label="Next case study"
+                />
+                <div className="relative z-0">
+                  {slide.brand && (
+                    <p className="mb-6 text-2xl font-light tracking-[0.18em] text-default md:text-[26px]">
+                      {slide.brand}
+                    </p>
+                  )}
 
-                <h3 className="text-3xl font-semibold leading-tight text-default md:text-[34px]">
-                  Our work in action
-                </h3>
+                  <h3 className="text-3xl font-semibold leading-tight text-default md:text-[34px]">
+                    Our work in action
+                  </h3>
 
-                <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-black md:text-base">
-                  {slide.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                </div>
-
-                {slide.highlight && (
-                  <p className="mt-5 text-[15px] font-semibold leading-relaxed text-default md:text-base">
-                    {slide.highlight}
-                  </p>
-                )}
-
-                {slide.bullets && (
-                  <ul className="mt-4 space-y-3 text-[15px] leading-relaxed text-black md:text-base">
-                    {slide.bullets.map((bullet, idx) => (
-                      <li
-                        key={idx}
-                        className="relative pl-6 before:absolute before:left-1 before:top-[10px] before:h-1.5 before:w-1.5 before:rounded-full before:bg-default"
-                      >
-                        {bullet.text}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                {slide.tags && (
-                  <div className="mt-7 flex flex-wrap gap-3">
-                    {slide.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="inline-flex h-[25px] items-center justify-center rounded-full leading-none bg-default/5 px-4 py-0.5 text-sm text-black"
-                      >
-                        {tag}
-                      </span>
+                  <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-black md:text-base">
+                    {slide.paragraphs.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
                     ))}
                   </div>
-                )}
+
+                  {slide.highlight && (
+                    <p className="mt-5 text-[15px] font-semibold leading-relaxed text-default md:text-base">
+                      {slide.highlight}
+                    </p>
+                  )}
+
+                  {slide.bullets && (
+                    <ul className="mt-4 space-y-3 text-[15px] leading-relaxed text-black md:text-base">
+                      {slide.bullets.map((bullet) => (
+                        <li
+                          key={bullet.text}
+                          className="relative pl-6 before:absolute before:left-1 before:top-[10px] before:h-1.5 before:w-1.5 before:rounded-full before:bg-default"
+                        >
+                          {bullet.text}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {slide.tags && (
+                    <div className="mt-7 flex flex-wrap gap-3">
+                      {slide.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="inline-flex h-[25px] items-center justify-center rounded-full leading-none bg-default/5 px-4 py-0.5 text-sm text-black"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             </motion.div>
           </AnimatePresence>

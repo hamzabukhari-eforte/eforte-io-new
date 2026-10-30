@@ -16,7 +16,7 @@ type VelocityAIInsightHeroSectionProps = {
 
 export default function VelocityAIInsightHeroSection({
   article,
-}: VelocityAIInsightHeroSectionProps) {
+}: Readonly<VelocityAIInsightHeroSectionProps>) {
   const router = useRouter();
 
   const goBack = () => {

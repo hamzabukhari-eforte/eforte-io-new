@@ -37,7 +37,7 @@ export default function AiWorkflowsReveal({
   mobileDuration,
   as: Tag = "div",
   once = false,
-}: {
+}: Readonly<{
   children: ReactNode;
   className?: string;
   direction?: RevealDirection;
@@ -45,7 +45,7 @@ export default function AiWorkflowsReveal({
   mobileDuration?: RevealDuration;
   as?: ElementType;
   once?: boolean;
-}) {
+}>) {
   const ref = useRef<HTMLElement | null>(null);
   const inView = useInViewReplay(ref, {
     margin: "0px",

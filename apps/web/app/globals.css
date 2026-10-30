@@ -1,16 +1,5 @@
 @import "tailwindcss";
 
-/* Local TTF preserved for possible offline/fallback reuse:
-@font-face {
-  font-family: "Be Vietnam Pro";
-  src: url("/fonts/BeVietnamPro-Regular.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-  size-adjust: 90%;
-}
-*/
-
 :root {
   --background: #0000;
   --foreground: #ededed;
@@ -251,5 +240,4 @@ html.scroll-locked::-webkit-scrollbar {
   margin-top: 1.75rem;
   margin-bottom: 0.75rem;
 }
-
 

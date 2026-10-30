@@ -14,7 +14,7 @@ type IndustryExpertiseSectionProps = {
 export default function IndustryExpertiseSection({
   content,
   expandStatCards = false,
-}: IndustryExpertiseSectionProps) {
+}: Readonly<IndustryExpertiseSectionProps>) {
   return (
     <section className="bg-default py-16 text-white md:py-24">
       <div className="mx-auto w-[90%]">

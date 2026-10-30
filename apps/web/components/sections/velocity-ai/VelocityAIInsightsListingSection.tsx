@@ -12,7 +12,7 @@ type VelocityAIInsightsListingSectionProps = {
 
 export default function VelocityAIInsightsListingSection({
   articles,
-}: VelocityAIInsightsListingSectionProps) {
+}: Readonly<VelocityAIInsightsListingSectionProps>) {
   return (
     <>
       <section className="relative overflow-hidden bg-default pt-28 pb-12 md:pt-36 md:pb-16">

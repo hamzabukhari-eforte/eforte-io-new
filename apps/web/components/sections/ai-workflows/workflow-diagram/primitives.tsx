@@ -110,11 +110,11 @@ export function FadeIn({
   delay,
   inView,
   children,
-}: {
+}: Readonly<{
   delay: number;
   inView: boolean;
   children: ReactNode;
-}) {
+}>) {
   return (
     <motion.g
       initial={{ opacity: 0 }}
@@ -131,11 +131,11 @@ export function Spin({
   seconds,
   reduce,
   children,
-}: {
+}: Readonly<{
   seconds: number;
   reduce: boolean;
   children: ReactNode;
-}) {
+}>) {
   return (
     <motion.g
       style={{ transformBox: "fill-box", transformOrigin: "center" }}
@@ -155,25 +155,28 @@ export function Pulse({
   seconds = 2.2,
   low = 0.35,
   children,
-}: {
+}: Readonly<{
   delay: number;
   inView: boolean;
   reduce: boolean;
   seconds?: number;
   low?: number;
   children: ReactNode;
-}) {
+}>) {
+  let animate: { opacity: number } | { opacity: number[] } | undefined;
+  if (inView) {
+    animate = reduce ? { opacity: 1 } : { opacity: [1, low, 1] };
+  }
+
+  const transition = reduce
+    ? { duration: 0.3, delay }
+    : { duration: seconds, delay, repeat: Infinity, ease: "easeInOut" as const };
+
   return (
     <motion.g
       initial={{ opacity: 0 }}
-      animate={
-        inView ? (reduce ? { opacity: 1 } : { opacity: [1, low, 1] }) : undefined
-      }
-      transition={
-        reduce
-          ? { duration: 0.3, delay }
-          : { duration: seconds, delay, repeat: Infinity, ease: "easeInOut" }
-      }
+      animate={animate}
+      transition={transition}
     >
       {children}
     </motion.g>
@@ -189,7 +192,7 @@ export function PageOutline({
   delay,
   inView,
   fold = 6,
-}: {
+}: Readonly<{
   x: number;
   y: number;
   width: number;
@@ -197,7 +200,7 @@ export function PageOutline({
   delay: number;
   inView: boolean;
   fold?: number;
-}) {
+}>) {
   return (
     <>
       <DrawPath

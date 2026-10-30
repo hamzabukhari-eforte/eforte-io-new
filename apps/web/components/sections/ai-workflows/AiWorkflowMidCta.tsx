@@ -7,9 +7,9 @@ import styles from "./aiWorkflows.module.css";
 
 export default function AiWorkflowMidCta({
   domain,
-}: {
+}: Readonly<{
   domain: AiWorkflowDomain;
-}) {
+}>) {
   return (
     <section className={styles.midCta}>
       <div className={styles.content}>

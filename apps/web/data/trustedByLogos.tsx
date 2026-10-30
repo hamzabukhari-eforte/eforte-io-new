@@ -14,10 +14,10 @@ const wrap =
 function LogoTooltip({
   name,
   children,
-}: {
+}: Readonly<{
   name: string;
   children: ReactNode;
-}) {
+}>) {
   return (
     <div
       title={name}
@@ -39,12 +39,12 @@ function ClientBrandImage({
   alt,
   tone,
   opticalScale = 1,
-}: {
+}: Readonly<{
   src: string;
   alt: string;
   tone: "white" | "dark";
   opticalScale?: number;
-}) {
+}>) {
   const style = {
     height: LOGO_HEIGHT_PX,
     width: "auto",

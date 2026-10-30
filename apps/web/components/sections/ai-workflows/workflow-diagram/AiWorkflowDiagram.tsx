@@ -35,14 +35,14 @@ export default function AiWorkflowDiagram({
   className,
   labelFontSize = 16,
   descriptionFontSize = 12,
-}: {
+}: Readonly<{
   steps: WorkflowStep[];
   /** Domain name, used to describe the diagram to screen readers. */
   label: string;
   className?: string;
   labelFontSize?: number;
   descriptionFontSize?: number;
-}) {
+}>) {
   const ref = useRef<SVGSVGElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.3 });
   const reduce = useReducedMotion() ?? false;

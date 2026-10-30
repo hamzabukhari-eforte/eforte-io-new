@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
 import ValueCard from "./ValueCard";
 import { values } from "./valuesData";

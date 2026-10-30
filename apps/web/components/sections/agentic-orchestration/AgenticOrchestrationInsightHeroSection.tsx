@@ -16,7 +16,7 @@ type AgenticOrchestrationInsightHeroSectionProps = {
 
 export default function AgenticOrchestrationInsightHeroSection({
   article,
-}: AgenticOrchestrationInsightHeroSectionProps) {
+}: Readonly<AgenticOrchestrationInsightHeroSectionProps>) {
   const router = useRouter();
 
   const goBack = () => {

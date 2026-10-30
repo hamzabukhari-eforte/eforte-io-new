@@ -1,0 +1,19 @@
+{
+  "measures": {
+    "coverage": "0.0",
+    "bugs": "0",
+    "reliability_rating": "1.0",
+    "alert_status": "ERROR",
+    "duplicated_lines_density": "14.8",
+    "code_smells": "0",
+    "security_rating": "1.0",
+    "ncloc": "56987",
+    "vulnerabilities": "0",
+    "security_hotspots": "0",
+    "sqale_index": "0",
+    "sqale_rating": "1.0"
+  },
+  "totalIssues": 0,
+  "issues": [],
+  "round": 7
+}

@@ -38,7 +38,6 @@
 .duration400 { transition-duration: 0.55s; }
 .duration500 { transition-duration: 0.6s; }
 .duration600 { transition-duration: 0.7s; }
-.mobileDuration400 { }
 @media (max-width: 1023px) {
   .mobileDuration400 { transition-duration: 0.55s; }
 }
@@ -166,22 +165,6 @@
   margin-bottom: 16px;
 }
 
-/* Preserved previous CSS-background hero for possible reuse:
-.hero{
-  background: var(--ind-black) url("/assets/images/package/industries/industries-landing-hero.svg");
-  background-position: right center;
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  height: 560px;
-  min-height: 480px;
-  max-height: 62vh;
-}
-.hero .text{ max-width: 640px; padding-top: 72px; padding-bottom: 40px; }
-.hero .text .title{ line-height: 1.12; font-weight: 600; margin-bottom: 18px; font-size: clamp(2rem, 4vw, 2.75rem); }
-.hero .text .subtitle{ line-height: 1.55; font-size: 16px; margin-bottom: 16px; font-weight: 600; }
-.hero .text .description{ line-height: 1.55; font-size: 15px; margin-bottom: 0; font-weight: 300; }
-*/
-
 /* Why eForte — 64px gap to next section via next section’s padding-top */
 .why-eforte-boxes{ background: var(--ind-black); color: var(--ind-white); padding: 64px 0 0; position: relative; }
 .why-eforte-boxes:before{ content: ""; position: absolute; top: 180px; left: 50%; margin-left: -700px; width: 1400px; height: 436px; background: url("/assets/images/landing/legacy-intelligence.png") no-repeat center center; background-size: 100% 100%; opacity: 0.55; }
@@ -212,13 +195,6 @@
   .methodologyGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* Preserved previous cyan-border agent cards for possible future reuse:
-.why-eforte-boxes .ai-agents{ display: flex; justify-content: stretch; gap: 40px; }
-.why-eforte-boxes .ai-agents li{ width: 33.333%; }
-.why-eforte-boxes .ai-agents li .box-border{ height: 100%; padding: 1px; border-radius: 30px; background: linear-gradient(81.18deg, #DAFFFF 10.61%, #80FFFF 35.24%, #51A4FF 58.93%); }
-.why-eforte-boxes .ai-agents li .box-content{ display: flex; align-items: flex-start; flex-direction: column; justify-content: flex-start; text-align: left; padding: 40px; border-radius: 31px; height: 100%; background: radial-gradient(146.36% 95.01% at 7.75% 100%, #2F64A1 0.96%, #183251 34.13%, #182028 88.46%); }
-*/
-
 /* Service Partners / industry grid */
 .service-partners{ background: var(--ind-black); color: var(--ind-white); padding: 64px 0 0; position: relative; }
 .service-partners .content{ position: relative; z-index: 10; }
@@ -232,12 +208,6 @@
 .service-partners .head .title i{ font-size: 20px; position: relative; width: 0; display: inline-block; bottom: 24px; right: 2px; }
 .service-partners .head .description{ font-size: 17px; color: var(--ind-white); line-height: 1.6; margin-top: 20px; font-weight: 300; }
 .service-partners .head .description span{ display: block; }
-
-/* Preserved previous cyan industry partner cards for possible future reuse:
-.service-partners .ai-agents{ display: flex; justify-content: stretch; gap: 40px; flex-wrap: wrap; position: relative; z-index: 300; }
-.service-partners .ai-agents .service-partner-box{ width: calc(33.3333% - 26.6667px); }
-.service-partners .ai-agents .service-partner-box .box-border{ height: 100%; padding: 1px; border-radius: 30px; background: linear-gradient(81.18deg, #DAFFFF 10.61%, #80FFFF 35.24%, #51A4FF 58.93%); }
-*/
 
 /* Databricks Partner */
 .databricks-partner{ background: var(--ind-black); color: var(--ind-white); padding: 70px 0 0; margin-top: -40px; }
@@ -256,7 +226,6 @@
 .badges .sectionLabel{ text-align: center; margin-bottom: 40px; }
 .badges .title{ text-align: center; font-size: 16px; font-weight: 500; margin-bottom: 80px; text-transform: uppercase; color: var(--ind-pink); }
 .badges ul{ display: flex; justify-content: center; align-items: center; gap: 80px; }
-.badges ul li{}
 .badges ul li figure{ width: 130px; }
 .badges ul li figure img{ width: 100%; }
     
@@ -268,10 +237,7 @@
 /* Our Solutions / Case Studies — solid black only (bg art preserved below) */
 .our-solutions{ padding: 64px 0; background: var(--ind-black); color: var(--ind-white); }
 .our-solutions .head{ display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 48px; position: relative; }
-/* Preserved decorative bg for possible future reuse:
-.our-solutions{ background: var(--ind-black) url("/assets/images/industry/bg-dots.webp"); background-repeat: no-repeat; background-size: 1060px auto; background-position: calc(50% + 500px) bottom; }
-.our-solutions .head:before{ content: ""; display: block; width: 1024px; height: 1154px; background: url("/assets/images/industry/hexa1.png"); background-size: 100% 100%; position: absolute; top: -220px; left: 50%; transform: translateX(-50%); }
-*/
+
 .our-solutions .head .title{ letter-spacing: -1px; font-size: 52px; font-weight: 600; margin-bottom: 20px; z-index: 100; position: relative; }
 .our-solutions .head .title span{ display: block; }
 .our-solutions .head .description{ font-size: 15px; font-weight: 300; line-height: 1.5; max-width: 700px; z-index: 100; position: relative; }
@@ -287,7 +253,6 @@
 .our-solutions .solutions-list .solution-box .explore-button i{ position: relative; right: -1px; font-size: 13px; margin-left: 5px; transition: var(--ind-transition); }
 .our-solutions .solutions-list .solution-box .explore-button:hover i{ right: -3px; }
 
-.our-solutions .solutions-list .solution-box .explore-button.desktop-button{}
 .our-solutions .solutions-list .solution-box .explore-button.mobile-button{ display: none; }
 
 .our-solutions .solutions-list .solution-box .right{ max-width: 600px; }
@@ -304,14 +269,7 @@
 .our-solutions .solutions-list .solution-box .right .big-pill{ background: linear-gradient(81.18deg, #DAFFFF 10.61%, #80FFFF 35.24%, #51A4FF 58.93%); display: inline-block; border-radius: 50px; padding: 1px; color: var(--ind-white); margin-top: 50px; }
 .our-solutions .solutions-list .solution-box .right .big-pill span{ background: var(--ind-black); border-radius: 50px; padding: 10px 15px; font-size: 16px; display: inline-block; }
 
-    /* Preserved legacy Avant / OnePay / MyRow card art for possible future reuse:
-    .our-solutions .solutions-list .solution-box.avant{ background: var(--ind-black) url("/assets/images/industry/bg-1.png"); background-size: 500px auto; background-position: top left; background-repeat: no-repeat; }
-    .our-solutions .solutions-list .solution-box.avant .left figure{ width: 270px; }
-    .our-solutions .solutions-list .solution-box.onepay{ background: var(--ind-black) url("/assets/images/industry/bg-2.png"); background-size: 520px auto; background-position: -100px center; background-repeat: no-repeat; }
-    .our-solutions .solutions-list .solution-box.onepay .left figure{ width: 200px; }
-    .our-solutions .solutions-list .solution-box.myrow{ background: var(--ind-black) url("/assets/images/industry/bg-3.png"); background-size: 280px auto; background-position: top left; background-repeat: no-repeat; }
-    .our-solutions .solutions-list .solution-box.myrow .left figure{ width: 250px; }
-    */
+    
 
 @media screen and (max-width: 1280px){
 
@@ -337,7 +295,6 @@
     /* Our Solutions */
     .our-solutions .head .title{ font-size: 36px; }
     .our-solutions .head .description{ font-size: 14px; max-width: 550px; }
-
 
 }
 
@@ -403,14 +360,7 @@
     .our-solutions .solutions-list .solution-box .right .big-pill span{ font-size: 13px; }
     .our-solutions .solutions-list .solution-box .right .values li + li:before{ display: none; }
     .our-solutions .solutions-list .solution-box .right .values li + li{ padding-left: 0; }
-    /* Preserved legacy figure widths:
-    .our-solutions .solutions-list .solution-box.avant .left figure{ width: 200px; margin: 20px 0 0; }
-    .our-solutions .solutions-list .solution-box.onepay .left figure{ width: 170px; margin: 20px 0 0; }
-    .our-solutions .solutions-list .solution-box.myrow .left figure{ width: 180px; margin: 20px 0 0; }
-    .our-solutions .solutions-list .solution-box.avant{ background: var(--ind-black); }
-    .our-solutions .solutions-list .solution-box.onepay{ background: var(--ind-black); }
-    .our-solutions .solutions-list .solution-box.myrow{ background: var(--ind-black); }
-    */
+    
 
 }
 

@@ -17,7 +17,7 @@ export default function ContactCTA({
   type = "button",
   onClick,
   ...props
-}: ContactCTAProps) {
+}: Readonly<ContactCTAProps>) {
   const { openContactModal } = useContactModal();
 
   return (

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Container from "@/components/atoms/Container";
 import IndustryHeroSection from "@/components/sections/industry-page/IndustryHeroSection";
 import { motion } from "@/lib/replayMotion";

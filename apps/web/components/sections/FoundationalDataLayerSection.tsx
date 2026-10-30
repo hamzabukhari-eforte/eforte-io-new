@@ -89,7 +89,7 @@ const rowVariants: Variants = {
   }),
 };
 
-function AnimatedCheck({ color, delay }: { color: string; delay: number }) {
+function AnimatedCheck({ color, delay }: Readonly<{ color: string; delay: number }>) {
   return (
     <motion.svg
       viewBox="0 0 24 24"

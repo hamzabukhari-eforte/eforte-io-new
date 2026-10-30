@@ -662,9 +662,9 @@ function AiInfraVisual() {
  */
 export default function FinancialServicesVelocitiesInfographics({
   id,
-}: {
+}: Readonly<{
   id: string;
-}) {
+}>) {
   if (id === "ui-banking-wrappers") return <BankingUiVisual />;
   if (id === "airflow-blueprints") return <OrchestrationVisual />;
   if (id === "model-monitoring-dashboards") return <ModelDashboardsVisual />;

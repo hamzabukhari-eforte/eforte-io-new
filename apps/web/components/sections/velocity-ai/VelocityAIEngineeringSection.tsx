@@ -141,7 +141,7 @@ const steps: Step[] = [
   },
 ];
 
-function PersonSilhouette({ className }: { className?: string }) {
+function PersonSilhouette({ className }: Readonly<{ className?: string }>) {
   return (
     <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden>
       <circle cx="12" cy="7" r="3.5" />
@@ -259,14 +259,14 @@ function ProcessRing({
   active,
   onHoverChange,
   index,
-}: {
+}: Readonly<{
   children: ReactNode;
   title: string;
   description: string;
   active: boolean;
   onHoverChange: (hovered: boolean) => void;
   index: number;
-}) {
+}>) {
   return (
     <motion.div
       className="group relative z-10 flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-28 lg:w-28"
@@ -330,10 +330,10 @@ function ProcessRing({
 function VelocityServicesProcessVisual({
   activeIndex,
   setActiveIndex,
-}: {
+}: Readonly<{
   activeIndex: number | null;
   setActiveIndex: (index: number | null) => void;
-}) {
+}>) {
   return (
     <div className="relative mx-auto w-full max-w-5xl overflow-x-hidden py-6 sm:py-10 md:py-14">
       <div

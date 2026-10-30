@@ -17,7 +17,7 @@ type CareersJobDetailHeroSectionProps = {
 
 export default function CareersJobDetailHeroSection({
   job,
-}: CareersJobDetailHeroSectionProps) {
+}: Readonly<CareersJobDetailHeroSectionProps>) {
   const router = useRouter();
 
   const goBack = () => {

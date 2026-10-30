@@ -13,7 +13,7 @@ type ConsultancyMentoringMediaProps = {
 
 export default function ConsultancyMentoringMedia({
   className,
-}: ConsultancyMentoringMediaProps) {
+}: Readonly<ConsultancyMentoringMediaProps>) {
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"

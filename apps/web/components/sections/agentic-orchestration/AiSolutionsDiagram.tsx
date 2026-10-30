@@ -17,7 +17,7 @@ import {
 } from "@/components/sections/ai-workflows/workflow-diagram/primitives";
 
 /** Document with a search lens — LLM Apps. */
-function DocumentSearchIcon({ delay, inView }: IconProps) {
+function DocumentSearchIcon({ delay, inView }: Readonly<IconProps>) {
   return (
     <>
       <PageOutline x={6} y={5} width={20} height={28} delay={delay} inView={inView} />
@@ -57,7 +57,7 @@ const STEPS: WorkflowStep[] = [
   },
 ];
 
-export default function AiSolutionsDiagram({ className }: { className?: string }) {
+export default function AiSolutionsDiagram({ className }: Readonly<{ className?: string }>) {
   return (
     <AiWorkflowDiagram
       steps={STEPS}

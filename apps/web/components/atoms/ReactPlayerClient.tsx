@@ -39,6 +39,6 @@ const Inner = dynamic(
   }
 ) as unknown as React.ComponentType<ReactPlayerClientProps>;
 
-export default function ReactPlayerClient(props: ReactPlayerClientProps) {
+export default function ReactPlayerClient(props: Readonly<ReactPlayerClientProps>) {
   return <Inner {...props} />;
 }

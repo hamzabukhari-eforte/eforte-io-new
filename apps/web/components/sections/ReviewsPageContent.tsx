@@ -17,7 +17,7 @@ import {
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-function StarRating({ rating }: { rating: number }) {
+function StarRating({ rating }: Readonly<{ rating: number }>) {
   return (
     <div className="flex items-center gap-2">
       <span className="text-lg font-bold text-white md:text-xl">{rating.toFixed(1)}</span>
@@ -45,11 +45,11 @@ function MetaRow({
   icon,
   label,
   value,
-}: {
+}: Readonly<{
   icon: ReactNode;
   label: string;
   value: string;
-}) {
+}>) {
   return (
     <div className="flex items-start gap-4">
       <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] border border-primary-pink/30 bg-primary-pink/10 text-primary-pink">
@@ -65,7 +65,7 @@ function MetaRow({
   );
 }
 
-function ReviewerAvatar({ review }: { review: ClientReview }) {
+function ReviewerAvatar({ review }: Readonly<{ review: ClientReview }>) {
   const initials = review.author
     .split(" ")
     .map((p) => p[0])
@@ -95,11 +95,11 @@ function ReviewDetailBlock({
   review,
   index,
   isInView,
-}: {
+}: Readonly<{
   review: ClientReview;
   index: number;
   isInView: boolean;
-}) {
+}>) {
   return (
     <motion.article
       className={cn(

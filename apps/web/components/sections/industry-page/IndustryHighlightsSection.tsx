@@ -11,7 +11,7 @@ type IndustryHighlightsSectionProps = {
 
 export default function IndustryHighlightsSection({
   highlights,
-}: IndustryHighlightsSectionProps) {
+}: Readonly<IndustryHighlightsSectionProps>) {
   if (highlights.length === 0) return null;
 
   return (

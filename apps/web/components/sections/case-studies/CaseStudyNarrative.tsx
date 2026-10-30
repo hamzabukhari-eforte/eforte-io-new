@@ -50,12 +50,12 @@ function Reveal({
   className,
   delay = 0,
   x = 0,
-}: {
+}: Readonly<{
   children: React.ReactNode;
   className?: string;
   delay?: number;
   x?: number;
-}) {
+}>) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 
@@ -74,7 +74,7 @@ function Reveal({
   );
 }
 
-export default function CaseStudyNarrative({ content, theme }: Props) {
+export default function CaseStudyNarrative({ content, theme }: Readonly<Props>) {
   const accent = `rgb(${theme[0]}, ${theme[1]}, ${theme[2]})`;
   const accentSoft = `rgba(${theme[0]}, ${theme[1]}, ${theme[2]}, 0.22)`;
   const solutionFallback =
@@ -495,11 +495,11 @@ function DeliverableCard({
   item,
   index,
   accent,
-}: {
+}: Readonly<{
   item: string;
   index: number;
   accent: string;
-}) {
+}>) {
   const ref = useRef<HTMLLIElement>(null);
   const inView = useInViewReplay(ref, { margin: "0px", amount: 0.25 });
 

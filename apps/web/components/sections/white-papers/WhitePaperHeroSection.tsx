@@ -18,7 +18,7 @@ export default function WhitePaperHeroSection({
   paper,
   parentLabel = "Home",
   parentHref = "/",
-}: WhitePaperHeroSectionProps) {
+}: Readonly<WhitePaperHeroSectionProps>) {
   const router = useRouter();
 
   const goBack = () => {

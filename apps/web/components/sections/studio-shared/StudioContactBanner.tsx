@@ -14,7 +14,7 @@ type StudioContactBannerProps = {
 export default function StudioContactBanner({
   content,
   imageSrc = "/assets/images/velocity-ai/cube-3d.png",
-}: StudioContactBannerProps) {
+}: Readonly<StudioContactBannerProps>) {
   return (
     <section className="bg-white py-10 md:py-14">
       <Container>

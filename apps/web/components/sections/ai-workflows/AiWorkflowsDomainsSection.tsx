@@ -60,7 +60,7 @@ export default function AiWorkflowsDomainsSection() {
                         <p className={styles.domainTagline}>{card.tagline}</p>
                         <p>{card.description}</p>
                         <span className={styles.learnMore}>
-                          Learn more
+                          Learn more{' '}
                           <span className={styles.learnMoreArrow} aria-hidden>
                             →
                           </span>

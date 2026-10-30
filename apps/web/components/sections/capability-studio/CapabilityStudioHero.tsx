@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import type { ReactNode } from "react";
 import { HiArrowRight } from "react-icons/hi";
 import ContactCTA from "@/components/atoms/ContactCTA";
 import Container from "@/components/atoms/Container";
@@ -24,7 +25,7 @@ const heroGraphicClassName =
 export default function CapabilityStudioHero({
   accent,
   hero,
-}: CapabilityStudioHeroProps) {
+}: Readonly<CapabilityStudioHeroProps>) {
   const tokens = getStudioAccent(accent);
   const graphicPath = (hero.graphicSrc.split("?")[0] ?? hero.graphicSrc).toLowerCase();
   const isPlatformHero =
@@ -36,6 +37,26 @@ export default function CapabilityStudioHero({
   const graphicClassName = isBlockchainHero
     ? "h-auto w-full max-h-[200px] object-contain sm:max-h-[240px] md:max-h-[280px] lg:max-h-[300px]"
     : heroGraphicClassName;
+
+  let heroGraphic: ReactNode;
+  if (isPlatformHero) {
+    heroGraphic = (
+      <PlatformEngineeringHeroGraphic className={graphicClassName} />
+    );
+  } else if (isAppSolutionsHero) {
+    heroGraphic = <AppSolutionsHeroGraphic className={graphicClassName} />;
+  } else {
+    heroGraphic = (
+      <Image
+        src={hero.graphicSrc}
+        alt={`${hero.label} capability illustration`}
+        width={560}
+        height={560}
+        className={graphicClassName}
+        priority
+      />
+    );
+  }
 
   return (
     <section className="bg-white pb-0 pt-28 text-black md:pt-32">
@@ -94,20 +115,7 @@ export default function CapabilityStudioHero({
             {/* Right mark + CTA */}
             <div className="flex min-h-[320px] flex-col border-t border-[#E8E8E8] lg:min-h-[480px] lg:border-t-0">
               <div className="relative flex flex-1 items-center justify-center bg-[#F5F5F5] px-6 py-8 sm:px-8 md:py-10 lg:px-10">
-                {isPlatformHero ? (
-                  <PlatformEngineeringHeroGraphic className={graphicClassName} />
-                ) : isAppSolutionsHero ? (
-                  <AppSolutionsHeroGraphic className={graphicClassName} />
-                ) : (
-                  <Image
-                    src={hero.graphicSrc}
-                    alt={`${hero.label} capability illustration`}
-                    width={560}
-                    height={560}
-                    className={graphicClassName}
-                    priority
-                  />
-                )}
+                {heroGraphic}
               </div>
 
               <ContactCTA

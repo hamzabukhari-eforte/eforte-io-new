@@ -16,7 +16,7 @@ const AUTOPLAY_INTERVAL_MS = 6000;
 
 export default function IndustrySuccessStoriesSection({
   stories,
-}: IndustrySuccessStoriesSectionProps) {
+}: Readonly<IndustrySuccessStoriesSectionProps>) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 

@@ -5,7 +5,7 @@ import Container from "@/components/atoms/Container";
 import { cloudSreSplitCards } from "@/data/capabilities/cloudSre";
 import { motion } from "@/lib/replayMotion";
 
-function CloudSreIcon({ className }: { className?: string }) {
+function CloudSreIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@ function CloudSreIcon({ className }: { className?: string }) {
   );
 }
 
-function CybersecurityIcon({ className }: { className?: string }) {
+function CybersecurityIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -41,9 +41,9 @@ const icons = {
 
 function OrbitalIcon({
   Icon,
-}: {
+}: Readonly<{
   Icon: (typeof icons)[keyof typeof icons];
-}) {
+}>) {
   return (
     <span className="mx-auto flex h-14 w-14 items-center justify-center text-default md:h-16 md:w-16">
       <Icon className="h-full w-full" />

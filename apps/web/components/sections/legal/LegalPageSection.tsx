@@ -4,7 +4,7 @@ import Container from "@/components/atoms/Container";
 import type { LegalBlock, LegalSection } from "@/data/legalContent";
 import { motion } from "@/lib/replayMotion";
 
-function LegalBlockContent({ block }: { block: LegalBlock }) {
+function LegalBlockContent({ block }: Readonly<{ block: LegalBlock }>) {
   if (block.type === "list") {
     return (
       <ul className="list-disc space-y-2 pl-5">
@@ -30,7 +30,7 @@ export default function LegalPageSection({
   title,
   intro,
   sections,
-}: LegalPageSectionProps) {
+}: Readonly<LegalPageSectionProps>) {
   return (
     <main className="min-h-screen bg-default text-white">
       <section className="relative overflow-hidden bg-default pt-28 pb-16 md:pt-36 md:pb-20">

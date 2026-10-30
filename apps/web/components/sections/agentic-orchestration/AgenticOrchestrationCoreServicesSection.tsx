@@ -21,11 +21,11 @@ function ServiceCardIcon({
   Icon,
   inView,
   className = "h-6 w-6",
-}: {
-  Icon: (props: IconProps) => ReactNode;
+}: Readonly<{
+  Icon: (props: Readonly<IconProps>) => ReactNode;
   inView: boolean;
   className?: string;
-}) {
+}>) {
   return (
     <svg viewBox={`0 0 ${ICON_BOX} ${ICON_BOX}`} className={className} aria-hidden>
       <Icon delay={0} inView={inView} reduce />

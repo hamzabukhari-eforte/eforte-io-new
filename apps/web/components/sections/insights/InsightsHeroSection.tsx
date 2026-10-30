@@ -99,7 +99,7 @@ export default function InsightsHeroSection({
                     src={featured.imageSrc}
                     alt={featured.title}
                     fill
-                    priority
+                    fetchPriority="high"
                     sizes="(max-width: 768px) 100vw, 60vw"
                     className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
                   />

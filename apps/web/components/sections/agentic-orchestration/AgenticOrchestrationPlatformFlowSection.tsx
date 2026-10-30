@@ -65,11 +65,11 @@ function RightColumnSection({
   item,
   index,
   registerRef,
-}: {
+}: Readonly<{
   item: FlowItem;
   index: number;
   registerRef: (index: number, el: HTMLDivElement | null) => void;
-}) {
+}>) {
   const localRef = useRef<HTMLDivElement | null>(null);
   const isInView = useInViewReplay(localRef, { margin: "0px", amount: 0.25 });
   const setRef = useCallback(
@@ -98,7 +98,7 @@ function RightColumnSection({
       <div className="space-y-4 text-white text-base leading-relaxed">
         {item.paragraphs.map((p, i) => (
           <motion.p
-            key={i}
+            key={p}
             initial={{ opacity: 0, y: 16 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
             transition={{ duration: 0.5, delay: 0.15 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
@@ -254,7 +254,7 @@ export default function AgenticOrchestrationPlatformFlowSection() {
                 {rolesForSvg.map((r, i) => {
                   const isActive = i === activeRoleIndex;
                   return (
-                    <g key={i} className="transition-all duration-500 ease-out cursor-default">
+                    <g key={r.label.join("-")} className="transition-all duration-500 ease-out cursor-default">
                       <text
                         x={r.x}
                         y={r.y}

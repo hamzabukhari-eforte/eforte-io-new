@@ -13,7 +13,7 @@ interface Props {
   }[];
 }
 
-export default function DetailsSection({ title, theme, sections }: Props) {
+export default function DetailsSection({ title, theme, sections }: Readonly<Props>) {
   const glow = `rgb(${theme[0]}, ${theme[1]}, ${theme[2]})`;
 
   return (

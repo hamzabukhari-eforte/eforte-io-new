@@ -41,7 +41,7 @@ function groupFeatures(features: StudioFeature[]): FeatureGroup[] {
 export default function CapabilityStudioFeatures({
   accent,
   features,
-}: CapabilityStudioFeaturesProps) {
+}: Readonly<CapabilityStudioFeaturesProps>) {
   const groups = groupFeatures(features);
 
   return (

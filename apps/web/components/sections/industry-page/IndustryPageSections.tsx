@@ -23,7 +23,7 @@ type IndustryPageSectionsProps = {
 
 export default function IndustryPageSections({
   content,
-}: IndustryPageSectionsProps) {
+}: Readonly<IndustryPageSectionsProps>) {
   const useSharedStudioLayout = SHARED_STUDIO_INDUSTRY_SLUGS.has(content.slug);
   const showcaseStories = getIndustryShowcase(content.slug);
 

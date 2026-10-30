@@ -16,7 +16,7 @@ type FoundationalDataLayerInsightHeroSectionProps = {
 
 export default function FoundationalDataLayerInsightHeroSection({
   article,
-}: FoundationalDataLayerInsightHeroSectionProps) {
+}: Readonly<FoundationalDataLayerInsightHeroSectionProps>) {
   const router = useRouter();
 
   const goBack = () => {

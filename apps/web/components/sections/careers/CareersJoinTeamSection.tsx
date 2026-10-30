@@ -1,6 +1,8 @@
 "use client";
 
-import { useRef, useState, type FormEvent } from "react";
+import { useRef, useState,
+  type SyntheticEvent,
+} from "react";
 import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import Container from "@/components/atoms/Container";
@@ -28,7 +30,7 @@ export default function CareersJoinTeamSection() {
   const selectedRole =
     jobOpenings.find((job) => job.id === roleParam)?.title ?? "";
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitError(null);
     setIsSubmitting(true);
@@ -105,7 +107,7 @@ export default function CareersJoinTeamSection() {
               className="grid grid-cols-1 gap-5 sm:grid-cols-2"
             >
               <label className="flex flex-col gap-2 text-sm font-medium text-gray-900">
-                First Name
+                First Name{' '}
                 <input
                   name="firstName"
                   type="text"
@@ -115,7 +117,7 @@ export default function CareersJoinTeamSection() {
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm font-medium text-gray-900">
-                Last Name
+                Last Name{' '}
                 <input
                   name="lastName"
                   type="text"
@@ -125,7 +127,7 @@ export default function CareersJoinTeamSection() {
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm font-medium text-gray-900">
-                Email
+                Email{' '}
                 <input
                   name="email"
                   type="email"
@@ -135,7 +137,7 @@ export default function CareersJoinTeamSection() {
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm font-medium text-gray-900">
-                Phone
+                Phone{' '}
                 <input
                   name="phone"
                   type="tel"
@@ -144,7 +146,7 @@ export default function CareersJoinTeamSection() {
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm font-medium text-gray-900 sm:col-span-2">
-                Position Interested In
+                Position Interested In{' '}
                 <select
                   name="position"
                   key={selectedRole || "none"}
@@ -163,7 +165,7 @@ export default function CareersJoinTeamSection() {
                 </select>
               </label>
               <label className="flex flex-col gap-2 text-sm font-medium text-gray-900 sm:col-span-2">
-                Resume Upload
+                Resume Upload{' '}
                 <input
                   type="file"
                   name="resume"
@@ -172,7 +174,7 @@ export default function CareersJoinTeamSection() {
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm font-medium text-gray-900 sm:col-span-2">
-                Message
+                Message{' '}
                 <textarea
                   name="message"
                   rows={4}

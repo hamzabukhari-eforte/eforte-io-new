@@ -13,7 +13,7 @@ export default function DetailsCard({
   description,
   image,
   format,
-}: DetailProps) {
+}: Readonly<DetailProps>) {
   const isLeft = format === "left";
 
   return (

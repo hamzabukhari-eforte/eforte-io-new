@@ -34,7 +34,7 @@ const STEPS: WorkflowStep[] = [
   },
 ];
 
-export default function CoreServicesDiagram({ className }: { className?: string }) {
+export default function CoreServicesDiagram({ className }: Readonly<{ className?: string }>) {
   return (
     <AiWorkflowDiagram
       steps={STEPS}

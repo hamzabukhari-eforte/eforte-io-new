@@ -12,7 +12,7 @@ type AgenticOrchestrationInsightsListingSectionProps = {
 
 export default function AgenticOrchestrationInsightsListingSection({
   articles,
-}: AgenticOrchestrationInsightsListingSectionProps) {
+}: Readonly<AgenticOrchestrationInsightsListingSectionProps>) {
   return (
     <>
       <section className="relative overflow-hidden bg-default pt-28 pb-12 md:pt-36 md:pb-16">

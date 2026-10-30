@@ -12,21 +12,21 @@ export default function FormSection() {
 
       <form className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
         <label className="flex flex-col gap-2 text-sm text-white">
-          Name
+          Name{' '}
           <input
             className="h-11 rounded-[12px] bg-white/5 border border-white/10 px-4 outline-none focus:border-primary-pink/60"
             placeholder="Your name"
           />
         </label>
         <label className="flex flex-col gap-2 text-sm text-white">
-          Work Email
+          Work Email{' '}
           <input
             className="h-11 rounded-[12px] bg-white/5 border border-white/10 px-4 outline-none focus:border-primary-pink/60"
             placeholder="you@company.com"
           />
         </label>
         <label className="flex flex-col gap-2 text-sm text-white md:col-span-2">
-          Message
+          Message{' '}
           <textarea
             className="min-h-[120px] rounded-[12px] bg-white/5 border border-white/10 px-4 py-3 outline-none focus:border-primary-pink/60"
             placeholder="Tell us about your project"

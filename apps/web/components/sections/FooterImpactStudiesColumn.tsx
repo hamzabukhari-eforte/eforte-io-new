@@ -13,7 +13,7 @@ type Props = {
   links: SiteNavLink[];
 };
 
-export default function FooterImpactStudiesColumn({ title, links }: Props) {
+export default function FooterImpactStudiesColumn({ title, links }: Readonly<Props>) {
   const overview = links[0];
   const studies = useMemo(() => links.slice(1), [links]);
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);

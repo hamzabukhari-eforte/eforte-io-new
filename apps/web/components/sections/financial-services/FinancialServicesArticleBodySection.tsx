@@ -11,7 +11,7 @@ type FinancialServicesArticleBodySectionProps = {
 
 export default function FinancialServicesArticleBodySection({
   article,
-}: FinancialServicesArticleBodySectionProps) {
+}: Readonly<FinancialServicesArticleBodySectionProps>) {
   return (
     <section className="bg-white py-14 text-default md:py-20">
       <Container>

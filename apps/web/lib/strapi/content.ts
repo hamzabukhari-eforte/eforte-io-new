@@ -17,51 +17,86 @@ function escapeHtml(text: string): string {
 
 function formatInlineMarkdown(text: string): string {
   return escapeHtml(text)
-    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-    .replace(/__(.+?)__/g, "<strong>$1</strong>")
+    .replace(/\*\*([^*\n]+)\*\*/g, "<strong>$1</strong>")
+    .replace(/__([^_\n]+)__/g, "<strong>$1</strong>")
     .replace(/(?<!\*)\*([^*\n]+)\*(?!\*)/g, "<em>$1</em>")
     .replace(/(?<!_)_([^_\n]+)_(?!_)/g, "<em>$1</em>");
+}
+
+function stripLeadingNewlines(value: string): string {
+  let i = 0;
+  while (i < value.length && value[i] === "\n") i += 1;
+  return value.slice(i);
+}
+
+function tryBoldHeadingBlock(trimmed: string): string | null {
+  if (!trimmed.startsWith("**")) return null;
+
+  const closeIdx = trimmed.indexOf("**", 2);
+  if (closeIdx <= 2) return null;
+
+  const heading = trimmed.slice(2, closeIdx);
+  if (heading.includes("*") || heading.includes("\n")) return null;
+
+  const after = trimmed.slice(closeIdx + 2);
+  if (after === "") {
+    return `<h2>${formatInlineMarkdown(heading)}</h2>`;
+  }
+
+  if (!after.startsWith("\n")) return null;
+  const body = stripLeadingNewlines(after);
+  if (!body) return null;
+
+  return `<h2>${formatInlineMarkdown(heading)}</h2><p>${formatInlineMarkdown(body).replace(/\n/g, "<br />")}</p>`;
+}
+
+function isBulletLine(line: string): boolean {
+  return line.startsWith("- ") || line.startsWith("* ");
+}
+
+function tryTitleBodyPairs(lines: string[]): string | null {
+  if (lines.length < 2) return null;
+  if (lines.some(isBulletLine)) return null;
+
+  const pairs: string[] = [];
+  for (let i = 0; i < lines.length; i += 2) {
+    const title = lines[i];
+    const body = lines[i + 1];
+    if (body) {
+      pairs.push(
+        `<p><strong>${formatInlineMarkdown(title)}</strong><br />${formatInlineMarkdown(body)}</p>`,
+      );
+    } else {
+      pairs.push(`<p>${formatInlineMarkdown(title)}</p>`);
+    }
+  }
+  return pairs.length > 0 ? pairs.join("\n") : null;
+}
+
+function tryBulletList(lines: string[]): string | null {
+  if (lines.length === 0 || !lines.every(isBulletLine)) return null;
+
+  const items = lines
+    .map((line) => line.slice(2))
+    .map((line) => `<li>${formatInlineMarkdown(line)}</li>`)
+    .join("");
+  return `<ul>${items}</ul>`;
 }
 
 function markdownBlockToHtml(block: string): string {
   const trimmed = block.trim();
   if (!trimmed) return "";
 
-  const onlyBoldHeading = trimmed.match(/^\*\*(.+?)\*\*$/);
-  if (onlyBoldHeading) {
-    return `<h2>${formatInlineMarkdown(onlyBoldHeading[1])}</h2>`;
-  }
-
-  const boldHeadingWithBody = trimmed.match(/^\*\*(.+?)\*\*\n+([\s\S]+)$/);
-  if (boldHeadingWithBody) {
-    const [, heading, body] = boldHeadingWithBody;
-    return `<h2>${formatInlineMarkdown(heading)}</h2><p>${formatInlineMarkdown(body).replace(/\n/g, "<br />")}</p>`;
-  }
+  const boldHeading = tryBoldHeadingBlock(trimmed);
+  if (boldHeading) return boldHeading;
 
   const lines = trimmed.split("\n").filter(Boolean);
-  if (lines.length >= 2 && lines.every((line) => !line.startsWith("- ") && !line.startsWith("* "))) {
-    const pairs: string[] = [];
-    for (let i = 0; i < lines.length; i += 2) {
-      const title = lines[i];
-      const body = lines[i + 1];
-      if (body) {
-        pairs.push(
-          `<p><strong>${formatInlineMarkdown(title)}</strong><br />${formatInlineMarkdown(body)}</p>`
-        );
-      } else {
-        pairs.push(`<p>${formatInlineMarkdown(title)}</p>`);
-      }
-    }
-    if (pairs.length > 0) return pairs.join("\n");
-  }
 
-  if (lines.every((line) => line.startsWith("- ") || line.startsWith("* "))) {
-    const items = lines
-      .map((line) => line.replace(/^[-*]\s+/, ""))
-      .map((line) => `<li>${formatInlineMarkdown(line)}</li>`)
-      .join("");
-    return `<ul>${items}</ul>`;
-  }
+  const pairs = tryTitleBodyPairs(lines);
+  if (pairs) return pairs;
+
+  const list = tryBulletList(lines);
+  if (list) return list;
 
   return `<p>${formatInlineMarkdown(trimmed).replace(/\n/g, "<br />")}</p>`;
 }

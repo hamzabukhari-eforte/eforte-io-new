@@ -27,7 +27,7 @@ export default function StudioProcessSection({
   titleClassName,
   descriptionClassName,
   tagClassName,
-}: StudioProcessSectionProps) {
+}: Readonly<StudioProcessSectionProps>) {
   const sizedFrame = imageFit === "contain";
 
   return (

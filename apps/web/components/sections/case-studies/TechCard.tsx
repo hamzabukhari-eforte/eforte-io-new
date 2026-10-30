@@ -7,7 +7,7 @@ interface CardProps {
   info: string;
 }
 
-export default function TechCard({ image, title, info }: CardProps) {
+export default function TechCard({ image, title, info }: Readonly<CardProps>) {
   return (
     <div
       className={`

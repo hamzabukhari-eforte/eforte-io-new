@@ -2,7 +2,7 @@
 
 import type { CSSProperties, ReactNode } from "react";
 
-function StrokeIcon({ color, children }: { color: string; children: ReactNode }) {
+function StrokeIcon({ color, children }: Readonly<{ color: string; children: ReactNode }>) {
   return (
     <svg
       width="32"
@@ -62,13 +62,13 @@ export default function AgenticMethodologyCard({
   iconName,
   accentColor,
   accentGlow,
-}: {
+}: Readonly<{
   title: string;
   description: string;
   iconName: MethodologyIconName;
   accentColor: string;
   accentGlow: string;
-}) {
+}>) {
   const icon = ICONS[iconName](accentColor);
 
   return (

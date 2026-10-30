@@ -11,7 +11,7 @@ type VelocityAIInsightBodySectionProps = {
 
 export default function VelocityAIInsightBodySection({
   article,
-}: VelocityAIInsightBodySectionProps) {
+}: Readonly<VelocityAIInsightBodySectionProps>) {
   return (
     <section className="bg-white py-14 text-default md:py-20">
       <Container>

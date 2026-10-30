@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 
 const RELATIVE_DIR = "public/assets/final-images/capabilities/blockchain";
 const PUBLIC_BASE = "/assets/final-images/capabilities/blockchain";

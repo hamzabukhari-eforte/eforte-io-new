@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 
 const RELATIVE_DIR = "public/assets/final-images/capabilities/app-solution";
 const PUBLIC_BASE = "/assets/final-images/capabilities/app-solution";
@@ -31,8 +31,8 @@ export function getAppSolutionImages(): Record<number, string> {
   if (!dir) return map;
 
   for (const file of fs.readdirSync(dir)) {
-    if (!IMAGE_EXT.test(file)) continue;
-    const match = file.match(/^(\d+)[-_]/);
+    if (!IMAGE_EXT.exec(file)) continue;
+    const match = /^(\d+)[-_]/.exec(file);
     if (!match) continue;
 
     const index = Number(match[1]);

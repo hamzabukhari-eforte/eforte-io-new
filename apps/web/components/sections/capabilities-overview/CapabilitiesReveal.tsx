@@ -53,7 +53,7 @@ export default function CapabilitiesReveal({
   mobileDuration,
   as: Tag = "div",
   once = false,
-}: CapabilitiesRevealProps) {
+}: Readonly<CapabilitiesRevealProps>) {
   const ref = useRef<HTMLElement | null>(null);
   const inView = useInViewReplay(ref, {
     margin: "0px",

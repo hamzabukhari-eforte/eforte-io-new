@@ -13,12 +13,12 @@ function TimelineCard({
   description,
   imageSrc,
   imageAlt,
-}: {
+}: Readonly<{
   year: string;
   description: string;
   imageSrc: string;
   imageAlt: string;
-}) {
+}>) {
   const { isActive } = useSwiperSlide();
 
   return (
@@ -132,29 +132,26 @@ export default function OurTimelineSection() {
                 className="group w-[280px]! md:w-[320px]! lg:w-[360px]! py-8 transition-transform duration-300 [&.swiper-slide-active]:scale-110 [&.swiper-slide-active]:z-10"
                 aria-hidden={isClone || undefined}
               >
-                <div
-                  className="w-full h-full cursor-pointer"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    goToSlide(index);
-                  }}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
+                <div className="relative h-full w-full">
+                  <button
+                    type="button"
+                    className="absolute inset-0 z-10 cursor-pointer border-0 bg-transparent p-0"
+                    onClick={(e) => {
+                      e.stopPropagation();
                       goToSlide(index);
-                    }
-                  }}
-                  role="button"
-                  tabIndex={isClone ? -1 : 0}
-                  aria-label={`Go to timeline: ${item.year}`}
-                  aria-hidden={isClone || undefined}
-                >
-                  <TimelineCard
-                    year={item.year}
-                    description={item.description}
-                    imageSrc={item.imageSrc}
-                    imageAlt={item.imageAlt}
+                    }}
+                    tabIndex={isClone ? -1 : 0}
+                    aria-label={`Go to timeline: ${item.year}`}
+                    aria-hidden={isClone || undefined}
                   />
+                  <div className="relative z-0 h-full w-full" aria-hidden={isClone || undefined}>
+                    <TimelineCard
+                      year={item.year}
+                      description={item.description}
+                      imageSrc={item.imageSrc}
+                      imageAlt={item.imageAlt}
+                    />
+                  </div>
                 </div>
               </SwiperSlide>
               );

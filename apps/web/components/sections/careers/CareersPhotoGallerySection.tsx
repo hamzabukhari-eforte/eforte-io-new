@@ -20,11 +20,11 @@ function BentoImageTile({
   image,
   flexRatio,
   index,
-}: {
+}: Readonly<{
   image: BentoImage;
   flexRatio: number;
   index: number;
-}) {
+}>) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -47,10 +47,10 @@ function BentoImageTile({
 function BentoColumnStack({
   column,
   columnIndex,
-}: {
+}: Readonly<{
   column: BentoColumn;
   columnIndex: number;
-}) {
+}>) {
   return (
     <div
       style={{ flex: `${column.width} 1 0%` }}

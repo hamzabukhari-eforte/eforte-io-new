@@ -56,7 +56,7 @@ function ValueCard({
   descriptionClassName,
   palette,
   invertDarkIcons,
-}: {
+}: Readonly<{
   item: StudioValueItem;
   index: number;
   iconPosition: "center" | "top-right";
@@ -64,7 +64,7 @@ function ValueCard({
   descriptionClassName?: string;
   palette: typeof cardStyles;
   invertDarkIcons?: boolean;
-}) {
+}>) {
   const styles = palette[item.variant];
 
   return (
@@ -151,7 +151,7 @@ export default function StudioValuesSection({
   cardDescriptionClassName,
   solidPalette = false,
   invertDarkIcons = false,
-}: StudioValuesSectionProps) {
+}: Readonly<StudioValuesSectionProps>) {
   const palette = solidPalette ? solidCardStyles : cardStyles;
 
   return (

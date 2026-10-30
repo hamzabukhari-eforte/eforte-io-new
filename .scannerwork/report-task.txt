@@ -1,0 +1,6 @@
+projectKey=eforte-new
+serverUrl=http://localhost:9000
+serverVersion=26.10.0.133078
+dashboardUrl=http://localhost:9000/dashboard?id=eforte-new
+ceTaskId=8a726e7a-4463-4cab-a33a-d1f2fb645ff4
+ceTaskUrl=http://localhost:9000/api/ce/task?id=8a726e7a-4463-4cab-a33a-d1f2fb645ff4

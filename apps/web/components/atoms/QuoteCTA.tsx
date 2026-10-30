@@ -17,7 +17,7 @@ export default function QuoteCTA({
   type = "button",
   onClick,
   ...props
-}: QuoteCTAProps) {
+}: Readonly<QuoteCTAProps>) {
   const { openQuoteModal } = useQuoteModal();
 
   return (

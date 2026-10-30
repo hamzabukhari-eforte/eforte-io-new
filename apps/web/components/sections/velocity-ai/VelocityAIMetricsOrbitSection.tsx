@@ -145,12 +145,12 @@ function MetricCard({
   isInView,
   delay,
   className = "",
-}: {
+}: Readonly<{
   item: (typeof metricViews)[number];
   isInView: boolean;
   delay: number;
   className?: string;
-}) {
+}>) {
   const Icon = item.icon;
 
   return (

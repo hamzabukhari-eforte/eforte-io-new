@@ -15,7 +15,7 @@ type IndustryHeroSectionProps = {
 
 export default function IndustryHeroSection({
   content,
-}: IndustryHeroSectionProps) {
+}: Readonly<IndustryHeroSectionProps>) {
   return (
     <section className="relative flex flex-col justify-center overflow-hidden bg-default pt-28 pb-6 md:min-h-[500px] md:pt-36 md:pb-8 lg:min-h-[700px]">
       <div className="absolute inset-0">

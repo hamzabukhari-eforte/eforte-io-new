@@ -11,7 +11,7 @@ type FoundationalDataLayerInsightBodySectionProps = {
 
 export default function FoundationalDataLayerInsightBodySection({
   article,
-}: FoundationalDataLayerInsightBodySectionProps) {
+}: Readonly<FoundationalDataLayerInsightBodySectionProps>) {
   return (
     <section className="bg-white py-14 text-default md:py-20">
       <Container>
